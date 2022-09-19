@@ -1,0 +1,1 @@
+[[the definition of Consequentialism#Interpretative Comments]]

@@ -1,0 +1,9 @@
+## {{title}} - {{publicationTitle}} ({{date}})
+### {{authors}}
+Accessed On: {{dateAdded}}
+**View on Zotero**: {{select}}
+### Content
+{% for attachment in attachments %}
+#### {{attachment.title}}
+[[{{attachment.path}}]]
+{% endfor %}

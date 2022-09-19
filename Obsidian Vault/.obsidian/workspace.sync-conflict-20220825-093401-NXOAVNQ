@@ -1,0 +1,145 @@
+{
+  "main": {
+    "id": "1e9a95a2a97dfe3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "243f7be34dedd258",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Useful FSharp Learning.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fb22948624b23b4d",
+    "type": "split",
+    "children": [
+      {
+        "id": "158f57136a4b7190",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "102a6d5b140b2264",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "703738fe40565af3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fce440eed9726ac4",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 371
+  },
+  "right": {
+    "id": "282606d45673b3c4",
+    "type": "split",
+    "children": [
+      {
+        "id": "84aaedab8114bef6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0efd4d118c17aa2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Useful FSharp Learning.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f2ce0ac92c338d81",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Useful FSharp Learning.md"
+              }
+            }
+          },
+          {
+            "id": "308923f28d6080a2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Useful FSharp Learning.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "931911b204c48d51",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "243f7be34dedd258",
+  "lastOpenFiles": [
+    "8-24-2022 Concurrent.md",
+    "literacy, discourse, and linguistics - introduction notes.md",
+    "8-23-2022 CSCI 3403.md",
+    "Gee '89.md",
+    "morality of affirmative action.md",
+    "issues with Consequentialism and Utilitarianism.md",
+    "is racism inherently immoral.md",
+    "Logic M5 Discussion 2 Find Your Own Letter to the Editor.md",
+    "Yuno/vale analysis.md",
+    "BMJ '19.md"
+  ]
+}

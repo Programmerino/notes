@@ -1,0 +1,1 @@
+My internal definition of Utilitarianism is a specialization of [[the definition of Consequentialism]] optimizing for pleasure/happiness (the distinction is insignificant to me, however some might argue that sex, masturbation, etc. are instances of pleasure, not happiness)
