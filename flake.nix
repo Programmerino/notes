@@ -1,4 +1,12 @@
 {
+  nixConfig.extra-substituters = [
+    "https://programmerino.cachix.org"
+  ];
+
+  nixConfig.extra-trusted-public-keys = [
+    "programmerino.cachix.org-1:v8UWI2QVhEnoU71CDRNS/K1CcW3yzrQxJc604UiijjA="
+  ];
+
   description = "Second Brain";
   inputs.flake-utils = {
     url = "github:numtide/flake-utils";
