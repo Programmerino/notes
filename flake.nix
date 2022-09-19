@@ -19,11 +19,12 @@
           inherit system;
         };
 
-        name = "example";
+        name = "Notes";
 
         project = obsidianhtml.mkProject."${system}" {
           inherit name;
-          src = "./Obsidian Vault";
+          src = ./ObsidianVault;
+          toggles.process_all = true;
           entrypoint = "index.md";
         };
       in rec {
