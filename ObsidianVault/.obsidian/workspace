@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "index.md",
+            "file": "Forum Analysis.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Diagram.xml",
+                "query": "forum analysis",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -58,7 +58,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -78,7 +79,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Forum Analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Forum Analysis.md"
               }
             }
           },
@@ -105,7 +106,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Forum Analysis.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,6 +132,7 @@
   },
   "active": "ac417e96bf8d1859",
   "lastOpenFiles": [
+    "index.md",
     "The Repugnant Conclusion.md",
     "abortion arguments.md",
     "Loki's Wager.md",
@@ -139,7 +141,6 @@
     "finding the underlying reason of a position.md",
     "the balance between moral systems and intuition.md",
     "the definition of Consequentialism.md",
-    "issues with Consequentialism and Utilitarianism.md",
-    "issues found in moral systems.md"
+    "issues with Consequentialism and Utilitarianism.md"
   ]
 }
