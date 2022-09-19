@@ -1,0 +1,723 @@
+
+Advertisement
+
+    plos.org
+    create account
+    sign in
+
+PLOS ONE
+
+    Publish
+        Submissions
+            Getting Started
+            Submission Guidelines
+            Figures
+            Tables
+            Supporting Information
+            LaTeX
+            Other Article Types
+            Preprints
+            Revising Your Manuscript
+            Submit Now
+            Calls for Papers
+        Policies
+            Best Practices in Research Reporting
+            Human Subjects Research
+            Animal Research
+            Competing Interests
+            Disclosure of Funding Sources
+            Licenses and Copyright
+            Data Availability
+            Complementary Research
+            Materials and Software Sharing
+            Ethical Publishing Practice
+            Authorship
+            Downloads and Translations
+        Manuscript Review and Publication
+            Criteria for Publication
+            Editorial and Peer Review Process
+            Editor Center
+            Guidelines for Reviewers
+            Accepted Manuscripts
+            Corrections and Retractions
+            Comments
+            Article-Level Metrics
+    Submit Your Manuscript
+
+    Discover a faster, simpler path to publishing in a high-quality journal. PLOS ONE promises fair, rigorous peer review, broad scope, and wide readership – a perfect fit for your research every time.
+
+    Learn More Submit Now
+    About
+        Why Publish with PLOS ONE
+        Journal Information
+        Staff Editors
+        Editorial Board
+        Section Editors
+        Advisory Groups
+        Find and Read Articles
+        Publishing Information
+        Publication Fees
+        Press and Media
+        Contact
+    Browse
+    Search Search
+    advanced search
+
+Browse Subject Areas
+?
+
+Click through the PLOS taxonomy to find articles in your field.
+
+For more information about PLOS Subject Areas, click here .
+All Subject Areas
+View All Articles (236094)
+
+    Biology and life sciences
+    Computer and information sciences
+    Earth sciences
+    Ecology and environmental sciences
+    Engineering and technology
+    Medicine and health sciences
+    People and places
+    Physical sciences
+    Research and analysis methods
+    Science policy
+    Social sciences
+
+    Loading metrics
+
+Open Access
+
+Peer-reviewed
+
+Research Article
+Is poverty the mother of crime? Evidence from homicide rates in China
+
+    Baomin Dong ,
+
+    Contributed equally to this work with: Baomin Dong, Peter H. Egger, Yibei Guo
+
+    Roles Conceptualization, Formal analysis, Project administration, Writing – original draft, Writing – review & editing
+
+    Affiliation Center for Yellow River Civilization and Sustainable Development, and School of Economics, Henan University, Kaifeng, Henan Province, China
+    ⨯
+    Peter H. Egger ,
+
+    Contributed equally to this work with: Baomin Dong, Peter H. Egger, Yibei Guo
+
+    Roles Investigation, Methodology, Supervision, Writing – review & editing
+
+    Affiliation Department of Management, Technology and Economics, ETH Zürich, Zürich, Switzerland
+    ⨯
+    Yibei Guo
+
+    Contributed equally to this work with: Baomin Dong, Peter H. Egger, Yibei Guo
+
+    Roles Data curation, Investigation, Resources, Software, Validation, Visualization, Writing – original draft
+
+    * E-mail: dabei913@163.com
+
+    Affiliation Institute of Economics and Management, Henan Agricultural University, Zhengzhou, Henan Province, China
+
+    ORCID logo http://orcid.org/0000-0002-9651-4609
+    ⨯
+
+Is poverty the mother of crime? Evidence from homicide rates in China
+
+    Baomin Dong, 
+    Peter H. Egger, 
+    Yibei Guo
+
+PLOS
+x
+
+    Published: May 18, 2020
+    https://doi.org/10.1371/journal.pone.0233034
+
+    Article
+    Authors
+    Metrics
+    Comments
+    Media Coverage
+
+    Abstract
+    Introduction
+    Literature review
+    Data and empirical model
+    Results
+    Conclusions
+    References
+
+    Reader Comments (0)
+    Media Coverage (0)
+    Figures
+
+Abstract
+
+Income inequality is blamed for being the main driver of violent crime by the majority of the literature. However, earlier work on the topic largely neglects the role of poverty and income levels as opposed to income inequality. The current paper uses all court verdicts for homicide cases in China between 2014 and 2016, as well as various inequality measures calculated from 2005 mini census data together with a host of control variables to shed light on the relationship at the detailed Chinese prefecture-level. The results suggest that it is the poverty and low income level, rather than income inequality, that is positively related to homicide rates. We show that the internal rural-urban migration from more violent localities contributes to the destination cities’ homicide rates. The poverty-homicide association implies that instead of “relative deprivation”, “absolute deprivation” is mainly responsible for violent crime. Poverty is the mother of crime. —Marcus Aurelius (121-180AD), Emperor of the Roman Empire.
+Figures
+Fig 2
+Fig 3
+Table 1
+Table 2
+Table 3
+Table 4
+Table 5
+Fig 1
+Fig 2
+Fig 3
+Table 1
+Table 2
+Table 3
+     
+
+Citation: Dong B, Egger PH, Guo Y (2020) Is poverty the mother of crime? Evidence from homicide rates in China. PLoS ONE 15(5): e0233034. https://doi.org/10.1371/journal.pone.0233034
+
+Editor: Shihe Fu, Xiamen University, CHINA
+
+Received: December 18, 2019; Accepted: April 27, 2020; Published: May 18, 2020
+
+Copyright: © 2020 Dong et al. This is an open access article distributed under the terms of the Creative Commons Attribution License , which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+
+Data Availability: The data underlying the results presented in the study are available from PKULAW.COM ( http://www.pkulaw.cn ) and CEIC database ( http://www.ceicdata.com ). Data providers are commercial and access is possible only if users subscribe. Reproducing or publicizing the data to a third party is not permitted.
+
+Funding: This study was supported by the Center of Yellow River Civilization and Sustainable Development; China Scholarship Council (grant number: 201808410386).The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+
+Competing interests: The authors have declared that no competing interests exist.
+Introduction
+
+On June 22, 2017, a mother and her three children died in their home in a tragic fire set deliberately by the family’s migrant worker nanny on the 18th floor of a luxurious high-rise building in Hangzhou, China. The high-profile homicide case in Hangzhou had quickly become a focus of attention for Chinese netizens, with over 200 million views on the Weibo blog within four days. The victim family’s wealth and the nanny’s impoverished and migrant background triggered a nationwide debate on violent crime and tensions over China’s poor-rich divide.
+
+Needless to say, violent crimes such as homicide negatively affect economic development. World Bank [ 1 ] reports that decreasing 10% of a country’s homicides would lift up per capita GDP by 0.7% to 2.9% over the subsequent five years even after controlling for a variety of other determinants. The homicide rate is also an important indicator for rule-of-law [ 2 ]. Homicide is an important dimension of disamenity and can be severely underestimated if the model formulation is incorrect [ 3 , 4 ]. High homicide rates also lower citizens’ satisfaction on democracy, which consequently impair further democratic institutions and economic development [ 5 ]. Policy-makers around the world enact laws to impact public safety, and a controversial one is ‘Stand Your Ground’ on the use of gun violence [ 6 ].
+
+There is a growing literature arguing that income inequality causes crime, beginning with Becker [ 7 ]. The mechanisms seem to be straightforward. For instance, the theory of ‘relative deprivation’ introduced by Merton [ 8 ] suggests that income inequality strengthens the feelings of dispossession and unfairness. The inequality-crime association that empirically identified has been widely accepted. For instance, Messner and Rosenfeld [ 9 ] state that a ‘finding that has emerged with remarkable consistency is that high rates of homicide tend to accompany high levels of inequality’, and solidified in both intra-national and cross-national studies, but it is not without debate.
+
+A fundamental debate centers on whether poverty or inequality drives violent crime. Although many studies show a positive relationship between income inequality and the rate of violent crime, some critical studies using similar data argue that when poverty is added to the regressions, income inequality is not significant anymore and (absolute) poverty explains the crime rate, while (relative) income inequality does not.
+
+Another criticism of the ambiguous effect of inequality on crime in cross country studies is that controlling confounding factors at the country level is inherently difficult. Neumayer [ 10 ] argues that by increasing the sample size of countries in Fajnzylber, Lederman, and Loayza [ 11 ], the Gini coefficient is no longer statistically significant in predicting violent crime. On top of the lack of observability of confounders, income inequality measures for different countries are based on different income concepts and definitions change which places a measurement bias problem, as demonstrated by Atkinson and Brandolini [ 12 ].
+
+In terms of possible reverse causality between income measures (such as various measures of income inequality) and crime rates, the existing literature usually employs an instrumental variable approach but seldom defend the relationship from an intuitive perspective. Nevertheless, it is often argued that the well-offs are able to invest in protection or preventative measures, including installing surveillance system, moving to better communities, and owning a car, etc., thus the reverse causality between property crime and income inequality is also weakened by such argument. In fact, it is documented by Levitt [ 13 ] that households with low income ($25,000 and below) suffer a 60% more chance from burglar than high-income ones ($50,000 and above).
+
+In one study dedicated to the possible reverse causality between crime and inequality, Barenboim [ 14 ] shows that although theoretical model predicts that the rich would spend more on prevention, the empirical evidence from the US indicates that the poor use more expensive transportations to work in areas with the higher violent crime rate. Barenboim [ 14 ] finds a small positive effect of property crime on inequality, but no evidence is shown for such an association between homicide and inequality to exist, to the best of our knowledge. Given that homicide rate is low in absolute magnitude and homicide is largely non-random, it is uneconomic to relocate oneself due to a higher city-level homicide rate.
+
+Another related and commonly believed important factor for violent crimes such as homicide beyond poverty and inequality is immigration. The empirical literature on cross country immigration finds little support of a positive association which runs in contrast to the contrary theory which considers immigration to segregate society and, hence, to stimulate crime. The empirical results seem to support the positive theory, which argues that the fear of deportation, together with the appreciation for a better life often motivate immigrants more than the locals to honor the law. However, the effect of internal migration on local crime rates is understudied by the literature partly due to the lack of data. One exception is Caminha et al. [ 15 ], who find cities with a higher floating population have higher rates of property crimes.
+
+China offers a unique testing ground for the mobility of people and crime for its humongous size of internal migration. According to China Labour Bulletin [ 16 ], there were an estimated 287 million rural migrant workers in China in 2017, making up more than one third of the entire working population. The perception that migrants contribute to most of the crimes may not be mistaken in China. According to a recent popular media analysis [ 17 ], migrants make up over 80% of total violent crimes but the official statistics do not include such information. The Study Group of Xiamen Public Safety Department [ 18 ] also shows that in Chinese cities, the crime rates of immigrants are five to six times higher than those of local hukou residents. However there is a lack of scholarly research on the impact of intra-national migration on violent crimes such as homicide.
+
+The current paper studies the relationship between income measures and homicide rate by using unique data on violent crimes in China, together with mini-census data which give information on the prefecture-level income distribution (allowing to define inequality and poverty rates). We use the “reduced form” model to identify the causality between income measures and homicide rates. Moreover, we use internal migration data between prefectures to control for the violence from migrants. Our results suggest that it is poverty and the income level per se, rather than income inequality, that contributes to the homicide rate. While the rural area poverty level works as a push factor for homicide in a prefecture, boosting crime there, higher average income in urban areas appears to work as a pull factor, attracting crime in the prefecture as a whole.
+
+We believe that the evidence from China in this paper, due to the regionally much more detailed (prefecture-level rather than province-level) account of the dependent and independent variables involved, adds to the ongoing debate on the roles of different dimensions of income and migration for violent crime.
+
+The rest of the paper is organized as follows. Section 2 gives a brief review of the literature. Section 3 describes data and empirical strategy. Section 4 discusses the results. Section 5 concludes the paper.
+Literature review
+
+Homicide, as the intentional killing of a person by another, represents the most serious criminal offense in all violent crimes. It is the most widely collected and reported crime in law enforcement and criminal justice statistics. Compared with other types of crime, homicide is least likely to be biased in measurement (e.g., [ 19 – 21 ]). By contrast, e.g., only two-thirds of all burglaries are recorded by the police from victim surveys and police-recorded crime in England and Wales [ 22 ].
+
+A burgeoning literature attempts to explain violent crimes such as homicide by income inequality. The vast majority of the studies show a positive relationship, such as the 34 cross-sectional studies surveyed in Hsieh and Pugh [ 23 ] and the original papers by Lederman et al. [ 24 ], Imrohoroglu et al. [ 25 ], Soares [ 26 ], and Pickett et al. [ 27 ], etc. Notable examples include Blau and Blau [ 28 ] who find such a relationship to exist in the US and Kelly [ 29 ] who concludes that robbery, assault, and the aggregate level of crime are all influenced by income inequality. Messner et al. [ 30 ] find a positive relationship between the Gini coefficient and homicides in the US. Recent evidence for a positive relationship between inequality and the homicide rate is found by Fajnzylber et al. [ 11 , 31 ] for a cross-section of industrialized and developing countries; Poveda [ 32 ] for seven major cities in Colombia; Nadanovsky and Cunha-Cruz [ 33 ] for Latin America; and Demombynes and Ozler [ 34 ] for South Africa.
+
+However, Mathur [ 35 ] finds that the Gini coefficient had an ambiguous effect on crime, and Stack [ 36 ] finds no relationship using data from Interpol for a cross-section of countries. Neumayer [ 10 ] directly questions the results in Fajnzylber et al. [ 11 ] since by increasing the sample size of countries, the Gini is no longer significant in explaining violent crime. Guillaumont and Puech [ 37 ] also do not find a significant impact of income inequality on crime rates. Some other studies, such as Brush [ 38 ] and Chintrakarn and Herzer [ 39 ], even find a negative relationship between income inequality and crime in the US. A common interpretation for this seemingly counterintuitive result is that the larger inequality triggers a larger demand for security devices or services, which leads to a reduction of crime rate. Costantini et al. [ 40 ] report a mixed message in which both inequality and unemployment rate positively impact violent crime where unemployment is often regarded as a proxy of absolute poverty.
+
+Indeed, Pridemore [ 41 ] argues that the positive inequality-homicide association may be a spurious result of model misspecification. In particular, he argues that most cross-national studies of homicide fail to control for poverty, which is the most consistent predictor of area homicide rates in the US empirical literature. In fact, empirical studies implied a poverty-homicide association, e.g., D’Ambrosio and Rodrigues [ 42 ] find a strong spatial correlation between homicide and favelas concentration in Latin America. It is argued that the poverty-homicide association works through disintegrating individuals from society, making them prone to commit to violent crimes [ 43 ].
+
+For the case of China, a number of studies have been carried out to examine the relationship (e.g., [ 44 – 53 ], etc.). Most of them find an inequality-crime association. However, virtually all of the existing papers suffer from problems of small sample size, the use of regionally very aggregated data, the use of aggregated rather than specific types of crime, and relatively imprecise measurement of inequality.
+
+For instance, most of the studies use province-level data, so that the number of observations is small and there is a risk of spatial aggregation bias (income may be relatively equal within but large between meso-regions within provinces, and the relationship to crime within a province may be spurious). Moreover, almost all of the studies took crime data from China Procuratorial Yearbooks in which only aggregate numbers of arrests in each province are reported. This brings multiple difficulties that are hard to overcome. E.g., with aggregate numbers of all arrests, the impact of inequality on specific types of crime may not be studied. The aggregation across different crime types may be of particular concern here, as the relationship between inequality and violent crime depends on the type of crime. For instance, some studies find that income inequality affects homicide rates but not on other types of violent crime such as rape or assault [ 54 – 56 ]. The use of data from China Procuratorial Yearbooks may be a problem since under-reporting [ 57 ] or under-registration [ 58 ] of murder and other violent crimes by the police is a widespread issue.
+
+Regarding the measurement of income inequality, most papers use the urban-rural divide to represent provincial income inequality but its impact on violent crime is hard to justify. E.g., Shi and Wu’s [ 51 ] ‘regional disparity’ is merely the difference between the national average income and provincial income. The most ‘accurate’ estimate of inequality in this line of research, is the provincial Gini coefficient calculated from five quantiles of income grouping recorded in the provincial statistical yearbooks. Similar problems exist for control variables. For instance, the China Procuratorial Yearbooks only give total expenditures of public security agency (police), the procuratorial offices, and the court and judicial agency together, whereas only expenditures on police should directly deter crime. Hence, it is unclear whether counterintuitive results or a lack of significance of the findings should be attributed to the absence of the actual effect, the small sample size, or the aforementioned measurement problems.
+
+Another strand of the literature looks into the relationship between immigration and crime. Despite the widespread perception that immigration is responsible for violent crimes such as homicide, scholarly research finds little empirical evidence for that (see, e.g., in Papadopoulos [ 59 ]). Indeed, numerous studies find that higher concentrations of immigrants are associated with lower crime rates (e.g., Pendergast et al. [ 60 ]). Some studies even establish causality to show that immigration led to lower crime rates. Historically, Sequeira, Nunn and Qian [ 61 ] show that the Age of Mass Migration (1850-1920) had no long-run effects on crime rates in the US. It is also argued that the positive relationship between immigrants and crime in some countries may be due to racial or ethnic discrimination by the police and the judicial system.
+
+However, little is known for the effect of a country’s internal migration on local crime rates. As an exception, Cheng, Liu, and Wang [ 62 ] combine the arrest and prosecution data from 306 prefectures in China with interviews with nine policemen and public procurators from five provinces to show that the ratio of migrants (in the total population) contributes more to the prosecution rate whereas the ratio of home rental over homeownership impacts more on the arrest rate. Thus the implication is that internal migration introduces crime and part of it is carried through the rental-housing channel. In the Chinese language literature, Chen, Li, and Chen [ 63 ] argue that the rise of large-scale internal migration in China is the main reason for the increase in crime rates. However, some other studies, e.g., Tong [ 64 ] finds that migrants are more likely to be victims than criminals due to their low social status and exposure to a complicated environment, etc.
+Data and empirical model
+
+The aforementioned data aggregation problem and under-reporting in official statistics make officially published data not well suited for research. However, the movement toward transparency of conviction inflicted by China’s top leader in 2013 resulted in the unconditional disclosure of all court verdicts since January 1, 2014. By decree of the Supreme Court of China, all court verdicts must be made available to public online unconditionally within seven days of judgment, with exceptions of cases of juvenile accused or of national security concerns, beginning by January 1, 2014. Verdicts are collected from PKULaw.cn ( http://www.pkulaw.cn/ ) which is the largest and most inclusive database for legal documents in China. We hand-collected first-instance judgments of all homicide cases from January 1, 2014, to December 31, 2016, from all levels of courts in China, and aggregated them by type to the prefecture level, to form the dependent variable. Thus our data overcomes the incompleteness problem of official statistics, allows a precise measurement of violent crime, and can be measured at the prefecture level rather than province level.
+Data
+
+In this study, we use data from PKULaw.cn on all homicides at the level of prefectures that were treated in Chinese courts in 2014 or, alternatively, in 2014-2016. Since the convictions do not reveal any personal information of the victims or the convicted, including second- and/or third-instance information would only bias the data, then we only use the first-stance court convictions and there were in total 8,354 first-stance court convictions in the homicide category between January 1, 2014, and December 31, 2016, published by PKULaw.cn. We normalize the respective numbers by the population size in each prefecture, to obtain the prefecture-level homicide rate. We dub the respective variable Homicide . In general, as the explanatory variables are not available at an annual level for this time span, we will use index i to denote prefectures and use data for 2014 or averages for the years 2014-2016.
+
+We use the following set of explanatory variables to explain Homicide i across prefectures.
+Income distribution and poverty.
+
+First of all, we use Poverty i , to measure the fraction of the population in the prefecture i , which has an income below the fifth percentile of the overall income distribution of China. Furthermore, we also consider the effect of PovertyUrb i and PovertyRur i in the urban and rural areas of the prefecture i on Homicide i , respectively. Data to compute income percentiles for all of China and for each prefecture underlying the respective poverty variables and variables introduced below are from China’s 2005 mini census of 1% of the population, which is the only dataset with a large-enough sample size to construct China’s prefecture-level income inequality measures. In the 2005 mini census, we use the place of residence (not according to the Hukou type) to define the rural and urban areas. A positive parameter on one of these poverty variables would indicate that an increase in the number of people below the poverty line (in urban or rural areas) would increase the homicide rate in a prefecture.
+
+Moreover, we employ various income-level and income-inequality measures. First of all, we include the log of average income LnAvgInc i , as well as log of average income in urban areas, LnAvgUrbInc i , and rural areas, LnAvgRurInc i , as three separate measures of income in a prefecture. A positive parameter on the average income variables would indicate that an increase in average income (in urban or rural areas) would increase the homicide rate in a prefecture.
+
+Second, we employ three measures of income inequality, all of them also defined for urban and rural areas separately, pertaining to different brackets of the income distribution: (1) the log difference between the 95th and the 5th percentiles, DLnInc 9505 i , DLnUrbInc 9505 i , and DLnRurInc 9505 i ; (2)the log difference between the 90th and the 10th percentiles, DLnInc 9010 i , DLnUrbInc 9010 i , and DLnRurInc 9010 i ; and (3) the log difference between the 75th and the 25th percentiles, DLnInc 7525 i , DLnUrbInc 7525 i , and DLnRurInc 7525 i . While the first measure indicates the income gap in the very tail of the distribution, the last measure captures the interquartile range. The three measures are considered together in order to permit a potentially nonparametric impact of income inequality on Homicide i . A positive parameter on one of these income dispersion variables would indicate that an increase in income dispersion of the respective kind (in urban or rural areas) would increase the homicide rate in a prefecture, even after conditioning on average income and poverty levels per urban or rural area in the prefecture.
+
+We generate the Gini coefficient Gini i for the prefecture i as another measure of inequality between urban and rural area in one additional robustness check. Data for calculating the Gini coefficient is also based on 2005 mini census. A positive coefficient on Gini i would indicate that an increase in income dispersion between urban and rural areas would increase the homicide rate in a prefecture, and such a result is consistent with results using other income inequality measures.
+Demography and employment.
+
+We employ the following variables and sources to capture demographic factors. LnPopUrb i and LnPopRur i are the log resident population numbers in urban and rural areas of a prefecture. The data source for these variables is CEIC ( www.ceicdata.com ). Moreover, we use the overall population of a prefecture and divide it by the respective area size (in squared kilometers) to obtain population density data, PopDens i . At least for the United States there is evidence that economic crimes are relatively more frequent in more densely populated areas.
+
+Moreover, we employ the ratio of college students in the total population of a prefecture, CollRate i , the unemployment rate, UnempRate i , and the share of manufacturing employment in the total population of a prefecture, IndEmpRate i , all using data from CEIC. Education is also considered in the empirical models since it increases employability, thus decreasing the probability of committing to a crime. Higher levels of unemployment provide direct incentives for economically driven crimes, as justified by Becker [ 7 ], Ehrlich [ 65 ], and Chiu and Madden [ 66 ]. However, we do not have a clear-cut reference point regarding the frequency of homicides in microregions with a higher versus a lower college or unemployment rate, at least not for China.
+Policing, jurisdiction, and violent environment.
+
+Public security expenditures are hand-collected from all prefecture city governments’ websites on the final settlement of budgetary expenditures for the year 2014. We use the log of prefecture-level public security expenditure and dub it LnPolicing i . Earlier work on crime identified a positive impact of policing on crime numbers, as more policing makes detection and arrests of criminals easier [ 7 ]. Although more policing activities may also deter crimes, the existing literature found no such effect on violent crimes [ 29 ]. Moreover, we employ the ratio of arrests and convictions, ArrConv i . Notice that convictions pertain to a potentially different base of arrested individuals than arrests do. Hence, the respective variable is not necessarily larger than unity. However, in the long run, we expect a larger value of ArrConv i to reflect a less severe threat of the court system for criminals, all else equal. Hence, we expect a positive influence of this variable on Homicide i .
+
+Based on N prefectures, and P provinces, we make twofold use of the N × P matrix of immigration into (cities in) prefectures and the N × 1 vector of intentional injury cases across prefectures from PKULaw.cn. First, using the population distribution across cities, prefectures, and provinces from CEIC data and assuming proportionality about the immigration across prefectures from provinces into cities from the China Migrants Dynamic Survey, we impute an N × N prefecture-to-prefecture immigration matrix where the lines are destinations and the columns are origins. Let us call a typical entry of that matrix m ij , where i is a destination and j an origin. Following customary practice with neighbor weighting in the spatial econometrics literature (see, e.g., Kelejian and Prucha [ 67 ]), we normalize m ii = 0 for all prefectures i . Moreover, let us refer to ι j as a typical entry of the vector of prefecture-level intentional injury cases. Then, we generate the variable NeighborViolence i based on . Hence, NeighborViolence i is the immigration-weighted number of intentional injury cases in other prefectures than a given one. Similarly, we define ViolentImmig i as , which is the intentional-injury-weighted number of immigrants from other prefectures. For controlling the net inflow poor migrants’ effect on homicide, we generate another variable ImmigPoor i based on the immigration matrix and the number of residents living in the minimum subsistence allowances in 2014 from statistical yearbook of each prefecture. We define ImmigPoor i as to resprensent the net inflow of poor migrants to prefecture j , where ω j and ω i are the proportion of the residents living in the minimum subsistence allowances in prefecture j and prefecture i .
+
+A positive parameter on NeighborViolence i would indicate that homicides are higher in prefectures which are located in the vicinity of prefectures with high rates of intentional injuries. Hence, this variable reflects one source of potential cross-border spillover effects of violent crime. A positive parameter on ViolentImmig i would indicate that homicides are higher in prefectures which are more important destinations of migrants from prefectures with high rates of intentional injuries. Hence, this variable reflects another source of the potential cross-border spillover effect of violent crime. A positive parameter on ImmigPoor i would indicate the homicides are higher in prefectures which had more net inflow of migrants. By adding this variable, we are able to identify whether poverty imported via inflows of migrants contributed to local violent crime.
+Region fixed effects.
+
+Apart from these continuous variables, we also include binary indicator variables for seven geographical divisions often used to aggregate Chinese provinces. These regions are: Eastern China (Anhui, Fujian, Jiangsu, Jiangxi, Shandong, Shanghai, Zhejiang); Southern China (Guangdong, Guangxi, Hainan); Northern China (Beijing, Hebei, Inner Mongolia, Shanxi, Tianjin); Central China (Henan, Hubei, Hunan); Northeastern China (Heilongjiang, Jilin, Liaoning); Southwestern China (Chongqing, Guizhou, Sichuan, Tibet, Yunnan); Northwestern China (Gansu, Ningxia, Shaanxi, Xinjiang).
+Descriptive statistics.
+
+We provide a list of the variables just introduced together with a short definition and descriptive statistics in Table 1 . For each variable used, we provide the number of prefectures this variable would be available for ( Obs .), the average value the variable takes on ( Mean ), as well as the corresponding standard deviation (Std.dev.), the minimum ( Min .), and the maximum ( Max .).
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Table 1. Summary statistics.
+
+https://doi.org/10.1371/journal.pone.0233034.t001
+
+We will suppress a lengthy discussion of the descriptive statistics for the sake of brevity but will highlight a few facts. The degrees of poverty vary widely across different prefectures in China, as well as average income and income inequality also show regional differences. The apparent contrast of poverty and income inequality also can be seen when we consider urban and rural areas separately. First of all, average urban income is higher than average rural income, as can be seen from the average values of the variables LnAvgUrbInc and LnAvgRurInc . Moreover, the average inequality is higher in urban than in rural areas for any inter-quantile range considered. To see this, compare the average values of DLnUrbInc9505 , DLnUrbInc9010 , and DLnUrbInc7525 with those of DLnRurInc9505 , DLnRurInc9010 , and DLnRurInc7525 , respectively. Observe also that the average rural poverty is higher than its urban counterpart (see the statistics for PovertyUrb vs. PovertyRur ).
+
+Urban areas tend to be smaller than rural ones according to the averages of LnPopUrb and LnPopRur , but the largest urban area is larger than the largest rural one across the prefectures (see the maxima of the same variables).
+
+Finally, consistent with our earlier discussion, the ratio of arrests to convictions of crimes is not bounded by unity from below. To see this, consider the maximum value of ArrConv in Table 1 .
+Empirical model
+
+Generally, the dependent variable and covariates may be endogenous due to simultaneity, and it shall be treated with care. In the case of the lack of convincing instrumental variables, a reduced form regression using lagged variables is suggested by the literature. Following Angrist and Pischke [ 68 ], we use a reduced-form model to identify the causality. Suppose we have such structure model with the true regression coefficient we are interested in: (1) where indices i for prefectures, t for year, vector X i , t is an endogenous variable, and W i , t is the disturbance. Consider using the poverty and inequality measure in 2005 as instrumental variables, which is the lag of our endogenous income measures. Because the lag of income measures affects the current term directly, and cannot play any role in the current homicide rate, the true structure model in the first stage is then: (2)
+
+Thus the reduced form is the regression of the dependent variable on the instrument X i , t −1 given by: (3) where U i , t is the disturbance. Assuming E ( X i , t −1 W i , t ) = 0, that is, the lag of the poverty and inequality affects homicide rates only through affecting themselves in 2014, and E ( X i , t −1 X i , t )≠0. It is credible to assert that the income measures in the past can be proper IVs to affect homicide rates in the current.
+
+To reduce the notational burden, we eliminate the subscript of year t and include all the aforementioned prefecture-level variables including our IV into the vector Y i . Using a for seven geographical divisions (in which prefectures are nested) and denote region fixed effects by μ a , we can write the empirical model we estimate as: (4) where G (·) indicates that we estimate a generalized-linear exponential-family model to accommodate the non-negativity of the dependent variable Homicide i , and U i is the respective disturbance term which obeys E ( U i ) = 1 and U i ≥ 0 and which we treat as potentially heteroskedastic. As Homicide i ∈ [0; 1) is defined as a rate that is bounded from below, and from above, we follow Papke and Wooldridge [ 69 ] and use a fractional-response framework. Typically, G (·) rests on a logistic function G ( z ) = exp( z )/(1 + exp( z )), which maps z to the(0, 1) interval. Then we maximize the binomial log likelihood with individual contribution given by: (5)
+
+One point noteworthy in the reduced form regressions is that the effect might be biased because the income level (or income inequality) in 2005 may have had an effect on 2014 income levels. Then the coefficient ( β ) here contains the whole effect which includes direct effect ( γ ) and indirect effect ( α ) of income inequality in 2014 on crime rates in 2014. From the above model, we may estimate coefficients with upward bias, however, the reduced form does not change the direction of the causality. At the same time, using the income measures in 2005 as an IV alleviates the problem of endogeneity due to simultaneity.
+Results
+
+We put regression results in five tables. Tables 2 and 3 present the results at the whole prefecture level. Table 4 presents the results in which the relevant income measures are calculated at prefectural urban and rural levels. Table 5 reports robustness checks where inequality measures are substituted by Gini coefficients.
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Table 2. The effect of income inequality on homicide.
+
+https://doi.org/10.1371/journal.pone.0233034.t002
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Table 3. The effect of poverty level and income inequality on homicide.
+
+https://doi.org/10.1371/journal.pone.0233034.t003
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Table 4. The effect of poverty level and income inequality in rural and urban areas.
+
+https://doi.org/10.1371/journal.pone.0233034.t004
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Table 5. Robustness check: The effect of GINI coefficient on homicide.
+
+https://doi.org/10.1371/journal.pone.0233034.t005
+
+In all regressions we control the region fixed effects. We choose the binomial model structure and the logit link function by using the link test which based on Pregibon’s work [ 70 ] to test the rationality of the family model structure for the fractional-response framework. We also perform the Hosmer-Lemmeshow (H-L) test to evaluate the goodness of fit of our model. When the p-value of the test is greater than 0.05, then we cannot reject the null hypothesis that the observed and expected proportions are the same across all quantiles, thus the model fits well. Based on the Liklihood Ratio (LR) test and H-L test, all the estimations we run have a high goodness of fit.
+
+Table 2 has seven numbered columns, which differ in terms of the included income measures as well as other demographic factors. Columns (1)-(6) suggest that a higher income difference between the 95th and the 5th percentiles induces lower homicide rates, but higher income differences between the 90th and the 10th percentiles ( DLnInc9010 ), and the 75th and the 25th percentiles ( DLnInc7525 ) induce higher homicide rates. Only the latter two income inequality measures provide consistent results with the existing literature even though all these three measures are not statistically significant. When three measures are considered together to show the nonparametric impact of income dispersion on homicides in column (7), only the coefficient of DLnInc9010 is statistically significant and positive. This indicates that an increase in income dispersion would increase the homicide rate at 90th and 10th percentile income inequality. However as we shall demonstrate later, this inequality-income association may be spurious once absolute poverty is introduced in the regressions.
+
+As for the control variables, we find that a higher arrest-to-conviction rate ( ArrConv ) reduces prefecture-level homicide rates, and higher intentional-injury-weighted number of immigrants ( ViolentImmig ) induces higher homicide rates. These estimated coefficients appear to be important at conventional levels of significance across columns (2)-(7). Other covariates’ effects on homicide rate conform intuition and some are statistically significant, e.g., total rural population, population density, and industrial sector employment. Thus, the results in Table 2 roughly replicate the positive inequality-crime association found in many existing studies, albeit the relationship is not statistically significant in general.
+
+Based on the results in Table 2 , we add poverty level and average income in the model and the results are shown in Table 3 . The results in columns (1)-(3) suggest a clear adverse effect of a greater degree of poverty ( Poverty ) and higher income level ( LnAvgInc ) of a prefecture appears to raise homicides there. However, columns (4)-(6) imply that the same poverty and income-level factors are insignificant but positive after controlling for the dispersion of income and other demographic covariates. Inequality in the tails ( DLnInc9505 and DLnInc9010 ) still show the significant and even larger values compared to Table 2 . Likewise, only the coefficient of DLnInc9010 is significantly positive which means an increase in income dispersion at 90th and 10th percentile income inequality would increase the homicide rate significantly. Therefore, our main results in Table 3 attest that all the poverty level, income-level, and income-dispersion factors show an adverse effect in homicide rate in prefecture-level. Moreover, the poverty-level and income-level appear to have more important and larger impacts than income inequality.
+
+As for the control variables in Table 3 , we find that the expenditures on policing ( LnPolicing ) reduces homicides significantly across columns (1)-(3) but changes to be positive and insignificant when adding inequality measures and other demographic covariates. This may arise from the other factors such as population, unemployment and income inequality play larger roles in homicide than public security expenditure. Similarly, the net inflow of poor migrants ( LnImmigPoor ) becomes positive on the homicide rate after adding other poverty and income inequality variables. The small and statistically insignificant effect of LnImmigPoor does not support the claim that the local homicide rate is largely determined by the poverty of net inflow migrants. However, this is not to say that violent crime is not related to internal migration, indeed, our variable, ViolentImmig which captures the spatially weighted influence of violence propensity due to the net inflow of migrants, positively contributed to the local homicide rate. Thus these results indicate that it is the violence per se that imported through migrants, rather than imported poverty, that escalates violent crime in a prefecture.
+
+In order to conclusively decide on an appropriate factor closely related to homicides, we investigate further by comparing the difference between rural and urban areas of prefectures. Table 4 gives us more complicated results based on Table 3 by dividing key explanatory variables into urban and rural areas.
+
+Relative to the insights from Table 3 , we find that the same poverty, income-level, and income-dispersion factors matter when considered in urban and rural areas, respectively. A higher degree of poverty in the rural areas ( PovertyRur ) of a prefecture on homicides there, and also a higher income level in the urban areas ( LnAvgUrbInc ) of a prefecture appears to raise homicides there. However, columns(4)-(6) imply that a greater dispersion of incomes does not—neither in the urban nor the rural part of a prefecture—increase homicide rates in the prefecture. Hence, these results attest to the fact that poverty in the rural parts to be a push factor and higher income levels in the urban parts to be a pull factor of homicide rates. However, they do not attest to an important adverse effect of income inequality on prefecture-level homicides.
+
+Furthermore, the effects of control variables reported in Table 4 are consistent with those in Table 3 , implying the robustness of our estimation. The latter findings suggest that a negative impact of college education ( CollRate ) on homicide rates, and a positive impact of a higher degree of unemployment rates ( UnempRate ) on homicides. Both urban and rural population decrease homicide rates as shown by the negative and statistically significant coefficients of LnPopUrb and LnPopRur , which is in contrast to the empirical patterns observed in Latin American countries [ 71 , 72 ].
+
+We also do a robustness test by replacing the income inequality measures into the Gini coefficient ( Gini ) in Table 5 . All columns in Table 5 show that a higher Gini coefficient (foremost in urban but even in rural areas) of a prefecture, regardless of overall, rural, or urban, reduces homicide rates, negating the inequality-crime nexus. At the same time, a higher poverty level, particularly in rural areas (both in terms of statistical significance and magnitude), drive up homicide rate. For the pull factor, a higher average income-level (particularly in urban areas) increases homicide rates. These findings are manifest the robustness of our benchmark results.
+
+In the remainder of the discussion, we focus on the effects of log urban average income ( LnAvgUrbInc ) and rural poverty rates ( PovertyRur ) on homicide rates, using nonlinear (fractional-logit) predictions of the homicide rate in column (7) of Table 4 .
+
+In Fig 1 , we plot predicted homicide rates when evaluating all variables except PovertyRur and LnAvgUrbInc at their sample average. For generating the figure, we use a 21 × 21 grid of equally-spaced cells in the maximum-to-minimum range of PovertyRur and LnAvgUrbInc in the data. Consistent with the fractional-logit form, this obtains a three-dimensional nonlinear (S-shaped) function. The steepest ascent of this function would be in the neighborhood, where Homicide ≈0.5 with respect to LnAvgUrbInc , and 0.66 with respect to PovertyRur . However, the data are situated around a much lower mean. Accordingly, the three-dimensional nonlinear function is ascending in PovertyRur-LnAvgUrbInc -space throughout the sample. Hence, the steepest ascent in either dimension is at the maximum value of both PovertyRur and LnAvgUrbInc at the point where Homicide is highest in Fig 1 .
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Fig 1. Predictions of homicide rate for the span of values of rural poverty and urban average income in the sample.
+
+https://doi.org/10.1371/journal.pone.0233034.g001
+
+In Figs 2 and 3 , we plot the marginal effects of these two variables for each prefecture in the data by way of a map. In each figure, we increase the respective variable by one standard deviation from the value a prefecture had in the outset. In this exercise, we do not use the means of all the other control variables, but we account for their prefecture-specific values. Fig 2 is devoted to the response of homicide rates to an increase in rural poverty, and Fig 3 to an increase in average urban income. The two figures suggest that there is a large degree of heterogeneity in the responses, and the effects tend to be largest in the northern prefectures and lower in the central and southern parts of China. In general, the effect of PovertyRur is much larger (and also its level of statistical significance is higher, which is not obvious from the maps) than that of LnAvgUrbInc .
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Fig 2. Response of homicide rate to a one-std.dev.
+
+Increase in Rural Poverty.
+
+https://doi.org/10.1371/journal.pone.0233034.g002
+thumbnail
+Download:
+
+    PPT
+    PowerPoint slide
+    PNG
+    larger image
+    TIFF
+    original image
+
+Fig 3. Response of homicide rate to a one-std.dev.
+
+Increase in Urban Average Income.
+
+https://doi.org/10.1371/journal.pone.0233034.g003
+Conclusions
+
+There is a burgeoning literature on the relationship between income inequality and violent crimes. The majority of this line of literature attributes the widened inequality as a driven force of higher violent crimes. However, the relationship may be spurious once some poverty measure is added, as argued by a handful of studies. The current paper provides support to the latter argument using court convictions on homicide throughout China, mini-census data on incomes, and migration survey data, all at the prefecture level.
+
+We find that it is the poverty level in rural areas and the average income level in urban areas, rather than income inequality, that contribute to the local rate of incidence of violent crimes in China. This finding is robust against different measures of inequality and different empirical formulations. Apart from poverty in rural areas, the ‘transferred’ violence by internal immigrants pushes the crime rate.
+
+The current paper therefore contributes to the ongoing literature by providing prefecture-level empirical evidence from China. Our study calls for a reexamination of the robustness of the results in earlier work by adding poverty measures in the regressions. The inequality-homicide association appears to likely disappear and the poverty-homicide association to hold, at least in China. Our purpose is not to argue that inequality is unimportant, but when it comes to violent crime, “absolute deprivation” appears to matter more than “relative deprivation”.
+References
+
+    1. World Bank. Crime, violence and economic development in Brazil: Elements for effective public policy. Washington, DC. 2006: w36525. Available from: http://siteresources.worldbank.org/BRAZILINPOREXTN/Resources/3817166-1185895645304/4044168-1186331278301/06CrimeViolence.pdf .
+    2. Dawson A. The social determinants of the rule of law: a comparison of Jamaica and Barbados. World Dev. 2013; 45: 314–324.
+        View Article
+        Google Scholar
+    3. Manning M, Fleming C, Ambrey C. Life Satisfaction and Individual Willingness to Pay for Crime Reduction. Reg Stud. 2015; 50(12): 2024–2039.
+        View Article
+        Google Scholar
+    4. da Silva D, Elhorst P, Neto P. Urban and rural population growth in a spatial panel of municipalities. Reg Stud. 2016; 51(6): 894–908.
+        View Article
+        Google Scholar
+    5. Blanco L, Ruiz I. The impact of crime and insecurity on trust in democracy and institutions. AEA Pap Proc. 2013; 103(3): 284–288.
+        View Article
+        Google Scholar
+    6. Guettabi M, Munasib M. Stand Your Ground laws, homicides and gun deaths. Reg Stud. 2017; 52(9): 1250–1261.
+        View Article
+        Google Scholar
+    7. Becker GS. Crime and punishment: An economic approach. J Polit Econ. 1968; 76(2): 169–217.
+        View Article
+        Google Scholar
+    8. Merton RK. Social structure and anomie. Am Sociol Rev. 1938; 3(5): 672–682.
+        View Article
+        Google Scholar
+    9. Messner SF, Rosenfeld R. Political restraint of the market and levels of criminal homicide: A cross-national application of institutional-anomie theory. Soc Forces. 1997; 75(4): 1393–1416.
+        View Article
+        Google Scholar
+    10. Neumayer E. Inequality and violent crime: Evidence from data on robbery and violent theft. J Peace Res. 2005; 42(1): 101–112.
+        View Article
+        Google Scholar
+    11. Fajnzylber P, Lederman D, Loayza N. Inequality and violent crime. J Law Econ. 2002a; 45(1): 1–40.
+        View Article
+        Google Scholar
+    12. Atkinson AB, Brandolini A. Promise and pitfalls in the use of “secondary” data-sets: Income inequality in OECD countries as a case study. J Eco Lit. 2001; 39(3): 771–799.
+        View Article
+        Google Scholar
+    13. Levitt SD. The changing relationship between income and crime victimization. Econ Policy Rev. 1999; 5(3): 87–98.
+        View Article
+        Google Scholar
+    14. Barenboim I. Crime and inequality: Reverse causality?. Harvard University. 2007: 1-22. Available from: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.491.1994&rep=rep1&type=pdf .
+    15. Caminha C, Furtado V, Pequeno THC, Ponte C, Melo HPM, Oliveira EA. Human mobility in large cities as a proxy for crime. PLoS One. 2017; 12(2): e0171609. pmid:28158268
+        View Article
+        PubMed/NCBI
+        Google Scholar
+    16. Migrant workers and their children. China Labour Bulletin. 2019 May 15 [Cited 2019 Aug 20]. Available from: https://clb.org.hk/content/migrant-workers-and-their-children .
+    17. Cheng J. The puzzle of China’s low crime rates. World. 2018 October 25 [Cited 2019 Aug 20]. Available from: https://world.wng.org/2018/10/the_puzzle_of_china_s_low_crime_rates .
+    18. The Study Group of Xiamen Public Safety Department. [Exploring the criminal problems among the migrating population in Xiamen]. J Fujian Police Coll. 2011; 1: 61–67. Chinese.
+        View Article
+        Google Scholar
+    19. Levitt SD. The relationship between crime reporting and police: Implications for the use of Uniform Crime Reports. J Quant Criminol. 1998; 14(1): 61–81.
+        View Article
+        Google Scholar
+    20. Donohue J. Understanding the time path of crime. J Crim Law Criminol. 1998; 88(4): 1423–1451.
+        View Article
+        Google Scholar
+    21. Fajnzylber P, Lederman D, Loayza N, Reuter P, Roman J. Crime and victimization: An economic perspective. Econ. 2000; 1(1): 219–302.
+        View Article
+        Google Scholar
+    22. MacDonald Z. Official crime statistics: Their use and interpretation. Econ J. 2002; 112(477): 85–106.
+        View Article
+        Google Scholar
+    23. Hsieh CC, Pugh MD. Poverty, income inequality, and violent crime: A meta-analysis of recent aggregate data studies. Crim Justice Rev. 1993; 18(2): 182–202.
+        View Article
+        Google Scholar
+    24. Lederman D, Loayza N, Menndez AM. Violent crime: Does social capital matter?. Econ Dev Cult Change. 2002; 50(3): 509–539.
+        View Article
+        Google Scholar
+    25. Imrohoroglu A, Merlo A, Pupert P. What accounts for the decline in crime?. Int Rev Econ. 2004; 45(3): 707–729.
+        View Article
+        Google Scholar
+    26. Soares RR. Development, crime and punishment: Accounting for the international differences in crime rates. J Dev Econ. 2004; 73(1):155–184.
+        View Article
+        Google Scholar
+    27. Pickett KE, Mokherjee J, Wilkinson RG. Adolescent birth rates, total homicides, and income inequality in rich countries. Am J Public Health. 2005; 95(7): 1181–1183. pmid:15983272
+        View Article
+        PubMed/NCBI
+        Google Scholar
+    28. Blau JR, Blau PM. The Cost of inequality: Metropolitan structure and violent crime. Am Sociol Rev. 1982; 47(1): 114–129.
+        View Article
+        Google Scholar
+    29. Kelly M. Inequality and crime. Rev Econ Stat. 2000; 82(4): 530–539.
+        View Article
+        Google Scholar
+    30. Messner SF, Raffalovich LE, Shrock P. Reassessing the cross-national relationship between income inequality and homicide rates: implications of data quality control in the measurement of income distribution. J Quant Criminol. 2002; 18(4): 377–395.
+        View Article
+        Google Scholar
+    31. Fajnzylber P, Lederman D, Loayza N. What causes violent crime?. Eur Econ Rev. 2002b; 46(7): 1323–1357.
+        View Article
+        Google Scholar
+    32. Poveda A. Economic development, inequality and poverty: an analysis of urban violence in Colombia. Oxf Dev Stud. 2011; 39(4): 453–468.
+        View Article
+        Google Scholar
+    33. Nadanovsky P, Cunha-Cruz J. The relative contribution of income inequality and imprisonment to the variation in homicide rates among developed (OECD), south and central American countries. Soc Sci Med. 2009; 69(9): 1343–1350. pmid:19733952
+        View Article
+        PubMed/NCBI
+        Google Scholar
+    34. Demombynes G, Ozler B. Crime and local inequality in South Africa. J Dev Econ. 2005; 76(2): 265–292.
+        View Article
+        Google Scholar
+    35. Mathur VK. Economics of crime: An investigation of the deterrent hypothesis for urban areas. Rev Econ Stat. 1978; 60(3): 459–466.
+        View Article
+        Google Scholar
+    36. Stack S. Income inequality and property crime. Criminol. 1984; 22(2): 229–256.
+        View Article
+        Google Scholar
+    37. Guillaumont P, Puech F. Macro-economic instability and crime. HAL. 2011: halshs-00564579. Available from: https://halshs.archives-ouvertes.fr/halshs-00564579 .
+    38. Brush J. Does income inequality lead to more crime? A comparison of cross-sectional and time-series analyses of United States counties. Econ Lett. 2007; 96(2): 264–268.
+        View Article
+        Google Scholar
+    39. Chintrakarn P, Herzer D. More inequality, more crime? A panel cointegration analysis for the United States. Econ Lett. 2012; 116(3), 389–391.
+        View Article
+        Google Scholar
+    40. Costantini M, Meco I, Paradiso A. Do inequality, unemployment and deterrence affect crime over the long run?. Reg Stud. 2017; 52(4): 558–571.
+        View Article
+        Google Scholar
+    41. Pridemore WA. Poverty matters: a reassessment of the inequality-homicide relationship in cross-national studies. Br J Criminol. 2011; 51(5): 739–772.
+        View Article
+        Google Scholar
+    42. D’Ambrosio C, Rodrigues RI. Deprivation in the Sao Paulo Districts: Evidence from 2000. World Dev. 2008; 36(6): 1094–1112.
+        View Article
+        Google Scholar
+    43. Corbacho A, Phillipp J, Ruiz-vega M. Crime and erosion of trust: Evidence for Latin America. World Dev. 2015; 70: 400–415.
+        View Article
+        Google Scholar
+    44. Cao L, Dai Y. Inequality and crime in China. In: Liu J, Zhang L, Messner SF. editors. Crime and social control in a changing China. Westport, CT: Greenwood Press; 2001. pp. 73–85.
+    45. Lo TW, Jiang G. Inequality, crime and the floating population in China. Asian J Criminol. 2007; 1(2): 103–118.
+        View Article
+        Google Scholar
+    46. Hu L, Hu A, Xu S. [A case study of the impact of the disparity between the rich and the poor upon criminal offences]. Manag World. 2005; 6: 34–44. Chinese.
+        View Article
+        Google Scholar
+    47. Xie W, Jia W. [An empirical study of economy on the criminal rate]. J Chin Peoples Public Secur Univ. 2006; 22: 114–120. Chinese.
+        View Article
+        Google Scholar
+    48. Huang SA, Chen YL. [Macroeconomic factors and crime rates in China: 1978—2005]. Proceedings of China Economics Annual Conference; 2007 Dec 15-16; China, Hong Kong. Chinese.
+    49. Edlund DL, Li H, Yi J, Zhang J. Sex ratios and crime: Evidence from China’s One-Child Policy. Rev Econ Stat. 2013; 95(5): 1520–1534.
+        View Article
+        Google Scholar
+    50. Chen C, Yi J. [Effect of income inequality on criminal behavior: Evidence from China]. J World Econ. 2009; 32: 13—25. Chinese.
+        View Article
+        Google Scholar
+    51. Shi J, Wu X. [An empirical study on China’s regional income inequality, floating population and criminal offense rate]. J Zhejiang Univ. 2010; 40: 73–84. Chinese.
+        View Article
+        Google Scholar
+    52. Wu Y, Rui M. [The impact of income inequality on crime]. China Econ Q. 2010; 10: 291–310. Chinese.
+        View Article
+        Google Scholar
+    53. Cheong TS, Wu Y. Crime rates and inequality: a study of crime in contemporary China. J Asia Pac Econ. 2015; 20(2): 202–223.
+        View Article
+        Google Scholar
+    54. Saridakis G. Violent crime in the United States of America: A time-series analysis between 1960-2000. Eur J Law Econ. 2004; 18(2): 203–221.
+        View Article
+        Google Scholar
+    55. Glaeser EL, Resseger MG, Tobio K. Urban inequality. NBER. 2008: w14419. Available from: https://www.nber.org/papers/w14419 .
+    56. Wilson M, Daly M. Life expectancy, economic inequality, homicide, and reproductive timing in Chicago neighbourhoods. Biomed J. 1997; 314(7089): 1271–1274.
+        View Article
+        Google Scholar
+    57. He N, Marshall IH. Social production of crime data: A critical examination of Chinese crime statistics. Int Crim Justice Rev. 1997; 7(1): 46–64.
+        View Article
+        Google Scholar
+    58. Yu O, Zhang L. The under-recording of crime by police in China: A case study. Policing. 1999; 22(3): 252–264.
+        View Article
+        Google Scholar
+    59. Papadopoulos G. Immigration status and property crime: an application of estimators for underreported outcomes. IZA J Migr. 2014; 3(1): 12.
+        View Article
+        Google Scholar
+    60. Pendergast PM, Wadsworth T, LePree J. Immigration, crime, and victimization in the US context. In: Martínez R, Hollis ME, Stowell JI. editors. The handbook of race, ethnicity, crime, and justice. John Wiley & Sons, Inc. 2018. pp. 65–85.
+    61. Sequeira S, Nunn N, Qian N. Migrants and the making of America: The short- and long-run effects of immigration during the age of mass migration. NBER. 2017: w23289. Available from: https://www.nber.org/papers/w23289 .
+    62. Cheng JX, Liu J, Wang J. Domestic migration, home rentals, and crime rates in China. J Chin Sociol. 2017; 4(1): 8.
+        View Article
+        Google Scholar
+    63. Chen G, Li S, Chen Y. [Population mobility and crime: An empirical analysis based on China’s observation]. Chin J Popul Sci. 2009; 4: 52–61. Chinese.
+        View Article
+        Google Scholar
+    64. Tong M. [Criminal victims in the migrating population and criminal prevention]. Crim Res. 2013; 3: 48–54. Chinese.
+        View Article
+        Google Scholar
+    65. Ehrlich I. Participation in illegitimate activities: A theoretical and empirical investigation. J Polit Econ. 1973; 81(3): 521–565.
+        View Article
+        Google Scholar
+    66. Chiu WH, Madden P. Burglary and income inequality. J Public Econ. 1998; 69(1): 123–141.
+        View Article
+        Google Scholar
+    67. Kelejian HH, Prucha IR. A Generalized Spatial Two Stage Least Squares Procedure for Estimating a Spatial Autoregressive Model with Autoregressive Disturbances. J Real Estate Financ. 1998; 17(1): 99–121.
+        View Article
+        Google Scholar
+    68. Angrist JD, Pischke JS. Mostly harmless econometrics: An empiricist’s companion. Princeton university press; 2008.
+    69. Papke LE, Wooldridge JM. Econometric methods for fractional response variables with an application to 401(k) plan participation rates. J Appl Econ. 1996; 11(6): 619–632.
+        View Article
+        Google Scholar
+    70. Pregibon D. Goodness of link tests for generalized linear models. J R Stat Soc. 1980; 29(1): 15–23.
+        View Article
+        Google Scholar
+    71. Alves LG, Ribeiro HV, Lenzi EK, Mendes RS. Distance to the scaling law: A useful approach for unveiling relationships between crime and urban metrics. PLoS One. 2013; 8(8): e69580. pmid:23940525
+        View Article
+        PubMed/NCBI
+        Google Scholar
+    72. Gomez-Lievano A, Youn H, Bettencourt LM. The statistics of urban scaling and their connection to Zipf’s law. PLoS One. 2012; 7(7): e40393. pmid:22815745
+        View Article
+        PubMed/NCBI
+        Google Scholar
+
+Download PDF
+ 
+
+    Citation
+    XML
+
+Print
+
+    Print article
+    Reprints
+
+Share
+
+    Reddit Reddit
+    Facebook Facebook
+    LinkedIn LinkedIn
+    Mendeley Mendeley
+    PubChase PubChase
+    Twitter Twitter
+    Email Email
+
+ 
+Advertisement
+Subject Areas
+?
+
+For more information about PLOS Subject Areas, click here .
+We want your feedback. Do these Subject Areas make sense for this article? Click the target next to the incorrect Subject Area and let us know. Thanks for your help!
+
+    Homicide  
+
+    Is the Subject Area "Homicide" applicable to this article? Yes No
+
+    Thanks for your feedback.
+    Violent crime  
+
+    Is the Subject Area "Violent crime" applicable to this article? Yes No
+
+    Thanks for your feedback.
+    Urban areas  
+
+    Is the Subject Area "Urban areas" applicable to this article? Yes No
+
+    Thanks for your feedback.
+    Rural areas  
+
+    Is the Subject Area "Rural areas" applicable to this article? Yes No
+
+    Thanks for your feedback.
+    China  
+
+    Is the Subject Area "China" applicable to this article? Yes No
+
+    Thanks for your feedback.
+    Crime  
+
+    Is the Subject Area "Crime" applicable to this article? Yes No
+
+    Thanks for your feedback.
+    Police  
+
+    Is the Subject Area "Police" applicable to this article? Yes No
+
+    Thanks for your feedback.
+    Unemployment rates  
+
+    Is the Subject Area "Unemployment rates" applicable to this article? Yes No
+
+    Thanks for your feedback.
+
+Archived Tweets
+
+Load more
+View all tweets
+
+    Publications
+    PLOS Biology
+    PLOS Medicine
+    PLOS Computational Biology
+    PLOS Genetics
+    PLOS Pathogens
+    PLOS ONE
+    PLOS Neglected Tropical Diseases
+
+    Home
+    Blogs
+    Collections
+    Give feedback
+    LOCKSS
+
+    Privacy Policy
+    Terms of Use
+    Advertise
+    Media Inquiries
+    Contact
+
+PLOS is a nonprofit 501(c)(3) corporation, #C2354500, based in San Francisco, California, US
+PLOS
+ 

@@ -1,0 +1,151 @@
+290 Int. J. Biomedical Engineering and Technology, Vol. 18, No. 3, 2015
+Free body diagram and static finite element analysis of the human tibia
+Bhaskar Kumar Madeti*
+Department of Mechanical Engineering, Gayatri Vidya Parishad College of Engineering (A), Visakhapatnam, Andhra Pradesh, India Email: madetibhaskar@rediffmail.com *Corresponding author
+Chalamalasetti Srinivasa Rao and Bollapragada S.K. Sundara Siva Rao
+Department of Mechanical Engineering, AU College of Engineering (A), Andhra University, Visakhapatnam, Andhra Pradesh, India Email: csr_auce@yahoo.co.in Email: bsk_sundara@yahoo.co.in
+Abstract: Static analysis on tibia is performed for three different postures of humans (standing, staircase ascent and descent) by drawing a free body diagram. A model of the tibia bone is created in CATIA software and is imported to ANSYS. Obtained values during standing and stair ascent and descent are incorporated in finite element analysis. The stress distribution and deformation made in the human bone tibia are observed.
+Keywords: finite element analysis; nodes; meshing; tetrahedron; axial compressive stress; deformation; tibia.
+Reference to this paper should be made as follows: Madeti, B.K., Rao, C.S. and Sundara Siva Rao, B.S.K. (2015) ‘Free body diagram and static finite element analysis of the human tibia’, Int. J. Biomedical Engineering and Technology, Vol. 18, No. 3, pp.290–299.
+Biographical notes: Bhaskar Kumar Madeti is working as an Assistant Professor in Mechanical Engineering Department of Gayatri Vidya Parishad College of Engineering (autonomous) since nine years. Presently he is doing PhD from Andhra University in Mechanical Engineering. He got GATE score of 94.46 percentile. He received Master of Engineering degree from Andhra University. His research interests are in field of biomechanics.
+Chalamalasetti Srinivasa Rao is a Professor at Mechanical Engineering Department of Andhra University. He has guided four PhD students and currently guiding 11 PhD students. He has published 100 papers in international journals and 50 in national and international conferences. He is also member of various professional bodies like ISTE, IE etc. His area of interest is manufacturing sciences, rapid prototyping and robotics.
+Copyright © 2015 Inderscience Enterprises Ltd.
+
+Free body diagram and static finite element analysis
+
+291
+
+Bollapragada S.K. Sundara Siva Rao is retried Professor of Andhra University. He had guided four PhD students. He has published 40 papers in national and international journals and 20 in national and international conferences.
+
+1 Introduction
+In developing models such as a model of the tibia bone, the first step is to generate computer models of the bones. The finite element formulations of contact characteristics have been used by biomechanics investigators to evaluate relative shift of the bone. The elasticity of the bone is likely to be a factor influencing bone growth in the tibia. Static analysis was performed and material properties of bone were assumed linear, isotropic and inhomogeneous. Characteristics of the bone can be found underwater as well (Zhang et al., 2014). The rate of application of finite element analysis to the evaluation of stresses in bones and to the fracture fixation devices has increased drastically in the last decade. Evaluation of stresses in bones helps in defining the effects of the constituent properties of the bone on its macroscopic behaviour. The application of the finite element technique to orthopaedic problems is different from its application to structural problems in that, in orthopaedics, a lot is dependent on the nature of the individual living tissues involved. Material properties are not as predominantly defined as in structural problems. Both geometric characteristics and material properties play a very important role in results that are reached. Moreover, it is absolutely necessary that a multidisciplinary team (both engineers and doctors) be involved in the study of orthopaedic.
+In recent days, replacement with implants in the joints of the human body is taking place. Materials used for implants are not much closer to the bone material (Baldwin et al., 2012; Halloran et al., 2005; Burny et al., 2000). Mechanical analysis should be done so that the exact forces may be determined, and depending upon the forces involved, suitable materials can be used. Owing to excessive loads transmitted to the bone, the ligaments may fail and may be exposed to severe pain (Meyer and Haut, 2005; Woo et al., 2006; Li et al., 1998). Implants may be designed in such a way that it reduces the muscle forces. With the mechanical analysis, muscle forces can also be obtained. Earlier authors used various optimisation techniques to reduce muscle forces (Pedotti et al., 1978; Challis and Kerwin, 1993). In the present paper, the analysis is done by reverse engineering the muscle, and axial compressive forces are obtained later the axial compressive loads are applied on the tibia bone in various postures in ANSYS; thereafter, stress distribution are found. Here due to abduction and adduction movement of the knee, it is difficult to apply forces in the tibia bone; these loads are of varying loads (Harrington, 1983).
+Computer Tomography (CT) scans or Magnetic Resonance Imaging (MRI) constitutes the input data required for modelling the human parts such as bones. Using these data we can make FEM model (Pena et al., 2006; Devika and Arumaikkannu, 2011) incorporating the material properties and the loading conditions, which yield required results. Since bone is an anisotropic material the properties in three directions must be used. In the present work, we got the dimensions through X-ray and MRI scans. We used the anisotropic properties of the tibia bone. The model is first created in CATIA software;
+
+292 B.K. Madeti, C.S. Rao and B.S.K. Sundara Siva Rao
+later it is imported to ANSYS software here meshing is done by using a ten-node solid tetrahedron with 4723 elements. Forces acting on tibia while standing, staircase ascent and staircase descent (Madeti et al., in press) considering the forces on the knee stress distribution can be clearly defined by finite element analysis (Madeti et al., 2014a, Tsouknidas et al., 2012). In contrast, while considering the transmission of loads to the knee, in the case of descent, the load acting on the knee is nearly 3.2–4.9 times the body weight. In the case of ascent, the load is 2.8–4.4 times the body weight (Komistek et al., 2005).
+
+2 Forces acting on knee during ascending and descending staircase
+
+During staircase ascent and descent, forces involved are muscle force and axial compressive force which are the unknown forces. Applying equilibrium conditions, for various positions, values have been determined as shown in Figure 1:
+
+ m1g = weight of leg;  R = normal reaction from staircase;
+
+ N = axial compressive force on the tibia bone;
+
+ Fq = muscle force;  α = angle made by N with the vertical axis;
+
+ θ = angle made by Fq with the horizontal axis; Resolving forces along x-axis,
+
+ Fx  0
+
+(1)
+
+Fq cos  N sin
+
+Resolving forces along x-axis,
+
+ Fy  0
+
+(2)
+
+Fq sin  R  m1g  N cos
+
+The above equations are obtained from Figure 1. By solving these equations, forces acting on tibia are attained. Consider a male of 60 kg body mass. Then, m1 = 2.1 kg, R = 60  9.81 and we also found that α = 40° and the corresponding θ = 40° by substituting these values in the above equations. Consider a male with body mass 60 kg, so m1 = 2.1 kg; R = 60 * 9.81; we found that α = 40° and the corresponding θ = 220° by substituting these values in the above equations. The axial compressive force on tibia is 1800 N force acting on the knee during staircase ascent, while descending forces acting on the knee is 2500 N; in the standing posture, half the weight of the person is considered (Madeti et al., 2014b). Different combinations of various forces may obtained by taking the best values in the finite element analysis.
+
+Free body diagram and static finite element analysis
+
+293
+
+Figure 1 Various forces acting on knee
+
+Source: Halloran et al. (2005)
+3 Process of creating FE model of the tibia
+The process of creating an FE model of the tibia is as follows: 1 The tibia of a 27-year-old male weighing 60 kg with tibia length of 30 cm and the
+area of the top of the tibia of 2795 mm2 is shown in Figure 2. 2 Multi-section solid command is used to get different cross-sections. 3 The fibula bone is a supporting bone to the tibia; the forces acting on it is neglected,
+since load transmitted to the fibula bone is neglected. 4 Later, cut the top of the tibia with a surface having the same profile as that of the
+tibial surface. 5 Later, it is saved in the iges.file format.
+Figure 2 Different views of tibia model in CATIA
+
+294 B.K. Madeti, C.S. Rao and B.S.K. Sundara Siva Rao 4 FE model for analysis of tibia
+
+1 The CATIA file saved in iges.file is imported in ANSYS Mechanical APDL software.
+2 Later the material properties were given, such as the young’s modulus, shear modulus and Poisson ratio in all three directions in Tables 1 and 2.
+3 We used a ten-node solid tetrahedron as the mesh element.
+4 The meshing was done in fine mesh mode as shown in Figure 3.
+5 Boundary conditions are applied as shown in Figure 4:
+
+ Lower end of the tibia was fixed in all three DOF where a uniform pressure of 210 KPa is applied, i.e. the maximum pressure while standing was applied on the top of the tibia. The stress distribution and deformation are shown in Figures 5 and 6.
+ In a similar boundary condition, a uniform pressure of 421 KPa was applied simulating the condition of a staircase ascent; the stress distribution and deformation are shown in Figures 7 and 8.
+
+ A 631 KPa uniform pressure simulates the condition of descending a staircase; the stress distribution and deformation is shown in Figures 9 and 10.
+6 The element used is a ten-node solid tetrahedron with 4723 elements.
+As shown in Figure 11, a comparison of the maximum stresses in the human tibia bone while standing, staircase ascent and staircase descent is shown clearly.
+Table 1 Material properties of tibia in all three directions
+
+Material property E1 E2 E3 G12 G13 G23
+
+Value in GPa 4.48 4.48 9.64 1.41 1.28 1.28
+
+Table 2
+
+Poisson ratio in all three directions
+Poisson ratio 12 13 23
+
+Value 0.35 0.12 0.12
+
+Free body diagram and static finite element analysis
+
+295
+
+Figure 3 Meshed tibia
+
+Figure 4 Tibia with boundary conditions Figure 5 Deformed shape while standing
+
+296 B.K. Madeti, C.S. Rao and B.S.K. Sundara Siva Rao
+Figure 6 Stress distribution while standing
+Figure 7 Deformed shape in stair ascent
+Figure 8 Stress distribution in stair descent
+
+Free body diagram and static finite element analysis
+
+297
+
+As shown in Figure 12, several nodal points are taken on the surface of the tibia; the graph is plotted between the three cases of standing position, stair ascent and stair descent owing to this compressive force which acts along the human tibia. Here comparisons of stresses in three cases are shown clearly.
+
+Figure 9 Deformed shape in stair descent
+
+Figure 10 Stress distribution in stair descent Figure 11 Axial compressive force on tibia (MPa)
+
+298 B.K. Madeti, C.S. Rao and B.S.K. Sundara Siva Rao
+Figure 12 Stresses obtained at several nodal points at the surface of tibia
+5 Results and discussion Results obtained from the finite element analysis are the maximum compressive stress on the tibia during the three postures of standing, staircase ascent and staircase descent: 5.6, 11 and 17 MPa, respectively. The maximum deformation occurring in the three cases are 0.49, 1.489 and 2.004 mm, respectively, for 600N person. For all these cases, more stresses are developed in the lower portion of the tibia. We have considered Von Mises effective stress because the bone is a ductile material. The Tresca stress is usually used for brittle materials.
+6 Conclusions The conclusions of the study are as follows:  The axial compressive force and muscle force can be obtained by drawing free body
+diagram of the human knee.  During stair ascent, less axial compressive force is required, while descending the
+axial compressive is more.  An FEA analysis of the tibia with this stress distribution is clearly identified
+throughout the surface of the tibia.  By knowing the maximum stresses, suitable replacement components may be
+designed. Materials can be selected, which are close to the material properties of the bone.
+
+Free body diagram and static finite element analysis
+
+299
+
+References
+Baldwin, M.A., Clary, C.W., Fitzpatrick, C.K., Deacy, J.S., Maletsky, L.P. and Rullkoetter, P.J. (2012) ‘Dynamic ﬁnite element knee simulation for evaluation of knee replacement mechanics’, Journal of Biomechanics, Vol. 45, No. 3, pp.474–483.
+Burny, F., Donkerwolcke, M., Moulart, F., Bourgois, R., Puers, R., Van Schuylenbergh, K., Barbosa, M., Paiva, O., Rodes, F., Bégueret, J.B. and Lawes, P. (2000) ‘Concept, design and fabrication of smart orthopedic implants’, Medical Engineering & Physics, Vol. 22, No. 7, pp.469–479.
+Challis, J.H. and Kerwin, D.G. (1993) ‘An analytical examination of muscle force estimations using optimization techniques’, Journal of Engineering in Medicine, Vol. 207, No. 3, pp.139–148.
+Devika, D. and Arumaikkannu, G. (2011) ‘Evaluation of mechanical behaviour of bone, implant and bone-implant interface by numerical simulation of two surgical fixation procedures using finite element analysis’, International Journal of Computer Applications in Technology, Vol. 42, Nos. 2–3, pp.225–232.
+Halloran, J.P., Petrella, A.J. and Rullkoetter, P.J. (2005) ‘Explicit ﬁnite element modeling of total knee replacement mechanics’, Journal of Biomechanics, Vol. 38, No. 2, pp.323–331.
+Harrington, I.J. (1983) ‘Static and dynamic loading patterns in knee joints with deformities’, The Journal of Bone and Joint Surgery-American, Vol. 65, No. 2, pp.247–259.
+Komistek, R.D., Kane, T.R., Mahfouz, M., Ochoa, J.A. and Dennis, D.A. (2005) ‘Knee mechanics: a review of past and present techniques to determine in vivo loads’, Journal of Biomechanics, Vol. 38, No. 2, pp.215–228.
+Li, G., Rudy, T. and Allen, C. (1998) ‘Effect of combined axial compressive and anterior tibial loads on in situ forces in the anterior cruciate ligament: a porcine study’, Journal of Orthopaedic Research, Vol. 16, pp.122–127.
+Madeti, B.K., Rao, C.S. and Rao, B.S.K.S.S. (2014a) ‘Biomechanics of hip joint: a review’, International Journal of Biomedical Engineering and Technology, Vol. 15, No. 4, pp.341–359.
+Madeti, B.K., Rao, C.S. and Rao, B.S.K.S.S. (2014b) ‘Failure analysis of ACL and Hertz contact stress in human knee’, International Journal of Biomedical Engineering and Technology, Vol. 16, No. 4, pp.317–328.
+Madeti, B.K., Rao, C.S. and Rao, B.S.K.S.S. (in press) ‘Biomechanics of knee joint: review’, Frontiers of Mechanical Engineering, DOI 10.1007/s11465-014-0306-x.
+Meyer, E.G. and Haut, R.C. (2005) ‘Excessive compression of the human tibio-femoral joint causes ACL rupture’, Journal of Biomechanics, Vol. 38, pp.2311–2316.
+Pedotti, A., Krishnan, V.V. and Stark, L. (1978) ‘Optimization of muscle force sequencing in human locomotion’, Mathematical Biosciences, Vol. 38, Nos. 1–2, pp.57–76.
+Pena, E., Calvo, B., Mertinez, M.A. and Doblare, M. (2006) ‘A three dimensional finite element analysis of the combined behaviour of ligaments and menisci in the healthy knee joint’, Journal of Biomechanics, Vol. 39, pp.1686–1701.
+Tsouknidas, A., Anagnostidis, K., Maliaris, G. and Michailidis, N. (2012) ‘Fracture risk in the femoral hip region: a finite element analysis supported experimental approach’, Journal of Biomechanics, Vol. 45, pp.1959–1964.
+Woo, S.L.Y., Abramowitch, S.D., Kilger, R. and Liang, R. (2006) ‘Biomechanics of knee ligaments: injury, healing, and repair’, Journal of Biomechanics, Vol. 39, No. 1, pp.1–20.
+Zhang, W., Luo, Y., Zheng, J. and Graham, M. (2014) ‘Biomechanical characteristics of knee flexion-extension in underwater situation’, International Journal of Biomedical Engineering and Technology, Vol. 15, No. 3, pp.189–197.
+

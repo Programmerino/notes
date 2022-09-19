@@ -1,0 +1,1555 @@
+POLICING THROUGH SUBSIDIZED FIREPOWER:
+AN ASSESSMENT OF RATIONAL CHOICE AND
+MINORITY THREAT EXPLANATIONS OF POLICE PARTICIPATION IN THE 1033 PROGRAM∗
+
+DAVID M. RAMEY1 and TRENT STEIDLEY2 1Department of Sociology and Criminology, The Pennsylvania State University 2Department of Sociology and Criminology, University of Denver
+KEYWORDS: police, militarization, minority threat, economic threat, social control
+There is a popular belief that the use of military equipment can improve police efforts at social control. Recent protests and riots across the country, however, have piqued public concern about racial disparities in law enforcement and the acquisition and use of military equipment by police in the United States. By using data from the Department of Defense’s 1033 Program, we conduct an agency-level analysis to assess the validity of rational choice arguments and minority threat explanations of police participation in the 1033 Program. Our results reveal that higher violent crime rates and lower drug arrest rates increase law enforcement participation in the 1033 Program. Participation in the 1033 Program, however, is also a function of minority threat, with the functional form of minority threat varying across models predicting 1033 participation and the value of materiel acquired by successful departments. Speciﬁcally, a curvilinear relationship exists between the relative size of the Black population and involvement in the 1033 Program, and an exponential relationship between the relative size of the Black and Hispanic populations and the value of property departments receive annually from the 1033 Program.
+Police use of force has been receiving increased public scrutiny in the United States recently. One example is the attention given law enforcement agencies (LEAs) acquiring military equipment, enabling police to deploy force with armored vehicles, aircraft, and automatic weapons (Balko, 2013). Criminologists and criminal justice scholars contend that the acquisition of such military gear; the growth of paramilitary police units (PPUs) or Special Weapons and Tactics (SWAT) teams; and the adoption of military terminology to describe domestic crime problems exemplify the militarization of law enforcement (Balko, 2013; Kraska, 2007). Indeed, domestic law enforcement has increasingly patterned its appearance and strategies after the military and military conﬂict (Kraska,
+
+∗ Additional supporting information can be found in the listing for this article in the Wiley Online Library at http://onlinelibrary.wiley.com/doi/10.1111/crim.2018.56.issue-4/issuetoc. Preliminary ﬁndings from this research were presented at the 2015 annual meeting of the American Society of Criminology in Washington, DC. We would like to thank Ryan King for helpful critiques on a previous draft.
+Direct correspondence to David M. Ramey, Department of Sociology and Criminology, 414 Oswald Tower, The Pennsylvania State University, University Park, PA 16802 (e-mail: dmr45@psu.edu).
+
+C 2018 American Society of Criminology
+
+doi: 10.1111/1745-9125.12193
+
+CRIMINOLOGY Volume 00 Number 0 1–45 2018
+
+1
+
+2
+
+RAMEY & STEIDLEY
+
+2001). Although journalists, policy makers, and scholars are paying more attention to the potential consequences of police obtaining and using military gear, the reasons why departments acquire and use such equipment remain elusive.
+To assess these patterns, we examine factors associated with participation in the Department of Defense’s (DoD’s) Defense Logistics Agency 1033 Program, one of the primary sources of military equipment for law enforcement (Dansky, 2014; Defense Logistics Agency, 2016a; Endebak, 2014; Grasso, 2014). In doing so, we draw from criminological and sociological theories of rational public choice and minority threat. Rational public choice theories posit that police acquire and use military equipment not only as a reaction to high crime rates but also in response to the wars on drugs and terrorism, which have changed the nature of policing (Bove and Gavrilova, 2017; Campbell and Campbell, 2009, 2016; Harris et al., 2017). A parallel argument contends that law enforcement priorities reﬂect the desires of politically and socially powerful majorities in society (Blalock, 1967), suggesting that the acquisition and use of military equipment is a response to growing minority populations viewed as threatening to the majority’s social order (Ajilore, 2015; Balko, 2013; Meeks, 2006).
+To date, research on the use of military equipment and tactics by police has been focused on a few national surveys, case studies, and ethnographic work; researchers have not explicitly addressed the role of racial and ethnic group relations in the acquisition of military equipment. Other research ﬁndings, however, have demonstrated a potential for social factors to inﬂuence police militarization by way of modern “tough-on-crime” initiatives, which disproportionally impact socially marginalized populations (Alexander, 2012; Balko, 2013; Beckett, 1999; Wacquant, 2009). Consequently, we draw from multiple criminological and sociological perspectives to conduct one of the ﬁrst nationwide ecological studies on the acquisition of military equipment in the United States at the LEA level. To explore our research questions, we take advantage of yearly agency-level data on the value of military equipment obtained by police departments from the DoD’s 1033 Program to assess varying explanations for the annual changes in the value of military equipment obtained by LEAs. Our results reveal that rational choice explanations, reﬂected in local violent crime rates and county drug arrests, partially account for law enforcement participation in the 1033 Program. Participation in the 1033 Program, however, is also a function of minority threat as the relative size of the Black and Hispanic populations predict involvement in the 1033 Program in a way that is consistent with minority threat expectations (Blalock, 1967). These ﬁndings for 1033 Program participation may indicate that police militarization is inﬂuenced by minority threat explanations independent of factors associated with rational public choice.
+
+POLICE MILITARIZATION AND THE 1033 PROGRAM
+Policing is often described as a quasi-military institution, relying on military ideals and trappings such as formal ranks, uniforms, discipline, structures, equipment, and culture (Bittner, 1970; Jermier and Berkes, 1979). Although criminologists and criminal justice scholars have debated the appropriateness or usefulness of using the military as a professional model for law enforcement (see Cowper, 2000; den Heyer, 2014; Waddington, 1987, 1993; cf. Buerger, 2000; Jefferson, 1993, 1987; Kappeler and Kraska, 2015), many American politicians, law enforcement professionals, and average citizens assume that the emulation of military traditions, tactics, chain of command, culture, and equipment
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+3
+
+can supplement and improve police efﬁcacy (Bove and Gavrilova, 2017; Campbell and Campbell, 2009, 2016; Harris et al., 2017; Phillips, 2016; Turner and Fox, 2017). To assess empirically how police may or may not be adopting or emulating such militaristic practices, however, as well as to assess the effect of such practices on police work, we must be clear about what is meant speciﬁcally by the term police militarization.
+Peter Kraska deﬁned militarization as a process of “arming, organizing, planning, training for, threatening, and sometimes implementing violent conﬂict” (2007: 503). Militarization itself is an extension of the underlying ideology of militarism, which is “a set of beliefs, values, and assumptions that stress the use of force and threat of violence as the most appropriate and efﬁcacious means to solve problems” (Kraska, 2007: 503). Kraska (2007) also theorized four dimensions of militarization in police work: 1) the material use of military technology; 2) the cultural use of military language, values, and style; 3) the use of military organization principles to manage police work; and 4) the use of military tactics and principles to conduct police work. This four-dimensional framework is useful for scholars because “police militarization” has been written about in several synonymous terms (i.e., militarization or paramilitarization), yet applied across dissimilar concepts and activities within the law enforcement profession, such as organizational structures, culture, and management styles (Buerger, 2000; Cowper, 2000; den Heyer, 2014; Kappeler and Kraska, 2015; Kraska, 1996; Kunselman, Vito, and Walsh, 2013) and the acquisition and use of military equipment and tactics in police work (Bove and Gavrilova, 2017; Delehanty et al., 2017; Kraska and Kappeler, 1997; Harris et al., 2017; McQuoid and Vitt, 2017; Phillips, 2016; Phillips, Wheeler, and Kim, 2016; Radil, Dezzani, and McAden, 2017).
+Even though Kraska’s (2007) four-dimensional framework offers a comprehensive understanding of police militarization as a sociological phenomenon, we focus our study most heavily on the ﬁrst dimension: the material use of military technology and equipment. Speciﬁcally, we explore the determinants of police acquisition of military-grade communications and transportation equipment, military fatigues, ﬁrearms, and ordinance preferred by modern militaries (i.e., materiel; Bove and Gavrilova, 2017; Bieler, 2016; Harris et al., 2017; Insler, McMurrey, and McQuoid, 2016; Kraska and Kappeler, 1997; Phillips, 2016). Our focus on this ﬁrst dimension is motivated by the fact that such materiel makes LEAs more capable of participating (and dominating) in violent confrontations, which is a fundamental aspect of Kraska’s (2007) conceptualization of militarization.
+For LEAs in the United States, a popular source for acquiring such military equipment and technology is the DoD’s 1033 Program (Dansky, 2014; Endebak, 2014; Grasso, 2014; Harris et al., 2017; Radil, Dezzani, and McAden, 2017). The 1033 Program originated with the National Defense Authorization Act of 1990 and, under several different titles, has provided LEAs military equipment warehoused to storage (for a maximum of 2 weeks) by the DoD. Although scholars and journalists have ﬁxated on the combat equipment (including uniforms, body armor, ﬁrearms, radios, night-vision goggles, mineresistant armored protected vehicles or MRAPs, and aircraft), the 1033 Program also provides materiel such as survival gear, medical utensils, and ofﬁce furniture and supplies. Researchers have found that some LEAs may take advantage of ofﬁce supplies and other noncombat materiel to offset policing costs (Bruce et al., 2017), whereas others may use combat materiel for law enforcement efforts (Bove and Gavrilova, 2017; Harris et al., 2017).
+
+4
+
+RAMEY & STEIDLEY
+
+Even though there is a growing body of scholars who argue that participation in the 1033 Program makes an excellent test case for theories of police militarization (Ajilore, 2015; Bove and Gavrilova, 2017; Dansky, 2014; Delehanty et al., 2017; Harris et al., 2017; McQuoid and Vitt, 2017; Radil, Dezzani, and McAden, 2017), it is not an exhaustive indicator of police militarization.1 We focus on the 1033 Program, however, because accessing materiel such as weaponry, vehicles, and uniforms is an early and often necessary step for many LEAs toward further militarization in the dimensions of language and terminology, organizing using military principles, and practicing military-style tactics (Ajilore, 2015; Insler, McMurray, and McQuoid, 2016; Kraska, 1996; Phillips, 2016). Moreover, the fact that the 1033 Program provides free materiel allows resource-poor LEAs the capacity to create PPUs and emulate policing efforts that may otherwise only occur in larger, better resourced departments (Dansky, 2014; Radil, Dezzani, and McAden, 2017).
+The process for obtaining 1033 Program materiel is not difﬁcult for LEAs and does not distinguish between combat and noncombat gear (Bruce et al., 2017; Harris et al., 2017). The ﬁrst step is for the LEA to register with the 1033 Program by submitting a two-page form. Once an LEA is registered and decides to request materiel, the head administrator requests, via another form, speciﬁc materiel (e.g., ﬁrearms, armored vehicles, aircraft, or any other gear; Bruce et al., 2017; Defense Logistics Agency, 2016a; Harris et al., 2017). Other than the subordinate relationship that leaders of law enforcement have with local political leaders (e.g., mayors and local councils; Jacobs and O’Brien, 1998), there is little community oversight into the types of property LEAs acquire each year (Bruce et al., 2017).
+Once a request is approved, the 1033 Program provides the requested equipment to LEAs (Defense Logistics Agency, 2016a; Grasso, 2014). The only ﬁnancial cost to LEAs in this process is shipping charges. The availability of materiel, and its disposition to LEAs nationwide, is mainly determined by U.S. military engagements abroad and DoD decisions regarding the equipment that active military use when they are deployed (e.g., military drawdowns in Iraq and Afghanistan increased the availability of MRAPs for LEAs). Currently, the DoD does not evaluate the social control needs of an LEA’s request for 1033 Program materiel, although the 1033 Program does prioritize requests that cite drug law enforcement or counterterrorism efforts and requires that departments plan to use the materiel for valid law enforcement efforts within the year.
+
+THEORIES OF SOCIAL CONTROL AND THE POLICE
+Although few dispute the fact that the police are increasingly adopting military practices and equipment, and that the 1033 Program may be inﬂuencing that trend, we know little about the determinants of 1033 Program acquisitions by LEAs. As such, to inform our assessment of militarization in the material dimension in the 1033 Program, we turn to
+
+1. LEAs may use federal grant monies to purchase materiel from private vendors (Ackerman, 2014; Parlapiano, 2014). Such approaches, however, are subject to higher levels of oversight and are more expensive than the 1033 Program (Bove and Gavrilova, 2017; Department of Homeland Security, 2018). The 1033 Program is the primary source of certain materiel (e.g., MRAPs), and it provides fully automatic ﬁrearms, body armor, armored vehicles, and aircraft at signiﬁcant value (Bove and Gavrilova, 2017; Feldman, 2014; Fowler, 2017; McRobbie, 2014; Welna, 2014). Moreover, LEAs must deploy 1033 property within a year (DLA, 2016b), indicating active militarized crime control.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+5
+
+theories of social control based on rational public choice and minority threat perspectives, which have informed prior work on police expenditures.
+
+RATIONAL PUBLIC CHOICE
+By drawing on econometric arguments for crime and crime control (Becker, 1968), rational public choice theories of social control presume that police departments will intensify social control efforts when facing greater demands to stop crime (Nagin, 1998; Stucky, 2005). As such, rational public choice theories posit that increases in policing efﬁcacy (be it by expanding police forces, increasing funding, or improving overall competence) may increase the police’s deterrent effect against crime and disorder (Cohen and Felson, 1979; Nagin, 1998).2
+In this sense, police militarization may be seen as a rational public choice police response to social control demands that stem from high crime rates, participation in drug interdictions, threats to public safety, or even threats to the police themselves (Hall and Coyne, 2013). Indeed, Phillips (2016) argued that perceptions of lethal danger to police ofﬁcers, and an institutional ethos of police as crime ﬁghters, have become justiﬁcations for police to seek and carry military-style “patrol” riﬂes as a reasonable (yet unproven) response to criminal, terrorist, and mass shooter threats that have recently increased demands on LEAs for public security. Similarly, Kraska and Kappeler (1997) found that a primary justiﬁcation for the existence of many paramilitary police units (PPUs, or SWAT units) is a belief that such gear and tactics improved LEA efforts at hot-spots policing, a policing strategy itself predicated on rational public choice theories of deterrence (Braga, Papachristos, and Hureau, 2014; Cohen and Felson, 1979; Roncek and Maier, 1991). Furthermore, Bell (1982: 47) argued that many police uniforms use military stylings to convey authority and power as general criminal deterrents, going so far as to say that police have “confused the desire to be military with the need to appear uniform and identiﬁable.” Bell’s (1982) insights are still relevant today as more and more LEAs may not simply add militaristic ﬂair to their uniforms but fully adopt military fatigues and tactical vests used by the military to deter criminals (DeMichele and Kraska, 2001).
+Following the rational public choice argument of policing, the acquisition of military equipment may serve as a means to improve LEAs’ capacity to respond to crime or public safety crises. Indeed, recent research ﬁndings reveal that 1033 Program materiel acquisitions are associated with reductions in the rates of violent crime and property crime (Bove and Gavrilova, 2017) and with increases in drug arrest rates (Harris et al., 2017), although these ﬁndings are unclear on whether crime or arrest rates inﬂuence demand for 1033 Program materiel. If police militarization is indeed a response to increased demands on LEAs to produce social control, we anticipate that 1033 Program participation will be greater in places where police departments are called to respond to high violent crime rates, improve the arrest capabilities in of drug enforcement efforts, and effectively prepare for potential threats to public safety.
+
+2. A complete review of this research literature is beyond the scope of this article; sufﬁce it to say that we think it is important to account for a rational public choice dynamic as a determinant of police acquisition of military equipment. But interested readers should see Marvell and Moody, 1996; Stucky, 2005, 2013; and Stucky, Heimer, and Lang, 2007, for a review of rational public choice arguments in police expeditures and resource allocation.
+
+6
+
+RAMEY & STEIDLEY
+
+MINORITY THREAT
+Minority threat perspectives of social control are based on conﬂict theories predicated on racial/ethnic cleavages. Blalock (1967) theorized that increases in minority group presence create perceptions of racial competition with dominant majority groups. As a reaction to perceptions of competition for political and economic resources, the majority group may respond to minority group threats with harsher law enforcement practices (Liska, 1992). Later research ﬁndings on minority threat theories revealed that prejudiced attitudes in majority groups can indeed be associated with the presence of racial minorities (Giles and Buckner, 1993; Quillian, 1995, 1996; Taylor, 1998). In this way, crime control becomes a means for racial majorities to protect their status by pacifying or eliminating threatening minority groups (Behrens, Uggen, and Manza, 2003; Olzak, 1992; Spitzer, 1975).
+When the percentage of Blacks, Hispanics, and non-White minorities in cities as an indicator of minority threat have been used, scholars in multiple studies have found a link between increased minority presence and larger police forces and police spending (Jackson, 1989; Jackson and Carroll, 1981; Kent and Jacobs, 2005; Liska, Lawrence, and Benson, 1981; Sharp, 2006; Stucky, 2005). In other studies, scholars have found that such minority threat explanations can also account for disparate minority incarceration rates (Bridges and Crutchﬁeld, 1988; Garofalo, 1980), sentencing outcomes (Crawford, Chiricos, and Kleck, 1998; Johnson, 2005; Sampson and Laub, 1993; Ulmer and Johnson, 2004), and the use of extralegal violence against minorities (Chamlin, 1989; Holmes, 2000; Jacobs, Carmichael, and Kent, 2005; Jacobs and Wood, 1999; Sorensen, Marquart, and Brock, 1993). In short, the link between minority threat, the allocation of criminal justice resources, and the use of violent social control has emerged as a consistent ﬁnding in criminological research.
+Although previous research ﬁndings have provided support to the notion that racial Whites are the dominant majority in the United States, there is some question about which racial minority group is the most threatening to this majority group and whether similar relationships between minority prevalence and social control practices exist across different minorities. Even though most studies of minority threat have been focused on Black populations (Jackson, 1989; Keen and Jacobs, 2009; King, 2008), others have produced results that reveal that Hispanic populations also produce threat responses from Whites (Kane, 2003; Kent and Jacobs, 2005; Stewart et al., 2015). It is theoretically plausible that any minority group can constitute a threat to a majority once it is large enough (Blalock, 1967); therefore, to assess minority threat explanations accurately, we must capture multiple measures of racial and ethnic minorities.
+Scholars testing minority threat explanations often ﬁnd the relationship between minority group threat and the allocation of criminal justice resources to be nonlinear. Blalock (1967) originally postulated that although perceptions of racial competition increase linearly with minority group presence, discriminatory responses against minority groups (such as disproportionate criminal justice resource allocation) would be nonlinear (Blalock, 1967: 140–7). According to Blalock (1967: 147–50), discriminatory actions cumulative in their effect to hinder minority competition would have a functional form that indicates a curvilinear relationship as the cumulative effect of discrimination to prevent threats reduced the need for harsher responses as minority presence grew. Discriminatory efforts, however, not cumulative in their effect to prevent minority competition would
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+7
+
+motivate discriminatory responses that exponentially increased with minority group presence (Blalock, 1967: 1950–4).3
+Although arguments for nonlinear responses have informed a broader conversation about the functional forms in minority threat and social control (Liska, 1992), researchers on minority threat and policing have regularly found nonlinear minority threat responses that vary in their functional form. Jacobs (1979) found that city-level police forces increase linearly with Black populations. Jackson and Carrol (1981), in their work on city-level police force spending, discovered that police spending increased until Black populations reached 50 percent and then declined for higher percentages. Kent and Jacobs (2005) and Kane (2003) likewise found a curvilinear relationship for police spending, increasing exponentially once Hispanic populations reached ß20 percent of the population in a locality. Furthermore, Stucky (2005) revealed a curvilinear association between police force size and both Black and Hispanic populations that was conditional upon the political context of city governments. Stults and Baumer (2007) similarly found county police force sizes increased at a decreasing rate until county populations reached 20 percent Black; then police force size began to decline. Given the wide range of ﬁndings between different minority groups and the variety of functional forms in criminal justice responses, in our assessment of 1033 Program participation, we consider functional forms of minority threat that might not be consistent across different racial and ethnic minority groups. It is also crucial, however, to understand how 1033 Program participation and the acquisition of militarized equipment may constitute a police response to minority threat, which leads us to explore the connection between race and police militarization.
+
+1033 PROGRAM PARTICIPATION AS MINORITY THREAT RESPONSE
+Although ecological associations have remained unexamined, previous research ﬁndings suggest that race is likely a factor in police militarization. In their seminal work on the expansion of police militarization, Kraska and Kappeler quoted an interview with a police commander who stated that the use of military equipment and tactics were meant to target “suspicious vehicles and people. We stop anything that moves. We’ll sometimes even surround suspicious homes and bring out the MP5s. We usually don’t have any problems with crack-heads” (1997: 10). The mention of using submachine guns (MP5s) to eliminate “problems” speaks to the intended symbolic threat of military gear in police work mentioned earlier, whereas the mention of suspicious vehicles can also have racial connotations (Kowalski and Lundman, 2007). At the same time, the mention of “crack-heads” belies the differential enforcement of drug laws against crack-cocaine users, who tend to be poor and Black, compared with powder-cocaine users, who tend to be wealthier and White (Alexander, 2012). Even more explicit in linking racial bias to police militarization, Kraska and Kappeler (1997: 10) later quoted a PPU commander, who stated that “when the soldiers ride in you should see those blacks scatter.”
+
+3. Blalock (1967: 147–54) argued that the former curvilinear form, increasing at a decreased rate, could be found in efforts to prevent minority economic competition even though the latter curvilinear form, increasing at an increased rate, could be found in efforts to ensure majority political dominance.
+
+8
+
+RAMEY & STEIDLEY
+
+Although policy proponents contend that 1033 Program participation is a race-neutral response to violent crime and terrorism, pervasive stereotypes of minorities as criminogenic and threatening to Whites suggest to us that 1033 Program participation speciﬁcally, and police militarization generally, may be inﬂuenced by minority group presence (Balko, 2013; Bove and Gavrilova, 2017; Kraska, 2001). Meeks (2006) argued that police militarization constitutes an “obscure war against the urban underclass” motivated by shifting federal funds from social programs meant to aid minority communities into tough-on-crime programs, a trend occurring since the late 1960s (Hinton, 2016). These efforts to increase state social control in minority communities while diverting funds from social welfare programs to crime-control efforts are consistent with Wacquant’s (2009) critiques. Thus, police have been able to justify the acquisition and use of military equipment and PPUs to conduct a variety of practices, from routine patrols to no-knock drug raids in minority communities deﬁned as “problems” by police and politicians (Balko, 2013; Hinton, 2016; Kraska and Kappeler, 1997; Meeks, 2006; Phillips et al., 2016).
+Perceptions of minorities as threatening to Whites, as well as law enforcement and policy maker responses to such threats, are well documented. Russell-Brown (1998) demonstrated that despite appeals of “color-blindness” from lawmakers and the police, White fears and stereotypes of criminal behavior remain dominated by racial biases that allow the proliferation of racial hoaxes like the “criminalblackman” stereotype. Indeed, popular perceptions of minority groups as criminogenic may inﬂuence policy leaders and law enforcement to view minority group presence as evidence of crime-control demand (Alexander, 2012; Du Bois, 1994 [1903]; Hinton, 2016; Weaver, 2007). Weaver (2007) also noted that the creation of the Law Enforcement Assistance Administration (LEAA) in 1968, the ﬁrst federal initiative to provide federal funds and military equipment to local police, was in part a response to White perceptions of Black civil rights mobilization as criminal. Jackson and Carroll (1981), in their earlier work linking LEAA funding for police departments with a curvilinear minority threat response to Black population size and civil rights mobilization, further supported the idea that police militarization is minority threat response. Similarly, Hinton (2016) also noted that some of the earliest arguments for issuing military equipment to police—and some of the earliest efforts to issue the equipment—were motivated by White fears of urban Black rioters after the Watts and Detroit riots. In short, if we follow the argument that an increase in minority groups also increases the perception of threats to social order (Blalock, 1967), which in turn incites punitive responses from the majority (Jacobs and Helms, 1999; Quillian, 1995, 1996; Taylor, 1998), and that the use of military equipment allows police to respond with greater force (Kraska, 2007), then the link between police militarization and minority presence is plausible.
+It is unknown whether minority presence may account for recent 1033 Program participation independent of the previously argued rational public choice explanations. Although a viable minority threat explanation of police militarization can be made based on previous research aimed at examining threats to the political status quo from the civil rights movement (Hinton, 2016; Jackson and Carroll, 1981; Weaver, 2007), Blalock (1967), in his original argument for nonlinear minority threat responses, suggests that perceived threats to political power should elicit discriminatory responses that increase at an increasing rate until a minority group’s size reaches a point at which its political and economic power becomes sufﬁcient to resist such discrimination efforts (Stucky, 2005; Stults and Baumer, 2007). The minority threat response to Black populations, however, may not
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+9
+
+have the same functional form as for Hispanic populations, which White majorities may perceive as more of an economic than a political threat (Kane, 2003; Kent and Jacobs, 2005; Wacquant, 2009). As our study is the ﬁrst to be aimed at examining minority threat explanations of police 1033 Program participation, it is prudent to assess the validity of nonlinear trends in 1033 Program participation and whether they vary across minority groups (i.e., increasing at an increasing rate for one minority group while perhaps increasing at a decreasing rate for another). Thus, we draw on the approach of previous research in which minority threat perspectives were used and for which a range of functional forms in minority threat responses in police militarization was tested (Jackson and Carroll, 1981; King and Wheelock, 2007; Stults and Baumer, 2007; Wang and Mears, 2010).
+
+RESEARCH QUESTIONS
+The earlier discussion of rational choice and minority threat explanations for police militarization motivates our research questions regarding local law enforcement’s participation in the 1033 Program. First, do rational public choice theories of police strength explain participation in the 1033 Program? If so, we should anticipate that high crime rates, violent threats to police, and terrorist threats create demand for increased police security, predicating 1033 Program participation. Second, is minority threat a determinant of participation in the 1033 Program? Third, and relatedly, given that minority threats produce nonlinear responses from majority groups, if minority threat is a determinant of police militarization, what is the functional form of this relationship? In the following analyses, we assess these three research questions by examining both rational public choice and minority threat explanations that account for the likelihood of an LEA to participate in the 1033 Program and the value of materiel obtained by the participant LEAs. Finally, given that the 1033 Program can supplement police work with noncombat gear (Bruce et al., 2017), as well as combat materiel (Bove and Gavrilova, 2017; Harris et al., 2017), it is crucial for an assessment of 1033 Program participation as a test of police militarization to account for the qualitative nature of equipment obtained. Thus, we pose a fourth question: Do rational public choice and/or minority threat accounts of police miltiarization explain the aquistion of military equipment as opposed to nonmilitary equipment?
+
+DATA AND METHOD
+1033 PROGRAM DATA
+Our primary source of data is the DoD’s Defense Logistics Agency Law Enforcement Support Ofﬁce (LESO) 1033 Program. The LESO was created in 1995 to work exclusively with local law enforcement and to improve the effectiveness of the program, which had been rarely used until then. The LESO records the value of the property supplied to LEAs as the value it had when obtained by the military. It also provides users with federal supply category and class names used by the military, itemized details using NATO Stock Numbers (NSN), and the date, location, and name of LEAs receiving military equipment. Thanks to the Freedom of Information Act, these 1033 Program data are publicly available (Defense Logistics Agency, 2016b). As discussed earlier, the 1033 Program provides a wide variety of materiel, combat and noncombat, with LEAs only having to cover the costs of shipping. We used LESO descriptions and federal supply categories and classes
+
+10
+
+RAMEY & STEIDLEY
+
+in these data to code materiel received by LEAs as either militarized or nonmilitarized. We present a list of militarized and nonmilitarized materiel in appendices A and B.
+Our conceptualization of militarized equipment is informed by Kraska’s (2007: 503) deﬁnition of militarism, such that we identiﬁed militarized equipment sent to LEAs as equipment that stresses “the use of force and threat of violence” and may help LEAs to prepare for and implement violence as a solution to problems, as well as to dominate in any situation in which violence might arise. Examples of militarized property include munitions (e.g., ﬁrearms, explosives, and missile launchers); militarized transportation (e.g., armored trucks, MRAPs, airplanes, and helicopters); military communication or surveillance equipment (e.g., night-vision goggles and wide-range radio antennae); uniforms (e.g., body armor and specialized combat clothing); and miscellaneous items, including weapons-training guides, crowd-control equipment, and aftermarket armor for vehicles (a.k.a. up-armor kits).
+We conceptualize nonmilitarized equipment as property received by agencies that does not facilitate the use or threat of violence or provide police ofﬁcers with a signiﬁcant tactical advantage in wielding violence. Examples of nonmilitarized property include ofﬁce supplies and computers (e.g., hardware, software, furniture, and supplies); standard telecommunications equipment (e.g., ﬁber optics, radar, and video recording); clothing (e.g., socks and underwear); agricultural and industrial tools (e.g., pest control, hand tools, laboratory supplies, and generators); safety and rescue equipment (e.g., ﬁre-ﬁghting and hazardous spill and containment); and health and medical supplies (e.g., ﬁeld medical kits, portable reagents, and IV ﬂuids). Additionally, we consider items that agencies may use in conjunction with militarized materiel but that have universal purposes (e.g., aircraft maintenance equipment and engine accessories) to be nonmilitarized. Finally, we consider items that are primarily used in emergency or disaster response (e.g., water puriﬁcation systems and ordinance disposal kits) to be nonmilitarized.
+Although our conceptualization of militarized and nonmilitarized property is rooted in prior theory and based on the intended or original use of the materiel, we recognize that tactical and combat equipment can be implemented for nonmilitarized purposes (e.g., search and rescue). For example, police departments in Harris County, Texas, credit the MRAPs they received through the 1033 Program for assisting in search and rescue operations after Hurricane Harvey (Blakinger, 2017), and Miami Beach police argue they need MRAPs to drive through ﬂoods and help with evacuation and protection during potential mass shooting situations (Iannelli, 2014). Although these uses reﬂect larger trends in the changing responsibilities of police in general (Beck and Goldstein, 2017; Simon, 2007), the war on drugs and the ability to maintain a superior force in the threat of potential violence remain the primary initial reasons for acquiring property from the 1033 Program (Apuzzo, 2014; DLA, 2016b; Grasso, 2014; Iannelli, 2017). Finally, regardless of how departments use MRAPs and other militarized property, the acquisition of such materiel is associated with harsh and overbearing policing in both police practice (Delehanty et al., 2017) and public opinion (Carriere and Encinosa, 2017).
+Although participation in the 1033 Program provides limited evidence of police militarization, our approach and data offer an in-depth assessment of the materiel LEAs are receiving via the 1033 Program, which may facilitate further militarization of LEAs, and the ecological determinants of such acquisitions. Because the 1033 Program provides materiel at low cost and with few restrictions, an examination of 1033 Program participation provides insight into police decision-making that is less inﬂuenced by
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+11
+
+political and institutional factors than others forms of police militarization (Bove and Gavrilova, 2017; Harris et al., 2017). As such, our primary motivation in this study is to offer an unprecedented assessment of the ecological factors explaining the transfer of $5 billion in lethal and nonlethal materiel to local law enforcement at little cost, with little oversight, and amidst a growing amount of public criticism and concern.
+After identifying the 1033 Program property as militarized or nonmilitarized and aggregating annual values for number and acquisition value for each agency, we merge the 1033 Program data to crime and arrest data from the Uniform Crime Reports (UCR) and LEOKA data using the state and agency name. We combine our agency-level data with data from the U.S. Census, American Community Survey, Congressional Quarterly Voting and Elections Collection, and the National Consortium for the Study of Terrorism and Responses to Terrorism (START) Global Terrorism Database, using the UCR Crosswalk and addresses provided to the UCR.
+SAMPLE
+Because the law enforcement responsibilities of county and state agencies differ greatly from state to state and serve overlapping geographies and populations as cities and towns, we exclude county and state agencies, as well as specialized forces (e.g., university campuses and school districts), and focus on local (cities and towns) law enforcement agencies, as deﬁned in LEOKA. We then link each local law enforcement agency to the Census place that best reﬂects its jurisdiction. This includes all incorporated places (e.g., cities, towns outside of the Northeast and Midwest, villages, and boroughs); Census-designated places (e.g., towns/townships in the Northeast and Midwest, unincorporated places in New England City and Town Areas, Consolidated Cities, and unincorporated statistical places with a police force).4 In most places, only one law enforcement agency operates and police chiefs and administrators are often required to work with, and answer to, local elected ofﬁcials (e.g., mayors and city councilmembers) on law enforcement matters. In places where more than one local agency operates, typically one local department and multiple task forces or special units focus on different aspects of law enforcement (e.g., local liquor control).
+Although data on military transfers are available dating back to the inception of the program in 1989, we reduce our analytic sample to the years between 1995 and 2016.5 We wish to focus on the period since the creation of the LESO, which is responsible for managing the program and which works exclusively with law enforcement (DLA, 2016b), to separate the limited scope of the program during its earliest years from more recent trends in police militarization as a general approach to policing (Balko, 2013). Although the amount of property increased substantially during the wars in Afghanistan and Iraq, we include prewar years (1995–2002) to capture the period in which Kraska and colleagues ﬁrst identiﬁed trends in police militarization in the criminological literature (Balko, 2013; Kraska, 1996; Kraska and Cubellis, 1997; Kraska and Kappeler, 1997) and to account for early adopters of police militarization through the 1033 Program.
+
+4. To save space, we use the term “place” to refer to all cities and towns. 5. Because we use 1-year lags, all values for our independent and control variables are measured
+between 1994 and 2015.
+
+12
+
+RAMEY & STEIDLEY
+
+We exclude several LEAs for varying reasons. Because of their unique geographic and racial/ethnic contexts, we exclude Alaskan and Hawaiian agencies from all analyses. Because of the unique relationship between the federal government and D.C. law enforcement, we exclude the District of Columbia PD and DC Metro Police. After excluding agencies serving extremely small places (maximum yearly population between 1994 and 2015 of less than 500) and those agencies that never reported to the UCR between 1994 and 2015, our ﬁnal sample size consists of 238,013 department-years’ worth of data from 11,764 local police departments.
+DEPENDENT VARIABLES
+Our dependent variables capture the annual value (as recorded by the LESO) of militarized and nonmilitarized equipment per 10,000 persons (place population) obtained by individual local law enforcement agencies from the 1033 Program between 1995 and 2016. This measure allows us to account for the decision to participate in the 1033 Program, the degree to which LEAs are adding to their inventories, and the variation in types of military equipment that are available from year to year.
+INDEPENDENT VARIABLES
+Rational Public Choice Explanations
+The predominate conventional explanations for police militarization speciﬁcally, and for aggressive policing generally, have been high rates of crime, risks to ofﬁcer safety, and the changing role of domestic law enforcement in addressing both domestic and foreign terrorist threats. In particular, drug enforcement efforts, and violent crime associated with such efforts, remain the most frequently cited reasons given by law enforcement to explain aggressive policies (Bove and Gavrilova, 2017; den Heyer, 2014; Harris et al., 2017; Kappeler and Kraska, 2015). For example, police departments that report high rates of violent crime may need superior weapons, armored vehicles, and better surveillance and communications equipment to protect ofﬁcers and detain criminals (Bove and Gavrilova, 2017; Harris et al., 2017). We measure violent crime rates using the number of homicides, aggravated assaults, robberies, and forcible rapes per 10,000 place population.
+Although the 1033 Program made materiel available for efforts outside of drug interdiction in 1997, more than half of the requests from departments are for drug enforcement (Bove and Gavrilova, 2017; DLA, 2016b). Departments in counties with lower levels of drug arrests may view their enforcement efforts as ineffective, motivating them to participate in the 1033 Program for materiel that might improve their ability to detect and arrest criminals in the war on drugs. We include a measure of drug arrest rates using the county-level number of drug arrests (possession and sales) per 10,000 county population.6 We choose a county-level measure of drug arrests task forces, as opposed to local arrests, for several reasons. First, buoyed by the recognition that drug dealers do not recognize
+
+6. We note that arrest rates reﬂect police behavior (arrest), whereas crime rates include those that ended in arrest and those that were reported to the police but did not end in arrest. We chose arrest rates for two important reasons. First, there is limited data on drug usage and trafﬁcking below the state level. Second, even if we had access to longitudinal local data on drug use, we argue that arrest rates still provide a better picture of local law enforcement’s perceptions of drug crime, which then motivates rational choice responses such as acquiring or not acquiring military gear.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+13
+
+jurisdictional boundaries and that agencies needed to pool collective resources during the height of the drug war, many agencies now dedicate signiﬁcant resources to multijurisdictional drug task forces, typically at the county or regional level (Jefferis et al., 1998; Smith et al., 2000). Second, although we are able to collect data from several state and local ofﬁcial sources to supplement missing data in the UCR, multiple geographies do not report drug arrest data at the agency level (e.g., Florida and Illinois) but do provide county-level estimates.
+In addition to ﬁghting violent crime and the war on drugs, police departments are now also expected to engage in counter-terror efforts. Departments in places that experience terrorism may be more likely to participate in the 1033 Program than departments in other places. We measure recent terror attack with a dummy variable equal to 1 for departments in places that have experienced at least one terror attack in the past 3 years using data from the START Global Terrorism Database (National Consortium for the Study of Terrorism and Responses to Terrorism, 2015).7 Finally, the LESO provides access to vehicles and equipment that offer police more protection than common police cruisers and weapons. As a result, departments that have experienced police fatalities may be more likely to participate in the 1033 Program. We use LEOKA data to measure recent ofﬁcer fatalities using the total number of ofﬁcers killed on duty (felony and nonfelony) over the past 3 years per 100 ofﬁcers.8
+
+Minority Threat Explanations
+We measure minority threat using data from the 1990 and 2000 U.S. Census, and because the American Community Survey replaced the long-form version of the decennial census, we use the 2005–2009, 2006–2010, 2007–2011, 2008–2012, 2009–2013, 2010– 2014, 2011–2015, and 2012–2016 ﬁve-year ACS samples to construct our minority threat measures.
+We test for different nonlinear relationships between racial and ethnic composition and the likelihood of participation in the 1033 Program as well as the value of materiel acquired by participating departments (Blalock, 1967; King and Wheelock, 2007; Stults and Baumer, 2007; Wang and Mears, 2010). We anticipate that racial and ethnic threat has a curvilinear relationship with participating in the 1033 Program and acquiring militarized property, but this relationship may be quadratic or logarithmic. As a result, we assess linear, quadratic, and natural logarithmic forms for percent Black (percent Black) and percent Hispanic (percent Hispanic) in our probit models predicting the receipt of any militarized property from the 1033 Program and our ordinary least-squares (OLS)
+
+7. Terror attacks are rare occurrences that have long-lasting effects on local communities. Additionally, equipment may not be readily available or LEAs may take time to develop plans to prepare or respond to future attacks. As a result, we use a dummy variable capturing events within the past 3 years. Results do not vary if we measure terror attacks within the past year, 5 years, or a cumulative measure of all terror attacks including in the START data.
+8. We use rolling 3-year averages for ofﬁcer fatalities instead of annual averages because, similar to terror attacks, ofﬁcer fatalities are rare occurrences that leave long-lasting effects on local communities, and we want to account for any time it might take for LEAs to respond to ofﬁcer deaths by acquiring property from the 1033 Program. Results do not vary if we use rolling yearly or 5-year averages.
+
+14
+
+RAMEY & STEIDLEY
+
+models predicting the value of militarized and nonmilitarized property departments acquired from the 1033 Program in a given year.9
+
+Control Variables
+We include several measures that could explain participation in the 1033 Program and the acquisition of high-value property at a discounted cost. Several scholars have contrasted racialized crime theories such as racial threat with conﬂict theories rooted in neo-Marxian perspectives of power and crime control (Rusche and Kircshheimer, 1939; Spitzer, 1975; Turk, 1969). Generally speaking, these arguments hold that large populations of the poor and unemployed present signiﬁcant threats to economic and political elites, who use their inﬂuence to address these threats with criminal justice practices like policing (Carmichael and Kent, 2014; Kent and Jacobs, 2005; Stucky, 2005; Stucky, Heimer, and Lang, 2007). We use two variables that capture different aspects of economic conﬂict that may affect the ability of local law enforcement to access military gear through the 1033 Program. We measure the poverty rate as the percentage of the relevant jurisdiction living under the poverty line. We measure the unemployment rate as the percentage of the relevant jurisdiction that is out of work.
+Because larger police departments may need more materiel for their ofﬁcers, we include a measure of police ofﬁcers per 10,000 population. Research ﬁndings show that politicians and localities supportive of the Republican Party tend to support increases in police expenditures, corrections expenditures, and punitive criminal justice polices (Beckett, 1999; Jacobs and Carmichael, 2002; Jacobs and Helms, 1999). Since police militarization operates to make law enforcement more punitive and coercive, we anticipate that localities supportive of the Republican Party may be inclined to pursue police militarization. Using data from the Congressional Quarterly Voting and Elections Collection, we measure political attitudes using the percentage of the county voting for the most recent Republican presidential candidate and interpolated for nonelection years (percent Republican). We control for regional differences in policing and access to military equipment using dummy variables for Midwest (reference), Northeast, South, and West Census regions, and for population size using the natural log to account for skew and nonlinearity.
+We include several controls that capture the practical restraints that LEAs face when participating in the 1033 Program. First, we include a measure of average distance to DLA disposition centers. Because departments are required to cover the costs to inspect and transport property from DLA disposition centers to their agencies, we assume that departments closer to these centers will be more likely to acquire militarized property. We also recognize that if departments are seeking out a speciﬁc item, they may be willing to pay to ship it long distances. Relatedly, if departments are shipping from a long distance, they may request and acquire property of a greater value to maximize their shipping costs. We use the natural log of our distance variable to account for skew and nonlinearity. We control for land area (in logged square kilometers) because the 1033 Program gives priority to departments serving larger jurisdictions in terms of land, particularly for vehicles. We include a measure of lagged total property value to control for recent 1033 Program
+
+9. Although our discussion revolves around the results from our best-ﬁt models, we present results for all of our tests of nonlinearity in supplemental tables in appendices E through G in the online supporting information.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+15
+
+participation. Finally, we include a series of year dummy variables to control for changes in military engagements and annual ﬂuctuations in the availability of materiel. Although some correlation among several of our predictors raises the possibility of problems related to multicollinearity (see appendix C and appendix D in the online supporting information10), the results of tests of variance inﬂation and sensitivity analyses revealed that multicollinearity is not an issue for any neighborhood type.11
+MISSING DATA
+There are two sources of missing data in our sample. First, because we use Census and ACS data for our demographic and social variables, we do not have measures for intercensal years (1997–1999, 2001–2008). We address this concern using linear interpolation to calculate year-by-year measures between the Census and ACS data points. This approach constructs new data points for observations between two or more known data points and is common strategy for handling the years between the Census and ACS in demographic (Crowder, Pais, and South, 2012; Ludwig et al., 2012) and criminological research (Eason, Zucker, and Wildeman, 2017; Parker, Mancik, and Stansﬁeld, 2017; Xie and McDowall, 2014).12 The second source of missing data is agency nonparticipation in UCR or LEOKA. After removing agencies that we could not locate any data on for the entire study period (1995–2015), slightly more than 6 percent of our agency-years contain missing data on either violent crime or drug arrests. We employ multiple imputation techniques to estimate these missing values using the “ICE” command in Stata 15.0 (Royston, 2005). ICE uses a chained equation approach, which produces a conditional distribution for missing data using the proper speciﬁcation for each variable (e.g., OLS regression for continuous variables). ICE then creates multiple data sets using Gibbs sampling techniques (Royston, 2005; van Buuren, 2012). Prior research ﬁndings reveal that the number of data sets be at least equal to the percentage of cases with missing data (Carll, 2017; White, Royston, and Wood, 2009). We create ten unique data sets, which we then combine using the MI command in Stata 15.0 to complete descriptive analyses and multivariate analyses.
+ANALYTIC STRATEGY
+An overwhelming majority of LEAs do not participate in the 1033 Program in any given year and report receiving zero dollars’ worth of property. Therefore, our dependent variable (value of property transferred) is clustered at zero and property values are only
+10. Additional supporting information can be found in the listing for this article in the Wiley Online Library at http://onlinelibrary.wiley.com/doi/10.1111/crim.2018.56.issue-4/issuetoc.
+11. Most notably, correlations between the linear and quadratic terms (e.g., percent Black and percent Black squared) were extremely high. Additionally, poverty and unemployment were highly correlated (r = .58). In each case, both predictors are conceptually important for this article, so we chose to keep them in our ﬁnal models. Additionally, we tested variance inﬂation factors (VIFs) running separate regressions for our total sample and participating LEAs in Stata 15.0, clustering the standard errors at the county level, and found that the quadratic terms were the only variables to have variance inﬂation factors above 4.0.
+12. To examine how the use of interpolated data might impact the study results, we ran supplemental results using 5-year intervals. Our results did not differ from those presented here. Because of ﬂuctuations in the availability of 1033 property and the year-to-year differences in perceived social control needs of local law enforcement, we use interpolated data in all analyses.
+
+16
+
+RAMEY & STEIDLEY
+
+observed when departments are acquiring materiel, violating multiple OLS assumptions. As a result, we employ Cragg double-hurdle models (with standard errors clustered at the county level to account for possible nonindependence among local LEAs) using Stata 15.0 to account for the clustering limit of the dependent variable at zero and the possibility that different factors explain acquiring property from the 1033 Program and the value of property acquired from the 1033 Program. The double-hurdle model ﬁts a probit model predicting acquiring any equipment for all departments and an OLS model predicting the value of property acquired for only participating departments. We assume that zeros in the 1033 Program data are fundamentally different from nonzero values in that they represent a department not participating in the 1033 Program and, therefore, that these nonzero values constitute the ﬁrst step in the process of participating in the 1033 Program in a given year; the second step in the process, decisions about the property the LEA acquires and will eventually use in a given year, is reﬂected in the per-capita value of that property. Please note that we chose hurdle models over other, similar models for limited or censored dependent variables (e.g., Tobit regression or Heckman selection models), for both empirical and conceptual reasons.13 Finally, because we are interested in the degree to which all departments in the United States are participating (or not participating) in the 1033 Program, we use the margins command in Stata 15.0 to estimate unconditional marginal effects for all variables in the models and conditional marginal effects of percent Black, percent Hispanic, and our crime variables at their national medians, 75th, and 90th percentiles, respectively, while holding all other variables constant.
+
+RESULTS
+Table 1 presents descriptive statistics for total, militarized, and nonmilitarized property reported by total sample, for currently participating (e.g., values in the year departments participated) and for those police departments that participated in 1033 Program at least once during the study period. Between 1995 and 2016, the U.S. Department of Defense provided slightly more than 48,000 dollars of total supplies per agency nationwide. Although the total cumulative value of militarized property ($26,754) exceeded that of nonmilitarized property ($18,432), the per-capita value of nonmilitarized gear ($1,994 per 10,000 persons) was worth almost twice that of militarized gear ($1,002 per 10,000 persons). Among agencies that participated at least once in the 1033 Program between 1995 and 2016, the average cumulative value of total property transferred is slightly more than $128,000, including $75,791 of militarized property and $52,280 of nonmilitarized property. Although year-to-year participation is rare, the average annual amount of militarized property transferred is quite large. Each year, participating departments receive almost $80,000 per 10,000 persons in total property from the 1033 Program, including $26,513 of militarized property and $52,729 of nonmilitarized property.
+Table 2 presents means and standard deviations for the independent and control variables in the total sample, as well as a comparison between those police departments that
+
+13. Tobit regression assumes variables predicting censored and noncensored observations are the same (Bushway, Johnson, and Slocum, 2009; Smith and Brame, 2003), an assumption not reﬂective of our 1033 Program data. Likewise, Heckman models assume zero values are a latent, unobserved, or partially observed value of y (Ba¨ hr and Abraham, 2016; Bushway, Johnson, and Slocum, 2009), which is also not representative of zero values in our data.
+
+Table 1. Descriptive Statistics for Dependent Variables Used in Analyses
+
+Total Agencies
+
+Currently Participating Agencies
+
+Variables
+Total Property Cumulative (dollars) Annual (dollars) Annual (dollars per 10,000 people)
+Total Militarized Property Cumulative (dollars) Annual (dollars) Annual (dollars per 10,000 people)
+Total Nonmilitarized Property Cumulative (dollars) Annual (dollars) Annual (dollars per 10,000 people) N (Agency-Years) N (Agencies) N (Counties)
+
+Mean
+45,184.66 1,933.16 2,997.10
+26,754.24 1,234.94 1,002.80
+18,432.62 698.23
+1,994.32 238,013 11,764 2,746
+
+SD
+468.63 68.44 154.16
+315.65 59.43 99.63
+249.22 28.37 105.09
+
+Mean
+17,041.30 79,243.48
+10,536.11 26,513.58
+97,901.70 6,505.19 52,729.90 83,913 4,037 1,681
+
+SD
+1,219.64 3,993.07
+1,016.21 2,620.16 3,540.98
+544.90 2,724.80
+
+Ever Participating Agencies
+
+Mean
+
+SD
+
+128,070.10 5,478.97 8,501.06
+75,791.63 3,498.52 2,844.35
+52,280.92 1,980.47 5,656.75 9,002 4,037 1,681
+
+1,280.77 193.52 436.63
+870.21 168.29 282.50
+691.83 80.28 297.67
+
+17
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+18
+
+Table 2. Descriptive Statistics for Independent and Control Variables Used in Analyses
+
+Total Agencies
+
+Ever Participating Agencies
+
+Never Participating Agencies
+
+RAMEY & STEIDLEY
+
+Variables
+
+Mean
+
+SD
+
+Mean
+
+SD
+
+Minority Threat % Non-Hispanic Black % Hispanic
+Rational Choice and Public Safety Violent crimes per 10,000a Drug arrests per 10,000b Recent ofﬁcer fatalities Fatal terrorist attack
+Control Variables % persons below poverty Unemployment rate Police ofﬁcers per 10,000 population Mean distance from DLAs Land area (1,000 km2) Population % Republican Region Midwest (reference) Northeast South West N (Agency-Years) N (Agencies) N (Counties)
+
+9.002 7.834
+165.069 47.562
+.032 .004
+14.283 7.103 2.110 1,78.380 14,200 30,824 51.560
+.322 .236 .327 .114 238,013 11,764 2,746
+
+.034 .030
+.505 .065
+.019 .010 19.227 332.208 52,300 514 13.472
+
+9.728 8.910
+189.007 49.096
+.032 .006
+14.606 7.237 2.040 1,767.610 21,500 52,994 51.580
+.363 .160 .352 .125 83,913 4,037 1,681
+
+.057 .053
+.809 .103
+.032 .016 18.292 337.723 69,700 1,381 13.531
+
+NOTE: Bold values indicate statistically signiﬁcant differences between ever and never participating agencies (p < .05). ABBREVIATION: DLA = Defense Logistics Age. aCity/town level. bCounty level.
+
+Mean
+8.606 7.247
+150.090 44.853
+.032 .002
+14.107 7.030 20.150 1,787.380 10,232 18.752 51.55
+.300 .278 .313 .109 154,100 7,727 1,065
+
+SD
+.043 .035
+241.120 30.876
+.024 .013 19.738 328.940 39,102 .251 13.440
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+19
+
+participated in the 1033 Program at least once during the study period and those that never participated in the 1033 Program between 1995 and 2016. Looking ﬁrst at the minority threat variables, agencies that have participated in the 1033 Program represent places with signiﬁcantly higher Black populations (9.7 percent versus 8.6 percent) and Hispanic populations (8.9 percent versus 7.2 percent) than agencies that have not participated. Although these numbers are slightly smaller than the national average for this period, the small mean values reﬂect the large number of small places in the data set and increasing residential “macro-segregation” in which Black–White and Hispanic–White segregation within places (e.g., big cities) has declined, but segregation between places has increased signiﬁcantly over the past two decades as afﬂuent Whites cluster in ex-urban communities, offsetting the increasing diversity of the central cities (Lichter, Parisi, and Taquino, 2015). Recent studies of metro and nonmetro Census places have yielded similar placelevel percentages of Black and Hispanic populations (Lichter, Parisi, and Taquino, 2015; Parisi, Lichter, and Taquino, 2015).
+We turn next to rational choice explanations of 1033 Program participation. On average, local police departments in the United States are cities and towns with an average of 165 violent crimes per 10,000 population and counties with 47.5 drug arrests (sales and possession) per 10,000 county population. These numbers are similar to prior research in which the UCR over the same time period was used (Beck and Goldstein, 2017; Feldmeyer, Harris, and Lai, 2016). When we compare the violent crime rates for participating and nonparticipating departments, violent crime rates are signiﬁcantly higher in agencies that have participated in the 1033 Program (189 per 10,000 population) than for agencies that have not participated in the 1033 Program (150 per 10,000 population). Similarly, the county drug arrest rates for agencies that have participated in the 1033 Program (49 per 10,000 population) are slightly higher than the county drug arrest for agencies that have not participated in the 1033 Program (45 per 10,000 population). As police fatalities and terror attacks are extremely rare events, there are minimal differences in ofﬁcer deaths or terror attacks across departments that participated in the 1033 Program and those that did not.
+There are signiﬁcant differences in our control variables as well. Compared with never participated departments, those that participated at least once have signiﬁcantly higher poverty and unemployment rates, and have served larger populations and geographies. Notably, there is little difference between participating and nonparticipating agencies in terms of ofﬁcers per capita, distance to DLA disposition centers, or proportion of Republican voters in participating places which is similar to the total sample.
+The results from table 1 and table 2 provide early support for rational choice and racial threat arguments for 1033 Program participation. Speciﬁcally, agencies that militarize through the 1033 Program have higher rates of violent crime, as well as greater proportions of Black and Hispanic residents in their jurisdictions. To examine further these relationships over time in a multivariate model, table 3 presents results from double-hurdle models of 1033 Program participation.
+Table 3 presents the results of probit models predicting acquiring property and OLS models predicting property value. We use the margins command in Stata 15.0 to estimate the unconditional average marginal effects (UAMEs) of our independent and control variables on property value for all departments annually. The results from table 3 indicate that both rational choice public safety factors and racial threat dynamics are associated with involvement in the 1033 Program. When we ﬁrst turn to conventional rational
+
+20
+
+RAMEY & STEIDLEY
+
+Table 3. Results From Double-Hurdle Model Estimating 1033 Participation via Acquiring Property and Value of Property Acquired for Militarized and Nonmilitarized Property, 1995–2016
+
+Militarized Property
+Minority Threat % Black % Black-squared % Hispanic % Hispanic-squared % Black (logged) % Hispanic (logged)
+Rational Choice and Public Safety Violent crime ratesa (logged) Drug arrest ratesb (logged) Recent ofﬁcer fatality Fatal terrorist attack
+Control Variables % persons below poverty Unemployment rate Police ofﬁcers per 10,000 (standardized) Mean distance from DLAs (logged) Land area (km2) (logged) Population % Republican Region Midwest (reference) Northeast South West Lagged Total Property Value (logged) Intercept
+Nonmilitarized Property
+Minority Threat % Black % Black-squared % Hispanic % Hispanic-squared
+
+Acquiring
+
+Property
+
+Property
+
+SE
+
+Value
+
+SE
+
+.003∗
+
+.002
+
+.000∗∗
+
+.000
+
+–.002
+
+.002
+
+.000
+
+.000
+
+.030∗∗∗
+
+.005
+
+–.020∗
+
+.010
+
+–.025
+
+.050
+
+.005
+
+.081
+
+–.002
+
+.001
+
+.004∗
+
+.002
+
+.037∗∗∗
+
+.008
+
+–.074
+
+.128
+
+–.001
+
+.002
+
+.121∗∗∗
+
+.007
+
+.001
+
+.001
+
+.070∗∗
+
+.023
+
+.075∗
+
+.032
+
+.018
+
+.012
+
+–.064∗
+
+.029
+
+.145
+
+.122
+
+–.071
+
+.250
+
+–.005
+
+.004
+
+.008
+
+.006
+
+.103∗∗
+
+.033
+
+.324
+
+.279
+
+.009
+
+.007
+
+–.523∗∗∗
+
+.021
+
+.002
+
+.002
+
+UAME
+
+SE
+
+.008∗
+
+.004
+
+.000∗∗
+
+.000
+
+–.005
+
+.004
+
+.000
+
+.000
+
+.096∗∗
+
+.032
+
+.111∗
+
+.048
+
+.013∗∗
+
+.004
+
+.000
+
+.002
+
+.001
+
+.001
+
+–.058
+
+.323
+
+–.009
+
+.005
+
+.018∗
+
+.007
+
+.188∗∗∗
+
+.037
+
+.000
+
+.001
+
+.000
+
+.001
+
+–.029∗∗∗
+
+.008
+
+.003
+
+.003
+
+–.382∗∗∗
+
+.043
+
+–.034
+
+.028
+
+–.041
+
+.058
+
+.079∗∗∗
+
+.003
+
+–2.120∗∗∗
+
+–.179
+
+.115
+
+–1.114∗∗∗
+
+.153
+
+.191∗
+
+.074
+
+.118
+
+.100
+
+.437∗∗
+
+.152
+
+.346
+
+.178
+
+–.011
+
+.010
+
+.034∗∗∗
+
+.003
+
+6.731∗∗∗
+
+Acquiring
+
+Property
+
+Property
+
+SE
+
+Value
+
+SE
+
+UAME
+
+SE
+
+.001
+
+.002
+
+.000
+
+.000
+
+.002
+
+.002
+
+.000
+
+.000
+
+.003
+
+.007
+
+.000
+
+.000
+
+.007
+
+.007
+
+.000
+
+.000
+
+(Continued)
+
+Table 3. Continued
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+Militarized Property
+
+Acquiring
+
+Property
+
+Property
+
+SE
+
+Value
+
+SE
+
+UAME
+
+SE
+
+% Black (logged)
+
+.024
+
+.040
+
+% Hispanic (logged)
+
+–.032
+
+.040
+
+Rational Choice and Public Safety Violent crime ratesa (logged)
+
+.058∗∗∗
+
+.008
+
+.011
+
+.024
+
+Drug arrest ratesb (logged)
+
+–.033
+
+.019
+
+.014
+
+.044
+
+Recent ofﬁcer fatalities
+
+–.033
+
+.069
+
+.025
+
+.265
+
+Fatal terrorist attack
+
+.254
+
+.175
+
+–.129
+
+.273
+
+Control Variables
+
+% persons below poverty
+
+–.001
+
+.002
+
+.003
+
+.005
+
+Unemployment rate
+
+.010∗∗∗
+
+.002
+
+.018∗
+
+.008
+
+Police ofﬁcers per 10,000 population (logged)
+
+.046∗∗∗
+
+.010
+
+.179∗∗∗
+
+.048
+
+Mean distance from DLAs (logged)
+
+–.637∗∗∗
+
+.176
+
+–1.260∗∗
+
+.411
+
+Land area (sq. miles) (logged)
+
+.008∗
+
+.003
+
+.009
+
+.013
+
+Population
+
+.089∗∗∗
+
+.009
+
+–.864∗∗∗
+
+.030
+
+% Republican
+
+–.001
+
+.001
+
+.004
+
+.003
+
+Region
+
+Midwest (reference) Northeast South West Lagged Total Property Value (logged) Intercept
+
+.170∗
+
+.073
+
+.787∗∗∗
+
+.217
+
+.196∗∗∗
+
+.041
+
+.288∗
+
+.116
+
+.285∗∗
+
+.084
+
+.473∗
+
+.211
+
+.088∗∗∗
+
+.003
+
+–.010
+
+.009
+
+–4.055∗∗∗
+
+11.525∗∗∗
+
+N (Agency-Years)
+
+238,013
+
+7,252
+
+N (Agencies)
+
+11,764
+
+4,037
+
+N (Counties)
+
+2,746
+
+1,681
+
+.033
+
+.055
+
+–.048
+
+.059
+
+.040∗∗
+
+.012
+
+.001
+
+.002
+
+–.001
+
+.002
+
+.694
+
+.561
+
+.000
+
+.008
+
+.050∗∗∗
+
+.011
+
+.328∗∗∗
+
+.059
+
+.001
+
+.019
+
+–.002
+
+.002
+
+–.025
+
+.019
+
+.001
+
+.006
+
+1.345∗∗∗
+
+.366
+
+.930∗∗∗
+
+.175
+
+1.395∗∗∗
+
+.339
+
+.049∗∗∗
+
+.004
+
+3,184 1,869 932
+
+ABBREVIATIONS: SE = standard error; UAME = unconditional average marginal effect; DLA = Defense Logistics Agency.
+NOTE: All models include year ﬁxed-effects. aRates per 10,000 population (city or town).
+bRates per 10,000 population (county).
+
+21
+
+22
+
+RAMEY & STEIDLEY
+
+choice arguments for 1033 Program participation, we see a signiﬁcant and positive relationship between the levels of violent crime an agency reports and participation in the 1033 Program. Agencies with higher violent crime rates are more likely to acquire militarized property from the 1033 Program than agencies with lower violent crime rates. For departments that are successful in acquiring property, however, there is no relationship between crime rates and the value of the property received. Although rates of violent crime are positively associated with 1033 Program participation, county-level drug arrest rates are signiﬁcantly and negatively associated with participation in the 1033 Program and the value of militarized materiel received by participating agencies. Even though rates of violent crime and drug arrests are associated with 1033 Program participation and the value property received through the 1033 Program, there is no association between recent ofﬁcer fatalities or the contemporary threat of terror attacks and the acquisition or value of militarized property.
+We turn next to our tests of nonlinearity between minority threat and 1033 Program participation. After controlling for local and regional factors and practical concerns associated with policing and 1033 Program participation, we found a curvilinear relationship between the size of the Black population and successfully acquiring any property from the 1033 Program. Speciﬁcally, the signiﬁcant and positive coefﬁcient for the linear term and the signiﬁcant and negative coefﬁcient for the quadratic term indicate that the true relationship is curvilinear, increasing at a decreasing rate. Speciﬁcally, as the Black population in a city or town increases, police departments are more likely to participate in the 1033 Program, but the strength of this relationship decreases as the size of the Black population increases. Although there is a curvilinear relationship between the size of the Black population and 1033 Program participation, the relative size of the Hispanic population has no effect on whether a department successfully acquired 1033 Program property. Notably, when we tested the nonlinear relationship between percent Black or percent Hispanic and 1033 Program participation, we found no evidence that this relationship took an exponential form (see appendices E and G in the online supporting information).
+For agencies that successfully acquire militarized property through the 1033 Program, we found a nonlinear relationship between the relative size of Black populations in their jurisdictions and the value of equipment they receive each year. The functional form of this relationship for Black minority threat, however, is exponential and increases at an increasing rate. Moreover, although we did not ﬁnd a nonlinear relationship for Hispanic populations and the acquisition of materiel through the 1033 Program, the relative size of the Hispanic population is signiﬁcantly associated with the total property value transferred through the 1033 Program. Similar to the Black population, the functional form of this relationship is exponential and increases at an increasing rate. We tested whether the nonlinear relationship between percent Black or percent Hispanic and the value of militarized property received took a quadratic form, but we found no evidence of quadratic functions of minority threat for either Black or Hispanic populations (see appendices F and G in the online supporting information).
+In our models for nonmilitarized property in table 3, evidence exists that departments in places with higher local violent crime rates are more likely to acquire nonmilitarized property from the 1033 Program than agencies with lower crime rates, but that crime has no effect on the value of the property received by participating agencies. We ﬁnd no evidence that county drug arrest rates, police fatalities, or recent terror attacks inﬂuence the likelihood of acquiring nonmilitarized equipment via the 1033 Program. Importantly, we
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+23
+
+Figure 1. Expected Differences in Property Value (per 10,000 Population) for a 1 Percent Difference in the Violent Crime Rate for Agencies in Places With Violent Crime Rates at the 50th, 75th, and 90th Percentiles
+
+Dollars per 10,000 population
+
+175
+
+165
+
+155
+
+145
+
+135
+
+125
+
+115
+
+105
+
+95
+
+85
+
+75
+
+65
+
+55
+
+45
+
+***
+
+35
+
+25
+
+***
+
+15
+
+5
+
+-5
+
+-15
+
+-25
+
+50th percentile
+
+93 per 10,000
+
+***
+***
+75th percentile 220 per 10,000
+
+***
+***
+90th percentile 406 per 10,000
+
+Place Violent Crime Rate Militarized Property Non-Militarized Property
+
+ﬁnd no evidence that the relative size of minority populations inﬂuences the acquisition of nonmilitarized property from the 1033 Program.
+Several control variables are associated with receiving both militarized and nonmilitarized property through the 1033 Program. Police departments in places with larger populations are more likely to acquire both militarized and nonmilitarized property successfully through the 1033 Program, but they will receive less in per-capita property if they are successful than agencies in places with smaller populations. Agencies with more ofﬁcers per capita are more likely to receive militarized and nonmilitarized materiel—and the property they do receive is worth more—than agencies with small police forces. Notably, places with higher unemployment rates are more likely to receive militarized and nonmilitarized materiel, but the relationship between unemployment and militarized property value is not statistically signiﬁcant.
+To facilitate a discussion of the ﬁndings, we use the margins command in Stata 15.0 to produce expected differences in the value of acquired militarized and nonmilitarized property (in U.S. dollars) for differences in violent crime rates, drug arrest rates, and the relative sizes of the Black and Hispanic populations, respectively, conditional on the values of each variable and holding all other variables at their means. Because the distribution of crime or arrest rates and our demographic variables are heavily skewed, we present results at their medians and 75th and 90th percentiles to ensure sizable variation across plausible expected values of each variable.
+Figure 1 displays the predicted differences in militarized and nonmilitarized property value (per 10,000 population) for a 1 percent difference in the violent crime rate for
+
+24
+
+RAMEY & STEIDLEY
+
+Figure 2. Expected Differences in Property Value (per 10,000 Population) for a 1 Percent Difference in the County Drug Arrest Rate for Agencies in Counties With Drug Arrest Rates at the 50th, 75th, and 90th Percentiles
+
+Dollars per 10,000 population
+
+175
+
+165
+
+155
+
+145
+
+135
+
+125
+
+115
+
+105
+
+95
+
+85
+
+75
+
+65
+
+55
+
+45
+
+35
+
+25
+
+15
+
+5
+
+-5
+
+-15
+
+**
+
+-25
+
+50th percentile
+
+40 per 10,000
+
+**
+75th percentile 59 per 10,000
+
+**
+90th percentile 81 per 10,000
+
+County Drug Arrest Rate Militarized Property Non-Militarized Property
+
+departments in places with violent crime rates at the national median (93 per 10,000 population), and at the 75th (220 per 10,000 population) and 90th percentiles (406 per 10,000 population). As ﬁgure 1 reveals, the relationship between violent crime and the value of militarized and nonmilitarized property received via 1033 Program participation is positive and increases at an increasing rate. For agencies in places with median violent crime rates, a 1 percent difference in the violent crime rate is associated with successfully acquiring about $13 in militarized property and $38 in nonmilitarized property per 10,000 persons. In places with higher violent crime rates, similar differences in violent crime are associated with larger differences in the expected value of 1033 Program property. For example, in places with violent crime rates at the 75th percentile, a 1 percent difference in the violent crime rate is associated with adding approximately $33 in militarized property and $101 in nonmilitarized property per 10,000 persons. In places with extremely high crime rates (top 10th percentile), a 1 percent difference in the crime rate is associated with a difference of about $48 in militarized property per 10,000 persons and $157 in nonmilitarized property from the 1033 Program.
+Figure 2 displays the expected differences in militarized and nonmilitarized property value (40 per 10,000 population) for a 1 percent difference in the county drug arrest rates for departments in counties with drug arrest rates at the national median (3 per 10,000 population), and at the 75th (59 per 10,000 population) and 90th percentiles (81 per 10,000 population). As ﬁgure 2 reveals, the relationship between county drug arrests and the value of militarized property is negative and decreases at an increasing rate, whereas
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+25
+
+Figure 3. Expected Differences in Property Value (per 10,000 Population) for a 1 Percent Difference in the Black Population for Agencies in Places With Black Population at the 50th, 75th, and 90th Percentiles
+
+Dollars per 10,000 population
+
+70
+
+65
+
+60
+
+55
+
+50
+
+45
+
+40
+
+35
+
+30
+
+25
+
+20
+
+**
+
+15
+
+10
+
+5
+
+0
+
+-5
+
+-10
+
+-15
+
+-20
+
+-25
+
+-30 50th percentile
+
+.02
+
+**
+75th percentile .10
+
+*
+90th percentile .35
+
+Percent Black Militarized Property Non-Militarized Property
+
+the relationship between county drug arrests and the value of nonmilitarized property is positive and increases at an increasing rate. Although statistically signiﬁcant, differences in county drug arrest rates are associated with small differences in per-capita militarized and nonmilitarized property received. The relationship between county drug arrest rates and the value of property received via 1033 Program participation is small. For example, departments in counties with highest drug arrest rates (e.g., 90th percentile), a 1 percent difference in the county drug arrest rate is associated with $16 less in militarized property per 10,000 persons.
+Figure 3 displays the expected differences in militarized and nonmilitarized property value (per 10,000 population) for a 1 percent difference in percent Black for departments in places with Black populations the national median (2 percent), and at the 75th (10 percent) and 90th percentiles (35 percent). As ﬁgure 3 reveals, the positive relationship between the relative size of the Black population and the value of militarized and nonmilitarized property received via 1033 Program participation increases at an increasing rate. This relationship, however, is only signiﬁcant for militarized materiel. For example, for agencies in places with small Black populations (ß2 percent), a 1 percent difference in the relative size of the Black population is associated with a difference of about $14 in militarized property per 10,000 persons but only $7 in nonmilitarized property per 10,000 persons. Turning to agencies in places with average Black populations (ß10 percent), a 1 percent difference in the Black population is associated
+
+26
+
+RAMEY & STEIDLEY
+
+Figure 4. Expected Differences in Property Value (per 10,000 Population) for a 1 Percent Difference in the Hispanic Population for Agencies in Places With Hispanic Population at the 50th, 75th, and 90th Percentiles
+
+Dollars per 10,000 population
+
+70
+
+65
+
+60
+
+55
+
+50
+
+45
+
+40
+
+35
+
+30
+
+25
+
+*
+
+20
+
+15
+
+10
+
+5
+
+0
+
+-5
+
+-10
+
+-15
+
+-20
+
+-25
+
+-30
+
+50th percentile
+
+.03
+
+* *
+
+75th percentile .08
+
+90th percentile .25
+
+Percent Hispanic Militarized Property Non-Militarized Property
+
+with a difference of about $37 in militarized property and $15 in nonmilitarized property per 10,000 persons. In places where Black populations fall in the top 10th percentile (ß35 percent), a 1 percent difference in the size of the Black population is associated with a difference of $68 per 10,000 in successfully acquired militarized property but just $21 per 10,000 population worth of nonmilitarized property.
+Figure 4 displays the expected differences in militarized and nonmilitarized property value (per 10,000 population) for a 1 percent difference in percent Hispanic for agencies in places with Hispanic populations at the national median (3 percent), at the 75th percentile (8 percent), and at the 90th percentiles (25 percent). Figure 4 reveals that the relationship between the relative size of the Hispanic population and the expected value of militarized property successfully acquired through 1033 Program participation is positive, signiﬁcant, and increases at an increasing rate. The relationship between the relative size of the Hispanic population and the expected value of nonmilitarized property, however, is negative and insigniﬁcant. For example, in places with small Hispanic populations (ß3 percent), a 1 percent difference in the relative size of the Hispanic population is associated with a difference of about $21 more per 10,000 persons in militarized property but about $10 less per 10,000 persons in nonmilitarized property. For agencies in places with average Hispanic populations (ß8 percent), a similar 1 percent difference in the Hispanic population is associated with successfully acquiring $37 more in militarized property per 10,000 persons. In places with large Hispanic populations (ß25 percent), a 1 percent difference in the Hispanic population is associated with a
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+27
+
+difference of $55 per 10,000 in successfully acquired militarized property from the 1033 Program.
+To summarize, rational choice perspectives of public safety explain 1033 Program participation for the purposes of acquiring both militarized and nonmilitarized property, but they cannot explain differences in the value of total 1033 Program property transferred. Speciﬁcally, departments who reported higher violent crime rates or lower drug arrest rates are more likely to acquire militarized and nonmilitarized property from the 1033 Program. Importantly, after considering rational choice explanations, and controlling for several important factors, minority threat variables have a signiﬁcant and pronounced inﬂuence on 1033 Program participation. Moreover, the functional form of minority threat is different in probit models predicting the successful acquisition of property through the 1033 Program and OLS models predicting the value of property transferred to agencies acquiring materiel. Departments in places with larger Black populations are more likely to acquire militarized property through the 1033 Program, but this relationship is curvilinear, increasing at a decreasing rate. For those departments that successfully acquire militarized property, however, there is a nonlinear, exponential relationship between the respective Black and Hispanic populations and the value of property transferred through the 1033 Program that increases at an increasing rate. Finally, the relationship between minority threat variables and 1033 Program participation is signiﬁcant for militarized materiel but not for nonmilitarized property.
+
+DISCUSSION AND CONCLUSION
+In this study, we use a large and unique data set on the value of military equipment obtained by police departments through the Department of Defense’s 1033 Program between 1996 and 2016, and we hurdle models to examine the determinants of materiel acquisition by police in the United States. Our results provide support for conventional rational choice arguments claiming that participation in the 1033 Program is a response to higher violent crime rates. Consistent support exists, however, for minority threat arguments that 1033 Program participation is associated with the presence of Black and Hispanic residents in law enforcement jurisdictions for both odds of involvement and the value of materiel acquired. The form of this minority threat varies across the different steps on 1033 Program participation in ways that have signiﬁcant implications for the policing of minority populations in the United States, yet are consistent with the ﬁndings of previous work on criminal justice resource allocation and minority threat (Blalock, 1967; Jackson, 1989; Jackson and Carroll, 1981; Kent and Jacobs, 2005; Stults and Baumer, 2007; Stucky, 2005; Wang and Mears, 2010).
+Regarding rational public choice explanations of LEA participation in the 1033 Program, departments with higher violent crime rates were more likely to participate in the Program and received more valuable equipment, both military and nonmilitary, when they did participate. These ﬁndings reﬂect arguments made by proponents of militarization and heads of departments participating in the 1033 Program (Bove and Gavrilova, 2017; Cowper, 2000; Harris et al., 2017). Departments facing high demands to curb violent crime are likely to respond with any technological or procedural changes they believe will help them (Campbell and Campbell, 2009). Interestingly, departments in counties with higher drug arrest rates were less likely to participate in the 1033 Program and received
+
+28
+
+RAMEY & STEIDLEY
+
+less valuable materiel when doing so. This may be a result of drug interdiction efforts in counties that produce lower levels of drug arrests seeking out equipment through the 1033 Program to enhance their ability to make arrests, whereas departments in counties with higher arrest rates already have established drug law enforcement capacities that do not perceive a need to seek military equipment (Harris et al., 2017).
+As for our other research questions, we ﬁnd that the relative size of minority populations is consistently and nonlinearly associated with 1033 Program participation. Specifically, the presence of minority populations is associated only with LEA acquisitions of militarized equipment (e.g., weapons, vehicles, and fatigues) from the 1033 Program but not of nonmilitarized equipment (e.g., tools and medical supplies). This ﬁnding, speciﬁc to combat equipment, provides support for the argument that police militarization is, in part, a product of racial threat mechanisms. Speciﬁcally, as the relative size of the Black population in places increases, police departments are more likely to acquire surplus military equipment, and as both Black and Hispanic populations increase, the supplies LEAs successfully acquire are worth more money. These ﬁndings supplement past studies in which minority populations and formal social control efforts were linked (Jackson, 1989; Kane, 2003; Kent and Jacobs, 2005; Stucky, 2005).
+Moreover, our ﬁndings add to this literature because we looked for different nonlinear forms of minority threat (Blalock, 1967; Stults and Baumer, 2007; Wang and Mears, 2010).14 By testing for the effect of quadratic forms of minority presence, we found that LEA selection into 1033 Program participation is consistent with a curvilinear minority threat curve, increasing at a decreasing rate, and is only signiﬁcant for Black populations. This ﬁnding may indicate that, controlling for rational public choice demands, LEAs seek surplus military equipment as a response to threats from exclusively Black communities until Blacks make up approximately 27.5 percent of a community. As such, 1033 Program participation seems to be less likely when minority threats are low from Black populations, or once Blacks make up a sizable component of the community. No such ﬁnding was found for Hispanic populations, which may indicate that Black populations present greater perceived threats that motivate LEAs to seek materiel.
+We similarly found nonlinear effects for minority group presence in the amount of materiel that LEAs successfully acquire. For both Black and Hispanic populations, the amount of 1033 Program combat materiel increased exponentially as anticipated with Blalock’s (1967) expectations of a minority power threat curve. Such a ﬁnding indicates that although the decision of LEAs to participate in the 1033 Program increases at a decreasing rate with Black populations only, the amount of materiel received increases at an increasing rate for both Black and Hispanic populations. We recognize that the effects sizes displayed in ﬁgures 3 and 4 suggest that differences in minority composition do not account for large differences in the expected per-capita value of militarized property across LEAs (e.g., the expected difference in property value for a 1 percent difference is between $14 and $68 in materiel per 10,000 persons). The values displayed in our ﬁgures reﬂect expected differences for all LEAs, however, and not just those participating in the 1033 Program. As such, small differences in the Black populations (e.g., 2.5 percent) are associated with a 1 standard deviation difference in expected militarized property
+
+14. See appendices E through G in the online supporting information for results of other nonlinear forms of minority threat.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+29
+
+value ($169.86 per 10,000; see table 1). Furthermore, it is important to note, for many small agencies, even small differences in the value of militarized items is likely to have a sizable impact on police inventories and local perceptions of law enforcement (Balko, 2013; Brunswick, 2015; Feldman, 2014; Fowler, 2017; Harris et al., 2017). Overall, our ﬁndings indicated that LEAs seem to request 1033 Program resources in a pattern that emulates what scholars often ﬁnd in work on police expenditures (Jackson, 1989; Jackson and Carroll, 1981; Kent and Jacobs, 2005).
+Overall, these ﬁndings suggest that minority group threat can, in part, account for police acquisition of military equipment. Assuming that 1033 Program participation constitutes an effort of police militarization, this study complements extant work on racial discrimination and the criminal justice system. Racial disparities in policing have roots in systems of racial social control, including slavery and Jim Crow (Alexander, 2012). Additionally, the fact that Black populations, but not Hispanic populations, seem to matter when it comes to initially acquiring militarized property also reﬂects the fact that White majorities have long viewed large Black populations as a signiﬁcant economic threat because overt historical institutions of slavery and legal discrimination have been subverted (Alexander, 2012; Du Bois, 1994 [1903]; Hinton, 2016). Once departments successfully acquire property, however, the value of militarized property received is consistent with social control responses in which overwhelming force is used toward both Black and Hispanic minority populations, reﬂecting a threat-oriented approach rooted in symbolic forms of discrimination (Blalock, 1967). This ﬁnding is further bolstered by the fact that minority threat explanations only account for military equipment acquisitions and not for noncombat gear from the 1033 Program.
+The ﬁndings from this research can potentially inform policy decisions about acquisition and use of military equipment by local and state law enforcement. We agree with Balko (2013) that police agencies should make information publicly available on not only the 1033 Program equipment they have acquired but also on how often it is used and in what capacity. Making public data to assess the use (or misuse) of military equipment is wise for a few reasons. First, such disclosures allow the public a means to hold the police accountable for their use of military equipment. Additionally, given the fact that we ﬁnd that minority presence is signiﬁcantly associated with 1033 Program participation, a policy of disclosure may help address or illuminate racial biases and tensions that may emerge from police militarization (Meeks, 2006). Finally, it is important to determine whether the acquisition of these materials changes the policing practices of a department (whether for good or for ill; Cowper, 2000; Harris et al., 2017; cf. Buerger, 2000; Kraska, 1996). Accurate data on the acquisition and use of military equipment allows for empirical program evaluations that may inform police departments on the actual effectiveness or ineffectiveness of military equipment used in police work. We also think it is important to acknowledge the role that terrorism and risk to police do not play in 1033 Program participation. These research ﬁndings show that terrorist attacks and ofﬁcer fatalities cannot account for participation in the 1033 Program. Although police militarization as a response to the “war on terror” is expected from a rational public choice perspective, we ﬁnd no support for such a trend in the 1033 Program data.
+Even though our results provide support for minority threat accounts of 1033 Program participation and police militarization, several limitations of the current study merit further consideration. First, although we argue that 1033 Program participation is part of the
+
+30
+
+RAMEY & STEIDLEY
+
+broader phenomenon of police militarization, we assess only one dimension of that phenomenon. Police militarization goes well beyond participation in the 1033 Program and the acquisition of materiel; it permeates the organizational and cultural environments of police work (Kraska, 2007). Nevertheless, this material dimension of militarization has captured public attention in ways that other aspects of militarization have not. Although the creation of PPUs and their deployments have increased steadily over the past 50 years, recent pictures of police ofﬁcers riding on MRAPs and other armored vehicles are what make the local and national news outlets (Hutchins, 2014; Welna, 2014). Additionally, the acquisition of military equipment may enable the other dimensions of militarization. For example, surplus vehicles, uniforms, and weapons may foster a combat mentality among ofﬁcers that encourages overpolicing in a militarized context (Kraska, 1996). The 1033 Program may play a role in this process, but we cannot speak to whether 1033 Program participation affects cultural and organizational dynamics in police work.
+Another limitation is that our data cannot speak to LEAs that seek out materiel from private vendors using their own funds or grant monies from federal agencies like the Department of Homeland Security. To illustrate this limitation, consider two hypothetical LEAs that each seek to purchase an armored vehicle. If one agency were to purchase the vehicle from a private vendor rather than using 1033 Program to acquire it, then our data would not capture that transaction. We must be cautious not to equate 1033 Program participation as a uniform indicator of police militarization, as we cannot account for these other private sources of materiel. Similarly, the DLA only includes values for property that has been transferred to law enforcement; thus, our dependent variable only captures successfully acquired property and not all equipment requested in a given year.
+We maintain, however, that our assessment of police militarization using 1033 Program participation is appropriate for several reasons. The 1033 Program is unique as the value of surplus materiel from the DoD is provided at only shipping cost and with less oversight than comparable approaches that might use grant funds or tax money. We would argue that these incentives for LEAs to use the 1033 Program over private vendors are strong. Furthermore, recent research ﬁndings and statements by the DLA indicate that the role of the federal government is limited to the timing of available equipment as a result of year-to-year changes in military engagement globally, geographical location of the storage and the distance of shipping centers to LEAs, agencies’ past acquisitions and cumulative value of property accumulated over time, the land area covered by law enforcement, and the ability of LEA administration to complete the application and transfer process successfully (Bruce et al., 2017; Grasso, 2014; Harris et al., 2017). With the exception of the application process itself, we believe that we have controlled for many of these factors in our models.15 Ultimately, we are interested in examining where materiel is going and whether rational public choice or minority threat accounts of police militarization help to explain the distribution of military equipment. We feel this approach speaks to the
+
+15. Request and cancellation data for the last quarter of 2017 suggest that approximately 50 percent of requests are unsuccessful and that timing and availability of property, agencies’ past involvement with the 1033 Program, and LEA mistakes are the most common reasons for rejections. Importantly, if similar equipment is available after the ﬁrst request is denied, departments are permitted to reapply for any available equipment. Although we are currently in the process of requesting similar data for all years of the program, we believe that an examination of requests and cancellations is beyond the scope of this project and merits important future consideration.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+31
+
+concern of citizens patrolled by police forces using military gear, as well as expands current knowledge about the ecological determinants of police militarization (Ajilore, 2015; Balko, 2013; Bove and Gavrilova, 2017; Bruce et al., 2017; Harris et al., 2017; Insler et al., 2017).
+Finally, although traditional measures of racial threat include the relative size of the non-White population, other racial and ethnic dynamics are not considered in this article that likely have important implications for police militarization. For example, Ajilore (2015) found that racial segregation, and not racial composition, was associated with increased odds of acquiring MRAPs. Similarly, race or ethnic-speciﬁc measures of economic or political threat may better capture competition for jobs or political power that motivate respective economic or political threat responses. A more comprehensive and causally powerful test of minority threat arguments in police militarization necessitates a theoretical assessment of both racial and ethnic perceptions of threat from the White majority (i.e., is minority threat viewed as political or economic in nature, and does militarization reduce the threat?) and racially speciﬁc measures to account for those threats independent of minority presence (e.g., Black and Hispanic employment or voting age population; Shah, 2018; Stults and Baumer, 2007, Wang and Mears, 2010). Our purpose here, however, is to illustrate the importance of race in police militarization arguments and to guide future research in this effort. The presence of signiﬁcant positive and nonlinear relationships between the Black and Hispanic composition and 1033 Program participation provides early evidence that minority threat and racialized social control may inﬂuence police militarization independently of rational public choice accounts.
+Future research should be aimed at considering two important questions. First, what are the implications of police militarization in general and participation in the 1033 Program in particular? Alongside the growing attention given to police militarization in the public and the press, there has been increased scrutiny involving police interaction with citizens, particularly young Black males. Whether confrontations and police violence are increasing along with the rise in police militarization remains an unanswered question. Second, although the 1033 Program provides “free” surplus equipment to local law enforcement, the supplies and equipment still come at public cost. In addition to the federally incurred costs of the initial development and purchase of the military equipment, local governments still take on transportation, maintenance, and storage costs, as well additional personnel costs associated with the deployment of this equipment. Scholars should examine how and whether other public services—including welfare programs, infrastructure, and education—are affected by increased social-control spending on military equipment. Furthermore, scholars need to examine whether increases in militarization and declines in other public services may have an interactive effect.
+
+REFERENCES
+Ackerman, Spencer. 2014. US police given billions from Homeland Security for ‘tactical’ equipment. The Guardian. August 20.
+Ajilore, Olugbenga. 2015. The militarization of local law enforcement: Is race a factor? Applied Economics Letters 22:1089–93.
+Alexander, Michelle. 2012. The New Jim Crow: Mass Incarceration in the Age of Colorblindness [Paperback]. New York: The New Press.
+
+32
+
+RAMEY & STEIDLEY
+
+Apuzzo, Matt. 2014. What military gear your local police department bought. The New York Times. August 19. https://www.nytimes.com/2014/08/20/upshot/data-ontransfer-of-military-gear-to-police-departments.html.
+Ba¨ hr, Sebastian and Martin Abraham. 2016. The role of social capital in the job-related regional mobility decisions of unemployed individuals. Social Networks 46:44–59.
+Balko, Radley. 2013. Rise of the Warrior Cop: The Militarization of America’s Police Forces. New York: Public Affairs.
+Beck, Brandon, and Adam Goldstein. 2017. Governing through police? Housing market reliance, welfare retrenchment, and police budgeting in an era of declining crime. Social Forces 96:1183–210.
+Becker, Gary S. 1968. Crime and punishment: An economic approach. Journal of Political Economy 76:169–217.
+Beckett, Katherine. 1999. Making Crime Pay: Law and Order in Contemporary American Politics. Rev. ed. New York: Oxford University Press.
+Behrens, Angela, Christopher Uggen, and Jeff Manza. 2003. Ballot manipulation and the “menace of negro domination”: Racial threat and felon disenfranchisement in the United States, 1850–2002. American Journal of Sociology 109:559–605.
+Bell, Daniel J. 1982. Police uniforms, attitudes, and citizens. Journal of Criminal Justice 10:45–55.
+Bieler, Sam. 2016. Police militarization in the USA: The state of the ﬁeld. Policing: An International Journal of Police Strategies & Management 39:586–600.
+Bittner, Egon. 1970. The Functions of Police in Modern Society: A Review of Background Factors, Current Practices, and Possible Role Models. Chevy Chase, MD: National Institute of Mental Health Center for Studies of Crime and Delinquency.
+Blakinger, Keri. 2017. Military surplus program saved lives during Harvey, HoustonArea law enforcement say. Houston Chronicle. October 22. https://www. houstonchronicle.com/news/houston-texas/houston/article/Military-surplus-programsaved-lives-during-12297966.php.
+Blalock, Hubert M. 1967. Towards a Theory of Minority Group Relations. New York: Capricorn.
+Bove, Vincenzo, and Evelina Gavrilova. 2017. Police ofﬁcer on the frontline or a soldier? The effect of police militarization on crime. American Economic Journal: Economic Policy 9:1–18.
+Braga, Anthony A., Andrew V. Papachristos, and David M. Hureau. 2014. The effects of hot spots policing on crime: An updated systematic review and meta-analysis. Justice Quarterly 31:633–63.
+Bridges, George S., and Robert D. Crutchﬁeld. 1988. Law, social standing and racial disparities in imprisonment. Social Forces 66:699–724.
+Bruce, Donald J., Celeste K. Carruthers, Matthew C. Harris, Matthew N. Murray, and Jinseong Park. 2017. Do in-kind grants stick? The Department of Defense 1033 Program and local government spending. CBER Working Papers. Knoxville, TN: University of Tennessee.
+Brunswick, Mark. 2015. Surplus military equipment brings police security, misunderstanding, headaches. Star Tribune. May 19. http://www.startribune.com/surplusmilitary-equipment-brings-police-security-misunderstanding-headaches/304325321/.
+Buerger, Michael E. 2000. Reenvisioning police, reinvigorating policing: A response to Thomas Cowper. Police Quarterly 3:451–64.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+33
+
+Bushway, Shawn, Brian D. Johnson, and Lee Ann Slocum. 2007. The risks of operational militarization: Increased conﬂict against militarized police. Journal of Quantitative Criminology 23:151–78.
+Campbell, Donald J., and Kathleen M. Campbell. 2009. Soldiers as police ofﬁcers/police ofﬁcers as soldiers: Role evolution and revolution in the United States. Armed Forces & Society 36:327–50.
+Campbell, Donald J., and Kathleen M. Campbell. 2016. Police/military convergence in the USA as organisational mimicry. Policing & Society 26:332–53.
+Carll, Erin. 2017. Disparate vantage points: Race, gender, county context, and attitudes about harsh punishment in the U.S. Social Science Research 64:137–53.
+Carmichael, Jason T., and Stephanie L. Kent. 2014. The persistent signiﬁcance of racial and economic inequality on the size of municipal police forces in the United States, 1980–2010. Social Problems 61:259–82.
+Carriere, Kevin R. and William Encinosa. 2017. Is the magic still there? The use of the Heckman two-step correction for selection bias in criminology. Peace Economics, Peace Science, and Public Policy 19:1–13
+Chamlin, Mitchell B. 1989. Conﬂict theory and police killings. Deviant Behavior 10:353– 68.
+Cohen, Lawrence E., and Marcus Felson. 1979. Social change and crime rate trends: A routine activity approach. American Sociological Review 44:588–608.
+Cowper, Thomas J. 2000. The myth of the “military model” of leadership in law enforcement. Police Quarterly 3:228–46.
+Crawford, Charles, Ted Chiricos, and Gary Kleck. 1998. Race, racial threat, and sentencing of habitual offenders. Criminology 36:481–512.
+Crowder, Kyle, J. Pais, and Scott J. South. 2012. Neighborhood diversity, metropolitan constraints, and household migration. American Sociological Review 77:325–53.
+Dansky, Kara. 2014. War comes home: The excessive militarization of American policing. American Civil Liberties Union. https://www.aclu.org/report/war-comeshome-excessive-militarization-american-police.
+Defense Logistics Agency. 2016a. 1033 Program FAQs. http://www.dla.mil/DispositionServices/Offers/Reutilization/LawEnforcement/ProgramFAQs.aspx.
+Defense Logistics Agency. 2016b. DLA Disposition Services Electronic Reading Room. http://www.dla.mil/DispositionServices/FOIA/EFOIALibrary.aspx.
+Delehanty, Casey, Jack Mewhirter, Ryan Welch, and Jason Wilks. 2017. Militarization and police violence: The case of the 1033 Program. Research & Politics 4:1–7.
+DeMichele, Matthew T., and Peter B. Kraska. 2001. Community policing in battle garb: A paradox of coherent strategy? In Militarizing the American Criminal Justice System: The Changing Roles of the Armed Forces and the Police, ed. Peter B. Kraska. Boston, MA: Northeastern University Press.
+den Heyer, Garth. 2014. Mayberry revisited: A review of the inﬂuence of police paramilitary units on policing. Policing & Society 24:346–61.
+Department of Homeland Security. 2018. Department of Homeland Security Notice of Funding Opportunity Fiscal Year 2018 Homeland Security Grant Program (DHS-18-GPD-067-00-01). https://www.fema.gov/media-library-data/152657880 9767-7f08f471f36d22b2c0d8afb848048c96/FY_2018_HSGP_NOFO_FINAL_508.pdf.
+Du Bois, W. E. B. 1994 [1903]. The Souls of Black Folk. Unabridged ed. New York: Dover.
+
+34
+
+RAMEY & STEIDLEY
+
+Eason, John M., Danielle Zucker, and Christopher Wildeman. 2017. Mass imprisonment across the rural-urban interface. The ANNALS of the American Academy of Political and Social Science 672:202–16.
+Endebak, Jeffrey. 2014. More bang for their buck: How federal dollars are militarizing American law enforcement. Marshall Law Review 47:1479–506.
+Feldman, Linda. 2014. Ferguson: How Pentagon’s “1033 Program” helped militarize small-town police. Christian Science Monitor. August 16.
+Feldmeyer, Ben, Casey T. Harris, and Daniel Lai. 2016. Language use and violence: Assessing the relationship between linguistic context and macrolevel violence. Sociological Forum 31:267–90.
+Fowler, Jeffery T. 2017. Police militarization in America—A positive or negative trend? Homeland Security. April 25. https://inhomelandsecurity.com/police-militarization-america/.
+Garofalo, James. 1980. Social structure and rates of imprisonment: A research note. The Justice System Journal 5:299–305.
+Giles, Michael W., and Melanie A. Buckner. 1993. David Duke and black threat: An old hypothesis revisited. The Journal of Politics 55:702–13.
+Grasso, Valerie Bailey. 2014. Defense Surplus Equipment Disposal, Including the Law Enforcement 1033 Program. Congressional Research Service. https://www.fas.org/ sgp/crs/natsec/RS20549.pdf.
+Hall, Abigail R., and Christopher J. Coyne. 2013. The militarization of U.S. domestic policing. The Independent Review 17:485–504.
+Harris, Matthew C., Jinseong Park, Donald J. Bruce, and Matthew N. Murray. 2017. Peacekeeping force: Effects of providing tactical equipment to local law enforcement. American Economic Journal: Economic Policy 9:291–313.
+Hinton, Elizabeth. 2016. From the War on Poverty to the War on Crime: The Making of Mass Incarceration in America, 1st ed. Cambridge, MA: Harvard University Press.
+Holmes, Malcolm D. 2000. Minority threat and police brutality: Determinants of civil rights criminal complaints in U.S. municipalities. Criminology 38:343–68.
+Hutchins, Sarah. 2014. How local, national media are investigating police militarization, shootings. Investigative Reporters and Editors. August 18. http://www.ire.org/ blog/extra-extra/2014/08/18/how-local-national-media-are-investigating-police-/.
+Iannelli, Jerry. 2017. Miami Beach Police now have a military armored truck. The Miami New Times. May 18. http://www.miaminewtimes.com/content/printView/9357062.
+Insler, Michael, Bryce McMurrey, and Alexander F. McQuoid. 2016. From Broken Windows to Broken Bonds: Militarized Police and Social Fragmentation. United States Naval Academy Department of Economics. https://ideas.repec.org/p/ usn/usnawp/53.html.
+Jackson, Pamela Irving. 1989. Minority Group Threat, Crime, and Policing: Social Context and Social Control. New York: Praeger.
+Jackson, Pamela Irving, and Leo Carroll. 1981. Race and the war on crime: The sociopolitical determinants of municipal police expenditures in 90 non-Southern U.S. cities. American Sociological Review 46:290–305.
+Jacobs, David. 1979. Inequality and police strength: Conﬂict theory and social control in metropolitan areas. American Sociological Review 44:913–25.
+Jacobs, David, and Jason T. Carmichael. 2002. The political sociology of the death penalty: A pooled time-series analysis. American Sociological Review 67:109–31.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+35
+
+Jacobs, David, Jason T. Carmichael, and Stephanie L. Kent. 2005. Vigilantism, current racial threat, and death sentences. American Sociological Review 70:656–77.
+Jacobs, David, and Ronald E. Helms. 1999. Collective outbursts, politics, and punitive resources: Toward a political sociology of spending on social control. Social Forces 77:1497–523.
+Jacobs, David, and Robert M. O’Brien. 1998. The determinants of deadly force: A structural analysis of police violence. American Journal of Sociology 103:837–62.
+Jacobs, David, and Katherine Wood. 1999. Interracial conﬂict and interracial homicide: Do political and economic rivalries explain White killings of Blacks or Black killings of Whites? American Journal of Sociology 105:157–90.
+Jefferis, Eric S., James Frank, Brad W. Smith, and Kenneth J. Novak. 1998. An examination of the productivity and perceived effectiveness of drug task forces. Police Quarterly 1:85–107.
+Jefferson, Tony. 1987. Beyond paramilitarism. British Journal of Criminology 27:47–53. Jefferson, Tony. 1993. Pondering paramilitarism: A question of standpoints? The British
+Journal of Criminology 33:374–81. Jermier, John M., and Leslie J. Berkes. 1979. Leader behavior in a police command bu-
+reaucracy: A closer look at the quasi-military model. Administrative Science Quarterly 24:1–23. Johnson, Brian D. 2005. Contextual disparities in guidelines departures: Courtroom social contexts, guidelines compliance, and extralegal disparities in criminal sentencing. Criminology 43:761–96. Kane, Robert J. 2003. Social control in the metropolis: A community-level examination of the minority group-threat hypothesis. Justice Quarterly 20:265–95. Kappeler, Victor E., and Peter B. Kraska. 2015. Normalising police militarisation, living in denial. Policing & Society 25:268–75. Keen, Bradley, and David Jacobs. 2009. Racial threat, partisan politics, and racial disparities in prison admissions: A panel analysis. Criminology 47:209–38. Kent, Stephanie L., and David Jacobs. 2005. Minority threat and police strength from 1980 to 2000: A ﬁxed-effects analysis of nonlinear and interactive effects in large U.S. cities. Criminology 43:731–60. King, Ryan D. 2008. Conservatism, institutionalism, and the social control of intergroup conﬂict. American Journal of Sociology 113:1351–93. King, Ryan D., and Darren Wheelock. 2007. Group threat and social control: Race, perceptions of minorities and the desire to punish. Social Forces 85:1255–80. Kowalski, Brian R., and Richard J. Lundman. 2007. Vehicle stops by police for driving while Black: Common problems and some tentative solutions. Journal of Criminal Justice 35:165–81. Kraska, Peter B. 1996. Enjoying militarism: Political/personal dilemmas in studying U.S. police paramilitary units. Justice Quarterly 13:405–29. Kraska, Peter B. 2001. Militarizing the American Criminal Justice System: The Changing Roles of the Armed Forces and the Police. Boston, MA: Northeastern University Press. Kraska, Peter B. 2007. Militarization and policing—Its relevance to 21st century police. Policing 1:501–13. Kraska, Peter B., and Louis J. Cubellis. 1997. Militarizing Mayberry and beyond: Making sense of American paramilitary policing. Justice Quarterly 14:607–29.
+
+36
+
+RAMEY & STEIDLEY
+
+Kraska, Peter B., and Victor E. Kappeler. 1997. Militarizing American police: The rise and normalization of paramilitary units. Social Problems 44:1–18.
+Kunselman, Julie, Gennaro F. Vito, and William F. Walsh. 2013. Police managers’ attitudes towards a US Marine Corps military model: Responses to corps business. International Journal of Police Science & Management 15:305–22.
+Lichter, Daniel, Domenico Parisi, and Michael C. Taquino. 2015. Toward a new macrosegregation? Decomposing within and between metropolitan cities and suburbs. American Sociological Review 80:843–73.
+Liska, Allen E. 1992. Social Threat and Social Control. Albany: State University of New York Press.
+Liska, Allen E., Joseph J. Lawrence, and Michael Benson. 1981. Perspectives on the legal order: The capacity for social control. American Journal of Sociology 87:413–26.
+Ludwig, Jens, Greg J. Duncan, Lisa A. Gennetian, Lawrence F. Katz, Ronald C. Kessler, Jeffrey R. Kling, and Lisa Sanbonmatsu. 2012. Neighborhood effects on the long-term well being of low-income adults. Science 337:1505–10.
+Marvell, Thomas B., and Carlisle E. Moody. 1996. Speciﬁcation problems, police levels, and crime rates. Criminology 34:609–46.
+McQuoid, Alexander, and David Vitt. 2017. Public Safety, Private Harm: The Impact of Police Militarization on Mortality. Rochester, NY: Social Science Research Network. https://papers.ssrn.com/abstract=3072433.
+McRobbie, Melissa. 2014. Ore. police will get MRAP through military program. PoliceGrantsHelp.com. September 3. https://www.policegrantshelp.com/news/ 7527498-Ore-police-will-get-MRAP-through-military-program/.
+Meeks, Daryl. 2006. Police militarization in urban areas: The obscure war against the underclass. The Black Scholar 35:33–41.
+Nagin, Daniel S. 1998. Criminal deterrence research at the outset of the twenty-ﬁrst century. In Crime and Justice, vol. 23, ed. Michael Tonry. Chicago, IL: University of Chicago Press.
+National Consortium for the Study of Terrorism and Responses to Terrorism. 2013. Global Terrorism Database [Data File]. https://www.start.umd.edu/gtd/.
+Olzak, Susan. 1992. The Dynamics of Ethnic Competition and Conﬂict. Palo Alto, CA: Stanford University Press.
+Parisi, Domenico, Daniel Lichter, and Michael C. Taquino. 2015. The buffering hypothesis: Growing diversity and declining Black-White segregation in America’s cities, suburbs, and small towns? Sociological Science 2:125–57.
+Parker, Karen F., Ashley Mancik, and Richard Stansﬁeld. 2017. American crime drops: Investigating the breaks, dips, and drops in temporal homicide. Social Science Research 64:154–70.
+Parlapiano, Alicia. 2014. The ﬂow of money and equipment to local police. The New York Times. August 23.
+Phillips, Scott W. 2016. Myths, militarism and the police patrol riﬂe. Policing & Society 26:185–96.
+Phillips, Scott W., Andrew Wheeler, and Dae-Young Kim. 2016. The effect of police paramilitary unit raids on crime at micro-places in Buffalo, New York. International Journal of Police Science & Management 18:206–19.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+37
+
+Quillian, Lincoln. 1995. Prejudice as a response to perceived group threat: Population composition and anti-immigrant and racial prejudice in Europe. American Sociological Review 60:586–611.
+Quillian, Lincoln. 1996. Group threat and regional change in attitudes toward AfricanAmericans. American Journal of Sociology 102:816–60.
+Radil, Steven M., Raymond J. Dezzani, and Lanny D. McAden. 2017. Geographies of U.S. police militarization and the role of the 1033 Program. The Professional Geographer 69:203–13.
+Roncek, Dennis W., and Pamela A. Maier. 1991. Bars, blocks, and crimes revisited: Linking the theory of routine activities to the empiricism of “hot spots.” Criminology 29:725–53.
+Royston, Patrick. 2005. Multiple imputation of missing values: Update of ICE. Stata Journal 5:527–536.
+Rusche, Georg, and Otto Kircshheimer. 1939. Punishment and Social Structure. New York: Russell & Russell.
+Russell-Brown, Katheryn. 1998. The Color of Crime: Racial Hoaxes, White Fear, Black Protectionism, Police Harassment, and Other Macroaggressions. New York: NYU Press.
+Sampson, Robert J., and John H. Laub. 1993. Structural variations in juvenile court processing: Inequality, the underclass, and social control. Law & Society Review 27:285– 311.
+Sharp, Elaine B. 2006. Policing urban America: A new look at the politics of agency size. Social Science Quarterly 87:291–307.
+Shah, Paru. 2018. Racial change, racial threat, and minority representation in cities. Urban Affairs Review. Epub ahead of print.
+Simon, Jonathan. 2007. Governing through Crime: How the War on Crime Transformed American Democracy and Created a Culture of Fear. New York: Oxford University Press.
+Smith, Brad W., Kenneth J. Novak, James Frank, and Lawrence F. Travis III. 2000. Multijurisdictional drug task forces: An analysis of impacts. Journal of Criminal Justice 28:543–56.
+Smith, Douglas A., and Robert Brame. 2003. Tobit models in social science research: Some limitations and a more general alternative. Sociological Methods & Research 31:364–88.
+Sorensen, Jonathan R., James W. Marquart, and Deon E. Brock. 1993. Factors related to killings of felons by police ofﬁcers: A test of the community violence and conﬂict hypotheses. Justice Quarterly 10:417–40.
+Spitzer, Steven. 1975. Toward a Marxian theory of deviance. Social Problems 22:638–51. Stewart, Eric A., Ramiro Martinez Jr., Eric P. Baumer, and Marc Gertz. 2015. The
+social context of Latino threat and punitive Latino sentiment. Social Problems 62:68–92. Stucky, Thomas D. 2005. Local politics and police strength. Justice Quarterly 22:139–69. Stucky, Thomas D. 2013. Crime, politics, and punishment: Criminological research for political sociologists. Sociology Compass 7:561–72. Stucky, Thomas D., Karen Heimer, and Joseph B. Lang. 2007. A bigger piece of the pie? State corrections spending and the politics of social order. Journal of Research in Crime and Delinquency 44:91–123.
+
+38
+
+RAMEY & STEIDLEY
+
+Stults, Brian J., and Eric P. Baumer. 2007. Racial context and police force size: Evaluating the empirical validity of the minority threat perspective. American Journal of Sociology 113:507–46.
+Taylor, Marylee C. 1998. How White attitudes vary with the racial composition of local populations: Numbers count. American Sociological Review 63:512–35.
+Turk, Austin T. 1969. Criminality and Legal Order. Chicago, IL: Rand McNally. Turner, Frederick W., and Bryanna Hahn Fox. 2017. Public servants or police soldiers?
+An analysis of opinions on the militarization of policing from police executives, law enforcement, and members of the 114th Congress U.S. House of Representatives. Police Practice and Research. https://doi.org/10.1080/15614263.2017.1371600. Ulmer, Jeffrey T., and Brian D. Johnson. 2004. Sentencing in context: A multilevel analysis. Criminology 42:137–78. van Buuren, Stef. 2012. Flexible Imputation of Missing Data. Boca Raton, FL: CRC Press. Wacquant, Lo¨ıc. 2009. Punishing the Poor: The Neoliberal Government of Social Insecurity. Durham, NC: Duke University Press. Waddington, P. A. J. 1987. Towards paramilitarism—Dilemmas in policing civil disorder. British Journal of Criminology 27:37–46. Waddington, P. A. J. 1993. The case against paramilitary policing considered. The British Journal of Criminology 33:353–73. Wang, Xia, and Daniel P. Mears. 2010. A multilevel test of minority threat effects on sentencing. Journal of Quantitative Criminology 26:191–215. Weaver, Vesla M. 2007. Frontlash: Race and the development of punitive crime policy. Studies in American Political Development 21:230–65. Welna, David. 2014. Should local police get the military’s extra armored trucks? National Public Radio. September 2. https://www.npr.org/2014/09/02/345275751/ should-local-police-get-the-militarys-extra-armored-trucks. White, Ian R., Patrick Royston, and Angela M. Wood. 2009. Multiple imputation using chained equations: Issues and guidance for practice. Statistics in Medicine 30:377–99. Xie, Min, and David McDowall. 2014. Impact of victimization on residential mobility: Explaining racial and ethnic patterns using the National Crime Victimization Survey. Criminology 52:553–87.
+
+David M. Ramey is an assistant professor in the Department of Sociology and Criminology at the Pennsylvania State University. His research is focused on racial and socioeconomic disparities in crime and social control.
+Trent Steidley is an assistant professor in the Department of Sociology and Criminology at the University of Denver. His research is focused on how social movements, politics, and the criminal justice system interact to affect criminal justice outcomes and policy.
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+39
+
+Appendix A. Federal Supply Category and Class Names for Militarized Materiel Provided by 1033 Program
+
+Federal Supply Category Aircraft/Airframe Structure Compts Ammunition And Explosives Clothing/Individual Equipment,
+Insignia Communication/Detection/Coherent
+Radiation
+Containers/Packaging/Packing Supplies
+Electrical/Electronic Equipment Components
+Engines And Turbines And Component
+Fire Control Equipment
+Guided Missiles
+Hardware And Abrasives Lighting Fixtures, Lamps
+Maintenance/Repair Shop Equipment
+Metal Bars, Sheets, Shapes Motor Vehicles, Cycles, Trailers
+Special Industry Machinery
+Training Aids And Devices
+Vehicular Equipment Components
+Weapons
+Miscellaneous
+
+Federal Supply Class (Examples)
+Aircraft, Fixed Wing; Aircraft, Rotary Wing Demolition Materials; Land Mines Armor, Combat Personal; Bag, Weapon Equipment, Carrier;
+Combat Boots; Specialized Flight Clothing And Accessories Stimulated Coherent Radiation Devices, Components and
+Accessories; Night Vision and Infrared Goggles; Visible And Invisible Light Communication Equipment Ammunition And Nuclear Ordnance Boxes, Packages And Special Containers Antennas, Waveguide, And Related Equipment
+Gas Turbines And Jet Engines, Aircraft, Prime Moving; And Components; Gasoline Reciprocating Engines, Aircraft Prime Mover; And Components
+Aircraft Gunnery Fire Control Components; Optical Sighting And Ranging Equipment
+Guided Missile Handling And Servicing Equipment; Launchers, Guided Missile
+Hardware, Weapon System Electric Portable And Hand Lighting Equipment (Crowd
+Control) Weapons Maintenance And Repair Shop Specialized
+Equipment; Guided Missile Maintenance, Repair, And Checkout Specialized Equipment; Torpedo Maintenance, Repair, And Checkout Specialized Equipment Armor Plate Combat, Assault, And Tactical Vehicles, Tracked; Combat, Assault, And Tactical Vehicles, Wheeled (MRAPs) Specialized Ammunition And Ordnance Machinery And Related Equipment Armament Training Devices; Kit, Suicide Vest Simulator; Kit, Tactical Vest; Training Aids (Weapons, Counterterrorism) Adapter Rail, Weapon Mounting; Adapter, Night Vision Viewer; Vehicle Armor Kits; Weapons Systems Speciﬁc Vehicular Accessories Assemblies Interchangeable Between Weapons; Camouﬂage And Deception Equipment; Conversion Kit,5.56 Millimeter Riﬂe; Guns, Over 30 Mm Up To 75 Mm; Guns, Through 30 Mm; Miscellaneous Weapons; Riﬂe,5.56 Millimeter Antiterrorism Force Protection Checkpoint Set; Barbed Wire; Battleﬁeld Anti-Intrusion System; Grenade Pouch, Maintenance Of Order And Crowd Control
+
+40
+
+RAMEY & STEIDLEY
+
+Appendix B. Federal Supply Category and Class Names for Nonmilitarized Materiel Provided by 1033 Program
+
+Federal Supply Category Adp Equipment/Software/Supplies And
+Equipment Agricultural Machinery And Equipment Aircraft Components/Accessories Aircraft/Airframe Structure Components Alarm, Signal, Security Detection Ammunition And Explosives Bearings Books, Maps, Other Publications Brushes, Paints, Sealers, Adhesives Chemicals And Chemical Products Cleaning Equipment And Supplies Clothing/Individual Equipment, Insignia Communication/Detection/Coherent
+Radiation
+Construction/Mine/Excavate/Highway Equipment
+Construction And Building Material
+Containers/Packaging/Packing Supplies
+
+Federal Supply Class (Examples)
+Central Processing Unit; Components; I/O and Storage Devices; Software; Supplies; System Support Equipment
+Gardening Implements And Tool: Harvesting Equipment; Pest, Disease, And Frost Control Equipment; Saddlery, Harness, Whips, And Related Animal Furnishings.
+Aircraft Air Conditioning, Heating, And Pressurizing Equipment; Cargo Tie Down Equipment; Vacuum And De-Icing System Components
+Gliders Miscellaneous Alarm, Signal, And Security Detection
+Systems; Shipboard Alarm And Signals Systems; Trafﬁc And Transit Signal Systems Surface Use Explosive Ordnance Disposal Tools And Equipment Mounted and Unmounted
+Paint And Artists’ Brushes; Preservative And Sealing Compounds
+Miscellaneous Chemical Specialties; Pest Control Agents And Disinfectants
+Brooms, Brushes, Mops, And Sponges; Cleaning And Polishing Compounds And Preparations; Floor Polishers And Vacuum Cleaning Equipment
+Badges And Insignia; Backpacks, Noncombat; Hosiery, Handwear, And Clothing Accessories; Luggage; Outerwear; Underwear; Nightwear
+Accessory Kit, Antenna; Communications Security Equipment And Components; Adaptors; Detector, Explosive Ordnance; Detector, Gas; Intercommunication And Public Address Systems; Headset-Microphone; Miscellaneous Communication Equipment; Radar Equipment; Radio and Television Equipment; Radio Navigation Equipment; Sound Recording And Reproducing Equipment; Video Recording And Reproducing Equipment; Telephone And Telegraph Equipment; Teletype And Facsimile Equipment; X-Ray Equipment
+Backhoe, Tractor Mounting; Cranes And Crane-Shovels; Earth Moving And Excavating Equipment; Mining, Rock Drilling, Earth Boring, And Related Equipment; Miscellaneous Construction Equipment; Road Clearing, Cleaning, And Marking Equipment; Truck And Tractor Attachments
+Building Components, Prefabricated; Fencing, Fences, Gates And Components; Miscellaneous Construction Materials; Nonwood Construction Lumber And Related Materials; Tile, Brick, And Block; Wallboard, Building Paper, And Thermal Insulation Materials
+Bags And Sacks; Boxes, Cartons, And Crates; Container, Freight, Thermal; Container, Freight, Utility; Drums And Cans; Packaging And Packing Bulk Materials; Reels And Spools; Specialized Shipping And Storage Containers; Tricon, Freight, General Purpose
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+41
+
+Continued
+Federal Supply Category Electric Wire, Power Distribution
+Equipment
+Electrical/Electronic Equipment Components
+Engine Accessories
+Engines And Turbines And Component Fiber Optic Fire Control Equipment.
+Fire/Rescue/Safety; Environmental Protection
+Food Preparation/Serving Equipment
+Fuels, Lubricants, Oils, Waxes Furnace/Steam/Drying Furniture Hand Tools Hardware And Abrasives
+
+Federal Supply Class (Examples)
+Batteries, Nonrechargeable and Rechargeable; Electrical Converters; Electrical Control Equipment; Generators and Generator Sets; Motors, Electrical; Solar Electrical Power Systems; Transformers: Distribution And Power Station; Wire And Cable, Electrical
+Ampliﬁers; Cable, Cord, And Wire Assemblies: Communication Equipment; Circuit Breakers; Connectors, Electrical; Electrical And Electronic Assemblies; Boards, Cards, And Associated Hardware; Electrical Hardware And Supplies; Electrical Insulators And Insulating Materials; Electronic Modules; Filters And Networks; Fuses, Arresters, Absorbers, And Protectors; Headsets, Handsets, Microphones And Speakers; Lugs, Terminals, And Terminal Strips; Microcircuits, Electronic; Miscellaneous Electrical And Electronic Components; Optoelectronic Devices And Associated Hardware; Relays And Solenoids; Semiconductor Devices And Associated Hardware
+Engine Air And Oil Filters, Cleaners; Engine Cooling System Components Aircraft Prime Moving; Engine Electrical System Components; Engine Fuel System Components; Miscellaneous Engine Accessories; Turbosuperchargers And Components
+Diesel Engines And Components; Gasoline Reciprocating Engines, Except Aircraft; And Components; Miscellaneous Engines And Components
+Fiber Optic Accessories And Supplies; Fiber Optic Cables; Fiber Optic Kits And Sets
+Fire Control Computing Sights And Devices; Fire Control Designating And Indicating Equipment; Fire Control Transmitting And Receiving Equipment, Except Airborne; Miscellaneous Fire Control Equipment
+Decontaminating And Impregnating Equipment; Fire Fighting Equipment; Hazardous Material Spill Containment And Clean-Up Equipment And Material; Marine Lifesaving And Diving Equipment; Recycling And Reclamation Equipment; Safety And Rescue Equipment
+Cutlery And Flatware; Food Cooking, Baking, And Serving Equipment; Kitchen Equipment And Appliances; Kitchen Hand Tools And Utensils; Sets, Kits, Outﬁts And Modules Food Preparation And Serving; Tableware
+Oils And Greases: Cutting, Lubricating, And Hydraulic Air Puriﬁcation Equipment; Driers, Dehydrators, And
+Anhydrators Cabinets, Lockers, Bins, And Shelving; Household Furniture;
+Miscellaneous Furniture And Fixtures; Ofﬁce Furniture Drill Bits, Counterbores, And Countersinks; Hand And
+Machine; Hand Tools; Taps, Dies, and Collets; Tool and Hardware Boxes Abrasive Materials; Bolts; Bushings, Rings, Shims And Spacers; Coil, Flat, Leaf, And Wire Springs; Disks And Stones, Abrasive; Fastening Devices; Hardware; Knobs And Pointers; Metal Screening; Nails, Machine Keys, And Pins; Nuts And Washers; Packing And Gasket Materials; Screws; Studs
+
+42
+
+RAMEY & STEIDLEY
+
+Continued
+Federal Supply Category Household/Commercial
+Furnishings/Appliances Instruments And Laboratory Equipment
+Lighting Fixtures, Lamps Lumber, Millwork, Plywood, Veneer Maintenance/Repair Shop Equipment
+Materials Handling Equipment
+Measuring Tools Mechanical Power Transmission
+Equipment Medical/Dental/Veterinary
+Equipment/Supplies
+Metal Bars, Sheets, Shapes
+
+Federal Supply Class (Examples)
+Floor Coverings; Household And Commercial Utility Containers; Household Furnishings; Ice Making Machine, Cube; Miscellaneous Household And Commercial Furnishings And Appliances
+Automatic Pilot Mechanisms And Airborne Gyro Components; Chemical Analysis Instruments; Combination And Miscellaneous Instruments; Drafting, Surveying, And Mapping Instruments; Electrical And Electronic Properties Measuring And Testing Instruments; Engine Instruments; Flight Instruments; Hazard-Detecting Instruments And Apparatus; Laboratory Equipment And Supplies; Liquid And Gas Flow, Liquid Level, And Mechanical Motion Measuring Instruments; Meteorological Instruments And Apparatus; Navigational Instruments; Optical Instruments, Test Equipment, Components And Accessories; Physical Properties Testing And Inspection; Pressure, Temperature, And Humidity Measuring And Controlling Instruments; Scales And Balances; Time Measuring Instruments
+Ballasts, Lampholders, And Starters; Electric Lamps; Electric Vehicular Lights And Fixtures; Indoor And Outdoor Electric Lighting Fixtures; Nonelectrical Lighting Fixtures
+Lumber And Related Basic Wood Materials Fire Control Maintenance And Repair Shop Specialized
+Equipment; Lubrication And Fuel Dispensing Equipment; Maintenance And Repair Shop Specialized Equipment; Miscellaneous Tools and Adaptors; Motor Vehicle Maintenance And Repair Shop Specialized Equipment Motor Vehicle Maintenance And Repair Shop Specialized Equipment; Miscellaneous Maintenance And Repair Shop Specialized Equipment Blocks, Tackle, Rigging, And Slings; Freight Elevators; Materials Handling Equipment, Not Self-propelled; Miscellaneous Materials Handling Equipment; Warehouse Truck And Tractors, Self-Propelled; Winches, Hoists, Cranes, And Derricks Inspection Gages And Precision Layout Tools; Measuring Tools Belting, Drive Belts, Fan Belts, And Accessories; Gears, Pulleys, Sprockets, And Transmission Chain; Miscellaneous Power Transmission Equipment; Torque Converters And Speed Changers Administration Set, Intravenous Fluids; Bag, Medical Instrument And Supply Set; Dental Instruments, Equipment, And Supplies; Hospital And Surgical Clothing And Related Special Purpose Items; Hospital Furniture, Equipment, Utensils, And Supplies; In Vitro Diagnostic Substances, Reagents, Test Kits And Sets; Medical And Surgical Instruments, Equipment, And Supplies; Medicated Cosmetics And Toiletries; Ophthalmic Instruments, Equipment, And Supplies; Replenishable Field Medical Sets, Kits, And Outﬁts; Surgical Dressing Materials; X-Ray Equipment And Supplies: Medical, Dental, Veterinary Bars And Rods; Plate, Sheet, Strip, And Foil; Structural Shapes, Nonferrous Base Metal
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+43
+
+Continued
+Federal Supply Category Metalworking Machinery
+Motor Vehicles, Cycles, Trailers
+Musical Instruments/Phonograph/Home Radio
+Nonmetallic Fabricated Materials Ofﬁce Machines Ofﬁce Supplies And Devices Ores, Minerals And Primary Products Photographic Equipment Pipe, Tubing, Hose, And Fittings Plumbing, Heating, Waste Disposal Prefab Structures/Scaffolding
+Pumps And Compressors Recreational/Athletic Equipment Refrigeration, Air
+Conditioning/Circulation Equipment Rope, Cable, Chain, Fittings
+
+Federal Supply Class (Examples)
+Accessories For Secondary Metalworking Machinery; Apron, Blacksmiths; Bending And Forming Machines; Cutting And Forming Tools For Secondary Metalworking Machinery; Cutting Tools For Machine Tools; Drilling And Tapping Machines; Electric Arc Welding Equipment; Electric Resistance Welding Equipment; Gas Welding, Heat Cutting, And Metalizing Equipment; Grinding Machines; Hydraulic And Pneumatic Presses, Power Driven; Lathes; Machine Tool Accessories; Machine Tools, Portable; Machining Centers And Way-Type Machines; Manual Presses; Milling Machines; Miscellaneous Machine Tools; Miscellaneous Welding Equipment; Miscellaneous Welding, Soldering, And Brazing Supplies And Accessories; Punching And Shearing Machines; Saws And Filing Machines
+Automobile, Sedan; Camper Top, Truck; Boat, Landing, Inﬂatable; Boat, Pontoon; Boat, Sport, Inﬂatable; Ground Effect Vehicles; Motorcycles, Motor Scooters, And Bicycles; Passenger Motor Vehicles; Trailers; Trucks And Truck Tractors, Wheeled
+Ampliﬁer, Guitar; Musical Instruments; Musical Instrument Parts And Accessories; Phonographs, Radios, And Television Sets: Home-Type
+Glass Fabricated Materials; Miscellaneous Fabricated Nonmetallic Materials; Paper And Paperboard; Plastics Fabricated Materials; Rubber Fabricated Materials
+Accounting And Calculating Machines; Miscellaneous Ofﬁce Machines
+Ofﬁce Devices And Accessories; Ofﬁce Supplies; Stationery And Record Forms
+Cameras, Motion Picture; Cameras, Still Picture; Photographic Equipment And Accessories; Photographic Projection Equipment; Photographic Sets, Kits, And Outﬁts
+Hose And Flexible Tubing; Hose, Pipe, Tube, Lubrication, And Railing Fittings; Pipe, Tube And Rigid Tubing
+Plumbing Fixtures And Accessories; Space And Water Heating Equipment; Waste Disposal
+Bridges, Fixed And Floating; Collective Modular Support System; Miscellaneous Prefabricated Structures; Prefabricated And Portable Buildings; Prefabricated Tower Structures; Rigid Wall Shelters; Scaffolding Equipment And Concrete Forms; Storage Tanks
+Compressors And Vacuum Pumps; Power And Hand Pumps Athletic And Sporting Equipment; Games, Toys, And
+Wheeled Goods; Recreational And Gymnastic Equipment Air Conditioning Equipment; Fans, Air Circulators, And
+Blower Equipment; Refrigeration And Air Conditioning Components; Refrigeration Equipment Chain And Wire Rope; Fiber Rope, Cordage, And Twine; Fittings For Rope, Cable, And Chain
+
+44
+
+RAMEY & STEIDLEY
+
+Continued
+Federal Supply Category Service And Trade Equipment
+Ship And Marine Equipment
+Ships, Small Craft, Pontoon, Docks Special Industry Machinery
+Subsistence Textile/Leather/Fur; Tent; Flag Tires And Tubes Toiletries Tractors Training Aids And Devices Valves Vehicular Equipment Components
+Water Puriﬁcation/Sewage Treatment Woodworking Machinery And
+Equipment Miscellaneous
+
+Federal Supply Class (Examples)
+Industrial Sewing Machines And Mobile Textile Repair Shops; Laundry And Dry Cleaning Equipment; Miscellaneous Service And Trade Equipment; Vending And Coin Operated Machines; Wrapping And Packaging Machinery
+Deck Machinery; Marine Hardware And Hull Items; Miscellaneous Ship And Marine Equipment; Ship And Boat Propulsion Components
+Miscellaneous Vessels; Small Craft; Food Products Machinery And Equipment
+Miscellaneous Special Industry Machinery; Printing, Duplicating, And Bookbinding Equipment; Pulp And Paper Industries Machinery
+Beverages, Nonalcoholic; Composite Food Packages Flags And Pennants; Leather; Notions And Apparel Findings;
+Tents And Tarpaulins; Textile Fabrics Tire Rebuilding And Tire And Tube Repair Materials; Tires
+And Tubes, Pneumatic, Except Aircraft Personal Toiletry Articles; Toilet Soap, Shaving Preparations,
+And Dentifrices; Toiletry Paper Products Tractors, Full Tracked, Low Speed; Tractors, Wheeled Operation Training Devices Valves, Nonpowered Miscellaneous Vehicular Components; Vehicular Brake,
+Steering, Axle, Wheel, And Track Components; Vehicular Furniture And Accessories; Vehicular Power Transmission Components Sewage Treatment Equipment; Water Puriﬁcation Equipment Sawmill And Planing Mill Machinery; Tools And Attachments For Woodworking Machinery; Woodworking Machines Absorbent Material, Oil And Water; Adhesives; Collectors And/Or Historical Items; Memorials; Cemeterial And Mortuary Equipment And Supplies; Signs, Advertising Displays, And Identiﬁcation Plates; Smokers’ Articles And Matches
+
+SUPPORTING INFORMATION
+Additional supporting information may be found in the online version of this article at the publisher’s website.
+Appendix C. Correlations for all variables included in analyses (full sample for Probit model, N = 238,013) Appendix D. Correlations for all variables included in analyses (Agencies currently acquiring militarized property, N = 7,252) Appendix E. Results from Double-Hurdle Model Estimating 1033 Participation via Acquiring Property and Value of Property Acquired for Militarized and Nonmilitarized Property, 1995–2016 (estimating exponential functional form for acquiring property and property value) Appendix F. Results from Double-Hurdle Model Estimating 1033 Participation via Acquiring Property and Value of Property Acquired for Militarized and Nonmilitarized
+
+EXPLANATIONS OF POLICE MILITARIZATION
+
+45
+
+Property, 1995–2016 (estimating quadratic functional form for acquiring property and property value) Appendix G. Results from Double-Hurdle Model Estimating 1033 Participation via Acquiring Property and Value of Property Acquired for Militarized and Nonmilitarized Property, 1995–2016 (estimating exponential functional form for acquiring property and quadratic functional form for property value)
+

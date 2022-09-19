@@ -1,0 +1,2253 @@
+Center for Advanced Multimodal Mobility
+Solutions and Education
+Project ID: 2018 Project 13
+DETERMINATION OF FREEWAY ACCELERATION LANE LENGTH FOR SMOOTH AND SAFE TRUCK
+MERGING
+Final Report
+by
+Yi Qi, Ph.D., P.E. (ORCID ID: https://orcid.org/0000-0002-6314-2626) Professor and Chair, Department of Transportation Studies, Texas Southern University
+Phone: 1-713-313-6809; Email: Yi.Qi@tsu.edu
+Qun Zhao (ORCID ID: https://orcid.org/0000-0003-3760-9234) Research Associate, Department of Transportation Studie, Texas Southern University
+Phone: 1-713-313-1854; Email: qun.zhao@tsu.edu
+Shaojie Liu (ORCID ID: https://orcid.org/ 0000-0001-5330-3871) Graduate Research Assistant, Department of Transportation Studies, Texas Southern University
+Phone: 1-713-313-1854; Email: liushaojie03051994@gmail.com
+Wenrui Qu (ORCID ID: https://orcid.org/ 0000-0003-4139-3544) School of Mathematics and Statistic,
+Qilu University of Technology (Shandong Academy of Sciences) City of Jinan, Shandong Province, P.R. China, E-mail: quwenrui601@163.com
+Juan Li (ORCID ID: https://orcid.org/ 0000-0003-2416-5013) Graduate Research Assistant, Department of Transportation Studies, Texas Southern University
+Phone: 1-713-313-1854; Email: seija1026@gmail.com for
+Center for Advanced Multimodal Mobility Solutions and Education (CAMMSE @ UNC Charlotte)
+The University of North Carolina at Charlotte 9201 University City Blvd Charlotte, NC 28223
+September 2019
+
+i
+
+ACKNOWLEDGEMENTS
+This project was funded by the Center for Advanced Multimodal Mobility Solutions and Education (CAMMSE @ UNC Charlotte), one of the Tier I University Transportation Centers that were selected in this nationwide competition, by the Office of the Assistant Secretary for Research and Technology (OST-R), U.S. Department of Transportation (US DOT), under the FAST Act. The authors are also very grateful for all of the time and effort spent by DOT and industry professionals to provide project information that was critical for the successful completion of this study.
+DISCLAIMER
+The contents of this report reflect the views of the authors, who are solely responsible for the facts and the accuracy of the material and information presented herein. This document is disseminated under the sponsorship of the U.S. Department of Transportation University Transportation Centers Program in the interest of information exchange. The U.S. Government assumes no liability for the contents or use thereof. The contents do not necessarily reflect the official views of the U.S. Government. This report does not constitute a standard, specification, or regulation.
+ii
+
+iii
+
+Table of Contents
+EXECUTIVE SUMMARY ......................................................................................................... ix Chapter 1. Introduction.................................................................................................................1
+1.1 Problem Statement .................................................................................................................1 1.2 Objectives ..............................................................................................................................2 1.3 Report Overview ....................................................................................................................3 Chapter 2. Literature Review .......................................................................................................4 2.1 Design Guidelines and Research on Freeway Acceleration Lane Length .............................4
+2.1.1 The AASHTO Green Book (2011) ............................................................................................. 4 2.1.2 Deen (1957)................................................................................................................................. 5 2.1.3 NCHRP REPORT 505 (2003)..................................................................................................... 6 2.1.4 Fitzpatrick and Zimmerman (2007) ............................................................................................ 7 2.1.5 Hunter and Machemehl (1997), Hunter et al. (2001) ................................................................ 10 2.1.6 Gattis et. al (2008) ..................................................................................................................... 10 2.1.7 Bareket & Fancher (1993) ......................................................................................................... 11 2.1.8 Long (2000)............................................................................................................................... 13 2.1.9 Other Studies ............................................................................................................................. 14
+2.2 Methods for Estimating the Freeway Acceleration Lane Length ........................................14 Chapter 3. Methodology ..............................................................................................................16
+3.1 Model for Freeway Acceleration Lane Length ....................................................................17 3.2 Merging Delay .....................................................................................................................19 3.3 Critical Gap ..........................................................................................................................20 3.4 The Overall Procedure for Determining Freeway Acceleration Lane Length.....................21 Chapter 4. Case Study .................................................................................................................23 4.1 Study Site and Data Collection ............................................................................................23 4.2 Acceleration Lane Length Determination............................................................................25
+4.2.1 Estimate the Four Types of Critical Gaps ................................................................................. 25 4.2.2 Estimate Merging Delay............................................................................................................ 26 4.2.3 Estimate Freeway Acceleration Lane Length ........................................................................... 27 4.2.4 Estimate Freeway Acceleration Lane Length ........................................................................... 27
+Chapter 5. Guidelines on Freeway Acceleration Lane Lengths under Different Traffic Volume Conditions.......................................................................................................................28 Chapter 6. Conclusions................................................................................................................37 References .....................................................................................................................................38
+iv
+
+v
+
+List of Figures
+Figure 1. 1: Freeway Acceleration Lane Design Elements............................................................. 1
+Figure 2. 1: Acceleration lengths from use of design speed or running speed and Blue Book procedure ................................................................................................................... 8
+Figure 2. 2: Acceleration lengths from a stop through use of constant acceleration compared with results from 2004 Green Book (1) and 5544 spreadsheet. ......................... 9
+Figure 2. 3: Acceleration from Speed – Jackson Road to I-94 eastbound .................................... 12 Figure 2. 4 Acceleration from 22 mph on a 2% grade.................................................................. 13
+Figure 3. 1: Freeway Acceleration Lane Design Length .............................................................. 16 Figure 3. 2: Speed and time diagram for merging ahead and merging behind cases ................... 18 Figure 3. 3: Determination of critical gap (source: Drew, 1965).................................................. 21
+Figure 4. 1: A video snapshot of the study site............................................................................. 23 Figure 4. 2: Estimation of critical gaps for study location............................................................ 26
+Figure 5. 1: Recommended freeway acceleration lane lengths when only considering passenger cars (LPC) for freeway design speed at 60 mph .............................................. 29
+Figure 5. 2: Recommended freeway acceleration lane lengths when only considering passenger cars (LPC) for freeway design speed at 65 mph .............................................. 30
+Figure 5. 3: Recommended freeway acceleration lane lengths when only considering passenger cars (LPC) for freeway design speed at 70 mph ............................................... 31
+Figure 5. 4: Recommended freeway acceleration lane lengths when considering heavy trucks (LHT) for freeway design speed at 60 mph ............................................................. 32
+Figure 5. 5: Recommended freeway acceleration lane lengths when considering heavy trucks (LHT) for freeway design speed at 65 mph ............................................................. 33
+Figure 5. 6: Recommended freeway acceleration lane lengths when considering heavy trucks (LHT) for freeway design speed at 70 mph ............................................................. 34
+vi
+
+vii
+
+List of Tables
+Table 2. 1: Minimum Length of Acceleration Lane by AASHTO Green Book (2011). ................ 4 Table 2. 2: Acceleration Lane Lengths for Semi-Trailer Trucks.................................................... 5 Table 2. 3: Maximum weight-to-power ratios for minimum acceleration lengths (0
+percent grades) .................................................................................................................... 6 Table 2. 4: Minimum acceleration lengths for a 180 lb/hp truck.................................................... 7 Table 2. 5: Minimum Acceleration Lane Length Recommended by Fitzpatrick and
+Zimmerman (2007). ............................................................................................................ 9 Table 2. 6: Acceleration Lane Lengths from Reviewed Sources and the Proposed
+Acceleration Lane Lengths from Research Project .......................................................... 11 Table 4. 1: Collected Accepted and Rejected Gaps for Heavy Trucks at SH288@ McHard....... 24 Table 4. 2: Collected Accepted and Rejected Gaps for Passenger Cars at SH288@
+McHard ............................................................................................................................. 25 Table 5. 1: Recommended Freeway Acceleration Lane Lengths for Passenger Cars (in ft) ........ 35 Table 5. 2: Recommended Freeway Acceleration Lane Lengths for Heavy Trucks (in ft) .......... 36
+viii
+
+EXECUTIVE SUMMARY
+Freeway entrance ramp has intensive vehicle merging activities that lead to delay and potentially high risk of collision between merging and freeway vehicles, especially for the ramps with a high percentage of heavy truck volume. Sufficient length of acceleration lane is critical for the traffic operations at the ramp merging sections. Currently, most DOTs employ the guidelines provided in the American Association of State Highway and Transportation Officials (AASHTO) Green Book, “A Policy on Geometric Design of Highways and Streets” (AASHTO 2011). However, AASHTO’s acceleration lane length design guideline was developed based on passenger cars and hasn’t been updated for years since 1965. In addition, AASHTO other design guidelines and previous studies mainly considered the speed differential between the on-ramp and freeway vehicles on determining freeway acceleration lane length. Only a few of them considered traffic volume, and even less gave special considerations on the heavy trucks that need more time to accelerate and find larger gaps to merge. This research developed an analytical model for estimating the required freeway acceleration lane lengths for both heavy trucks and passenger cars. The model considers both the acceleration and gap searching needs of the merging vehicles. As a result, it can take account of the impacts of the freeway traffic volume into the estimation of the required acceleration lane length. A case study was conducted in Houston, TX to demonstrate the model application. Finally, this research provides a chart and a lookup table for estimating required acceleration lane lengths for both heavy trucks and passenger cars under different traffic volume conditions for different combinations of the freeway and entrance ramp design speeds.
+ix
+
+Chapter 1. Introduction
+1.1 Problem Statement
+Freeway entrance ramp locations have intensive vehicle merging activities that lead to delay and potentially high risk of collision between merging and freeway vehicles, especially for the locations where high truck volume present. Sufficient length of acceleration lane is critical for traffic safety at the ramp merging sections. Currently, the existing roadway design guidelines, such as American Association of State Highway and Transportation Officials Green Book (AASHTO, 2011), determine the required acceleration lane length mainly based on the design speeds of the freeway and the on-ramps. Actually, for the freeways with high traffic volume, the acceleration lane should also provide sufficient time and space for drivers to find an acceptable gap prior to merging. Therefore, the length of the acceleration lane should be sufficient for both vehicle acceleration and gap searching purposes. Figure 1.1 shows the elements that should be considered in the design of freeway acceleration lanes.
+
+Accelerating
+
+Searching Gap
+
+Acceleration Lane Length (L()()Length
+
+Merging
+Taper
+
+a. Parallel Acceleration Lane
+
+Accelerating
+
+Searching Gap
+
+Acceleration Lane Length
+
+Merging
+
+b. Taper Acceleration Lane
+Figure 1. 1: Freeway Acceleration Lane Design Elements
+
+1
+
+For the freeways with higher traffic volumes, the on-ramp vehicles often need longer times to find an acceptable gap and, thereby need a longer merging distance. Therefore, longer acceleration lanes should be provided at locations with higher traffic volumes. However, the existing guidelines and studies on freeway acceleration lane length rarely consider the impacts of freeway traffic volume and are mainly based on the speed differential between the freeway and the on-ramp. As a result, the required length of the acceleration lane is often underestimated, especially for the locations with high freeway traffic volumes.
+In addition, a few existing studies gave special considerations on the heavy trucks that need more time to accelerate and to find a larger gap to merge. Nowadays, over 70% of the freight tonnage is moved by heavy trucks in the United States. For roadways where a high percentage of truck volume present, it is necessary to consider the effects of heavy trucks in the roadway design to ensure the efficiency of freight transportation. With the increase of the overall traffic volume and freight transportation, there is a need to update AASHTO and other freeway acceleration lane design guidelines by considering heavy trucks’ characteristics.
+To fill the gaps in the existing studies, this research developed an analytical model for estimating the length of freeway acceleration lanes according to the merging distance required by the on-ramp vehicles. This model considers both the acceleration and gap searching needs of the merging vehicles. As a result, it can consider the impact of the freeway traffic volume on the required acceleration lane length. In addition, to ensure the safe merging of heavy trucks, this model takes account of the operational characteristics of heavy trucks into the estimation of the freeway acceleration lane length. The developed model was validated by a case study at an onramp location in Houston, Texas. The results of the case study showed that the model can produce reasonable estimates of the acceleration lane lengths under different traffic volume conditions. The results of this research will complement the provisions in existing roadway design guidelines in designing freeway auxiliary lanes.
+1.2 Objectives
+The goal of this project is to conduct an in-depth study on freeway acceleration lane length for large trucks and develop an analytical model to estimate the freeway acceleration lane lengths under different traffic conditions. The research is developed based on the CAMMSE theme of addressing the FAST Act research priority area of “Improving Mobility of People and Goods.” The research is relevant to the CAMMSE research thrust, “Develop data modeling and analytical tools to optimize passenger and freight movements.” Specific project objectives include:
+1) Collect field data using Houston TranStar cameras;
+2) Extract traffic information for developing and validating the model. Information extracted include freeway design speed, ramp design speed, traffic volume, large truck merging behaviors (merging ahead vehicles or merging behand vehicles, and average gap accepted by different types of merging trucks);
+3) Develop a model to determine acceleration lane length whether or not considering large trucks;
+2
+
+4) Conduct a case study to demonstrate the application of the developed model; 5) Recommend adequate freeway acceleration lane lengths under different traffic conditions.
+1.3 Report Overview
+The rest of this paper is organized as follows: first, a thorough literature review is presented including the existing design guidelines, previous studies of determining freeway acceleration lane length, as well as research on estimating freeway acceleration lane length. Next, the methodology to develop the proposed model is introduced and utilized with real data collected by a field study in Houston, TX. In the end, by analyzing the results, conclusions and recommendations on further acceleration lane length design are provided.
+3
+
+Chapter 2. Literature Review
+The literature review includes two parts: 1) the existing design guidelines on freeway acceleration lane and 2) the existing methods for estimating the freeway acceleration lane length.
+2.1 Design Guidelines and Research on Freeway Acceleration Lane Length
+2.1.1 The AASHTO Green Book (2011) The AASHTO Green Book (2011) provided acceleration lane design guidelines used by many state transportation agencies. Three factors were considered in the determination of minimum acceleration lane length: (1) the speed at which vehicles enter the acceleration lane, (2) the acceleration behavior of vehicles at the entrance ramp, and (3) the speed at which vehicles start to merge into freeway traffic. The minimum length of an acceleration lane was presented in Table 1. The two columns listed the design speed of the freeway (V) and the speed reached by the vehicles on the highway (Va). Note that Va is around 75% of V. For the row indexes, the initial speed (V'a) was the speed at which vehicles just enter the acceleration lane, which was little less than the on-ramp design speed. AASHTO used the term “entrance curve” instead of “on-ramp.” Thus, the term “entrance curve design speed” was equivalent to “on-ramp design speed.” According to the AASHTO Green Book (2011) guideline, it could be seen that freeway acceleration lanes mainly depended on the design speed of the freeway (V) and the “entrance curve design speed”, and the impact of freeway traffic volume on the vehicle merging maneuver was not considered in the design of acceleration lanes.
+Table 2. 1: Minimum Length of Acceleration Lane by AASHTO Green Book (2011).
+4
+
+2.1.2 Deen (1957)
+Thomas Deen (1957) studied the acceleration behavior of heavy commercial vehicles in a real-world scenario. The author conducted field study at the Lincoln Tunnel Interchange on the New Jersey Turnpike, where all vehicles entering the roadway were required to stop at a toll booth, and then accelerated and entered the turnpike via an acceleration lane. With the time data and speed data collected, the vehicle accelerations were able to be calculated. All of the data are concerned with vehicle accelerations on a level or nearly level grade.
+
+The data set was divided into four categories of vehicles: 51 buses, 59 single-unit trucks, 55 single trailer axle semi-trailer trucks, and 39 tandem trailer axle semi-trailer trucks. Only loaded vehicles were included in the sample.
+
+After data analysis, it was noted that semi-trailer trucks with single trailer axles and ones with tandem trailer axles had approximately the same acceleration characteristics. The two categories were not statistically significantly different, so the data from the two categories were combined into a single semi-trailer truck category.
+
+It was found that: 1) single unit trucks accelerate at a higher rate than other heavy commercial vehicles at speeds below 29 miles per hour; 2) buses accelerate at a greater rate above 29 miles per hour; 3) semi-trailer trucks accelerate at the lowest rate of the commercial vehicles studied.
+
+In addition, the author found acceleration lanes designed under current length standards are adequate for single unit trucks for all highway design speeds of 50 miles per hour or less and are adequate for semitrailer trucks for all highway design speeds of 30 miles per hour or less. Design of acceleration lanes based on the acceleration characteristics of the assumed SU or C-50 design vehicles as determined from the society of automotive engineers truck ability prediction procedure does not appear justified, nor are they required to accommodate most heavy commercial vehicles. Therefore, following table was recommended to determine acceleration lane length required for these vehicles (see Table 2.2). Comparing with the AASHTO Green Book (2011) recommendations in Table 2.1, it could be seen that, at the same freeway and ramp design speeds, a longer acceleration lane was recommended by this study because the acceleration behavior of heavy trucks was considered.
+
+Table 2. 2: Acceleration Lane Lengths for Semi-Trailer Trucks.
+
+Design
+
+Assumed truck
+
+Entrance curve design speed(mph)
+
+0
+
+5
+
+10 15 20
+
+25 30 35 40
+
+speed(mph) running
+
+Assumed actual entrance speed(mph)
+
+speed(mph)
+
+0
+
+5
+
+10 14 18 22 26 30 34
+
+30
+
+22
+
+290 275 240 190 110 -
+
+-
+
+-
+
+-
+
+40
+
+29
+
+700 685 650 600 520 410 210 -
+
+-
+
+50
+
+35
+
+1240 1225 1190 1140 1160 950 750 460 100
+
+60
+
+40
+
+1820 1805 1770 1720 1640 1530 1330 1040 680
+
+Source: Thomas Deen (1957)
+
+5
+
+2.1.3 NCHRP REPORT 505 (2003) In NCHRP Report 505, the research team reviewed the range of dimensions and performance characteristics of trucks currently used on U.S. highways and predicted how these characteristics may change in response to current political, economic, and technological trends. The objective of this research is to evaluate whether the proposed geometric design (Table 2.1) in AASHTO Green Book (2001) was capable of accommodating heavy trucks. The evaluation of the recommendation table in Green Book, was conducted using the truck speed profile model (TSPM) to determine the weight-to-power ratios implied by the design values. Table 2.3 shows the maximum weight-to-power ratio of a truck capable of achieving the given conditions as specified in Table 2.1, assuming a 0 percent grade.
+Table 2. 3: Maximum weight-to-power ratios for minimum acceleration lengths (0 percent grades)
+Table 2.3 indicates that trucks with weight-to-power ratios in the range of 100 to 145 lb/hp have sufficient acceleration capabilities to achieve the given speeds within the minimum acceleration lengths, assuming a 0 percent grade. However, the 2001 Green Book used a 200lb/hp truck to represent of the size and type of vehicle normally used for design control of major highways and that current field data indicate that on the freeways the 85th percentile weight-to-power ratios of trucks fall within a fairly narrow range around 170 to 210 lb/hp, this analysis indicates that the underlying assumptions for estimating the minimum acceleration lengths in Table 2.1 do not necessarily account for the performance capabilities of heavily loaded vehicles. It appears that the 2001 Green Book criteria can accommodate an average truck, but not a heavily loaded truck. Although it was not recommended to update the AASHTO guideline at that point, further research on this issue was recommended. Finally, the NCHRP report provides guidance for roadway geometric designers on how best to accommodate large trucks on the U.S. highway system.
+6
+
+Table 2. 4: Minimum acceleration lengths for a 180 lb/hp truck
+(Source: NCHRP Report 505, 2003)
+2.1.4 Fitzpatrick and Zimmerman (2007) Fitzpatrick and Zimmerman (2007) examined and reproduced the design guidance for the acceleration lane length provided by the AASHTO Green Book 2004. The 2004 Green Book provides design criteria for entrance ramp acceleration lengths, which are similar to the values included in A Policy on Geometric Design of Rural Highways (the Blue Book) published by AASHO in 1965. The procedure used to generate the acceleration lengths included in the 1965 Blue Book is based upon speeds on ramps, acceleration behavior, and speeds on limited-access roads. The assumptions are outdated and need more current information. Moreover, the authors provided a summary of how acceleration lane length could be calculated using several different existing methodologies. The methodologies to calculate acceleration lane lengths include: Calculated Through Use of Design Speed When design speed is used rather than running speed within the methodology identified from the Blue Book, the acceleration lengths increase significantly. As shown in Figure 2.1, for a highway design speed of 70 mph (113 km/h), the acceleration lengths would change from 1,600 to 2,800 ft (488 to 854 m). The use of acceleration performance that is more representative of current vehicles may offset some of the increase caused by using design speed rather than running speed.
+7
+
+Figure 2. 1: Acceleration lengths from use of design speed or running speed and Blue Book procedure (Source: Fitzpatrick and Zimmerman, 2007)
+Calculated Through Use of Equations That Produce Second-to-Second Acceleration Another potential source for the determination of distance traveled while accelerating is vehicle performance equations. NCHRP Report 505 (2003) discussed truck characteristics with respect to critical length of grade. In addition, it also provided a spreadsheet that could be used to determine distance traveled from an assumed ramp curve speed to highway speed. A TxDOT report (2007) also investigated vehicle performance on highway facility design. A spreadsheet (5544) was generated to compare between different assumptions. This spreadsheet was used to determine potential acceleration lengths for passenger cars. Acceleration Lengths Calculated Through Use of Constant Acceleration The constant acceleration rate is also widely used to provide a reasonable approximation of the needed acceleration length. The authors also listed several sources with available constant acceleration rate. Figure 2.2 described the acceleration lengths calculated with different constant rates.
+8
+
+Figure 2. 2: Acceleration lengths from a stop through use of constant acceleration compared with results from 2004 Green Book (1) and 5544 spreadsheets. (Source: Fitzpatrick and Zimmerman, 2007)
+
+Finally, based on a Canadian study (Hassan, Y et al., 2006), the authors recommended an average constant acceleration rate of 2.5 ft/s2 to calculate potential acceleration length. By using the updated acceleration rate, minimum acceleration lane lengths longer than that suggested by the AASHTO Green Book 2004 were recommended (see Table 2.2).
+
+Table 2. 5: Minimum Acceleration Lane Length Recommended by Fitzpatrick and Zimmerman (2007).
+
+Highway
+
+Entrance curve design speed(mph)
+
+design
+
+speed(mph) 0
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+45
+
+50
+
+30
+
+389
+
+292
+
+216
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+35
+
+529
+
+432
+
+357
+
+259
+
+-
+
+-
+
+-
+
+-
+
+-
+
+40
+
+691
+
+594
+
+519
+
+421
+
+303
+
+-
+
+-
+
+-
+
+-
+
+45
+
+875
+
+778
+
+702
+
+605
+
+486
+
+346
+
+-
+
+-
+
+-
+
+50
+
+1080 983
+
+908
+
+810
+
+691
+
+551
+
+389
+
+-
+
+-
+
+55
+
+1301 1210 1134 1037 918
+
+778
+
+616
+
+432
+
+-
+
+60
+
+1556 1459 1383 1286 1167 1026 864
+
+681
+
+475
+
+65
+
+1826 1729 1653 1556 1437 1297 1134 951
+
+746
+
+70
+
+2118 2020 1945 1848 1729 1588 1426 1243 1037
+
+75
+
+2431 2334 2258 2162 2042 1902 1740 1556 1351
+
+9
+
+2.1.5 Hunter and Machemehl (1997), Hunter et al. (2001)
+In their report, Hunter and Machemehl (1997) evaluated the appropriateness of AASHTO minimum allowable ramp design speed, as well as the adequacy of high-speed ramp lengths designed by AASHTO criteria. In order to evaluation of freeway entry ramp design speed criteria, an examination of assumptions regarding ramp vehicle acceleration and deceleration rates, as well as of gap seeking and acceptance behavior are important.
+In this study, the videotaping method was used to conduct field data collection. Twenty sites were selected along freeways in Houston, San Antonio, Dallas and Austin, Texas. After processing data collected, authors presented several approaches to modeling ramp driver acceleration/deceleration behavior. By analyzing results, authors determined that observed ramp driver acceleration rate and AASHTO values were comparable. However, it was suggested that acceleration lengths for taper-type entry ramps should include only the lane portions from which ramp drivers can clearly view the freeway right-lane traffic, which leads to a recommendation that AASHTO acceleration lane length measurement model should be modified for taper type tamps.
+Another study by Hunter et al. (2001) also indicated that the design length of acceleration lanes should fully consider drivers’ views of the freeway right-lane traffic. This is because most drivers on a ramp with adequate sight distance tend to travel to the end of the speed change lane before merging; for ramps where drivers’ views are obstructed, drivers are more likely to aggressively merge from any location beyond the gore to avoid being trapped at the end of the acceleration lane.
+2.1.6 Gattis et. al (2008)
+Gattis et. al (2008) examined attributes associated with tractor-trailer trucks accelerating on freeway entry ramps and entering the main traffic lanes. The authors studied the acceleration behavior of tractor-trailer trucks in actual operating conditions, and based on the observations evaluate the adequacy of current acceleration lane lengths and determine if longer lengths are needed to accommodate these larger trucks. Other attributes examined included truck speeds at various distances from the scales, freeway volumes, and freeway grades.
+Data used in this research were collected at four separate commercial vehicle weigh stations in Arkansas and one in southwest Missouri using weigh-in-motion systems, static scales, video cameras, and lidar guns. This equipment provided speed and distance data that were correlated to the weight of each measured truck. The weights of the majority of the tractortrailer trucks measured during this research project ranged from 40,000 to 80,000 pounds. The percentage of trucks present in the freeway traffic flow ranged from 14% to 52%. These percentages were based on traffic counts performed by the Arkansas Highway and Transportation Department in 2006 and the Missouri Department of Transportation in 2007.
+The data for this project were analyzed using both graphical and statistical techniques including data distribution graphs and statistical significance tests. The effects that truck weight, freeway volume, and roadway grade had on the speeds of the measured truck were examined and compared among the data collection sites. From the data, mathematical models
+10
+
+that predicted the average and 10th percentile speeds for tractor-trailer trucks at each of three grade-groups (slight downgrade, nearly level, slight upgrade) were developed. With the model developed in this research project, the authors proposed acceleration lane lengths considering tractor-trailer trucks. Table 2.6 compares the acceleration lane lengths recommended in other literature with the models from this research project. It can be seen that the acceleration lane lengths proposed by Deen, NCHRP Report 505, and the model developed during this research are substantially longer than those proposed by both the AASHTO Green Book and Fitzpatrick and Zimmerman. One possible reason may be both the AASHTO and the Fitzpatrick and Zimmerman recommendations were based on passenger cars, not heavy trucks.
+Table 2. 6: Acceleration Lane Lengths from Reviewed Sources and the Proposed Acceleration Lane Lengths from Research Project
+2.1.7 Bareket & Fancher (1993) In their study, Bareket & Fancher (1993) simulated the operation of various longer combination vehicles (LCV) on roadways and highways that are typical in Michigan. By analyzing the simulation results, necessary highway design modifications to accommodate each truck combination were identified, including highway acceleration lane length. To investigate the acceleration related performance levels for different LCVs, two situations were considered in this study: 1) an actual roadway section from the drawings provided by Michigan Department of Transportation (MDOT), and 2) a generic situation which involving hypothetical long continuous grades and trucks that are represented by mere weight-to-power ratios.
+11
+
+Actual situation For the actual roadway section, two sites were studies: the first site was departing Lakeview Drive from Jackson Road, merging with the eastbound traffic on 1-94, and the second site was departing ramp I from Whittaker Road, merging with the westbound traffic on I-94. Calculation results for each site were plotted as an accumulative portrayal of speed vs. distance for the combinations studied. Figure 2.3 shows the calculation results of Jackson Roan as an accumulative portrayal of speed vs. distance. It can be seen when concerning the acceleration from speed, the tractorsemitrailer (TST) configurations (both 48 ft and 57 ft) perform best, while the triple is the slowest combination. When the specific-power values are considered, this observation can be rationalized: the semitrailers have 232 lb/hp, while the other combinations all have higher values. Another finding from Figure 2.3 is all the trucks perform similarly during the initial stages of the acceleration (up to about 1,000ft). As the progress, there is an approximately 5 mph difference between the fastest combinations (semitrailers) and the slowest combination(triple). Therefore, to reach a speed of 45 mph, the triple needs an additional 1,000 ft.
+Figure 2. 3: Acceleration from Speed – Jackson Road to I-94 eastbound
+With the results from the actual roadway situation, authors concluded that on average, an additional 1,000 ft of merging lanes should be provided to maintain the current speed differential between merging and highway traffic.
+12
+
+Generic Situation Generic situation simulated trucks with different weight-to-power values. For the purpose of this analysis, LCVs were represented as three groups: 230, 265 and 300 lb/hp. Performance levels of these generic trucks were evaluated on level roads and roads that had 2% and 4% grades. Calculation results were tabulated and then plotted as distances it took to reach certain final speeds from different initial speeds. Figure 2.4 shows the acceleration results from an initial speed of 22 mph on a 2% grade. It indicates that if trucks with 300 lb/hp are to perform at the level of trucks with 230 lb/hp, then the merging/acceleration lanes need to be extended.
+Figure 2. 4 Acceleration from 22 mph on a 2% grade
+The authors further concluded that there is a linear relationship between the required lane extension and the current length. An equation representing the linear relationship between existing acceleration lanes length and an extension in length for LCVs was proposed:
+L=0.31 L where:
+L is the length of the existing acceleration lane L is the required extension for the acceleration lane 2.1.8 Long (2000) Long (2000) did a study on the acceleration characteristics of starting vehicles. The design accelerations in the AASHTO acceleration values were found to deviate substantially from observed accelerations. At the start of motion, observed accelerations were about 15% faster for passenger cars and 45% faster for single unit trucks than design accelerations. As speed increased, observed accelerations dropped three to four times faster than design accelerations
+13
+
+for these vehicles. In the study, the linearly decreasing design acceleration rates for different classes of vehicles in different design situations are recommended, and revisions for Green Book parameters and charts are suggested. For normal passenger cars, the average acceleration of 4.72 ft/s2 over a speed range of 0 to 25 mph is recommended. For loaded trucks, an average acceleration of 0.47 ft/s2 is recommended.
+2.1.9 Other Studies
+Many studies have found that the current design guidelines of the acceleration lane are not sufficient for heavy trucks.
+In a research conducted by TTI (2003), it was found that “merge areas and acceleration lanes” were the most challenging driving circumstances voted by truck drivers. Drivers had perceived that many freeway acceleration lanes don’t provide adequate space for a large truck to accelerate and merge with the freeway traffic stream. Furthermore, in a recent study on truck safety conducted by Qi et al. (2018), freeway short merging distance was also identified as one of the top ten risk factors contributing to large truck crashes.
+2.2 Methods for Estimating the Freeway Acceleration Lane Length
+As shown in Figure 1.1, a freeway acceleration lane would include two sections, acceleration section, and gap searching section. The acceleration section provides the necessary lane length required by the ramp vehicles to accelerate until the desired speed is reached, which can be obtained directly by the inputs of initial speed, acceleration rate, and desired speed. The merging section is, however, more complicated than the acceleration section for it has to involve studies on gap acceptance and driving behaviors.
+In the merging process, the merging maneuver is a process of rejecting and accepting different gaps. Greenshields et al. (1947) defined the critical gap as the “acceptable averageminimum time gap”. Different drivers would have different critical gaps depending on their driving behavior. Usually, an aggressive driver is more likely to accept a smaller gap than a vigilant driver who expects a longer gap to merge safely. Moreover, even for the same driver, the critical gap can vary according to geometry features of ramps, traffic volumes and weather conditions.
+Liu and Wang (2012) provided an analytic framework for calculating the on-ramp acceleration length integrating human factors, vehicle dynamic characteristics, roadway surface condition and on-ramp weaving design. Two driver behaviors, merging ahead (vehicles move at a speed higher than the average freeway speed to search for an acceptable gap to merge) and merging behind (vehicles keep moving at a speed a little lower than the freeway average speed to wait for an acceptable gap to merge) were separated for analysis in this study. The relationship between the acceleration lane length and the speed differential between on-ramp and freeway vehicles were investigated. This is the first study that investigated the required acceleration lane length from a vehicle merging behavior point of view. However, it did not consider the distance caused by searching for an acceptable gap prior to merging.
+Song (2010) derived a model to determine both acceleration and deceleration lane length on Urban Expressway. In his study, the acceleration lane length consists of three sections,
+14
+
+acceleration length, merging length and width transition length. By combining the probability theory and differential methods, a model of calculating the length of the waiting merging section was established. However, the model developed in this paper did not consider the characteristics of large vehicles and the different driving behaviors during the merging process.
+15
+
+Chapter 3. Methodology
+In this study, the length of a freeway acceleration lane was estimated according to the merging distance required by on-ramp vehicles (including both passenger cars and heavy trucks) during the merging process.
+As indicated in Figure 3.1, the total acceleration lane length (L) includes two parts: 1) acceleration length (L1), which enables a vehicle to accelerate from the ramp speed to near freeway speed prior to merging and 2) gap searching length (L2), which provides the moving vehicle the distance to find an acceptable gap prior to merging. After that, the vehicle will adjust its speed to merge to the freeway traffic flow. This part of merging could also be accomplished by using the taper at the end of the acceleration lane or on the freeway main lane. In this study, only the acceleration length and gap searching length were considered in determining the acceleration lane length. Note that the “gap searching length” is only applicable to a freeway location with substantial traffic volume. If the freeway traffic volume is always very light and vehicles can merge easily without waiting for any gaps, this part of the length could be zero. The required acceleration lane lengths by heavy trucks and passenger cars were estimated as follows.
+
+Accelerating (L1)
+
+Searching Gap (L2)
+
+Acceleration Lane Length (L) ()()Length
+
+Merging
+Taper
+
+a. Parallel Acceleration Lane
+
+Accelerating (L1)
+
+Searching Gap (L2)
+
+Merging
+
+Acceleration Lane Length (L)
+
+Figure 3. 1: Freeway Acceleration Lane Design Length
+
+16
+
+3.1 Model for Freeway Acceleration Lane Length
+Since the acceleration lane length (L) is defined as the sum of acceleration (L1) and gap searching (L2), we have
+
+𝐿 = 𝐿1 + 𝐿2
+
+(1)
+
+As mentioned before, two merging behaviors, merging ahead and merging behind were considered in developing the model. Because the speeds are different for these two merging behaviors, the required acceleration lane lengths are different. In this research, the speed for merging ahead behavior (Va) is assumed as the freeway design speed (Vf) plus 5 mph and the speed for merging behind behavior (Vb) is assumed as the 75% of the freeway design speed according to the actual speed reached by vehicles suggested by AASHTO green book (see Table 2.1 ).
+
+For both merging ahead and behind situations, there are two stages in the process. (1) L1, vehicles accelerate from the ramp speed (Vr) to speed (Va) or speed (Vb) (2) L2, vehicles keep searching for an acceptable gap while moving at the constant speed Va or Vb, where the searching time (also referred to as merging delay) is noted as da or db. This overall merging process can be presented by the speed and time diagram in Figure 3.2.
+
+Speed Va=Vf+5 Vf
+
+(a) Merging ahead diagram Speed curve for
+
+da
+
+merging ahead
+
+L2 Gap Searching
+
+Length
+
+L1 Accelerating
+
+Vr
+
+Length
+
+Merging
+
+0
+Time
+
+17
+
+Speed Vf
+Vb=Vf *0.75
+
+(b) Merging behind diagram
+Speed curve for merging behind
+db
+
+Vr L1 Accelerating Length
+
+L2 Gap Searching
+Length
+
+Merging
+
+0 Time
+
+Vr is ramp design speed; Vf is freeway design speed; Va is gap searching speed, Va=Vf+5mph for merging ahead; da is gap searching time or merging delay for merging ahead; Vb is gap searching speed, Vb=Vf *0.75mph for merging behind; db is gap searching time or merging delay for merging behind.
+
+Figure 3. 2: Speed and time diagram for merging ahead and merging behind cases
+
+According to Figure 3.1, the total distance traveled by the merging vehicle can be calculated as the area below the speed curve (the shaded area in Figure 2), which is the minimum required length for the acceleration lane in both situations and can be mathematically expressed by Equation 2 and Equation 3, respectively
+
+𝐿𝑎
+
+=
+
+𝐿1𝑎
+
++
+
+𝐿2𝑎
+
+=
+
+𝑉𝑎2−𝑉𝑟2 2𝑎
+
++
+
+𝑉𝑎𝑑𝑎
+
+(2)
+
+𝐿𝑏
+
+=
+
+𝐿1𝑏
+
++
+
+𝐿2𝑏
+
+=
+
+𝑉𝑏2−𝑉𝑟2 2𝑎
+
++
+
+𝑉𝑏 𝑑𝑏
+
+(3)
+
+Where La is the acceleration lane length for merging ahead (m),
+Lb is acceleration lane length for merging behind (m), 𝐿1𝑎 is the length for merging ahead vehicle to accelerate to the desired speed(m) 𝐿2𝑎 is the length for merging ahead vehicles to find an available gap to merge(m) 𝐿1𝑏 is the length for merging behind vehicles to accelerate to the desired speed(m) 𝐿2𝑏 is the length for merging behind vehicles to find an available gap(m) Vr is the ramp design speed (mps),
+Vf is freeway design speed (mps),
+
+18
+
+Va is the speed during gap searching for merging ahead situation (mps), which is assumed as Vf +5 mph,
+Vb is gap searching speed (mps) for the merging behind situation (mps), which is assumed as Vf *0.75 mph,
+a is the accelerate rate (ftps2), which is different for different types of vehicles and different merging behaviors. In this study, a for merging ahead is set as the maximum acceleration rate for a given type of vehicle and a for merging behind is set as the average accelerate rate for a given type of vehicle. According to Bokare and Maurya (2017), a for merging ahead passenger cars is the 2.28 m/s2; a for merging passenger cars is 0.62 m/s2; a for merging ahead heavy trucks is 0.9 m/s2, and a for merging behind heavy trucks is 0.26 m/s2.
+From Equation 2 and Equation 3, it can be seen that merging delay (or gap searching time) is a critical element in estimating the length of a freeway acceleration lane.
+
+3.2 Merging Delay
+Drew (1965) developed a model for estimating the merging delay. The basic idea for estimating the merging delay is that the average merging delay is the product of the average number of rejected gaps and the average length of rejected gaps, which can be mathematically expressed as follows:
+
+Merging Delay = Average Number of Rejected Gaps × Average Length of Rejected Gaps (4)
+
+It is important to know the gap distribution to calculate the merging delay. According to Rod J. Troutbeck (1997), a negative exponential distribution is the most common distribution and would be employed in this study.
+
+𝑓(𝑡) = 𝑞𝑒−𝑞𝑡
+
+(5)
+
+where, t is the time gap (s) in the freeway traffic flow, f(t) is the distribution of time gaps on freeway traffic flow, q is the freeway traffic volume (vps).
+
+Assuming that the critical gap accepted by a merging vehicle for a safe merge is T, the probability of rejecting a gap can be calculated by the following equation:
+
+𝑝 = 𝑝(𝑡 < 𝑇) = ∫0𝑇 𝑓(𝑡)𝑑𝑡 = 1 − 𝑒−𝑞𝑇
+
+(6)
+
+Then, the probability for a driver rejecting n gaps before finding an acceptable gap to merge is
+
+𝑃𝑛 = 𝑝𝑛(1 − 𝑝), 𝑛 = 1,2, …
+
+(7)
+
+The average number of gaps for which a driver has to wait is given by
+
+19
+
+𝐸(𝑛)
+
+=
+
+∑∞𝑛=0 𝑛𝑃𝑛
+
+=
+
+𝑝 1−𝑝
+
+=
+
+∫0𝑇 𝑓(𝑡)𝑑𝑡 ∫𝑇∞ 𝑓(𝑡)𝑑𝑡
+
+(8)
+
+The average length of the rejected gaps can be calculated by the following equation:
+
+𝐸(𝑡
+
+|𝑡
+
+<
+
+𝑇)
+
+=
+
+∫0𝑇 𝑡𝑓(𝑡)𝑑𝑡 ∫0𝑇 𝑓(𝑡)𝑑𝑡
+
+(9)
+
+Therefore, according to Equations 4 and 5, the average merging delay can be estimated by
+
+𝑑′
+
+=
+
+𝐸(𝑛)
+
+×
+
+𝐸(𝑡|𝑡
+
+<
+
+𝑇)
+
+=
+
+∫0𝑇 𝑡𝑓(𝑡)𝑑𝑡 ∫𝑇∞ 𝑓(𝑡)𝑑𝑡
+
+=
+
+𝑒𝑞𝑇−𝑞𝑇−1 𝑞
+
+(10)
+
+Furthermore, some vehicles will be able to merge directly without rejecting any gaps because the first gap that they encounter is acceptable. According to Equation 7, such a proportion of vehicles is 1 − 𝑝 (n=0 in Equation 7). Thus, the probability for a vehicle rejecting at least one gap is p. Then the average delay for the proportion of vehicles that will actually suffer delays is
+
+𝑑
+
+=
+
+𝑑′ 𝑝
+
+=
+
+𝑒𝑞𝑇−𝑞𝑇−1 𝑞(1−𝑒−𝑞𝑇)
+
+(11)
+
+According to Equation 11, to derive the average merging delay, the critical gap (T ) accepted by merging drivers for a safe merging needs to be estimated first.
+
+3.3 Critical Gap
+According to Drew (1965), the critical gap is defined as the time gap that is just as likely to be accepted as it is to be rejected. In other words, a critical gap is the gap size where the probability of accepting such gap is equal to the probability of rejecting such a gap. Many different methods for estimating critical gap have been present (Brilon et al., 1999; Bunker and Troutbeck, 2003; Hewitt, 1983). Drew (1965) conducted a study for estimating the critical gap for freeway ramp merging. In this study, the number of rejected gaps and accepted gaps of onramp vehicles were collected from the field. The relationships of accepted gaps and rejected gaps with a length of gaps were drawn, respectively. Then, the critical gap was determined by the intersection point of these two curves (see Figure 3.3 as an example). In this study, the same method was used for estimating the critical gaps for both passage cars and heavy trucks that have different merging behaviors at the selected study site. Note that, heavy truck in this study refers to Class 7 and Class 8 trucks defined by FHWA [7]. The details about the estimation of the critical gaps are introduced in the case study section.
+
+20
+
+Figure 3. 3: Determination of critical gap (source: Drew, 1965)
+3.4 The Overall Procedure for Determining Freeway Acceleration Lane Length
+Overall, for the proposed method, the freeway acceleration lane length can be determined by the following 4 steps. Step 1. Estimate the following 4 critical gaps according to the method given in Drew (1965) as presented in Figure 3.
+ 𝑇𝑎𝐻𝑇: the critical gap for merging ahead heavy trucks  𝑇𝑏𝐻𝑇: the critical gap for merging behind heavy trucks  𝑇𝑎𝑃𝐶: the critical gap for merging ahead passage cars  𝑇𝑏𝑃𝐶: the critical gap for merging behind passage cars
+Note that, in the case that a field study is not conducted for collecting the required data for critical gap estimation, the critical gaps estimated by this study are recommended to use as default values.
+21
+
+Step 2. Estimate the following 4 merging delays based on the 4 estimated critical gaps by using Equation 11.
+ 𝑑𝑎𝐻𝑇: the merging delay for merging ahead heavy trucks  𝑑𝑏𝐻𝑇: the merging delay for merging behind heavy trucks  𝑑𝑎𝑃𝐶: the merging delay for merging ahead passage cars  𝑑𝑏𝑃𝐶: the merging delay for merging behind passage cars
+Step 3. Estimate the following 4 freeway acceleration lane lengths based on the 4 estimated merging delays by using Equation 2 and Equation 3.
+ 𝐿𝐻𝑎𝑇: the acceleration lane length for merging ahead heavy trucks  𝐿𝐻𝑏𝑇: the acceleration lane length for merging behind heavy trucks  𝐿𝑃𝑎𝐶: the acceleration lane length for merging ahead passage cars  𝐿𝑃𝑏𝐶: the acceleration lane length for merging behind passage cars
+Step 4. Determine the required freeway acceleration lane lengths
+The required acceleration lane should be able to accommodate vehicles with different merging behaviors. In other words, it will allow both merging ahead and merging behind vehicles to safely merge to the freeway. Therefore, the required freeway acceleration lane lengths for the locations with different traffic conditions (in term of heavy truck volume) can be determined as follows:
+ 𝐿𝐻𝑇= Max (𝐿𝐻𝑎𝑇, 𝐿𝐻𝑏𝑇) for locations where heavy trucks need to be considered in the design of freeway acceleration lane
+ 𝐿𝑃𝐶= Max (𝐿𝑃𝑎𝐶, 𝐿𝑃𝑏𝐶) for locations where heavy trucks do not need to be considered in the design of freeway acceleration lane
+ Note that, since the critical cap for heavy trucks usually is larger than that of the passage cars, and the acceleration rate of heavy trucks is lower than that of the passage cars, it can be approved that 𝐿𝐻𝑇 will be greater than 𝐿𝑃𝐶 , which means if the freeway acceleration lane is long enough for merging heavy trucks, then it can also safely accommodate the merging passage cars. It depends on the traffic engineer’s judgments to choose 𝐿𝐻𝑇 or 𝐿𝑃𝐶 as the final recommended freeway acceleration lane lengths for a particular location according to the truck volume or the truck safety problem at this location.
+22
+
+Chapter 4. Case Study
+To demonstrate the application of the developed model, a case study was conducted based on the data collected from a real-world study site. The chapter covers three parts: 1) study site and data collection, 2) determine the acceleration lane length by applying the proposed method, and 3) provide updated acceleration lane length recommendation charts and tables for different volumes based on the developed model.
+4.1 Study Site and Data Collection
+The study site is an on-ramp location on freeway SH288 southbound at exit McHard RD in Houston, Texas (Figure 4.1). At this location, the ramp speed is 40 mph and the freeway speed is 60 mph. Time periods to collect the number of accepted and rejected gaps are in the midday during 9-12 am and 2-5 pm when the traffic condition at this location is at near-congestion condition (at LOS C). It means that the safe gaps are still available for the merging vehicle, however, drivers must be very vigilant in searching gaps to merge.
+Figure 4. 1: A video snapshot of the study site
+In total, 76 hours of traffic video was collected. The collected traffic videos were then processed in the lab using an Excel-based tool and software called time machine, a virtual clock to derive the different type of gaps with different sizes. The following information was extracted from the video:
+23
+
+ Traffic volume  Percentage of heavy trucks  Number of accepted and rejected gaps for a particular gap size for heavy trucks (HT) and
+passage cars (PC) with different merging behaviors.
+Based on the observation on the recorded videos, the average traffic volume was 740 vehicles per hour per lane, the truck percentage at this location ranged from 8.9% to 14.4% during the observed time periods. Merging ahead and merging behind events were collected for both heavy trucks and passenger cars. The collected gaps for different types of merging events for heavy trucks and passenger cars are presented in Table 4.1 and Table 4.2, respectively.
+
+Table 4. 1: Collected Accepted and Rejected Gaps for Heavy Trucks at SH288@ McHard
+
+Length of Gap t (Seconds)
+∆t = 1
+
+No. Accept Gaps<t
+0
+
+Merging Ahead No. Reject Gaps>t 250
+
+Merging Behind
+
+No. Accept Gaps<t
+
+No. Reject Gaps>t
+
+0
+
+250
+
+2
+
+8
+
+161
+
+7
+
+144
+
+3
+
+54
+
+60
+
+29
+
+64
+
+4
+
+110
+
+17
+
+72
+
+33
+
+5
+
+145
+
+7
+
+108
+
+18
+
+6
+
+185
+
+3
+
+138
+
+12
+
+7
+
+202
+
+0
+
+162
+
+8
+
+8
+
+218
+
+0
+
+183
+
+5
+
+9
+
+231
+
+0
+
+197
+
+4
+
+10
+
+240
+
+0
+
+212
+
+2
+
+11
+
+245
+
+0
+
+217
+
+1
+
+12
+
+247
+
+0
+
+225
+
+1
+
+13
+
+249
+
+0
+
+233
+
+0
+
+14
+
+250
+
+0
+
+237
+
+0
+
+15
+
+250
+
+0
+
+243
+
+0
+
+16
+
+250
+
+0
+
+248
+
+0
+
+17
+
+250
+
+0
+
+249
+
+0
+
+19
+
+250
+
+0
+
+250
+
+0
+
+24
+
+Table 4. 2: Collected Accepted and Rejected Gaps for Passenger Cars at SH288@ McHard
+
+Length of Gap t (Seconds)
+
+No. Accept Gaps<t
+
+Merging Ahead No. Reject Gaps>t
+
+Merging Behind
+
+No. Accept Gaps<t
+
+No. Reject Gaps>t
+
+0
+
+0
+
+250
+
+0
+
+250
+
+∆t = 1
+
+0
+
+249
+
+1
+
+248
+
+2
+
+50
+
+149
+
+40
+
+160
+
+3
+
+120
+
+47
+
+125
+
+54
+
+4
+
+164
+
+25
+
+187
+
+22
+
+5
+
+197
+
+11
+
+224
+
+4
+
+6
+
+220
+
+4
+
+236
+
+0
+
+7
+
+239
+
+2
+
+241
+
+0
+
+8
+
+244
+
+1
+
+245
+
+0
+
+9
+
+248
+
+0
+
+249
+
+0
+
+10
+
+250
+
+0
+
+250
+
+0
+
+4.2 Acceleration Lane Length Determination
+To determine the acceleration lane length at this study site, the 4-step procedure introduced in the methodology section was used.
+4.2.1 Estimate the Four Types of Critical Gaps
+Based on the collected accepted and rejected gaps at the study site, the four critical gaps for two different types of vehicles with different merging behaviors can be estimated. As we mentioned before, a critical gap is a gap where the probability of accepting such gap is equal to the probability of rejecting such gap. Using the truck merging ahead event as an example, Figure 4.2 can be developed based on the collected accepted and rejected gaps for the “truck merging ahead” event presented in Table 4.1. In Figure 4.2, the two curves represent the numbers of accepted and rejected gaps at different sizes. The critical gap for merging ahead heavy truck (𝑇𝑎𝐻𝑇) can be determined according to the intersection point of these two curves as shown in Figure 4.2.
+
+25
+
+Truck Merging Ahead
+
+No. Gaps
+
+300
+
+NO. Accepted Gaps
+
+No. Rejected Gaps
+
+250
+
+200
+
+150
+
+100
+
+50
+
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+Gap Size (t, in seconds)
+
+Figure 4. 2: Estimation of critical gaps for study location
+
+Using this method, the critical gaps for merging ahead heavy truck, merging behind heavy truck, merging ahead passenger car, merging behind passenger car can be obtained and are listed as follows.
+
+ 𝑇𝑎𝑃𝐶 (the critical gap for merging ahead passage cars): 2.58s  𝑇𝑏𝑃𝐶 (the critical gap for merging behind passage cars): 2.63s  𝑇𝑎𝐻𝑇 (the critical gap for merging ahead heavy trucks): 3.06s  𝑇𝑏𝐻𝑇 (the critical gap for merging behind heavy trucks): 3.47s
+
+4.2.2 Estimate Merging Delay
+Based on the estimated critical gaps and the observed average freeway traffic volume at this location, i.e. 740vph/ln (q = 0.21vps/ln), the merging delays for different types of merging events (merging ahead and merging behind) and different types of vehicles (heavy trucks and passage cars) can be estimated by using Equation 11 as follows:
+
+𝑑𝑎𝐻𝑇
+
+=
+
+𝑒𝑞×3.06−𝑞×3.06−1 𝑞(1−𝑒 −𝑞×3.06 )
+
+=
+
+𝑒0.21×3.06−0.21×3.06−1 0.21×(1−𝑒−0.21×3.06)
+
+=
+
+2.60s
+
+𝑑𝑏𝐻𝑇
+
+=
+
+𝑒𝑞×3.47−𝑞×3.47−1 𝑞(1−𝑒 −𝑞×3.47 )
+
+=
+
+𝑒0.21×3.47−0.21×3.47−1 0.21×(1−𝑒−0.21×3.47)
+
+=
+
+3.16s
+
+𝑑𝑎𝑃𝐶
+
+=
+
+𝑒𝑞×2.58−𝑞×2.58−1 𝑞(1−𝑒 −𝑞×2.58 )
+
+=
+
+𝑒0.21×2.58−0.21×2.58−1 0.21×(1−𝑒−0.21×2.58)
+
+=
+
+2.01s
+
+𝑑𝑏𝑃𝐶
+
+=
+
+𝑒𝑞×2.63−𝑞×2.63−1 𝑞(1−𝑒 −𝑞×2.63 )
+
+=
+
+𝑒0.21×2.63−0.21×2.63−1 0.21×(1−𝑒−0.21×2.63)
+
+=
+
+2.07s
+
+26
+
+4.2.3 Estimate Freeway Acceleration Lane Length
+As we mentioned before, at this location, the ramp design speed Vr is 17.8mps (40mph) and freeway design speed Vf is 26.7mps (60mph). Then, according to the estimated merging delays, the acceleration lane length for different types of merging behaviors (merging ahead and merging behind) and different types of vehicles (heavy trucks and passage cars) can be estimated by using Equation 2 and 3 as follows:
+
+𝐿𝐻𝑎𝑇
+
+=
+
+𝐿𝐻1𝑎𝑇
+
++
+
+𝐿𝐻2𝑎𝑇
+
+=
+
+𝑉𝑎2−𝑉𝑟2 2𝑎
+
++
+
+𝑉𝑎 𝑑𝑎
+
+=
+
+29.12−17.82 2×0.9
+
++
+
+29.1
+
+×
+
+2.60
+
+=
+
+370m
+
+𝐿𝐻𝑏𝑇
+
+=
+
+𝐿𝐻1𝑏𝑇
+
++
+
+𝐿𝐻2𝑏𝑇
+
+=
+
+𝑉𝑏2−𝑉𝑟2 2𝑎
+
++
+
+𝑉𝑏𝑑𝑏
+
+=
+
+20.112−17.82 2×0.26
+
++
+
+20.11
+
+×
+
+3.16
+
+=
+
+231m
+
+𝐿𝑃𝑎𝐶
+
+=
+
+𝐿𝑃1𝑎𝐶
+
++
+
+𝐿𝑃2𝐶𝑎
+
+=
+
+𝑉𝑎2−𝑉𝑟2 2𝑎
+
++
+
+𝑉𝑎𝑑𝑎
+
+=
+
+29.12−17.82 2×2.28
+
++
+
+29.1
+
+×
+
+2.01
+
+=
+
+175m
+
+𝐿𝑃𝑏𝐶
+
+=
+
+𝐿𝑃1𝑏𝐶
+
++
+
+𝐿𝑃2𝐶𝑏
+
+=
+
+𝑉𝑏2−𝑉𝑟2 2𝑎
+
++
+
+𝑉𝑏 𝑑𝑏
+
+=
+
+20.112−17.82 2×0.62
+
++
+
+20.11
+
+×
+
+2.07
+
+=
+
+112m
+
+4.2.4 Estimate Freeway Acceleration Lane Length
+Finally, the recommended acceleration lane length for this location should be discussed in two separate situations, considering heavy trucks and without considering heavy trucks. If heavy trucks are considered in the design of acceleration lane, then
+
+𝐿𝐻𝑇 = max(𝐿𝐻𝑎𝑇, 𝐿𝐻𝑏𝑇) = 370𝑚
+
+If heavy trucks are not considered in the design of acceleration lane, then
+
+𝐿𝑃𝐶 = max(𝐿𝑃𝑎𝐶, 𝐿𝑃𝑏𝐶) = 175𝑚
+Both estimated freeway acceleration lane lengths, i.e. 𝐿𝐻𝑇 and 𝐿𝑃𝐶 , are longer than the recommended acceleration lane length provided by the AASHTO Green Book (2011) for the freeway and ramp at the given design speeds (Vf = 60mph, Vr=40mph), which is 168m (550ft). This result is reasonable because the required distance for searching for an acceptable gap and the operation characteristics of heavy trucks were not considered in the current AASHTO guidelines. Thus, it tends to underestimate the required length for the freeway acceleration lanes.
+
+27
+
+Chapter 5. Guidelines on Freeway Acceleration Lane Lengths under Different Traffic Volume Conditions
+As mentioned before, most of the existing methods, including the AASHTO Green Book (2011) guidelines, did not consider the effects of the traffic volume on determining the required lengths of freeway acceleration lanes. Based on the model developed by this research, new guidelines on the required freeway acceleration lane lengths under different traffic volume conditions were developed and presented in Figure 4. Note that, a special set of guidelines on the required freeway acceleration lane lengths for the safe merging of heavy trucks was provided for the locations where heavy truck safety need to be considered in the freeway design. In developing these guidelines, the four critical gaps ( 𝑇𝑎𝑃𝐶 , 𝑇𝑏𝑃𝐶 , 𝑇𝑎𝐻𝑇 and 𝑇𝑏𝐻𝑇 ) collected by this study was used for calculating the required freeway acceleration lane lengths.
+From Figure 4, it can be seen that for all the cases, there is at least 10 percent increase of acceleration lane length as traffic volume increases from 800 vph/ln to 1900 vph/ln. These results indicated that the required acceleration lane length is sensitive to the change in traffic volume. It is reasonable because higher traffic volume on a freeway will result in fewer numbers of acceptable gaps and longer merging distance for the on-ramp merging vehicles. Therefore, a longer acceleration lane should be provided at the locations with higher traffic volumes.
+In addition, longer acceleration lane lengths are required for accommodating the merging of the heavy truck. This is also reasonable because heavy trucks need more time to accelerate and to find a larger gap to merge comparing with passenger cars. Furthermore, the speed differential between the freeway and the on-ramp also has a significant impact on the required acceleration lane length. As the speed differential increases, the required acceleration lane length also increases because a longer time is needed for merging vehicles to accelerate to the designed freeway speed. Overall, the developed guidelines can reasonably reflect the impacts of traffic volume, heavy vehicle operation characteristics and other influencing factors on the determination of the required lengths of freeway acceleration lanes. Finally, by comparing the developed guidelines with the existing guidelines, i.e. AASHTO guidelines, it was found that overall, the developed guidelines are comparable with the AASHTO guidelines when only considering passenger cars. The recommended acceleration lane length is higher than what recommended by AASHTO guidelines when the traffic volume is high and it becomes significantly higher than what recommended by AASHTO guidelines when considering heavy trucks.
+To facilitate the implementation of the developed guidelines, a lookup table that summarized the recommended freeway acceleration lane lengths under different traffic volume conditions (Table 5.1 and Table 5.2) were also developed based on the results presented in Figure 5.1 and Figure 5.2.
+28
+
+Freeway design speed at 60 mph
+1400
+
+1200
+
+Acceleration Lane Length（ft）
+
+1000
+
+800
+
+600
+
+400
+
+200
+
+0 800
+
+900
+
+1000 1100 1200 1300 1400 1500 1600 1700 1800 1900
+
+Freeway Traffic Volume (vph/ln)
+
+Ramp Speed at 20 mph (Passenger car) Ramp Speed at 30 mph (passenger car) Ramp Speed at 40 mph (passenger car) Ramp Speed at 50 mph (passenger car)
+
+AASHTO for Ramp Speed at 20 mph AASHTO for Ramp Speed at 30 mph AASHTO for Ramp Speed at 40 mph AASHTO for Ramp Speed at 50 mph
+
+Figure 5. 1: Recommended freeway acceleration lane lengths when only considering passenger cars (LPC) for freeway design speed at 60 mph
+
+29
+
+Acceleration lane length(ft)
+
+Freeway design speed at 65 mph
+
+1400 1200 1000 800 600 400 200
+0 800
+
+900
+
+1000 1100 1200 1300 1400 1500 1600 1700 1800 1900
+
+Freeway Traffic Volume(vph/ln)
+
+Ramp Speed at 20 mph (Passenger car) Ramp Speed at 30 mph (passenger car) Ramp Speed at 40 mph (passenger car) Ramp Speed at 50 mph (passenger car)
+
+AASHTO for Ramp Speed at 20 mph AASHTO for Ramp Speed at 30 mph AASHTO for Ramp Speed at 40 mph AASHTO for Ramp Speed at 50 mph
+
+Figure 5. 2: Recommended freeway acceleration lane lengths when only considering passenger cars (LPC) for freeway design speed at 65 mph
+30
+
+Freeway design speed at 70 mph
+
+1800
+
+1600
+
+Acceleraotin Lane Length(ft)
+
+1400
+
+1200
+
+1000
+
+800
+
+600
+
+400
+
+200
+
+0 800
+
+900
+
+1000
+
+1100 1200 1300 1400 1500 1600 1700 1800 1900
+
+Freeway Traffic Volume (vph/ln)
+Ramp Speed at 20 mph (Passenger car) Ramp Speed at 30 mph (passenger car) Ramp Speed at 40 mph (passenger car) Ramp Speed at 50 mph (passenger car)
+
+AASHTO for Ramp Speed at 20 mph AASHTO for Ramp Speed at 30 mph AASHTO for Ramp Speed at 40 mph AASHTO for Ramp Speed at 50 mph
+
+Figure 5. 3: Recommended freeway acceleration lane lengths when only considering passenger cars (LPC) for freeway design speed at 70 mph
+
+31
+
+1
+Freeway design speed at 60 mph
+2500
+
+Acceleration Lane Length(ft)
+
+2000
+
+1500
+
+1000
+
+500
+
+0 800
+
+900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 Freeway Traffic Volume (vph/ln)
+
+Ramp Speed at 20 mph (heavy truck)
+
+AASHTO for Ramp Speed at 20 mph
+
+Ramp Speed at 30 mph (heavy truck)
+
+AASHTO for Ramp Speed at 30 mph
+
+Ramp Speed at 40 mph (heavy truck)
+
+AASHTO for Ramp Speed at 40 mph
+
+Ramp Speed at 50 mph (heavy truck)
+
+AASHTO for Ramp Speed at 50 mph
+
+2
+
+3
+
+Figure 5. 4: Recommended freeway acceleration lane lengths when considering heavy trucks (LHT) for freeway design speed at 60 mph
+
+4
+
+32
+
+Freeway design speed at 65 mph
+
+3000
+
+Acceleration lane length(ft)
+
+2500
+
+2000
+
+1500
+
+1000
+
+500
+
+0
+
+800
+
+900
+
+1000 1100 1200 1300 1400 1500 1600 1700 1800 1900
+
+Freeway Traffic Volume(vph/ln)
+
+Ramp Speed at 20 mph (heavy truck) Ramp Speed at 30 mph (heavy truck) Ramp Speed at 40 mph (heavy truck) Ramp Speed at 50 mph (heavy truck)
+
+AASHTO for Ramp Speed at 20 mph AASHTO for Ramp Speed at 30 mph AASHTO for Ramp Speed at 40 mph AASHTO for Ramp Speed at 50 mph
+
+5
+
+6
+
+Figure 5. 5: Recommended freeway acceleration lane lengths when considering heavy trucks (LHT) for freeway design speed at 65 mph
+
+33
+
+Freeway design speed at 70 mph
+
+3500
+
+Acceleraotin Lane Length(ft)
+
+3000
+
+2500
+
+2000
+
+1500
+
+1000
+
+500
+
+0 800
+
+900
+
+1000 1100 1200 1300 1400 1500 1600 1700 1800 1900
+
+Freeway Traffic Volume (vph/ln)
+
+Ramp Speed at 20 mph (heavy truck) Ramp Speed at 30 mph (heavy truck) Ramp Speed at 40 mph (heavy truck) Ramp Speed at 50 mph (heavy truck)
+
+AASHTO for Ramp Speed at 20 mph AASHTO for Ramp Speed at 30 mph AASHTO for Ramp Speed at 40 mph AASHTO for Ramp Speed at 50 mph
+
+7
+
+8
+
+Figure 5. 6: Recommended freeway acceleration lane lengths when considering heavy trucks (LHT) for freeway design speed at 70 mph
+
+34
+
+Table 5. 1: Recommended Freeway Acceleration Lane Lengths for Passenger Cars (in ft) Ramp Speeds
+
+Freeway Speeds 60 mph
+
+Volume (vph/ln) 800
+
+20 mph 1000
+
+30 mph 735
+
+40 mph 575
+
+50 mph 426
+
+900
+
+1009
+
+744
+
+587
+
+438
+
+1000
+
+1018
+
+753
+
+599
+
+451
+
+1100
+
+1027
+
+763
+
+613
+
+464
+
+1200
+
+1038
+
+773
+
+627
+
+478
+
+1300
+
+1049
+
+784
+
+642
+
+493
+
+1400
+
+1060
+
+796
+
+658
+
+509
+
+1500
+
+1072
+
+808
+
+674
+
+526
+
+1600
+
+1085
+
+821
+
+692
+
+544
+
+1700
+
+1099
+
+835
+
+711
+
+562
+
+1800
+
+1114
+
+849
+
+731
+
+582
+
+1900
+
+1129
+
+865
+
+752
+
+603
+
+65 mph
+
+800
+
+1197
+
+933
+
+687
+
+558
+
+900
+
+1207
+
+942
+
+700
+
+571
+
+1000
+
+1217
+
+952
+
+714
+
+584
+
+1100
+
+1227
+
+963
+
+728
+
+599
+
+1200
+
+1238
+
+974
+
+743
+
+614
+
+1300
+
+1250
+
+986
+
+759
+
+630
+
+1400
+
+1263
+
+998
+
+776
+
+647
+
+1500
+
+1276
+
+1012
+
+794
+
+665
+
+1600
+
+1290
+
+1026
+
+813
+
+684
+
+1700
+
+1305
+
+1041
+
+834
+
+704
+
+1800
+
+1321
+
+1056
+
+855
+
+726
+
+1900
+
+1337
+
+1073
+
+878
+
+748
+
+70 mph
+
+800
+
+1410
+
+1146
+
+807
+
+677
+
+900
+
+1420
+
+1156
+
+820
+
+691
+
+1000
+
+1431
+
+1166
+
+835
+
+705
+
+1100
+
+1442
+
+1178
+
+850
+
+721
+
+1200
+
+1454
+
+1190
+
+867
+
+737
+
+1300
+
+1467
+
+1202
+
+884
+
+754
+
+1400
+
+1480
+
+1216
+
+902
+
+773
+
+1500
+
+1495
+
+1230
+
+921
+
+792
+
+1600
+
+1510
+
+1245
+
+942
+
+812
+
+1700
+
+1526
+
+1261
+
+963
+
+834
+
+1800
+
+1543
+
+1278
+
+986
+
+857
+
+35
+
+1900
+
+1561
+
+1296
+
+1011
+
+881
+
+Table 5. 2: Recommended Freeway Acceleration Lane Lengths for Heavy Trucks (in ft) Ramp Speeds
+
+Freeway Speeds 60 mph
+
+Volume (vph/ln) 800
+
+20 mph 2265
+
+30 mph 1635
+
+40 mph 1217
+
+50 mph 887
+
+900
+
+2283
+
+1652
+
+1235
+
+906
+
+1000
+
+2301
+
+1671
+
+1255
+
+925
+
+1100
+
+2322
+
+1692
+
+1276
+
+946
+
+1200
+
+2344
+
+1714
+
+1298
+
+968
+
+1300
+
+2368
+
+1738
+
+1322
+
+993
+
+1400
+
+2394
+
+1764
+
+1348
+
+1018
+
+1500
+
+2422
+
+1791
+
+1375
+
+1046
+
+1600
+
+2452
+
+1821
+
+1405
+
+1075
+
+1700
+
+2484
+
+1854
+
+1436
+
+1106
+
+1800
+
+2519
+
+1889
+
+1470
+
+1140
+
+1900
+
+2557
+
+1926
+
+1506
+
+1176
+
+65 mph
+
+800
+
+2726
+
+2096
+
+1484
+
+1154
+
+900
+
+2745
+
+2115
+
+1504
+
+1174
+
+1000
+
+2766
+
+2136
+
+1525
+
+1195
+
+1100
+
+2788
+
+2158
+
+1547
+
+1218
+
+1200
+
+2812
+
+2182
+
+1572
+
+1242
+
+1300
+
+2838
+
+2208
+
+1597
+
+1268
+
+1400
+
+2866
+
+2236
+
+1625
+
+1295
+
+1500
+
+2896
+
+2266
+
+1655
+
+1325
+
+1600
+
+2929
+
+2298
+
+1686
+
+1356
+
+1700
+
+2964
+
+2333
+
+1720
+
+1390
+
+1800
+
+3002
+
+2371
+
+1756
+
+1426
+
+1900
+
+3042
+
+2412
+
+1795
+
+1465
+
+70 mph
+
+800
+
+3223
+
+2593
+
+1769
+
+1439
+
+900
+
+3244
+
+2613
+
+1790
+
+1461
+
+1000
+
+3266
+
+2635
+
+1813
+
+1483
+
+1100
+
+3290
+
+2659
+
+1837
+
+1507
+
+1200
+
+3316
+
+2685
+
+1863
+
+1533
+
+1300
+
+3343
+
+2713
+
+1891
+
+1561
+
+1400
+
+3374
+
+2743
+
+1920
+
+1591
+
+1500
+
+3406
+
+2776
+
+1952
+
+1622
+
+1600
+
+3441
+
+2811
+
+1986
+
+1656
+
+1700
+
+3479
+
+2848
+
+2022
+
+1692
+
+1800
+
+3520
+
+2889
+
+2061
+
+1731
+
+36
+
+1900
+
+3564
+
+2933
+
+2102
+
+1772
+
+Chapter 6. Conclusions
+In this study, an analytical model was developed for estimating the freeway acceleration lane length for vehicle safe merging. To develop this model, a thorough literature review was conducted, which includes two parts: 1) the existing design guidelines on freeway acceleration lane and 2) the existing methods for estimating the freeway acceleration lane length. The model developed by this study considers both the acceleration and the gap searching needs of the vehicles during the merging process. Thus, it can take account of the impacts of freeway traffic volume on the required acceleration lane lengths, which fills a gap in the existing studies. In addition, heavy trucks and passenger vehicles are treated differently in the developed model since they have significantly different operational characteristics. Beside the developed model, this study also had the following key findings:
+ There are two types of merging behaviors: merging ahead and merging behind. The critical gaps for different types of merging behaviors and different types of vehicles are very different. According to the conducted field study, for heavy trucks, the critical gap for merging ahead is about 3.06s and the critical gap for merging behind is about 3.47s; for passenger vehicles, the critical gap for merging ahead is 2.58s and the critical gap for merging behind is 2.63s.
+ Freeway traffic volume is an important factor to be considered when determining freeway acceleration lane length. In the case study, with the traffic volume increasing from 800 vph to 1900 vph, the required acceleration lane length increase for more than 10 % for all the cases.
+A case study was conducted in Houston, TX to demonstrate the model application. This research provides a chart and a lookup table for estimating required acceleration lane lengths for both heavy trucks and passenger cars under different traffic volume conditions for different combinations of the freeway and entrance ramp design speeds. The results of this research complement the provisions in current roadway design manuals/guidelines in implementing and designing freeway auxiliary lanes.
+Note that, the model was developed based on the field study conducted at one typical on-ramp location in Texas. In the future, more field studies with different combinations of ramp speed and freeway speed need to be conducted to further validate the results of this study.
+
+37
+
+References
+1. A Policy on Geometric Design of Highways and Streets. American Association of State Highway and Transportation Officials (2011). Washington, D.C.,
+2. Bareket & Fancher. Effect of Large Trucks on Traffic Safety and Operations. MDOT Report No. UMTRI-93- 19, Michigan Department of Transportation, Ann Arbor, 1993.
+3. Bokare, P. S., & Maurya, A. K. (2017). Acceleration-deceleration behaviour of various vehicle types. Transportation research procedia, 25, 4733-4749
+4. Brilon, W., Koenig, R., & Troutbeck, R. J. (1999). Useful estimation procedures for critical gaps. Transportation Research, 33(A), 161-186.
+5. Bunker, J., & Troutbeck, R. (2003). Prediction of minor stream delays at a limited priority freeway merge. Transportation Research Part B: Methodological, 37(8), 719-735.
+6. Deen, T. B. (1957). Acceleration Lane Lengths for Heavy Commercial Vehicles. Traffic Engineering, Inst Traffic Engr.
+7. Drew, D. R. (1965). Gap acceptance characteristics for ramp-freeway surveillance and control and discussion. Highway Research Record, (157).
+8. Gattis, J. L., M. A. Bryant, and L. K. Duncan. Acceleration Lane Design for Higher Truck Volumes. MBTC FR 2094/3003, December 2008
+9. Maps and Data - Vehicle Weight Classes & Categories, U.S. Department of Energy, https://afdc.energy.gov/data/10380. Accessed July 24, 2019.
+10. Fitzpatrick, K., K. Zimmerman (2007). Potential Updates To 2004 Green Book's Acceleration Lengths for Entrance Terminals. Journal of the Transportation Research Board, Vol 2023, pp 130-139.
+11. Fitzpatrick, K., K. Zimmerman, R. Bligh, S. Chrysler, and B. Blaschke. Criteria for High Design Speed Facilities. Final Report. FHWA/TX-07/5544-1. Texas Transportation Institute, College Station, and Texas Department of Transportation, Austin, March 2007
+12. Greenshields, B. D., Schapiro, D., & Ericksen, E. L. (1946). Traffic performance at urban street intersections (No. Tech Rpt. 1).
+13. Harwood, D. W., D. J. Torbic, K. R. Richard, W. D. Glauz, and L. Elefteriadou. NCHRP Report 505: Review of Truck Characteristics as Factors in Highway Design. Transportation Research Board of the National Academies, Washington, D.C., 2003.
+14. Hassan, Y., T. A. Sayed, and A. M. Ahammed. Effect of Geometry of Entrance Terminals on Freeway Merging Behavior. Presented at 85th Annual Meeting of the Transportation Research Board, Washington, D.C., 2006.
+15. Hewitt, R. H. (1983). Measuring critical gap. Transportation Science, 17(1), 87-109. 16. Hunter, M., and R. B. Machemehl. Re-Evaluation of Ramp Design Speed Criteria: Review of
+Practice and Data Collection Plan. Report No. FHWA/TX-98/1732-1, University of Texas at Austin, Austin, 1997. 17. Hunter, M., R. Machemehl, and A. Tsyganov. Operational Evaluation of Freeway Ramp Design. Transportation Research Record: Journal of the Transportation Research Board, No. 1751, Transportation Research Board of the National Research Council, Washington, D.C., 2001, pp. 90–100.
+38
+
+18. Liu, C., & Wang, Z. (2012). Determination of Onramp Weaving Length for Resolving Merging Dilemma. International Journal of Transportation Science and Technology, 1(1), 49-60.
+19. Long, G. Acceleration characteristics of starting vehicles. Transportation Research Record: Journal of the Transportation Research Board, No. 1737, Transportation Research Board of the National Academies, Washington, DC, 2000, pp.58-70.
+20. M. Hunter and Machemehl, R., Reevaluation of Ramp Design Speed Criteria: Review of Practice and Data Collection Plan,” Texas Department of Transportation Research Report Number 1732-2, 1997
+21. Maps and Data - Vehicle Weight Classes & Categories, U.S. Department of Energy, https://afdc.energy.gov/data/10380. Accessed July 24, 2019.
+22. Middleton, Dan. (2003) “Truck accommodation design guidance: policy maker workshop”. No. FHWA/TX-04/4364-3. Texas Transportation Institute, Texas A & M University System.
+23. Schurr, K. S., & Townsend, D. P. (2010). Acceleration Ramps along High Operating Speed Roadways (No. SPR-P1 (06) P582).
+24. Song, Xinsheng, Aizeng Li, Binghua Wu, and Lihua Liu. (2010). "Length of Acceleration and Deceleration Lane on Urban Expressway." In Traffic and Transportation Studies 2010, pp. 1019-1028.
+25. Troutbeck Rodj and Werner Brilon (1997) “Unsignalized intersection theory.". 26. Yang, Guangchuan, Zhongren Wang, Hao Xu, and Zong Tian. (2018) "Feasibility of Using a
+Constant Acceleration Rate for Freeway Entrance Ramp Acceleration Lane Length Design." Journal of Transportation Engineering, Part A: Systems 144, no. 3 (2017): 06017001. 27. Yi Qi, Qun Zhao, Pengfei Liu and et al. (2018). “Development of Systemic Large Truck Safety Analyses” (Report No.0-6911), retrieved from the Texas Department of Transportation website:
+https://library.ctr.utexas.edu/Presto/content/Detail.aspx?ctID=M2UxNzg5YmEtYzMyZS00ZjBlLWI yODctYzljMzQ3ZmVmOWFl&rID=NTEx&sID=MQ==&qrs=VHJ1ZQ==&q=KHJwLlN0YXR1czo oYWN0aXZlKSk=
+39
+

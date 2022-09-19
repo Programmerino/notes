@@ -1,0 +1,1386 @@
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 1
+
+5-MAY-16 15:51
+
+NOTE
+
+How Bearcats Became Toys: The 1033 Program and Its Effect on the Right to Protest
+Laura Withers*
+ABSTRACT
+Since 1996, police departments around the country have been receiving, for free, military weaponry and resources through the Department of Defense 1033 Program. Although ostensibly designed to help fight the Wars on Drugs and Terror, police departments have instead consistently acquired and used these weapons for purposes at odds with Congress’s original intent. These uses represent a violation of the Constitution and the Posse Comitatus Act, which are both designed to keep the military away from local law enforcement and civilian protestors, in particular. This Note analyzes the historical, constitutional, and statutory issues with the 1033 Program, particularly in the context of civil protest. It then proposes a legislative solution to address these problems by bringing the Program into conformity with the Posse Comitatus Act. These solutions include that: (1) law enforcement only be permitted to use its military-sourced weapons for counter-drug and counter-weapons of mass destruction purposes; (2) law enforcement be required to seek Department of Defense permission before using these weapons against civilian protestors; and (3) local jurisdictions be required to pay for the weapons received through the 1033 Program. These solutions would help maintain the vital division between the military and law enforcement and provide muchneeded protection for the constitutionally guaranteed right of the people to protest.
+* J.D., May 2016, The George Washington University Law School; B.A., History, 2009, Emory University. The author would like to thank her parents for their support and indefatigable willingness to edit, as well as The George Washington Law Review for publishing this work.
+May 2016 Vol. 84 No. 3
+812
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 2
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+813
+
+TABLE OF CONTENTS
+
+INTRODUCTION . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 813
+
+R
+
+I. THE CONSTITUTION, STANDING ARMIES, AND CIVIL
+
+UNREST . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 816
+
+R
+
+A. Standing Armies and Civil Unrest . . . . . . . . . . . . . . . . . . . 817
+
+R
+
+B. Military Power and Civil Unrest . . . . . . . . . . . . . . . . . . . . 820
+
+R
+
+C. The Application of Posse Comitatus to Civil
+
+Unrest. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 822
+
+R
+
+II. THE 1033 PROGRAM . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 824
+
+R
+
+A. The War on Drugs and Posse Comitatus . . . . . . . . . . . . 824
+
+R
+
+B. The Effect of the 1033 Program on Law
+
+Enforcement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 827
+
+R
+
+C. The Posse Comitatus-1033 Program Clash . . . . . . . . . . 833
+
+R
+
+III. A PCA-CONFORMING SOLUTION TO THE 1033
+
+PROGRAM . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 835
+
+R
+
+A. Limited Purpose . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 835
+
+R
+
+B. DoD Permission . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 836
+
+R
+
+C. Local Reimbursement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 837
+
+R
+
+IV. THE LEGISLATIVE SOLUTIONS . . . . . . . . . . . . . . . . . . . . . . . . . . 837
+
+R
+
+CONCLUSION . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 841
+
+R
+
+INTRODUCTION
+In August 2014, the Ferguson, Missouri police department reacted to initially peaceful displays of civil unrest by deploying the following panoply of military-style equipment1: “Kevlar helmets, assaultfriendly gas masks, combat gloves and knee pads . . . , tactical body armor vests, about 120 to 180 rounds for each shooter, semiautomatic pistols . . . , disposable handcuff restraints . . . , close-quarter-battle receivers for their M4 carbine rifles and Advanced Combat Optical Gunsights,” smoke grenades, smoke bombs, riot guns, tear gas, pepper spray projectile balls, rubber bullets, wooden bullet projectiles,
+
+1 See, e.g., Rob Crilly, Michael Brown Shooting: Peaceful Protests After Second Death in Ferguson, TELEGRAPH (Aug. 20, 2014, 7:05 AM), http://www.telegraph.co.uk/news/worldnews/ northamerica/usa/11044995/Michael-Brown-shooting-peaceful-protests-after-another-death-inFerguson.html (contrasting the “several hundred” peaceful individuals protesting during the day in Ferguson with the “small hard core of aggressors” causing problems for police at night); Ryan Grim & Braden Goyetter, Ferguson Protests Met with Heavy Police Response, 2 Reporters and Alderman Arrested, HUFFINGTON POST (Aug. 14, 2014, 3:59 PM), http://www.huffingtonpost .com/2014/08/14/ferguson-protests-police-response_n_5677741.html (describing as “mostly peaceful” the protestors in Ferguson whom police met with “tear gas and smoke bombs”).
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 3
+
+5-MAY-16 15:51
+
+814
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+bean bag projectiles, a Bearcat, a Long Range Acoustic Device (“LRAD”) sonic weapon, and a MD Helicopter 500 Series.2
+Although the resultant images of heavily-armed police officers arrayed against civilian protestors may have sparked outraged calls for the demilitarization of local law enforcement, transfers of militarystyle weapons and equipment to police departments have been commonplace since Congress made the 1033 Program permanent in 1996.3
+Part of the annual National Defense Authorization Act, the 1033 Program allows the Secretary of Defense (“SoD”) to transfer unused excess property to local law enforcement from the Department of Defense (“DoD”), “including small arms and ammunition.”4 In Ferguson, the Program provided two multipurpose wheeled vehicles, a generator, and a cargo trailer to the local police force; throughout the St. Louis County police departments, it has disbursed six pistols, twelve rifles, fifteen weapons sights, one explosive ordinance disposal robot, three helicopters, seven multipurpose wheeled vehicles, and two night-vision devices.5 Although the 1033 Program ostensibly provides such heavy-duty weapons to local law enforcement to help fight the War on Drugs and defend against weapons of mass destruction, when the Ferguson police department used its military weapons against civil protestors, it unequivocally went beyond these statutorily imposed constraints.6
+In the wake of events in Ferguson, officials in the executive and legislative branches of government have raised concerns about oversight and unconstitutional elements of the 1033 Program.7 There are
+2 Lyle Jeremy Rubin, A Former Marine Explains All the Weapons of War Being Used by Police in Ferguson, NATION (Aug. 20, 2014), http://www.thenation.com/article/181315/catalogferguson-police-weaponry#. This article goes on to note that the 1993 Chemical Weapons Convention actually bans the use of gas in warfare—although still allowing it for domestic riot control purposes—and that the Bearcat “is the SWAT team’s version of the military’s Mine Resistant Ambush Protected (MRAP) vehicle . . . .” Id. In other words, a Bearcat is “an eightton armored personnel vehicle.” Radley Balko, Police ‘Tank’ Purchase Riles New Hampshire Town, HUFFINGTON POST, http://www.huffingtonpost.com/2012/02/16/police-tank-purchase-newhampshire_n_1279983.html (last updated Feb. 17, 2012).
+3 See Excess Personal Property: Sale or Donation for Law Enforcement Activities, 10 U.S.C. § 2576a (2012).
+4 Id. § 2576a(a)(1). 5 Oversight of Federal Programs for Equipping State and Local Law Enforcement Agencies: Hearing Before the S. Comm. on Homeland Sec. & Governmental Affairs, 113th Cong. 5 (2014) [hereinafter Oversight Hearing] (statement of Alan Estevez, Principal Deputy Under Secretary of Defense for Acquisition, Technology and Logistics), http://www.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equipping-state-and-local-law-enforcement. 6 See infra Part II.A. 7 See, e.g., Memorandum from Senator Coburn’s HSGAC Staff Regarding Federal Pro-
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 4
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+815
+
+also more fundamental statutory concerns with the Program, particularly in light of the Posse Comitatus Act (“PCA”), which prohibits use of any part of the military to execute local law when not operating within an exception as explicitly provided by Congress or the Constitution.8 Although the exceptions to the PCA do include provisions for responding to serious civil unrest, they also include a number of protections against excessive use of military resources in protest cases.9 The 1033 Program provides no parallel guarantees, which makes it a violation of the basic tenets of the PCA.10
+As police departments around the country have taken increasing advantage of the 1033 Program in recent years, some states—and now the federal government—have enacted or attempted to enact legislation to cure these defects.11 Such efforts usually impose greater oversight on the Program and, in the federal instance, limit the types of weapons that the DoD may disburse under it.12 This Note argues that these efforts are insufficient to address the historic, constitutional, and statutory concerns associated with the 1033 Program. Instead, the Program should be amended in the following ways to bring it into compliance with the PCA and reinstate the historic divide between the military and local law enforcement.
+First, the 1033 Program should forbid the automatic use of transferred military property in any circumstance that does not fall within an expressly stated counter-drug or counter-weapons of mass destruction exception to posse comitatus. Currently, although the 1033 Program theoretically gives preferential treatment to applications alleging such concerns, no oversight mechanism limits use of transferred property to these specific instances.13 In reality, police departments use these weapons for any purpose at their own discretion.14
+grams Which Equip State and Local Law Enforcement to the HSGAC Minority (Sept. 8, 2014); David Nakamura & Niraj Chokshi, Obama Orders Review of Military Equipment Supplied to Police, WASH. POST (Aug. 23, 2014), http://www.washingtonpost.com/politics/obama-orders-review-of-military-equipment-supplied-to-police/2014/08/23/6316b8aa-2b03-11e4-8593-da634b3343 90_story.html.
+8 Use of Army and Air Force as Posse Comitatus, 18 U.S.C. § 1385 (2012). “Posse Comitatus” is Latin for “power of the country,” defined as “[a] group of citizens who are called together to help the sheriff keep the peace or conduct rescue operations.” Posse Comitatus, BLACK’S LAW DICTIONARY (10th ed. 2014).
+9 See 10 U.S.C. § 331 (2012); 32 C.F.R. § 215.1–.4, .9 (2014). 10 See infra Part II.C. 11 See, e.g., Stop Militarizing Law Enforcement Act, H.R. 5478, 113th Cong. (2014); S.B. 185, 60th Leg., Gen. Sess. (Utah 2014); S.B. 590, 433d Gen. Assemb., Reg. Sess. (Md. 2013). 12 See H.R. 5478. 13 See infra Part II. 14 See infra Part II.B.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 5
+
+5-MAY-16 15:51
+
+816
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+Second, the Pentagon should require express permission from a ranking DoD official—an Executive Agent or Under Secretary— before law enforcement may use its transferred property to react to civil unrest. Although the DoD currently requires this permission to receive military resources during an ongoing civil disturbance, the 1033 Program eliminates this step altogether by simply providing law enforcement with these resources ahead of time.15 Effectively, law enforcement already has the military weapons that they would be requesting and may deploy them at will to respond to civil unrest.
+Finally, Congress should require that law enforcement pay for the transfers of military equipment that they receive from the DoD under the Program. Again, although the DoD currently requires reimbursement for immediate requests for military help, the 1033 Program avoids this hurdle by loaning equipment for the duration of its usefulness.16 These proposed changes to the 1033 Program would still allow law enforcement to gain access to the material necessary to respond quickly in an emergency. However, these changes could also help rehabilitate the image of police on American streets and might prevent a number of the excesses seen in Ferguson in 2014.
+Part I of this Note examines the historic separation between the military complex and local law enforcement, including the Framers’ desire to suppress standing armies, empower local protest, and write a Constitution that would protect the distinction. It further examines the PCA and the historic and constitutional reasons for its enactment. Part II traces the origins of the 1033 Program out of the War on Drugs and examines its current impact on local law enforcement, as well as its incompatibility with the PCA. Part III proposes a PCA-consistent approach to overhauling the 1033 Program. Part IV critiques the state and federal legislation that has been proposed to cure the ills of the 1033 Program and explains why these alternate solutions are insufficient.
+I. THE CONSTITUTION, STANDING ARMIES, AND CIVIL UNREST
+When the American colonists rebelled against the British, they did so in part because of a strong belief that the military, as an organization, had no place in local law enforcement, especially in the face of civil unrest. When they drafted the Constitution, and when their descendants drafted the PCA, they did so with this ethos in mind. Thus,
+15 See infra Part II.C. 16 See infra Part II.A.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 6
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+817
+
+the right to protest and the right to be free of military intrusion into civilian life are concepts firmly rooted in the laws and traditions of this country.17
+A. Standing Armies and Civil Unrest
+In American law there is a traditional separation between military forces and civil law enforcement.18 This separation is grounded in the common law principle that military involvement in law enforcement poses a fundamental threat to individual liberties19 and the right to due process.20 Although these goals are lofty, states have historically given into the temptation to use the military to suppress civil unrest, a reality with which the American revolutionaries were all too familiar.21 As unrest grew in the American colonies in the 1760s, the British used the military to maintain law and order, which included quelling civilian riots in New York City in 1766 and Boston in 1770.22 The Boston Massacre, the name by which the latter incident became known, left five rioters dead and infuriated local sentiment, as did the 1765 Quartering Act obligating colonists to provide shelter in their private homes to British troops.23
+These laws and incidents significantly influenced the revolutionaries.24 Indeed, the Declaration of Independence specifically referenced the “quartering [of] large Bodies of Armed Troops among us” and “protecting [the troops] . . . from Punishment for any Murders
+
+17 See infra Parts I.A.–I.B.
+
+18 See DANIEL H. ELSE, CONG. RESEARCH SERV., R43701, THE “1033 PROGRAM,” DE-
+
+PARTMENT OF DEFENSE SUPPORT TO LAW ENFORCEMENT 1 (2014).
+
+19 See Perpich v. Dep’t of Def., 496 U.S. 334, 340 (1990); Laird v. Tatum, 408 U.S. 1, 15, 17,
+
+24 (1972).
+
+20 See Nathan Canestaro, Homeland Defense: Another Nail in the Coffin for Posse Comita-
+
+tus, 12 WASH. U. J.L. & POL’Y 99, 109 (2003) (analyzing the Fifth Amendment’s protection for
+
+due process in light of the importance of the civil-military divide); David E. Engdahl, Soldiers,
+
+Riots, and Revolution: The Law and History of Military Troops in Civil Disorders, 57 IOWA L.
+
+REV. 1, 7 (1971) (referencing as foundational a late-1300s English common law principle that
+
+“the kind of expedient recourse to force and discretion appropriate in war has no place in civil-
+
+ian situations so long as the courts . . . can function”).
+
+21 See Engdahl, supra note 20, at 8–10 (establishing that by the early-1400s the English
+
+R
+
+monarchy had reverted to “militia law,” using the civilian posse comitatus to suppress civil un-
+
+rest, as well as maintaining a standing army with domestic law enforcement power).
+
+22 See Radley Balko, Rise of the Warrior Cop, A.B.A. J., July 2013, at 44, 47; Engdahl,
+
+supra note 20, at 24–25.
+
+R
+
+23 See Balko, supra note 22, at 47; Canestaro, supra note 20, at 106; Engdahl, supra note
+
+R
+
+20, at 22–24.
+
+R
+
+24 See Engdahl, supra note 20, at 28 (citing as one prominent grievance England’s violation
+
+R
+
+of the principle that “soldiers . . . are never to be used against their civilian countrymen, no
+
+matter how expedient their utilization might seem”).
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 7
+
+5-MAY-16 15:51
+
+818
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+which they should commit on the Inhabitants of these States” as grounds for throwing off the colonial power.25 Later, the Bill of Rights established provisions to protect individual rights from similar military intrusion.26 These protections included the right to bear arms and form a militia to maintain public order;27 the guarantee that the government could never forcibly quarter soldiers in American homes during peacetime;28 and the right to basic due process,29 which English common law had explicitly aimed to protect with its civil-military divide.30 Thus, the American Revolution was partially a reaction against military intrusion into local law enforcement, and the Bill of Rights protected the individual rights upon which such intrusions often infringed.
+However, in between the approval of the Declaration of Independence and the Bill of Rights there was significant debate at the 1787 Constitutional Convention about the role, if any, that a standing army should play in the new nation.31 On the one hand, many delegates believed that disciplined armies bore “a malignant aspect to liberty and economy” and “a tendency to destroy . . . civil and political rights.”32 On the other hand, the new nation needed an effective defense against numerous anticipated dangers, against which many delegates feared the local militias could not stand.33 The compromise provided for a standing army equipped to provide for the national defense, which was intended to remain separate from the policing of all but the most dangerous of civil disturbances.34
+The Framers of the Constitution thus envisioned a minimal American army subject to numerous checks on its power and separate from civil law enforcement.35 These constitutional checks were two-
+
+25 THE DECLARATION OF INDEPENDENCE paras. 16–17 (U.S. 1776); see also Ex parte Milli-
+
+gan, 71 U.S. (4 Wall.) 2, 124–25 (1866) (“Martial law . . . destroys every guarantee of the Consti-
+
+tution, and effectually renders the ‘military independent of and superior to the civil power’—the
+
+attempt to do which by the King of Great Britain was deemed by our fathers such an offence,
+
+that they assigned it to the world as one of the causes which impelled them to declare their
+
+independence. Civil liberty and this kind of martial law cannot endure together; the antagonism
+
+is irreconcilable; and, in the conflict, one or the other must perish.”).
+
+26 See Laird v. Tatum, 408 U.S. 1, 22–23 (1972) (Douglas, J., dissenting).
+
+27 U.S. CONST. amend. II.
+
+28 U.S. CONST. amend. III.
+
+29 U.S. CONST. amend. V.
+
+30 See Canestaro, supra note 20, at 109; Engdahl, supra note 20, at 35–40.
+
+R
+
+31 See Balko, supra note 22, at 47; Canestaro, supra, note 20, at 108.
+
+R
+
+32 THE FEDERALIST NO. 8, at 43–44 (Alexander Hamilton) (E.H. Scott ed., 1894).
+
+33 See Canestaro, supra note 20, at 108–09.
+
+R
+
+34 See Balko, supra note 22, at 47.
+
+R
+
+35 See THE FEDERALIST NO. 8, supra note 32, at 46 (arguing that the army should never
+
+R
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 8
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+819
+
+fold. First, the military would be subject to civilian leadership in the form of the Executive.36 Second, the Legislature would possess the power to make military appropriations, but not “for a longer Term than two Years.”37 This second provision ensured that Congress—a popular body, periodically elected to represent the will of the people—would bear responsibility for policing any standing army.38 Furthermore, this body would revisit the question of military funding every two years, which would serve as a further check on power.39
+Subject to these limitations, the military was designed to defend the nation and only suppress popular rebellion if absolutely necessary.40 This necessity would have to be great, however—“that sort of armed violence comparable to foreign invasion . . . [or] such armed resistance to law as would constitute treason”—before the army should become involved in civilian law enforcement.41 In the absence of such a substantial need, local militias were to enforce local law.42 The militia was to be a force subject to local control, composed of local people, and for the maintenance of local public order, including the suppression of minor insurrections.43 This institution was not considered a threat to liberty because its members would be “daily mingling with the rest of their countrymen” and possess “the same feelings, sentiments, habits, and interests.”44 The militia would be of the people, directly answerable to the people, and therefore arguably better situated to maintain public order in case of minor unrest.45
+
+become large enough to stand “against the united efforts of the great body of the people” and thus potentially pose a serious threat to the union itself); MATT MATTHEWS, THE POSSE COMITATUS ACT AND THE UNITED STATES ARMY: A HISTORICAL PERSPECTIVE 6 (2006).
+
+36 See U.S. CONST. art. II, § 2; Engdahl, supra note 20, at 30.
+
+R
+
+37 U.S. CONST. art. I, § 8.
+
+38 See THE FEDERALIST NO. 24, at 131 (Alexander Hamilton) (E.H. Scott ed., 1894).
+
+39 See id. (finding this legislative oversight “a great and real security against military establishments without evident necessity”).
+
+40 See MATTHEWS, supra note 35, at 5–6; Engdahl, supra note 20, at 44.
+
+R
+
+41 See Engdahl, supra note 20, at 39 (citing H.R. DOC. NO. 69-398, at 407, 408, 470, 475,
+
+R
+
+481, 561, 579, 603, 645–46 (1927)) (analyzing Madison’s notes on the debates in the 1787 Consti-
+
+tutional Convention).
+
+42 See Perpich v. Dep’t of Def., 496 U.S. 334, 340 (1990); THE FEDERALIST NO. 28, at 150 (Alexander Hamilton) (E.H. Scott ed., 1894).
+
+43 See THE FEDERALIST NO. 28, supra note 46, at 42; THE FEDERALIST NO. 29, at 157
+
+R
+
+(Alexander Hamilton) (E.H. Scott ed., 1894).
+
+44 THE FEDERALIST NO. 29, supra note 43, at 157; see also 7 CONG. REC. 3583–84 (1878)
+
+R
+
+(statement of Rep. Kimmel).
+
+45 See 7 CONG. REC. 3583 (1878) (statement of Rep. Kimmel).
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 9
+
+5-MAY-16 15:51
+
+820
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+B. Military Power and Civil Unrest
+In addition to the constitutional basis for rejecting military involvement in local law enforcement, Congress has also passed the PCA, which makes it unlawful to use the military to execute local law without explicit authorization.46 After the Civil War, the power of the army expanded significantly as the federal government used it to maintain order in the Reconstruction South.47 In introducing the PCA to limit such use of the military, the Southern Democrats in Congress expressed concerns similar to those of the revolutionaries.48 Citing the Framers of the Constitution and the Declaration of Independence, writers of The Federalist, and members of Congress from the revolutionary period, congressional representatives argued that standing armies had been and remained fatal to liberty.49
+As a necessary means of correcting this growth in military power, the PCA declared:
+[I]t shall not be lawful to employ any part of the Army of the United States, as a posse comitatus, or otherwise, for the purpose of executing the laws, except in such cases and under such circumstances as such employment of said force may be expressly authorized by the Constitution or by act of Congress.50
+The constitutional allowance within this Act ensured that the PCA would not interfere with the Executive’s power to command the army for domestic defense.51 Any further military use to enforce local law would require explicit congressional permission, however, and thus ensure protection for sacrosanct individual liberties.52
+The Executive’s powers to provide for the national defense, which the PCA recognizes in referencing constitutional exceptions to the Act,53 provide the authority to use military resources to suppress
+
+46 18 U.S.C. § 1385 (2012).
+
+47 See MATTHEWS, supra note 35, at 24–34.
+
+R
+
+48 See 7 CONG. REC. 3579 (1878) (statement of Rep. Kimmel); MATTHEWS, supra note 35,
+
+R
+
+at 30–34.
+
+49 See 7 CONG. REC. 3581 (1878) (statement of Rep. Kimmel) (citing “the possibility of employing that army for the execution of the laws” as the greatest threat that the military posed to liberty).
+
+50 Army as Posse Comitatus, ch. 263 § 15, 20 Stat. 152 (1879) (codified as amended at 18 U.S.C. § 1385 (2012)).
+
+51 See U.S. CONST. art. II, § 2.
+
+52 See 7 CONG. REC. 3583 (1878) (statement of Rep. Kimmel).
+
+53 18 U.S.C. § 1385.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 10
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+821
+
+serious insurrection.54 Thus, the President may provide military assistance to respond to any insurrection in any state upon request of its legislature or governor.55 The DoD has, however, established a number of restrictions on such uses that serve as a check on law enforcement.56 First, military resources will be on loan to local authorities to encourage them to provide their own resources and limit reliance on the DoD.57 Second, requests for “[p]ersonnel, arms, ammunition, tank-automotive equipment, and aircraft”58 must receive “personal approval of the DoD Executive Agent or . . . the Under Secretary of the Army.”59 Third, as with the PCA, these uses of military resources are subject to reimbursement.60 Each of these requirements serves as a check on military resources in law enforcement by limiting their use, ensuring that they are truly warranted, and dissuading the spending of excessive amounts of taxpayer money to obtain them unless absolutely necessary.
+In addition to the general executive power exception to the PCA, Congress has developed a number of other exceptions to allow for the use of military resources to respond to weapons attacks and drug proliferation.61 The first exception applies in the event of an emergency involving chemical or biological weapons of mass destruction that pose “a serious threat” to U.S. interests.62 The September 11, 2001 terrorist attacks provoked calls for further amendments to broaden the military’s law enforcement powers under this provision.63 As a result, the USA PATRIOT Act of 2001, which expanded the available tools in the fight against terrorism, did amend the PCA to authorize military involvement when any and all kinds of weapons of
+
+54 See supra text accompanying notes 30–38. For a definition of “serious insurrection,” see
+
+R
+
+supra text accompanying note 41.
+
+R
+
+55 See 10 U.S.C. § 331 (2012); Linda J. Demaine & Brian Rosen, Process Dangers of Mili-
+
+tary Involvement in Civil Law Enforcement: Rectifying the Posse Comitatus Act, 9 N.Y.U. J.
+
+LEGIS. & PUB. POL’Y 167, 193–94 (2005).
+
+56 See generally 32 C.F.R. § 215.1–.10 (2014) (outlining the nature of military resource employment in the case of civil disturbances). This text defines civil disturbances as “group acts
+
+of violence and disorders prejudicial to public law and order . . . .” Id. § 215.3(a); see also id.
+
+§ 215.4 (discussing legal considerations of military use in cases of insurrection).
+
+57 Id. § 215.9(a).
+
+58 Id. § 215.9(a)(1)(i).
+
+59 Id. § 215.9(b)(1).
+
+60 Id. § 215.10; see also 10 U.S.C. § 377 (2012).
+
+61 See Canestaro, supra note 20, at 116–17.
+
+R
+
+62 See 10 U.S.C. §382 (2012); 18 U.S.C. §§ 175a, 229e, 2332e (2012).
+
+63 See Canestaro, supra note 20, at 138–40 (discussing the debates over a counterterror
+
+R
+
+amendment to the PCA).
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 11
+
+5-MAY-16 15:51
+
+822
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+mass destruction pose a threat.64 Beyond this single expansion of military power, however, Congress has since declined to create an explicit posse comitatus exception for terrorism on a broader scale.65 Some experts have hypothesized that this refusal is the product of concern for the protection of individual liberties, which other reactionary responses to terrorism had already significantly eroded.66
+The second explicitly stated exception to the PCA has been military assistance in the war against drugs.67 Drafted in the late-1980s, various amendments provided “intelligence, equipment, maintenance support, use of military facilities, specialized training and tactical advice” to support law enforcement’s drug interdiction efforts.68 This exception has led to increasing militarization of law enforcement and significant military involvement in any law enforcement issue with a drug nexus.69 However, as with all other provisions of the PCA, both the weapons of mass destruction and drug exceptions are restrained by the requirement that law enforcement pay the military for the use of its equipment.70
+C. The Application of Posse Comitatus to Civil Unrest
+Although courts have expressly interpreted executive authority to use the military to suppress serious civil unrest as a PCA exception, they have disagreed about how to define a PCA violation.71 The first real challenge to military action on posse comitatus grounds arose out of the “Wounded Knee” cases in the mid-1970s.72 Here, residents at Wounded Knee challenged their arrests for attempting to interfere with U.S. Marshals and FBI agents during a sit-in occupation of their village.73 The individuals arrested in these cases argued that the federal agents’ use of military weapons and advisors constituted a viola-
+
+64 See Uniting and Strengthening America by Providing Appropriate Tools Required to
+
+Intercept and Obstruct Terrorism (USA PATRIOT) Act of 2001, Pub. L. No. 107–56, § 104, 115
+
+Stat. 272, 277 (2001) (amending 18 U.S.C. § 2332e).
+
+65 See Canestaro, supra note 20, at 138–39.
+
+R
+
+66 See id. at 139–42.
+
+67 See 10 U.S.C. §§ 371–381 (2012); Canestaro, supra note 20, at 114.
+
+R
+
+68 Canestaro, supra note 20, at 115 (footnotes omitted); see also 10 U.S.C. §§ 371–381.
+
+R
+
+69 See David B. Kopel & Paul M. Blackman, Can Soldiers Be Peace Officers? The Waco
+
+Disaster and the Militarization of American Law Enforcement, 30 AKRON L. REV. 619, 652–54
+
+(1997).
+
+70 See 10 U.S.C. §§ 377, 382(e).
+
+71 See United States v. McArthur, 419 F. Supp. 186, 192–94 (D.N.D. 1975); United States
+
+v. Jaramillo, 380 F. Supp. 1375, 1379 (D. Neb. 1974).
+
+72 See MATTHEWS, supra note 35, at 41–42.
+
+R
+
+73 See McArthur, 419 F. Supp. at 189; Jaramillo, 380 F. Supp. at 1376.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 12
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+823
+
+tion of the PCA and that, therefore, their arrests were invalid and represented a constitutional violation.74 Through independent analyses of the historic suspicion of military suppression of civil unrest, the judges in these cases disagreed about what form and level of military involvement represented impermissible military execution of the law.75
+Judges in the Wounded Knee cases generally agreed that no PCA violation occurred, but disagreed about the appropriate test to apply. The judge in United States v. Jaramillo76 determined that the purpose of the Act was to police the use of personnel, not material, and therefore that no amount of non-personnel military resources at Wounded Knee would have constituted a violation.77 The holding in United States v. McArthur78 established the PCA’s purpose as protection against “that which is regulatory, proscriptive or compulsory in nature, and causes the citizens to be . . . subject to regulations, proscriptions, or compulsions imposed by military authority.”79 Finally, United States v. Red Feather80 drew a line between active and passive use of military resources and argued that supplies, weapons, and materials fell into the latter category, which meant that there was no PCA violation.81 Unfortunately for future litigation, these cases never managed to clarify whether use of military resources could come to constitute a PCA violation, let alone how much or for what purpose local police would need to use them in order to rise to that level. Courts since have attempted to reconcile these contradictory decisions in those rare instances when civil plaintiffs or criminal defendants raise the issue of a PCA violation in litigation with the government.82
+In order to determine whether a PCA violation has occurred, courts today will often look to the extent to which local law enforcement relies upon military resources in an individual situation. This test is arguably more consistent with the reasoning behind the Act
+74 See United States v. Red Feather, 392 F. Supp. 916, 920–21 (D.S.D. 1975). 75 See McArthur, 419 F. Supp. at 193–95; Jaramillo, 380 F. Supp. at 1379. 76 United States v. Jaramillo, 380 F. Supp. 1375 (D. Neb. 1974). 77 Id. at 1379. This holding was in spite of the partial list of military items furnished for this incident: 1,000 Star parachute flares, 100,000 rounds of M-16 ammunition, 100 protective vests, twenty sniper rifles, and fifteen unarmed armored personnel carriers. Id. 78 United States v. McArthur, 419 F. Supp. 186 (D.N.D. 1975). 79 Id. at 194–95. 80 United States v. Red Feather, 392 F. Supp. 916 (D.S.D. 1975). 81 Id. at 924. 82 See, e.g., United States v. Khan, 35 F.3d 426, 431 (9th Cir. 1994) (citing United States v. Yunis, 924 F.2d 1086, 1094 (D.C. Cir. 1991)) (listing the tests from all three decisions and explaining that all three remain good law).
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 13
+
+5-MAY-16 15:51
+
+824
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+itself and with concerns that the Red Feather active-versus-passive test would be too stark of a line to draw.83 At least one legal scholar has argued in testimony before Congress that “there is nothing inherently ‘indirect and passive’ about supplying equipment, training, or serial surveillance,” all of which raise similar concerns about “the proper role of armed forces in a democratic republic.”84 This concern has caused some courts to ask whether military involvement “pervade[s] the activities of civilian authorities” to determine if such “involvement constitutes more than indirect assistance.”85 Thus, although the minimal use of military resources at Wounded Knee may have been acceptable, a situation in which those resources come to pervade the activities of law enforcement might produce a PCA violation. It is not so much the nature of the military resources involved, but how extensively law enforcement relies upon them that now raises legal concerns.
+II. THE 1033 PROGRAM
+The 1033 Program emerged as a means for the DoD to dispose of extraneous military resources, while at the same time providing local law enforcement with the means to combat a growing drug crisis.86 What it has evolved into, however, is a program that gives military weapons and resources to largely untrained police officers who do not need them, pressures their departments into using them, and provides no oversight regarding when and how these items are to be used.87 As a result, police departments are becoming more militarized and less akin to local law enforcement.88
+A. The War on Drugs and Posse Comitatus
+As with the explicit drug war exception to the PCA, the DoD’s 1033 Program emerged in the 1980s amid concerns that local law enforcement was out-gunned in the War on Drugs.89 Supporters argued
+
+83 Posse Comitatus Act: Hearing on H.R. 3519 Before the Subcomm. on Crime of the H.
+
+Comm. on the Judiciary, 97th Cong. 41–44 (1981) [hereinafter Posse Comitatus Act Hearing]
+
+(statement of Professor Christopher Pyle, Mount Holyoke College).
+
+84 Id. at 42.
+
+85 See Khan, 35 F.3d at 431 (citing Yunis, 924 F.2d at 1094).
+
+86 See ACLU, WAR COMES HOME: THE EXCESSIVE MILITARIZATION OF AMERICAN PO-
+
+LICING 16 (2014).
+
+87 See infra Part II.B.
+
+88 See id.
+
+89 See 135 CONG. REC. 17,652 (1989) (statement of Sen. Nunn); ACLU, supra note 86, at
+
+R
+
+16; Matt Apuzzo, War Gear Flows to Police Departments, N.Y. TIMES (June 8, 2014), http://www
+
+.nytimes.com/2014/06/09/us/war-gear-flows-to-police-departments.html?_r=0.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 14
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+825
+
+that the drug epidemic was growing worse and that prior, similar, but temporary authorizations were insufficient to meet the need for a more effective law enforcement response.90 Pursuant to the authority granted by the Anti-Drug Abuse Act of 1988, the Director of the Office of National Drug Control Policy made recommendations to combat the drug epidemic, which included use of the significant resources available to the DoD.91 Thus, Congress made the prior temporary authorizations permanent to allow the SoD to make available to law enforcement agencies any excess military equipment that it determines “suitable for use by the agencies in law enforcement activities.”92
+This section of the National Defense Authorization Act allows the SoD to transfer personal property of the DoD, “including small arms and ammunition,” to local law enforcement.93 This property must be suitable for use in law enforcement, “including counter-drug and counter-terrorism activities,” subject to consultation with the Director of the National Drug Control Policy.94 Such transfers are without charge to the agency receiving this property, with the exception of transfer costs.95 Furthermore, the SoD is to “give a preference to those applications indicating that the transferred property will be used in the counter-drug or counter-terrorism activities of the recipient agency.”96 Rooted in the War on Drugs, this program emphasizes drugs as a pervasive problem, which the military possesses the equipment to combat most effectively.97
+The 1033 Program distinguishes between two types of available property, namely non-controlled and controlled.98 Items on the noncontrolled list are those without military attributes, like clothing and office supplies, whereas items on the controlled list are those with military design, like “weapons, aircraft, watercraft, and tactical vehicles.”99 This latter category of items is “conditionally loaned” and must be returned to the DoD “at the end of its useful life” for demili-
+
+90 See 135 CONG. REC. 17,652–55 (1989) (statement of Sen. Nunn).
+
+91 See id.
+
+92 10 U.S.C. § 2576a(a)(1) (2012).
+
+93 Id.
+
+94 Id. § 2576a(a)(1)–(2).
+
+95 Id. § 2576a(b)–(c).
+
+96 Id. § 2576a(d).
+
+97 See 135 CONG. REC. 17,652 (1989) (statement of Sen. Nunn).
+
+98 See Oversight Hearing, supra note 5, at 3 (statement of Alan Estevez), http://www
+
+R
+
+.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equipping-state-and-local-law-
+
+enforcement.
+
+99 Id.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 15
+
+5-MAY-16 15:51
+
+826
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+tarization.100 Because local agencies only have to return these resources at a far-distant date when they can no longer serve their function, this long-term loan policy means that military resources are effectively given to law enforcement agencies free of charge.101 However, there are some items that for national security reasons never transfer out under the 1033 Program, including “tanks, fighter aircraft, Strykers, tracked vehicles, weapons greater than 7.62mm, and Military Services uniforms . . . .”102 It is therefore the controlled, but still distributable military items that have raised PCA and constitutional concerns when used at the local level.
+At first glance, the 1033 Program would appear consistent with the PCA in its use of counter-drug and counter-terror language, but there are a few key differences. Both allow for the provision of military support to local law enforcement within specific situations related to combatting the drug epidemic and terrorism.103 However, the PCA language explicitly provides for limited exceptions to its restrictions, whereas the 1033 Program includes only advisory language for distribution and use of these weapons in counter-drug and counter-terror situations.104 Recipients of military resources under the 1033 Program are only encouraged to limit their use to these two specific instances105 and there is no oversight to ensure that recipients use resources for the reasons named in their application to the DoD.106 In reality, military weapons are used for every conceivable law enforcement purpose, without any real Pentagon oversight.107
+
+100 Id.
+
+101 See Jon Swaine et al., Ferguson Forced to Return Humvees as US Military Gear Still
+
+Flows to Local Police, GUARDIAN (Aug. 11, 2015, 8:00 AM), http://www.theguardian.com/us-
+
+news/2015/aug/11/ferguson-protests-police-militarization-humvees?CMP=share_btn_link (noting
+
+that “controlled equipment such as vehicles and weapons” remain on the Pentagon’s records and
+
+effectively represent a “long-term lease,” although “the military only reclaims that gear ‘under
+
+very rare circumstances’ ”).
+
+102 See Oversight Hearing, supra note 5, at 3–4 (statement of Alan Estevez), http://www
+
+R
+
+.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equipping-state-and-local-law-
+
+enforcement.
+
+103 See 10 U.S.C. §§ 371–381, 2576a (2012).
+
+104 Compare 10 U.S.C. § 371–381, with id. § 2576a.
+
+105 See id. § 2576(a).
+
+106 See Oversight Hearing, supra note 5, at *6 (statement of Dr. Peter Kraska, Professor and
+
+R
+
+Chair of Graduate Studies and Research, School of Justice Studies at Eastern Kentucky Univer-
+
+sity), http://www.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equipping-state-
+
+and-local-law-enforcement.
+
+107 See id. Oversight by the Pentagon is quite poor. In August 2015, the Obama Adminis-
+
+tration announced that the city of Ferguson, Missouri would have to return two military
+
+Humvees after Pentagon officials “discover[ed] in a data review that the city had been given
+
+twice as many Humvees in 2013 . . . as they had previously known, without proper federal
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 16
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+827
+
+Furthermore, although the 1033 Program’s language appears designed to stay within the confines and explicit exceptions of the PCA, it is neither in compliance with them nor clearly intended as an entirely separate exception. The PCA establishes an exception for weapons of mass destruction, not terrorism.108 Therefore, under the 1033 Program, law enforcement is receiving military weapons for significantly broader terrorism purposes than would be permissible under the PCA, which only allows the use of military weapons to defend against weapons of mass destruction.109 The question then remains whether the 1033 Program is legal under the PCA when local law enforcement uses military weaponry outside of a counter-drug or counter-weapons of mass destruction context.
+B. The Effect of the 1033 Program on Law Enforcement
+The 1033 Program has grown massively in the past few years as the drawdowns in Iraq and Afghanistan have led to a surplus of military weapons and, increasingly, vehicles, which have been particularly controversial in their application on American streets.110 In 2011, the DoD provided state and local law enforcement with $317.3 million in aid, more than the previous five years combined.111 In 2012 and 2013, those numbers rose to $530.9 million and $530 million, respectively, although they did fall to $245.6 million in 2014.112 Of those funds, a scant amount, if any, went to mine-resistant or combat vehicles until 2013 and 2014, when $111.1 million and $300.3 million, respectively, went to those sources.113 These statistics equate to 191 mine-resistant vehicles in 2013 and 413 in 2014; in the seven years preceding 2013, the 1033 Program dispersed only one mine-resistant vehicle in total.114 Although these combat vehicles might not officially qualify as tanks,
+
+authorisation [sic].” Swaine et al., supra note 101. State officials responded that they had the
+
+R
+
+proper authorization for the additional vehicles, but that the Pentagon had simply “ ‘los[t] the
+
+records’ for two of them.” Id.
+
+108 See 10 U.S.C. § 382 (2012).
+
+109 Compare id., with 10 U.S.C. § 2576(a) (2012).
+
+110 See, e.g., Michael Shank, Post-Election Ferguson: Bipartisan Congress to Demilitarize
+
+Police, HUFFINGTON POST (Dec. 21, 2014, 5:59 AM), http://www.huffingtonpost.com/michael-
+
+shank/post-election-ferguson-bi_b_6022368.html.
+
+111 See Brent Skorup & Andrea Castillo, Breaking Down Department of Defense Grants to
+
+State and Local Law Enforcement, MERCATUS CTR. GEO. MASON U. (Dec. 15, 2014), http://
+
+mercatus.org/publication/breaking-down-department-defense-grants-state-and-local-law-
+
+enforcement.
+
+112 Id.
+
+113 Id.
+
+114 Id.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 17
+
+5-MAY-16 15:51
+
+828
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+which the program is not supposed to disburse at all,115 they are similar enough that the distinction is probably lost on a protestor coming face-to-face with one of these vehicles.116
+In addition to combat vehicles, the Program has also distributed weapons to local law enforcement, though weapons generally account for only a small portion of money spent.117 Since 2006, the Pentagon has used the 1033 Program to distribute: “79,288 assault rifles; 205 grenade launchers; 11,959 bayonets; 3,972 combat knives; $124 million worth of night-vision equipment, including night-vision sniper scopes; 479 bomb detonator robots;” plus numerous airplanes, helicopters, and millions of dollars worth of camouflage gear and “deception equipment.”118 This actual weaponry, not including vehicles or aircraft, only “account[ed] for just over 3 percent of the total value of all goods sent out by the Pentagon” since 2006.119 Therefore, even without providing military weapons and vehicles, the 1033 Program could still provide significant non-controlled material support to local law enforcement.120
+The provision of these weapons and vehicles to local law enforcement raises numerous issues. First, in the aftermath of the September 11, 2001 terrorist attacks, the 1033 Program organically expanded to address crime and terror, i.e., policing internal threats presented by everyday Americans.121 For example, as a means to prove the necessity of acquiring an armored vehicle, the Law Enforcement Support
+
+115 See Oversight Hearing, supra note 5, at 3 (statement of Alan Estevez), http://www
+
+R
+
+.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equipping-state-and-local-law-
+
+enforcement.
+
+116 As an example, High-Mobility Multipurpose Wheeled Vehicles (“HMMWVs”), which
+
+the 1033 Program disburses, are 180 inches long, 85.2 inches wide, and 72 inches high, and weigh
+
+5200–5900 pounds. See Law Enforcement Support Office, Tactical Vehicles, DEF. LOGISTICS
+
+AGENCY (July 14, 2015), http://www.dispositionservices.dla.mil/leso/Pages/Vehicles.aspx [https://
+
+web.archive.org/web/20141218005242/http://www.dispositionservices.dla.mil/leso/Pages/Vehicles
+
+.aspx]. By comparison, one of the military’s MRAP vehicles is 254 inches long, 102 inches wide,
+
+120 inches high, and weighs almost 38,000 pounds. See MaxxPro® MRAP, NAVISTAR DEF.,
+
+http://www.navistardefense.com/navistardefense/vehicles/maxxpromrap/maxxpro_mrap (last vis-
+
+ited March 22, 2016).
+
+117 See Arezou Rezvani et al., MRAPs and Bayonets: What We Know About the Pentagon’s
+
+1033 Program, NPR, http://www.npr.org/2014/09/02/342494225/mraps-and-bayonets-what-we-
+
+know-about-the-pentagons-1033-program (last updated Sept. 3, 2014, 3:46 PM).
+
+118 See id.
+
+119 See id.
+
+120 See supra text accompanying notes 98–99.
+
+R
+
+121 See Oversight Hearing, supra note 5, at *6 (statement of Dr. Peter Kraska, Professor and
+
+R
+
+Chair of Graduate Studies and Research, School of Justice Studies at Eastern Kentucky Univer-
+
+sity), http://www.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equipping-state-
+
+and-local-law-enforcement. For a discussion of militarized policing prior to 9/11, see generally
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 18
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+829
+
+Office, which is responsible for overseeing 1033 Program disbursements, recommends that law enforcement agencies flag concerns related to: “SWAT, active shooter, barricaded suspect, emergency response, first responder, critical incident, hostage rescue, natural disaster rescue, border patrol, homeland security, etc.”122 For a program designed to aid counter-terror or counter-drug efforts, only about half of these justifications would specifically relate to either objective. It would seem that the agency designed to facilitate 1033 Program transfers is explicitly encouraging local law enforcement to seek out military weaponry for purposes, such as natural disaster rescue, in no way authorized by law.
+The War on Terror generally has buoyed programs designed to provide local law enforcement with weapons to suppress terrorist threats, even where their provision could not clearly be linked to a threat and in locations where the prospect of such a threat seems absolutely outrageous.123 For example, in 2011, the small hamlet of Keene, New Hampshire received a $285,933 Department of Homeland Security grant with which to purchase an eight-ton Bearcat.124 As of February 2012, the town had a population of 23,000 and had seen only two murders since 1999.125 Keene police acquired this Bearcat by citing a potential terrorist threat to their town’s “annual Pumpkin Festival.”126 As a member of the city council that authorized the purchase put it, “the ‘danger of domestic terrorism’ was ‘just something you put in the grant application to get the money. What red-blooded American cop isn’t going to be excited about getting a toy like this? . . . That’s what it comes down to.’ ”127 Although almost any application for military weaponry can allege a terrorist threat, there is no require-
+
+Peter B. Kraska & Louis J. Cubellis, Militarizing Mayberry and Beyond: Making Sense of Ameri-
+
+can Paramilitary Policing, 14 JUST. Q. 607 (1997).
+
+122 LAW ENFORCEMENT SUPPORT OFFICE, DEF. LOGISTICS AGENCY, ARMORED VEHICLE
+
+JUSTIFICATION LETTER TEMPLATE 1, http://www.dispositionservices.dla.mil/leso/Documents/
+
+ARMORED%20VEHICLE%20JUSTIFICATION%20LETTER%203-31-15.pdf.
+
+123 See Balko, supra note 22, at 52.
+
+R
+
+124 Balko, supra note 2. A “Bearcat” is an “armored personnel vehicle.” Id.
+
+R
+
+125 Id.
+
+126 Robert Windrem, Pumpkin Festival Cited as Terror Target Hit by Drunken Riots, NBC
+
+NEWS (Oct. 20, 2014, 3:56 PM), http://www.nbcnews.com/news/investigations/pumpkin-festival-
+
+cited-terror-target-hit-drunken-riots-n229996. Ironically, when student rioting broke out at this
+
+same pumpkin festival in 2014, local police responded to drunken protestors with tear gas and
+
+pepper spray pellets, but not the much-vaunted Bearcat. Id.
+
+127 Id. For additional examples of military provisioning in disproportion to population and
+
+threat levels, see, e.g., Christian Sheckler, Local Police Acquire More Firepower, S. BEND TRIB.
+
+(July 21, 2014, 8:01 AM), http://www.southbendtribune.com/news/local/local-police-acquire-
+
+more-firepower/article_9d74c2aa-0ff4-11e4-ad41-001a4bcf6878.html; Taylor Wofford, How
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 19
+
+5-MAY-16 15:51
+
+830
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+ment to prove that the threat is anything more than a pretext to gain access to deadly military equipment.128
+Second, police must use whatever they receive from this Program within one year, or else return the DoD’s weapons, which creates built-in pressure to use military equipment in any conceivable way.129 Instead of incentivizing responsible equipment use and reduction in the stockpiling of unnecessary weaponry this provision of the 1033 Program has instead ensured that whether its use is necessary or not, local law enforcement will aim to roll out the heavy weaponry whenever possible.130 Some law enforcement officials note that if their agency had to buy this military equipment, they would and could do without it, “[b]ut since it’s donated, they find a place for it.”131 In addition, departments that acquire military equipment, which may be quite expensive to maintain, often feel pressure to justify the acquisition. This pressure “can result in ‘normalizing’ . . . use in ‘routine’ circumstances.”132 With no federal oversight of the use to which transferred equipment is put, there is simply no incentive to ensure responsible use.133
+The third problem inherent in the 1033 Program is that there is generally no training of any kind to accompany the provision of military weapons to police officers. Increasing SWAT team presence in law enforcement has perhaps created the impression that with serious weaponry comes serious paramilitary organization and training.134 However, local law enforcement is not just made up of SWAT teams and it is not just SWAT teams that respond in civil unrest situations.135
+
+America’s Police Became an Army: The 1033 Program, NEWSWEEK (Aug. 13, 2014, 10:47 PM),
+
+http://www.newsweek.com/how-americas-police-became-army-1033-program-264537.
+
+128 See ACLU, supra note 86, at 26; supra text accompanying note 122.
+
+R
+
+129 See Stop Militarizing Law Enforcement Act, H.R. 5478, 113th Cong. (2014).
+
+130 See id.
+
+131 Rhonda Cook, Military Equipment Flowing to Local Law Enforcement Raises Ques-
+
+tions, ATLANTA J.-CONST. (Jan 27, 2013, 5:00 AM), http://www.ajc.com/news/news/military-
+
+equipment-flowing-to-local-law-enforcemen/nT7ZK/#__federated=1.
+
+132 See Oversight Hearing, supra note 5, at 5 (statement of Jim Bueermann, President, Po-
+
+R
+
+lice Foundation), http://www.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equip-
+
+ping-state-and-local-law-enforcement.
+
+133 See EXEC. OFFICE OF THE PRESIDENT, REVIEW: FEDERAL SUPPORT FOR LOCAL LAW
+
+ENFORCEMENT EQUIPMENT ACQUISITION 7–9 (2014).
+
+134 See ACLU, supra note 86, at 22; Oversight Hearing, supra note 5, at *6 (statement of
+
+R
+
+Dr. Peter Kraska, Professor and Chair of Graduate Studies and Research, School of Justice
+
+Studies at Eastern Kentucky University), http://www.hsgac.senate.gov/hearings/oversight-of-fed-
+
+eral-programs-for-equipping-state-and-local-law-enforcement.
+
+135 Oversight Hearing, supra note 5, at *6 (statement of Dr. Peter Kraska, Professor and
+
+R
+
+Chair of Graduate Studies and Research, School of Justice Studies at Eastern Kentucky Univer-
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 20
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+831
+
+Most police departments—like that of Keene, New Hampshire—are small, and the military equipment going to them, which is considerable, brings with it “little to no training, little to no oversight, and little to no accountability.”136 In fact, there is no training requirement of any kind before an agency may receive transferred property under the 1033 Program.137
+In addition to the fundamental problems of the 1033 Program, there have been numerous negative effects. First, the perception of local law enforcement has become not that of community police, but of a military force fighting a daily war against the civilian population on American streets.138 In Mitchell v. City of Henderson,139 for example, Nevada homeowners are currently suing their local police force for numerous civil rights violations suffered during a police action.140 Among the allegations originally pleaded, the plaintiffs asserted a violation of the Third Amendment, which forbids the quartering of soldiers in private homes.141 The plaintiffs claimed “that, within the scope of the Third Amendment, police officers should be considered soldiers.”142 Although not a posse comitatus case per se, this case does illuminate the growing perception that police officers are now so like the military in their affect and the weapons they carry that they are in effect military officers to which this amendment should apply.
+In the specific instance of civil unrest, clashes between police and protestors often come to resemble war zones complete with excessive military arms directed at unarmed civilians.143 In Ferguson, riot re-
+
+sity), http://www.hsgac.senate.gov/hearings/oversight-of-federal-programs-for-equipping-state-
+
+and-local-law-enforcement.
+
+136 Id.
+
+137 EXEC. OFFICE OF THE PRESIDENT, supra note 133, at 4.
+
+R
+
+138 See generally ACLU, supra note 86, at 23 (criticizing the merits of training police to
+
+R
+
+think like soldiers); CIVIL RIGHTS DIV., U.S. DEP’T OF JUSTICE, INVESTIGATION OF THE FERGU-
+
+SON POLICE DEPARTMENT 6 (2015) (stating that the Ferguson police department’s racial bias and
+
+emphasis on revenue led to community distrust and a breakdown of partnership with the com-
+
+munity); Sandra Eismann-Harpen, Comment, Rambo Cop: Is He a Soldier Under the Third
+
+Amendment?, 41 N. KY. L. REV. 119, 128–31 (2014) (discussing similarities between police and
+
+military in equipment, training, and language).
+
+139 Mitchell v. City of Henderson, No. 2:13-cv-01154, 2015 WL 427835 (D. Nev. Feb. 2,
+
+2015).
+
+140 See First Amended Complaint at 29, Mitchell v. City of Henderson, 2015 WL 427835 (D.
+
+Nev. Feb. 2, 2015) (No. 2:13-cv-01154).
+
+141 First Amended Complaint, supra note 140, at 29; see also U.S. CONST. amend. III; Eis-
+
+R
+
+mann-Harpen, supra note 138, at 120–21.
+
+R
+
+142 Mitchell, 2015 WL 427835, at *17.
+
+143 See Patrik Jonsson, Mike Brown Shooting: Images of Militarized Police Bring Out Crit-
+
+ics, CHRISTIAN SCI. MONITOR (Aug. 14, 2014), http://www.csmonitor.com/USA/Justice/2014/
+
+0814/.VABn01DXClw.email.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 21
+
+5-MAY-16 15:51
+
+832
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+sponders were individually equipped with “Kevlar helmets, assaultfriendly gas masks, combat gloves and knee pads . . . , tactical body armor vests, about 120 to 180 rounds for each shooter, semiautomatic pistols . . . , close-quarter-battle receivers for their M4 carbine rifles and Advanced Combat Optical Gunsights.”144 They deployed smoke grenades, smoke bombs, stun grenades, riot guns, tear gas, pepper spray projectiles, rubber bullets, wooden bullet projectiles, bean bag projectiles, a Bearcat, a LRAD, military-grade helicopters, and K-9 units against initially unarmed protestors peacefully objecting to racial disparities endemic to police action in their city.145 St. Louis County Police received M-16s through free DoD transfers and used Department of Homeland Security (“DHS”) grant funds to purchase the Bearcat, LRAD, ballistic shields, helmets, vests, and night-vision goggles, which means that there was no actual cost to the police department to acquire any of these items.146
+There are also numerous civil liberties concerns with the 1033 Program’s transfer of military weaponry. The ACLU has issued a recent report in which it condemned not only the increasing militarization of everyday law enforcement, but also the primarily negative impact of paramilitary weapons and tactics upon individuals of color.147 This impact may be due to the fact that there is currently no requirement for any kind of training before a law enforcement agency may acquire weapons through this Program, including civil rights or civil liberties training.148 The result is a program that essentially (1) throws serious military equipment and weapons at local law enforcement, (2) incentivizes the use of these weapons whenever and wherever possible, and (3) provides police officers no training on the weapons they are using or how to protect individual or civil rights. Especially when applied to civil protest, the weapons and vehicles transferred under the Program can quickly escalate what might have started as a peaceful situation into one where someone may be seriously injured or killed.149
+
+144 Rubin, supra note 2.
+
+R
+
+145 Id. See generally CIVIL RIGHTS DIV., U.S. DEP’T OF JUSTICE, supra note 138; Jon Swaine
+
+R
+
+& Amanda Holpuch, Ferguson Police: A Stark Illustration of Newly Militarised US Law Enforce-
+
+ment, GUARDIAN, http://www.theguardian.com/world/2014/aug/14/ferguson-police-military-re-
+
+straints-violence-weaponry-missouri (last updated Mar. 12, 2015, 11:05 AM) (reporting on the
+
+Ferguson riots and the increasing militarization of U.S. law enforcement).
+
+146 See Memorandum from Senator Coburn’s HSGAC Staff, supra note 7, at 13–14.
+
+R
+
+147 See ACLU, supra note 86, at 35.
+
+R
+
+148 See EXEC. OFFICE OF THE PRESIDENT, supra note 133, at 2.
+
+R
+
+149 See, e.g., Kara Dansky, An MRAP Is Not a Blanket, HUFFINGTON POST http://www.huf-
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 22
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+833
+
+C. The Posse Comitatus-1033 Program Clash
+As a result of the 1033 Program, the distinct separation between the military and local law enforcement, which the PCA was intended to enshrine, has been unconstitutionally infringed upon.150 This infringement has also failed to maintain previously imposed legal strictures once required before the military could become involved in police action, a change particularly apparent in reactions to civil unrest.151 The new reality of military responses to civil unrest outside the parameters of the PCA has led to a military-provisioning regime that is not only shocking, but also illegal.152
+First, militarized reactions to civil unrest are illegal because protest does not generally fall within the explicit drug or weapons of mass destruction exceptions to posse comitatus.153 As in Ferguson, such protests often revolve around social or racial grievances and in no way implicate either the War on Drugs or weapons that threaten national security, which the PCA exceptions were originally intended to combat.154 Because civil unrest does not fall into a PCA exception, the presumption remains that the use of military resources in such an instance is prohibited.155
+Although the Wounded Knee cases may once have stood for the proposition that provision of military weapons alone cannot constitute a PCA violation, the trend since 1975 has been to assess the breadth of military resources employed.156 Cases like United States v. Khan157 and militarization academics158 have posited that the truly relevant question is not whether police forces employ military weapons, but whether those weapons pervade law enforcement activities such that their provision no longer represents mere indirect assistance.159 Given
+
+fingtonpost.com/kara-dansky/police-military-equipment_b_6256686.html (last updated Feb. 1,
+
+2015).
+
+150 See supra Part II.B.
+
+151 See supra Part I.B.
+
+152 See supra Parts I.B & II.B.
+
+153 See supra Part II.A.
+
+154 See supra Part I.B.
+
+155 Id.
+
+156 See supra Part I.C.
+
+157 United States v. Kahn, 35 F.3d 426, 431 (9th Cir. 1994) (citing United States v. Yunis,
+
+924 F.2d 1086, 1094 (D.C. Cir. 1991)).
+
+158 Posse Comitatus Act Hearing, supra note 83, at 41–42 (statement of Professor Christo-
+
+R
+
+pher Pyle, Mount Holyoke College).
+
+159 See Mark P. Nevitt, Unintended Consequences: The Posse Comitatus Act in the Modern
+
+Era, 36 CARDOZO L. REV. 119, 150 (2014) (citing Bissonette v. Haig, 776 F.2d 1384 (8th Cir.
+
+1985)). For a recent instance of a violation that pushed the Ninth Circuit to take the step—rare
+
+in PCA cases—of applying the exclusionary rule to inculpatory evidence because of “widespread
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 23
+
+5-MAY-16 15:51
+
+834
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+the huge number of military weapons—including tank-like vehicles— and large amounts of money expended to provide local law enforcement with those weapons, the military has now become hugely involved in the day-to-day operations of local law enforcement.160 This support is no longer the minor military assistance for security and reconnaissance apparent at Wounded Knee, but rather the kind of active, pervasive involvement that makes the 1033 Program a violation of the PCA.
+Second, a militarized response to civil unrest cannot fall within non-PCA executive exceptions for use of the military against civilians because these protests do not qualify as disturbances so extensive that they come to constitute treason.161 Treason was the only instance in which the Framers understood use of the military to be appropriate against civil unrest.162 Protests such as those in Ferguson may have represented a threat to immediate, local security but they were in no way widespread enough, nor indeed directed, to bring down the federal government. Because protest on the scale of treason is not at issue here, military support to law enforcement in places like Ferguson cannot meet the original threshold for executive power to react.
+Finally, military support in reaction to civil unrest fails to meet the PCA’s requirements for non-drug or non-weapons of mass destruction provisions of weapons, and it therefore cannot stand. The PCA requires that military weaponry going to support law enforcement be (1) loaned only until such time as the crisis has passed, (2) reimbursed by local law enforcement, and (3) obtained only by special permission of a high-ranking DoD official.163 The 1033 Program ignores each and every one of these requirements.
+First, the Pentagon loans weaponry under the Program until the weaponry is no longer functional.164 This practice basically ensures lifetime use in law enforcement, although the purpose behind the PCA loan requirement was to limit use of military weapons by law enforcement.165 Second, under the 1033 Program, local law enforcement does not pay for use of military weapons at all and only pays the
+
+and repeated violations,” see United States v. Dreyer, 767 F.3d 826, 835–36 (9th Cir. 2014)
+
+(quoting United States v. Roberts, 779 F.2d 565, 568 (9th Cir. 1986), superseded by statute as
+
+stated in Kahn, 35 F.3d at 432 n.7).
+
+160 See supra Part II.B.
+
+161 See supra Part I.B.
+
+162 See supra Parts I.A & I.B.
+
+163 See supra Part I.B.
+
+164 See supra text accompanying notes 98–102.
+
+R
+
+165 See supra text accompanying notes 57–58.
+
+R
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 24
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+835
+
+cost to transfer requested material.166 Third, there is no requirement that law enforcement obtain permission to use military weapons during civil unrest. In fact, police departments already have their military weapons before such incidents and do not need to return to the DoD for permission before deploying them.167 Although allowing departments to act without such permission might help ensure a quick response to crises, recipient departments actually possess the freedom to use these weapons however and whenever they choose—there is no oversight to ensure use for the purposes for which these weapons were obtained.168
+Although legislators and politicians have recognized issues with the 1033 Program, there has been no consensus about how to address them. Individual states have successfully imposed stronger reporting obligations on law enforcement and even requirements for legislative permission before acquisition of military resources through this Program.169 Congress also recently debated a bill that would have increased oversight, limited the purpose for which transferred weapons could be used, and limited the type of weapons that could be transferred, but this initiative failed.170 The congressional failure to demand oversight of the 1033 Program to ensure compliance with the PCA and executive powers represents a blatant violation of the Framers’ intentions, those of the PCA, and even, in many ways, the goals of the 1033 Program itself.
+III. A PCA-CONFORMING SOLUTION TO THE 1033 PROGRAM
+Bringing the 1033 Program into strict compliance with the PCA is the only way to ensure that the Program transfers military weapons to local law enforcement in accordance with the goals advanced by the country’s Founders and still held dear today. The next congressional bill aimed at revising the 1033 Program should thus require limits on the purposes for which transferred weapons may be used, DoD permission before use against civilian protestors, and payment.
+A. Limited Purpose
+Local law enforcement should be permitted to automatically use weapons transferred under the 1033 Program for exclusively counter-
+
+166 See supra Part II.A.
+
+167 See supra text accompanying notes 103–07.
+
+R
+
+168 See supra Parts II.A & II.B.
+
+169 See id.
+
+170 See infra Part IV for a more detailed discussion of these proposals.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 25
+
+5-MAY-16 15:51
+
+836
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+drug and counter-weapons of mass destruction purposes. This solution would return to the 1033 Program the military and law enforcement separation originally intended by the writers of the PCA.171 Local law enforcement would no longer be able to borrow and use military weaponry with impunity, but instead would be able to do so only for those specific purposes demanding a semi-federalized response with greater concomitant firepower. At the same time, however, law enforcement would not have to wait for weapons to arrive; they would instead already be on the ground, still allowing for a quick response time.
+Furthermore, the 1033 Program is not the only outlet available from which law enforcement may obtain military resources. First, as noted above, weapons and vehicles only make up a little over three percent of the disbursements under this Program.172 Non-controlled items, which would not raise PCA concerns, could still be transferred. Second, law enforcement agencies can still obtain DHS grants for counter-terrorism expenditures, which usually supplement law enforcement needs, as well as Justice Department grants “for broad categories of expenditures to support law enforcement and criminal justice efforts.”173 These other programs would help ensure that limiting the uses to which local police can put 1033 weapons would still leave other options open to these agencies for obtaining support for their law enforcement efforts.
+B. DoD Permission
+In the case of civil unrest, local law enforcement should be statutorily required to obtain explicit DoD permission before using transferred property against protestors. Given that this requirement emerges from the PCA, the DoD already has a system in place to evaluate and approve requests for a military-like response to unrest.174 In granting requests for military support to civilian law enforcement, the DoD has generally considered such factors as (1) the necessity of assistance “to prevent significant loss of life or wanton destruction of property” and “to restore governmental function and public order”; or (2) the risk to federal property that local law has lost the capacity
+
+171 See supra notes 45–50 and accompanying text.
+
+R
+
+172 See supra text accompanying note 119.
+
+R
+
+173 Memorandum from Senator Coburn’s HSGAC Staff, supra note 7, at 1. While these
+
+R
+
+programs are outside the scope of this Note, for additional information, see ACLU, supra note
+
+86.
+
+R
+
+174 See DEP’T OF DEF., INSTRUCTION NO. 3025.21: DEFENSE SUPPORT OF CIVILIAN LAW
+
+ENFORCEMENT AGENCIES 16 (2013).
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 26
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+837
+
+to protect.175 Just as with the PCA, revised legislation should define this permission as that which comes from the DoD Executive Agent or Under Secretary of the Army.176 This proposal would accord greater protection to the civil right of protest. If local law enforcement wishes to combat civil unrest with heavy military weaponry, it would at least have to justify the gravity and necessity of that decision to an entity more emotionally removed from what is happening on the ground.
+C. Local Reimbursement
+As with the PCA, all local law enforcement that wish to obtain military weapons through the 1033 Program should have to pay for them. This proposal would again require that local law enforcement bear the burden of financing its acquisitions. Public pressure to use tax dollars efficiently would incentivize law enforcement to purchase only what it needed and not what is merely wanted. This approach would also ensure weapon allocation according to threat level. Currently, 1033 Program disbursements are not based on population, crime rate, or proximity to borders or coasts, which might be expected to see significant drug trafficking or vulnerability to terrorism.177 Residents of small New Hampshire towns neither want nor need Bearcats and would not get them anymore without the large tax base necessary to support such a purchase.178 Conversely, larger cities with significant drug rings or terrorist threats should be able to afford the expenditure of resources necessary to bear the purchase of such an item. This particular solution would be consistent with the constitutional demand for re-evaluation of military expenditures every two years; with a popularly elected body overseeing use of military weaponry, that use will more closely align with the will of the people.179
+IV. THE LEGISLATIVE SOLUTIONS
+Although there has been outrage over the 1033 Program since the events in Ferguson in 2014, the only proposed solutions have called for greater oversight and limited reform.180 Similar proposals, how-
+
+175 Id.
+
+176 32 C.F.R. § 215.9(b)(1) (2014).
+
+177 See Rezvani et al., supra note 117.
+
+R
+
+178 See Balko, supra note 124.
+
+R
+
+179 See supra Part I.A.
+
+180 In May 2015, President Obama announced a ban on certain types of weapon transfers
+
+under the 1033 Program. Eyder Peralta, Obama to Limit Police Acquisition of Some Military-
+
+Style Equipment, NPR, http://www.npr.org/sections/thetwo-way/2015/05/18/407631522/obama-to-
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 27
+
+5-MAY-16 15:51
+
+838
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+ever, have been on the table for some time at the state and federal levels.181 In response to the growth of highly militarized tactical teams and no-knock warrants that result in loss of innocent life, states like Utah and Maryland have implemented legislation designed to increase reporting.182 Although limited to tactical or SWAT teams, this legislation could conceivably serve as a starting point for 1033 Program reform as well because lax oversight is a common concern.
+The Utah and Maryland legislations demand different kinds of reporting from all law enforcement agencies with tactical teams. In Maryland, every six months, these agencies report: (1) the number of times the SWAT team was activated and deployed; (2) where it was deployed; (3) the reason for its deployment; (4) the legal authority, e.g., warrant under which it was deployed; and (5) the result of the deployment.183 This fifth category includes: (a) how many arrests were made, if any; (b) whether property was seized; (c) whether forcible entry was made; (d) whether a weapon was discharged by a SWAT team member; and (e) whether a person or domestic animal was injured or killed.184 The Utah legislation requires roughly the same information, with the addition of whether a person other than a law enforcement officer brandished a weapon, whether a weapon was used against a law enforcement officer, and whether a law enforcement officer was injured or killed.185
+Recently failed federal legislation to increase oversight of the 1033 Program would have imposed similar reporting requirements.186
+limit-police-acquisition-of-some-military-style-equipment (last updated May 18, 2015, 6:22 PM). However, much of the banned weaponry was never transferred under this Program in the first place and many of the items most typically transferred will still be eligible for transfer. For example, although the President’s plan bans the distribution of firearms above .50 caliber, “[a]ll 84,258 rifles—including assault types such as M16s and battle types such as M14s—that were distributed to police departments would still be made available to local agencies” under the President’s new plan. Eyder Peralta & David Eads, White House Ban on Militarized Gear for Police May Mean Little, NPR, http://www.npr.org/sections/thetwo-way/2015/05/21/407958035/ white-house-ban-on-militarized-gear-for-police-may-mean-little (last updated May 21, 2015, 7:09 PM). Although the plan also bans tracked armored vehicles, MRAPs typically have wheels, which means eighty-seven percent of MRAPs would still be transferrable. See id. It is also unclear what the future of this ban might be once President Obama leaves office. A legislative solution would ensure a more permanent approach.
+181 See Stop Militarizing Law Enforcement Act, H.R. 5478, 113th Cong. (2014); S.B. 185, 60th Leg., Gen. Sess. (Utah 2014); S.B. 590, 433d Gen. Assemb. Reg. Sess. (Md. 2013).
+182 See Utah S.B. 185; Md. S.B. 590. 183 See Md. S.B. 590 § 1(b). 184 See id. 185 See Utah S.B. 185 § 1. 186 One of the reasons that this federal legislation failed was almost certainly the defense industry and the police lobby, which profit greatly from the 1033 Program. See, e.g., Zaid Jilani,
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 28
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+839
+
+In response to concerns about missing equipment and inappropriate weapons transfers, the Stop Militarizing Law Enforcement Act would have: (1) eliminated counter-drug actions as a basis for weapons transfers under the 1033 Program; (2) instituted a requirement for certification that recipients of weapons possessed the personnel, technical capacity, and training to operate them; (3) encouraged return of any equipment deemed surplus; and (4) implemented strict annual accounting.187 Finally, this bill would have prohibited any future transfer of automatic weapons unsuitable for law enforcement, tactical vehicles, armored drones, aircraft, flash-bang or stun grenades, and silencers.188
+These state and federal proposals possess a number of positive attributes. First, they force greater law enforcement accountability to elected officials who represent the will of the people.189 Recipient agencies that have to account for every piece of transferred equipment, every bullet fired, and every threat that produced police action might use their military equipment less often.190 These weapons-transfer programs are not popular, as evidenced by the fact that several states have in the past few months moved to implement various oversight mechanisms giving greater authority to the executive or legislature to reject weapons transfers under the 1033 Program.191 The resultant increased pressure to reduce the militarized police presence on public streets might result in fewer police actions that resemble military deployment.
+Second, in the case of the federal proposal, getting some of the more controversial and less police-appropriate military property off the streets might reduce the number of battle-like encounters between police and protestors.192 This bill would have removed the heavy
+
+Two Months Ago, Congress Had a Chance to Help Prevent the Escalating Militarization of Po-
+
+lice, VANITY FAIR (Aug. 15, 2014, 9:56 AM), http://www.vanityfair.com/news/politics/2014/08/
+
+militarization-police-force-ferguson-congress; Megan R. Wilson, Police Lobby Fights to Keep
+
+Gear, HILL (Aug. 28, 2014, 6:00 AM), https://thehill.com/business-a-lobbying/business-a-lobby-
+
+ing/216127-law-enforcement-lobbies-to-keep-gear.
+
+187 See Stop Militarizing Law Enforcement Act, H.R. 5478, 113th Cong. § 3 (2014).
+
+188 Id.
+
+189 See Jake Grovum, States Face Uphill Battle over Growing Militarization of Police, HUF-
+
+FINGTON POST, http://www.huffingtonpost.com/2015/03/24/states-police-militarization_n_6932576
+
+.html (last updated Mar. 24, 2015, 1:59 PM).
+
+190 See H.R. 5478 §§ 2–3.
+
+191 See Grovum, supra note 189.
+
+R
+
+192 See AMNESTY INT’L, ON THE STREETS OF AMERICA: HUMAN RIGHTS ABUSES IN FER-
+
+GUSON 11 (2014), https://www.amnestyusa.org/sites/default/files/onthestreetsofamericaamnesty-
+
+international.pdf.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 29
+
+5-MAY-16 15:51
+
+840
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+
+weaponry and tank-like weapons193 that have sparked so much protest and that often make officers feel empowered to suppress protests with excessive force.194 Finally, this bill would have imposed a training requirement, which does not currently exist for the 1033 Program.195 Training would at least ensure that when law enforcement officers point a deadly weapon at a protestor, they know how to show restraint in its use.
+The one consistent problem with these proposed reforms is that they do not bring the 1033 Program into conformity with the PCA or its reasoning. Increased oversight of this Program will only ensure that it functions as originally intended. Although a worthy goal, the original intent of the Program still violates the PCA. For example, the congressional solution removed the War on Drugs as a basis for which to obtain military weaponry.196 There would, however, have been no strictures to ensure that recipients only use transferred property as permitted. Currently, in theory, 1033 Program recipients only use their property to fight weapons of mass destruction and drugs, but the reality is that the lack of an enforcement mechanism allows for use at the whim of law enforcement. There was no proposed enforcement mechanism to accompany the new restrictions on use, which would keep police forces from turning these military weapons on civilian protestors.
+Furthermore, merely eliminating the transfer or state-level acquisition of certain weapons, as both federal and state proposals have suggested, would also have no effect on the use of the still-transferred weapons. With no limit on the circumstances under which law enforcement could deploy those weapons that it does acquire, the constitutional right to civil protest would still be threatened. Police could continue to bring military weapons and vehicles to bear in such situations with seeming impunity. This Note proposes solutions that would instead impose a necessary balance to both restrict and enforce the circumstances of use, as well as reduce the number of military weapons transferred and return supervision of the 1033 Program to the taxpayers and their elected representatives.
+
+193 H.R. 5478 §§ 2–3.
+
+194 See AMNESTY INT’L, supra note 192, at 11.
+
+R
+
+195 See H.R. 5478 § 3.
+
+196 See supra notes 104–07, 181, 186 and accompanying text.
+
+R
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 30
+
+5-MAY-16 15:51
+
+2016]
+
+THE 1033 PROGRAM AND THE RIGHT TO PROTEST
+
+841
+
+CONCLUSION
+The Ferguson police department’s highly militarized response to initially-peaceful civil unrest illuminated for the country the problem of a federal program that liberally transfers military weaponry to local law enforcement. The DoD’s 1033 Program, as written and as applied, violates the basic separation between the military and local law enforcement that undergirded the founding of this country and the Posse Comitatus Act. There are, however, legislative ways to bring the 1033 Program into compliance with posse comitatus, which could both ensure national security and protect those individual liberties still at the bedrock of the American value system. The next bill designed to reign in the 1033 Program should consider the dictates of the PCA in doing so.
+
+\\jciprod01\productn\G\GWN\84-3\GWN306.txt
+
+unknown
+
+Seq: 31
+
+5-MAY-16 15:51
+
+842
+
+THE GEORGE WASHINGTON LAW REVIEW
+
+[Vol. 84:812
+

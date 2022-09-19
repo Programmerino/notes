@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[32],{1313:function(n,r){var e=[].indexOf;n.exports=function(n,r){if(e)return n.indexOf(r);for(var i=0;i<n.length;++i)if(n[i]===r)return i;return-1}}}]);
+//# sourceMappingURL=https://fortune.com/static/js/npm.indexof.map?v=d45c2b14

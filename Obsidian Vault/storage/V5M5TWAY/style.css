@@ -1,0 +1,43 @@
+/*
+ Theme Name:   Twenty Fourteen Child
+ Template:     twentyfourteen
+*/
+
+@import url("../twentyfourteen/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+
+
+table.smallBox td {
+	border: none;
+}
+
+table.smallBox5 td {
+	border: none;
+}
+
+.entry-title {
+text-transform: none;
+font-weight:bold;
+}
+
+.entry-content table,
+.comment-content table {
+	font-size: 12px;
+	line-height: 1.2857142857;
+	margin-bottom: 24px;
+}
+
+
+.content-sidebar .widget table,
+.content-sidebar .widget th,
+.content-sidebar .widget td {
+	border-color: rgba(26, 78, 136, 1.0);
+}
+
+ins {
+	background: #ffffff;
+	text-decoration: none;
+}

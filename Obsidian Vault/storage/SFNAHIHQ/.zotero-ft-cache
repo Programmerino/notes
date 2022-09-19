@@ -1,0 +1,1218 @@
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+You have institutional access
+
+    View  PDF
+    Download full book 
+
+    Chapter contents
+    Book contents 
+
+Outline
+
+    Abstract
+    Keywords
+    Acknowledgments
+    5.1. Introduction
+    5.2. Study Approach
+    5.3. Experimental Equipment
+    5.4. Effect of Human Factors
+    5.5. Objective and Subjective Evaluation
+    References 
+
+Show full outline
+Cited By (9)
+Figures (42)
+
+    Figure5.1. Vehicle Speed and DHW
+    Figure5.2. THW Histogram
+    Figure5.3. Distribution of THW and TTCi
+    Figure5.4. Distribution of Acceleration and TTCi
+    Figure5.5. Relative Speed and DHW Under Driver Control
+    Figure5.6. Own Vehicle Speed and TTC at Driver Actions
+
+Show all figures
+Tables (9)
+
+    Table 5.1
+    Table 5.2
+    Table 5.3
+    Table 5.4
+    Table 5.5
+    Table 5.6 
+
+Show all tables
+Advances in Intelligent Vehicles
+Advances in Intelligent Vehicles
+2014, Pages 111-157
+Advances in Intelligent Vehicles
+Chapter 5 - Effect of Human Factors on Driver Behavior
+Author links open overlay panel Jianqiang Wang ∗ Keqiang Li ∗ Xiao-Yun Lu †
+Show more
+Cite
+https://doi.org/10.1016/B978-0-12-397199-9.00005-7 Get rights and content
+Abstract
+
+Driver behavior is one of the most important aspects in the design, development, and application of Advanced Driving Assistance Systems (ADAS) and Intelligent Transportation Systems (ITS), which can be affected by many factors. To study the effect of human factors in driving, a simulator with Hardware-in-the-Loop (HIL) and Driver-in-the-Loop (DIL), and an instrumented vehicle were developed to quantitatively measure the driver actions, vehicle status, and the relationship with the vehicle. A comparative analysis of the differences was carried out in a driving simulator and also in the real-world environment. After 33 various driver experiments were conducted, a set of special data-processing programs were also developed to review, extract, and analyze the captured data. Some representative parameters such as time to collision (TTC) and time headway (THW) are adopted to analyze and compare the effect of human factors, which include age, gender, driving experience, workload, education level, and nationality. Finally, to ensure the consistency of classifications based on subjective evaluation and objective experimental data, tests including the completion of a driver behavior questionnaire (DBQ) and real-world driving were conducted with 52 participants and compared. Factor analysis theory was applied to the data processing and characteristic extractions. The results of the study indicated that there were significant differences between the subjective evaluation and objective data, i.e. the subjective evaluation was not reliable enough for algorithm design , although it can be used as a reference.
+
+    Previous chapter in book
+    Next chapter in book 
+
+Keywords
+Driver behavior
+human factors
+Advanced Driving Assistance Systems (ADAS)
+Intelligent Transportation Systems (ITS)
+Hardware-in-the-Loop (HIL)
+Driver-in-the-Loop (DIL)
+time to collision (TTC)
+time headway (THW)
+Chapter Outline
+
+5.1
+
+    Introduction  112
+5.2
+
+    Study Approach  112
+
+    5.2.1
+
+        Definitions of Driver Behavior and Characteristics  112
+
+            Driver Behavior  112
+
+            Driver Characteristics  113
+
+    5.2.2
+
+        Parameters Embodying Driver Behavior and Characteristics  113
+    5.2.3
+
+        Definitions of Driver Operation and Vehicle Driving Scenarios  113
+    5.2.4
+
+        Relation Diagram of Parameters  113
+
+            Scenario A: Steady-State Following  114
+
+            Scenario B: No Restricted Following  115
+
+            Scenario C: Approaching  116
+
+    5.2.5
+
+        Data Processing and Analysis Approach  117
+
+5.3
+
+    Experimental Equipment  118
+
+    5.3.1
+
+        Simulator  119
+
+            Monitoring Software  119
+
+            Vision-rendering Software  120
+
+    5.3.2
+
+        Experimental Vehicle  121
+
+            Hardware  121
+
+            Data Collection System  123
+
+            Data Processing Program  123
+
+    5.3.3
+
+        Comparison of Simulation and Field Experiments  124
+
+            Comparison of Driving Behavior  124
+
+            Correlation Model for Driving Simulator and Real-world Test  126
+
+5.4
+
+    Effect of Human Factors  127
+
+    5.4.1
+
+        Experiment Design  127
+
+            Driver Profile  127
+
+            Experimental Route Selection  129
+
+    5.4.2
+
+        Comparison of Individual Driver Behavior  129
+    5.4.3
+
+        Age  129
+    5.4.4
+
+        Gender  132
+    5.4.5
+
+        Driving Experience  136
+    5.4.6
+
+        Workload  139
+    5.4.7
+
+        Level of Education  142
+    5.4.8
+
+        Nationality  143
+
+5.5
+
+    Objective and Subjective Evaluation  144
+
+    5.5.1
+
+        Participants  145
+    5.5.2
+
+        Driver Classification Based on DBQ  145
+
+            Design of DBQ  145
+
+            Statistical Data Analysis  145
+
+    5.5.3
+
+        Driver Classification Based on Real-World Driving Data  151
+
+            Experiment Design and Data Collection  151
+
+            Measurable Parameters Selection  151
+
+            Classification Based on Factor Analysis  151
+
+    5.5.4
+
+        Comparison of Subjective Evaluation and Objective Experiment  151
+    5.5.5
+
+        Conclusions  154
+
+    References  154
+
+Acknowledgments
+
+The project was supported by NSFC (No. 51175290) and the joint research project of Tsinghua University and Nissan Motor Co. Ltd. The authors especially thank Mr Lei Zhang, Mr Qing Xiao, Ms Xiaojia Lu, Ms Ruina Dang, Mr Lai Chen, and Ms Yu Bai for their contribution to the research work. The authors would also like to thank the co-researchers of Nissan Motor Co. Ltd and Nissan (China) Investment Co. Ltd.
+5.1. Introduction
+
+Road traffic accidents have always been a serious issue in modern society. According to statistical results, more than 90% of accidents have been caused by a driver’s mistake and/or fatigue [1] . Therefore, the human driver’s behavior has been an important component in Intelligent Transportation System (ITS) research. Some results on driver behavior have been applied to the development of intelligent vehicles [2] , [3] , [4] . There are various aspects of this research field. Some studies focused on specific driving scenarios, including car following [5] and lane changing [6] . The driver’s physiological characteristics during driving, such as response time [7] , cognition process [8] and fatigue [9] , have also been investigated.
+
+Driver behavior depends on many factors. This chapter will focus on the effect of human factors on driver behavior and analyze the differences in subjective evaluation and objective experiments.
+5.2. Study Approach
+5.2.1. Definitions of Driver Behavior and Characteristics
+Driver Behavior
+
+The manner of driver action during driving in real traffic situations with certain vehicles, road and environmental conditions.
+
+The driver’s behavior may include many aspects, such as the perception of traffic conditions, decision-making, vehicle operation, using cellphones and navigation systems, talking to other people in the vehicle, eating, drinking, applying cosmetics, looking around, etc.
+
+The vehicle operation includes longitudinal and lateral driving, which reflects the perception of the road, decision-making, and driver’s intention and action, such as car following, lane change, lane keeping, acceleration and deceleration, etc. Longitudinal driving behavior mainly focuses on vehicle movement along the driving direction, while lateral driving behavior mainly focuses on vehicle movement perpendicular to the driving direction. These features represent the variation of vehicle states and the relationship with other vehicles when the driver operates on the accelerator/brake pedal, steering wheel, gear, and in-vehicle switches. The vehicle state can be quantified as position, speed, acceleration, and steering angle and rate (single vehicle trajectory), as well as distance headway , time headway, and time to collision (inter-vehicle relationship).
+Driver Characteristics
+
+The driving traits, quality, and performance of the driver depend on physiology, psychology, knowledge, culture, traffic laws and regulations , driver’s experience and temper, etc.
+
+The driver characteristics may also be classified by skills and styles, such as prudence (aggressive vs. prudent), stability (unstable vs. stable), conflict proneness (risk prone vs. risk avoidance), skillfulness (non-skillful vs. skillful), and self-discipline (law-abiding vs. violation frequent).
+5.2.2. Parameters Embodying Driver Behavior and Characteristics
+
+In order to quantitatively analyze driver behavior, several parameters and terms are defined in Table 5.1 , which include vehicle parameters and inter-vehicle parameters.
+
+Table 5.1 . Nomenclature and Definitions for Vehicle State Parameters
+No.	Term	Symbol	Unit	Definition
+1	v 	Velocity	m/s	The speed of own (host) vehicle
+2	v l 	Velocity	m/s	Speed of lead vehicle
+3	v r 	Relative speed	m/s	Speed difference between the host vehicle and the relevant vehicle
+4	a 	Acceleration	m/s 2 	Accelerator pedal position more than 5%, and the vehicle speed increasing
+5	a dmax 	Maximum deceleration	m/s 2 	Maximum absolute value of longitudinal deceleration when braking
+6	a amax 	Maximum deceleration	m/s 2 	Maximum value of longitudinal acceleration for every acceleration scenario
+7	P l 	Lateral position	m	Distance from the center of vehicle to the lane mark
+8	DHW	Distance headway	m	Distance to the lead vehicle
+9	THW	Time headway	m	Distance headway divided by the host vehicle speed v
+10	TTC	Time to collision	s	Distance headway divided by the relative speed v r
+11	TTCi	The inverse of TTC	s −1 	Inverse of TTC
+12	TLC	Time to lane crossing	s	Distance from left/right wheel to left/right lane mark divided by the lateral speed
+13	TLCi	Inverse of time to lane crossing	s −1 	Inverse of TLCi
+14	TTCi_1stAccR	The inverse of TTC	s −1 	TTCi when the driver first releases the acceleration pedal in approaching.
+15	TTCi_1stBra	The inverse of TTC	s −1 	TTCi when the driver first activates the brake pedal in approaching.
+5.2.3. Definitions of Driver Operation and Vehicle Driving Scenarios
+
+Driver operation under different driving scenarios will usually reflect driver behavior characteristics. To compare and comprehend the driver’s behavior in the real world, several terms were defined as in Table 5.2 . This includes driver actions and driving types. Longitudinal driving is divided into four types, i.e. solo driving, steady-state following, approaching, and non-restricted following.
+
+Table 5.2 . Nomenclature and Definitions of Driver Operation and Driving Scenarios
+No.	Symbol	Definition
+1	Braking	Activation of brake pedal longer than 1 s when the host vehicle speed is decreasing
+2	Accelerator pedal release	Accelerator pedal position data becoming lower than a threshold (5% of the allowable deflection)
+3	Brake pedal activation	Braking action, and “Brake Pedal Switch” signal becoming 1 (On) from 0 (Off)
+4	Solo driving	Host vehicle in motion without a lead vehicle (distance headway set to 0 m)
+Host vehicle speed larger than a set threshold (e.g. 30 km/h in this study for the jammed traffic)
+5	Car following	Host vehicle behind a lead vehicle and both in motion; no braking action during the following
+6	Steady-state following	Relative speed is very low. Car following with TTCi lower than 0.05 s −1 (a speed threshold depending on the road geometry); no braking action
+7	Non-restricted following	Car following without any restriction on TTCi
+8	Approaching	Gap closing lasts longer than a certain period of time (when the host vehicle speed is greater than the lead vehicle speed)
+Car following under the following conditions: (1) the duration of gap closing is longer than 5 s; (2) TTC is less than 50 s
+5.2.4. Relation Diagram of Parameters
+
+Some important parameters such as time headway (THW), time to collision (TTC), and time to lane crossing (TLC) were selected to describe driver behavior. The relation diagram of parameters will reflect driving styles and driver characteristics through behavioral data.
+Scenario A: Steady-State Following
+(a). Vehicle Speed vs. DHW
+
+Figure 5.1 shows a sketch map of the relationship between vehicle speed and distance headway, which to a great extent reflects the car-following distance at different vehicle speeds.
+
+    Download : Download full-size image 
+
+Figure 5.1 . Vehicle Speed and DHW.
+(b). Time Headway Histogram
+
+Figure 5.2 shows a sketch map of the distribution of time headway, which to a great extent reflects the THW the driver prefers to keep under a steady-state following scenario.
+
+    Download : Download full-size image 
+
+Figure 5.2 . THW Histogram.
+Scenario B: No Restricted Following
+(a). THW vs. TTCi Distribution
+
+Figure 5.3 shows a sketch map of the distributions of THW and TTCi. The contour graph of the distribution is usually shown, the contours being 25%, 50%, 75%, 95%, and 99%. The relation of THW and TTCi to a great extent reflects what safety degree the driver desires under different THW.
+
+    Download : Download full-size image 
+
+Figure 5.3 . Distribution of THW and TTCi.
+(b). Longitudinal Acceleration vs. TTCi Distribution
+
+Figure 5.4 shows a sketch map of the distribution of longitudinal acceleration and TTCi. The graph shows the distributions of contours 25%, 50%, 75%, 95%, and 99%. The relationship of longitudinal acceleration and TTCi to a great extent reflects the driver’s operating style.
+
+    Download : Download full-size image 
+
+Figure 5.4 . Distribution of Acceleration and TTCi.
+Scenario C: Approaching
+(a). Relative Speed and DHW at the Driver’s Actions
+
+Figure 5.5 shows a sketch map of the relationship between relative speed and distance headway relative to the driver’s actions, which reflects the threshold for the driver to judge safety and risk. Figure 5.5 represents the acceleration pedal release (left) and brake pedal activation (right).
+
+    Download : Download full-size image 
+
+Figure 5.5 . Relative Speed and DHW Under Driver Control.
+(b). Subject Vehicle Speed and TTC at the Driver’s Actions
+
+Figure 5.6 shows a sketch map of the relationship between own vehicle speed and time to collision for driver actions, which to a great extent reflects the judgmental principle of the risk and decision-making mechanism of operating a vehicle for the driver.
+
+    Download : Download full-size image 
+
+Figure 5.6 . Own Vehicle Speed and TTC at Driver Actions.
+5.2.5. Data Processing and Analysis Approach
+
+The Kalman filtering algorithm is widely applied in signal processing. It is based on the best estimate rule for the estimation of least mean-square error in search of a recursive estimate. It is suitable for real-time processing and computer operation. The Kalman filter was used in Ref.  [10] to eliminate noise from the radar data of the longitudinal acceleration in the host vehicle. The detailed mathematical equations of the Kalman filter algorithm are given in Ref.  [11] . Only data-processing results with the Kalman filter are presented below.
+
+Figure 5.7 (a) shows an example of the distance headway and relative speed data. The data are smoothed with stagnation eliminated. Figure 5.7 (b) shows the longitudinal acceleration estimation result, which is much better than the derivative of the vehicle speed.
+
+    Download : Download full-size image 
+
+Figure 5.7 . (a) Processed DHW and Relative Speed Data. (b) Processed Host Vehicle Speed and Estimated Acceleration.
+
+In this study, the t -test method is used for statistical comparison. This method can determine whether there are differences between both samples (such as male group and female group) with an unknown but equal population variance. It is a common method for hypothesis testing. The calculation is simple and the method is suitable for small sample cases [12] .
+
+We formulate a testing variable t as follows: (5.1) t = X ¯ − Y ¯ S w 1 n 1 + 1 n 2 (5.2) S w 2 = ( n 1 − 1 ) S 1 2 + ( n 2 − 1 ) S 2 2 n 1 + n 2 − 2 , where X ¯ and Y ¯ are the expectation values of the samples A and B, such as the expectation value of THW for urban access roads and for urban distributor roads. S 1 and S 2 are the standard deviations of samples A and B. n 1 and n 2 are the numbers of the two samples. Assuming that sample A has little difference from sample B, we make a hypothesis H 0 and an alternative hypothesis H 1 : (5.3) H 0 : E X − E Y = 0 H 1 : E X − E Y ≠ 0 , where E X and E Y are the expectation values of the two samples. We consider the results for α  = 0.05, which is the typical level of significance used in the t -test [13] .
+5.3. Experimental Equipment
+
+Simulations and field tests are important methods for studying driver behavior and developing vehicular on-board electronics such as Advanced Driving Assistance Systems (ADAS) [14] . One simulator and one real vehicular experimental platform have been developed in our research, and are described below.
+5.3.1. Simulator
+
+It is generally accepted that the use of a proper driving simulator may shorten the system development cycle and reduce system development costs. A good simulator can be used for studying driver behavior and testing system performance in dangerous conditions and/or situations that cannot or are not easily able to be tested in the real world [15] . In addition, clear advantages of using a driving simulator include its operational flexibility and high level of safety. It can be easily used for recurring experiments, and for testing/evaluating various algorithms.
+
+To comprehensively address driver behavior research, a driving simulation platform was developed in a MATLAB real-time simulation environment [16] . The platform combined two data flow loops, Hardware-in-the-Loop (HIL) and Driver-in-the-Loop (DIL). Its hardware consists of a simulation computer and monitoring computer, a vision computer , ADAS actuators , and a car mock-up. Its main software includes monitor software running in the monitor computer, a vision-rendering software running in the vision computer, and a Simulink-based model running in a simulation computer. These components have been properly integrated through interfaces.
+
+The configuration of the driving simulation platform is shown in Figure 5.8 . The car mock-up is a passenger vehicle from Nissan Ltd, with the engine removed. In the DIL simulation, the simulation computer collects driver’s manipulating signals through a Control Area Network (CAN) bus connected with the car mock-up. Subsequently, the simulation model calculates the states of the host vehicle and those of its surrounding vehicles, and then sends them to the vision computer through an RS232 serial interface. By utilizing this information, the vision-rendering software in the vision computer generates virtual scenes and projects them on the screen to imitate the driver’s view in an actual driving environment.
+
+    Download : Download full-size image 
+
+Figure 5.8 . System Configuration of Driving Simulation Platform.
+
+CAN, Control Area Network; ISA, Industrial Standard Architecture bus; RS 232, Recommended Standard 232 bus.
+Monitoring Software
+
+As required by ADAS, monitoring software should have four functions, specifically parameter adjustment, simulation control, real-time display, and data recording. Among the four required functions, real-time display is the most difficult task, because an xPC-based simulation computer does not have enough processing capability for display in real time. Therefore, a monitor was added. To maintain real-time characteristics for displaying data, the sampling frequency of monitor software must be at least 10 Hz. However, experiments have shown that data display would have apparent stagnations if driven by the MATLAB clock, since Graphic User Interface (GUI) was an interpreted programming language that ran slowly. To address this issue, the monitor software was developed by a GUI-Driven-by-S-Function (GUIDSF) method [17] . The appearance and Human–Machine Interface (HMI) of the driving simulator are shown in Figure 5.9 .
+
+    Download : Download full-size image 
+
+Figure 5.9 . Appearance and HMI of the Driving Simulator .
+
+In the GUI, Active-X controls are used to achieve virtual meters and Real Time (RT) display. From xPC, the Target module in Simulink outputs simulation data to the S-function and then the S-function drives GUI to display them. Experiments indicated that its sampling frequency exceeded 30 Hz, which effectively avoided data-updating delays and display stagnation in a clock-driven method.
+Vision-rendering Software
+
+A critical issue of a virtual traffic scene is that it is weak in the sense of “immersion”. Apart from its crude approximation to reality, the depth of field, size, and position of objects are also difficult to represent. They are closely related to viewpoint position and view angle range in the vision-rendering software, positions of car mock-up, screen and driver’s eyes. Therefore, to strengthen the “immersion sense”, viewpoint position and view angle range must be adjusted according to relative positions of car mock-up, screen, and driver’s eyes. An adjustment method based on the principle of optical projection was proposed in Ref.  [16] .
+
+Compared with existing driving simulators, this configuration possesses a simple structure, strong modularity , and good maintainability . It effectively avoids shortcomings such as excessive complication in structure, difficulties in development, and high cost. A GUI-Driven-by-S-Function method, based on monitor software, eliminates the display stagnation of simulation data. Compared with some effects on the virtual scene, the proposed adjustment method for vision-rendering software further strengthens the driver’s feeling of immersion in the virtual traffic environment with improved reliability. It is closer to naturalistic driving and therefore helps in disclosing driver characteristics.
+5.3.2. Experimental Vehicle
+
+To investigate driver behavior, an instrumented vehicle testbed was built to measure the information on driver actions and vehicle status, to evaluate driver behavior and different performance, and to obtain the human factor parameters required for the development of driver assistance systems [18] .
+Hardware
+
+The instrumented vehicle testbed is designed to capture all of the real-time information with sensors and a data collection system. Figure 5.10 , Figure 5.11 , Figure 5.12 show the system architecture of the testbed and the main equipment.
+
+    Download : Download full-size image 
+
+Figure 5.10 . Equipment in the Vehicle Testbed .
+
+A Lidar is used to detect the forward vehicle and other objects, and to measure the distance and relative speed. To validate the data of Lidar to meet the research requirement on driver lateral behavior, a CCD camera is used to capture the image of the frontal road environment, which is shown in Figure 5.11 (a). The position of the vehicle is obtained with a high-precision GPS. The GPS data based on maps can help to distinguish the driver’s behavior in different road conditions. The state of the vehicle includes the vehicle speed, longitudinal and lateral acceleration, and yaw rate. There are four CCD cameras. Two of them installed inside the vehicle are shown in Figure 5.11 (b) and (c), to capture the images of the driver’s hand and foot movements respectively. The other two installed in the rear-view mirrors are shown in Figure 5.12 (a) and (b) to capture the images behind the host vehicle.
+
+    Download : Download full-size image 
+
+Figure 5.11 . Cameras Inside Vehicle and Monitor.
+
+(a) Forward road camera. (b) Pedal and foot camera. (c) Driver hand camera. (d) Monitor.
+
+    Download : Download full-size image 
+
+Figure 5.12 . Installation of Rear-View Cameras and Two Radars.
+
+(a) Left: left rear-view camera. (b) Middle: right rear-view camera. (c) Right: rear radars.
+
+The two radars that are installed behind the vehicle mainly collect the rear vehicle status in adjacent lanes for any relative lateral movement ( Figure 5.12 (c)). The turn light switch, the pedal positions, and steering angle are also recorded to model the driver’s behavior.
+Data Collection System
+
+The data collection system consists of three parts: CAN bus data, the Lidar and the two radars’ data, and the image data of the five cameras and the GPS data. The camera data and the GPS data are from the serial port . The CAN data of FUGA are collected based on the NI-CAN (PCI-CAN Series 2) card and the data collection software of the FUGA’s measurement PC.
+
+All of the experimental data are recorded in text file format. The five experimental images and the data display interface are synchronized with respect to the same timeline and are saved as videos.
+Data Processing Program
+
+The analysis of the driver experimental data was a complicated task. In order to provide functions for data review and processing, a data analysis program was developed with MATLAB GUI tools.
+
+The program had the following functionalities:
+
+1.
+
+    Postprocessing the original CAN bus and video data. This step included synchronizing, rearranging and data saving.
+2.
+
+    Overlaying vehicle GPS locations, experimental data, and video image on the city map.
+3.
+
+    Extracting and plotting the intersected data set.
+4.
+
+    Achieving the data statistics and analysis results such as PDF of THW.
+
+5.3.3. Comparison of Simulation and Field Experiments
+
+Simulation is an important means of studying driver behavior, but the driving task cannot be rendered completely and realistically in a driving simulator. Therefore, a crucial issue for simulator design is to ensure that the results obtained in a driving simulator study are similar to a real traffic environment [19] . In previous studies, efforts of measures and comparisons of lateral displacement both on the road and in a driving simulator have been made [20] , and simulator validity and fidelity were investigated [21] . However, no proper explanation of the differences between the results from the simulator and real-world experiments, such as lateral offset and time to lane crossing (TLC) [22] were obtained. Our work intends to fill this gap and to calibrate the simulation results with real-world data.
+Comparison of Driving Behavior
+
+Twelve drivers were invited to take both experiments for simulated and on-road driving. The data in both the simulator and the instrumented vehicle were recorded and analyzed. In this research, parameters for consideration include THW, TTCi–THW, lateral offset, and TLC.
+(1). THW
+
+THW is the parameter that can significantly reflect the driver’s longitudinal characteristics. As Figure 5.13 shows, the THW distribution in simulator tests is similar to that in real-world tests. Most data concentrate on 0.5–2 s, and the peak is close to 1 s. Nevertheless, it can be observed that the THW from the simulator data is slightly smaller than that from the real-world data, which means that drivers tend to follow a little closer to the leading vehicle on a simulator than in real-world driving. This could be explained by: (1) drivers feeling safer when driving in a simulator than in the real world, i.e. the drivers think it unnecessary to pay similar attention to a potential collision on the simulator as in the real world; and (2) the relative distance estimation is different in the 3D virtual traffic environment from that in the real world.
+
+    Download : Download full-size image 
+
+Figure 5.13 . THW Distribution of the Driving Simulator Test (left) and the Real-World Test (right).
+(2). TTCi–THW
+
+As Figure 5.14 shows, the TTCi distribution for the simulator test has similar tendencies as those in the real world. In spite of that, TTCi has a slightly larger and more decentralized PDD (Probability Density Distribution) in the simulator than in the real world, which reflects the driver’s preference to follow closer to the leading vehicle in the simulator than in the real world. The result and explanation are consistent with those of the THW.
+
+    Download : Download full-size image 
+
+Figure 5.14 . TTCi with Respect to THW Distribution of the Driving Simulator Test (left) and the Real-World Test (right).
+(3). Lateral offset
+
+Lateral offset reflects the vehicle position with respect to the lane centerline . It is the direct expression of the vehicle’s lateral position (see Figure 5.15 ).
+
+    Download : Download full-size image 
+
+Figure 5.15 . Lateral Offset Distribution of the Driving Simulator (left) and of the Real-World Test (right).
+
+From Figure 5.15 , it can be seen that, in the simulator (left panel), drivers do not have a preference for driving on the left or the right side of the lane. In addition, the PDD for simulator data is a little more dispersed. However, in real-world tests, drivers prefer driving on the left side of the lane. The PDD is much more centralized. Figure 5.15 (right) shows that the graph is high and narrow, and the peak close to −0.1 m.
+(4). TLC
+
+TLC is the most useful quantitative characteristic to express a vehicle’s lane deviation. It provides a measurable criterion for a lane departure warning.
+
+The value of TLC is significantly influenced by the speed of the driver in lane changing. TLC increases with increasing lateral offset and decreasing lateral speed.
+
+Comparisons of the TLC value frequency distributions for the driving simulator and the real-world test (see Figure 5.16 ) reveal that they are similar, with peak values around TLC = 4.5 s, and frequency peak values near 1.5%.
+
+    Download : Download full-size image 
+
+Figure 5.16 . TLC Result Contrast: The Driving Simulator (left) vs. Real-World Test (right).
+
+The analysis of the test data indicates that the values of the driver’s behavior parameters obtained from the driving simulator tests are different when compared to the real-world test results, but the differences are generally consistent for different data sets.
+Correlation Model for Driving Simulator and Real-world Test
+
+The aforementioned analysis shows that there exist differences in the results between the driving simulator data and the real-world data. Actually, lateral offset PDD is close to a normal distribution, while the THW and TLC PDDs are closer to a gamma distribution. Such anomalies lie in the difference between the distribution parameters.
+
+The normal distribution PDF is (5.4) ϕ ( x ; μ , σ ) = 1 2 π σ exp [ ( x − μ ) 2 2 σ 2 ] , x ∈ R . The normal distribution is determined by μ and σ , where μ denotes the expected value and σ denotes the standard deviation.
+
+The gamma distribution PDF is (5.5) f G ( x ; r , λ ) = λ r Γ ( r ) x r − 1 e − λ x , x > 0.
+
+The gamma distribution is determined by r and λ , where r denotes the shape parameter and λ denotes the scale parameter.
+
+In Ref.  [23] , a calibration method for a correlation model between the two data sets was presented that was able to correct the driving simulator data using the real-word data with sufficient accuracy.
+
+It can be concluded from the discussion above that an experimental tool is effective in driver behavior testing and analysis. However, the simulator test data should be calibrated with the real-world test data to improve simulator utility. The proposed model justifies the use of the simulator for the development of in-vehicle driving assistance systems as a feasible and solid approach.
+5.4. Effect of Human Factors
+
+Driver physical and mental characteristics are the critical factors affecting driver behavior , which depend on the driver’s individual features such as gender, age, driving experience, education level, etc. In the first part of this section, we design an experiment to investigate the effects of human factors on driver behavior. In the second part, a comparison of relative factors is presented, e.g. male vs. female, different age groups, driving experience, education, nationality, etc.
+5.4.1. Experiment Design
+Driver Profile
+
+There were 33 driver subjects involved in the driver behavior experiments. The driver’s feature data including age, gender and years of driving experience were used to divide the drivers into groups.
+
+•
+
+    Comparison of drivers’ age. The distribution of the driver age was nearly symmetrical as shown in Figure 5.17 . The mean age was 44.9, and the variance and standard deviation were 116.87 and 10.81 respectively. The oldest and youngest were 69 and 30 respectively.
+
+        Download : Download full-size image 
+
+    Figure 5.17 . Distribution of Driver Age.
+•
+
+    Drivers’ gender. The driver subjects were composed of seven female drivers and 26 male drivers. The distribution of driver gender is shown in Figure 5.18 .
+
+        Download : Download full-size image 
+
+    Figure 5.18 . Distribution of Driver Gender.
+•
+
+    Years of driving experience. It was difficult to define the driving experience quantitatively. For example, in China, some drivers only drive occasionally but still have good driving skills. In those cases, the number of years of driving experience was selected as the criterion. The distribution and statistics are showed in Figure 5.19 . The mean value was 12.03. The variance and standard deviation were 128.28 and 11.33 respectively.
+
+        Download : Download full-size image 
+
+    Figure 5.19 . Distribution of the Years of Driving Experience.
+
+Experimental Route Selection
+
+Because the influence of the road conditions on driver behavior is important, different roads were selected purposely for the experiments. Based on the observation and analysis of the common roads in Beijing, three road types were chosen, including arterial urban highway (“Highway” or “Urban distributor road”), comparatively congested local roads (“City road” or “Urban access road”) and intercity freeway (“Freeway” or “Through road”), and the experimental route was designed for efficiency and effectiveness. Figure 5.20 shows the route map.
+
+    Download : Download full-size image 
+
+Figure 5.20 . Experimental Route Map.
+
+During the experiment, it was found that, under most circumstances, when the instrumented vehicle crossed the intersections, the vehicle speed was so low and the distance to the leading vehicle was so small that the Lidar lost function. Therefore, the driver-following behavior at intersections was not considered in this study.
+5.4.2. Comparison of Individual Driver Behavior
+
+Figure 5.21 , Figure 5.22 , Figure 5.23 , Figure 5.24 depict the distribution of drivers’ statistic results, such as the amount of valid data sample points, mean DHW, mean THW, and mean vehicle speed for data collected on the entire highway section. Regarding the individual differences in longitudinal driving behavior, it was found that different drivers have different driving styles and characteristics.
+
+    Download : Download full-size image 
+
+Figure 5.21 . Distribution of the Average Vehicle Speed of Each Driver, Highway.
+
+    Download : Download full-size image 
+
+Figure 5.22 . Distribution of the Data Sample Points Amount of Each Driver, Highway.
+
+    Download : Download full-size image 
+
+Figure 5.23 . Distribution of the Average DHW of Each Driver, Highway.
+
+    Download : Download full-size image 
+
+Figure 5.24 . Distribution of the Average THW of Each Driver, Highway.
+5.4.3. Age
+
+Age is a demographic variable frequently used in studies on driver behavior. Younger drivers have the highest rate of accidents [24] . They are significantly overrepresented among all drivers involved in traffic accidents and fatalities, and are much more likely than older drivers to be responsible for the crashes in which they are involved [25] . Golias and Karlaftis [26] found that when age was considered, drivers seemed to become more law abiding and to take fewer risks as they grew older. Drivers over 55 years old seem to drive distinctly more carefully than younger drivers, while those below 25 years old seemed to exert a distinctly less law-abiding approach to driving or were more prone to regulation violations. Traffic accidents can be caused by different age-related factors, such as visual attention and risky driving styles [27] . According to videotape data, Finn and Bragg [25] found that the pedestrian sequence was seen as more risky by young drivers, while the tailgating sequence was seen as more risky by older drivers. For example, Yagil [28] concluded that younger drivers and male drivers expressed a lower level of normative motivation to comply with traffic laws than do female and older drivers. The commission of traffic violations was found to be related more to the evaluation of traffic laws among men and younger drivers, compared to women and older drivers.
+
+To compare the influence of age on driver behavior, the age groups used in this study were: 18–34 (eight subjects), 35–44 (nine subjects), 45–64 (14 subjects), and 65+ (two subjects). The results are shown in Figure 5.25 , Figure 5.26 , Figure 5.27 , Figure 5.28 . The t -test was used to compare the differences with the results listed in Table 5.3 .
+
+    Download : Download full-size image 
+
+Figure 5.25 . Comparison of Speed.
+
+Table 5.3 . Absolute Values of t -Test Variables Based on Different Age Groups
+Variables	Age (18–34 and 35–44) Rejection Region: | t | > 2.1315	Age (18–34 and 45–64) Rejection Region: | t | > 2.0860	Age (18–34 and 65+) Rejection Region: | t | > 2.3060
+THW	Urban access roads (Uar)	Scenario A	1.6389	0.4662	0.3855
+Scenario B	1.4890	0.2669	0.4782
+Urban distributor roads (Udr)	Scenario A	0.9127	0.5053	1.7246
+Scenario B	0.7835	0.8170	1.4520
+Through roads (Tr)	Scenario A	1.7383	0.8494	3.7164
+Scenario B	1.8861	1.3775	3.8139
+TTC	Urban access roads	Accelerator release (Acc)	0.4619	0.2989	0.5938
+Brake activation (Bra)	0.4206	0.0155	0.2467
+Urban distributor roads	Accelerator release	1.3846	1.0060	0.1237
+Brake activation	0.3446	1.0293	0.9660
+Through roads	Accelerator release	0.7579	1.5552	1.1037
+Brake activation	1.0016	0.0884	0.5914
+
+Regarding age groups, it was found that the values of THW, TTCi, and TTC were different among age groups. Also, the trend of variation was uncertain. Furthermore, the values of speed and DHW of each age group were very similar (see Figures 5.25 and 5.26 ), except the results for 65+ drivers on through roads. The reason for this could be that the sample size of 65+ drivers was too small, and elderly drivers might be more prudent on the through roads with high speed than young drivers. In addition, it appeared that the values of the standard deviation for each parameter were always significantly larger for the young group than those of other groups. Therefore, it could be concluded that elderly drivers had a relatively stable driving style.
+
+    Download : Download full-size image 
+
+Figure 5.26 . Comparison of DHW.
+5.4.4. Gender
+
+It has been recognized that men and women exhibit different driving behaviors. A great deal of literature supports the greater driver crash rates for males when compared to females (for example, Ref.  [29] and many others). The evidence of gender differences in driving behavior can be established more on a natural psychological basis than on experience and differences in capabilities and driving skills. According to two independent surveys in the years 1978 and 2001 in Finland, Laapotti et al. [30] found that the difference in driving behavior between males and females remained unchanged, or even increased in some aspects. The differences involved traffic accidents and offenses, although the driving times, attitudes, education, and other background factors were controlled. On average, men exhibited higher levels of sensation-seeking, risk-taking, and deviant behavior when compared to women, which could be explained, at least in part, using a psychology perspective [31] . For frequent violators, whether the driver was male or female seemed to make no difference to the frequency of active crash involvement; they were equally at risk [32] .
+
+However, according to the literature on aggressive driving, the role of gender is a very complex issue [33] . The research presented in Ref.  [31] provided a detailed review on aggressive driving. Work in Ref.  [33] also contained substantial research on gender differences in drivers’ aggressive behavior.
+
+What about Chinese drivers? In this study, of the 33 drivers, 26 are male and seven are female. The comparative analysis results are shown in Figure 5.29 , Figure 5.30 , Figure 5.31 , Figure 5.32 , Figure 5.33 .
+
+    Download : Download full-size image 
+
+Figure 5.27 . Comparison of THW.
+
+    Download : Download full-size image 
+
+Figure 5.28 . Comparison of TTC.
+
+    Download : Download full-size image 
+
+Figure 5.29 . Comparison of Speed.
+
+    Download : Download full-size image 
+
+Figure 5.30 . Comparison of DHW.
+
+    Download : Download full-size image 
+
+Figure 5.31 . Comparison of TTC.
+
+    Download : Download full-size image 
+
+Figure 5.32 . Comparison of THW.
+
+t -Test results are listed in Table 5.4 . According to the analysis, no significant differences between gender groups were found. The difference in THW between males and females is only about ±1%, which indicates that gender is not the principal factor in driver behavior characteristics. It was found that the standard deviation of the THW of female groups is obviously larger than for male groups (see Figure 5.33 ). A plausible explanation for this could be that female Chinese drivers are generally less skillful than male Chinese drivers in very complex mixed traffic conditions (vehicles, non-motorized vehicles, and pedestrians share the same lane). Most female drivers were less experienced than male drivers before the time of the test (in 2005). Even if female drivers had driving licenses for many years, they had less chance to drive. The other reason might be that the number of female participants was less than that of male participants.
+
+Table 5.4 . Absolute Values of t -Test Variables Based on Different Gender Groups
+Variables Rejection Region: | t | > 2.0395	Gender (Male and Female)
+THW	Urban access roads	Scenario A	1.0777
+Scenario B	1.2182
+Urban distributor roads	Scenario A	0.0838
+Scenario B	0.1938
+Through roads	Scenario A	0.1288
+Scenario B	0.2893
+TTC	Urban access roads	Accelerator release	0.3896
+Brake activation	0.3171
+Urban distributor roads	Accelerator release	0.3146
+Brake activation	0.0276
+Through roads	Accelerator release	1.5323
+Brake activation	0.5281
+
+    Download : Download full-size image 
+
+Figure 5.33 . Comparison of Standard Deviation of THW.
+5.4.5. Driving Experience
+
+Mourant and Rockwell [34] found that the visual acquisition process of the novice driver was unskilled and overloaded. Compared to experienced drivers, novice drivers lacked adequate coverage of neighborhood visual scenes, and looked closer in front of the vehicle and more to the right of the vehicle’s direction. Instead of making only eye contacts on the freeway route as experienced drivers do, novice drivers tended to pursue eye movements. Brown and Groeger’s finding [35] on risk perception showed a significant role of driving experience in the development of schemata that accurately represented the spatio-temporal characteristics of vehicles and road traffic. Novice drivers initially use knowledge-based behavior to shift gears, while experienced drivers use skill based on an automatic pattern of action [36] . It was proposed that drivers at rule- or skill-based levels operated more homogeneously and predictably than those at a knowledge-based level [37] . Compared with experienced drivers, novice drivers were more likely to underestimate hazards, while experienced drivers were more likely to show anticipatory avoidance of a hazard by changing speed, direction, level of vigilance, focus of attention, and information transmitted to other road users [38] .
+
+In our study, no novice drivers were involved. In addition, the participants could not accurately evaluate driving mileages because of uncertainty in vehicle usage, but most participants (27 subjects) said they drove more than once each week. For these reasons, we simply divided the subjects into two groups: a group of drivers with driving experience over 10 years (12 subjects), and a group with 10 years or less (21 subjects).
+
+From the results shown in Figures 5.34 and 5.35 and Table 5.5 , no significant differences exist between the two groups. The differences in THW between the two driving groups are about 1%, and the differences in TTC accelerator release are about 3%. We can conclude that driving experience is not the principal factor affecting driving characteristics except for novice drivers.
+
+    Download : Download full-size image 
+
+Figure 5.34 . Mean Value of Vehicle Speed.
+
+    Download : Download full-size image 
+
+Figure 5.35 . Mean Value of Time Headway.
+
+Table 5.5 . Absolute Values of t -Test Variables Based on Different Driving Experience
+Variables Rejection Region: | t | > 2.0395	Driving Experience (≤10 years and >10 years)
+THW	Urban access roads	Scenario A	0.1689
+Scenario B	0.0910
+Urban distributor roads	Scenario A	0.2022
+Scenario B	0.2337
+Through roads	Scenario A	0.1492
+Scenario B	0.7369
+TTC	Urban access roads	Accelerator release	0.5345
+Brake activation	0.0146
+Urban distributor roads	Accelerator release	0.7449
+Brake activation	0.6662
+Through roads	Accelerator release	0.7949
+Brake activation	0.9940
+5.4.6. Workload
+
+In this study, workload means the degree of drowsiness. The concept of “drowsiness” is a qualitative factor that is very difficult to quantify. No “gold standard” of drowsiness exists to express drowsiness numerically and accurately. Wierwille and Ellsworth [38] examined the method of evaluating the degrees of drivers’ drowsiness using their facial video. This subjective evaluation has been used in many research studies and has proved to be consistent and accurate. In this approach psychologically trained raters assess the driver’s drowsiness from the signs of their facial video. These signs are indicative of drowsiness, and include rubbing the face or eyes, facial contortions, moving restlessly in the seat, slow eyelid closures, etc.
+
+In this study, we developed this approach further and created a subjective evaluation criterion called VSCD (Video Scoring Criterion of Drowsiness), as shown in Table 5.6 . The VSCD focused on four features of facial expression/movement to assess driver’s level of drowsiness [39] :
+
+1.
+
+    Eye features such as pupils movement, blinking speed, and blinking frequency.
+2.
+
+    Breathing features such as yawns and deep breaths.
+3.
+
+    Movements such as scratching (eyes/face/head), adjusting posture (head/body), and nodding.
+4.
+
+    The rater’s subjective evaluation of the whole facial expression.
+
+Table 5.6 . Video Scoring Criterion of Drowsiness (VSCD)
+Drowsiness Level	Description	Score
+Not Drowsy	Eyes open as normal; Quick blinking; Active pupils movement; Upright head/body posture, etc.	1
+Some Drowsiness	Eyelids become heavy; Less active pupil movement; Yawn, Deep breath, Adjusting posture, etc.	2
+Very Drowsy	Eyelids become very heavy; Long eye close duration; Unintentional nodding head; Less upright posture, etc.	3
+
+Three raters were trained to look into these features of drowsiness and make a subjective, but specific, assessment of the level of drowsiness. Data from the facial video had been acquired from a CCD camera fixed on the car panel for data collection. The camera view covered both the driver’s face and parts of the body, so that the rater could see the drowsy driver fidgeting, stretching, having heavy eyes, etc. After the experiment, the video record was digitized and cut into 1-minute segments by special software called Fatigue Driving Scoring System. It was then screened for the raters in random sequence. Each segment was scored by three raters independently using the VSCD. To reduce subjectivity, if the difference of the scores given by the two raters was no larger than 1, the average score was used, otherwise a third rater would be introduced and all three raters were asked to rate again after a discussion. The average score of the three was taken as the final value. After the video scoring, the test data of each 1-minute segment were classified into groups of (1) not drowsy, (2) some drowsiness, and (3) very drowsy based on their scores.
+
+According to the method introduced above, we find the state of each driver in each 1-minute segment based on the scores of their facial video. It should be noted that the experiment for workload is different from the aforementioned experiments for other features. Figure 5.36 shows the experiment route. Figure 5.37 shows the final result for one driver. The relation between road and time is shown in Table 5.7 .
+
+    Download : Download full-size image 
+
+Figure 5.36 . Experiment Route for Workload.
+
+    Download : Download full-size image 
+
+Figure 5.37 . Arousal Level.
+
+Table 5.7 . Relation of the Road and Time
+Road	Road 1	Road 2	Road 3	Road 4	Road 5
+Time (min)	1–47	48–103	104–156	157–189	190–242
+
+Figure 5.37 shows the arousal level on each road section in Figure 5.36 (Roads 1, 4, and 5 belong to the 4th Ring Road, and Roads 2 and 3 belong to the Jingjintang Highway-freeway). It can be observed that the driver is seldom tired on Roads 1, 2, and 3. The reason might be that drivers usually do not feel tired in the morning, and the experiment time is not long enough. In addition, drivers show some drowsiness on Roads 4 and 5 because of the longer experiment time and postmeridian drowsiness after lunch.
+
+The values of THW for non-restricted following and TTC for approaching on braking were calculated and compared under arousal levels. The effect of arousal level on driving characteristics has been analyzed according to the statistical results.
+
+The average values of THW at levels 1, 2, and 3 were calculated on the highway shown in Figure 5.38 and Table 5.8 . The trend is that the higher the level, the longer the THW, and the more risk-compensated behavior drivers intend to take.
+
+    Download : Download full-size image 
+
+Figure 5.38 . Time Headway – No Restricted Following.
+
+(a) Level 1. (b) Level 2. (c) Level 3. (d) Comparison of THW in different drowsiness levels.
+
+Table 5.8 . Data Information for Time Headway – Non-Restricted Following
+Parameter	4th Ring Road	Freeway
+Level 1	Level 2	Level 3	Level 1	Level 2	Level 3
+Number of data	119,304	56,813	12,631	92,009	31,017	8724
+Average (s)	1.57	1.69	1.61	1.42	1.47	1.55
+Standard deviation (s)	0.9	0.87	0.82	0.86	0.83	0.95
+Median (s)	1.33	1.5	1.43	1.15	1.22	1.22
+Mode (s)	1.8	1.8	1.2	0.9	0.9	0.76
+5% tile value (s)	0.55	0.64	0.53	0.48	0.52	0.55
+50% tile value (s)	1.33	1.5	1.43	1.15	1.22	1.22
+95% tile value (s)	3.46	3.49	3.14	3.22	3.07	3.65
+5.4.7. Level of Education
+
+Several studies have been conducted on the relationship between driver behavior and their levels of education. Hemenway and Solnick [40] found that drivers who had had a higher level of education were more likely to be involved in an accident. However, different conclusions were also drawn by other researchers. It was also found that the level of education was not directly related to accident involvement [41] . In the work of Turner and McClure [42] , the level of education did not show any significant association with the likelihood of a crash. In terms of safe driving behavior, it was found that drivers who received a higher level of education tended to speed more often and were not less likely to commit to drinking and driving. It was reported that there was an increase in the use of safety belts for drivers with a higher education level for both men and women. However, complete avoidance of drinking and driving hardly varied across groups with different education levels, and people with higher education levels were even less likely to abide by the speed limit all the time [43] . Also, Laapotti et al. [44] showed that a low level of education increased the odds for committing traffic offenses.
+5.4.8. Nationality
+
+Marsden et al. [45] studied the differences in motorway driving behavior between three sites in the UK, France, and Germany. Data used in their study was collected using an instrumented vehicle, equipped with an optical speedometer , radar, and a video-audio monitoring system that measured the driver’s behavior in a 10-Hz range.
+
+The analysis of THW showed that what was observed in Lille were lower than those at Hamburg, which were, in turn, lower than those observed on the M3 in the UK at free flow speeds. In terms of the analysis of relative speed tolerances, a comparison of TTC for different nationalities was conducted. Statistical differences between the number of low occurrences to collision events were found at each site. The study revealed significant differences between driver behavior at the three sites. Such differences could impact on the effectiveness of roadside telematics systems as well as the design of advanced vehicle control and safety systems.
+
+Golias and Karlaftis [46] used a combination of factor analysis and tree-based regression to identify driver groups with homogeneous self-reported behavior and to determine whether regional differences in driving behaviors exist. The study was based on a large database of more than 20,000 questionnaires from 19 European countries through a SARTRE survey. Important differences and similarities among drivers in different regions in Europe were found. It was concluded that Northern European drivers had a much higher compliance rate with drinking and driving laws and seat-belt use regulations than do Southern and Eastern European drivers.
+
+Work in Ref.  [47] conducted a comparitive study of the car-following behavior between Southampton (UK) and Tsukuba (Japan). Data were collected on public roads at the two sites. A fuzzy logic car-following model was used to evaluate the dynamics. It was found that Southampton drivers had short DHW on motorways, while Tsukuba drivers had long DHW on rural roads . In addition, Southampton drivers tended to increase their speeds when DHW was greater with a higher acceleration rate than drivers from Tsukuba.
+5.5. Objective and Subjective Evaluation
+
+For the design and the evaluation of in-vehicle driving assistance systems, classification of driver behavior is necessary. With different driver groups, proper control algorithms can be designed to adapt their characteristics for better performance. In behavioral studies with this purpose, drivers were classified by gender, age, and driving experience (number of years in driving), and the behavior analysis was conducted for all driver groups [48] . In earlier studies, analysis was mainly based on the objective experimental data from real-world driving experiments or driving simulators . An assignment procedure was investigated by Canale and Malan [49] to classify driver behavior with respect to a stop-and-go task. Othman et al. [50] introduced a method for detection and classification of abnormal driver behaviors with estimated jerk from a driving simulator. Although the relationship between driving behavior and the internal state of the driver was verified, the questionnaire for the survey was very simple: it only requested feedback by the subjects regarding their driving condition from level one to five. Work in Refs. [51] , [52] attempted a driver style classification by using the ratio of the standard deviation and the average acceleration extracted from the acceleration profile within a specified time window. The authors then incorporated the predicted driver style into their power management strategy as a practical application. Similarly, Ref.  [53] developed an algorithm for classifying driving style with statistical information from the jerk profile, road type, and traffic congestion level prediction.
+
+Though many research efforts in the past focused on driver classification, they almost always were based on the objective data, and the parameters used in these studies were not, in general, comprehensive. There was little research focusing on both objective experimental data and subjective evaluation simultaneously. In using some in-vehicle driver assistance systems (e.g. adaptive cruise control), drivers usually set the parameters (e.g. time headway in steady car following) according to their own driving characteristics. The subjective evaluation could affect driving safety and stability. Thus, it is essential to objectively verify the validity of the subjective evaluation; the comparison of classifications based on the objective experimental data and subjective evaluations can achieve this purpose [54] .
+
+The answers to the following questions are sought in our research:
+
+•
+
+    How do we determine the dissimilarity of the driving behavior regarding driving style and driving skill comprehensively taking into account longitudinal and lateral characteristics?
+•
+
+    How do we classify the dissimilarity of the driving behavior based on the subjective evaluation and the objective experimental data respectively?
+•
+
+    What is the consistency of classification based on the subjective evaluation and the objective experimental data?
+
+5.5.1. Participants
+
+A sample of 52 participants with full Chinese driving licenses were recruited from Haidian District, Beijing. All of the participants took the self-reported survey and then real-world driving experiments. There were 48 males (92.3%) and four females (7.7 %). The average age of the participants was 44.60 years (standard deviation, S.D. = 9.18), and the age range was from 27 to 62 years. On average, the participants had held their driving licenses for 14.19 years (S.D. = 7.94, range 3–38 years).
+5.5.2. Driver Classification Based on DBQ
+
+Because of the complication and variability of the human driver, it is challenging to convert descriptive concepts of driver behavior into quantitative mathematic variables. A self-reported survey was conducted as the method for studying the driver behavior of the sample group. The answers to the questionnaires were then used to analyze driver behavior, especially the relationship between abnormal behavior and driver characteristics.
+Design of DBQ
+
+A self-reported survey was designed based on the DBQ [55] with some modifications made to adapt to the traffic situation and driving conditions in China. For example, the traffic density in China is much greater than that in many other countries. The number of overtaking and undertaking maneuvers was one factor in the survey. The survey consisted of two parts:
+
+1.
+
+    Individual information, including gender, age, and driving experience.
+2.
+
+    The main body of the survey, including 30 items describing possible abnormal behaviors that could occur in daily driving, which were extracted and transferred from the original questionnaire, as shown in Table 5.9 . In order to cover the most important driver characteristics, driving style and driving skill, abnormal longitudinal and lateral behaviors respectively were listed in the survey.
+
+    Table 5.9 . Statistical Analysis Results and Factor Score Coefficients of DBQ
+    No.	Item	Mean	S.D.	r with Total Score	F style 	F skill
+    1	Drive so close to the car in front that it would be difficult to stop in an emergency	0.731	0.770	0.418 ∗∗ 	0.149	−0.073
+    2	Disregard the speed limit on a residential road	0.865	0.864	0.598 ∗∗ 	0.150	−0.061
+    3	Disregard the speed limit on an intercity highway	0.942	0.938	0.474 ∗∗ 	0.160	−0.075
+    4	Become angered by another driver and show anger through aggressive driving	1.404	1.015	0.545 ∗∗ 	0.063	0.030
+    5	Overtake a slow driver on the inside	1.308	0.853	0.422 ∗∗ 	0.096	−0.022
+    6	Become angered by another driver and give chase	0.788	0.750	0.443 ∗∗ 	0.145	−0.065
+    7	Sound your horn to indicate your annoyance to another road user	1.269	0.819	0.445 ∗∗ 	0.153	−0.069
+    8	Stay in a closing lane and force your way into another	0.577	0.667	0.282 ∗ 	0.047	0.001
+    9	Underestimate the speed of an oncoming vehicle when overtaking	0.923	0.813	0.597 ∗∗ 	−0.025	0.140
+    10	Get into the wrong lane when approaching a roundabout or a junction	1.096	0.774	0.623 ∗∗ 	0.017	0.093
+    11	Misread the signs and exit from a roundabout on the wrong road	1.096	0.891	0.664 ∗∗ 	−0.011	0.145
+    12	Forget where you left your car in a car park	0.962	1.047	0.512 ∗∗ 	0.016	0.062
+    13	Hit something when reversing that you had not previously seen	0.885	0.732	0.547 ∗∗ 	0.062	0.045
+    14	Have no clear recollection of the road along which you have just been traveling	0.808	0.864	0.458 ∗∗ 	−0.099	0.193
+    15	Cut off the vehicle in the next lane when car following on a residential road	2.192	0.841	0.389 ∗∗ 	−0.058	0.140
+    16	Repeatedly try to pass, but fail	1.231	0.899	0.571 ∗∗ 	−0.051	0.155
+    17	Accelerate through the intersection when the lights change	1.615	1.013	0.553 ∗∗ 	0.126	−0.025
+    18	Overtake always	1.692	0.981	0.609 ∗∗ 	0.128	−0.014
+    19	Change lanes frequently	1.308	0.829	0.519 ∗∗ 	0.093	0.001
+    20	Forget to check the instrument panel and trouble lights when start	0.942	1.018	0.573 ∗∗ 	0.002	0.110
+    21	Go to the wrong lane when turning left	0.712	0.750	0.567 ∗∗ 	−0.071	0.184
+    22	Forget to wear a seatbelt or to release the handbrake when starting	1.038	0.885	0.679 ∗∗ 	0.039	0.087
+    23	Change lanes because of a slow driver on the inside	2.135	1.121	0.561 ∗∗ 	0.081	0.023
+    24	Change lanes from the outside lane to the inside lane because of a fast driver that is following	1.538	1.038	0.083	−0.100	0.109
+    25	Force your way into another lane when coming across some barrier	1.635	0.950	0.380 ∗∗ 	−0.018	0.072
+    26	Underestimate the speed of an oncoming vehicle when changing lanes	1.212	0.848	0.520 ∗∗ 	0.040	0.059
+    27	Drive near the left side of the lane	1.250	1.266	0.521 ∗∗ 	0.060	0.020
+    28	Change lanes slowly with a large distance from the lead vehicle	1.577	1.538	0.273	−0.017	0.051
+    29	Change lanes quickly with a large distance from the lead vehicle	1.654	1.136	0.563 ∗∗ 	0.074	0.022
+    30	Accelerate until a small distance away from the lead vehicle, then change lanes quickly	0.846	0.849	0.344 ∗ 	0.049	0.008
+    	Total score	1.208	1.015	1.000		
+
+    ∗
+
+        P < 0.05;
+    ∗∗
+
+        P < 0.01.
+
+Statistical Data Analysis
+
+In the statistical data analysis, reliability and validity were the two main indices that could determine whether the results of such self-reported questionnaires are reliable and accurate [56] . Cronbach’s alpha reliability coefficient method was the most commonly used method that reflects the internal consistency of scale [57] . If it was greater than 0.6, the scale was considered persuasive. The number in our study was 0.884, which meant that it was persuasive with good consistency.
+
+The validity of the scale can be determined by the correlation analysis of each item score and the total score. The closer the correlation that exists between each item score and the total score, the more the items involved reflect the same theme. The Pearson correlative coefficients ( r ) between each item score and the total score of the DBQ are shown in Table 5.9 , and 93% of the items have a high positive interrelation at the 0.05 and 0.01 significance levels, which indicate that this DBQ has good validity and may be applied to driver behavior analysis.
+
+The item scores of the questionnaire were analyzed, and the mean score, the standard deviation of the tested samples and that of the total scores are shown in Table 5.9 .
+Driver Characteristics Quantification Based on Factor Analysis
+
+Factor analysis theory [58] has been applied to the data processing and extraction of this 30-item DBQ. A two-dimensional DBQ factor structure has been established. Principal components analysis with oblique rotation has been implemented as the factor analysis method to investigate the factor structure.
+
+The factor analysis method distinguishes different types of behaviors distinctively. The first factor accounts for 18.47% of the total variance and contains 16 items (i.e. items 1–8, 13, 17–19, 23, 27, 29, 30), which reflect the intentional abnormal behaviors. The second factor contains the other 14 items, which mainly describe unintentional abnormal behaviors. It can be assumed that the driver’s intention is attributed to driving style. For instance, considering the 23rd item “change lanes because of a slow driver on the inside”, this behavior occurs because the driver is overconfident and aggressive whilst driving. Thus, the first factor is defined as F style to describe the intentional abnormal characteristics. On the other hand, the driver’s unintentional passive characteristics are caused by a lack of driving skill. Therefore, the second factor can be defined as F skill to describe the unintentional abnormal characteristics of driving skill.
+
+Based on the scale point data of DBQ, the factor score coefficients of each driver can be estimated using regression analysis. The quantified factors are normalized so that the mean is 0 and the standard deviation is 1. The drivers with larger F style have higher frequencies of intentional abnormal behaviors and drive in more aggressive styles, and those with a larger value of F skill show more unintentional abnormal behaviors and are less skillful. The factor scores of the 52 participants are distributed over all four quadrants, which are shown in Figure 5.39 .
+
+    Download : Download full-size image 
+
+Figure 5.39 . Factor Score Distribution and the Result of K-Means Clustering Analysis.
+Driver Classification and Analysis
+
+Considering the cluster regularity of this population, there were some consistencies in the trend of characteristics among the same type cluster or pattern. Thus, based on the cluster analysis, different clusters of drivers were matched with different parameters in the algorithm design so that the results would be more representative and applicable, which could eliminate dissimilarities between individuals. Based on this idea, the two factors were taken as the basis of cluster analysis, and then the distribution of space of the pilot model was established.
+
+In this section, the K-means clustering algorithm [59] is used to classify the drivers. This algorithm treats each observation in the data as an object with a location in space. Each cluster in the partition is defined by its member objects and by its centroid . K-means uses an iterative algorithm to minimize the sum of distances from each object to its cluster centroid over all clusters.
+
+The cluster result can be seen in Figure 5.39 , and it is clear that it is not definitive. Firstly, the definition of the cluster is indistinctive. Take the drivers in cluster C, for example; the score of F style is the largest relative to the other four clusters so that they can be regarded as the aggressive group. However, regarding driving skill, the group is biased toward normal because the score of F style is in the middle state. Secondly, the drivers on the borderline of two opposite clusters are not clearly grouped. Taking the driver in cluster C with the lowest score of F skill as an example, it can be observed that the distances from this driver to clusters C and D are comparable, but the two clusters are opposite for driving skill. Therefore, there is no sufficient reason to classify this driver to cluster C or D. Finally, the classification result is directly affected by the selection of the clustering method . The K-means clustering algorithm is a learning method without surveillance. The general drawback of standard clustering methods is that they ignore measurement errors or uncertainty associated with the data, and the outlier points in the set of experimental data can lead to local optima and be misleading in the outcome.
+
+Considering all the shortcomings of the clustering approach, a novel clustering that accounts for these conventions is proposed and applied to the classification of dissimilarities. Common sense tells us that there are a great majority of drivers in the normal group that gather around the origin of coordinates, and the others are scattered across the four quadrants. Based on this idea, a circle with its center at the origin that contains 50% of all the participants is defined as the threshold of the normal group. The reason for the 50% figure is as follows. In verifying the consistency of two classifications, if the boundary is selected larger than 50%, e.g. 60%, the worst case result is that 40% of all the drivers based on the subjective evaluation are different from that based on the objective analysis. They will then be placed in the normal group of the objective analysis. Similarly, 40% of all the drivers based on the objective data could be in the normal group of the subjective evaluation. Then the lowest consistency of the two classifications is 20%, which has no statistical significance. Also, if the boundary is selected smaller than 50%, it is statistically insignificant. When 50% is selected, the lowest consistency is zero, which is acceptable. Once the normal group has been determined, the other four groups can be naturally determined as falling into the four quadrants.
+
+The results of the classification can be seen in Figure 5.40 . The center of the circle is verified as the peak of each factor from the distribution of the two factors’ scores, whose position reflects the general characteristics of Chinese drivers. It can be seen that Chinese drivers are inclined to be aggressive in driving style and normal in driving skill from a subjective evaluation. There were five participants (9.6%) in group A, six participants (11.5%) in group B, eight participants (15.4%) in group C, seven participants (13.5%) in group D, and 26 participants in group E (which contains 50% of all the participants). Considering the mean of the two factors, group A is defined as the aggressive and non-skillful group, group B the prudent and non-skillful group, group C the prudent and skillful group, group D the aggressive and skillful group, and group E is the normal group.
+
+    Download : Download full-size image 
+
+Figure 5.40 . Classification Results Based on DBQ (left) and Factor Analysis (right).
+5.5.3. Driver Classification Based on Real-World Driving Data
+Experiment Design and Data Collection
+
+The experimental platform is shown in Figure 5.10 . The experimental conditions are as follows: intercity highway (freeway), daytime, and good weather. Experimental procedures are: (1) Introduction of the experiment; (2) taking a trial drive in the new instrumented vehicle on an ordinary road for about half an hour; and (3) driving on an intercity highway for 1 hour. There are no other restrictions imposed on the driver.
+Measurable Parameters Selection
+
+Considering that the two factors extracted from the DBQ are gained from aspects of abnormal driving behavior, the parameters that are selected in experimental data should reflect the same meaning. Based on the correlation analysis, six parameters were selected for factor analysis: the mean values of DHWi in steady car following, TTCi_1stBra in approaching, a dmax in braking (factors related to driving style), the standard deviation of R ap (the rate of the acceleration pedal position for every acceleration scenario in accelerating), R sa (the steering angle rate), and a lat (the lateral acceleration). It can be assumed that drivers with larger mean values have a more aggressive driving style, and those with larger values of standard deviation are less skillful. The six selected parameters reflect the driver characteristics reasonably well, as these parameters are related to driver operations (e.g. R ap , R sa ), host vehicle state (e.g. a dmax , a lat ), and the relative state of the host vehicle and the lead vehicle (e.g. DHWi, TTCi_1stBra). Likewise, the longitudinal and lateral behaviors are considered simultaneously.
+Classification Based on Factor Analysis
+
+In accordance with the classification based on the subjective evaluation, the same classification method is proposed and analyzed. The same five groups are also divided according to their factor scores. The definitions of the groups are the same as before. There are two participants (3.8%) in group A, nine participants (17.3%) in group B, four participants (7.7%) in group C, 11 participants (21.2%) in group D, and 26 participants in group E.
+5.5.4. Comparison of Subjective Evaluation and Objective Experiment
+
+In the two sections above, the 52 participants were classified into five groups from subjective questionnaire and objective data analysis. The difference is that the drivers involved in each group are not the same. It is necessary to verify the consistency of the subjective evaluation and objective data analysis.
+
+Firstly, a comparison of the centers of the two circles is necessary. The center position can reflect the general characteristics of Chinese drivers, who subjectively are inclined to be aggressive in driving style and normal in driving skill. However, from Figure 5.41 it can be seen that the participants are objectively inclined to be a little prudent in driving style and slightly skillful at driving. The difference between the overall trends exists, but is not significant.
+
+    Download : Download full-size image 
+
+Figure 5.41 . Driver distributions of the five groups classified by the objective data (a), driver distribution of the five groups classified by the subjective evaluations (b), and numbers of drivers in each group that coincide fully on the two classifications (c).
+
+Secondly, the statistical results of the numbers of drivers involved in each group are analyzed. The distributions of drivers involved in the five groups are shown in Figure 5.41 (a) and (b). The number of drivers involved in each group is shown. Meanwhile, the numbers of drivers in each of the five groups that coincide on both classifications are shown in Figure 5.41 (c). There are 15 participants (about 28.8%) whose subjective belief coincides fully with reality. There are some differences between self-evaluation and the real driving characteristics of the other 37 participants. Since the classification based on real-world experimental data is more objective and more likely represents the truth, it can be assumed that if a prudent driver overrates his or her driving style, it is unacceptable and could affect the safety of normal driving. The reason is that a prudent driver always leaves a longer distance for reaction to danger, but if he/she overrates his/her driving style, there is not enough time to react once a collision becomes imminent. On the contrary, if an aggressive driver underestimates his/her driving style, it is acceptable and it would not affect safety though driving comfort may be sacrificed. Similarly, from the aspect of driving skill, if a driver overrates his/her driving skill, it may affect safe driving, which is unacceptable, while underestimating the driving skill is acceptable. With those unacceptable conditions, 22 participants (42.3%) are considered not to be driving unsafely, which means that the subjective evaluations of those drivers are unreliable. In other words, there are 30 participants (57.7%) who did the subjective evaluation effectively, from the consideration of safe driving.
+
+Finally, since THW and TTC are the two important parameters that can reflect the longitudinal behavior of the driver, they are taken as parameters for comparison. Considering the relative speed is zero sometimes, TTC is replaced by TTCi. The mean values and standard deviation of THW in steady car following and TTCi under non-restricted situation were calculated for the five groups classified with subjective and objective evaluations respectively. The results are shown in Figure 5.42 . The mean values of THW and TTCi reflect driving style. The comparison of driving style ranges by the degree of aggressiveness from prudent to aggressive. A more aggressive driver leaves a much smaller THW and larger TTCi compared with a normal driver, especially a prudent driver. The standard deviation of THW and TTCi reflects driving skill. The comparison of driving style ranges by the degree of skill from non-skillful to skillful. A non-skillful driver controls the vehicle unstably compared with a normal driver, especially a skillful driver, and therefore the standard deviation is much larger. It can be observed from the figure that the trend of values of these aspects is incongruent between subjective and objective tests. For driving skill in particular, the trend is almost opposite.
+
+    Download : Download full-size image 
+
+Figure 5.42 . Comparison of Subjective and Objective.
+
+(a) Comparisons of mean value of THW. (b) Comparisons of mean value of TTCi. (c) Comparisons of standard deviation of THW. (d) Comparisons of standard deviation of TTCi.
+
+Therefore, it can be concluded that there is a disagreement between the subjective evaluation and the objective experimental data analysis. The reasons could be as follows. The parameters of the DBQ are inadequate to reflect driver characteristics comprehensively. The meaning of borderline scores for each item is ambiguous, which could confuse the participants. The understanding of the items also varies from driver to driver. All these causes may lead to the result that the scale is not reliable enough.
+5.5.5. Conclusions
+
+According to the statistical analysis, only 15 participants (about 28.8%) performed evaluations that coincide with the reality of their own driving in the real world, and another 15 participants (about 28.8%) are in the acceptable range considered to be safe driving. However, there are 22 participants (42.3%) who are out of the acceptable range, which means that the subjective evaluations of these drivers are unreliable. Meanwhile, a comparison of the longitudinal parameters (i.e. THW and TTCi) between the two classifications was also made. The results indicate that there are significant differences between the subjective evaluation and the objective experimental data analysis. Therefore, the conclusion can be drawn that the consistency of the classifications based on the subjective evaluation and the objective experimental data is not satisfactory, and the DBQ is not qualified for the algorithm design of ADAS, but it could be used as a reference.
+References
+
+[1]
+    Transportation Department of the Ministry of Public Security of the People’s Republic of China
+    The Annals of Road Traffic Accident Statistics of PRC
+    Traffic Management Research Institute of the Ministry of Public Security, Wuxi, Jiangsu (2009)
+    2009
+    Google Scholar
+[2]
+    H. Ohno
+    Analysis and modeling of human driving behaviors using adaptive cruise control
+    Applied Soft Computing, 1 (2001), pp. 237-243
+    Article Download PDF View Record in Scopus Google Scholar
+[3]
+    A.M. Vadeby
+    Modeling of relative collision safety including driver characteristics
+    Accident Analysis and Prevention, 36 (2004), pp. 909-917
+    Article Download PDF View Record in Scopus Google Scholar
+[4]
+    M. Canale, S. Malan
+    Analysis and classification of human driving behaviour in an urban environment, Cognition
+    Technology and Work, 4 (2002), pp. 197-206
+    View Record in Scopus Google Scholar
+[5]
+    H. Yoo, P. Green, Driver Behavior while Following Cars, Trucks and Buses, Technical Report UMTRI-99–14.
+    Google Scholar
+[6]
+    J.C. McCall, D. Wipf, M.M. Trivedi
+    Lane change intent analysis using robust operators and sparse Bayesian learning
+    Proceedings of the 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition
+    (2005)
+    Google Scholar
+[7]
+    B. Cheng, M. Hashimoto, T. Suetomi
+    Analysis of driver response to collision warning during car following
+    JSAE Review, 23 (2002), pp. 231-237
+    Article Download PDF View Record in Scopus Google Scholar
+[8]
+    D. Salvucci, E. Boer, A. Liu
+    Toward an integrated model of driver behavior in a cognitive architecture
+    Transportation Research Record, vol. 1779 (2001), pp. 9-16
+    CrossRef View Record in Scopus Google Scholar
+[9]
+    A. Pentland, A. Liu
+    Modeling and prediction of human behavior
+    Neural Computation, 11 (1999), pp. 229-242
+    View Record in Scopus Google Scholar
+[10]
+    L. Zhang
+    A Vehicle Longitudinal Driving Assistance System Based on Self-Learning Method of Driver Characteristics
+    Doctoral dissertation
+    Tsinghua University, Beijing, China (2009)
+    Google Scholar
+[11]
+    G. Welch, G. Bishop
+    An introduction to the Kalman Filter
+    SIGGRAPH (2001)
+    Course
+    Google Scholar
+[12]
+    Z. Sheng, S. Xie, C. Pan
+    Probability Theory and Mathematical Statistics, vol. 3, Higher Education Press (2001)
+    pp. 225–229 (in Chinese)
+[13]
+    C. Liu, J. Wan
+    Probability and Statistics
+    Higher Education Press, Beijing (2005)
+    (in Chinese)
+    Google Scholar
+[14]
+    Q. Yan, J.M. Williams, J. Li
+    Chassis control system development using simulation: Software in the loop, rapid prototyping, and hardware in the loop
+    Society of Automotive Engineers (SAE) (2002)
+    Paper No. 2002-01-1565
+    Google Scholar
+[15]
+    O. Gietelink, J. Ploeg, B. De Schutter, M. Verhaegen
+    Development of advanced driver assistance systems with vehicle hardware-in-the-loop simulations
+    Vehicle System Dynamics, 44 (7) (2006), pp. 569-590
+    CrossRef View Record in Scopus Google Scholar
+[16]
+    J. Wang, S. Li, X. Huang, K. Li
+    Driving simulation platform applied to develop driving assistance systems
+    Journal of IET Intelligent Transportation System, 4 (2) (2010), pp. 121-127
+    CrossRef Google Scholar
+[17]
+    S. Li, J. Wang, K. Li
+    xPC technique based hardware-in the-loop simulator for driver assistance systems
+    China Mechanical Engineering, 18 (16) (2007), pp. 2012-2015
+    (in Chinese)
+    View Record in Scopus Google Scholar
+[18]
+    L. Zhang, J. Wang, K. Li, T. Yamamura, N. Kuge, T. Nakagawa
+    An instrumented vehicle test bed and analysis methodology for investigating driver behavior
+    14th World Congress on Intelligent Transport Systems, Beijing, China (9–13 October 2007)
+    Google Scholar
+[19]
+    J.D. Lee, D.V. McGehee, T.L. Brown, M.L. Reyes
+    Collision warning timing, driver distraction, and driver response to imminent rear end collisions in a high-fidelity driving simulator
+    Human Factors, 44 (2) (2002), pp. 314-334
+    CrossRef View Record in Scopus Google Scholar
+[20]
+    E. Blana, J. Golias
+    Differences between vehicle lateral displacement on the road and in a fixed-base simulator
+    Human Factors, 44 (2) (2002), pp. 303-313
+    CrossRef View Record in Scopus Google Scholar
+[21]
+    A. Kemeny, F. Panerai
+    Evaluating perception in driving simulation experiments
+    Trends in Cognitive Sciences, 7 (1) (2003), pp. 31-37
+    Article Download PDF View Record in Scopus Google Scholar
+[22]
+    D.V. McGehee, T.L. Brown, J.D. Lee, T.B. Wilson
+    The effect of warning timing on collision avoidance behavior in a stationary lead-vehicle scenario
+    Transportation Research Record, 1803 (2002), pp. 1-7
+    View Record in Scopus Google Scholar
+[23]
+    L. Jia, M. Lu, J. Wang
+    Using real-world data to calibrate a driving simulator measuring lateral driving behaviour
+    IET Intelligent Transport Systems, 5 (1) (2011), pp. 21-31
+    CrossRef View Record in Scopus Google Scholar
+[24]
+    P.F. Lourens, et al.
+    Annual mileage, driving violations, and accident involvement in relation to drivers’ sex, age, and level of education
+    Accident Analysis and Prevention, 31 (1999), pp. 593-597
+    Article Download PDF View Record in Scopus Google Scholar
+[25]
+    P. Finn, B. Bragg
+    Perception of the risk of an accident by young and older drivers
+    Accident Analysis and Prevention, 18 (1986), pp. 289-298
+    Article Download PDF View Record in Scopus Google Scholar
+[26]
+    I. Golias, M.G. Karlaftis
+    An international comparative study of self-reported driver behavior
+    Transportation Research Part F, 4 (2002), pp. 243-256
+    Google Scholar
+[27]
+    J. Elander, R. West, D. French
+    Behavioral correlates of individual differences in road-traffic crash risk: An examination of methods and findings
+    Psychological Bulletin, 113 (1993), pp. 279-294
+    View Record in Scopus Google Scholar
+[28]
+    D. Yagil
+    Gender and age-related differences in attitudes toward traffic laws and traffic violations
+    Transportation Research Part F, 1 (1998), pp. 123-135
+    Article Download PDF View Record in Scopus Google Scholar
+[29]
+    L. Evans
+    Traffic Safety and the Driver
+    van Nostrand Reinhold, New York (1991)
+    Google Scholar
+[30]
+    S. Laapotti, et al.
+    Comparison of young male and female drivers’ attitude and self-reported traffic behavior in Finland in 1978 and 2001
+    Journal of Safety Research, 24 (2003), pp. 579-587
+    Article Download PDF View Record in Scopus Google Scholar
+[31]
+    The Social Issues Research Centre
+    Sex Differences in Driving and Insurance Risk: An Analysis of the Social and Psychological Differences Between Men and Women that are Relevant to their Briving Behavior
+    (2004)
+    Google Scholar
+[32]
+    M. Meadows, S. Stradling
+    Are women better drivers than men?
+    J. Hartley, A. Branthwaite (Eds.), The Applied Psychologist (second ed.), Open University Press, Buckingham (1999)
+    Google Scholar
+[33]
+    T. Lajunen, D. Parker
+    Are aggressive people aggressive drivers? A study of the relationship between self-reported general aggressiveness, driver anger and aggressive driving
+    Accident Analysis and Prevention, 33 (2001), pp. 243-255
+    Article Download PDF View Record in Scopus Google Scholar
+[34]
+    R.R. Mourant, T.H. Rockwell
+    Strategies of visual search by novice and experienced drivers
+    Human Factors, 14 (1972), pp. 325-335
+    CrossRef View Record in Scopus Google Scholar
+[35]
+    D. Brown, J.A. Groeger
+    Risk perception and decision taking during the transition between novice and experienced driver status
+    Ergonomics, 31 (4) (1988), pp. 585-597
+    CrossRef View Record in Scopus Google Scholar
+[36]
+    T.A. Ranney
+    Models of driving behavior: A review of their evolution
+    Accident Analysis and Prevention, 26 (1994), pp. 733-750
+    Article Download PDF View Record in Scopus Google Scholar
+[37]
+    R. Hale, J. Stoop, J. Hommels
+    Human error models as predictors of accident scenarios for designers in road transport systems
+    Ergonomics, 33 (10–11) (1990), pp. 1377-1387
+    CrossRef View Record in Scopus Google Scholar
+[38]
+    R. Fuller
+    Towards a general theory of driver behavior
+    Accident Analysis and Prevention, 37 (2005), pp. 461-472
+    Article Download PDF View Record in Scopus Google Scholar
+[39]
+    W.W. Wierwille, L.A. Ellsworth
+    Evaluation of driver drowsiness by trained raters
+    Accident Analysis and Prevention, 26 (5) (1994), pp. 571-581
+    Article Download PDF View Record in Scopus Google Scholar
+[40]
+    T. Ma, B. Cheng
+    Detection of driver’s drowsiness using facial expression features
+    Journal of Automotive Safety and Energy, 1 (3) (2010), pp. 200-204
+    View Record in Scopus Google Scholar
+[41]
+    D. Hemenway, S.J. Solnick
+    Fuzzy dice, dream cars, and indecent gestures: Correlates of driver behavior?
+    Accident Analysis and Prevention, 25 (1993), pp. 161-170
+    Article Download PDF View Record in Scopus Google Scholar
+[42]
+    P.F. Lourens, J.A.M.M. Vissers, M. Jessurun
+    Annual mileage, driving violations and accident involvement in relation to drivers’ sex, age and level of education
+    Accident Analysis and Prevention, 31 (1) (1999), pp. 593-597
+    Article Download PDF View Record in Scopus Google Scholar
+[43]
+    C. Turner, R. McClure
+    Age and gender differences in risk-taking behavior as an explanation for high incidence of motor vehicle crashes as a driver in young males
+    Injury Control and Safety Promotion, 10 (3) (2003), pp. 123-130
+    View Record in Scopus Google Scholar
+[44]
+    D. Shinar, E. Schechtman, R. Compton
+    Self-reports of safe driving behaviors in relationship to sex, age, education and income in the US adult driving population
+    Accident Analysis and Prevention, 33 (2001), pp. 111-116
+    Article Download PDF View Record in Scopus Google Scholar
+[45]
+    S. Laapotti, E. Keskinen, S. Rajalin
+    Comparison of young male and female drivers’ attitude and self-reported traffic behaviour in Finland in 1978 and 2001
+    Journal of Safety Research, 34 (2003), pp. 579-587
+    Article Download PDF View Record in Scopus Google Scholar
+[46]
+    G.R. Marsden, M. Mcdonald, M. Brackstone
+    A comparative assessment of driving behaviours at three sites
+    European Journal of Transport and Infrastructure Research, 3 (1) (2003), pp. 5-20
+    View Record in Scopus Google Scholar
+[47]
+    I. Golias, M.G. Karlaftis
+    An international comparative study of self-reported driver behavior
+    Transportation Research Part F, 4 (2002), pp. 243-256
+    Google Scholar
+[48]
+    T. Sato, M. Akamatsu, P. Zheng, M. McDonald
+    Comparison of car following behavior between UK and Japan
+    ICROS–SICE International Joint Conference 2009
+    Fukuoka International Congress Center, Japan (18–21 August 2009)
+    Google Scholar
+[49]
+    M. Hoedemaeker
+    Driving with Intelligent Vehicles: Driving Behaviour with Adaptive Cruise Control and the Acceptance by Individual Drivers
+    Doctoral thesis, Delft University of Technology, Delft (1999)
+    Google Scholar
+[50]
+    M. Canale, S. Malan
+    Analysis and classification of human driving behaviour in an urban environment
+    Cognition, Technology and Work, 4 (3) (2002), pp. 197-206
+    View Record in Scopus Google Scholar
+[51]
+    M.R. Othman, Z. Zhang, T. Imamura, T. Miyake
+    A study of analysis method for driver features extraction, Proceedings: IEEE International Conference on Systems
+    Man and Cybernetics (2008), pp. 1501-1505
+    CrossRef View Record in Scopus Google Scholar
+[52]
+    R. Langari
+    Jong-Seob Won, Intelligent energy management agent for a parallel hybrid vehicle – part I: System architecture and design of the driving situation identification process
+    IEEE Transactions on Vehicular Technology, 54 (3) (2005), pp. 925-934
+    View Record in Scopus Google Scholar
+[53]
+    R. Jong-Seob Won
+    Langari, Intelligent energy management agent for a parallel hybrid vehicle – part II: Torque distribution, charge sustenance strategies, and performance results
+    IEEE Transactions on Vehicular Technology, 54 (3) (2005), pp. 935-953
+    Google Scholar
+[54]
+    Y.L. Murphey, R. Milton, L. Kiliaris
+    Driver’s style classification using jerk analysis
+    Proceedings: IEEE Symposium Series on Computational Intelligence (2009)
+    Google Scholar
+[55]
+    Jianqiang Wang, Xiaojia Lu, Qing Xiao, Meng Lu
+    Comparison of driver classification based on subjective evaluation and objective experiment
+    Proc. 90th TRB Annual Meeting, Paper 11-3170 (23–27 January 2011)
+    Washington, DC
+    Google Scholar
+[56]
+    J. Davey, D. Wishart, J. Freeman, B. Watson
+    An application of the driver behaviour questionnaire in an Australian organisational fleet setting
+    Transportation Research Part F, 10 (2007), pp. 11-21
+    Article Download PDF Google Scholar
+[57]
+    Huixin Ke, Hao Shen
+    The Statistical Analysis of Research
+    (second ed.), China Media University Press, Beijing (2005)
+    Google Scholar
+[58]
+    L.J. Cronbach
+    Coefficient alpha and the internal structure of tests
+    Psychometrika, 16 (3) (1951), pp. 297-334
+    Google Scholar
+[59]
+    R.L. Gorsuch
+    Factor Analysis
+    Lawrence Erlbaum Associates (1983)
+    Google Scholar
+[60]
+    J.B. MacQueen
+    Some methods for classification and analysis of multivariate observations
+    Proceedings: 5th Berkeley Symposium on Mathematical Statistics and Probability, vol. 1, University of California Press (1967), pp. 281-297
+    Google Scholar
+
+Cited by (9)
+
+    Understanding the potential of emerging digital technologies for improving road safety
+    2022, Accident Analysis and Prevention
+    Show abstract
+    Systematic review of driving simulator validation studies
+    2019, Safety Science
+    Show abstract
+    Effects of mobile phone use on driving performance: an experimental study of workload and traffic violations
+    2021, International Journal of Environmental Research and Public Health
+    Mathematical Definitions of Scene and Scenario for Analysis of Automated Driving Systems in Mixed-Traffic Simulations
+    2021, IEEE Transactions on Intelligent Vehicles
+    Impact of vehicle headlights radiation pattern on dynamic vehicular vlc channel
+    2021, Journal of Lightwave Technology
+    Xtext Grammar of Driver Logical Condition Factor
+    2021, 2021 International Conference Engineering and Telecommunication, En and T 2021
+
+View all citing articles on Scopus
+Copyright © 2014 Elsevier Inc. All rights reserved.
+Recommended articles
+
+    Testing of Intelligent Vehicles Using Virtual Environments and Staged Scenarios
+    Advances in Intelligent Vehicles, 2014, pp. 45-64
+    Download PDF View details
+    Guaranteed Collision Avoidance with Discrete Observations and Limited Actuation
+    Advances in Intelligent Vehicles, 2014, pp. 89-110
+    Download PDF View details
+    Modeling and Control of a New Narrow Vehicle
+    Advances in Intelligent Vehicles, 2014, pp. 1-43
+    Download PDF View details
+
+1 2 Next
+Article Metrics
+Citations
+
+    Citation Indexes: 9 
+
+Captures
+
+    Readers: 66 
+
+plumX logo
+View details
+Elsevier logo with wordmark
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy 
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+Copyright © 2022 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+
+ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX group home page

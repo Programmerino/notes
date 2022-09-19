@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{908:function(e,t,n){e.exports={controllerViews:{AccountSwitch:n(1863)},meta:{dependencies:["tdv2-applet-userintent","tdv2-service-profile"]},stores:{UHAccountSwitchStore:n(1270)}}}}]);

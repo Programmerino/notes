@@ -1,0 +1,184 @@
+Militarization fails to enhance police safety or reduce crime but may harm police reputation
+
+Jonathan Mummoloa,b,1
+
+aDepartment of Politics, Princeton University, Princeton, NJ 08544; and bWoodrow Wilson School of Public and International Affairs, Princeton University, Princeton, NJ 08544
+
+Edited by John Hagan, Northwestern University, Evanston, IL, and approved July 2, 2018 (received for review March 24, 2018)
+
+The increasingly visible presence of heavily armed police units in American communities has stoked widespread concern over the militarization of local law enforcement. Advocates claim militarized policing protects ofﬁcers and deters violent crime, while critics allege these tactics are targeted at racial minorities and erode trust in law enforcement. Using a rare geocoded census of SWAT team deployments from Maryland, I show that militarized police units are more often deployed in communities with large shares of African American residents, even after controlling for local crime rates. Further, using nationwide panel data on local police militarization, I demonstrate that militarized policing fails to enhance ofﬁcer safety or reduce local crime. Finally, using survey experiments—one of which includes a large oversample of African American respondents—I show that seeing militarized police in news reports may diminish police reputation in the mass public. In the case of militarized policing, the results suggest that the often-cited trade-off between public safety and civil liberties is a false choice.
+police militarization | public safety | crime | race and policing |
+bureaucratic reputation
+A s thousands marched in Ferguson, MO to protest the police shooting of Michael Brown in 2014, many Americans were surprised and alarmed by the character of law enforcement’s response. For days, national news networks broadcast images of armored vehicles, snipers taking aim at unarmed Black and brown civilians, and ofﬁcers clad in battle armor, deployed by state and local police agencies (1).
+To some people, American police appeared to have suddenly transformed into a wartime occupying force. But to scholars of race and policing, and perhaps to many citizens of color, these images were less surprising. More than half a century earlier, James Baldwin described urban police as “occupying forces” in Black communities (2). And decades of research in the intervening years have documented the ways in which policing efforts like “stop and frisk” and the “war on drugs” have served to maintain race- and class-based social hierarchies (3–6). In part due to this history, critical race scholars have characterized police militarization as another means by which the state exercises social control over racial minorities (7).
+But despite a prolonged and vigorous national debate, there is little systematic evidence demonstrating the consequences of militarized police tactics or whether they are more prevalent in communities of color. Because of heterogeneity in the way thousands of local law enforcement agencies in the United States document the presence and activities of their militarized units (if they document them at all), the study of police militarization has been hampered by data constraints (8, 9). In the absence of scientiﬁc analysis, the arguments of both advocates and critics are largely informed by anecdotal and journalistic accounts. Proponents argue that militarized police units enhance ofﬁcer safety and deter violent crime (10), while critics allege that these tactics are disproportionately applied in the policing of racial minorities (11–13), potentially eroding the already-anemic levels of trust between citizens and law enforcement in highly policed
+
+communities (14). The implications of police militarization for civil rights, public safety, and the exercise of state power depend crucially on the empirical validity of these claims.
+This study leverages previously unavailable data to describe the communities affected by militarized policing and to estimate its effects on crime, ofﬁcer safety, and public perceptions of police. I ﬁrst use a rare census of “special weapons and tactics” (SWAT) team deployments in Maryland to characterize the ways in which militarized police units are used and the characteristics of the communities in which they deploy. I show that militarized police units are more often deployed in communities with high concentrations of African Americans, a relationship that holds at multiple levels of geography and even after controlling for social indicators including crime rates. I then use an original nationwide panel measuring the presence of active SWAT teams in roughly 9,000 US law enforcement agencies, as well as the Maryland SWAT deployment data, to test whether militarized policing lowers crime rates and promotes ofﬁcer safety. Using within-agency comparisons that greatly mitigate concerns over omitted variable bias, I ﬁnd no evidence that obtaining or deploying a SWAT team reduces local crime rates or lowers the rates at which ofﬁcers are killed or assaulted.
+Finally, using survey experiments that randomly assign images of police ofﬁcers in news reports, I show that seeing more militarized ofﬁcers—relative to traditionally equipped police— can inﬂate perceptions of crime and depress support for police
+Signiﬁcance
+National debates over heavy-handed police tactics, including so-called “militarized” policing, are often framed as a tradeoff between civil liberties and public safety, but the costs and beneﬁts of controversial police practices remain unclear due to data limitations. Using an array of administrative data sources and original experiments I show that militarized “special weapons and tactics” (SWAT) teams are more often deployed in communities of color, and—contrary to claims by police administrators—provide no detectable beneﬁts in terms of ofﬁcer safety or violent crime reduction, on average. However, survey experiments suggest that seeing militarized police in news reports erodes opinion toward law enforcement. Taken together, these ﬁndings suggest that curtailing militarized policing may be in the interest of both police and citizens.
+Author contributions: J.M. designed research, performed research, analyzed data, and wrote the paper.
+The author declares no conﬂict of interest.
+This article is a PNAS Direct Submission.
+This open access article is distributed under Creative Commons AttributionNonCommercial-NoDerivatives License 4.0 (CC BY-NC-ND).
+Data deposition: All replication materials have been deposited in Harvard Dataverse (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VYPUVC).
+1Email: jmummolo@princeton.edu.y
+This article contains supporting information online at www.pnas.org/lookup/suppl/doi:10. 1073/pnas.1805161115/-/DCSupplemental.
+Published online August 20, 2018.
+
+Downloaded by guest on July 28, 2020
+POLITICAL SCIENCES
+
+www.pnas.org/cgi/doi/10.1073/pnas.1805161115
+
+PNAS | September 11, 2018 | vol. 115 | no. 37 | 9181–9186
+
+funding and presence. This analysis includes a large oversample of African American respondents—an important feature given the high rate at which militarized police units deploy in Black neighborhoods.
+On average, militarized police units do not appear to provide the safety beneﬁts that many police administrators claim. And police may suffer reputational damage when they deploy militarized units. These results suggest that the often-cited tradeoff between public safety and civil liberties is, in the case of militarized policing, a false choice.
+Deﬁning Police Militarization
+Police militarization is a continuum deﬁned by a combination of equipment, tactics, and culture that centers on violent conﬂict (7, 15, 16). In recent decades, local police agencies have militarized their departments to varying degrees, adopting weapons, attire, tactics, and organizational structures developed for theaters of war. The proliferation of militarized policing is due in part to an expansion of the war on drugs and federal initiatives that supplied localities with excess military equipment and funds to purchase arms (17, 18). Heterogeneity in agency capacity makes it difﬁcult to precisely code police agencies as “militarized” or not. Recently publicized data on military gear disbursements have been used in some studies to estimate the effects of militarization on police violence, crime, and ofﬁcer safety (19–21). But these data convey only the receipt of equipment from one of several programs that help supply agencies with militarized gear (22). The data also appear incomplete (see SI Appendix, section 1A for details).
+As an alternative approach, this paper analyzes the effects of a substantively important threshold on the militarization continuum: the use of SWAT teams. Both popular and scholarly debates over police militarization have focused on the activities of SWAT teams, their pronounced role in conducting the drug war (17), and their high-proﬁle crowd-control efforts (23). SWAT teams often receive advanced combat training and exhibit a command structure modeled on military special forces units (15). In general the formation of a SWAT team represents a heightened commitment to the use of militarized equipment and tactics.
+While it is plausible that SWAT deployments deter violent crime—and, in turn, improve ofﬁcer safety—previous research on other heavy-handed tactics, including some that were much more widely applied such as stop and frisk, has found little evidence of resulting crime reductions (24–26). It is therefore crucial to empirically evaluate the assumed beneﬁts of militarized policing.
+Data and Methods
+To characterize where and why SWAT teams deploy, I obtained data on every SWAT deployment in the state of Maryland over a 5-y period via a public records request. These data exist because of an unusual statute requiring every Maryland agency to uniformly record all SWAT activity. Because the statute has since sunset, the data represent a rare, complete accounting of militarized police units’ activities and contain the date, postal zip code, and agency of each SWAT deployment between FY2010 and FY2014, as well as the reasons for and outcomes of each deployment (n ≈ 8,200 deployments).
+To estimate the effects of police militarization on crime and ofﬁcer safety, I use a nationwide panel measuring the presence of active SWAT teams. I generated the national panel by merging (27) three waves of the federal Census of State and Local Law Enforcement Agencies (CSLLEA) surveys—which measure whether agencies supply SWAT services—with FBI data on violent crimes and the FBI’s Law Enforcement Ofﬁcers Killed and Assaulted (LEOKA) database. The resulting
+
+panel includes roughly 9,000 agencies, each observed in 2000, 2004, and 2008. About 29% of agencies vary on SWAT status during this period (SI Appendix, Table S2). I then use an agency-month panel in Maryland to test whether the increased deployment of SWAT teams affects crime and ofﬁcer safety outcomes.
+To estimate the effects of militarized policing on public perceptions of law enforcement, I conducted two survey experiments: one using a convenience sample from Amazon’s Mechanical Turk (n= 1,566) and one conducted by Survey Sampling International (SSI) (n= 4,465). (Survey experiments were approved by Stanford University’s Institutional Review Board, protocol no. 32534. All respondents supplied informed consent.) These experiments provided brief news articles accompanied by a randomly assigned image that conveyed different levels of militarization, allowing for an estimate of the causal effect of seeing militarized police on attitudes toward law enforcement relative to seeing more traditionally equipped police forces. Because of the prevalence of SWAT deployments in Black communities, the SSI data include an oversample of roughly 1,850 African Americans to test whether treatment effects varied with respondent race.
+Where and Why SWAT Teams Deploy
+The rare census of SWAT activity available in Maryland offers a valuable opportunity to study the stated reasons for, and geographic correlates of, militarized policing. Maryland also exhibits large variation in the racial composition of localities [e.g., the percentage of Blacks in zip-code tabulation areas (ZCTAs) ranges from 0% to more than 95%], allowing for an evaluation of the relationship between militarized tactics and neighborhood racial composition with minimal extrapolation.
+Before examining that relationship, Table 1, generated using the pooled Maryland SWAT census, ﬁrst displays the reasons SWAT teams are deployed. Table 1 shows that roughly 90% of SWAT deployments in that state over 5 ﬁscal years were conducted to serve search warrants. Previous work has shown that the use of SWAT teams to serve warrants, a practice which escalated as a result of the war on drugs (17), is an extremely disruptive event in the lives of citizens and often involves percussive grenades, battering rams, substantial property damage, and in rare cases deadly altercations stemming from citizens’ mistaken belief that they are experiencing a home invasion (28, 29). Table 1 also shows that less than 5% of deployments involved a “barricade” scenario, which typically involves an armed suspect refusing to surrender to police. Violence to people and animals is rare, and gun shots are ﬁred 1.2% of the time—roughly 100 deployments during this period. While the data suggest that indiscriminate violence is less common than some anecdotal reports suggest, they also show that the vast majority of SWAT deployments occur in connection with nonemergency scenarios, predominately to serve search warrants.
+
+Table 1. SWAT deployments, Maryland FY2010–2014
+
+Reason, legal authority
+
+%
+
+Outcome
+
+Search warrant Barricade Other Arrest warrant Exigent circumstances
+
+91.06 4.92 2.67 0.89 0.45
+
+Property taken Forcible entry
+Arrest Shot ﬁred Person injured Ofﬁcer injured Animal killed Animal injured Person killed
+
+%
+84.38 68.36 63.69
+1.20 1.15 0.42 0.17 0.12 0.11
+
+Downloaded by guest on July 28, 2020
+
+9182 | www.pnas.org/cgi/doi/10.1073/pnas.1805161115
+
+Mummolo
+
+Fig. 1. SWAT deployments are more frequent in areas with high concentrations of African Americans. (Top row) Maryland ZCTAs. (Middle row) ZCTAs from three large Maryland agencies. (Bottom row) Maryland counties. Left column shows bivariate relationships. Right column controls for social indicators in corresponding geographic unit. Locally weighted and linear regression ﬁts are shown. Variables are plotted on log scales.
+Critics allege that militarized tactics are more often applied in communities of color, a pattern that would be in line with decades of evidence indicating disparate treatment of racial minorities by police (4, 6, 30). To test this claim, Fig. 1 shows the relationship between the percentage of Black residents in a geographic unit and the volume of SWAT deployments per 100,000 residents in that unit during FY2010–2014, both logged. Fig. 1, Top Left and Top Right is generated using ZCTAs in Maryland and shows a strong positive correlation, even after controlling for local unemployment, education, and household income levels (Fig. 1, Top Right). Fig. 1, Middle Left and Middle Right is generated using data from three large agencies—the Baltimore City Police Department and the Prince George’s County and Montgomery County Police Departments—which publish incident-level crime data that can be mapped to ZCTAs. Even after controlling for the aforementioned social indicators and local crime rates (Fig. 1, Middle Right), the percentage of Blacks still strongly predicts the volume of SWAT activity in a ZCTA. The slope in Fig. 1, Middle Right (β = 1.05, P < 0.001; SI Appendix, Tables S8 and S9) implies that a 10% increase in the percentage of Blacks in a ZCTA is associated with a 10.53% increase in SWAT deployments per 100,000 residents during this period. Fig. 1, Bottom Left and Bottom Right shows a similar pattern at the county level, although the slope is not statistically signiﬁcant in the county model with controls. This analysis comes from only one state, so caution is warranted when generalizing beyond Maryland. We also cannot conﬁdently infer a causal relationship from these cross-sectional comparisons. However, these results are consistent with the descriptive claim that Black residents face a pronounced risk of experiencing militarized policing.
+Effects on Crime and Ofﬁcer Safety
+Proponents claim that militarized tactics deter violent crime and protect police (10). To test these claims, I use a nationwide panel
+
+to estimate the effects of acquiring a SWAT team on violent crime and ofﬁcer fatalities and assaults and an agency-month panel in Maryland to test whether the increased deployment of SWAT teams affects these outcomes. I focus on violent crime because of the asserted link between militarized policing and public safety. To gauge robustness, I estimate two models per outcome: a generalized difference-in-differences (DID) estimator containing agency and time period ﬁxed effects and a second model including ﬁxed effects but also allowing each agency to trend uniquely over time. By comparing agencies to themselves over time, both approaches greatly mitigate concerns over omitted variable bias that plague cross-sectional comparisons (31). All outcomes are logged to reduce the inﬂuence of extreme values (see SI Appendix, sections 2–4 for alternative speciﬁcations).
+Fig. 2 displays estimates of the effect of obtaining a SWAT team on violent crime and ofﬁcer safety measures. The top coefﬁcient implies a statistically signiﬁcant 6.5% increase in within-agency violent crimes, on average. This result is consistent with anecdotal evidence of suspects reacting violently to SWAT teams (29) or with militarized policing lowering trust in police, thereby hindering criminal investigations and promoting crime (14). However, once we allow agencies to trend differentially over time, the effect shrinks to a statistically insigniﬁcant 4.3%. Estimates for ofﬁcer deaths, both accidental and felonious, are precise and near zero, partly because they are so rare (i.e., there is little variation in these outcomes to explain). Estimates for assaults are noisier, and one shows a statistically signiﬁcant 3.2% increase in noninjurious assaults, although this result misses statistical signiﬁcance in the time trends speciﬁcation. In sum, estimated effects are generally positive and often indistinguishable from zero, and there is no evidence that acquiring a SWAT team lowers crime or promotes ofﬁcer safety.
+Fig. 2. Obtaining a SWAT team does not reduce crime or improve ofﬁcer safety. Shown are coefﬁcients from regressions estimating the effect of obtaining a SWAT team on crime and ofﬁcer safety. Outcomes are logged. Bars are 95% conﬁdence intervals.
+
+Downloaded by guest on July 28, 2020
+POLITICAL SCIENCES
+
+Mummolo
+
+PNAS | September 11, 2018 | vol. 115 | no. 37 | 9183
+
+image randomly varied across respondents (Fig. 4). Images were randomly assigned within racial groups of respondents in the second survey (which contained an oversample of African American respondents), with equal probability. The control image (Fig. 4A) featured ﬁve male, traditionally uniformed ofﬁcers (e.g., blue uniforms, brimmed caps, and standard side arms). The “low” militarization conditions (Fig. 4B and Fig. 4C) showed ﬁve male ofﬁcers with “riot gear” and batons or with body armor and assault riﬂes. The “high” militarization condition (Fig. 4D) added an armored vehicle. (Because it elicited very similar treatment effects to the other low militarization image in Fig. 4C, the Fig. 4B image was dropped from the SSI survey to enhance statistical power.)
+In each case, the caption beneath the photo read, “Above: Five city police ofﬁcers stand guard during a local protest.” All images were tightly cropped to ensure that any differences in responses were due to the appearance of police ofﬁcers and not the surrounding area in which they were deployed. Following the article, respondents answered questions measuring perceived crime levels, support for police spending, and conﬁdence in police. All images and text were borrowed or adapted from real online news content (32–36).
+
+Fig. 3. SWAT team deployments exert no detectable effects on crime or ofﬁcer safety. Shown are coefﬁcients on log(#SWAT Deployments + 1) from panel regressions using data from Maryland, FY2010–2014. All outcomes are logged. Bars are 95% conﬁdence intervals.
+Fig. 3 displays the effects of increased SWAT deployments in Maryland on crime and ofﬁcer safety. Fig. 3, Left shows results from models using all deployments, summed within agency months and logged, while Fig. 3, Right uses deployments only for barricade situations to test whether using SWAT in emergencies might be especially effective. (I thank an anonymous reviewer for this suggestion.) (Ofﬁcer fatalities are omitted as an outcome here because they almost never occur in these data; SI Appendix, Table S7.) As Fig. 3 shows, point estimates are negative but near zero, none are statistically signiﬁcant, and all estimates imply a 10% increase in deployments exerts changes smaller than 1% in all outcomes. Some small declines in ofﬁcer assaults are detectable if the data are weighted by agency size (SI Appendix, Table S35), suggesting the Maryland results are more sensitive to model speciﬁcation than the national analysis which makes it difﬁcult to draw ﬁrm conclusions. Using the available data, the beneﬁts of increased deployments appear to be either small or nonexistent.
+The adoption and deployment of SWAT teams is not randomly assigned, and we should therefore make causal interpretations with some caution (see SI Appendix, section 2B, for placebo tests assessing the risk of endogeneity). The Maryland results may also not generalize to other states. But the lack of any robust association between militarized policing and public and ofﬁcer safety shown here calls the validity of these claimed beneﬁts into question.
+
+Experimental Results. Fig. 5 shows average differences in responses between each treatment condition and the control condition in the unweighted samples. All outcomes were rescaled to range from 0 to 100 so effects can be interpreted as percentage-point increases on each outcome’s respective scale. Militarized images in the M-Turk survey caused clear increases between roughly 8 points and 15 points in perceived levels of crime in the vignette city. The high militarization condition in the SSI survey caused a statistically signiﬁcant 2.2-point increase in the perceived level of crime in the vignette city and, strikingly, a 3.2-point drop in respondents’ desire for more police patrols in their own neighborhoods.
+The high militarization treatment also caused support for police funding in the United States to fall by roughly four points in the M-Turk survey and two points in the SSI survey. Support
+
+A
+
+B
+
+C
+
+D
+
+Effects on Police Reputation
+I conducted two survey experiments to estimate effects on public perceptions of police, the ﬁrst one via Amazon’s Mechanical Turk (M-Turk) and the second one via SSI. Respondents read a mock news article concerning an unnamed police chief seeking a budget increase. Text remained constant while the accompanying
+
+Fig. 4. Experimental manipulation [from Top Left (A) to Bottom Right (D)]. Reprinted with permission from Reuters Pictures/Jessica Rinaldi, Shutterstock/JPL Designs, Associated Press/Jeff Roberson, and The New York Times/Redux Pictures/Whitney Curtis.
+
+Downloaded by guest on July 28, 2020
+
+9184 | www.pnas.org/cgi/doi/10.1073/pnas.1805161115
+
+Mummolo
+
+Americans by police and depressed levels of trust in police in communities of color. Indeed, in the control condition in the SSI data, when asked how much conﬁdence they had in police in the United States, the mean response among Black participants was 21 percentage points lower than among white respondents (P < 0.001). Why then, do we observe such similar effects among the two groups? One explanation is that different mechanisms are operating within each group to produce effects of similar magnitude. For example, white respondents may react negatively to militarized images because they clash with their baseline perception of law enforcement, while Black residents may react negatively because they conjure memories of discrimination. These results are also consistent with previous work showing that perceived discrimination is not well predicted by the increased probability of exposure to racial hostility (37). Adjudicating between these explanations is beyond the scope of this study. But what we learn from the present analysis is that militarized policing can impose reputational costs on law enforcement, likely in unintended ways. This is troubling, since prior work shows that negative views of police inhibit criminal investigations and are associated with stunted civic participation (38).
+
+Fig. 5. Survey experimental results: seeing militarized police may tarnish police reputation. Shown are effects of militarized images in M-Turk (blue) and SSI (red) surveys. Bars are 95% conﬁdence intervals.
+for funding the department in the news article also fell. A close reading and text analysis of open-ended responses suggest that treated respondents were less supportive of police funding because militarized equipment gave the impression that the agency was already well funded (see SI Appendix, Fig. S10 and discussion in SI Appendix, section 2E).
+Effects on conﬁdence in police in the United States are generally negative but not statistically signiﬁcant, although the high militarization treatment in the SSI survey did lower conﬁdence in the police portrayed in the experimental vignette, suggesting some of militarized images’ effects may be conﬁned to the agency in question and not law enforcement at large. The effects of the high militarization treatment are also substantially smaller in the SSI sample, and the low militarization treatment effects from the M-Turk sample did not replicate, so we should be cautious about endorsing the large effect sizes from the M-Turk survey. Despite these limitations, the SSI results generally replicate the M-Turk results in terms of direction, and all effects appear after only a single brief exposure to militarized images. Repeated exposure to similar news items over time could help to cement negative views of law enforcement in the mass public.
+
+Discussion and Conclusion
+Aggressive policing strategies have historically been disproportionately applied to citizens of color in ways that serve to preserve race- and class-based social hierarchies (3). The normalization of militarized policing in the United States (15, 16) has raised concerns that a new, heavy-handed policing strategy is being used in similar ways and is eroding public opinion toward law enforcement, but law enforcement administrators defend the tactics claiming they can deter violent crime and protect police. This study marshals an array of data sources and analytical techniques to systematically evaluate these claims.
+Consistent with anecdotal evidence (11), militarized police units are more often deployed in areas with high concentrations of African Americans, even after adjusting for local crime rates
+
+Effects by Race of Respondent. Fig. 6 shows treatment effects in the SSI survey estimated on non-Hispanic white and African American respondents (with respondent race/ethnicity measured via self-reports) separately, as well as the difference in effects. In some cases the group effects have opposite signs, such as the effects of high militarization on perceived crime in the vignette city, but this difference is not statistically signiﬁcant. In general, these results reveal little evidence of heterogeneous responses. Larger samples may allow for the detection of disparate effects, but the small point estimates in Fig. 6 suggest that any differences in effects are likely to be small in magnitude.
+This relatively uniform pattern of response is surprising given extensive prior work indicating disparate treatment of Black
+
+Fig. 6. No heterogeneous effects by race of respondent. Bars are 95% conﬁdence intervals.
+
+Downloaded by guest on July 28, 2020
+POLITICAL SCIENCES
+
+Mummolo
+
+PNAS | September 11, 2018 | vol. 115 | no. 37 | 9185
+
+and other community traits. But I ﬁnd no ﬁrm evidence that SWAT teams lower an agency’s violent crime rate or the rates at which ofﬁcers are killed or assaulted. Using survey experiments, I show that citizens react negatively to the appearance of militarized police units in news reports and become less willing to fund police agencies and less supportive of having police patrols in their own neighborhoods.
+Given the concentration of deployments in communities of color, where trust in law enforcement and government at large is already depressed (14, 38), the routine use of militarized police tactics by local agencies threatens to increase the historic tensions between marginalized groups and the state with
+
+no detectable public safety beneﬁt. While SWAT teams arguably remain a necessary tool for violent emergency situations, restricting their use to those rare events may improve perceptions of police with little or no safety loss.
+ACKNOWLEDGMENTS. I thank Justin Grimmer, Alexandra Blackman, Courtenay Conrad, Ted Enamorado, Andrew Guess, Jens Hainmueller, Andrew Hall, Dorothy Kronick, Amy Lerman, Neil Malhotra, Steve Mello, Tali Mendelberg, Naomi Murukawa, Terry Moe, Erik Peterson, Jonathan Rodden, Gary Segura, Mike Tomz, Sean Westwood, Vesla Weaver, Lauren Wright, and Yiqing Xu for their guidance throughout this project. I thank Helene Wood, Madeleine Marr, and Grace Masback for research assistance. This work was funded by Stanford University, Princeton University, and National Science Foundation Grant 15-571.
+
+1. Institute for Intergovernmental Research (2015) After-action assessment of the police response to the August 2014 demonstrations in Ferguson, Missouri. COPS Ofﬁce Critical Response Initiative (Ofﬁce of Community Oriented Policing Services, Washington, DC).
+2. Baldwin J (1966) A report from occupied territory. The Nation. Available at https:// www.thenation.com/article/report-occupied-territory/. Accessed May 1, 2018.
+3. Alexander M (2010) The New Jim Crow: Mass Incarceration in the Age of Colorblindness (The New Press, New York).
+4. Garland D (1996) The limits of the sovereign state: Strategies of crime control in contemporary society. Br J Criminol. 36:445–471.
+5. Gottschalk M (2008) Hiding in plain sight: American politics and the carceral state. Annu Rev Polit Sci 11:235–260.
+6. Wacquant L (2009) Prisons of Poverty (Univ of Minnesota Press, Minneapolis). 7. Gama F (2016) The racial politics of protection: A critical race examination of police
+militarization. Calif L Rev 104:979–1008. 8. Balko R (2014) Shedding light on the use of SWAT teams. The Washington Post. Avail-
+able at https://www.washingtonpost.com/news/the-watch/wp/2014/02/17/sheddinglight-on-the-use-of-swat-teams/. Accessed May 1, 2018. 9. President’s Task Force on 21st Century Policing (2015) Final Report of the President’s Task Force on 21st Century Policing (Ofﬁce of Community Oriented Policing Services, Washington, DC). Available at https://ric-zai-inc.com/Publications/cops-p311pub.pdf. 10. Madhani A (2014) St. Louis county chief defends militarization of police. USA Today. Available at https://www.usatoday.com/story/news/nation/2014/09/16/ferguson-stlouis-county-michael-brown-militarization/15736907/Newsweek. Accessed May 1, 2018. 11. ACLU (2014) War comes home: The excessive militarization of American policing. Available at https://www.aclu.org/sites/default/ﬁles/assets/jus14-warcomeshomereport-web-rel1.pdf. Accessed May 1, 2018. 12. Camp J (2016) Incarcerating the Crisis: Freedom Struggles and the Rise of the Neoliberal State (Univ of California Press, Oakland, CA). 13. Hinton E (2016) From the War on Poverty to the War on Crime: The Making of Mass Incarceration in America (Harvard Univ Press, Cambridge, MA). 14. Tyler T, Fagan J (2008) Legitimacy and cooperation: Why do people help the police ﬁght crime in their communities? Ohio State J Criminal Law 6:231– 275. 15. Kraska P, Kappeler V (1997) Militarizing American police: The rise and normalization of paramilitary units. Soc Probl 44:1–18. 16. Kraska P (2007) Militarization and policing: Its relevance to 21st century police. Policing 1:501–513. 17. Balko R (2013) Rise of the Warrior Cop: The Militarization of America’s Police Forces (Public Affairs, New York). 18. Wofford T (2014) How America’s police became an army: The 1033 program. Newsweek. Available at www.newsweek.com/how-americas-police-became-army1033-program-264537. Accessed May 1, 2018. 19. Bove V, Gavrilova E (2017) Police ofﬁcer on the frontline or a soldier? the effect of police militarization on crime. Am Econ J Econ Policy 9:1–18. 20. Harris M, Park J, Bruce D, Murray M (2017) Peacekeeping force: Effects of providing tactical equipment to local law enforcement. Am Econ J Econ Policy 9: 291–313.
+
+21. Masera F (2016) Bringing war home: Violent crime, police killings and the overmilitarization of the US police. Available at https://papers.ssrn.com/sol3/papers.cfm? abstract id=2851522. Accessed May 1, 2018.
+22. Beavers E, Shank M (2014) Get the military off of main street: Ferguson shows the risks of militarized policing. The New York Times. Available at https://www.nytimes.com/ 2014/08/15/opinion/ferguson-shows-the-risks-of-militarized-policing.html. Accessed May 1, 2018.
+23. Szoldra P (2014) SWAT team called on peaceful protesters in Ferguson? Police arrest journalists, ﬁre tear gas and rubber bullets. Business Insider. Available at www. businessinsider.com/swat-ferguson-protest-2014-8. Accessed May 1, 2018.
+24. Rosenfeld R, Fornago R (2012) The impact of police stops on precinct robbery and burglary rates in New York City, 2003-2010. Justice Q 31:96–122.
+25. MacDonald J, Fagan J, Geller A (2016) The effects of local police surges on crime and arrests in New York City. PLoS One 11:1–15.
+26. Mummolo J (2017) Modern police tactics, police-citizen interactions and the prospects for reform. J Polit 80:1–15.
+27. Enamorado T, Fiﬁeld B, Imai K (2018) Using a probabilistic model to assist merging of large-scale administrative records. Available at https://ssrn.com/abstract=3214172. Accessed August 1, 2018.
+28. Redden M (2015) Documents reveal the fearmongering local cops use to score military gear from the Pentagon. Mother Jones. Available at www.motherjones.com/ politics/2015/08/new-documents-reveal-fearmongering-local-cops-use-score-militarygear-pentagon. Accessed May 1, 2018.
+29. Sack K (2017) Door-busting drug raids leave a trail of blood. The New York Times. Available at https://www.nytimes.com/interactive/2017/03/18/us/forced-entrywarrant-drug-raid.html. Accessed May 1, 2018.
+30. Eberhardt J, Goff PA, Purdie VJ, Davies PG (2004) Seeing black: Race, crime, and visual processing. J Personal Soc Psychol 87:876–893.
+31. Angrist J, Pischke J (2009) Mostly Harmless Econometrics: An Empiricist’s Companion (Princeton Univ Press, Princeton).
+32. Bosman J, Eckholm E (2014) Anonymity in police shooting fuels anger in Missouri. The New York Times. Available at www.nytimes.com/2014/08/14/us/missouriteenager-and-ofﬁcer-scufﬂed-before-shooting-chief-says.html? r=0. Accessed May 1, 2018.
+33. Jonsson P (2014) Mike Brown shooting: Images of militarized police bring out critics. The Christian Science Monitor. Available at https://www.csmonitor.com/ USA/Justice/2014/0814/Mike-Brown-shooting-Images-of-militarized-police-bring-outcritics. Accessed May 1, 2018.
+34. Molotch H (2013) How much security is too much? New York Daily News. Available at www.nydailynews.com/opinion/security-article-1.1320360. Accessed May 1, 2018.
+35. Sebens S (2013) Oregon fusion center: House of spies or terror-threat prevention? Watchdog.org. Available at watchdog.org/86470/spy-center-or-terrorist-threatprevention-or-fusion-center-in-limbo/. Accessed May 1, 2018.
+36. Zummo M (2014) Vernon police looking to add ofﬁcers. The Advertiser-News. Available at www.advertisernewsnorth.com/article/20140122/NEWS01/140129966/Vernonpolice-looking-to-add-ofﬁcers. Accessed May 1, 2018.
+37. Hopkins D, et al. (2016) Out of context: The absence of geographic variation in US immigrants’ perceptions of discrimination. Polit Groups Identities 4:363–392.
+38. Lerman A, Weaver V (2014) Arresting Citizenship: The Democratic Consequences of American Crime Control (Univ of Chicago Press, Chicago).
+
+Downloaded by guest on July 28, 2020
+
+9186 | www.pnas.org/cgi/doi/10.1073/pnas.1805161115
+
+Mummolo
+

@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{63:function(n,t,r){n.exports=function(n,t){if(!1===t)return n;var r=n.load;return n.then=function(n){return r().then(function(t){return n&&n(t)})},n.catch=function(n){return r().catch(function(t){return n&&n(t)})},n};var c=!1;!function(){if(!c){var n;try{(n=r(384))&&(n.setHasBabelPlugin(),c=!0)}catch(n){}}}()}}]);
+//# sourceMappingURL=https://fortune.com/static/js/npm.babel-plugin-universal-import.map?v=3021e9b8

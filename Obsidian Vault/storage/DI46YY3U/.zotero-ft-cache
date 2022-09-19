@@ -1,0 +1,948 @@
+Dependent Types in Practical Programming*
+(Extended Abstract)
+
+Hongwei Xi Department of Computer Science and Engineering Oregon Graduate Institute of Science and Technology
+hongweiQcse.ogi.edu
+
+Frank Pfenning Department of Computer Science
+Carnegie Mellon University
+fp@cs.cmu.edu
+
+Abstract
+We present an approach to enriching the type system of ML with a restricted form of dependent types, where type index objects are drawn from a constraint domain C, leading to the DML(C) language schema. This allows specification and inference of significantly more precise type information, facilitating program error detection and compiler optimization. A major complication resulting from introducing dependent types is that pure type inference for the enriched system is no longer possible, but we show that type-checking a sufficiently annotated program in DML(C) can be reduced to constraint satisfaction in the constraint domain C. We exhibit the unobtrusiveness of our approach through practical examples and prove that DML(C) is conservative over ML. The main contribution of the paper lies in our language design, including the formulation of type-checking rules which makes the approach practical. To our knowledge, no previous type system for a general purpose programming language such as ML has combined dependent types with features including datatype declarations, higher-order functions, general recursions, let-polymorphism, mutable references, and exceptions. In addition, we have finished a prototype implementation of DML(C) for an integer constraint domain C, where constraints are linear inequalities (Xi and Pfenning 1998).
+
+1 Introduction
+
+Type systems for functional languages can be broadly classified into those for rich, realistic languages such as Standard ML (Milner, Tofte, and Harper 1990), Cam1 (Weis and Leroy 1993), or Haskell!(Hudak, Peyton Jones, and Wadler 1992), and those for small, pure languages such as the ones underlying Coq (Dowek, Felty, Herbelin, Huet, Murthy, Parent, Paulin-Mohring, and Werner 1993), NuPrl (Constable et al. 1986), or PX (Hayashi and Nakano 1988). Type-checking in realistic languages should be theoretically decidable and
+
+‘This research was sponsored in part by the Advanced Research Projects Agency CSTO under the title “The Fox Project: Advanced Languages for Systems Software”, ARPA Order No. C533.
+
+of Permission to make digital or hard copies all or part ofthis work for
+personal or classroom use is granted without fee provided that copies arc not made or distributed for prolit or commercinl ad\,anlqy and that
+
+topics bear this notice and the full citation on the first page. To copy
+
+otherwise. to republish. to post on servers or to redistribute requires prior specific permission and/or a fee.
+POPL 99 San Antonio Texas USA
+Copyright ACM 1999 l-58113-095-3/99/01...$5.00
+
+to lists,
+
+must be practically feasible without requiring large amounts of type annotations. In order to achieve this, the type systems are relatively simple and only elementary properties of programs can be expressed and thus checked by a compiler. For instance, the error of taking the first element out of an empty list cannot be detected by the type system of ML since it does not distinguish an empty list from a nonempty one. Richer type theories such as the Calculus of Inductive Constructions (underlying Coq) or Martin-Mf type theories (underlying NuPrl) allow full specifications to be formulated, which means that type-checking becomes undecidable or requires excessively verbose annotations. It also constrains the underlying functional language to remain relatively pure, so that it is possible to effectively reason about program properties within a type theory.
+Some progress has been made towards bridging this gap, for example, by extracting Cam1 programs from Coq proofs, by synthesizing proof skeletons from Cam1 programs (Parent 1995), or by embedding fragments of ML into NuPrl (Kreitz, Hayden, and Hickey 1998). In this paper, we address the issue of designing a type system for practical programming in which a restricted form of dependent types is available, allowing more program invariants to be captured by types. We conservatively refine the type system of ML by allowing some dependencies, without destroying desirable properties of ML such as prxtical and unintrusive type-checking.
+We now present a short example from our implementation before going into further details. A correct implementation of the append function on lists should return a list of length m + n when given two lists of lengths m and n, respectively. This property, however, cannot be captured by the type system of ML. This inadequacy can be remedied if we introduce a restricted form of dependent types.
+The code in Figure 1 is written in the style of ML with a type annotation, which will be explained shortly. We assume that we are working over the domain of natural numbers with constants 0 and 1 and the addition operation +. The datatype ‘a list is defined and then indexed by a natural number, which stands for the length of a list in this case. The constructors of ‘a list are then assigned dependent types:
+nil <I ‘a list (0) states that nil is an ‘a list of length 0.
+cons <I (n:nat) ‘a * ‘a list(n) -> ‘a list (n+l) states that cons yields an ‘a list of length n+l when given a pair consisting of an element of type ‘a and an ‘a list of length n. We write Cn:nat) for the dependent function type constructor, usually written as
+
+214
+
+IIn : nat, which can also be seen as a universal quantifier.
+The where clause in the declaration of append is a type annotation, which precisely states that append returns a list of length m + n when given a pair of lists of lengths m and n, respectively. Generally speaking, the programmer is responsible for refining a datatype and programs are then automatically checked against type annotations with respect to the refinement made.
+Let us consider another short example. Suppose that we intend to specify that an implementation of the evaluation function for the pure call-by-value X-calculus returns a closure (if it terminates) when given a closed X-expression. It seems difficult in ML, if not impossible, to construct a type for closed lambda expressions. With dependent types, this can be done elegantly.
+The datatype lamexp in Figure 2 is a representation of Xexpressions in de Bruijn’s notation. For instance, XzXy.z(y) is represented as Abs (Abs (App (Shif t (One> , One) 1. lamexp is indexed with a natural number n, which roughly means that there are at most n free variables in a X-expression of type lamexp (n>. Therefore, lamexp (0) is the type for closed X-expressions. A complete implementation of the evaluation function can be found in (Xi 1997).
+Adding dependent types to ML raises a number of theoretical and pragmatic questions. We briefly summarize our results and design choices.
+The first question that arises is the meaning of expressions with effects when they occur as index objects to type families. In order to avoid these difficulties we require index objects to be pure. In fact, our type system is parameterized over a domain of constraints from which type index objects are drawn. We can maintain this purity and still make the connection to run-time values by using singleton types, such as int(n) which contains just the integer n. This is critical for practical applications such as static elimination of array bound checking (Xi and Pfenning 1998).
+The second question is the decidability and practicality of type-checking. We address this in two steps: the first step is to define an explicitly typed (and unacceptably verbose) language for which type-checking is easily reduced to constraint satisfaction in C. The second step is to define an elaboration from DML(C), a slightly extended fragment of ML, to the fully explicitly typed language which preserves the standard operational semantics. The correctness of elaboration and decidability of type-checking modulo constraint satisfiability constitute the main technical contribution of this paper.
+The third question is the interface between dependently annotated and other parts of a program or a library. For this we use existential dependent types, although they introduce non-trivial technical complications into the elaboration procedure. Our experience shows that existential dependent types are indispensable in practice. For instance, they are involved in almost all the realistic examples in our experiments.
+We have so far finished developing a theoretical foundation for combining dependent types with all the major features in the core of ML, including datatype declarations, higher-order functions, general recursion, let-polymorphism, mutable references and exceptions. We have also implemented our design for a fragment of ML which encompasses all these features. The only main feature in the core of ML which we have not implemented is records. In addition, we have experimented with different constraint domains and applications. Many non-trivial examples are available at (Xi
+
+1997). For the domain of linear inequalities on integers, they include quicksort on arrays, mergesort on lists, a red/black tree implementation, a highly optimized byte copy function, an implementation of Knuth-Morris-Pratt’s algorithm for string matching and others in which array bound checks can be statically eliminated without excessive annotations. On symbolic domains we have verified the type preservation property for an implementation of the evaluation function for the pure simply typed call-by-value X-calculus. Also a different red/black tree implementation is verified using a finite domain, where the constraint solver is based on modelchecking.
+In our experience, DML(C) is acceptable from the pragmatic point of view: programs can often be annotated with very little internal change, annotations are usually to the point and roughly comparable to what one would find in a typical ML program (including signatures). The resulting constraint simplification problems can be solved efficiently in practice. Also the annotations are mechanically verified, and therefore can be fully trusted as program documentation.
+Due to length restrictions, it is impossible to present here all aspects of DML(C). Instead, we concentrate on its main features. In contrast to (Xi and Pfenning 1998), this extended abstract emphasizes the theoretical foundation of DML(C), showing that the type system of DML(C) is sound and type-checking in DML(C) can be made practical. We refer the interested reader to (Xi 1998) for the details.
+The remainder of the paper is organized as follows. We present a monomorphic language ML0 in Section 2, which is a simply typed X-calculus with general pattern matching. We start with a monomorphic language simply because the development of dependent types is largely orthogonal to polymorphism. We then introduce the notion of constraint domain in Section 3. We proceed to extend ML0 with universal dependent types in Section 4, leading to the language ML:(C) parameterized over a constraint domain C. We
+give the typing rules and operational semantics of ML!(C) and show why the type system of ML:(C) can be regarded as a restricted form of dependent types. In Section 5, we present the rules for elaboration from DMLo(C), an external language, into ML,“(C) and prove the correctness of the elaboration. We explain the need for existential dependent
+types in Section 6 and extend ML:(C) to MLzl’(C). We then briefly mention in Section 7 how dependent types can be combined with let-polymorphism and effects. In Section 8, we sketch some interesting applications. The rest of the paper is concerned with some related work, current status and future research directions.
+2 Mini-ML with Pattern Matching
+We start with a monomorphic programming language (MLo) along the lines of Mini-ML, including general pattern matching which is critical in practice and whose theory in this setting is non-trivial. Polymorphism, on the other hand, is largely orthogonal and therefore postponed until Section 7. There we also discuss how to extend the language with effects such as mutable references and exceptions. The syntax of ML0 is given in Figure 3. We sssume throughout that variables are declared at most once in a context and that bound variables may be renamed tacitly.
+We omit the typing rules and the call-by-value natural semantics of this language, which are completely standard. Given e,v in MLo, we write e -+o v if e evaluates to v.
+
+215
+
+datatype ‘a list = nil 1 cons of ‘a * ‘a list typeref ‘a list of nat with (* indexing the datatype
+nil <I ‘a list(O) I cons <I Cn:nat) ‘a * ‘a list(n) -> ‘a list (n+l)
+
+‘a list
+
+with nat *>
+
+funOa>
+
+append(ni1, ys) = ys
+
+I append(cons(x, xs>, ys) = cons(x, appendcxs, ys))
+
+where append <I {m:nat){n:nat)
+
+‘a list(m) * ‘a list(n)
+
+-> ‘a list (mtn)
+
+Figure 1: An introductory example: append
+
+datatype lamexp = One I Shift of lamexp I Abs of lamexp I App of lamexp * lamexp
+typeref lamexp of nat with One <I Cn:nat> lamexp(n+l)
+I Shift <I {n:nat) lamexp(n) -> lamexp(n+l) I Abs <I {n:nat) lamexp(nt1) -> lamexp(n) I App <I {n:nat) lamexp(n) * lamexp(n) -> lamexp(n)
+
+Figure 2: Another introductory example: closed lambda expressions
+
+3 Constraint Domains
+Our enriched language will be parameterized over a domain of constraints from which the type index objects are drawn. Typical examples include linear inequalities over integers, boolean constraints, or finite sets. Due to space limitations, we only briefly sketch the interface to constraints as they are used in our type system.
+First we note that constraints themselves are typed. In order to avoid confusion we call the types of the constraint language index sorts. We use b for base index sorts such as boo1 for booleans and int for integers. We use f for interpreted functions symbols, p for atomic predicates (that is, functions of sort 7 + bool) and we assume to have constants such as equality G for every sort, truth values T and I, negation 7, conjunction A, and disjunction V, all of which are interpreted as usual.
+
+index sorts 7 ::= bllIyi*yzI{a:ylP}
+
+index propositions
+
+P ::=
+
+T 1I 1p(i) I
+4 A P2 I A v P2
+
+Here {a : y ( P} is the subset index sort for those elements of 7 satisfying proposition P. For instance, nat is an abbreviation for {o : int I a > 0). We use a for index variables, and formulate index objects as follows.
+
+index objects i, j ::= a I () I (i, j) 1f(i) index contexts 4 ::= .I(&a:rlqS,P
+
+index constraints Cp ::= P I +I A 91 I P > Cp1 Va : 7.9 I 3a : y.@
+
+satisfaction relation
+
+$I=@
+
+The satisfaction relation 4 k 0 means that cf, is satisfied in the constraint domain under index context 4. The method for verifying such a relation depends on the constraint domain. For instance, model-checking can be chosen for finite
+domains.
+
+We omit the standard sorting rules for this index language and the standard definition of constraint satisfaction.
+The index constraints listed here are the ones which result from elaboration and should therefore be practically solvable for C in order to obtain a usable type-checker for DML(C). This is the case, for example, for integer inequalities, which our implementation solves by a variant of the Fourier variable elimination method. Empirical results and
+further references can be found in (Xi and Pfenning 1998).
+
+4 Universal Dependent Types
+
+We now present ML!(C), which extends ML0 with universal dependent types. Given a domain C of constraints, the syntax of ML:(C) is given in Figure 4. Note that only the syntax different from ML0 is present. We use 6 for base type families, where we use a() for unindexed types.
+We do not specify here how new type families or constructor types are actually declared, but assume only that they can be processed into the form given above. Our implementation provides both built-in and user-declared refinement of types as shown in the examples.
+The typing rules for ML:(C) should be familiar from
+a dependently typed &calculus (such as the ones underlying Coq or NuPrl), except that we separate index variables, abstractions, and applications from term variables, abstractions, and applications. The critical rule of type conversion uses the judgment 4 I- 71 I rs which is the congruent extension of equality on index objects to arbitrary types:
+
+4+iiii’ f#lI- a(i) q a(i))
+
+4 I- ri = r; fp I- 72 I r; 4 k 71 * 72 I 7; * 7;
+
+I$ b 7; I ri 4 I- 72 3 r;
+
+$!J,o:ykr=r’
+
+f#Jt- 7.1+ 7-zi r: + 7-i $5I- no : 7.’ E l-h : 7.”
+
+Notice that it is the application of these rules which generates constraints. For instance, the constraint 4 k (o + n) + 1 k m + n is generated in order to derive 4 I- intlist((a +
+
+216
+
+base types types patterns matches expressions
+values contexts
+
+p ::= boo1 1int 1(other user defined datatypes)
+
+Q, r P
+
+::= ::=
+
+pI11T*ulcT-iT
+2 I dd IO I bl,Pd
+
+ma ::= (p * e) I (p * e I ma)
+
+e ::= x I () I (el, e2) I c(e) ) (case e of ms) I (lam x : 7.e) Iel (e2)
+
+I let x = ei in e2 end 1(Ax f : 7.21)
+
+::= 2 I c(V) I () ( (m,V2)
+
+I (lam x : r.e)
+
+: ::= . I r,z: 7
+
+Figure 3: The syntax for ML0
+
+families constructor signature major types
+types
+patterns expressions values substitutions
+
+6 ::= (family of built-in or user-declared refined types)
+
+S ::= * I S, c : IIai : 71. . . IIa, : ^Im.‘r + J(i)
+
+P ::= a(i) I 11 (71 * 72) 1 (Tl + T2)
+
+c[m.] r
+P e
+
+::=
+....-...*--
+
+p 1 (l-h: 7.T)
+
+..’ 1
+
+, . [an](P)
+
+. . . I c[i~.]. . [in](e) I (Aa : 7.e) I e[i]
+
+V ....--
+8 ....--
+
+. . . I C[il] . . . [in](v) **. ]@Zl+_,i]
+
+I (Xa : 7.v)
+
+Figure 4: The syntax for ML:(C)
+
+4+ 1) z intliat(m + n) in an example below, where 4 is
+m:nat,n:nat,a:nat,a+l+m. The only significant complication arises from pattern
+matching, where new index propositions P are generated. We restrict the index arguments to constructors appearing in patterns to index variables so that pattern matches fail or succeed independently of the indices. This is essential to proving the conservativity of ML,“(C) over MLe.
+The judgment p J. T D (#;I’) expresses that the index and ordinary variables in pattern p have the sorts and types declared in 4 and l?, respectively, if we know that p must have type r. It is defined by the following rules.
+
+2 J- 7 b (q 2 : T)
+
+0 J-1 D (*; .)
+
+plhD(h;rl)
+
+Pz172D(+z;r2)
+
+(p1,~2)~~l*~~D(~l,~2;rl,r2)
+
+Assume that cons is of type
+IIa : nat.int * intZiat(a) + intliat(a + 1)
+since polymorphism is not available at this moment. Then the following is derivable.
+(cons[a]((x, x3)), ya) 1 intlist(m) * intlist(n) D a:nat,a+lsm;
+x : int, x.9 : intliat(a), ya : intliat(n)
+The judgment for match expressions 4; l? I- ma : 71 + rz checks independently for each case that given a subject of type ri the case branch will have type 72. In other words, ri + 72 is the type of match ma. The following rules are for
+
+the derivation of such a judgment.
+
+p .l rl D (4';r') $,#;r,r' k-e : rz
+
+$;ri-p*e:Tl
+
+JT~
+
+f$;r I-(p * e) :71 * r2 4;r I-rns :TI =s 72 f$;l?l-(p*e~ma):~l=+r~
+
+For instance, also using the rules for expressions from Figure 6, it can be readily verified that the following is derivable.
+m : nat, n : nat; append : r I- (~44((~, 41, v4 =+-
+coda + nl(b, amd4bl((~s, w4))) :
+intZist(m) * intliat(n) * intliat(m + n)
+
+where r is
+IIm : nat.lln : nat. intliat(m) * intliat(n) + intliat(m + n)
+
+Notice that this involves deriving the following, which is obviously true in an integer domain.
+
+m:nat,n:nat,a:nat,a+lkm + (a+n)+lGm+n
+
+The remaining typing rules for ML!(C) are in Figure 6. We now present an example in Figure 5, which is basically an expression in ML,“(C) corresponding to a monomorphic version of the code in Figure 1. We also present a sugared version of the expression to enhance readability but we emphasize that there is no sugared syntax for MLb(C) in our implementation (see Section 5). Next we turn to the operational semantics. The critical design decisions are that (a) indices are never evaluated, (b) indices are never used to select branches during pattern matches, and (c) we evaluate underneath index abstractions
+
+217
+
+fix append : IIm : nat.k : nat.intlist(m) * intZist(n) + intlist(m
+Am : natAn : nat.lam 1 : intlist(m) * i&list(n).
+case 1 of
+
++ n).
+
+fun append CO]Cn] (nil, ys) = ys
+
+I append [a+11 Cnl (cons Cal (x, x(t) , ys) = cons Cad (x , append [al Cnl (xs , ys> 1
+
+where append <I {m:nat){n:nat)
+
+intlist(m) * intlist(n)
+
+-> intlist(m+n)
+
+Figure 5: An expression in ML,“(C) and its sugared version
+
+$;I? l-e : 71 4 k 71 E 72 (ty_eq)
+&I? I- e : 72
+
+r(z)=
+
+7
+
+4;r ~f.~f["""l
+
+(tY-4
+
+S(c) = na : q.7 + b(i)
+
+f$G:~
+
+q%;rl-v:T[a:=~
+
+'(') = 6(i) (ty_cons_wo)
+4;r t c: 6(i)
+
+4; r k c[q(~) : a(i[a := i)) (ty-cons-w)
+
+4; r I- el : 7l C#rJ;t- e2 : 72
+
+dir k 0: 1 (ty-unit)
+
++;rt-(el,e2):71*T2
+
+(ty-prod)
+
+f$l-71:*
+
+PJ~~D(#;P) +,+‘;r,r’ke:T2
+
+&rl-p*e:rl
+
+=3r2
+
+41-r2 :* (ty-match)
+
+&rl-(p*e):TI=+-7
+
+4;ri-m5:T137
+
++;rk(p*elms):71*7
+
+(ty-mat ches)
+
+4;r k e: 7l 4; r t- ms : 71 + 7 tty_caseJ 4; r I- (case e of ms) : T
+
+q5,a:y;rke:T
+
+4; r I- (Xa : y.e) : (IIa : 7.7) (ty-ilam)
+
++;r
+
+4; r, z : 71 I- e : r2
+t- (lam z : 7l.e) : 71 +
+
+(ty-lam) ~2
+
+4; r I- e : IIa : 7.~ C#I-J i : y (ty_iapp) 4; r I- e[i] : 7[a := i]
+
+W k el;;;;e;e2ELk
+
+e2 : ~1 tty_appl
+
+f$;r I- el : 71 +;r,x : 71 i- e2 :72 (ty_let) qi; r t- let x = el in e2 end : 72
+
+Figure 6: Typing Rules for ML,“(C)
+
+Xa : y.e. We do, however, substitute for index variables when a branch in a pattern match has been selected, or when a dependently typed function is applied to an index argument as in e[i]. These points together guarantee type preservation for ML,“(C) and conservativity over MLo.
+There is no obstacle preventing the evaluation of type indices at, run-time--there is simply no need to do so. Clearly, this would change immediately if run-time type-checking became necessary, but we do not intend to run DML programs which could not be type-checked at compile-time.
+For the sake of brevity, we omit the operational semantics in this extended abstract. Given the remarks above, it is straightforward to define e _)d v in the style of natural semantics, which means e evaluates to v in ML,“(C).
+Next, we prove the central properties of ML,“(C). The first basic property states that dependent types are preserved under the operational semantics.
+Theorem 4.1 (Type preservation) Given e,v in ML:(C)
+
+such that e _)d v is derivable. If qb;I? I- e : r is derivable, then q5;I? I- v : r is derivable.
+
+Proof By a structural induction on the derivations of e +d
+
+vand4;rke:r.
+
+H
+
+The following definition and theorems detail the relationship between ML,“(C) and MLo. Basically, MLF(C) is a refinement of the type system of ML0 which allows us to express more properties, but neither affects the operational semantics nor the typing judgments already expressible in MLo.
+
+Definition 4.2 We define the index erasure fin&on )I . 11
+
+218
+
+as follow3:
+
+Mil ,...,iJl 117*1Al IIn -+ 7211
+
+= 6
+= IhI1 * 117211 = 11~1+1111741
+
+llna : 7.41 II44 . . . MWII
+II(lam x : 7.e)ll
+~~Oylrl:.e)ll
+
+= llrll = 4ll4) 1 1;;;” x : 11~1144)
+
+11:: z : 7.2111 == AII:x11x : llTll.1lVll
+
+IF, x : 41
+
+= Ilrll,~ : lldl
+
+It maps an expression in ML:(C) into one in MLo. Note that a few trivial cases are omitted for the sake of brevity.
+
+The erasure of a program written in ML,“(C) is executed in MLo. In general, the erasure of a DML program is executed in ML. The next theorem guarantees that the index erasure of a well-typed program in ML,“(C) is also well-typed in MLo.
+
+Theorem 4.3 If 4; l? I- e : 7 is derivable in ML,“(C), then llrll k [IelI: 11~11is derivable in MLo.
+
+Proof By a structural induction on the derivation of 4; l? I-
+
+e : 7.
+
+n
+
+A significant consequence of Theorem 4.3 is that if an untyped program is typable in ML:(C) then it is already typable in MLo. This distinguishes our design from those which aim at making more programs typable by extending the type system of ML. Instead, our objective is to assign more accurate types to programs.
+Also we must guarantee that the operational semantics of a program in ML:(C) is preserved when it is evaluated in MLo. This is done by the following two theorems.
+
+Theorem 4.4 (Soundness) If e _)d v derivable in ML:(C), then llell +o Ilull is derivable.
+
+Proof By a structural induction on the derivation of e +d
+
+2).
+
+n
+
+The corresponding completeness property relies on the restrictions on the form of constructor types and the index arguments to constructors in patterns.
+
+Theorem 4.5 (Completeness) Given 4; r I- e : r derivable in ML!(C). If llell +O vg is derivable for some vg in MLo, then there exists v in ML:(C) such that e _)d v and ~~v~=~ vo.
+
+Proof By a structural induction on the derivations of [IelI +O
+
+v. and 4; r b e : T.
+
+w
+
+It is a straightforward observation on the typing rules for ML,“(C) that the following theorem holds. Therefore, if the user does not index any types, then his code is valid in ML,“(C) iff it is valid in MLo.
+
+Theorem 4.6 ML,“(C) is a conservative extension of MLo.
+
+We call the type system of ML,“(C) a restricted form of
+dependent types since we view both index objects and expressions in ML:(C) as terms. In this view, the type of one term can depend on the valve of other terms. For instance, the type of append[m][n]((xs, ys)) depends on m and n. An alternative is to view index objects as types, and therefore
+
+to regard the type system of ML,“(C) as a polymorphic type system. However, this alternative leads some (unnecessary) complications. For instance, it is unclear which expressions are of type i if i is an index object. A more serious problem is how subset sorts should be treated under this alternative view.
+In a filly dependent type system such as the one which underlies LF (Harper, Honsell, and Plotkin 1993) or Coq, there is no differentiation between type index objects and language expressions. In other words, the constraint domain is the same as the language. Therefore, constraint satisfaction is as difficult as program verification, which seems to be intractable in practice. The novelty of ML:(C) is precisely the differentiation between type index objects and language expressions, which makes our approach practical and scalable.
+5 Elaboration
+We have so far presented an explicitly typed language ML:(C) . This presentation has a serious drawback from a programmer’s point view: one would quickly be overwhelmed with types when programming in such a setting. It then becomes apparent that it is necessary to provide an external language DMLo(C) together with a mapping to the internal language ML,“(C). This mapping is called elaboration. For instance, the declaration of (a monomorphic version of) append in Figure 1 is to be elaborated into the ML: (C)-expression in Figure 5.
+
+5.1 The External Language DMLo(C) The syntax for DMLo(C) is given as follows.
+
+patterns matches
+
+p ::= x I c(P) I 0 I (Pl!P2)
+ms ::= (p*e)I(p=FeIms)
+
+expressions e ::= x I c(e) I () I (el,e2) I case e of ms I el(e2) 1lam x.e 1lam 2 : T.e I let 2 = el in e2 end I fix f.v I fix f : T.V 1e : T
+
+Note that this is basically the syntax for ML0 though types here could be dependent types. This partially attests to the unobtrusiveness of our enrichment.
+
+5.2 Elaboration as Static Semantics
+We illustrate the intuitions behind some elaboration rules while presenting them. Elaboration, which incorporates type-checking, is defined via two mutually recursive judgments: one to synthesize a type where this can be done in a most general way, and one to check a term against a type where synthesis is not possible. A synthesizing judgment has the form +;I’ t- e t 7 =X e’ and means that e elaborates into e’ with type r. A checking judgment has the form 4; r I- e .J r =S e’ and means that e elaborates into e’ against type 7. In general, we use e,p,ms for external expressions, patterns and matches, and e*,p’, ms’ for their internal counterparts.
+The purpose of the first two rules is to eliminate II quantifiers. For instance, let us assume that el(e2) is in the code and a type of form Ha : 7.~ is synthesized for el; then we must apply the rule (elab-pi-elim) to remove the II quantifier in the type. We continue doing so until a major type is reached, which must be of form ~1 + 72 (if the code is type-correct). Note that the actual index i is not locally
+
+219
+
+determined, but becomes an existential variable for the constraint solver. The rule (elab-pi-intro) is simpler since we check against a given dependent function type.
+
+x~T=+(x;~;x:T)
+
+0 1 1 * (0; ‘i *I
+
+4,a:r;rt-eJT*e*
+4; r I- e 1 lla : 7.7 * (Xa : r.e*) (elab-pi-intro)
+The next rule (elab-lam) is for lambda abstraction, which checks a lam expression against a type. The rule for the fixed point operator is similar. We emphasize that we never synthesize types for either lam or Ax expressions (for which principal types do not exist in general).
+4; r, x : ~~ !- e 1 rz * e* 4; r t-(lam x.e) J. Tl + 72 * (lam x : 71.6;)
+
+PI -1~1 3 Cpi;41;rl) ~2 4~2 * (p;;42;r2)
+(Pl,p2) 4~~ ~~~ + ((p:,p4)i~l,~2;rl,r2)
+S(C)= na : 7.7 -+ a(i) p 4 T=$(p*;4;r)
+4~) 4 a(j) + (4-w); 2 : 7, i k j, 4; r) Figure 7: The elaboration rules for patterns
+into the context 4 while elaborating e. For constraint satisfaction, the declarations in I#Ja’ re treated as hypotheses.
+
+The next rule (elab-app-up) is for function application, where the interaction between the two kinds of judgments takes place. After synthesizing a major type ~1 + ~2 for el,
+we simply check e2 against 71-synthesis for e2 is unnecessary.
+
+We maintain the invariant that the shape of types of vaxiables in the context is always determined, modulo possible index constraints which may need to be solved. This means that with the rules above we can already check all normal forms. A term which is not in normal form most often will be a let-expression, but in any case will require a type annotation, as illustrated in the rule (elab-let-down) below.
+q3;rI- el t 71 a f3i 4; r, 2 : 71 b e2 J-72 * eZ
+4; r, x : 71 I- let x = el in e2 end J-72 j e*
+where e* = let x = ei in e; end. Even if we are checking against a type, we must synthesize the type of el. If el is a function or fixpoint, its type must be given, in practice mostly by writing let x : 7 = el in e2 end which abbreviates let c = (el : T) in e2 end. The following rule allows us to take advantage of such annotations.
+
+4;r”l-(er:7’)?7e*’e*7 * e*
+
+(elab _anno - up)
+
+As a result, the only types which itre required in realistic programs are due to declarations of functions and a few cases of polymorphic instantiation.
+Moreover, in the presence of existential dependent types, which will be introduced in Section 6, a pure ML type without dependencies obtained in the first phase of type-checking is assumed if no explicit type annotation is given. This makes our extension truly conservative in the sense that pure ML programs will work exactly as before, not requiring any annotations.
+Elaboration rules for patterns are particularly simple, due to the constraint nature of the types for constructors. We elaborate a pattern p against a type r, yielding an internal pattern p’ and index and term contexts 4 and I’, respectively. This is written as p & T + (p*; 4; l?) in Figure 7. This judgment is used in the following rule (elab-match) for pattern matching: the generated context 4’ is assumed
+
+The complete elaboration rules for DMLo(C) are listed in Appendix B, and they are justified by the following theorem.
+
+Theorem 5.1 Let Z be the operational equivalence relation.
+
+1. If q5;r i- e t r + e* is derivable, then q5;I? I- e* : T is derivable and e P e' .
+
+2. Ifqi;rl-eJ_r=+e*
+
+isderivable, thenq5;rke’:ris
+
+derivable and e g e* .
+
+Proof (1) and (2) follow straightforwardly from a simul-
+
+taneous structural induction on the derivations of r I- e t
+
+r=+e* and4;I’ke$rje*.
+
+n
+
+The description of type reconstruction as static semantics is intuitively appealing, but there is still a gap between the description and its implementation. There, elaboration rules explicitly generate constraints, thus reduce dependent type-checking to constraint satisfaction. This kind of transformation is standard and therefore omitted here. For instance, when elaborating the first and second clauses in the function declaration in Figure 1, we generate the following two constraints, which are obviously true.
+
+Vn : nat.O + n L n Vm : nat.Vn : nat.Va : nat.
+a+l~m>(a+n)+l~m+n
+
+Therefore the code is well-typed in ML,“(C). A thoroughly explained example on elaboration and constraint generation is available in (Xi 1998).
+
+6 Existential Dependent Types
+
+In practice, the constraint domain must be relatively simple to permit the implementation of an effective constraint solver. Therefore there remain many properties of indices which cannot be expressed. For instance, if we apply the following filter function to a list of length n, we cannot express the length of the resulting list since it depends on the predicate p.
+
+fun filter p nil = nil I filter p (x::xs) = if p(x) then I:: (filter else (filter p x8)
+
+p xs)
+
+220
+
+Nonetheless, we know that there exists some m 5 n such that the length of the resulting list is m, which can be expressed using an existential dependent type, also called weak dependent sum. Also, existential types can mediate between dependent and ordinary ML types. For instance, given a function of ML type ‘a list -> ‘a list, we can assign to it a dependent type which states that the function returns a list of unknown length when applied to a list of unknown length. This yields an approach to handling existing functions such as those in a library, whose definitions may not be available. Notice that this is crucial to support separate compilation. However, the use of existential types to represent ML types leads to a major loss of information at module boundaries. We would like soon to address this issue by exporting dependent types in signatures, extending DML to full SML. This approach closely relates to Extended ML (Sannella and Tarlecki 1989).
+We now extend ML:(C) to ML:“(C).
+
+types expressions
+values
+
+7 ....-e ::=
+21 ....-_
+
+. . . 1(Ca : -y*T)
+... I 6 I 4 I let (a 1z) = el in ez end . . . 1 (i I v)
+
+We need the additional typing rules (t-sig-intro) and (t-sig-elim)
+4; l? I- e : ~[a:= i]
+’ I- i ’ ’ (t-s&intro) 4; l? I- (i 1e) : (Ca : 7.7)
+
+$;rt-el:Ea:7.71
+
+f$,a:y;r,2:71+e2:72
+
+4; I’ k let (a I z) = el in e2 end : 72
+
+(t-sig-elim)
+
+where a may not occur in 72 in the latter (in addition to the general assumption that a and x are not already declared in 4 and I?, respectively). For instance, we can assign the following type to the function filter:
+(‘a -> bool) -> In:nat) 'a list(n) -> Cm:nat I m<=nI 'a list(m),
+where Cm:nat Im<=nl stands for
+Cm: {a : not I a 5 n}.
+Also, we can assign the type
+([n:natl ‘a list(n)) -> [n:nat] ‘a list(n),
+to any function of ML type ‘a list -> ‘a list. We can then prove all the theorems in Section 4 for
+MLfl’(C). It is also straightforward to give a sound elaboration procedure from DMLo(C) to MLfYc(C). The following is a significant rule for this purpose.
+4; r I-el t Ca : 7.~1* e;
+
+4;r I-let x = el in e2 end $72 + e’,
+where e’ is let (a I z) = ei in eg end. Unfortunately, this elaboration rule requires a let to be
+present in the source when eliminating an existential dependent type, which will not be the case in many typical ML programs. We therefore apply the A-translation (Moggi 1989; Sabry and Felleisen 1993) before elaboration. For example, suppose that the synthesized types of I and 1’ are Ca : nat.intlist(a), that is, the lengths of 1 and 1’ are unknown.
+
+If we check append((l,l’)) against Ca : nat.intlist(a), then append( (1,1’)) istranslated to
+let x = 1 in let z’ = 1’ in append((z,z’)) end end,
+which is then elaborated into
+let (a I x) = I in let (a’ I 2’) = 1’ in (a + a’ I append[a][a’]((z, z’))) end end
+There are some pragmatic issues on whether A-translation should be controlled by the programmer or applied automatically. We have chosen the latter in our current implementation. Please see (Xi 1998) for details.
+7 Polymorphism and Effects
+It is straightforward to extend ML:“(C) with polymorphism. We have designed a two-phase elaboration algorithm which elaborates a program as follows.
+Phase one It verifies that the index erasure of the program is a well-typed ML program.
+Phase two It then applies the elaboration algorithm for ML:*‘(C) to the result obtained in phase one. If a needed type annotation is unavailable, the type inferred in phase one is supplied. This guarantees that a valid ML program is always valid in DML(C).
+The type system becomes unsound if dependent types are combined directly with effects. The symptom is the same as that of combining polymorphism with effects. Soundness can be recovered if we adopt a value restriction, that is, we replace the rule (ty-ilam) with the following.
+4,a:y;rkv:T 4;r I- (Xa : 7.~) : (Ha : 7.~)
+After this, the development is standard, which is thoroughly explained in (Xi 1998).
+8 Applications
+8.1 Program Error Detection
+A red/black tree is a balanced binary tree which satisfies the following conditions: (a) all leaves are marked black and all other nodes are marked either red or black; (b) for every node there are the same number of black nodes on every path connecting the node to a leaf, and this number is called the black height of the node; (c) the two sons of every red node are black.
+In Figure 8, we define a polymorphic datatype ‘a diet, which is essentially a binary tree with colored nodes. We then refine the datatype with type index objects (c, bh) drawn from the sort bool * nut, where c and bh are the color and the black height of the root of the binary tree. The node is black if and only if c is true. Therefore, the properties of a red/black tree are naturally captured with this datatype refinement. This enables the programmer to catch program errors which lead to violations of these properties when implementing an insertion or deletion operation on red/black trees. We have indeed encountered errors caught in this way in practice.
+The types of other balanced trees such as AVL trees can be declared similarly (see Appendix A).
+
+221
+
+type ‘a entry = int * ‘a
+
+datatype
+
+‘a diet
+
+= Empty (* considered black *) I Black of ‘a entry l ‘a diet * ‘a diet 1 Red of ‘a entry * ‘a diet * ‘a diet
+
+typeref ‘a diet of boo1 * nat with Empty <I ‘a dict(true, 0)
+I Black <I icl:bool){cr:bool)<bh:nat) ‘a entry * ‘a dict(c1, bh) * ‘a dict(cr,
+I Red <I ibh:nat) ‘a entry * ‘a dict(true, bh) * ‘a dict(true,
+
+bh) -> ‘a dict(true, bh+l) bh) -> ‘a dictcfalse, bh)
+
+Figure 8: The red/black tree data structure
+
+8.2 Array Bound Check Elimination
+We refine the built-in types: (a) for every integer n, int(n) is a singleton type which contains only n, and (b) for every natural number n, ‘a array(n) is the type of arrays of size n. We then assume that the array operations sub and update have been assigned the following types.
+sub <I (n:nat) Ci:nat I i < n) ‘a array(n) * int(i) -> ‘a
+update <I in:nat) Ci:nat I i < n) ‘a array(n) * int(i) * ‘a -> unit
+Clearly, the array accesses through sub or update cannot result in array bounds violations, and therefore it is unnecessary to insert array bound checks when we compile the code. Please see (Xi and Pfenning 1998) for the details.
+8.3 Dead Code Elimination
+The following function zip zips two lists together. If the clause zip(_, _) = raise zipException is missing, then ML compilers will issue a warning message stating that zip may result in a match exception. This happens if two arguments of zip are of different lengths.
+exception zipException fun(,a, ‘b)
+zip(ni1, nil) = nil I zip(cons(x, x18), cons(y, ys)) =
+cons((x,y), zip(xs, ys>) I zip(_, _I = raise zipException
+However, this function is meant to zip two lists of equal length. If we declare zip to be of the following dependent type,
+Cn:natI ,a list(n) * ,b list(n) -> (,a * ‘b) list(n)
+the clause zip(_, _) = raise zipException in the definition of zip can never be reached, and therefore can be safely removed.
+This leads to not only more compact but also potentially more efficient code. For instance, if it has been verified that the first argument of zip is non-empty, then the second argument must also be non-empty. Therefore, tag-checking can be reduced significantly when this example is implemented. Such examples are abundant in practice.
+It will not be straightforward to extend the usual pattern compilation algorithms to take advantage of such additional
+
+information, and we have not yet tried this idea in a compiler. However, the benefit of such dead code elimination for error detection can be readily realized. We refer the interested reader to (Xi 1999) for further explanation.
+8.4 Other Applications
+There are many other potential applications of dependent types which can be found in (Xi 1998), including facilitating partial evaluation, performing loop-unrolling, passing dependent types to an assembly language, etc.
+9 Related Work
+Our work falls in between full program verification, either in type theory or systems such as PVS (Owre, Rajan, Rushby, Shankar, and Srivas 1996), and traditional type systems for programming languages. When compared to verification, our system is less expressive but more automatic when constraint domains with practical constraint satisfaction problems are chosen. Our work can be viewed as providing a systematic and uniform language interface for a verifier intended to be used as a type system during the program development cycle. Since it extends ML conservatively, it can be used sparingly as existing ML programs will work as before (if there is no keyword conflict).
+Most closely related to our work is the system of indexed types developed independently by Zenger in his forthcoming Ph.D. Thesis (Zenger 1998) (an earlier version of which is described in (Zenger 1997)). He works in the context of of lazy functional programming. His language is clean and elegant and his applications (which significantly overlap with ours) are compelling. In general, his approach seems to require more changes to a given Haskell program to make it amenable to checking indexed types than is the case for our system and ML. This is particularly apparent in the case of existential dependent types, which are tied to data constructors. This has the advantage of a simpler algorithm for elaboration and type-checking than ours, but the program (and not just the type) has to be more explicit. Also, since his language is pure, he does not consider a value restriction.
+When compared to traditional type systems for programming languages, perhaps the closest related work is refinement types (Freeman and Pfenning 1991), which also aims at expressing and checking more properties of programs that are already well-typed in ML, rather than admitting more programs as type correct, which is the goal of most other research on extending type systems. However, the mechanism of refinement types is quite different and incomparable
+
+222
+
+in expressive power: while refinement types incorporate intersection and can thus ascribe multiple types to terms in a uniform way, dependent types can express properties such as “these two argument lists have the same length” which are not recognizable by tree automata (the basis for type refinements). We plan to consider a combination of these ideas in future work.
+Parent (Parent 1995) proposed to reverse the process of extracting programs from constructive proofs in Coq (Dowek, Felty, Herbelin, Huet, Murthy, Parent, Paulin-Mohring, and Werner 1993), synthesizing proof skeletons from annotated programs. Such proof skeletons contain “holes” corresponding to logical propositions not unlike our constraint formulas. In order to limit the verbosity of the required annotations, she also developed heuristics to reconstruct proofs using higher-order unification. Our aims and methods are similar, but much less general in the kind of specifications we can express. On the other hand, this allows a richer source language with fewer annotations and, in practice, avoids interaction with a theorem prover.
+Extended ML (Sannella and Tarlecki 1989) is proposed as a framework for the formal development of programs in a pure fragment of Standard ML. The module system of Extended ML can not only declare the type of a function but also the axioms it satisfies. This requires theorem proving during extended type checking. We specify and check less information about functions which avoids general theorem proving. On the other hand, we currently do not address module-level issues, although we believe that our approach should extend naturally to signatures and functors without much additional machinery.
+Cayenne (Augustsson 1998) is a Haskell-like language in which fully dependent types are available, that is, language expressions can be used as type index objects. The steep price for this is undecidable type-checking in Cayenne. We feel that Cayenne pays greater attention to making more programs typable than assigning programs more accurate types. In Cayenne, the printf in C, which is not typable in ML (see (Danvy 1998) for further details), can be made typable, and modules can be replaced with records, but the notion of datatype refinement does not exist. This clearly separates our language design from that of Cayenne.
+The notion of sized types is introduced in (Hughes, Pareto, and Sabry 1996) for proving the correctness of reactive systems. Though there exist some similarities between sized types and datatype refinement in DML(C) for some domain C of natural numbers, the differences are also substantial. We feel that the language presented in (Hughes, Pareto, and Sabry 1996) is too restrictive for general programming since the type system there can only handle (a minor variation) of primitive recursion. On the other hand, the use of sized types in the correctness proofs of reactive systems cannot be achieved in DML at this moment.
+Jay and Sekanina (Jay and Sekanina 1996) have introduced a technique for array bounds checking based on the notion of shape types. Shape checking is a kind of partial evaluation and has very different characteristics and source language when compared to DML(C), where constraints are linear inequalities on integers. We feel that their design is more restrictive and seems more promising for languages based on iteration schemas rather than general recursion.
+A key feature in DML(C) which does not exist in either of the above two systems is existential dependent types, which is indispensable in our experiment.
+Finally, recent work by Pierce and Turner (Pierce and Turner 1998) which includes some empirical studies, is based
+
+on a similar bi-directional strategy for elaboration, although they are concerned with the interaction of polymorphism and subtyping, while we are concerned with dependent types. The use of constraints for index domains is quite different from the use of constraints to model subtyping constraints (see, for example, (Sulzmann, Odersky, and Wehr 1997)).
+10 Conclusion
+We have extended the entire core of ML with a restricted form of dependent types, yielding the DML(C) language schema. This includes proving the soundness of the type system of DML(C) and designing a type-checking algorithm. Type annotations are required, but not overly verbose. The algorithm has shown itself to be practical for typical programs and constraint domains, such as linear inequalities over integers for array bounds checking (Xi and Pfenning 1998). In addition, we have finished a prototype implementation of DML(C) in which all the major features in the core of ML except records are available. The only reason for omitting records is that we already have tuples and we would like to simplify the implementation. We have also experimented with integer, symbolic and finite domains. We are currently writing a frontend for &ml-light.
+In future work, we plan to enrich DML with modulelevel constructs, that is, extend DML to full Standard ML. Since our design explicitly separates indices from ML expressions, we expect the extension to be mostly straightforward. Another practically important extension may be the introduction of limited forms of intersection types (Freeman and Pfenning 1991), so that more than one dependent type can be assigned to a function without code duplication.
+Our primary motivation is to allow the programmer to express more program properties through types and thus catch more errors at compile time. We are also interested in using this as a front-end for a certifying compiler (Necula and Lee 1998) which propagates program properties through a compiler where they can be used for optimizations or be packaged with the binaries in the form of proof-carrying code (Necula 1997).
+11 Acknowledgements
+We are grateful to Rowan Davies for many technical discussions regarding the subject of this extended abstract. We also would like to thank Chad Brown for proofreading a draft and providing us with many helpful comments, and the referees for their highly constructive suggestions.
+References
+Augustsson, L. (1998). Cayenne - a language with dependent types. In Proceedings of ACM SIGPLAN International Conference on Functional Programming, pp. 239-250.
+Constable, R.. L. et al. (1986). Implementing Mathematics with the Nuprl Proof Development System. Englewood Cliffs, New Jersey: Prentice-Hall.
+Danvy, 0. (1998, May). Functional unparsing. Technical Report RS-98-12, University of Aarhus.
+Dowek, G., A. Felty, H. Herbelin, G. Huet, C. Murthy, C. Parent, C. Paulin-Mohring, and B. Werner (1993). The Coq proof assistant user’s guide. Rapport Techniques 154, INRIA, Rocquencourt, France. Version 5.8.
+Freeman, T. aid F. Pfenning (1991). Refinement types for ML. In ACM SIGPLAN Conference on Progmmming Language Design and Implementation, Toronto, Ontario, pp. 26% 277.
+
+223
+
+Harper, R. W., F. Honsell, and G. D. Plotkin (1993, January). A framework for defining logics. Journal of the ACM 40(l), 143-184.
+Hayashi, S. and H. Nakano (1988). PX: A Computational Logic. The MIT Press.
+Hudak, P., S. L. Peyton Jones, and P. Wadler (1992, May). Report on the programming language Haekell, a non-strict purely-functional programming language, Version 1.2. SIGPLAN Notices 27(5).
+Hughes, J., L. Pareto, and A. Sabry (1996). Proving the correctness of reactive systems using sized types. In Conjerence Record of 23rd ACM SIGPLAN-SIGACT Symposium on Principles of Programming Longuoger, pp. 410-423.
+Jay, C. and M. Sekanina (1996). Shape checking of array programs. Technical Report 96.09, University of Technology, Sydney, Australia.
+Kreitz. C., M. Hayden, and J. Hickey (1998, July). A proof environment for the development of group communication svstems. In H. Kirchner and C. Kirchner (Eds.). 15th Znternational Conference on Automoted Deductiont’LNAI 1421, Lindau, Germany, pp. 317-332. Springer-Verlag.
+Milner, Ft., M. Tofte, and R. W. Harper (1990). The Definition of Standard ML. Cambridge, Massachusetts: MIT Press.
+Moggi, E. (1989). Computational lambda-calculus and monads. In Proceedings Fourth Annual Symposium on Logic in Computer Science, pp. 14-23.
+Necula, G. (1997). Proof-carrying code. In Conference Record of 24th Annual ACM Symposium on Principle8 of Programming Longuoges, pp. 106-119. ACM press.
+Necula, G. and P. Lee (1998, June). The design and implementation of a certifying compiler. In ACM SIGPLAN ‘98 Conference on Progmmming Longuoge Design and Implementotion, pp. 333-344. ACM press.
+Owre, S., S. Rajan, J. Rushby, N. Shankar, and M. Srivas (1996, July/August). PVS: Combining specification, proof checking, and model checking. In R. Alur and T. A. Henzinger (Eds.), Proceedings of the 8th International Conference on Computer-Aided Verification, CAV ‘96, New Brunswick, NJ, pp. 411-414. Springer-Verlag LNCS 1102.
+Parent, C. (1995). Synthesizing proofs from programs in the calculus of inductive constructions. In Proceedings of the International Conference on Mathematics for Progmms Constructions. Springer-Verlag LNCS 947.
+Pierce, B. and D. Turner (1998). Local type inference. In Proceeding8 of the 25th Annual ACM SIGPLAN-SIGACT Symposium on Principle8 of Programming Languages, pp. 252-265.
+Sabry, A. and M. Felleisen (1993). Reasoning about programs in continuation-passing style. LISP and Symbolic Computation 6(3/4), 289-360.
+Sannella, D. and A. Tarlecki (1989, February). Toward formal development of ML programs: Foundations and methodology. Technical Report ECS-LFCS-89-71, Laboratory for Foundations of Computer Science, Depatment of Computer Science, University of Edinburgh.
+Sulzmann, M., M. Odersky, and M. Wehr (1997). Type inference with constrained types. In Proceeding8 of 4th International Workshop on Foundations of Object-Oriented Languages.
+Weis, P. and X. Leroy (1993). Le longoge Coml. Paris: InterEditions.
+Xi, H. (1997, November). Some examples of DML programming. Available at http://vuu.cs.cmu.edu/‘huxi/DML/~xamplea/.
+Xi, H. (1998). Dependent npeo in Pmcticol Programming. Ph. D. thesis, Carnegie Mellon University. pp. viii+189. Forthcoming. The current version is available as http://wvw.cs.cmu.edu/‘hvxi/DML/thesis.ps.
+Xi, H. (1999, January). Dead code elimination through dependent types. In The First International Workshop on
+
+Practical Aspects of Declomtive Language& San Antonio, Texas. To appear.
+Xi, H. and F. Pfenning (1998, June). Eliminating array bound checking through dependent types. In Proceeding8 of ACM SIGPLAN Conference on Progmmming Language Design and Implementation, pp. 249-257.
+Zenger, C. (1997). Indexed types. Theoretic01 Computer Science 187, 147-165.
+Zenger, C. (1998). Indisierte Qpen. Ph. D. thesis, Fakultlit fiir Informatik, Universitgt Karlsruhe. Forthcoming.
+
+A Further Examples
+
+We present some additional examples for those who may have difficulty accessing (Xi 1997), where the complete versions of these examples and some other larger ones are available.
+An AVL tree is a balanced binary tree such that for every interior node the difference between the heights of its two sons is at most one. The data structure in Figure 9 precisely declares the type of AVL trees.
+Untyped X-expressions in de Bruijn form and an implementation of evaluation are given in Figure 10. The depedent type checker verifies that no dangling de Bruijn references can occur during evaluation of a closed X-expression.
+This can be extended to verify type-safety statically, but requires a symbolic constraint domain. Assume that we have sorts type and context and the following constants.
+
+unit
+arrow empty
+::
+
+: type : type * type -+ type : context : type * context + context
+
+In Figure 11, the datatype lamexp, declared in Figure 2, is refined to formulate the type of simply typed X-expressions. Note that lamexp is indexed with a pair (t,ctx), where t stands for the simple type of a X-expression and ctx records the types of free variables in the X-expression. Therefore the DML type of closed well-typed X-expressions is Xi! : type.lamexp(t,empty).
+Lastly, we present a short implementation of quicksort on lists in Figure 12, where the type guarantees that this implementation always returns a list of length n when given one of length n. Note that we use :: as an infix operator for cons.
+
+B Elaboration Rules for ML,“(C)
+We present the elaboration rules in Figures 13 and 14. Note that some rules have (obvious) side conditions, which can be found in (Xi 1998).
+
+224
+
+datatype ‘a tree = empty I branch of int * ‘a * ‘a tree * ‘a tree (* height, key, left son, right son *)
+
+typeref ‘a tree of nat with (* the index stands for the height *)
+
+empty <I ‘a tree(O)
+
+I branch <I {lh:nat){rh:nat
+
+I rh - 1 <= lh <= rh + 11
+
+int(l+max(lh,rh))
+
+* ‘a + ‘a tree(lh) * ‘a tree(rh) ->
+
+‘a tree(l+max(lh,rh))
+
+Figure 9: AVL trees
+
+datatype lamexp = One I Shift of lamexp I Abs of lamexp I App of lamexp * lamexp
+
+typeref lamexp of int
+with One <I Cn:nat) lamexp(n+l)
+I Shift <I {n:nat) lamexp(n) -> lamexp(n+l) I Abs <I In:nat) lamexp(n+l) -> 1amexpM I App < I Cn:nat) 1amexpW * lamexp(n) -> lamexp(n)
+
+datatype closure = Closure of lamexp * env and env = Nil I Cons of closure * env
+
+typeref env of int with Nil <I env(0)
+I Cons <I {n:nat) closure * env(n) -> env(n+l) I Closure <I Cn:nat) lamexp(n) * env(n> -> closure
+
+fun callbyvalue(exp)
+
+=
+
+let
+
+fun cbv(One, Cons(clo, env)> = clo
+
+I cbv(Shift(exp),
+
+Cons(clo, env>) = cbvcexp, env)
+
+I cbv(Abs(exp) , env) - Closure(Abs (exp) , env)
+
+I cbv(App(fexp, exp), env) =
+
+let
+
+val Closure(Abs(body),
+
+envl) = cbvtfexp, env)
+
+val clo = cbvcexp, env)
+
+in
+
+cbv(body , Cons (clo, envl))
+
+end
+
+(* exhaustiveness of these cases follows from the dependent types *>
+
+where cbv <I in:nat) lamexp(n) * env(n) -> closure
+
+in
+
+cbvcexp, Nil)
+
+end
+
+where callbyvalue <I lamexp(0) -> closure
+
+Figure 10: Closed X-expressions and evaluation
+
+datatype lamexp - One I Shift of lamexp I Abs of lamexp I App of lamexp * lamexp
+
+typeref lamexp of type * context with (* index lamexp with a pair (t, ctx) *I
+
+One <I Ct:type)Cctx:context)
+
+lamexp(t,t::ctx)
+
+I Shift <I Ctl:type)CtZ:type)Cctx:context)
+
+lamexp(tl,ctx) -> lamexp(tl,t2::ctx)
+
+I Abs <I Cti:type)Ct2:type)Cctx:context)
+
+lamexp(t2,tl: :ctx) -> lamexp(arrow(tl,t2) ,ctx)
+
+I App <I {ti:type)Ct2:type)Cctx:context)
+
+lamexp(arrow(tl,t2) ,ctx) * lamexp(tl,ctx) -> lamexp(t2,ctx)
+
+Figure 11: Simply-typed X-expressions
+
+225
+
+fun(‘a) quickSort cmp [I = [I I quickSort cmp (x::xs) = par cmp (x, Cl, Cl, IS)
+where quickSort <I <n:nat) (‘a * ‘a -> bool) -> ‘a list(n)
+
+-> ‘a list(n)
+
+and(‘a) par cmp (x, left, right, xs) = case x8 of [] => (quickSort cmp left) (D (x:: (quicksort cmp right)) I y::ys => if cmp(y, x) then par cmp (x, y::left. right, ys)
+else par cmp (x, left, y::right, ys) where par <I {p:nat){q:nat)<r:nat>
+(‘a * ‘a -> boo11 -> ‘a * ‘a list(p) * ‘a list(q) * ‘a list(r) -> ‘a list(p+q+r+l)
+
+Figure 12: Quicksort on lists
+
+“‘L; ~~$‘T~~l~i~;
+
+“l]i ’ 7 (elab-pi-elim)
+
++,a:y;I~eJr=%e* &II-eJIIIa:7.7=+(Xa:7.e*)
+
+(elab-pi-intro)
+
+S(c) = IIUl : 71.. . no, : 744
+
+4 I- il : 71 . . . c$I- i,
+
++;rt-ct6(i[al,... ,a, :=i1,..* in]) =+ C[il] . . . [in]
+
+: 7n
+
+(elab-cons-wo-up)
+
+S(c) = I-IIal: 71 . . . ITa, : ‘yn.7 + d(i)
+
+f$;l?l-e$+l
+
+,..., a,:=il
+
+,... &1=+-e*
+
+q!JI- il : 71 *** q5I- i, : -yn
+
++;rkc(e)ta(i[ol,...
+
+,a, :=i1,... in]) * c[il] . . . [i,](e*)
+
+(elab-cons-w-up)
+
+” r ’ c~)I,t~P~(~ Ii2 ttr’ z cl’ (elab-cons-w-down)
+
+Figure 13: Elaboration rules for ML,“(C), part I
+
+226
+
++; r
+
+k
+
+()
+
++ 1
+
+j
+
+() (elab-unit-w)
+
+4;r~oll=+o
+
+(elab-unit-down)
+
+r ei r 4; b el t cdl *
+
+4; ’ e4 e2t p2 *
+
+(elab_prod_up)
+
+4; r I- el J. ~1 * ei “r ’ e2 ’ T2 * e’ (elab-prod-down) 4; r k (el, e2) 4 71* 72* (ei, e;)
+
+pJ~l*(p*;#;r~)
+
+~,~‘;r,rV-e~T2+e*
+
+fji-~~:*
+
+#;I?k (p* e) .J (71 * ~2) =+ (p’ * e*)
+
+(elab-match)
+
+4; r t- (P * e) 4 (n * ~2) * (P’ * e’)
+
+4; r I- ms -4 (~1 * TV) =+ ms*
+
+4; r I- (p * e 1 ms) 4 (71 * 72) * (p’ * e’ 1 ms*)
+
+(elab
+
+matches)
+
+_
+
+4; r t- e t 71 * e’
+
+di r t- ms 5- (~1 * ~2) * ms*
+
+f$; r t- (case e of ms) J 72* (case e* of m9’)
+
+~elabcase~
+
+(elab-lam) 4; r !- (lam 2.e) 4 71+ 72* (lam c : Tl.e*)
+
+(b;r,Xl:Tl,X:Tke$T2=$e*
+f$;r I- (lam z : T.e) $ ~1 +
+
+&r,Zl:T1kX1$T+ei
+72 =S (lam z1 : ~l.let x = f3; in e’ end)
+
+(elab-lam-anno)
+
+4;rt-eltTl-+~2+~; ~;ri-e2iTl=$e;
+
+4; r t- el(e2) t 72* ei(4)
+
+(elab-app-up)
+
+r i- e* 4; el(e2)t ~1 =+
+
+9 I=~11f ~2 (elab_app_down)
+
+qkrl-el(e2)lp2*eL
+
+C$;rkeltT1jei
+
+&r,x:Tlke2tT2+ez
+
+4; r I- let z = el in e2 end t 723 let CE= e; in e; end
+
+(elab-let-up)
+
+f$;l?belt71=Sei
+
+C$;r,x:Tlt-e2~T2=k-e;
+
+4; r k let z = el in e2 end J-~2=Slet x = ei in e; end
+
+(elab-let-down)
+
+&r,f:Tt-V$T*21* &rk(fiXf:T.?J)fT=k+Xf:T.V*)
+
+(elab-flx-up)
+
+&r,f:Tk21$T+V*
+
++;r,Z:TbZlT’=ke*
+
+~irt-(fixf:7.21)~7’=k.letx=(fixf:~.~*)ine*end
+
+(elab-fix-down)
+
+4’r ’ e ’ T * e*
+&rb(e:T)tT+e*
+
+(elab anno-up)
+_
+
+9; r k (e : T) t PI * e’
+
+9 I= PI = ~2
+
+4; r k (e : 7) 1 p2 + e’
+
+(elab_anno-down)
+
+Figure 14: Elaboration rules for ML,“(C), part II
+
+227
+

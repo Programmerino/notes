@@ -1,0 +1,1579 @@
+AIAA Guidance, Navigation, and Control Conference and Exhibit 11-14 August 2003, Austin, Texas
+
+AIAA 2003-5445
+
+GPS/INS Kalman Filter Design for Spacecraft Operating in the Proximity of the International
+Space Station
+
+David E. Gaylor∗ E. Glenn Lightsey† The University of Texas at Austin, Austin, TX
+The next generation reusable launch vehicle will operate in ﬁve ﬂight phases: ascent, on-orbit, proximity operations, re-entry and landing. Navigation during each of these ﬂight phases presents unique challenges. The Space Shuttle addresses these challenges by the use of a number of navigation sensors. However, an integrated GPS/INS navigation system may be able to meet the navigation requirements of all ﬂight phases. Integrated GPS/INS systems have been built and demonstrated for the ascent, re-entry and landing phases and their performance is known. However, the same cannot be said for integrated GPS/INS systems for the on-orbit and proximity operations ﬂight phases. Therefore, this research examines the performance of GPS/INS navigation during a rendezvous with the ISS. Error models for INS and GPS navigation sensors operating in the vicinity of the ISS have been developed. The GPS error model includes the eﬀects of GPS signal blockage and multipath near the ISS. These error models have been used to develop an integrated GPS/INS extended Kalman ﬁlter. A simulation of the ﬁlter has been developed and the ﬁrst test case shows position errors of less than 1 meter and velocity errors of less than 0.02 m/s in each axis. The second test case shows the position errors grow to approximately 47.5 meters and the velocity errors grow to 0.13 m/s during a ten minute GPS outage. Finally, the third test case shows that the GPS/INS EKF performance is not signiﬁcantly degraded by GPS signal blockage due to the ISS during a simulated rendezvous with the ISS.
+
+Introduction
+The goal of NASA’s Space Launch Initiative (SLI) program is to advance the technologies needed for the next generation reusable launch vehicle (RLV). The next generation RLV will operate in ﬁve ﬂight phases: ascent, on-orbit, proximity operations, re-entry and landing. Navigation during each of these ﬂight phases presents unique challenges. The Space Shuttle addresses these challenges by the use of a number of navigation sensors, many of which are used only during one ﬂight phase. However, it has been hypothesized that an Inertial Navigation System (INS) integrated with a Global Positioning System (GPS) receiver may be able to meet the navigation requirements of all ﬂight phases.
+A GPS-only navigation system is not adequate because GPS is subject to outages due to blockage, atmospheric ionization during re-entry and delta-v maneuvers. GPS is also subject to errors and integrity problems due to multipath and other sources. For example, when a spacecraft approaches the International Space Station (ISS) to perform rendezvous and docking, the signals from the GPS satellites may be blocked by the ISS or degraded by multipath.
+Integrated GPS/INS systems have been analyzed for
+∗Ph.D. Candidate, Department of Aerospace Engineering, The University of Texas at Austin.
+†Assistant Professor, Department of Aerospace Engineering, The University of Texas at Austin.
+
+the re-entry and landing phases by Braden, Browning and Gelderloos.1 GPS/INS systems have also been demonstrated to be capable of precision landing. However, the same cannot be said for the on-orbit and proximity ops ﬂight phases. Automated rendezvous and docking has been identiﬁed by the SLI program as an area requiring further research and development. Currently, the Space Shuttle uses a partially manual system for rendezvous, but a fully automated system could be safer and more reliable.2 Therefore, this research examines GPS/INS navigation during a rendezvous with the ISS.
+Previous Work
+The Space Integrated GPS/INS (SIGI) is an example of a spaceborne integrated GPS/INS system.3 SIGI is used on the ISS and was planned to be used on the Crew Return Vehicle (CRV). However, it is not known whether SIGI will meet the navigation requirements for all ﬂight phases or whether it will meet the size, weight, and power requirements for the next generation RLV. In addition, the GPS and INS in SIGI are integrated in a loosely coupled architecture so it may be possible to improve its navigation performance by changing to a more tightly integrated design.
+Much work has been done on integrated GPS/INS systems for aircraft and missiles. There are many examples of these systems in operation today, such as the Honeywell H764G Embedded GPS/INS, which is currently being ﬂown in several military aircraft and
+
+1 of 11
+
+Copyright © 2003 by David E. Gaylor. Published by the American Institute of Aeronautics and Astronautics, Inc., with permission.
+
+has been shown to be capable of precision approach and landing by Elchynski.4
+Ebinuma demonstrated the use of GPS for rendezvous. He developed an extended Kalman ﬁlter to perform real-time relative navigation and used a hardware-in-the-loop test facility, which integrates navigation and guidance for rendezvous. However, his models assumed that GPS was always available and did not include multipath or blockage of the GPS signals.5
+The most recent research on navigation during proximity operations conducted by Um examined spacecraft relative navigation using an integrated GPS/INS in the vicinity of the ISS.6 The GPS/INS was a loosely coupled system, which included two Kalman ﬁlters, one to process the GPS measurements and the other to combine the INS measurements with the output of the GPS ﬁlter. The INS part of the system was simulated in software and the GPS measurements were collected from a Mitel Architect GPS receiver being stimulated by a GSSI STR4760 GPS simulator.
+The major contributions of this paper include:
+1. A spacecraft INS error model is developed. Most INS error models are designed for terrestrial navigation and therefore are formulated in an earthﬁxed reference frame. The error model developed in this paper is formulated in an inertial reference frame, which is more useful for spacecraft in orbit.
+2. A GPS error model which includes the eﬀects of GPS signal blockage and multipath caused by the ISS.
+3. A proposed GPS/INS Kalman ﬁlter design for an orbiting spacecraft and a simulation of the navigation performance during a rendezvous with the ISS.
+INS Error Model
+In order to design an integrated GPS/INS navigation system for spacecraft, a linear INS error model has been developed. The INS system-level error model describes the errors in position, velocity and attitude due to various error sources. In most cases, these models are formulated in terms of latitude, longitude and altitude errors and east, north and vertical velocity errors. Attitude errors have been expressed in terms of rotation matrices, tilt angles or quaternions.
+In the case of a spacecraft in orbit, it is convenient to formulate the INS system-level error model in an inertial reference frame as Friedland did in 1978.7 Friedland’s formulation is used in this paper. A similar model was developed and used by Crain and Bishop for analyzing Mars entry navigation.8
+The sensor-level models describe the errors in speciﬁc force measurements taken by accelerometers and errors in angular rate measurements taken by gyroscopes. The sensor error models used by most authors have the same form but sometimes diﬀer in the
+
+stochastic processes (random walk or Gauss-Markov processes) used to model various component errors such as accelerometer bias or gyro drift. These differences are due to the nature of the instrument or the data available on the instrument. Detailed data on a particular sensor are often not available so a simpler model must be used.
+Concept of Inertial Navigation
+The fundamental equation of inertial navigation comes directly from Newton’s Second Law:
+
+d2r dt2
+
+=
+
+CBI f
+
++
+
+g
+
+(1)
+
+where r is the inertial position vector, CBI is the matrix which transforms a vector from the INS body frame (B) to the inertial reference frame (I), f is the total speciﬁc force vector, and g is the acceleration due to gravity. This equation is integrated once to obtain velocity and a second time to obtain position, both relative to the inertial reference frame. Accelerometers measure speciﬁc force, which does not include forces due to gravity. Gyroscopes (gyros) measure the angular motion of the INS body with respect to inertial space in order to compute CBI . An INS uses an internal gravity model to estimate the acceleration due to gravity based on its current estimate of position and attitude.
+The major sources of error in an INS include initialization errors, system alignment errors, sensor errors, gravity model errors and quantization and computational errors. These errors are characterized in the INS error model.
+The gyros and accelerometers are ﬁxed to the body of the vehicle in a strapdown INS. Therefore, the outputs of the accelerometers and gyros are assumed to be provided in the body frame with small misalignments as described in the INS error model.
+
+INS System-Level Error Model
+
+The navigation errors committed by an inertial navigation system can be modelled by a set of ﬁrst order, linear ordinary diﬀerential equations. Deﬁne the error state vector δx as:
+
+ δr
+
+δx =  δv 
+
+(2)
+
+δq
+
+where δr is the position error, δv is the velocity error
+
+and δq represents the error in the platform to inertial
+
+reference frame quaternion. Then the INS system-level
+
+error model is:7
+
+ 
+
+δr˙ δv˙
+
+  = 
+
+δv CBI (qˆ)
+
+2A¯T R¯T δq + δf
+
+δq˙
+
+Q (qˆ) δω + Ω (ωˆ) δq
+
+
+
++
+
+∂
+
+g(r) ∂r
+
+δr
+
+
+
+where, ω1, ω2 and ω3 are the body frame compo-
+
+2 of 11
+
+nents of the instantaneous angular velocity vector and:
+
+
+
+
+
+0 ω3 −ω2 ω1
+
+Ω (ω) =
+
+1 2
+
+
+
+−ω3 ω2
+
+0 −ω1
+
+ω1 0
+
+ω2 ω3
+
+
+
+(3)
+
+−ω1 −ω2 −ω3 0
+
+and
+
+
+
+
+
+q4 −q3 q2
+
+Q (q) =
+
+1 2
+
+
+
+q3 −q2
+
+q4 q1
+
+−q1 q4
+
+
+
+(4)
+
+−q1 −q2 −q3
+
+and
+
+R¯ = 2Q −q
+
+(5)
+
+and
+
+
+
+
+
+0 −f3 f2
+
+A¯ = 
+
+f3 −f2
+
+0 f1
+
+−f1 0
+
+
+
+(6)
+
+−f1 −f2 −f3
+
+The
+
+gravity
+
+gradient
+
+matrix,
+
+G
+
+=
+
+∂g(r) ∂r
+
+for
+
+a
+
+two-
+
+body gravity ﬁeld is:
+
+ G3×3 = 
+
+3µx2 r5
+
+−
+
+µ r3
+
+3µxy
+
+r5
+
+3µxz
+
+r5
+
+3µxy
+
+− 3µry5 2
+
+µ
+
+r5
+
+r3
+
+3µyz
+
+r5
+
+
+3µxz
+
+r5 3µyz
+
+− 3µr5z2
+
+µ
+
+r5
+
+r3
+
+
+
+(7)
+
+The INS system-level error equations can also be
+
+written as follows:
+
+
+
+
+
+ 
+
+δr˙
+
+03×3 I3×3 03×3
+
+δr
+
+ δv˙  =  G3×3 03×3 D3×4   δv 
+
+δq˙
+
+04×3
+
+04×3
+
+Ω (ωˆ) 
+
+δq
+
+03×3 +  03×3
+Q (qˆ)
+
+03×3 CBI (qˆ)  04×3
+
+δω δf
+
+(8)
+
+where the gyro scale factor error vector is deﬁned as:
+
+δSFG = δSFGx δSFGy δSFGz T
+
+the vector of gyro misalignments is deﬁned as:
+
+δM AG = XGz XGy Y Gz Y Gx ZGy ZGx T
+
+δbG represents the gyro bias, δnlG represents the gyro g-sensitive errors and nG represents the gyro measurement noise. Gyro scale factor and alignment errors are modelled as Gaussian random constants.
+There are two components in gyro drift. There is the gyro drift (also referred to as bias repeatability or bias stability) that varies from turn-on to turn-on. This is modelled as a Gaussian random constant. The second part is bias drift or variability after turn-on (sometimes referred to as in run stability) and is usually modelled as a random walk or ﬁrst order Markov process.
+Gyro measurement noise is usually the predominant error source in ring laser and ﬁber optic gyros but is usually not included in error models for most mechanical gyros. This is modelled as zero-mean, white Gaussian noise and causes angular random walk.
+
+Accelerometer Error Model
+
+The purpose of the accelerometer error model is to provide the δf term in equation (8). The accelerometer error model is very similar to the gyro error model. The error model for a set of three orthogonal accelerometers can be deﬁned by:9
+
+ δSFAx
+δf =  Y Az −Z Ay
+
+−X Az δSFAy Z Ax
+
+ X Ay −Y Ax  f +δbA +δnlA +nA δSFAz
+
+where D = 2CBI (qˆ) A¯T R¯T . The vectors δω and δf represent the errors in the gyro angular velocity and accelerometer speciﬁc force measurements. These vectors are obtained from the gyro and accelerometer error models described below.
+
+Gyro Error Model
+
+The purpose of the gyro error model is to provide the δω term in equation (8). The speciﬁc details of any gyro error model depend on the type of gyro and the characteristics of the errors found during testing. Gyro manufacturers usually provide some speciﬁcation numbers but do not publish the detailed error models. Therefore, early in the navigation system design process, before a particular gyro has been selected, simpliﬁed error models are used to perform trade studies and requirements analysis.
+The error model for a set of three orthogonal gyros can be deﬁned by:9
+
+ δSFGx
+δω =  Y Gz −Z Gy
+
+−X Gz δSFGy Z Gx
+
+ X Gy −Y Gx  ω+δbG+δnlG+nG δSFGz
+
+where the accelerometer scale factor error vector is deﬁned as:
+δSFA = δSFAx δSFAy δSFAz T
+the vector of accelerometer misalignments is deﬁned as:
+δM AA = XAz XAy Y Az Y Ax ZAy ZAx T
+δbA represents the accelerometer bias, δnlA represents the accelerometer non-linearity and nA represents the accelerometer measurement noise. Accelerometer scale factor and misalignment errors are modelled as Gaussian random constants.
+Accelerometer bias error is modelled as a random constant plus a random walk or ﬁrst order Markov process. Accelerometers may exhibit errors that are linear and quadratic functions of acceleration. These errors are modelled as Gaussian random constants. Accelerometer measurement noise is modelled as white Gaussian noise and causes velocity random walk.
+
+3 of 11
+
+GPS Measurement Model
+A model of the measurements obtained by a GPS receiver operating in the vicinity of the ISS is needed to quantify GPS navigation performance. The GPS measurement model includes a model of the GPS constellation, a range measurement error model, a GPS signal blockage model and a multipath model.
+
+GPS Constellation Model
+A model of the GPS constellation was constructed from a daily global broadcast ephemeris ﬁle in RINEX format from the National Geodetic Survey CORS data website. This ﬁle contains the GPS broadcast ephemeris parameters for each satellite in the constellation for March 1, 2001. There were a total of 29 satellites in the constellation. The ephemeris parameters and the equations used to determine the positions of the GPS satellites at a given time are described in GPS-ICD-200.10 This GPS constellation model was used for all simulations in this study.
+
+Range Measurement Error Model
+A simpliﬁed GPS range measurement error model is used in this study. GPS satellite clock bias, ephemeris error, ionospheric and tropospheric eﬀects are assumed to be negligible. Therefore, the range error for the j th satellite at time ti can be expressed as:
+
+δρj−GP S(ti) = (c − ρ˙)δtR(ti) + M Pj(ti) + vj(ti) (9)
+
+where c is the speed of light, ρ˙ is the range-rate, δtR(ti) is the user clock bias, M Pj(ti) is the range error due to multipath, and vj(ti) is white Gaussian noise representing receiver measurement noise. GPS satellite
+clock bias and ephemeris errors have not been included
+but will be added to the model in the future. GPS C/A
+code measurements are used in this study.
+
+Receiver Clock Bias Model
+The receiver clock model presented in Ebinuma5 is used in this study. The receiver clock bias and drift are modelled as random walk processes. The receiver clock model is:
+
+bc(˙ t) = dc(t) + wf (t) + hc
+
+dc˙(t) = wg(t)
+
+(10)
+
+where bc is the clock bias scaled to meters (bc = cδtR), dc is the clock drift, h is the frequency correction due to relativistic eﬀects, and wf and wg are zero mean, white Gaussian noise with the power spectral amplitudes of
+Sf and Sg, respectively. In near circular orbits, the relativistic eﬀect can be
+approximated by:
+
+h
+
+=
+
+1 c2
+
+µ RE
+
+−
+
+µ r
+
+−
+
+v2 2
+
+(11)
+
+where RE is the radius of the Earth, r is the distance of the receiver from the center of the Earth and v is
+the inertial velocity of the receiver.
+
+The discrete time process noise covariance associated with the receiver clock drift and bias is given by:
+
+Q=
+
+Sf
+
+∆t + Sg
+
+Sg
+
+∆t2 2
+
+∆t3 3
+
+Sg
+
+∆t2 2
+
+Sg ∆t
+
+(12)
+
+where ∆t is the time between samples. Typical power spectral amplitudes of temperature
+controlled crystal oscillators commonly used on commercial GPS receivers are:
+
+Sf = 1.0c2 × 10−19(m2/s) Sg = 4.0c2π2 × 10−20(m2/s3)
+ISS Signal Blockage Model
+It has been hypothesized that the ISS will block GPS signals needed by other spacecraft to navigate during rendezvous operations. To analyze this eﬀect, the GPS signal blockage due to the ISS is modelled as sphere centered at the ISS position with diameter, d = 100 meters.
+The line of sight vector from the satellite to the jth GPS satellite is found by:
+
+rLOSj = rGP Sj − r
+
+(13)
+
+The GPS antenna is assumed to be pointed along the r vector, therefore, the declination angle (θ) between the antenna boresight and the line of sight vector can be found by:
+
+cos θj =
+
+r · rLOSj r · rLOSj
+
+(14)
+
+There is a cone about this vector whose central angle is deﬁned by the radius of the blockage sphere and the distance from the receiver to the ISS where GPS signals are considered to be blocked. The vector from the receiver to the ISS can be found by:
+
+rLOSISS = rISS − r
+
+(15)
+
+Then the central angle, λ can be determined using:
+
+tan(λ) =
+
+d/2 rLOSISS
+
+(16)
+
+If the angle between the GPS line of sight vector and the ISS line of sight vector is less than λ, the signal would be blocked. Furthermore, any GPS signals below a 10◦ minimum elevation angle from the horizonal plane, which is perpendicular to the antenna boresight vector, are assumed to be blocked.
+A side view of the GPS signal blockage model is shown in Figure 1 below. The shaded areas represent the regions where the GPS signals would be blocked.
+
+ISS Multipath Model
+For spacecraft operating in the vicinity of the ISS, GPS signals can be blocked or degraded by multipath signals being reﬂected oﬀ of the ISS. It is diﬃcult to
+
+4 of 11
+
+G PS SV
+
+G P S S ig n a ls B lo c k e d
+H IS S /S T S
+
+a n te n n a b o r e s ig h t
+d e c lin a tio n a n g le
+G
+
+H G P S /S T S
+
+G P S S ig n a ls A llo w e d
+
+G P S S ig n a ls A llo w e d
+
+h o r iz o n
+
+e le v a tio n m a s k
+
+e le v a tio n m a s k
+
+h o r iz o n
+
+Fig. 1 GPS Signal Blockage Model.
+
+model the eﬀects of these multipath signals because the ISS is composed of several reﬂective surfaces, some of which are moving relative to the ISS main body. Furthermore, the chaser spacecraft is moving relative to the ISS and both are moving relative to the GPS satellites. A geometrical multipath model would have to account for each reﬂecting surface and the relative motion between the ISS, chaser spacecraft and GPS satellites. This would be computationally intensive and not practical for use in an integrated GPS/INS navigation simulation of a rendezvous scenario. Therefore, a statistical multipath model was selected instead of a geometrical multipath model.
+The ISS multipath model computes the errors due to multipath in GPS carrier phase measurements only. The capability to compute the errors in GPS code measurements will be incorporated in the future. Therefore, the ISS multipath model is not used in the rest of this study but is included to present the current status of this work.
+In formulating this model, the following assumptions are made:
+1. If a GPS signal is not blocked by the ISS, it is subject to multipath.
+2. For each GPS signal that is not blocked by the ISS, many reﬂections are caused and there is no dominant reﬂector.
+3. The phases of the reﬂections are uniformly distributed over [0, 2π). The rationale for this assumption is explained later in the paper.
+4. The relative velocity between the chaser spacecraft and ISS is small so that there is no relative Doppler eﬀect between the direct and reﬂected signals.
+GPS Carrier Phase Error
+The multipath channel consists of multiple paths or rays that have real positive gains βk, propagation delays τk and phase shifts ψk, relative to the direct signal and where k is the path index and in principle ranges
+
+from 0 to ∞ but will be limited to a ﬁnite number of
+rays, N . According to Axelrad, et al, the error in the
+carrier phase measurement, δφ, due to multipath can be found by:11
+
+N
+
+A0 βk sin ψk
+
+tan δφ =
+
+k=1 N
+
+A0 β0 + A0 βk cos ψk
+
+k=1
+
+(17)
+
+Factoring out A0 leaves:
+
+N
+
+βk sin ψk
+
+tan δφ =
+
+k=1 N
+
+β0 + βk cos ψk
+
+k=1
+
+(18)
+
+where A0 represents the amplitude of the signal transmitted by the GPS satellite.
+
+Conjectures
+Since there is limited experimental data available, some conjectures based on terrestrial multipath models and measurements have been used. Conjectures about the nature of the relative phase shifts, relative amplitudes, the multipath power delay proﬁle and relative time delays are described in this section.
+1. Phase Shifts: The phase angle ψk changes by 2π when the path length changes by one wavelength. For the GPS L1 signal, fc =1575.42 MHz, the wavelength is about 19 cm. This implies that small motions of the reﬂector or receiver can cause ψk to change by 2π. The delays associated with diﬀerent paths are expected to change at diﬀerent rates and in an unpredictable or random manner. If one considers a ﬁxed transmitter and a mobile receiver, and imagines an ensemble of receiver positions spread over hundreds or thousands of wavelengths, then the geometry of a single path with delay τk will lead to a uniform distribution of phase for that path, while the geometrical relationship between separate paths with diﬀerent delays will lead to a uniform joint distribution of pairs of phases, thus the phases would be independent. Therefore, the phase angles will be assumed to be statistically independent random variables with a uniform distribution over [0, 2π).12
+2. Amplitudes: The received multipath signals can be modelled as random processes. When there are a large number of paths (in practice, greater than 6), the central limit theorem may be applied so that r (t) may be modelled as a complex-valued Gaussian random process.12
+The received signal can be broken down into inphase and quadrature components, I(t) and Q(t), which are independent Gaussian processes. This means that they are completely characterized by their mean value and autocorrelation function. I(t) and Q(t) have equal variance σ2 equal to the mean square power. The total amplitude of the signal is the square root of the sum of the squares of I(t) and Q(t), which
+
+5 of 11
+
+are Gaussian. This leads to the conjecture that the amplitudes are Rayleigh distributed. Therefore, the βk’s are Rayleigh distributed such that:
+
+If a cardioid pattern antenna is used, then:
+
+Gdrirect = 1 + cos θdirect
+
+(28)
+
+p βk2
+
+=
+
+1 β¯k2
+
+−
+e
+
+βk2/β¯k2
+
+(19)
+
+where β¯k2= the average power gain at τk.13 3. Power Delay Proﬁle: The multipath power-delay
+proﬁle for a given environment is the expected power
+received as a function of delay. Numerous measure-
+ments of the multipath power-delay proﬁle for various
+environments have been made, such as those by Van Rees14 and Belloul.15 Based on these studies, a gen-
+eral model of the multipath average power delay proﬁle can be given as:16
+
+P¯ (τ ) = P0 e−τ/τ¯
+
+(20)
+
+where τ¯ is the mean excess delay of the multipath reﬂections and P0 is the total multipath power. The total multipath power can be estimated by using the bi-static radar equation:
+
+P0
+
+=
+
+ARCS λ2Gm r pPt Gt (4π)3 r2 rG2 P S/ISS
+
+(21)
+
+where ARCS is the radar cross sectional area of the ISS, λ is the wavelength, Gm r pis the antenna gain of the receiver in the direction of the multipath, and Pt Gt is the eﬀective isotropic radiated power from the transmitter.
+The average power in each multipath signal is:
+
+where θdirect is the angle between the direct line of sight vector and the antenna boresight vector. Substi-
+tuting (28) into (27) leads to:
+
+β0 =
+
+λ2 (1 + cos θdirect) 4πrGP S/ST S 2
+
+(29)
+
+4. Delay Times: The mean excess delay and RMS delay spread are commonly used to characterize multipath time delays. The parameters are determined from a multipath power delay proﬁle. The mean excess delay is the ﬁrst moment of the power delay proﬁle and is deﬁned to be17
+
+βk2 τk τ¯ = k βk2
+k
+
+(30)
+
+Turin, et al, proposed that the delay times form a
+Poisson sequence. The probability distribution of time delays is given by:18
+
+p (τk)
+
+=
+
+1 τ¯
+
+e−
+
+τk τ¯
+
+(31)
+
+Multipath Model Algorithm
+This section describes how the multipath error for each GPS carrier phase measurement is computed for the simulation. The algorithm is:
+
+P¯k = A20 β¯k2
+
+(22)
+
+Equating this with equation (20) and solving for β¯k2
+
+leads to:
+
+β¯k2
+
+=
+
+P0 A20
+
+e−τ /τ¯
+
+(23)
+
+Substituting (21) into (23) and recognizing that
+
+A20 = Pt Gt results in the following expression:
+
+β¯k2
+
+(τ )
+
+=
+
+ARCS λ2Gm r p (4π)3 r2 rG2 P S/ISS
+
+e−τ /τ¯
+
+(24)
+
+Since the multipath rays are being reﬂected oﬀ of the ISS, the mean excess delay is approximated by:
+
+τ¯
+
+=
+
+r c
+
+(25)
+
+where r is the distance from the spacecraft to the ISS and c is the speed of light. The power of the direct signal can be estimated by using the Friis equation:
+
+Pdirect = A20 β02 =
+
+λ2GdrirectPt Gt 4πrGP S/ST S 2
+
+(26)
+
+Since A20 = Pt Gt,
+
+β02 =
+
+λ2Gdrirect 4πrGP S/ST S 2
+
+(27)
+
+1. For each simulation time and each GPS satellite, compute: r, rGP S/ISS and θdirect.
+2. Compute β0 using (29) and τ¯ using (25).
+3. Given N , obtain the τk’s from the Poisson distribution given in (31).
+4. For each τk:
+• Given ARCS, compute β¯k2 using (24). • Obtain the βk’s from the Rayleigh distribu-
+tion given in (19).
+• Obtain the ψk’s from a uniform distribution over [0, 2π).
+• Construct βk sin ψk and βk cos ψk
+5. Determine the carrier phase error from (18).
+ISS Blockage Study Results
+This section provides a quantitative analysis of this GPS signal blockage due to the ISS. A computer simulation was developed to study the GPS signal blockage due to the ISS.
+The ISS orbit model was an unperturbed two-body orbit with orbit elements presented in Table 1. To determine the GPS signal blockage, the spacecraft was positioned so that it remained at a constant distance
+
+6 of 11
+
+Table 1
+a e i
+
+ISS Orbit Elements.
+
+= 6678.0 km
+
+= 0.005
+
+=
+
+56.0◦
+
+Table 2 GPS Signal Outage Statistics (All-In-View Receiver).
+
+when a satellite is within 60 m of the ISS. The 12-channel receiver results were almost identi-
+cal to the all-in-view receiver results. The only difference was that the number of satellites below the horizon mask was higher for the all-in-view receiver. Therefore, the performance of a 12-channel receiver programmed to select the 12 highest elevation SVs was the same as an all-in-view receiver.
+
+Meters Below ISS
+10 20 30
+
+Percent Outage
+99.99 85.85 42.04
+
+Max Outage Duration (s)
+58059 2111 1119
+
+Ave. Outage Duration (s)
+43197 501.2 167.4
+
+GPS/INS Integration
+The integration of GPS and INS is achieved using a extended Kalman ﬁlter (EKF). This section describes the integration architecture and Kalman ﬁlter design chosen for this application.
+
+40
+
+12.79
+
+602
+
+50
+
+4.92
+
+389
+
+60
+
+2.38
+
+249
+
+100
+
+0.0
+
+0.0
+
+107.3 103.6 102.8 0.0
+
+∆r directly below the ISS along the radius vector from the center of the earth to the ISS. ∆r was varied for each simulation run to determine the GPS signal blockage at diﬀerent distances below the ISS. While this does not represent a rendezvous scenario, it allowed a large number of samples to be collected over the course of the simulation while maintaining the same geometry relative to the ISS. Another reason for placing the spacecraft at various distances below the ISS is to evaluate the blockage at various points during an R-bar approach in which the Space Shuttle approaches the ISS along the Earth to ISS radius vector.
+Two kinds of GPS receivers were modelled. The ﬁrst kind was an all-in-view receiver that was assumed to track all visible GPS satellites with no delay in tracking a satellite as soon as it becomes visible. The second kind was a 12-channel receiver programmed to track the twelve highest elevation SVs. For this receiver, it was also assumed to have no delay in tracking a satellite as soon as it becomes visible.
+The simulation was run over a time span of one day taking samples once per second for the following values of ∆r : 10 m, 20 m, 30 m, 40 m, 50 m, 60 m, and 100 m. At each point in time, the number of visible GPS satellites was recorded and analyzed. Any time there were less than four GPS satellites visible, it was considered to be an outage. The data collected on outages for the all-in-view receiver is summarized in Table 2.
+The data shows that at least four GPS satellites were in view at all times when the satellite was 100 m or more below the ISS. At 60 m below the ISS, there were less than four satellites in view for a small percentage of the time but the average outage was over 102 seconds long. The amount of blockage increases as the satellite is brought closer to the ISS. When it is 10 m below the ISS, no position ﬁxing is possible. These results suggest that some aiding of GPS is required
+
+Integration Architecture
+The complementary ﬁlter method of integration with the INS providing the reference trajectory was chosen for a number of reasons. The INS was chosen to provide the reference trajectory because it is selfcontained, continuous, and provides accurate position, velocity and attitude in the short term.
+The complementary ﬁlter estimates the errors in the INS position, velocity and attitude so that the linear INS error model can be used. It also allows the addition of other sensors if needed. Finally, the complementary ﬁlter can be run at a lower update rate because the dynamics of the INS errors have a much lower frequency than the dynamics of the total state variables.
+Many GPS/INS integrations are feedforward or open-loop conﬁgurations where the estimates of the INS errors are not used to correct the INS. In this conﬁguration, a linearized Kalman ﬁlter is used. The reference trajectory and actual trajectory may diverge to the point where the assumption of linearity and the random process models gradually deteriorate.19
+To avoid this problem, a feedback or closed-loop conﬁguration has been chosen. The estimates of the INS error are used to correct the INS, which allows the ﬁlter to be used for long durations. The closed-loop conﬁguration requires an extended Kalman ﬁlter formulation.
+
+Filter Equations and Models
+The general state and measurement models are given by:
+
+x˙ (t) = f (x(t), t) + G (t) w (t) zk = h (xk) + vk
+
+(32)
+
+where w (t) ∼ N (0, Q (t)) and vk ∼ N (0, Rk). In order to linearize the state and measurement
+models, deﬁne the output and system matrices as:
+
+Hk ≡
+
+∂h ∂x
+
+x=xˆ
+
+F
+
+≡
+
+∂f ∂x
+
+x=xˆ
+
+(33)
+
+The state and covariance propagation equations are:
+
+x˙ (t) = f (x(t), t) Φ˙ (tk, tk−1) = F (tk−1) Φ (tk, tk−1) Pk− = Φ (tk, tk−1) Pk+−1ΦT (tk, tk−1) + Qk
+
+(34)
+
+7 of 11
+
+Table 3 GPS/INS Filter States
+
+ECI Position Error
+
+3
+
+ECI Velocity Error
+
+3
+
+Attitude Quaternion Error 4
+
+Gyro Biases
+
+3
+
+Accelerometer Biases 3
+
+GPS Receiver Clock Bias 1
+
+GPS Receiver Clock Drift 1
+
+Table 4 INS Sensor Characteristics.
+
+Parameter
+
+Value Units
+
+Gyro Bias Gyro Bias Gyro Noise
+
+σ 0.0035 deg/hr
+
+τ
+
+1
+
+h√r
+
+0.002 deg/ hr
+
+Accelerometer Bias σ 30
+
+µg
+
+Accelerometer Bias τ
+
+1
+
+hr√
+
+Accelerometer Noise
+
+0.00075 m/s/ hr
+
+The Kalman gain is computed by:
+
+Kk = Pk−HkT HkPk−HkT + Rk −1
+
+(35)
+
+The measurement update equations are:
+
+Pxˆ+kk+
+
+= =
+
+xˆ−k I
+
++ Kk yk − KkHk
+
+−h xˆ−k
+
+Pxˆk−k−
+
+(36)
+
+State and Propagation Models
+
+The states to be estimated by the extended Kalman
+
+ﬁlter are shown in Table 3 below.
+
+The state vector is deﬁned as:
+
+ δr
+
+δx = 
+
+δv
+δq
+δbg δba δbc
+
+
+
+(37)
+
+δdc 18×1
+
+The linear system matrix is:
+
+ 03×3
+
+F
+
+= 
+
+G3×3 04×3 03×3
+03×3
+
+01×3
+
+01×3
+
+I3×3 03×3
+04×3 03×3
+03×3 01×3 01×3
+
+03×4 D3×4 Ω (ωˆ)
+03×3
+03×3 01×4 01×4
+
+03×3 03×3
+Q (qˆ)
+Fbg 03×3 01×3 01×3
+
+03×3 CBI (qˆ) 04×3 03×3
+Fba 01×3 01×3
+
+03×1 03×1 04×1 03×1
+03×1 0
+0
+
+03×1 
+
+03×1 04×1 03×1
+03×1
+
+
+
+1
+
+0
+
+If gyro and accelerometer biases are modelled as ﬁrst order Gauss-Markov processes, then:
+
+Fba
+
+=
+
+−
+
+1 τg
+
+I3×3
+
+Fba
+
+=
+
+−
+
+1 τg
+
+I3×3
+
+where τg and τa are the gyro and accelerometer bias correlation times.
+The noise input matrix is:
+
+
+I3×3
+
+G = 
+
+03×3 04×3 03×3 03×3 01×3
+
+01×3
+
+03×3
+I3×3 04×3 03×3 03×3 01×3 01×3
+
+03×4
+03×4 I4×4 03×3 03×3 01×4 01×4
+
+03×3 03×3 Q (qˆ)
+I3×3 03×3 01×3 01×3
+
+03×3 CBI (qˆ) 04×3 03×3 I3×3 01×3 01×3
+
+03×1 03×1 04×1 03×1 03×1 0
+0
+
+
+03×1
+
+03×1 04×1 03×1 03×1 1
+
+
+
+0
+
+Measurement Model
+The measured range from the j th GPS satellite to the vehicle at time tk can be represented by the following non-linear equation:
+
+zj(tk) = hj(x, tk) + v(tk)
+
+(38)
+
+where v(tk) is a zero-mean, white Gaussian noise process of strength R representing random range measure-
+ment noise and:
+
+hj (x, tk) = rLOSj (x, tk) +
+
+1
+
+−
+
+ρ˙ c
+
+bc
+
+(39)
+
+where:
+
+ρ˙
+
+=
+
+rLOSj · r˙ LOSj rLOSj
+
+(40)
+
+The linearized measurement presented to the ﬁlter
+
+is:
+
+δzj(tk) = zj(tk) − hj(xˆ, tk)
+
+(41)
+
+Results
+A simulation of the GPS/INS extended Kalman ﬁlter described in the preceding sections was developed. Three test cases were run. During test cases 1 and 2, the spacecraft was in an unperturbed two-body orbit with orbit elements given in Table 1 and the ISS blockage and multipath models were not used. Test case 1 was a nominal ﬁlter run where GPS measurements are continually fed into the ﬁlter. In test case 2, GPS measurements were completely blocked out for a period of 600 seconds. In test case 3, the spacecraft was started on a trajectory designed to achieve rendezvous with the ISS in one orbit period. The ISS blockage model was included in test case 3 to illustrate the eﬀects of GPS signal blockage by the ISS on ﬁlter performance.
+In all test cases, the parameters presented in Table 4 were used to simulate the gyros and accelerometers of the SIGI.6
+In all of the test cases, the GPS/INS EKF was started with initial position errors of +10 meters in each axis and velocity errors of +0.1 m/s in each axis from the true trajectory. GPS measurements were provided at a rate of once per second for each GPS satellite above a 10-degree minimum elevation mask, except when they were blocked. The EKF dynamics model and measurement model matched the truth model. The true gyro, accelerometer and clock biases and clock drift rate were started at zero. The EKF
+
+8 of 11
+
+x error [m]
+
+1 0.5
+0 −0.5
+−1 0
+
+ECI Position Errors
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+y error [m]
+
+1 0.5
+0 −0.5
+−1 0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+1
+
+0.5
+
+z error [m]
+
+0
+
+−0.5
+
+−1
+
+0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+time [s]
+
+Fig. 2 Test Case 1 ECI Position Errors.
+
+x error [m]
+
+30 20 10
+0 −10 −20 −30
+0
+
+ECI Position Errors
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+y error [m]
+
+30 20 10
+0 −10 −20 −30
+0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+z error [m]
+
+30 20 10
+0 −10 −20 −30 −40
+0
+
+1000
+
+2000
+
+3000 time [s]
+
+4000
+
+5000
+
+6000
+
+Fig. 4 Test Case 2 ECI Position Errors.
+
+vx error [m/s]
+
+0.02 0.015
+0.01 0.005
+0 −0.005
+−0.01 −0.015
+−0.02 0
+
+ECI Velocity Errors
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+vy error [m/s]
+
+0.02 0.015
+0.01 0.005
+0 −0.005
+−0.01 −0.015
+−0.02 0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+vz error [m]
+
+0.02 0.015
+0.01 0.005
+0 −0.005
+−0.01 −0.015
+−0.02 0
+
+1000
+
+2000
+
+3000 time [s]
+
+4000
+
+5000
+
+6000
+
+Fig. 3 Test Case 1 ECI Velocity Errors.
+
+clock when scaled to meters and the clock drift rate errors were under ±0.5 m/s most of the time. The errors in the EKF estimate of the gyro biases for test case 1 were generally within ±2.0 × 10−7 radians/second of the true gyro biases. The errors in the EKF estimate of the accelerometer biases were generally within ±2.0×10−4 m/s2 of the true accelerometer biases. The test case 1 results indicate that the EKF is working as expected. The sigmas track the errors which indicates that the EKF is reasonably well-tuned.
+Test Case 2 Results
+During test case 2, GPS measurements were completely blocked out starting from 1800 seconds to 2400 seconds simulation time. The ECI position errors are shown in Figure 4. During the GPS outage, the total position error increases to 47.5 meters before GPS measurements reduce them to about 2 meters. The ECI velocity errors are shown in Figure 5. During the GPS outage, the total velocity error increases to 0.13 m/s just before GPS measurements are resumed. These results are very similar to those found by Um.6
+
+was also initialized with zero gyro, accelerometer and clock biases and clock drift rate. The simulation was run for one orbit period.
+Test Case 1 Results
+The resulting position and velocity errors for test case 1 are shown in Figures 2 and 3. The red dashed lines represent the EKF estimated sigmas. The position errors were generally below ±1 meter in each axis and the velocity errors were generally below ±0.02 meters/second.
+The errors in the EKF estimate of the GPS receiver clock bias were generally within ±1 meter of the true
+
+Test Case 3 Results
+In test case 3, the velocity of the initial orbit was modiﬁed to achieve a rendezvous with the ISS within one orbit period. The spacecraft started out in the same orbit as the ISS but 15 km behind the ISS. The rendezvous trajectory is shown in Figure 6. The ISS blockage model was used during this test case.
+The number of visible GPS satellites is shown in the bottom plot of Figure 9. The eﬀects of signal blockage due to the ISS begin at about 4500 seconds simulation time when the number of visible satellites goes down to six or less. More test cases would have to be run
+
+9 of 11
+
+vx error [m/s]
+
+0.15 0.1
+0.05 0
+−0.05 −0.1 0
+
+ECI Velocity Errors
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+vy error [m/s]
+
+0.15 0.1
+0.05 0
+−0.05 −0.1
+−0.15 −0.2 0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+vz error [m]
+
+0.15 0.1
+0.05 0
+−0.05 −0.1
+−0.15 −0.2 0
+
+1000
+
+2000
+
+3000 time [s]
+
+4000
+
+5000
+
+6000
+
+Fig. 5 Test Case 2 ECI Velocity Errors.
+
+x error [m]
+
+1 0.5
+0 −0.5
+−1 0
+
+ECI Position Errors
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+y error [m]
+
+1 0.5
+0 −0.5
+−1 0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+1
+
+0.5
+
+z error [m]
+
+0
+
+−0.5
+
+−1
+
+0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+time [s]
+
+Fig. 7 Test Case 3 ECI Position Errors.
+
+4000 2000
+0 ← start −2000
+
+Rendezvous Trajectory finish→
+
+vx error [m/s]
+
+0.02 0.015
+0.01 0.005
+0 −0.005
+−0.01 −0.015
+−0.02 0
+
+ECI Velocity Errors
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+radial [m]
+
+−4000 −6000
+
+−15000
+
+−10000
+
+−5000
+
+0
+
+along−track [m]
+
+Fig. 6 Test Case 3 Rendezvous Trajectory.
+
+to determine whether this is a representative case because the GPS constellation geometry may have been unusually favorable.
+The ECI position errors are shown in Figure 7 and the ECI velocity errors are shown in Figure 8. The clock bias and drift estimate errors are shown in Figure 9. The ﬁlter performance does not appear to be degraded signiﬁcantly by the GPS signal blockage.
+Conclusions
+Error models for INS and GPS navigation sensors operating in the vicinity of the ISS have been developed. The GPS error model includes the eﬀects of GPS signal blockage and multipath in the vicinity of the ISS. These error models have been used to form an integrated GPS/INS EKF. A simulation of the ﬁlter has been developed and the ﬁrst test case shows position errors of less than 1 meter and velocity errors of less than 0.02 m/s in each axis. The second test case shows the position errors grow to approximately 47.5 meters and the velocity errors grow to 0.13 m/s
+
+vy error [m/s]
+
+0.02 0.015
+0.01 0.005
+0 −0.005
+−0.01 −0.015
+−0.02 0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+vz error [m]
+
+0.02 0.015
+0.01 0.005
+0 −0.005
+−0.01 −0.015
+−0.02 0
+
+1000
+
+2000
+
+3000 time [s]
+
+4000
+
+5000
+
+6000
+
+Fig. 8 Test Case 3 ECI Velocity Errors.
+
+during a ten minute GPS outage. Finally, the third test case shows that the GPS/INS EKF performance is not signiﬁcantly degraded by GPS signal blockage due to the ISS during a simulated rendezvous with the ISS.
+Future Work
+Plans for the future include adding the eﬀects of GPS satellite clock and ephemeris errors and more realistic orbital dynamics models to the simulation. The GPS/INS EKF will be modiﬁed to perform relative navigation with the ISS using GPS carrier phase measurements. The ISS multipath model will then be
+
+10 of 11
+
+bias error [m]
+
+2 1.5
+1 0.5
+0 −0.5
+−1 −1.5
+−2 0
+1
+
+Clock Bias Estimation Errors
+
+1000
+
+2000
+
+3000
+
+4000
+
+Clock Drift Estimation Errors
+
+5000
+
+6000
+
+0.5
+
+drift error [m/s]
+
+0
+
+−0.5
+
+−1
+
+0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+Number of Visible GPS SVs 12
+
+10
+
+# of visible SVs
+
+8
+
+6
+
+4
+
+2
+
+0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+6000
+
+time [s]
+
+Fig. 9 Test Case 3 Clock Bias, Clock Drift Estimation Errors and Number of Visible GPS Satellites.
+
+incorporated and the eﬀects of signal blockage combined with multipath will be studied.
+Acknowledgments
+This research was partially funded by the NSTL Relative Navigation Support Grant (NAG9-1189) from the Navigation Systems Testing Laboratory at the NASA Johnson Space Center.
+The results presented in this paper were produced using software from the Java Astrodynamics Toolkit, an open source software library which can be found on the Internet at: http://jat.sourceforge.net.
+
+of the AIAA Atmospheric Flight Mechanics Conference, August 2002.
+9Farrell, J. A. and Barth, M., The Global Positioning System and Inertial Navigation, McGraw-Hill, New York, 1999.
+10JPO, “NAVSTAR GPS Space Segment/Navigation User Interfaces,” Tech. Rep. ICD-GPS-200, ARINC Research Corp., Fountain Valley, CA, 1997.
+11Axelrad, Penina, e. a., “SNR-Based Multipath Error Correction for GPS Diﬀerential Phase,” IEEE Transactions on Aerospace and Electronic Systems, Vol. 32, No. 2, April 1996.
+12Proakis, J., Digital Communications, Wiley & Sons, New York, 1989.
+13Saleh, A. A. M. and Valenzuela, R. A., “A Statistical Model for Indoor Multipath Propagation,” IEEE Journal on Selected Areas in Communications, Vol. SAC-5, No. 2, February 1987.
+14Van Rees, J., “Measurements of the Wide-Band Radio Channel Characteristics for Rural, Residential and Suburban Areas,” IEEE Transactions on Vehicular Technology, Vol. VT36, February 1987.
+15Belloul, B., e. a., “Measurement and Modelling of Wideband Propagation at L- and S-bands Applicable to the LMS Channel,” IEEE Proceedings: Microwave Antenna Propagation, Vol. 147, No. 2, April 2000.
+16Van Nee, R. D. J., “Multipath Eﬀects on GPS Code Phase Measurements,” Journal of The Institute of Navigation, Vol. 39, No. 2, 1992.
+17Rappaport, T. S., Wireless Communications: Principles and Practice, Prentice-Hall, Inc., Upper Saddle River, NJ, 2nd ed., 2002.
+18Turin, George L., e. a., “A Statistical Model of Urban Multipath Propagation,” IEEE Transactions on Vehicular Technology, Vol. VT-21, No. 1, February 1972.
+19Brown, R. G. and Hwang, P. Y., Introduction to Random Signals and Applied Kalman Filtering, John Wiley and Sons, New York, 3rd ed., 1997.
+
+References
+1Braden, Kevin, e. a., “Integrated Inertial Navigation System/Global Positioning System (INS/GPS) for Automatic Space Return Vehicle,” Proceedings of the IEEE/AIAA/NASA 9th Digital Avionics Systems Conference, October 1990.
+2Lightsey, E. G. and Um, J., “Autonomous Relative Navigation Methods in the Proximity of the International Space Station,” Proceedings of the KIS-2001 Conference.
+3Willms, B., “Space Integrated GPS/INS (SIGI) Navigation System for Space Shuttle,” Proceedings of 18th IEEE Digital Avionics Systems Conference, Vol. 2, October 1999.
+4Elchynski, Joseph, e. a., “Development and Test Results of a Precision Approach and Landing Capability for Military Aircraft Using an Embedded GPS/INS (EGI) System,” Proceedings of IEEE Position Location and Navigation Symposium.
+5Ebinuma, T., Precision Spacecraft Rendezvous Using Global Positioning System: An Integrated Hardware Approach, Ph.D. thesis, The University of Texas at Austin, August 2001.
+6Um, J., Relative Navigation and Attitude Determination Using a GPS/INS Integrated System Near the International Space Station, Ph.D. thesis, The University of Texas at Austin, December 2001.
+7Friedland, B., “Analysis of Strapdown Navigation Using Quaternions,” IEEE Transactions on Aerospace and Electronic Systems, Vol. AES-14, No. 5, September 1978, pp. 764–768.
+8Crain, T. P. and Bishop, R. H., “Mars Entry Navigation: Atmospheric Interface Through Parachute Deploy,” Proceedings
+11 of 11
+

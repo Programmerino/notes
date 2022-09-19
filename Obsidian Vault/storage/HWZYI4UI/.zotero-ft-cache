@@ -1,0 +1,206 @@
+
+Omni Calculator logo
+We’re hiring! Embed
+Share via
+Projectile Motion Calculator
+Created by Bogna Szyk and Hanna Pamuła , PhD candidate
+Reviewed by Steven Wooding and Jack Bowater
+Last updated: Oct 05, 2021
+0.5 Stars 1 Star 1.5 Stars 2 Stars 2.5 Stars 3 Stars 3.5 Stars 4 Stars 4.5 Stars 5 Stars
+Table of contents:
+
+    What is projectile motion? Projectile motion definition
+    Projectile motion analysis
+    Projectile motion equations
+    FAQ 
+
+Our projectile motion calculator is a tool that helps you analyze the parabolic projectile motion. It can find the time of flight, but also the components of velocity , the range of the projectile, and the maximum height of flight. Continue reading if you want to understand what is projectile motion, get familiar with the projectile motion definition, and determine the abovementioned values using the projectile motion equations.
+What is projectile motion? Projectile motion definition
+
+Imagine an archer sending an arrow in the air. It starts moving up and forward, at some inclination to the ground. The further it flies, the slower its ascent is – and finally, it starts descending, moving now downwards and forwards and finally hitting the ground again. If you could trace its path, it would be a curve called a trajectory in the shape of a parabola . Any object moving in such a way is in projectile motion.
+
+Only one force acts on a projectile – the gravity force. Air resistance is always omitted. If you drew a free body diagram of such an object, you would only have to draw one downward vector and denote it “gravity”. If there were any other forces acting on the body, then – by projectile motion definition – it wouldn't be a projectile.
+Projectile motion analysis
+
+Projectile motion is pretty logical. Let's assume you know the initial velocity of the object V , the angle of launch α , and initial height h . Our projectile motion calculator follows these steps to find all remaining parameters:
+
+    Calculate the components of velocity.
+
+Velocity and its horizontal and vertical component
+
+    The horizontal velocity component Vx is equal to V * cos(α) .
+    The vertical velocity component Vy is equal to V * sin(α) .
+    Three vectors - V , Vx and Vy - form a right triangle .
+
+If the vertical velocity component is equal to 0, then it's the case of horizontal projectile motion . If, additionally, α = 90° then it's the case of free fall .
+
+    Write down the equations of motion.
+
+Distance
+
+    Horizontal distance traveled can be expressed as x = Vx * t , where t is the time.
+    Vertical distance from the ground is described by the formula y = h + Vy * t – g * t² / 2 , where g is the gravity acceleration.
+
+Velocity
+
+    Horizontal velocity is equal to Vx .
+    Vertical velocity can be expressed as Vy – g * t .
+
+Acceleration
+
+    Horizontal acceleration is equal to 0.
+    Vertical acceleration is equal to -g (because only gravity acts on the projectile).
+
+    Calculate the time of flight .
+
+Projectile motion plot: time of flight
+
+    Flight ends when the projectile hits the ground. We can say that it happens when the vertical distance from the ground is equal to 0. In the case where the initial height is 0, the formula can be written as: Vy * t – g * t² / 2 = 0 . Then, from that equation, we find that the time of flight is
+
+    t = 2 * Vy / g = 2 * V * sin(α) / g .
+
+    However, if we're throwing the object from some elevation, then the formula is not so nicely reduced as before, and we obtain a quadratic equation to solve: h + Vy * t – g * t² / 2 = 0 . After solving this equation, we get:
+
+    t = [V * sin(α) + √((V * sin(α))² + 2 * g * h)] / g
+
+    Calculate the range of the projectile .
+
+Projectile motion plot: range
+
+    The range of the projectile is the total horizontal distance traveled during the flight time. Again, if we're launching the object from the ground (initial height = 0), then we can write the formula as R = Vx * t = Vx * 2 * Vy / g . It may be also transformed into the form: R = V² * sin(2α) / g
+
+    Things are getting more complicated for initial elevation differing from 0. Then, we need to substitute the long formula from the previous step as t :
+
+    R = Vx * t = V * cos(α) * [V * sin(α) + √(V * sin(α))² + 2 * g * h)] / g
+
+    Calculate the maximum height .
+
+Projectile motion plot: maximum height
+
+    When the projectile reaches the maximum height, it stops moving up and starts falling. It means that its vertical velocity component changes from positive to negative – in other words, it is equal to 0 for a brief moment at time t(Vy=0) .
+    If Vy – g * t(Vy=0) = 0 , then we can reformulate this equation to t(Vy=0) = Vy / g .
+    Now, we simply find the vertical distance from the ground at that time: hmax = Vy * t(vy=0) – g * (t(Vy=0))² / 2 = Vy² / (2 * g) = V² * sin(α)² / (2 * g)
+    Fortunately in the case of launching a projectile from some initial height h , we need to simply add that value into the final formula:
+
+hmax = h + V² * sin(α)² / (2 * g)
+Projectile motion equations
+
+Uff, that was a lot of calculations! Let's sum that up to form the most essential projectile motion equations:
+
+    Launching the object from the ground (initial height h = 0)
+
+    Horizontal velocity component: Vx = V * cos(α)
+    Vertical velocity component: Vy = V * sin(α)
+    Time of flight: t = 2 * Vy / g
+    Range of the projectile: R = 2 * Vx * Vy / g
+    Maximum height: hmax = Vy² / (2 * g)
+
+
+    Launching the object from some elevation (initial height h > 0)
+
+    Horizontal velocity component: Vx = V * cos(α)
+    Vertical velocity component: Vy = V * sin(α)
+    Time of flight: t = [Vy + √(Vy² + 2 * g * h)] / g
+    Range of the projectile: R = Vx * [Vy + √(Vy² + 2 * g * h)] / g
+    Maximum height: hmax = h + Vy² / (2 * g)
+
+Using our projectile motion calculator will surely save you a lot of time. It can also work 'in reverse'. For example, enter the time of flight, distance, and initial height and watch it do all calculations for you!
+FAQ
+Does projectile motion have to travel horizontally?
+
+No , projectile motion and its equations cover all objects in motion where the only force acting on them is gravity. This includes objects that are thrown straight up , those thrown horizontally , those that have a horizontal and vertical component , and those that are simply dropped .
+What is an example of projectile motion?
+
+Objects with projectile motion include: keys being thrown, a 300 kg projectile being thrown 90 m by a trebuchet , a football being kicked so that it no longer touches the ground, a diver jumping from a diving board, an artillery shell the moment it leaves the barrel, and a car trying to jump a bridge .
+How can a projectile fall around the Earth?
+
+There is only one force acting on a projectile - gravity . This means that an object will eventually fall to Earth. But what about if the object is moving so fast horizontally that, by the time it reaches the ground, the ground is no longer there? This is the principle that governs satellites.
+How do I find acceleration in projectile motion?
+
+There is only one force acting on an object in projectile motion - gravity . This means that any change in vertical speed is due to gravitational acceleration, which is 9.81 m/s 2 (32.2 ft/s 2 ) on Earth. In the horizontal direction, there is no change in speed, as air resistance is assumed to be negligible , so acceleration is 0.
+What factors affect the motion of a projectile launched horizontally?
+
+Initial velocity , the initial height the projectile is being launched from, and gravity will all affect a projectile launched horizontally. Air resistance will also have an effect in real life, but for most theoretical calculations it is negligible and is therefore ignored. If the projectile has wings , this will also impact its motion, as it will glide.
+What exactly is a projectile?
+
+A projectile is an object that is in motion, in the air and has no force acting upon it other than the acceleration due to gravity (this means that it cannot be self-propelled). You can probably think of many examples: a thrown ball or a stone thrown from a trebuchet. Even the Moon is a projectile , with respect to the Earth!
+What are the characteristics of projectile motion?
+
+The properties of projectile motion are that the object’s horizontal velocity does not change , that it’s vertical velocity constantly changes due to gravity, that the shape of its trajectory will be a parabola , and that the object is not affected by air resistance.
+Who first accurately described projectile motion and when?
+
+Galileo was the first person to describe projectile motion accurately , by breaking down motion into a horizontal and vertical component, and realizing that the plot of any object's motion would always be a parabola. He described it in his book, On Motion, published around the 1590s .
+Why does a projectile follow a curved path?
+
+An object follows a parabola because of how its two components of motion - the horizontal and vertical - are affected by gravity. The horizontal component is not affected by gravity at all, and so changes in a constant, linear fashion. The vertical part, however, is constantly affected by gravity , and so it will increase in height, and then decrease, accelerating due to gravity.
+Why is 45 degrees the optimal angle for projectiles?
+
+The equation for the distance traveled by a projectile being affected by gravity is sin(2θ)v 2 /g , where θ is the angle, v is the initial velocity and g is acceleration due to gravity. Assuming that v 2 /g is constant, the greatest distance will be when sin(2θ) is at its maximum , which is when 2θ = 90 degrees. This means θ = 45 degrees .
+Bogna Szyk and Hanna Pamuła , PhD candidate
+Initial parameters
+Initial velocity (V)
+m/s
+Angle of launch (α)
+deg
+Initial height (h)
+m
+Time of flight (t)
+sec
+Distance (d)
+m
+Maximum height (hmax)
+ft
+Flight parameters at given time
+Time
+sec
+Velocity
+ft/s
+Projectile motion image. Velocity, angle of launch, initial height, time of flight, distance and maximum height marked
+Advanced mode Reset defaults
+Check out 79 similar classical mechanics calculators ⚙️
+Acceleration Bank angle Belt length … 76 more
+People also viewed…
+Harmonic wave equation
+Harmonic wave equation calculator helps you find the displacement of any point along an oscillating wave.
+Harmonic Wave Equation Calculator
+Plastic Footprint
+Find out how much plastic you use throughout a year with this plastic footprint calculator. Rethink your habits, reduce your plastic waste, and make your life a little greener.
+Plastic Footprint Calculator
+Projectile motion experiment
+Blast off with this super fun projectile motion experiment calculator! Create a simple launcher and learn the basics of projectile motion.
+Projectile Motion Experiment Calculator
+Test grade
+With this test grade calculator you'll easily find out the test percentage score and grade.
+Test Grade Calculator
+Other physics calculators
+Omni Calculator
+
+    About us
+    All calculators
+    Blog
+    Calculator collections
+    Contact
+    Partnership
+    We’re hiring!
+    Press kit 
+
+Copyright by Omni Calculator sp. z o.o.
+Privacy policy & cookies
+
+    Biology (79)
+    Chemistry (81)
+    Construction (109)
+    Conversion (158)
+    Ecology (27)
+    Everyday life (151)
+    Finance (451)
+    Food (59)
+    Health (409)
+    Math (478)
+    Physics (400)
+    Sports (83)
+    Statistics (123)
+    Other (147)
+    Discover Omni (40) 
+
+main background

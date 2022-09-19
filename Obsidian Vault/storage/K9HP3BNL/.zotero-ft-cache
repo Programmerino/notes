@@ -1,0 +1,430 @@
+Journal of Criminal Justice 72 (2021) 101781 Contents lists available at ScienceDirect
+Journal of Criminal Justice
+journal homepage: www.elsevier.com/locate/jcrimjus
+
+Fatal outcomes of militarization: Re-examining the relationship between the 1033 Program and police deadly force
+Wendy M. Koslicki a,*, Dale W. Willits b, Rachael Brooks b
+a Department of Criminal Justice and Criminology, Ball State University, USA b Department of Criminal Justice and Criminology, Washington State University, USA
+
+ARTICLE INFO
+Keywords: Militarization United States policing Police use of force Deadly force Fatal encounters 1033 Program
+
+ABSTRACT
+Purpose: Prior literature has examined police militarization by operationalizing the materiel dimension using the 1033 Program – a U.S. military surplus transfer program – and assessing its relationship with police fatal force. Given mixed findings, the present study demonstrates the importance of data considerations while examining this relationship and any assessment of militarization or fatal force. Methods: The present study uses the 1033 Program data and the crowdsourced Fatal Encounters database to conduct multi-level mixed effects negative binomial regression models using both raw and cleaned data. Results: While the cost of 1033 Program items was negatively associated with fatal force in the raw models, this relationship disappears using the cleaned data. The cleaned data models demonstrate a moderate, positive relationship between the number of 1033 Program items obtained and fatal force, though this relationship disappears when agencies are disaggregated by size. Conclusion: These findings demonstrate the importance of data selection, validation, and categorization, given that previous literature examining this relationship vary in their extent of data cleaning and the data sources used. These findings also demonstrate the necessity for militarization research to examine police outcomes beyond fatal force, and to account for additional measures of militarization beyond the 1033 Program.
+
+1. Introduction
+An increasing amount of attention has been directed towards the phenomenon of police militarization, growing with events in the United States such as the Ferguson riots and coming to greater national atten­ tion with filmed instances of police responses to Black Lives Matter demonstrations protesting the deaths of George Floyd and Breonna Taylor in 2020. Beyond a growing literature examining public percep­ tions of militarization (Fox, Moule Jr., & Parry, 2018; Moule Jr., Bur­ russ, Parry, & Fox, 2019a; Moule Jr., Fox, & Parry, 2019b), the phenomenon of police militarization is a relatively under-researched subfield with little established consensus regarding its empirical mea­ surement (Koslicki & Willits, 2018). It is therefore essential that emerging police militarization literature is theoretically sound (Kap­ peler & Kraska, 2015), attentive to the nuances of the data used (Koslicki, 2017), and examines specific outcomes theoretically linked to increased militarization (Bieler, 2016). Recent research in the fields of political science and economics have addressed Bieler’s (2016) call to examine outcomes of indicators of police militarization by exploring the
+
+impact of the U.S. Defense Logistics Agency’s (DLA) Law Enforcement Support Office (LESO) Program – a military surplus dispersion program more commonly known as the 1033 Program – on the number of civil­ ians killed by United States police (Bove & Gavrilova, 2017; Harris, Park, Bruce, & Murray, 2017; Delehanty, Mewhirter, Welch, & Wilks, 2017). While these authors seek to contribute to the field of police militarization with empirical, outcome-driven research, their findings – taken as a whole – are inconclusive regarding the effect of 1033 Program participation on police use of lethal force. We posit that these incon­ clusive findings may be due to the problems inherent to the data sources used and the lack of a consistent data handling strategy across studies, which may have led to inaccurate results and conclusions. It is prudent therefore to not only retest the relationship between 1033 Program participation and its effect on police lethal force, but to also engage in a broader discussion regarding the methodological concerns surrounding these data sources as their use becomes more widespread across several academic disciplines. In the current study, we re-examine this rela­ tionship using 1033 data and data from fatalencounters.org (FE). We estimate models with both cleaned and uncleaned data, and examine the
+
+* Corresponding author at: North Quad Building 278, Muncie, IN 47304, USA. E-mail address: wkoslicki@bsu.edu (W.M. Koslicki).
+https://doi.org/10.1016/j.jcrimjus.2021.101781 Received 8 December 2020; Received in revised form 5 January 2021; Accepted 6 January 2021 Available online 14 January 2021 0047-2352/© 2021 Elsevier Ltd. All rights reserved.
+
+W.M. Koslicki et al.
+effect of measuring 1033 acquisitions by cost versus by amount of items obtained, demonstrating the importance of carefully managing and using data sources to study this broader social problem.
+1.1. Police militarization and lethal force
+While police militarization has quickly become a current point of discussion since the events of Ferguson and the law enforcement response 2020 Black Lives Matter demonstrations across the nation, the study of police militarization in the United States was first publicized in the 1970s, with scholars from the University of California at Berkeley asserting that police militarization and community policing were two coherent strategies, with community policing as the “velvet glove” concealing the “iron fist” of the militarized police institution (Center for Research on Criminal Justice, 1977). The study of police militarization in the United States was further spearheaded by Kraska, Kappeler, and colleagues in the 1990s (see Kraska & Cubellis, 1997; Kraska & Kap­ peler, 1997; Kraska & Paulsen, 1997).
+Kraska (2007) has developed a four-dimension framework for the assessment of police militarization, with militarization examined through (1) materiel indicators (examining the extent to which the po­ lice use military weapons and equipment), (2) cultural indicators (the extent of military language, appearance, and values used by the police), (3) organizational indicators (the extent to which military arrangements are used, such as paramilitary policing units [PPUs], or SWAT teams), and (4) operational indicators (the extent to which police operations are patterned after those used by the military). While the majority of police militarization scholars agree that the police have always been milita­ rized to some degree due to their paramilitary roots and state-sanctioned ability to use force (Kappeler & Kraska, 2015; Koslicki, 2020; Kraska, 2007; Maguire & King, 2004), Kraska’s (2007) four indicators assist in determining the extent to which the police are militarized upon a con­ tinuum of low to high police militarization.
+In a state-of-the-field review of police militarization literature, Bieler (2016) observes that while some of the indicators in Kraska’s (2007) framework are easily quantifiable – such as numbers of military equip­ ment transfers or the presence of PPUs in departments – few studies empirically examine whether these quantifiable indicators lead to observable changes in police behavior. Indeed, while a number of scholars have examined the transfer of military equipment to the police (see D’Esposito, 2016; Endebak, 2014; Haggerty & Ericson, 1999; Hall & Coyne, 2013; Johnson & Hansen, 2016), few have assessed whether the acquisition of this equipment affects real change in the behavior of recipient departments. Recent research has assessed factors that increase an agency’s likelihood of acquiring specific categories of equipment through the 1033 Program, with Burkhardt and Baker (2018) finding that agencies with “warrior” tendencies (measured through agencies’ body armor policies and special units) and that use asset forfeiture were significantly more likely to acquire a mine-resistant ambush-protected (MRAP) vehicle. Ramey and Steidley (2018) likewise assessed the in­ fluence of violent crime rates, drug arrest rates, and proportion of mi­ nority population on agencies’ participation in the 1033 Program, finding that high violent crime rates and high proportion of Black population increased an agency’s likelihood to obtain any equipment from the 1033 Program.
+The few studies that currently exist that measure the effect of 1033 Program participation on agency behaviors (and other outcomes) pro­ duce mixed findings. For example, Harris et al. (2017) found that acquiring tactical items (or that which the police militarization litera­ ture would consider militarized; discussed at length in the following section) led to decreases in citizen complaints, as well as decreases in several crime categories (robbery, assaults, and vehicle thefts) and in­ creases in drug-related arrests. Harris et al. (2017) also found no effect on suspect deaths, which the authors argue is indicative of a null effect of tactical military gear on officer violence. Similarly, Bove and Gavrilova (2017) found military vehicles and equipment such as special clothing
+
+Journal of Criminal Justice 72 (2021) 101781
+and night vision (what Bove and Gavrilova categorize as “gears”) ob­ tained from the 1033 Program to have a significant, negative impact on most crime rates, as well as a null effect on suspect deaths. The authors of both studies argue that tactical or visibly military items obtained from the 1033 Program may have a deterrent effect on local crime rates and no appreciable affect on police use of force. It must be noted, however, that Bove and Gavrilova (2017) claim to have obtained data on suspect deaths from the Federal Bureau of Investigation’s (FBI) Law Enforce­ ment Officers Killed and Assaulted (LEOKA) data, which does not include information on suspect deaths (only those of law enforcement officers). Harris et al. (2017) claim to have obtained data of suspect deaths from Bove and Gavrilova. As such, it is difficult to assess the validity of these results without knowing how suspect deaths were measured or where the data were obtained.
+Contrary to the findings of Bove and Gavrilova (2017) and Harris et al. (2017), research by Delehanty et al. (2017) has found a positive relationship between participation in the 1033 Program and police use of lethal force. Delehanty et al. (2017) argue that this military equip­ ment (Kraska’s materiel dimension) will introduce martial language, lead to a willingness to engage in high-risk operations, and lead to a higher likelihood to create military arrangements like PPUs, thus affecting all aspects of Kraska’s dimensions of police militarization (and resulting, ultimately, in higher levels of police use of force and violence). Mirroring this concept and approach, Lawson Jr. (2019) likewise found a significant, positive relationship between 1033 Program participation and police lethal force when examining a larger sample at the agency level (no significance was found, however, in Lawson’s zero-inflation model).
+While these four recent studies provide a considerable step towards understanding the effects of the materiel dimension on police militari­ zation, their inconclusive findings demand further assessment of the 1033 Program on police behavioral outcomes – particularly the use of lethal force. The disagreement of these studies’ findings regarding sus­ pect deaths likewise demands further examination into data sources and handling. Specifically, we anticipate that the inconclusive findings may be explained in part by these studies’ differences in data sources used, as well as their treatments of these data (including their categorization and cleaning considerations).
+1.2. The 1033 Program data
+The 1033 Program allows law enforcement agencies to obtain sur­ plus equipment from the military. However, it is important to note that not all equipment provided in the 1033 program is militaristic in nature. Indeed, many of the items obtained by law enforcement agencies from this program are not what would be commonly considered as militarized gear when comparing these items to Kraska’s (2007) definition of the materiel dimension (Johnson & Hansen, 2016; Koslicki & Willits, 2018; Ramey & Steidley, 2018). These non-military, or general, items avail­ able through the 1033 Program include categories such as furniture, office supplies, exercise equipment, first aid and medical equipment, and miscellaneous tools and industrial parts (Else, 2014; Koslicki & Willits, 2018; Ramey & Steidley, 2018).
+While it could be argued that these general items should still be considered militarized, as they were obtained from a direct military source, prior literature has operationalized Kraska’s (2007) materiel dimension largely by examining indicators such as armored vehicles, firearms (often long rifles, though some researchers include all fire­ arms), uniforms of military appearance or origins, and body armor or other wearable gear of paramilitary appearance (such as night vision, riot gear and ballistic helmets) (Bieler, 2016; Burkhardt & Baker, 2018; Carriere & Encinosa, 2017; Institute for Intergovernmental Research, 2015; Johnson & Hansen, 2016; Koslicki & Willits, 2018; Kraska & Kappeler, 1997; Maguire & King, 2004; Ramey & Steidley, 2018). We therefore propose that the inclusion of the more non-military or general items obtained from the 1033 Program into an analysis determining the
+
+2
+
+W.M. Koslicki et al.
+effects of military equipment on police use of fatal force may obfuscate the effects of gear more commonly identified by the literature as mili­ taristic on police use of fatal force. The aforementioned study conducted by Delehanty et al. (2017) included all items obtained from the 1033 Program in the models, while Lawson Jr. (2019) likewise assessed 1033 Program materiel based on US dollar (USD) value, reasoning that the more expensive items are those that are higher in technological so­ phistication and more visibly militaristic. Therefore, it is prudent to retest their research question after categorizing the 1033 Program data to parse out the effects of an LEA receiving equipment commonly consid­ ered to be militarized on their use of fatal force, as opposed to their acquisition of any items through the 1033 Program.
+1.3. Police lethal force data
+Police lethal force data is equally difficult to measure. As previously discussed, two of the aforementioned studies of the 1033 Program’s effect on suspect deaths utilized LEOKA data; however, the LEOKA dataset does not contain information on assaults or deaths beyond those experienced by law enforcement officers (though these data can still be useful in examining other policing outcomes, like officer safety, as also examined by Bove and Gavrilova). Historically, most researchers have made use of one of three data sources to study police lethal force: the National Vital Statistics System (NVSS), Arrest Related Deaths (ARD) (a subprogram of the Death in Custody Reporting Program [DCRP]), or Supplementary Homicide Report (SHR) (Banks, Couzens, Blanton, & Cribb, 2015; Loftin, Wiersema, McDowall, & Dobrin, 2003; Mumola, 2007). It is important to note, however, that there is currently no federal policy mandating U.S. law enforcement agencies to report suspect or arrest-related deaths; agency reporting of these statistics to the U.S. Bureau of Justice Statistics is currently voluntary (President’s Task Force on 21st Century Policing, 2015). Perhaps unsurprisingly, there is sub­ stantial within-agency variation in police lethal force rates across these sources (Loftin et al., 2003; Mumola, 2007). Furthermore, Klinger (2012) has demonstrated that SHR estimates do not match internal agency statistics and, consequently, has argued that these data are illsuited to the study of police lethal violence.
+Due to the lack of a national, comprehensive reporting and data collection policy, some scholars, such as Delehanty et al. (2017), Lawson Jr. (2019), and Nix, Campbell, Byers, and Alpert (2017), have turned to crowdsourced datasets such as the Washington Post’s Killed by Police database, Mapping Police Violence, and Fatal Encounters. Fatal En­ counters (FE) provides one of the most comprehensive databases that includes descriptive information on incidents involving police use of lethal force, as the Washington Post data only counts shooting-related fatalities, and FE includes more fatalities per year than Mapping Po­ lice Violence. However, even a cursory examination of the FE data re­ veals that it captures incidents which many researchers would not typically count as instances of police use of force. As such, while these data likely do a better job of tracking lethal police force than prior official data sources, it is clear that these data must be verified and cleaned prior to use. Indeed, the inclusion criteria that Fatal Encounters adheres to is unclear, making it crucial for researchers to understand the type of incidents included.
+Put simply, there are major issues related to both the measurement of materiel police militarization and police lethal force. Neither the 1033 data, nor newly available crowdsourced datasets (like FE) are clean and ready for analysis upon download. As such, we argue that very little is actually known about the relationship between police militarization and police use of force. Here, we describe how we manage both of these data sources, then provide an analysis of the raw (uncleaned) and cleaned data, examining the data both in terms of USD value and amount of 1033 equipment obtained. Our analysis has two goals: 1) to demonstrate the importance of data cleaning and considerations and 2) to provide robust empirical evidence regarding the link between 1033 Program acquisi­ tions and police lethal force.
+
+Journal of Criminal Justice 72 (2021) 101781
+2. Data and method
+To examine the relationship between acquisitions from the 1033 Program and police lethal force, we conduct the analyses on both raw and cleaned data. Specifically, we use Fatal Encounters data from 2010 to 2014 and 1033 Program data from 2011 to 2014. Our general approach is to estimate a series of regression models which use 1033 Program acquisitions, and control variables, to predict police lethal force for municipal police agencies in the United States, while control­ ling for police lethal force in the prior year (hence why our FE data goes back one year further than the 1033 data). All agencies that appeared on the Fatal Encounters dataset or that appeared on the 1033 Program dataset within this timespan were merged and included in the sample; in total, we examine 2973 agencies for a total of 11,884 agency-years (98 agency-years were omitted due to missing Census data when merging with the control variable datasets).
+2.1. Dependent variable
+The dependent variable of the current study is the count of lethal force incidents per agency, per year, as obtained by the FE database as of 2018. The FE crowdsourcing platform requires submissions to include a news article associated with each police/civilian interaction resulting in civilian death, and the FE research team compares news article sub­ missions to other known media sources to verify their accuracy (Bur­ ghart, 2020). To increase the accuracy of our findings, we analyzed each FE incidents’ associated news article to verify that the deceased died as a result of a police officer using lethal force, or whether the fatality occurred due to non-law enforcement action (or is a duplicate entry). The verification process is time-consuming but an essential cleaning method to ensure a valid measurement of the frequency of lethal force incidents. Indeed, it took the current authors around 1400 h to verify incidents occurring between 2010 and 2014.
+During the verification process, significant issues were identified with incidents included in the FE database. Indeed, out of the 7673 in­ cidents occurring between 2010 and 2014, 2585 of these were identified as not involving police use of lethal force or as duplicates. Specifically, 695 incidents were ruled a self-inflicted suicide, 74 as drug-related, 214 as medical-related, 38 as a drowning, 14 as an accident involving the deceased falling from a height, 1053 involved a vehicular crash not caused by police action, 452 involved a victim killed by a suspect, 15 were duplicates, 25 involved an individual being killed by a non-law enforcement agency, and 5 contained either individuals who were not dead or had an inaccurate year of death. None of the previously mentioned incidents involved a death caused by a police officer using lethal force, according to each incident’s associated news article. Additionally, the dataset does not distinguish incidents involving on and off-duty police officers. The current authors found that of the 5088 in­ cidents involving police use of lethal force, 258 of these involved offduty officers. Incidents involving off-duty police officers using lethal force occur in a different context, such as, for example, self-defense or murder. Therefore, depending on a study’s purpose, including off-duty incidents may inflate results in studies examining on-duty officer behavior.
+In sum, the above cases were excluded from the data in the present study, resulting in 4830 total instances of lethal force across the study’s agencies and years. In addition to using measures of lethal force as an outcome variable, we also control for lethal force incidents that occurred in the prior year ensuring that our results are not confounded by lethal force trends for a given agency.
+2.2. Independent variables
+2.2.1. 1033 Program data Data were obtained through the LESO’s public information webpage
+and include all LESO surplus materiel transferred to any agency
+
+3
+
+W.M. Koslicki et al.
+participating in the 1033 Program between the years of 2010–2014. Current data reporting for the program represents quarterly reports of Department of Defense (DOD) items in law enforcement possession, but also does not contain data on items with a DOD demilitarization (DEMIL) code of A (no demilitarization or mutilation required) that are possessed for longer than one year, as these items are then considered law enforcement property (Ramey & Steidley, 2019). However, the first quarter report for 2016 (the dataset used for the present study) contains data for DEMIL A items transferred as far back as July 2010 and there­ fore appears to follow a more comprehensive reporting method. Due to the aforementioned importance of categorization of the 1033 Program data, the current study follows the categorization method similar to that utilized by Koslicki and Willits (2018) and Ramey and Steidley (2018) by sorting all types of acquisitions into separate categories that differ­ entiate between militarized (that which emphasizes the use or threat of force to gain compliance, according to Kraska, 2007) and general cate­ gories (such as office supplies and furniture). Specifically, the 2016 1033 Program dataset includes the NATO stock number (NSN) codes of all items acquired, and the first four digits of the NSN (the federal supply group, or FSG) contain the broader government classification. Coding was guided by using the FSGs alongside the English labels included for each item in the dataset. However, a broader categorization approach solely informed by FSG would – using motor vehicles (FSG 23-) as an example – include motor vehicles not specifically considered militaristic in the literature (such as motorized scooters and tractors). The catego­ rization scheme therefore was narrowed to include the federal supply classes (FSCs) within the FSGs to include any item with a clear connection to weapons or tactical approaches that are not considered standard to law enforcement, as well as any item that would convey a visible paramilitary appearance (a list of the specific FSCs used for the present study can be provided upon request for future research and replication). Keeping in line with the majority of studies that categorize the 1033 data, all calibers of firearms are also included in our measures.
+Examples of items deemed militaristic using this coding method include military motor vehicles and accessories (such as mine-resistant ambush protected, or MRAP, vehicles); firearms and accessories; mili­ tary uniforms and wearable equipment (such as battle-dress uniforms, or BDUs, tactical vests, riot gear, and ballistic helmets); and night vision and night vision accessories.
+In addition to the number of items obtained by agencies, the 1033 data include the USD value of each item obtained. Most research has focused on the USD value of these items (Bove & Gavrilova, 2017; Delehanty et al., 2017; Lawson Jr., 2019; Ramey & Steidley, 2018) and, accordingly, we use the USD value of 1033 acquisitions in a given year as one of our primary measures of militarization. Given that these values are highly skewed, we take the natural log of the value of these items (shifted by 0.5, as most agencies do not acquire any items from the program in a given year). However, the USD value of 1033 items varies tremendously, with militaristic vehicles often worth hundreds of thou­ sands of dollars, while rifles are often worth considerably less (indeed, one MRAP has roughly the equivalent value of 1300 rifles obtained through the program). Given this, we include one additional set of measurement strategies in which we exclude military vehicle value from our value measure. The value of military vehicles creates a pervasive skew in the data, even with logarithmic transformations. Moreover it is not immediately clear that obtaining one militaristic vehicle makes an agency more militaristic than obtaining, say, 1300 semi-automatic rifles (indeed, a higher count of military items used by a department may enhance the cultural dimension of militarization, according to Dele­ hanty et al., 2017).
+Given that obtaining these military items can occur at any point during the year and that lethal force incidents can occur at any time during the year, each of these measures are lagged so that the prior year’s measure of militarization is used to the predict the next year’s measure of lethal force. Taken together, we generated six dependent variables: two variations of Number of 1033 Acquisitions (Lagged) (one
+
+Journal of Criminal Justice 72 (2021) 101781
+variation being raw data, the other being categorized according to the scheme above); two variations of Value of 1033 Acquisitions (Lagged) (raw and categorized); and a categorized Value of 1033 Acquisitions with Vehicles Removed.
+2.2.2. Control variables While our primary purpose is examining the link between 1033 ac­
+quisitions and police lethal force, we control for a number of other factors which might also predict lethal force. Specifically, we control for the number of lethal force incidents in the prior year, with data obtained from the FE database. This measure is included to account for prior trends in lethal force. That is, it is possible that some agencies employ deadly force at higher rates than others and this measure accounts for this past trend as a predictor. Though the data remain observational in nature, this measure ensures that our results are not spurious by way of prior lethal force rates. We also include agency size (measured as the natural logarithm of the number of sworn officers in a department), obtained from the Uniform Crime Reports (UCR) data, given prior research finding significant differences in predictors of small and large agencies’ uses of fatal force (Willits & Nowacki, 2014).
+Several other environmental controls were also included; these are: violent crime rates (obtained from UCR data), median income, the percentage of the population who graduated from high school or higher, the percentage of the population who are Black, and the percentage of the population who are Hispanic (these latter controls being obtained from the American Community Survey or ACS). We control for the vi­ olent crime rate of the city of each agency’s location, given the incon­ clusive effects of crime rates on police use of force (Alpert & MacDonald, 2001; Hickman & Piquero, 2009; Lawson Jr., 2019; Nix et al., 2017; Smith, 2004; Terrill & Reisig, 2003) and the potential for an aggressive, “crime fighter” mentality to be adopted by police departments in these areas (Paoline, 2003). Median income and the percentage of the popu­ lation who completed high school (or higher) are included as measures of economic stability and opportunity (or lack thereof), as the rela­ tionship between poverty and law enforcement has been theoretically approached from both a structural conflict perspective (the use of law enforcement to maintain structural status quo with marginalized pop­ ulations) (Ramey & Steidley, 2018) as well as a more ecological expla­ nation (officers being more primed to use force in areas perceived as dangerous, including those areas of economic disadvantage) (Nix et al., 2017; Terrill & Reisig, 2003). Lastly, given resent research demon­ strating disproportionately higher police uses of fatal force on minorities (Menifield, Shin, & Strother, 2019; Nix et al., 2017) and mixed findings of prior research (see Klahm & Tillyer, 2010), we control the percentage of the population that is Black (not Hispanic), and the percentage of the population that is Hispanic. Related to this, we include the population of a given city (per year) as the exposure for our count-based regression models. Table 1 displays the descriptive statistics of these controls, as well as the independent and dependent variables.
+3. Analysis
+As the dependent variable is a count variable (the number of lethal force incidents), we make use of count-based regression modelling strategies. Standard Poisson and negative binomial regression ap­ proaches were deemed inappropriate, given the repeated measures na­ ture of our data in that agencies were examined up to 4 years each. In addition, preliminary analyses suggested substantial overdispersion. As a result, our primary analyses make use of multi-level mixed effects negative binomial regression models estimated using the glmmTMB package in R (Brooks et al., 2017). For each of these models, we include the natural logarithm of the population of the city as an offset variable to account for population differences.
+First, we estimate two mixed-effects negative binomial regression models using the raw (uncleaned) 1033 and FE data. The first of these models uses the logged USD value of all 1033 acquisitions as the primary
+
+4
+
+W.M. Koslicki et al.
+
+Journal of Criminal Justice 72 (2021) 101781
+
+Table 1 Descriptive statistics and definitions for variables in the study
+
+Variable
+
+Mean
+
+Standard Deviation
+
+Lethal Force (Uncleaned)
+
+0.26
+
+1.08
+
+Lethal Force (Cleaned)
+
+0.17
+
+0.79
+
+Value of 1033 Acquisitions (Uncleaned)
+Value of 1033 Acquisitions (Cleaned)
+
+22.16 1.94
+
+128.50 34.76
+
+Value of 1033 Acquisitions, with
+
+0.11
+
+Vehicles Removed (Cleaned)
+
+Number of 1033 Acquisitions
+
+1.97
+
+(Uncleaned)
+
+Number of 1033 Acquisitions
+
+0.47
+
+(Cleaned)
+
+Median Household Income (in $1000s) 5.90
+
+24.56 13.96 4.29 3.38
+
+% Graduating High School or Higher 84.17 9.21
+
+% Population Black
+
+11.44 18.42
+
+% Population Hispanic
+
+12.15 17.95
+
+Number of Officers
+
+77.73 380.94
+
+Violent Crime Rate
+
+341.30 408.89
+
+Minimum Maximum Definition
+
+0 0 0 0 0 0 0 2.026 23.20 0.00 0 1 0.00
+
+29 27 5390.00
+
+Yearly count of lethal force incidents from the Fatal Encounters database, as downloaded on 2018 Yearly count of lethal force incident from the Fatal Encounters database, cleaned to remove incidents that did not qualify as police lethal force Yearly acquisitions from the federal 1033 program, in $1000s (USD)
+
+2618.58 2617.21 1298
+
+Yearly acquisitions from the federal 1033 program in $1000s, cleaned to only include military items Yearly acquisitions from the federal 1033 program, cleaned to only include military items, but omitting military vehicles. Yearly count of the number of items received from the 1033 program
+
+269 12.109 100.00 100.00 100.00 13,469 11,764.71
+
+Yearly count of the number of items received from the 1033 program, cleaned to only include military items Annual median household income in $1000’s, obtained from 5-year American Community Survey (ACS) estimates Annual percentage of the population age 25 and older who graduated from high school or higher, obtained from 5-year ACS estimates Annual percentage of the population defined as non-Latino Black or African American, obtained from 5-year ACS estimates Annual percentage of the population defined as Latino or Hispanic, obtained from 5-year ACS estimates Annual count of the number of full-time sworn, obtained from the Uniform Crime Report (UCR) Annual violent crime rate per 100,000 for violent index crimes, obtained from the UCR
+
+measure of militarization, while the second model uses the sum of all 1033 acquisitions as the primary measure of militarization. Next, we estimate these models again using cleaned 1033 and FE data, as well as an additional model where the value of acquisitions does not include military vehicles. Lastly, we estimate these models disaggregated by agency size. Prior research indicates that predictors of lethal force vary by agency size (Willits & Nowacki, 2014). Therefore, this disaggregation operates both as a robustness check for the models described above and as further examination of the differences between small and large agencies. Smaller agencies are those defined as serving fewer than 100,000 people, while large agencies cover populations over 100,000. Given the relative sparseness of lethal force incidents in smaller cities, lethal force is dichotomized for these models (both as the outcome variable and as the lagged measure of lethal force), which are then analyzed as mixed-effect logistic regression models. We also discuss a number of additional robustness checks that were performed that are available upon request.
+4. Results
+Table two presents the first four mixed-effects negative binomial regression models. Models 1 and 2 (the raw models) make use of all 1033 and FE data, while models 3 and 4 make use of only the cleaned versions of these data.
+Model 1 shows that the logged value of 1033 acquisitions was significantly related to police lethal force. As shown in this first column, 1033 acquisitions were negatively related to police lethal force (b = − 0.015, p < .05, Incident Rate Ratio = e.=0.015 = 0.985), suggesting that police agencies which obtain 1033 items of greater USD value in the prior year are less likely to use lethal force than other agencies, a result similar to the findings of Bove and Gavrilova (2017) and Harris and colleagues (2018). Model 2 reveals that the number of 1033 acquisitions obtained in the prior year is not significantly related to police lethal force, indicating that dollar value and number of items do not present the same results.
+In terms of control variables, the lagged FE measure is positively and significantly related to lethal force incidents in Models 1 and 2, sug­ gesting that agencies which used greater numbers of lethal force more in
+
+the past year were also more likely to use lethal force in the current year. Similarly, the violent crime rate is also positively related to lethal force incidents in both models, indicating that agencies in cities with higher crime rates are likely to have greater numbers of lethal force incidents. Median income and the percentage of the population which graduated from high school or higher are significant protective factors in both models, suggesting that police use lethal force at lower rates in cities with higher median incomes and with larger educated populations. Conversely, the percentage of the population which is Black is positively and significantly related to lethal police force in these first two models. Lastly, agency size was inversely and significantly related to police le­ thal force. This indicates that controlling for other factors (including the population of the city, which is included as offset variable), larger agencies were less likely to use lethal force than other agencies.
+The results for the cleaned models (Models 3 and 4 in Table 2) are substantively different in regards to police militarization. Once cleaned, the USD value is no longer significantly related to related to police lethal force. The number of 1033 acquisitions (cleaned), however, is positively related to use of force, indicating that agencies which obtained more items were likely to have more lethal force incidents than other agencies. Importantly, this result runs contrary to the results of the model using uncleaned data. The model indicates no difference between measures based on overall value of militaristic items and the value of militaristic items minus vehicles (Models 3 and 5).
+The percentage of the population who graduated from high school is no longer statistically significant in the cleaned data models. The remainder of the control variables that were significant in Models 1 and 2 remain significant and in the same directions as in Models 1 and 2. That is, agencies which used lethal force at a higher rate in the prior year and those operating in cities with larger Black populations and with higher violent crime rates were expected to use more lethal force in the current year, while agencies which operate in cities with higher median incomes, and larger agencies are found to use lethal force at lower rates. While these variables remained significant predictors for both the cleaned and uncleaned results, the coefficients for these variables differ in size. Using the formula detailed by Paternoster, Brame, Mazerolle, and Piquero (1998), Table 2 includes formal comparisons across un­ cleaned and cleaned models.
+
+5
+
+W.M. Koslicki et al.
+
+Table 2 Regression models comparing results using cleaned and uncleaned militarization and lethal force data
+
+Variable
+
+Model 1 (Uncleaned FE and 1033 Value Data)
+
+Model 2 (Uncleaned FE and 1033 Number Data)
+
+Model 3 (Cleaned FE and 1033 Value Data)
+
+Model 4 (Cleaned FE and 1033 Number Data)
+
+Model 5 (Cleaned Data, No Vehicles)
+
+Value of 1033 Acquisitions (Lagged)
+Number of 1033 Acquisitions (Lagged)
+Lagged Fatal Encounters
+Violent Crime Rate
+Median Income
+% HS Graduate or Higher
+% Black
+% Hispanic
+Agency Size
+Constant
+AIC Log-Likelihood
+
+− 0.015* (0.006)
+–
+0.056** (0.012) 0.043* (0.020) − 0.023* (0.010) − 0.010* (0.005) 0.011** (0.001) 0.001 (0.001) − 0.283** (0.022) − 10.020** (0.411) 11,504.8 − 5741.4
+
+–
+0.001 (0.004)
+0.051** (0.013) 0.043* (0.020) − 0.022* (0.009) − 0.010* (0.048) 0.011** (0.001) 0.001 (0.001) − 0.282** (0.022) − 10.030** (0.413) 11,514.2 − 5746.1
+
+0.010 (0.012)
+–
+0.036* (0.017) 0.081** (0.029) − 0.022 (0.012) − 0.010 (0.006) 0.007** (0.002) 0.001 (0.002) − 0.164** (0.026) − 11.219** (0.532) 8230.9 − 4104.5
+
+–
+0.004* (0.002)
+0.038* (0.017) 0.083** (0.029) − 0.022 (0.012) − 0.010 (0.006) 0.007** (0.002) 0.001 (0.002) − 0.167** (0.026) − 11.222** (0.531) 8227.9 − 4102.9
+
+0.016 (0.012)
+–
+0.035* (0.017) 0.082** (0.029) − 0.022 (0.012) − 0.010 (0.006) 0.007** (0.002) 0.001 (0.002) − 0.165** (0.026) − 11.218** (0.532) 8229.9 − 4104.0
+
+Note: Standard errors in parentheses. n = 5791 (1449 agencies).
+* p < .05. ** p < .01.
+
+Journal of Criminal Justice 72 (2021) 101781
+
+z statistics for Model 1 versus 3 coefficient comparisons
+
+z statistics for Model 2 versus 4 coefficient comparisons
+
+− 1.86
+
+–
+
+− 0.67
+
+0.96 − 1.08 − 0.06 0 1.79 0 − 3.49**
+
+0.61 − 1.14 0 0 1.79 0 − 3.38**
+
+As indicated by Table 2, while there are differences in the coefficients across models, these differences are generally not statistically signifi­ cant. The one exception here is the coefficient for agency size. Using the uncleaned data, agency size has a much stronger relationship with lethal force than when cleaned data are used to measure lethal force and
+
+militarization. The other noteworthy difference is that median income shifts from significant to non-significant when comparing uncleaned to cleaned data, though the Paternoster test does not indicate a significant difference in coefficients across models. Though the differences are not universal, these results do suggest that the use of uncleaned data can not
+
+Table 3 Models using cleaned data disaggregated by agency size
+
+Variable
+
+Model 1a (Large Agencies)
+
+Model 2a (Large Agencies)
+
+Model 3a (Large Agencies, No Mil. Vehicles)
+
+Model 4b (Small Agencies)
+
+Model 5b (Small Agencies)
+
+Model 6b (Small Agencies, No Mil. Vehicles)
+
+Value of 1033 Acquisitions (Lagged)
+Number of 1033 Acquisitions (Lagged)
+Lagged Fatal Encounters
+Violent Crime Rate
+Median Income
+% HS Graduate or Higher
+% Black
+% Hispanic
+Agency Size
+Constant
+AIC Log-Likelihood
+
+0.015 (0.016) –
+0.008 (0.018) 0.595** (0.112) 0.008 (0.024) 0.003 (0.014) − 0.007 (0.004) 0.004 (0.005) − 0.062 (0.060) − 16.113** (1.559) 2326.3 − 1152.2
+
+–
+0.002 (0.003) 0.010 (0.08) 0.596** (0.112) 0.009 (0.024) 0.004 (0.014) − 0.007 (0.004) 0.005 (0.005) − 0.066 (0.060) − 16.144** (1.557) 2326.2 − 1152.1
+
+0.023 (0.017) –
+0.007 (0.018) 0.597** (0.112) 0.009 (0.024) 0.003 (0.013) − 0.007 (0.004) 0.004 (0.005) − 0.065 (0.060) − 16.104** (1.563) 2325.4 − 1151.7
+
+0.001 (0.020) –
+− 0.133 (0.121) 0.081** (0.029) − 0.001 (0.014) 0.002 (0.007) 0.006** (0.002) 0.009** (0.003) 0.687** (0.042) − 5.571** (0.593) 5374.3 2677.2
+
+–
+0.011 (0.007) − 0.135 (0.121) 0.081** (0.029) − 0.001 (0.014) 0.002 (0.007) 0.006* (0.002) 0.009** (0.003) 0.685** (0.042) − 5.562** (0.593) 5372.1 − 2676.1
+
+− 0.001 (0.021) –
+− 0.133 (0.121) 0.081** (0.029) − 0.001 (0.014) − 0.002 (0.007) 0.006** (0.002) 0.009** (0.003) 0.687** (0.042) − 5.572** (0.592) 5372.3 − 2677.1
+
+Note: Standard errors in parentheses. a Large agency models use multi-level mixed effects negative binomial regression, with the dependent variable being count of police lethal force incidents; n = 871
+(218 agencies). b Small agency models use multi-level logistic regression, with the dependent variable being any police lethal force; n = 4907 (1231 agencies). * p < .05. ** p < .01
+
+6
+
+W.M. Koslicki et al.
+only affect the relationship between the key independent variable and the outcome variable, but also the relationship between control vari­ ables and the outcome variable.
+Table 3 displays the next set of regression models examining the link between 1033 acquisitions and lethal force incidents, using cleaned data and disaggregated by agency size. Prior research suggests that small and large town policing are quite distinct, with smaller agencies prioritizing generalization over specialization and having lower levels of militari­ zation (Falcone, Wells, & Weisheit, 2002); moreover, research suggests that the predictors of lethal force vary by agency size (Willits & Now­ acki, 2014). In this table, Models 1 and 2 present mixed-effects negative binomial regression models for large agencies (224 agencies with 896 agency-years serving populations of 100,000 or more), while Models 3 and 4 present mixed-effects logistic regression models for smaller agencies (2749 agencies and 10,990 agency-years serving populations of less than 100,000). Given that the prior results presented in Table 2 highlight the importance of using cleaned data, these models only report the results on cleaned 1033 and FE measures.
+Disaggregated by agency size, these models suggest that there is no link between 1033-based measures of militarization and police lethal force. In fact, for large agencies, the only significant predictor of police lethal force is the violent crime rate, suggesting that police in larger cities were more likely to use lethal force when the overall violent crime rate was higher. For smaller agencies, violent crime rates, the percent­ age shares of the population that is Black and Hispanic, and agency size predict police lethal force, though none of the 1033 Program measures are significant. These results seem contradictory to the models presented in Table 2, which suggested that the lagged FE measure was positively related to lethal force and that agency size was negatively related to police lethal violence. We caution against this interpretation. Agency size is positively related to the size of the community that a given agency serves and the population size is strongly and positively related to police lethal force (Pearson’s r = 0.78). The mixed-effects negative binomial regression models in Table 3 account for this by including population as an exposure variable. This exposure is not included in the mixed-effects logistic regression models, as these models are simply trying to predict whether an agency used lethal force or not, and not the populationbased rate at which lethal force was used. As a result, it is unsurpris­ ing that agency size is positively related to lethal force for the sub-setted small-town sample, as these models do not build population in as an exposure or offset. In any event, the most important of these results is the finding that 1033 acquisitions, once cleaned, are unrelated to police lethal force.
+In addition to these models above, we also estimated a set of zeroinflated mixed-effects negative binomial models on the full sample (using the log value measure of 1033 items) of clean and raw data to ensure that our results were not driven by the relative infrequency of lethal force incidents. These results (presented in the Appendix) are substantively similar to the models presented above in terms of finding no relationship between 1033 acquisitions and use of force.
+5. Discussion
+Taken together, the results of our analyses demonstrate that, when 1033 Program data and Fatal Encounters data are attentively cleaned prior to analysis, there appear to be several notable differences when examining our two main goals (demonstrating the differences between raw and cleaned data for both the 1033 Program and FE, and providing a robust analysis of the relationship between the 1033 Program and police fatal force). Specifically, we found that, while 1033 Program acquisi­ tions (measured by USD value) were initially significantly, negatively related to police use of fatal force when using raw data, this relationship fell out of significance once the analysis was conducted using cleaned datasets for the dependent and primary independent variable. Removing military vehicles from the analyses also demonstrated no effect on the relationship between the cleaned measure of 1033 acquisitions
+
+Journal of Criminal Justice 72 (2021) 101781
+(measured by USD value) and cleaned fatal force. Using cleaned data, the quantity of 1033 acquisitions became significantly, positively related, showing a very modest effect of 1033 Program acquisitions on police use of fatal force. However, this significant relationship disap­ pears when using cleaned data and disaggregating by agency size. This may be explained by the smaller sample sizes of the disaggregated models.
+Our findings therefore stand in contrast to those previously found by Delehanty et al. (2017) and Lawson Jr. (2019), likely due to the cleaning considerations necessary to obtain accurate results from both the 1033 Program and FE datasets (specifically, Delehanty and colleagues do not address cleaning considerations for either dataset; Lawson addresses verification of the FE dataset, but not in detail, and appears to measure the 1033 Program data in its entirety, based on value of acquisitions). Additionally, while Bove and Gavrilova (2017) and Harris and col­ leagues (2018) found no significant relationships between 1033 Pro­ gram acquisitions (as measured by USD value) and police fatal force, we again caution that LEOKA data does not capture data on police fatal force used on civilians, therefore casting these results into serious question. Careful selection and cleaning of data on police fatal force is necessary for obtaining robust, accurate results.
+We also find several other interesting relationships among the con­ trol variables. Specific to Table 2, we find that the percentage of the population who is Black was significantly related to a higher likelihood of police use of fatal violence across the models using both the raw and cleaned data, with this relationship remaining significant for small agencies (agencies serving populations of less than 100,000) when agencies were disaggregated by size (Table 3). The percentage of His­ panic/Latinx civilians within the population was also found to only be significant in areas served by small agencies. These findings may indi­ cate support for the racial threat hypothesis in areas with fewer than 100,000 residents. Previous literature on police fatal force has found evidence of the racial threat hypothesis (Menifield et al., 2019; Ross, 2015; Smith, 2004); however, we do not see this relationship in juris­ dictions of more than 100,000 residents in the current models. It is possible that with the smaller sample size in the large agency model that our analysis is underpowered to detect small effects, though it could be the case that demographics matter less for this outcome in more metropolitan areas. Additionally, for small agencies we find that agency size is positively, significantly related to use of fatal force, though not for large agencies, reflecting Willits and Nowacki’s (2014) findings that predictors of police use of fatal force differ across agency sizes; however, while Willits and Nowacki (2014) find agency size to be significantly related to fatal force for large agencies and not small agencies, we find the reverse. Violent crime rates are the only variable to maintain a significant, positive relationship with police use of fatal force across all models and agency sizes.
+Beyond these particular findings, however, we also reveal several broad implications for the study of police militarization and use of force, as well as the process of quantitative social science research. To this latter point specifically, this paper should serve as an example of the fundamental importance of careful data cleaning prior to quantitative assessment. All social science data, particularly crowdsourced data, require an attentive and methodological approach to cleaning. Indeed, Nix and Lozada (2020) recently demonstrated this importance by using a similar verification and cleaning process of the Mapping Police Violence dataset. Additionally categorization is necessary for the 1033 Program data, informed by considerations unique to the data in question (such as the assessment of general equipment obtained through the 1033 Program as opposed to that which the literature would consider milita­ ristic). This process is essential to reducing biases in the results and implications of research that may inform future scientific inquiry, practitioner decision-making, or potential public policy.
+In relation to future scientific inquiry, we hope that our paper will also engender much-needed dialogue surrounding the ways in which militarization should be measured, as there is still no concrete consensus
+
+7
+
+W.M. Koslicki et al.
+beyond the four dimensions provided by Kraska (2007). Furthermore, operationalization of these dimensions varies considerably, with the materiel dimension being more easily quantifiable, though recent research has attempted to explore novel ways of operationalizing the materiel, cultural, and operational dimensions, such as Koslicki’s (2020) content analysis of themes in police recruitment videos. While an emerging body of research operationalizes these dimensions in terms of public perceptions (Fox et al., 2018; Moule Jr., Burruss, et al., 2019a; Moule Jr., Fox, & Parry, 2019b), this study demonstrates the need to explore these avenues further, as well as other empirical, methodolog­ ically attentive examinations of militarization on associated police behavioral outcomes.
+Specific to the materiel dimension in particular, there is still variance in how these items are quantified (Bieler, 2016), and the 1033 Program only captures that which is transferred from the DOD – military items and equipment can be obtained through means outside of the program as well, such as through grants or departmental funds (Koslicki & Willits, 2018). For the 1033 Program in particular, we demonstrate that ac­ quisitions obtained through this program can be measured both through the USD value (as also done by Bove & Gavrilova, 2017; Delehanty et al., 2017; Lawson Jr., 2019; Ramey & Steidley, 2018) or the count (Harris et al., 2017) of items obtained. Previous scholars have also assessed these data based on dichotomous measures of whether specific items were acquired (Burkhardt & Baker, 2018; Koslicki & Willits, 2018). We would caution against valuing one way as superior to the other, and would instead suggest that it is essential to assess both USD value and count (indeed, Bove and Gavrilova do so as a robustness check), and to consider additional factors depending on the research question. For example, a recent study by Mummolo (2018) suggests that public per­ ceptions of visible police militarization (or that which the public per­ ceives to be militarized police equipment) damages citizens’ – particularly minorities’ – opinions of the police, and Simpson (2020) likewise finds public support of the police to be dependent on uniform and accessory appearance. In the case of public perception, a higher frequency of militaristic equipment (i.e. increased visibility) may be more influential than the overall dollar value of these items.
+There is likewise no consensus regarding categorization of the 1033 Program data itself. While it is clear that these data require careful consideration of categorization to avoid muddying the interpretive value of the data for research questions related to police militarization (Koslicki & Willits, 2018; Ramey & Steidley, 2018), the specific process of doing so has varied across scholars to date. For example, Bove and Gavrilova (2017, p. 7) divide these data as weapons, vehicles (any vehicle or vehicle accessory meant for tactical use), gears (communication equipment, night vision, and “special clothing”), and residuals (more general items such as office supplies). Harris et al. (2017) do not include in their militaristic categorization any uniforms or body armor; while Carriere and Encinosa (2017) assess weapons, body armor, and uni­ forms, but no military vehicles. Koslicki and Willits (2018, p. 147) create 10 categories, four of which are narrowed to LESO-protected categories or those deemed militaristic in the literature (military vehicles and ac­ cessories, military firearms and accessories, night vision and accessories, and military wearable equipment), and Ramey and Steidley (2018, p. 10) guide their categorization based on any equipment that could reasonably be considered to fall into Kraska’s (2007) definition of rep­ resenting the use of threat or violence to solve problems. While the 1033 Program data remain a useful tool in assessing the materiel dimension of militarization, the inconsistency of categorization among scholars may lead to varying results.
+The final broad implication of this study concerns police use of force, sharing similar concerns to the measurement and treatment of the data of the materiel dimension of militarization. As there is currently no national database for mandatory documentation of police use of fatal force (or indeed, any type of force), scholarly research must currently rely on crowdsourced data for fatal force, or on individual law enforcement agency partnerships for further use of force data. However,
+
+Journal of Criminal Justice 72 (2021) 101781
+as previously mentioned, the crowdsourced fatal force data sets require careful cleaning efforts to detect repeat cases, and – as with the 1033 Program – there is no guiding consensus regarding criteria for case in­ clusion or exclusion (for example, whether to include or exclude cases of suicide by cop, or police uses of fatal force while off-duty). Additionally, these data do not capture the number of community members shot by the police, who later recover. From a research perspective, we recom­ mend that criteria be guided by the research question, and that considerable time be spent on verifying the data before using them in analyses. We likewise recommend that further police behavioral out­ comes be examined, as fatal force – though more readily available at a national level due to crowdsourcing efforts – is also a relatively rare occurrence in policing. There remains a need to explore the link between militarization and other outcomes such as less-than-lethal force, deescalation, arrests, procedural justice, and other police-public in­ teractions. From a policy perspective, we advocate for a mandatory national system of reporting and collecting fatal force data from U.S. law enforcement agencies.
+In addition to these considerations, there are several additional limitations to the current study. First, while the available 1033 Program data contain all transfers of equipment, nothing is currently known of the contexts and frequencies of recipient departments’ use of transferred items. For example, an agency may obtain an MRAP primarily for infrequent environmental disaster response, while another may obtain an MRAP for frequent use in conducting drug raids; given the different nature and frequency of these two hypothetical agencies’ use of their MRAPs, one could theoretically expect different outcomes specific to those agencies. Further research would benefit from agency-level ex­ aminations to obtain more information about 1033 acquisition uses and outcomes. Additionally, as addressed previously, assessing militariza­ tion at just the materiel dimension disregards the interplay between Kraska’s (2007) other three dimensions, leaving any assessment of the 1033 Program incomplete in capturing the entirety of the concept.
+Lastly, the analysis itself has some limitations as well. While the random-effects models with lagged variables do an excellent job of controlling for prior trends and agency-to-agency variation, these models are almost certainly limited by model specification issues. It is likely that additional variables predict lethal force incidents and the degree to which they are related to 1033 acquisitions is important to consider. Given our modest goals of examining the consequences of data management choices as applied to this topic, this is not a major concern for our research but should be considered for future analyses. More broadly, however, these models are not suitable for causal claims. Future research adopting quasi-experimental designs is likely better suited for these purposes, but even these models will be limited by measurement error issues given the quality of data available for police militarization and use of force measures.
+6. Conclusion
+Police militarization continues to grow in relevance in the wake of police responses to the 2020 Black Lives Matter demonstrations, and there is continuous need to examine militarization and its outcomes empirically. Not only is continued empirical research necessary, but – as the present study demonstrates – research must be attentive to the origin and nature of the data used in empirical analyses in order to obtain the most robust results possible. The current study, when cleaning both the independent and dependent variables and assessing the 1033 acquisi­ tions in terms of both value (with and without military vehicles removed) and quantity, finds a very modest association between the quantity of 1033 Program acquisitions and fatal force, though this relationship disappears when disaggregating agencies by size of juris­ diction served.
+However, we strongly caution against an overly simple interpreta­ tion that these findings demonstrate a lack of evidence of nationwide police militarization. U.S. law enforcement agencies continue to directly
+
+8
+
+W.M. Koslicki et al.
+receive military equipment through the 1033 Program; therefore, as previously discussed, additional examination into the use of this equipment is necessary, while also examining a variety of policing outcomes beyond fatal force. Beyond the 1033 Program, research examining further measures of Kraska’s (2007) materiel dimension, as well as the other three dimensions, must also continue in order to gain a fuller picture of U.S. police militarization, its outcomes, and ways to redress the overlap between the law enforcement and military institutions.
+Funding
+This research did not receive any specific grant from funding
+
+Journal of Criminal Justice 72 (2021) 101781
+agencies in the public, commercial, or not-for-profit sectors. Declaration of Competing Interest
+None. Acknowledgements
+The authors would like to thank Jon George and Hailey Bouffiou for their invaluable assistance in data management.
+
+Appendix A. Appendix
+Table A.1 Zero-inflated regression models comparing results using cleaned and uncleaned militarization and lethal force data.
+
+Variable
+
+Model 1 (Uncleaned Data)
+
+Model 2 (Uncleaned Data)
+
+Model 3 (Cleaned Data)
+
+Model 4 (Cleaned Data)
+
+Value of 1033 Acquisitions (Lagged) Number of 1033 Acquisitions (Lagged) Lagged Fatal Encounters Violent Crime Rate Median Income % HS Graduate or Higher % Black % Hispanic Agency Size Constant
+
+− 0.015* (0.006) –
+0.056** (0.012) 0.035 (0.020) − 0.005** (0.002) − 0.007* (0.005) 0.010** (0.001) 0.001 (0.001) − 0.286** (0.021) − 10.007** (0.409)
+
+–
+0.001 (0.004) 0.051** (0.013) 0.035 (0.020) − 0.005** (0.001) − 0.007 (0.005) 0.011** (0.001) 0.0010 .001 − 0.286** (0.021) − 10.007** (0.411)
+
+0.001 (0.593) –
+0.045** (0.011) 0.074* (0.034) − 0.010** (0.003) − 0.008 (0.007) 0.001 (0.002) − 0.005* (0.002) − 0.156** (0.028) − 10.480** (0.593)
+
+–
+0.005* (0.002) 0.030** (0.011)) 0.061* (0.028) − 0.008** (0.002) − 0.006 (0.005) 0.007** (0.002) 0.002 (0.002) − 0.146** (0.013) − 11.199** (0.437)
+
+Note: Standard errors in parentheses. Models 1,2, and 4 estimated using mixed-effects Poisson regression, Model 3 using zero-inflated negative binomial regression due to convergence errors. n = 5791 (1449 agencies).
+* p < .05. ** p < .01
+
+References
+Alpert, G. P., & MacDonald, J. M. (2001). Police use of force: An analysis of organizational characteristics. Justice Quarterly, 18(2), 393–409.
+Banks, D., Couzens, L., Blanton, C., & Cribb, C. (2015). Arrest-related deaths program assessment. Washington, D.C.: U.S. Department of Justice. Bureau of Justice Statistics.
+Bieler, S. (2016). Police militarization in the USA: The state of the field. Policing: An International Journal of Police Strategies & Management, 39(4), 586–600.
+Bove, V., & Gavrilova, E. (2017). Police officer on the frontline or a soldier? The effect of police militarization on crime. American Economic Journal: Economic Policy, 9(3), 1–18.
+Brooks, M. E., Kristensen, K., van Benthem, K. J., Magnusson, A., Berg, C. W., Nielsen, A., … Bolker, B. M. (2017). glmmTMB balances speed and flexibility among packages for zero-inflated generalized linear mixed modeling. The R Journal, 9(2), 378–400.
+Burghart, B. D. (2020). Fatal encounters. Available at http://www.fatalencounters.org/. Burkhardt, B. C., & Baker, K. (2018). Agency correlates of police militarization: The case
+of MRAPs. Police Quarterly, 22(2), 161–191. Carriere, K. R., & Encinosa, W. (2017). The risks of operational militarization: Increased
+conflict against militarized police. Peace Economics, Peace Science, and Public Policy, 23(3), 13–26. Center for Research on Criminal Justice. (1977). The Iron Fist and the Velvet Glove: An Analysis of the U.S. Police. San Francisco, CA: Garrett Press. Delehanty, C., Mewhirter, J., Welch, R., & Wilks, J. (2017). Militarization and police violence: The case of the 1033 program. Research and Politics, 4(2), 1–7. D’Esposito, J. M. (2016). Note: Are police officers equipped to protect and serve their communities? An examination into the militarization of America’s police and police legitimacy. Notre Dame Journal of Law, Ethics, & Public Policy, 30(1), 403–421.
+
+Else, D. H. (2014). The “1033 Program,” department of defense support to law enforcement. Washington, DC: Congressional Research Service.
+Endebak, J. A. (2014). More bang for their buck: How federal dollars are militarizing American law enforcement. John Marshall Law Review, 47(1), 1479–1506.
+Falcone, D. N., Wells, L. E., & Weisheit, R. A. (2002). The small-town police department. Policing: An International Journal of Police Strategies & Management, 25(2), 371–384.
+Fox, B., Moule, R. K., Jr., & Parry, M. M. (2018). Categorically complex: A latent class analysis of public perceptions of police militarization. Journal of Criminal Justice, 58, 33–46.
+Haggerty, K. D., & Ericson, R. V. (1999). The militarization of policing in the information age. Journal of Political and Military Sociology, 27(2), 233–255.
+Hall, A. R., & Coyne, C. J. (2013). The militarization of US domestic policing. The Independent Review, 17(4), 485–504.
+Harris, M. C., Park, J., Bruce, D. J., & Murray, M. N. (2017). Peacekeeping force: Effects of providing tactical equipment to local law enforcement. American Economic Journal: Economic Policy, 9(3), 291–313.
+Hickman, M. J., & Piquero, A. R. (2009). Organizational, administrative, and environmental correlates of complaints about police use of force: Does minority representation matter? Crime & Delinquency, 55(1), 3–27.
+Institute for Intergovernmental Research. (2015). After-action assessment of the police response to the august 2014 demonstrations in Ferguson, Missouri. In COPS office critical response initiative. Washington, DC: Office of Community Oriented Policing Services.
+Johnson, T. C., & Hansen, J. A. (2016). Law enforcement agencies’ participation in the military surplus equipment program. Policing: An International Journal of Police Strategies & Management, 39(4), 791–806.
+Kappeler, V. E., & Kraska, P. B. (2015). Normalising police militarisation, living in denial. Policing and Society, 25(3), 268–275.
+
+9
+
+W.M. Koslicki et al.
+Klahm, C. F., & Tillyer, R. (2010). Understanding police use of force: A review of the evidence. Southwest Journal of Criminal Justice, 7(2), 214–239.
+Klinger, D. A. (2012). On the problems and promise of research on lethal police violence: A research note. Homicide Studies, 16(1), 78–96.
+Koslicki, W. (2017). SWAT mobilization trends: Testing assumptions of police militarization. Policing: An International Journal of Police Strategies & Management, 40 (4), 733–747.
+Koslicki, W. M. (2020). Recruiting warriors or guardians? A content analysis of police recruitment videos. Policing & Society. https://doi.org/10.1080/ 104394463.2020.1765778.
+Koslicki, W. M., & Willits, D. (2018). The iron fist in the velvet glove? Testing the militarization/community policing paradox. International Journal of Police Science & Management, 20(2), 143–154.
+Kraska, P. B. (2007). Militarization and policing – Its relevance to 21st century police. Policing, 1(4), 501–513.
+Kraska, P. B., & Cubellis, L. J. (1997). Militarizing Mayberry and beyond: Making sense of American paramilitary policing. Justice Quarterly, 14(4), 607–629.
+Kraska, P. B., & Kappeler, V. E. (1997). Militarizing American police: The rise and normalization of paramilitary units. Social Problems, 44(1), 1–18.
+Kraska, P. B., & Paulsen, D. J. (1997). Grounded research into U.S. paramilitary policing: Forging the iron fist inside the velvet glove. Policing and Society, 7(4), 253–270.
+Lawson, E., Jr. (2019). TRENDS: Police militarization and the use of lethal force. Political Research Quarterly, 72(1), 177–189.
+Loftin, C., Wiersema, B., McDowall, D., & Dobrin, A. (2003). Underreporting of justifiable homicides committed by police officers in the United States, 1976-1998. American Journal of Public Health, 93(7), 1117–1121.
+Maguire, E. R., & King, W. R. (2004). Trends in the policing industry. The Annals of the American Academy of Political and Social Science, 593(1), 15–41.
+Menifield, C. E., Shin, G., & Strother, L. (2019). Do white law enforcement officers target minority suspects? Public Administration Review, 79(1), 56–68.
+Moule, R. K., Jr., Burruss, G. W., Parry, M. M., & Fox, B. (2019a). Assessing the direct and indirect effects of legitimacy on public empowerment of police: A study of public support for police militarization in America. Law & Society Review, 53(1), 77–107.
+Moule, R. K., Jr., Fox, B. H., & Parry, M. M. (2019b). The long shadow of Ferguson: Legitimacy, legal cynicism, and public perceptions of police militarization. Crime & Delinquency, 65(2), 151–182.
+
+Journal of Criminal Justice 72 (2021) 101781
+Mummolo, J. (2018). Militarization fails to enhance police safety or reduce crime but may harm police reputation. Proceedings of the National Academy of Sciences of the United States of America, 155(37), 9181–9186.
+Mumola, C. J. (2007). Arrest-related deaths in the United States, 2003–2005. Washington, DC: US Department of Justice, Office of Justice Programs.
+Nix, J., & Lozada, M. J. (2020). Do police killings of unarmed persons really have spillover effects? Reanalyzing Bor et al. (2018). SocArXiv. https://doi.org/10.31235/ osf.io/ajz2q.
+Nix, J., Campbell, B. A., Byers, E. H., & Alpert, G. P. (2017). A bird’s eye view of civilians killed by police in 2015. Criminology & Public Policy, 16(1), 1–32.
+Paoline, E. A., III (2003). Taking stock: Toward a richer understanding of police culture. Journal of Criminal Justice, 31(3), 199–214.
+Paternoster, R., Brame, R., Mazerolle, P., & Piquero, A. (1998). Using the correct statistical test for the equality of regression coefficients. Criminology, 36(4), 859–866.
+President’’s Task Force on 21st Century Policing. (2015). Final report of the President’s task-force on 21st century policing. Washington, DC: Office of Community Oriented Policing Services.
+Ramey, D. M., & Steidley, T. (2018). Policing through subsidized firepower: An assessment of rational choice and minority threat explanations of police participation in the 1033 program. Criminology, 56(4), 812–856.
+Ramey, D. M., & Steidley, T. (2019). Corrigendum: Policing through subsidized firepower: An assessment of rational choice and minority threat explanations of police participation in the 1033 program*. Criminology, 57(2), 369–372.
+Ross, C. T. (2015). A multi-level Bayesian analysis of racial bias in police shootings at the county-level in the United States, 2011-2014. PLoS One, 10(11), 1–34.
+Simpson, R. (2020). Officer appearance and perceptions of police: Accoutrements as signals of intent. Policing: A Journal of Policy and Practice, 14(1), 243–257.
+Smith, B. W. (2004). Structural and organizational predictors of homicide by police. Policing: An International Journal of Police Strategies & Management, 27(4), 539–557.
+Terrill, W., & Reisig, M. D. (2003). Neighborhood context and police use of force. Journal of Research in Crime and Delinquency, 40(3), 291–321.
+Willits, D. W., & Nowacki, J. S. (2014). Police organisation and deadly force: An examination of variation across large and small cities. Policing and Society, 24(1), 63–80.
+
+10
+

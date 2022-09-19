@@ -1,0 +1,2171 @@
+Does Military Aid to Police Decrease Crime? Counterevidence from the Federal 1033 Program and Local Police Jurisdictions in the United States∗
+
+Anna Gunderson Elisha Cohen Kaylyn Jackson
+
+Adam Glynn
+
+Michael Leo Owens
+
+February 5, 2019
+
+Tom S. Clark
+
+Abstract
+The proﬁle of American policing, from its physical appearance to its tactical operations, continues to change, aided by federal grants-in-aid programs for local law enforcement agencies to acquire surplus military equipment. Recent econometric studies of the eﬀects of federal subsidies of subnational police militarization in the United States, particularly transfers of surplus military equipment via the 1033 Program of the U.S. Department of Defense, imply that crime decreases and other positive beneﬁts accrue for law enforcement and order maintenance when local police agencies have more military-grade equipment. Leveraging newly-available data, we replicate and extend two of the most prominent of these studies. Our results challenge the validity of extant evidence that police militarization associated with the 1033 Program reduces crime and yields other social beneﬁts at the local level.
+
+∗Drafts of this paper were presented at the 2018 Annual Meeting of the American Political Science Association, Boston, MA, and at the 2018 symposium The Beneﬁts and Costs of Policing, organized by the Policing Project at New York University School of Law. All authors are aﬃliated with the Department of Political Science, Emory University, Tarbutton Hall 327, 1555 Dickey Drive, Atlanta, GA 30322. Direct all correspondence to Tom Clark (tclark7@emory.edu).
+
+1 Introduction
+Militarization is a prominent development in policing across the globe (Lutterbeck 2005, Fassin 2013, Roziere and Walby 2018, Balko 2013). In part, it is characterized by the increased possession, display, and use of military equipment, initially procured for warfare and national defense, inclusive of weapons, vehicles, technology, and attire, by subnational police departments (Kraska 2007). In the United States, numerous federal programs induce and organize the transfer of surplus military-grade equipment from the Department of Defense to subnational law enforcement agencies, particularly municipal police departments and county sheriﬀ’s oﬃces (Committee on Armed Services 2014). The intergovernmental transfers of military equipment have changed the physical appearance of many police oﬃcers, altered law enforcement operations of many police departments, and possibly aﬀected community perceptions of the police across the nation (Balko 2013, Mummolo 2018).
+While the militarization of American police is a phenomenon that has been taking place for decades and involves multiple organizational and procedural components, we focus on one salient policy—the provision of surplus military equipment to local police agencies. Such provision is permissible by federal law, enacted ﬁrst in 1990 and periodically expanded in subsequent years by the Congress. This law, most manifest in 1033 Program of the U.S. Department of Defense, is to assist domestic law enforcement agencies to acquire military surplus equipment for the purpose of controlling and reducing crime. The scale of surplus military equipment at the local level varies but it generally has increased over time. For example, the percentage of the population residing in a jurisdiction where a police department had received any surplus military equipment increased from 15 percent in 2009 to 29 percent in 2014 (Masera 2016).
+The key correlates and causes of the increased transfer of military-grade equipment to localities are still being determined (Ajilore 2015, Baumgart 2016). Nevertheless, the dominant justiﬁcation for militarizing the police via surplus equipment from the Department of Defense is that it supports their key purposes, namely crime prevention and control. In short, the assumption of federal
+1
+
+policymakers in the Congress and the White House is that militarizing local policing will reduce crime.
+Of course, police militarization may have consequences beyond the deterrence of crime and increased public safety. At a minimum, “militarization aﬀects the decision making of police by moving their preferences toward more violent responses to suspects” (Lawson 2018, Delehanty et al. 2017). Moreover, police militarization may aﬀect rates of police violence, lethal and nonlethal, against civilians, communities, and canines (Lawson 2018, Delehanty et al. 2017, Reingle Gonzalez et al. 2018, Mummolo 2018); public perceptions and opinions such as feelings about funding and legitimacy of and conﬁdence and trust in the police (Lawson 2018, Mummolo 2018); and possibly mass political behavior and elite preferences, which may be true of concentrated and aggressive policing in some cities (Laniyonu 2018b;a, Lerman and Weaver 2014b). Whether the militarization of local law enforcement agencies, particularly municipal police departments, aﬀects crime is an important empirical matter with normative implications. Social scientists, including political scientists, for decades have pondered the relationship among police departments, the communities they police, the methods they use, and the production of public safety, along with other outcomes associated with the coercive force of the local state (e.g. Wilson 1978, Muir 1979, Lipsky 1980, Soss and Weaver 2017).
+Beyond public safety, police militarization, like policing, generally, bears on classic and fundamental questions about the state, inclusive of its nature, size, power, potential abuses, and the proper balance and exchange of security, liberty, equity, and eﬃciency (Geller, Fagan and Tyler 2018). Given that police oﬃcers are the most visible representatives of the state and those with whom adult civilians are most likely to interact (Wilson 1978, Eith and Durose 2011, Lerman and Weaver 2014a, Epp, Maynard-Moody and Haider-Markel 2014, Davis, Whyde and Langton 2018), the study of police militarization goes to the heart of how political scientists understand citizens’ relationships with their governments and, by implications, the machinery and operation of democracy. As Soss and Weaver (2017) put it, “if one’s aim is to understand state powers to govern citizens, regulate their behaviors, revoke their freedoms, redeﬁne their civic standing, and to impose violence on them—and if one considers such practices relevant to understanding US politics—it is essential to confront the decisions police agencies and oﬃcers make.” Those decisions include police militarization and its civic eﬀects across localities of the United States.
+2
+
+Two prominent econometric studies recently evaluated whether transfers of surplus military equipment via the 1033 Program causes a decrease in crime rates and yields a bounty of the other positive externalities in relation to public safety and policing in the United States (Bove and Gavrilova 2017, Harris et al. 2017). Both studies claim that transfers of military surplus equipment cause a reduction in crime rates. In this paper, however, using newly available federal data on intergovernmental transfers of military equipment, we uncover a series of challenges to inference that arise from the nature and structure of the data previously available to researchers. Moreover, we report empirical results of a set of replication analyses that challenge extant ﬁndings that police militarization makes the polis better.
+2 The Militarization of Municipal and County Law Enforcement Agencies in the U.S.
+Police militarization includes direct militarization and indirect militarization (Balko 2013). The former refers to the use of military forces for domestic policing (e.g., colonial militias). The latter refers to the adoption of military attributes by police oﬃcers and their departments. More generally, we can think of militarization as consisting of at least four dimensions: material (armaments, other equipment, apparel), cultural (appearance, language, ideologies, preferences) organizational (“martial arrangements” of police agencies, inclusive of the creation of special or elite police forces), and operational (tactical and procedural activities akin to military operations) (Kraska 2007). The dimensions involve a number of choices and actions by police departments that increase the possession and deployment of military-grade equipment, including weapons, vehicles, technology, and attire, by subnational police departments (Kraska 2007). Indirect militarization may also involve the increased recruitment and training of military veterans as police oﬃcers (e.g., Weiss 2011).
+Police militarization has occurred during a larger shift in American policing, coupled with the rise in “tough on crime” policymaking and mass incarceration (Simon 2007). Generally, police departments have moved from reactive policing in response to citizen contact for assistance during or after crimes to proactive policing for the deterrence and prevention of crime (National Academies of Sciences 2018). This approach to policing has produced “more frequent police-initiated non-
+3
+
+voluntary public contacts...and more people within the criminal justice system through arrests, court appearances, and even time in jail” (Tyler, Jackson and Mentovich 2015). It also has been marked by greater degrees of spatially concentrated and physically aggressive policing. Plus, it has encouraged more departments to adopt the “legalistic style” of policing, which puts police oﬃcers “under some pressure to ‘produce’” more stops, searches, citations, and arrests (Wilson 1978).
+The militarization of local police can be driven not just by choices and values within police departments but also by choices of political institutions. City councils and state legislatures, for instance, can increase procurement budgets of police departments and other local law enforcement agencies for the acquisition and maintenance of military-grade equipment. At the same time, local law enforcement agencies beneﬁt, with little expense to them, from federal support for indirect militarization. A set of federal grants-in-aid programs (e.g., the Department of Defense 1033 Program, Department of Homeland Security Grant Program, and Department of Justice Edward Byrne Memorial Justice Assistance Grant Program) incentivize and facilitate the militarization of local law enforcement agencies, including municipal police departments and county sheriﬀs departments.
+The federal 1033 Program is central to the intergovernmental relations of police militarization. Given its spatial coverage (Radil, Dezzani and McAden 2017), it arguably is the most important program for the acquisition and possession of military equipment by local police agencies. The program, administered by the Law Enforcement Support Oﬃce (LESO) of the Defense Logistics Agency (DLA) of the Department of Defense, transfers surplus military equipment that has been decommissioned to local and state law enforcement agencies, particularly for use in ﬁghting crime, prosecuting the “War on Drugs,” and preparing for or responding to terrorism. Initially, the program, enacted by Congress temporarily in 1990 as part of the National Defense Authorization Act, and made permanent in 1997, restricted the acquisition of equipment to the purpose of drug law enforcement. However, the program now permits the use of surplus military equipment for nearly any law enforcement purpose. According to the LESO, at least 7,000 law enforcement agencies are enrolled in the 1033 program. As of 2017, the value of equipment, inclusive of “clothing and oﬃce supplies, tools and rescue equipment, vehicles, riﬂes, and other small arms,” transferred by the LESO to subnational law enforcement agencies stood at approximately $7 billion (United States Government Accountability Oﬃce 2017).
+4
+
+Though there is a vast diversity in the number and quantity of items shipped to counties, there is one primary distinction between them: whether they are controlled or uncontrolled. Controlled items are typically sensitive in nature and include objects like Mine-Resistant Ambush Protected Vehicles (MRAPs), aircraft, and small arms. Other equipment falls under the non-controlled category, items without military attributes like oﬃce furniture, medical supplies, and other materials. These diﬀerences make it diﬃcult to study militarization via the 1033 Program in the past1, but are an important qualitative diﬀerence in the kinds of equipment agencies are requesting. Despite common media coverage of heavily militarized police with sophisticated military weaponry, the majority of the products distributed by the 1033 Program are relatively uncontroversial items like oﬃce supplies.
+Many public policymakers up and down the intergovernmental ladder favor the militarization of police (Turner and Fox 2017). The general public, however, questions the utility of it, especially for smaller cities and rural counties. Generally, the public, according to opinion surveys, believes that the possession and use of military equipment by police for law enforcement purposes is “going too far” or it is ambivalent about its use (Ekins 2016, Fox, Moule Jr. and Parry 2018). Moreover, support for police militarization varies by ascriptive and attitudinal measures, particularly race, ideology, and perceptions of police legitimacy (Lockwood, Doyle and Comiskey 2018, Moule Jr., Fox and Parry 2018). Although the Obama administration issued an executive order prohibiting the transfer of some types of military equipment, the Trump administration rescinded that directive via its own executive order. Both presidential actions were taken in the absence of empirical examinations of the local eﬀects of police militarization.
+Overall, the literature on police militarization is largely conceptual and descriptive (Bieler 2016). Rigorous empirical studies of the causes and consequences of the variation in the possession of military equipment by local law enforcement agencies, especially via the 1033 program, are nascent (Ajilore 2015, Baumgart 2016, Masera 2016, Delehanty et al. 2017, Bove and Gavrilova 2017, Harris et al. 2017, Lawson 2018, Carriere and Encinosa 2017, Mummolo 2018). The two most prominent and publicized of these studies, published together in 2017, received media and policymaker attention for reporting a range of positive eﬀects of federal transfers of surplus military
+1This is primarily because uncontrolled items drop oﬀ the LESO ledgers after one year - see the appendix for more information.
+5
+
+equipment to localities. The reported beneﬁts include reductions in all types of crime, without any negative eﬀects on outcomes such as case closure rates, arrest rates, or assaults and injuries of oﬃcers, as well as reductions in citizen complaints against the police and declines in civilian assaults and deaths of police oﬃcers (Harris et al. 2017, Bove and Gavrilova 2017). Other studies, however, observe that police militarization produces adverse eﬀects for communities (e.g Masera 2016, Carriere and Encinosa 2017, Lawson 2018, Mummolo 2018). There is evidence, for instance, that more federal transfers of military equipment to localities for police, measured by the value of surplus military equipment per capita, increases the likelihood a police oﬃcer is killed by civilians or a civilian is killed by the police (Wickes 2016, Lawson 2018, Delehanty et al. 2017, Masera 2016). Plus, there is evidence of a signiﬁcant displacement eﬀect of police militarization, whereby crime may decrease in one jurisdiction as it increases in proximate jurisdictions (Masera 2016).
+There are at least three explanations for the mixed results of previous studies of local police militarization, particularly militarization assisted by the 1033 Program. First, some forms of surplus military equipment may produce diﬀerent eﬀects. Multiple categories of surplus military equipment exist, including weapons, optics, radar, and vehicles. Local law enforcement agencies’ stock of surplus military equipment varies across these categories, with some categories of equipment yielding diﬀerent eﬀects on, for instance, crime rates. Both Harris et al. (2017) and Bove and Gavrilova (2017) disaggregate total surplus military equipment by key categories and report diﬀerential eﬀects by categories of equipment. Second, empirical studies have used diﬀerent units of analysis. Most studies analyze federal transfers to and possession of surplus military equipment by local law enforcement agencies at the county level (e.g. Harris et al. 2017, Bove and Gavrilova 2017). Other studies conduct their analyses at the state level (e.g. Carriere and Encinosa 2017, Delehanty et al. 2017, Wickes 2016). The remainder analyze the eﬀect(s) of police militarization at the the agency-level (e.g. Lawson 2018, Masera 2016). Third, while most studies focus on the distribution of surplus military equipment from the same federal program (for the exception, see Mummolo 2018), they tend to measure police militarization diﬀerently. Studies can use the quantity of surplus military equipment transferred to agencies, municipalities, and counties or they can use the monetary value of equipment the federal program transfers to localities (see either Bove and Gavrilova 2017, Harris et al. 2017). In short, diﬀerences in data structure and estimation likely undermine consensus about the eﬀects of the militarization of local law enforcement agencies.
+6
+
+3 Revisiting Prominent Studies for Replication
+Due to the existence of new data at the agency level, we empirically revisit the two most prominent studies that ﬁnd and report the strongest evidence of positive eﬀects of police militarization. These studies performed their analysis at the county level, while we attempt to replicate their ﬁndings at the agency level.
+3.1 Bove and Gavrilova (2017) and Harris et al. (2017)
+Bove and Gavrilova (2017) primarily examine whether the monetary value of surplus military equipment possessed by law enforcement agencies causes a reduction in crime rates. The authors also test how the monetary value of military equipment aﬀects arrest rates and a variety of police activities, including the number of civilian and oﬃcer employees, the number of calls, assaults and deaths of police oﬃcers, and citizen complaints. Harris et al. (2017) examine whether the volume of surplus military equipment such as the amount of guns received by local law enforcement agencies aﬀects citizen complaints about police, assaults on oﬃcers, oﬃcer deaths, arrests for a variety of crimes, crime rates, and case closure rates. Both studies ﬁnd evidence that federal provision of military-grade equipment to local law enforcement may signiﬁcantly contribute to increased public safety. Speciﬁcally, police militarization, as measured by value or volume of military-grade equipment, is associated with lower crime rates, decreased citizen complaints, and fewer assaults on oﬃcers. (Yet they ﬁnd, too, that the value and volume of police militarization may increase drug crime arrests and not aﬀecting oﬀender deaths.) Therefore, these studies suggest that police militarization may achieve the overall policy goals its supporters claim. Perhaps they suggest, too, that militarized municipal and county police agencies are more eﬀective at law enforcement and order maintenance, without producing or producing less adverse consequences.
+Both of these studies recognize an important challenge in studying the eﬀects of police militarization— police do not randomly receive military equipment from the federal government. The potential for endogeneity of the possession of military equipment to the outcomes we seek to understand is great. For example, if crime rates vary stochastically, and if police departments respond to high crime rates by seeking military-grade equipment, then regression to the mean in crime rates would lead to a spurious negative correlation between police militarization and crime rates.
+7
+
+To overcome this problem, the two studies use an instrumental variable design; however, they use diﬀerent instruments. Bove and Gavrilova (2017) employ an instrument that combines information about military spending by the federal government and previous acquisitions of surplus military equipment by counties. Speciﬁcally, they construct a variable by interacting a county’s likelihood of receiving any surplus military equipment with U.S. military spending, as a county is only eligible to receive that aid if federal military spending is suﬃciently high in the previous year. They sum the quantity of items received by each county and divide that number by the lagged amount of military spending by the U.S. government. Essentially, this allows the authors to compare counties that frequently receive aid to counties that rarely do, in years following high U.S. military spending relative to those following lower military spending.
+Harris et al. (2017) employ a diﬀerent instrument. In fact, they propose four diﬀerent instrumental variables, all of which focus on the likelihood a county will receive aid based on its location. Though the federal government distributes surplus military equipment to subnational agencies free of charge, agencies must pay the costs of shipping the equipment from a ﬁeld activity center (FAC), of which 18 exist around the country. Therefore, an agency’s proximity to a FAC directly contributes to the likelihood that agency will request aid, on the logic that it is cheaper for an agency closer to a FAC to get any military equipment than an agency further from it. Harris et al. (2017) use two instrumental variables that measure distances to/from FACs. However, as with Bove and Gavrilova (2017), because their data are only available aggregated by county, those instruments are measured at the county level, rather than the individual agency that makes the decision about whether to acquire the equipment. The ﬁrst instrument is the inverse distance from the closest FAC and the second is the inverse distance from the sixth-largest FAC. The authors use two separate measures of the distance from a FAC because an item could originate from any of the 18 FACs across the country, and no one center has all categories or types of equipment. The last two instruments consider factors that contribute to the likelihood of the agencies in a county requesting equipment, namely the county’s geographic size and its degree of drug traﬃcking. Harris et al. (2017) use a county’s land area and whether it was designated a High Intensity Drug Traﬃcking Area (HIDTA) as additional instruments, with both measures positively inﬂuencing the probability agencies in a county will request surplus military equipment. In addition, as distinct from Bove and Gavrilova (2017), they examine military aid in various categories of equipment, separately.
+8
+
+3.2 Sources of Concern
+Both of these previous studies were limited by the data made available by the Defense Logistics Agency (DLA) which, at the time, only provided the name of the county of the address to which equipment was shipped. The immediate cause of concern, then, is a matter of ecological fallacy. It is well known that ecological inference may result in bias (see Robinson (2009) and the following discussion articles for a primer). In this setting, an ecological fallacy would occur if, for example, military aid was going disproportionately to more suburban or rural parts of a county, while crime rates were decreasing in the more urban parts of the county, or vice versa. A county level analysis would indicate a positive correlation between military equipment and crime reduction while an agency level analysis would indicate a negative correlation between between military equipment and crime reduction.
+More recently, though, the DLA released agency-level inventories of the items in the possession of each agency, which allows the analyst to avoid the risks of ecological inference. We have assembled these data and use them to attempt our replication of both previous studies. In examining the newly-available data, we have uncovered a variety of inconsistencies in the data previously released by the DLA and the data currently available. Table 1 summarizes documented examples of these concerns, which we also describe here in greater detail. At their essence, though, each of the problems we uncover has to do with discrepancies between records of what has been shipped, such as the data both Bove and Gavrilova (2017) and Harris et al. (2017) use, and current inventories.
+While we cannot know the exact source of these discrepancies, recent media reports and a government study highlight the lack of rigorous controls to track this equipment which can result in (a) unreported transfers of equipment from one agency to another, (b) equipment being lost or damaged but not reported, or (c) poor record keeping of the equipment transferred in the ﬁrst instance. For example, in a sting operation, the Government Accountability Oﬃce was able to create a ﬁctitious law enforcement agency and gained permission to receive over $1 million in military surplus equipment (United States Government Accountability Oﬃce 2017). In addition, because the original data only report the county to which equipment is shipped, it is possible there are items that have been shipped to one county on behalf of an agency located in another county. For example, we have learned of instances in which aircraft and vehicles have ﬁrst been sent to
+9
+
+one location for repair, other maintenance, or even training, before being ultimately directed to the agency that has custody of the equipment. Table 2 details descriptions of these hypothesized concerns.
+Value of aid transferred. First, there are discrepancies between the value associated with individual items in the original county-level data and the value reported in the current agency-level data. Discrepancies go both ways—sometimes items were assigned higher values in the original data, sometimes they are assigned higher values in the current data. The consequences of these discrepancies are direct, as a common operationalization of military transfers is the total value (per capita) of aid sent to each locality.
+Inconsistent records. In some instances, the original data report items that have been transferred to a county, but we cannot locate such an item in the current inventory, even while we can locate a similar item in that county. In Table 1, for example, we describe two vehicles, one which was reported in the original data, and the other in the current data, with similar ship dates, but diﬀerent serial numbers.
+Missing counties. In the original county-level data, there are some counties that report no military surplus transfers, even while current records indicate they received equipment during the period covered by those data. Possible reasons include the indirect transfer process described above as well as simple errors in the original data released.
+State agencies. Equipment shipped to state agencies, which can ultimately be deployed anywhere in a state, are associated with only the county to which it was shipped. This will result in an inﬂated level of military aid to counties with state agency receiving locations.
+Missing controlled items. In line with high-proﬁle controversies in the media, there are many instances of controlled items for which receiving agencies cannot currently account. In the original data, these items are shown to have been shipped, but not the agency to which they have been shipped. However, the current inventories cannot account for the location of these items. Indeed, in some localities, losing track of controlled equipment has become such a problem that law enforce-
+10
+
+Problem Diﬀerent Item Costs
+Diﬀerent Item Records
+Missing Counties
+State and Federal Agencies
+Missing Controlled Items Missing Uncontrolled Items
+
+Description Some items identiﬁed as matches (have the same description, NSN serial number, and ship date) have diﬀerent costs.
+Some items identiﬁed as matches (have the same description, are in the same county, and are the only items of that type shipped to that county in that year) have diﬀerent NSN serial numbers and ship dates, as well as costs.
+Some counties (or county-years) are missing from the NPR FOIA data.
+It is unclear how items received by state and federal LEAs were recorded in the NPR FOIA data. The inclusion (or not) of state and federal agencies in county totals could be a source of some discrepancies between the NPR FOIA data and our data based on the current LESO inventory. Some controlled items (such as weapons) that were in the NPR FOIA data are missing from the current LESO inventory. Uncontrolled items (tools, oﬃce supplies, and other items that are not weapons) are removed from the LESO inventory after one year. Therefore, there are many uncontrolled items that were in the NPR FOIA data that are no longer in the current LESO inventory.
+
+Example(s) In the NPR FOIA data, Yuba County, CA received a truck worth $47,069 in 2012. In the current LESO inventory, Marysville Police Department in Yuba County (the only agency in that county to receive a vehicle in that year) received a truck worth $63,894 in 2012. In the NPR FOIA data, Humboldt County, CA received a utility truck with NSN 2320-01-107-7153 for a price of $47,609 that was shipped on 10/12/2012. In the current LESO inventory, Ferndale Police Department in Humboldt County (the only agency in that county to receive a vehicle in that year) received a utility truck with NSN 2320-01-346-9317 for a price of $89,900 that was shipped on 3/1/2012. Sanpete County, UT is missing from the NPR FOIA data, but that same county is recorded as having received items in 2009 and 2010 in the current LESO inventory. No data is available for Howard County, MD in 2010 based on the NPR FOIA data, but that same county is recorded as having received items in 2010 based on the current LESO inventory. In the NPR FOIA data, there is no record of items received by Fulton County, AR in 2011. However, in the current LESO inventory, the Arkansas State Parks Department, which is geolocated to Fulton County, received 69 weapons in 2011. The Arkansas State Parks Department is the only LEA in Fulton County, AR in the 1033 program. The 69 weapons do not appear to be elsewhere in the NPR FOIA data.
+In the NPR FOIA data, Baldwin County, AL received 4 sniper riﬂes in 2009. Those weapons are not included in the current LESO inventory.
+In the NPR FOIA data, Clark County, IN received 912 items such as binoculars and clothing (not weapons or vehicles) in 2010. None of those items are included in the current LESO inventory.
+
+Table 1: Documented Problems Causing Diﬀerences Between the Current LESO Inventory and the NPR FOIA Data
+
+11
+
+Problem Description
+
+Damaged Damaged items that are reported
+
+Items
+
+to LESO state coordinators are re-
+
+moved from the LESO inventory
+
+after some time. The removal of
+
+damaged items could cause dis-
+
+crepancies between the NPR FOIA
+
+data and the current LESO inven-
+
+tory.
+
+Transferred Items can be transferred legally
+
+Items
+
+(approved by LESO state coordi-
+
+nators) or transferred illegally (no
+
+approval) between LEAs. These
+
+transfers could cause discrepancies
+
+between the NPR FOIA data and
+
+the current LESO inventory.
+
+Variability LEAs arrange for the shipping of
+
+in Ship- items obtained through the 1033
+
+ping
+
+program and have ﬂexibility re-
+
+Locations garding where the items are sent.
+
+The NPR FOIA data is based on
+
+shipments to counties, but the cur-
+
+rent LESO inventory is based on
+
+the agencies responsible for the
+
+items. Items shipped to a county
+
+diﬀerent from the county of the
+
+LEA could causes diﬀerences be-
+
+tween the two sets of data.
+
+Example(s) We have no way of knowing which items are no longer in the LESO inventory because they were damaged.
+We have no way of knowing which items in the LESO inventory were transferred.
+Without analyzing the individual requests submitted to LESO state coordinators, we cannot identify which (if any) LEAs and counties are subject to this problem.
+
+Table 2: Hypothesized Problems Causing Diﬀerences Between the Current LESO Inventory and the NPR FOIA Data
+
+12
+
+ment agencies have been suspended from participation in the 1033 program. For example, Maricopa County Sherriﬀ Joe Arpaio admitted in 2014 that the county could not account for nine ﬁrearms it received through the program. At that point in time, 184 separate agencies were suspended from the program.
+Missing uncontrolled items. Finally, the current, agency-level data cannot account for all uncontrolled items. Law enforcement agencies acquire ownership of the items after one year. Therefore, they do not need to report their possession of them on inventories. Accordingly, we cannot construct a full account of all uncontrolled items any agency has at its disposal.
+3.3 Our Replication
+Given these concerns, we present a replication analysis that relies on agency-level data in an attempt to ﬁrst recover the original ﬁndings and then assess their robustness in light of concerns about ecological inference. That is, we take as given the other modeling choices made in these studies (e.g., the instrumental variables strategies) and focus solely on changing the unit of analysis from the county to the agency. We make this choice for two reasons. First, the recently-released data we described above make agency level analysis possible, where it wasn’t before. Second, there is ex-ante reason to believe that bias due to ecological inference may be substantial. Local law enforcement occurs at the agency level. Cities and other municipalities typically have their own police departments, with sheriﬀs departments generally providing law enforcement in unincorporated or non-municipal parts of counties. The consequence is that we have no reason to believe that the aggregate measures of surplus military equipment transfers for all agencies in a county are evenly distributed across all agencies. In other words, the “treatment” of these studies—federal allocations of surplus military equipment—occurs at a level lower than the county. Furthermore, the public safety outcomes that past studies examine primarily occur, too, at the level of local agencies, not the county level. Given these facts, there is a strong prospect that ﬁndings of extant studies may result from an ecological fallacy.
+13
+
+4 Replication Analyses
+In 2018 the DLA began releasing information that identiﬁes which local law enforcement agencies posses surplus military equipment. We used this information to collect individual agency data on the monetary amount and quantity of surplus military equipment present in local law enforcement jurisdictions in all 50 states, as of March 2018. The data include names of the individual agencies within these states that requested and received any amount of military equipment from the 1033 program. It also includes information on the speciﬁc transfers/transactions between the federal program and local agencies: the categories and types of military equipment, quantity of it, and value of the equipment received, and the shipping dates.
+For the purposes of the analyses below, we aggregate these data to the agency-year,2 reﬂecting the total monetary amount and quantity of equipmenteach agency received in each year from 2010 to 2015.
+4.1 Agency-Level Data
+While accessing the agency-level data provides an powerful opportunity to evaluate whether the theoretical problems in the data aﬀect the inferences drawn in past studies, they raise a host of issues to which we must be attentive. First, we need to map the agency-level data to jurisdictions. Often, this is straight-forward. The Atlanta Police Department is an agency in the DLA data, and that can be linked to the City of Atlanta, which is a law-enforcement jurisdiction for which we could collect the outcomes of interest. However, some other agencies are less easily linked to jurisdictions. In addition, for each agency, we do not necessarily know in which county it is located. To overcome these challenges, we use the Google Maps API. We search for each agency and retrieve its address, locality, and latitude and longitude. These pieces of information allow us to link the agency to a speciﬁc jurisdiction and county.
+Second, while the agency-level data provide us with information for agencies participating in the 1033 program, they obviously do not provide us with information for agencies not participating in the program. In other words, we only have those agencies for which there were any military transfers. We are left to construct the set of jurisdictions that received no military transfers. To
+2Rarely, two or more equal law enforcement agencies share the same municipality (e.g., a university or college police force and a municipal police force). See the appendix for more details.
+14
+
+overcome this issue, we rely on the universe of cities that report crime rates to the FBI. This is neither the universe of agencies receiving military transfers nor the universe of agencies in the US. The sample in our data, then, is the set of agencies reporting crime rates to the FBI. While we have no reason to believe this constitutes a random sample of agencies, it is the full set of agencies that are available to be studied given the research design set out in the analyses we replicate.
+We rely on the FBI’s Uniform Crime Reporting (UCR) Program data to identify the eﬀect of militarization on crime, but we recognize the shortcomings of this data. Primarily, it is diﬃcult to know whether missing crime data is truly missing for that year. It could be the case that cities are recording all their crime data in one month of the year and are missing the rest of the months, or the city could be reporting their data through another agency, or the missing data could be due to human error (Maltz 1999). Though we recognize these limitations, we use the FBI data for this initial analysis to more closely approximate the results found in Bove and Gavrilova (2017) and Harris et al. (2017) as both of these authors also use the same data, which is subject to the same limitations as us using it here.
+However, we caution that limitations with the UCR data themselves could contribute to the ecological fallacy problem we highlighted above. Within counties in the US, there is considerable heterogeneity in comprehensiveness of UCR data, especially in a way that interacts with military aid patterns. From 2010 to 2015 (our sample period) there are 1,729 jurisdictions that received surplus military equipment but did not report crime data to the FBI. In addition, fewer than 600 counties (out of 3,141) have complete coverage of crime reports from jurisdictions within the county’s borders. In the other counties, at least some jurisdictions within the county do not report their crime statistics. Still further, there is considerable within-county variation in the receipt of surplus military equipment. The mean standard deviation in the logged sum of all military aid is 1.7 and the maximum is 10.8. The consequence of these observations is that there is a mismatch between the military equipment data aggregated at the county level and the crime data aggregated at the county level.
+15
+
+Figure 1: Locations of jurisdictions with military transfer aid, 2010-2015. Points show locations of agencies to which surplus military equipment was transferred. Darker colors indicate more military aid transferred.
+
+16
+
+Figure 2: Distribution of logged total value of yearly transfers to agencies receiving any aid, 20102015.
+500
+
+400
+
+300
+
+Density
+
+200
+
+100
+
+0
+
+0.00
+
+0.01
+
+0.02
+
+0.03
+
+0.04
+
+0.05
+
+Total Logged Aid Per Capita
+
+Figure 1 shows the location of each agency that received a transfer of military surplus equipment from the DLA between 2010 and 2015. The points show the location of the agency, and the color corresponds to the total amount, in US dollars, of the value of the transfers to each agency - darker colors indicate more aid. In general, there seem to be some patterns, such as more transfers going to more populous parts of the country. At the same time, there is some interesting variation not necessarily associated with population. The state of Mississippi, for example, stands out for its relative lack of transfers, as do Virginia, North Carolina, and West Virginia. At the same time, there have been a large amount of transfers to Appalachia and the coastal parts of the Mid-Atlantic region.
+Figure 2 reports the distribution of the total value of all transfers each year to all agencies receiving any support from the 1033 program. Excluded from this ﬁgure are the many jurisdictions that received no military transfers. (Including them makes the distribution appear to be little more than a point mass at zero.) These data indicate that most places in most years receive a relatively similar, and relatively small, amount of military transfer support, whereas a small number of places receive very larger amounts of support in some years. (Keep in mind the x-axis is on the log scale.)
+
+17
+
+Figure 3: Total crime rate per 100,000 and logged total military transfers each year, 2010-2015.
+
+Total Crime Rate Per 100,000 Population
+
+q q
+
+60000 40000 20000
+0
+
+q q
+qq
+q q q q qq
+q qq q q q
+
+q qq q qqqq qqqqq
+
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+
+q
+
+q
+
+q
+
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+
+q qqqqqq q
+
+qqqqq
+
+q
+
+q q qq qq
+qq
+
+q
+
+q q
+
+q
+
+q
+
+q
+
+0.00
+
+0.01
+
+0.02
+
+0.03
+
+Total Logged Aid Per Capita
+
+q q
+
+q q
+0.04
+
+q
+0.05
+
+Indeed, in Figure 3 we show the raw correlation between the amount of military surplus transfers to each jurisdiction reporting crime data in each year and that year’s total crime rate. We exclude from this analysis a very small number of observations where small jurisdictions with tiny populations experience a handful of crimes and therefore have unnaturally larger crime rates.
+
+4.2 Replication of Bove and Gavrilova (2017)
+Bove and Gavrilova’s (2017) analysis seeks to understand the eﬀect of militarization aid on crime rates for all jurisdictions. To ensure that we have complete coverage on the number of jurisdictions that could request equipment from the federal government, in our replication we include all cities and all counties in all states that reported crime data, one of the main variables in the analysis. Though there are over 19,000 local jurisdictions across the ﬁfty states,3 just over 9,000 of those reported crime data to the national government. Therefore, the ﬁnal sample includes the approximately 9,000 agencies that report crime data and could request militarization aid from the federal government.
+3Formally, there are 19,354 “incorporated places” in the United States as of 2018.
+
+18
+
+Following Bove and Gavrilova (2017), we estimate the following speciﬁcation:
+
+Crimea,t = βEquipˆmenta,t−1 + αa + δt + ζs + γXa,t + a,t
+
+(1)
+
+where the variable Equipˆmenta,t−1 is the ﬁtted level of equipment at agency a in year t − 1.The model also includes three sets of ﬁxed eﬀects - α, δ, ζ - agency, time, and state ﬁxed eﬀects, respectively. Finally, we include a matrix of demographic control variables, Xa,t, following Bove and Gavrilova (2017): percent in poverty, median household income, unemployment, population, population male, population Black, population aged 15-19, population aged 20-24, and population aged 25-34. All control variables were collected from the Census Bureau.
+Before presenting the regression results, it is useful to consider the diﬀerences between our data disaggregated by individual agencies, our data aggregated to counties, and the Bove and Gavrilova’s (2017) data, which is aggregated to counties. Table 3 displays the summary statistics for our agency-level data and our county-level data, compared to the data from the replication ﬁles made available by Bove and Gavrilova (2017) for their analysis. Table 3 also displays the summary statistics for the Harris et al. (2017) data, which we discuss below.
+For the most part, the crime rates for either the jurisdictions or just the counties look relatively similar, which is not surprising considering Bove and Gavrilova (2017) use county crime rates that include the crime rates of jurisdictions within a county’s borders. Additionally, the instrumental variable, B&G IV, is fairly similar in the county estimates. The signiﬁcant diﬀerences lie in the militarization variables - Bove and Gavrilova (2017) have a much higher value and quantity for the militarization variables in their data. We hunted for reasons within the data for this smaller magnitude, including line-by-line comparisons of Bove and Gavrilova’s (2017) data and ours and concluded that the underlying data in our and Bove and Gavrilova (2017) dataset is simply diﬀerent and of a much smaller magnitude (more information in the appendix). While we do not know the exact reason for these discrepancies, one very plausible reason could be the types of data that disappear from the LESO data over time—clothing, for example, which typically comes in much higher quantities than objects like guns or tanks. Finally, the demographic and economic control variables are fairly consistent across both datasets, which provides encouraging evidence that our samples do not diﬀer very signiﬁcantly.
+
+19
+
+Next, we estimate the IV regression model using both Bove and Gavrilova’s (2017) replication data and using our disaggregated information at the agency level. We use the same estimation strategy for both sets of data, including additive state, year, and either county or agency ﬁxed eﬀects. This allows us to recover their results. Finally, we cluster our standard errors by either county or agency. The results of both of these regressions4 are in Table 4.
+4We removed 24 outliers from the agency-level database that had all crime rates over one hundred thousand, which heavily skewed our regression results. Results including all observations are in the appendix.
+20
+
+Table 3: Summary Statistics
+
+21
+
+Crime rate Murder rate Robbery rate Assault rate Burglary rate Larceny rate Vehicle theft rate Aid value (B&G) Aid value (Harris et al.) Aid quantity (B&G) Aid quantity (Harris et al.) Percent poverty Median income Unemployment rate Population Share males Share blacks Share age 1519 Share age 2024 Share age 2534 Per cap income B&G IV Harris et al. IV 1 Harris et al. IV 2 Harris et al. IV 3 Harris et al. IV 4 Harris et al. IV 5 Harris et al. IV 6 Harris et al. IV 7 Harris et al. IV 8
+
+Mean
+
+Replication
+
+Agency
+
+County
+
+3,254.3
+
+2,121.0
+
+2.7
+
+2.8
+
+53.4
+
+31.4
+
+196.6
+
+168.0
+
+536.1
+
+491.1
+
+2,298.3
+
+1,298.3
+
+147.9
+
+104.0
+
+13,844.7
+
+31,501.1
+
+13,844.7
+
+31,501.1
+
+3.5
+
+11.8
+
+3.5
+
+11.8
+
+16.4
+
+16.2
+
+50,650.4
+
+45,499.8
+
+5.4
+
+4.9
+
+20,786.7
+
+98,712.7
+
+0.5
+
+0.5
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+26,046.4
+
+23,313.4
+
+1.5
+
+3.3
+
+0.2
+
+0.2
+
+0.0
+
+0.0
+
+47,372.5
+
+249,394.0
+
+10,818.3
+
+5,486.3
+
+836.7
+
+481.1
+
+56.1
+
+46.0
+
+189,344,690.0 666,042,845.4
+
+43,259,900.9 14,652,062.6
+
+B&G County 2,500.0
+3.4 41.3 200.4 585.6 1,532.4 136.8 49,372.5
+58.8
+16.2 43,111.7
+7.3 92,574.5
+0.5 0.1 0.1 0.1 0.2
+4.3
+
+Harris et al. County
+3.1 35.9 912.7 513.9
+135.9
+88,083.5
+18.8
+6.3 95,758.2
+0.1
+31.1
+2,089.7 407.2
+1,675,891.1 42,356.1 0.1 0.0 43.4 1.1
+
+SD
+
+Replication
+
+Agency
+
+County
+
+51,535.7
+
+1,414.0
+
+14.2
+
+5.5
+
+290.3
+
+52.6
+
+378.4
+
+164.7
+
+884.2
+
+372.7
+
+50,599.6
+
+892.8
+
+1,309.1
+
+107.8
+
+107,848.6
+
+153,496.7
+
+107,848.6
+
+153,496.7
+
+59.4
+
+116.6
+
+59.4
+
+116.6
+
+9.8
+
+6.5
+
+25,065.1
+
+11,863.8
+
+2.7
+
+2.0
+
+120,079.1
+
+314,460.7
+
+0.7
+
+0.0
+
+0.2
+
+0.1
+
+0.1
+
+0.0
+
+0.1
+
+0.0
+
+0.2
+
+0.0
+
+13,830.7
+
+5,549.5
+
+2.9
+
+3.8
+
+0.8
+
+0.3
+
+0.0
+
+0.0
+
+50,676.3
+
+129,176.4
+
+17,729.4
+
+15,215.6
+
+3,734.3
+
+807.7
+
+53.4
+
+33.3
+
+278,819,496.2 461,004,023.5
+
+91,224,410.7
+
+44,287,001.5
+
+B&G County 1,536.9
+6.8 69.7 194.8 418.0 954.0 139.7 1,125,022.4
+979.9
+6.4 11,092.1
+3.2 255,477.6
+0.0 0.2 0.0 0.0 0.0
+3.7
+
+Harris et al. County
+6.4 69.5 761.9 391.0
+158.6
+2,043,833.3
+122.7
+2.9 307,970.1
+0.1
+9.1
+5,310.3 417.8
+1,623,002.6 138,217.3 0.1 0.0 8.1 2.5
+
+Median
+
+Replication
+
+B&G
+
+Agency
+
+County County
+
+2,227.9
+
+1,961.7 2,249.3
+
+0.0
+
+0.0
+
+0.3
+
+16.5
+
+13.2
+
+17.5
+
+107.8
+
+125.8
+
+150.3
+
+381.4
+
+421.4
+
+501.9
+
+1,478.3
+
+1,221.5 1,410.6
+
+75.4
+
+79.3
+
+103.7
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+14.9
+
+15.5
+
+15.3
+
+44,204.5
+
+43,655.0 41,275.0
+
+5.1
+
+4.8
+
+6.7
+
+5,101.5
+
+25,906.0 24,305.0
+
+0.5
+
+0.5
+
+0.5
+
+0.0
+
+0.0
+
+0.0
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.2
+
+22,701.0
+
+22,601.0
+
+0.0
+
+2.7
+
+3.8
+
+0.1
+
+0.1
+
+0.0
+
+0.0
+
+35,524.4
+
+307,088.4
+
+0.0
+
+0.0
+
+324.0
+
+274.8
+
+38.9
+
+41.0
+
+95,430,819.2 586,494,032.4
+
+0.0
+
+0.0
+
+The data come from the following sources: the Stockholm International Peace Research Institute (SIPRI), the Law Enforcement Support Oﬃce (LESO), the FBI’s Uniform Crime Reports (FBI UCR), and the Census Bureau (CB). The Replication Agency data are from 2010 to 2015, the Replication County data are from 2009 to 2013, the Bove and Gavrilova (2017) County data are from 2006 to 2012, and the Harris et al. (2017) County data are from 2002 to 2013.
+
+Harris et al. County
+0.0 13.0 773.4 445.6
+98.0
+0.0
+0.0
+5.8 25,596.0
+0.0
+29.5
+871.3 221.1 937,102.7
+0.0 0.0 0.0 42.9 0.0
+
+Table 4: The Eﬀect of Military Aid on Substantiated Crime Rates (Table 2 in Bove and Gavrilova (2017))
+
+B&G
+
+OLS Replication
+
+First Stage
+
+B&G
+
+Replication
+
+Total Crime Rate
+
+B&G
+
+Replication
+
+Military exp. IV Lagged Total Aid Num. obs.
+
+County (1)
+0.69 (1.30) 17822
+
+County
+2.75 (2.31) 15653
+
+Agency
+−1.69 (2.00) 41376
+
+County (2) 17.59∗∗∗ (2.76)
+17822
+
+County 0.73∗∗∗ (0.01)
+15653
+
+Agency 4.00 (3.20)
+41376
+
+County (3)
+−59.29∗∗∗ (15.67) 17822
+
+County
+9.99 (12.31) 15653
+
+Agency
+560.44 (477.97)
+41376
+
+Homicide
+
+B&G
+
+Replication
+
+Robbery
+
+B&G
+
+Replication
+
+B&G
+
+Assault Replication
+
+22
+
+Lagged Total Aid Num. obs.
+
+County (4) −0.06 (0.10) 17822
+
+County −0.00 (0.03) 15653
+
+Agency 0.25 (1.64) 41376
+
+County (5) −6.10∗∗∗ (1.21)
+17822
+
+County 0.63 (0.42) 15653
+
+Agency 18.89 (17.48) 41374
+
+County (6) −5.31∗ (2.62)
+17822
+
+County −0.16 (1.38) 15653
+
+Agency 52.08 (47.09) 41343
+
+Burglary
+
+B&G
+
+Replication
+
+Larceny
+
+B&G
+
+Replication
+
+Vehicle Theft
+
+B&G
+
+Replication
+
+Lagged Total Aid
+
+County (7)
+−8.75 (5.92)
+
+County
+4.06 (3.26)
+
+Agency
+216.35 (188.58)
+
+County (8)
+−27.43∗∗∗ (8.06)
+
+County
+4.10 (8.10)
+
+Agency
+174.20 (174.97)
+
+County (9)
+−11.64∗∗∗ (3.13)
+
+County
+1.40 (0.83)
+
+Agency
+17.61 (21.78)
+
+Num. obs.
+
+17822
+
+15653 41344
+
+17822
+
+15653 41342
+
+17822
+
+15653 41370
+
+∗∗∗p < 0.001, ∗∗p < 0.01, ∗p < 0.05
+All regression speciﬁcations control for percent in poverty, logged median household income, unemployment, logged population, share male, share Black, share aged 15-19, share aged 20-24, share aged 25-34, and agency/county and year ﬁxed eﬀects. The B&G column numbers correspond to their models and can be matched back to their Table 2 results. The Replication regressions are run on County data from 2009-2013 and Agency data from 2010-2015. The Bove and Gavrilova (2017) County data is from 2005-2012. We removed 24 outliers from the agency-level database that had total crime rates of over one hundred thousand.
+
+Our results, either in the agency or the county estimations, diﬀer signiﬁcantly from those of Bove and Gavrilova (2017). We either ﬁnd no signiﬁcant eﬀect of military aid on a variety of crime rates, or we ﬁnd a signiﬁcant and positive eﬀect, as with the total crime rate variable. While it is important to note our analyses use diﬀerent time periods, the results here suggest their conclusions are sensitive to either diﬀerent time periods or diﬀerent units of analysis. We also perform an analysis using only the subset of years in which both Bove and Gavrilova (2017) and we have data, from 2010 to 2012. The results, presented in the appendix, are similarly inconclusive. Not only do our results stay insigniﬁcant as in Table 4, their results become insigniﬁcant in every speciﬁcation. Their sample size is roughly halved, but still remains large at over 9,000, yet their coeﬃcients all become insigniﬁcant. Even changing just the years included in the analysis makes the results insigniﬁcant, highlighting how precarious Bove and Gavrilova’s (2017) conclusions are. We therefore cannot conclude deﬁnitively that military aid exerts any inﬂuence on crime rates, either at the county or the agency level.
+4.3 Replication of Harris et al. (2017)
+Harris et al. (2017) analyze how a higher quantity of aid aﬀects a variety of outcomes, including citizen complaints, assaults on oﬃcers, and arrest rates. For the purposes of this replication, however, we focus solely on their analysis regarding crime: how does the quantity and value of items shipped aﬀect crime rates within speciﬁc jurisdictions? Harris et al. (2017) identify this relationship at the county level, similar to Bove and Gavrilova (2017). In Table 3, we report descriptive statistics from the Harris et al. (2017) data. When compared to our data, we again ﬁnd encouraging consistency concerning key control variables but notable distinctions in the military aid information, given our disaggregated data.
+Importantly, our data diﬀer slightly from Harris et al. (2017) because of data limitations at the city level. First, while they include a set of controls concerning the number of arrests made at the county level, not all of those data are made available at the city level. We only include that information that is listed by the FBI, so our arrest data only considers arrests made on charges of murder, rape, robbery, burglary, and assault. Second, while the county data record gun assault crimes, the city data do not. So the dependent crime variables we look at are rates of murder,
+23
+
+robbery, assault, and vehicle theft5. Finally, there remain signiﬁcant discrepancies between Harris et al.’s (2017) instruments and the ones we calculate from their description of those instruments in the paper (more detail in the appendix).
+With these distinctions in mind, we now replicate their analysis. Using their county-level data, we replicate the results found in Harris et al. (2017) exactly. We then re-estimate their analysis using our jurisdiction-level dataset. The sample for this analysis follows the description in Section 4.2, in which we separately determine how militarization aﬀects crime rates at the approximately 9,000 agencies in any given year. We estimate their instrumental variables model, following Table 8 in Harris et al. (2017). The second-stage equation is given by:
+
+Crimea,t = β0 + β1Eˆas,t−1 + β2Xa,t + β3La,t−1 + αa + νt + a,t
+
+(2)
+
+The outcome of interest in the second-stage regression is the reported crime rates—for the crimes of homicide, robbery, assault, and vehicle theft—for agency a at time t.6 The variable Eˆas,t−1 is the estimate of the lagged equipment for jurisdiction j at t − 1.In this analysis, we examine two variables regarding equipment: either the logged number of items shipped in the previous year, or the logged value of those shipments. Second, X is a matrix of controls including per capita personal income, unemployment, and population (all collected from the Census Bureau), and La,t−1 are the lagged arrest rates for the crimes of murder, rape, robbery, burglary, and assault (from UCR). Finally, α and ν represent vectors of agency and year ﬁxed eﬀects, respectively.
+
+5Columns 1, 2, 4, and 5, in Table 8 of Harris et al. (2017). 6Note, the Harris et al. (2017) analysis also examines crime rates for gun assaults. The agency-level data does not contain information on this variable, however, so it is excluded from the results reported here.
+24
+
+Table 5: The Eﬀect of Receiving Tactical Items on Substantiated Crime Rates (Table 8 in Harris et al. (2017))
+
+Homicide
+
+Harris et al.
+
+Replication
+
+Robbery Harris et al. Replication
+
+log itemst−1 log valuet−1 Num. obs.
+
+County (1)
+−0.22 (0.32) 0.35 (0.29)
+36671
+
+County
+−0.26 (0.55) 0.03 (0.17)
+15425
+
+Agency
+4.34∗∗∗ (0.95) 1.11∗∗∗ (0.18)
+45000
+
+Assault
+
+Harris et al.
+
+Replication
+
+County
+−15.39∗∗∗ (3.38) −6.23∗ (2.99)
+36671
+
+County Agency
+
+12.56∗ (6.24) 2.73 (1.48)
+
+58.91∗∗∗ (9.30) 11.95∗∗∗ (1.85)
+
+15425 44998
+
+Vehicle Theft Harris et al. Replication
+
+County (4) County Agency County (5) County Agency
+
+log itemst−1 log valuet−1
+
+−145.80∗∗∗ (35.07) −110.35∗ (44.03)
+
+−18.96∗∗ (7.32) −4.27∗ (1.72)
+
+184.16∗∗∗ (30.34) 36.27∗∗∗ (6.17)
+
+−114.51∗∗∗ (15.59) −55.94∗∗ (18.35)
+
+−0.00∗ (0.00) −0.00 (0.00)
+
+99.79∗∗∗ (23.70) 25.11∗∗∗ (4.39)
+
+Num. obs.
+
+36671
+
+15425 44966
+
+36671
+
+15425 44994
+
+∗∗∗p < 0.001, ∗∗p < 0.01, ∗p < 0.05
+
+All regression speciﬁcations control for lagged arrest rates, economic controls, and agency/county and year ﬁxed eﬀects. The Harris column numbers correspond to their models and can be matched back to their Table 8 results. The Replication regressions are run on County data from 2009-2013 and Agency data from 2010-2015. The Harris et al. (2017) County data is from 2000-2013. We removed 24 outliers from the agency-level database that had total crime rates of over one hundred thousand.
+
+Table 5 reports ﬁrst, the replicated results from Table 8 in Harris et al. (2017) and second, our replicated results using our jurisdiction-level data. Whereas Harris et al. (2017) found signiﬁcant and negative relationships between the logged items given to counties and robbery, assault, and vehicle theft rates, we ﬁnd no statistically signiﬁcant eﬀect on those categories of crime rates or any other categories of crime rates. Similarly, if we instead examine the logged value of items, Harris et al. (2017) ﬁnd a signiﬁcant and negative relationship between military equipment transfers and robbery, assault, and vehicle theft rates, whereas we ﬁnd no signiﬁcant eﬀect of the value of military equipment transfers and a variety of crime rates. Even if we limit both Harris et al. (2017) and our analysis to only the years in which we have overlapping data, from 2010 to 2012, the purported
+
+25
+
+negative relationship between transfers of military equipment and crime at the local level does not appear, either in the agency or county data. Their sample size decreases signiﬁcantly, however, as their original data covers 2000 to 2013, so the insigniﬁcance could be partially due to a decrease in statistical power. Either way, though, both Harris et al.’s (2017) and Bove and Gavrilova’s (2017) conclusions are extremely sensitive to the time period selected by the analyst.
+5 Discussion and Conclusion
+Police militarization continues, facilitated by policies and programs of the federal government. These policies and programs provide material support to subnational governments seeking to upgrade their law enforcement equipment, primarily (perhaps) for the purposes of law enforcement and order maintenance. In particular, the federal 1033 program provides surplus military equipment to municipal police departments, county sheriﬀs departments, and other subnational law enforcement agencies. That program, along with others of the federal government, has changed the appearance and operations of many local law enforcement agencies. In the process, it blurs a bit more the line between military security and domestic law enforcement, both in perception and practice. The purported justiﬁcation for police militarization, though, is that it increases public safety, especially by decreasing crime, through crime desistance, crime deterrence, and crime control by incarceration.
+Because of the signiﬁcance of the changes to policing that have taken place, recent scholarship has set out to analyze the eﬀects of police militarization on important measures of law enforcement and order maintenance. Two recent studies, in particular, tried to assess how and how much police militarization aﬀects crime rates and other metrics of public safety associated with policing. They concluded that the transfer of surplus military equipment to local police departments reduced crime, along with civilian complaints against police oﬃcers, without adverse consequences such as increased assaults on police or lethal harm of civilians during police-civilian encounters. However, there are methodological reasons to interrogate their conclusions and claims drawn from them about police militarization. First, ﬁndings from other studies report inconsistent or contradictory evidence that challenge those conclusions and claims. Second, the previous analyses were forced to use aggregate data for counties, despite police militarization and crime happening levels below counties, in and across local law enforcement jurisdictions.
+26
+
+We employed recently-released 1033 Program data that report the agency to which equipment has been sent, rather than the county, to quasi-replicate the analyses in two key studies, Bove and Gavrilova (2017) and Harris et al. (2017). Our analyses of agency data from the 1033 Program did not recover the ﬁndings reported in those studies. We posit that the mismatch in ﬁndings about the eﬀects of police militarization are the consequence of an ecological fallacy. Moreover, we show that when analyzing the eﬀect of police militarization—monetary amounts and types of equipment– on crime rates at the level at which both police militarization and crime rates manifest—local police jurisdictions—there is an absence of a relationship between surplus military equipment transfers to local law enforcement agencies and rates of crime in their jurisdictions. Although our counterevidence is strong, it does not settle academic and practical debates about the need and products of police militarization at the local level in the United States. Instead, our counterevidence invites reﬁnement of the conceptualization and measurement of police militarization, as well as more studies of the public safety outputs and outcomes of police militarization and the civic consequences of police militarization for communities and our republican democracy, inclusive of worsening perceptions of police legitimacy, weakened police-community relations, and electoral and non-electoral political participation.
+References
+Ajilore, Olugbenga. 2015. “The militarization of local law enforcement: is race a factor?” Applied Economics Letters 22(13):1089–1093.
+Balko, Radley. 2013. Rise of the warrior cop: The militarization of America’s police forces. Public Aﬀairs.
+Baumgart, Zach. 2016. Crime, Arrests, Legitimacy or Race? Militarization of American Police from 1990 to 2007. The University of Wisconsin-Madison.
+Bieler, Sam. 2016. “Police militarization in the USA: the state of the ﬁeld.” Policing 39(4):586–600.
+Bove, Vincenzo and Evelina Gavrilova. 2017. “Police Oﬃcer on the Frontline or a Soldier? The Eﬀect of Police Militarization on Crime.” American Economic Journal: Economic Policy 9(3):1– 18.
+27
+
+Carriere, Kevin R. and William Encinosa. 2017. “The Risks of Operational Militarization: Increased Conﬂict Against Militarized Police.” Peace Economics, Peace Science, and Public Policy 23(3):1– 13.
+Committee on Armed Services, U.S. House of Representatives. 2014. The Department of Defense Excess Property Program in Support of U.S. Law Enforcement Agencies: An Overview of DOD Authorities, Roles, Responsibilities, and Implementation of Section 1033 of the 1997 National Defense Authorization Act. U.S. Government Publishing Oﬃce.
+Davenport, Aaron C., Jonathan William Welburn, Andrew Lauland, Annelise Pietenpol, Marc Robbins, Erin Rebhan, Patricia Boren and K. Jack Riley. 2018. An Evaluation of the Department of Defense’s Excess Property Program. RAND Corporation.
+Davis, Elizabeth, Anthony Whyde and Lynn Langton. 2018. “Contact between police and the public, 2015. Bureau of Justice Statistics NCJ 251145.”.
+Delehanty, Casey, Jack Mewhirter, Ryan Welch and Jason Wilks. 2017. “Militarization and police violence: The case of the 1033 program.” Research & Politics 4(2):2053168017712885.
+Eith, C and MR Durose. 2011. “Contact between police and the public, 2008. Bureau of Justice Statistics NCJ 234599.”.
+Ekins, Emily E. 2016. Policing in America: understanding public attitudes toward the police. Results from a national survey. Cato Institute.
+Epp, Charles R, Steven Maynard-Moody and Donald P Haider-Markel. 2014. Pulled over: How police stops deﬁne race and citizenship. University of Chicago Press.
+Fassin, Didier. 2013. Enforcing order: An ethnography of urban policing. Polity. Fox, Bryanna, Richard K. Moule Jr. and Megan M. Parry. 2018. “Categorically complex: A latent
+class analysis of public perceptions of police militarization.” Journal of Criminal Justice 58:33–46. Geller, Amanda, Jeﬀrey Fagan and Tom Tyler. 2018. “Do the Ends Justify the Means? Policing
+and Rights Tradeoﬀs in New York City.”.
+28
+
+Harris, Matthew C., Jinseong Park, Donald J. Bruce and Matthew N. Murray. 2017. “Peacekeeping Force: Eﬀects of Providing Tactical Equipment to Local Law Enforcement.” American Economic Journal: Economic Policy 9(3):291–313.
+Kraska, Peter B. 2007. “Militarization and Policing Its Relevance to 21st Century Police.” Policing: A Journal of Policy and Practice 1(4):501–513.
+Laniyonu, Ayobami. 2018a. “Police, Politics And Participation: The Eﬀect Of Police Exposure On Political Participation In The United Kingdom.” The British Journal of Criminology .
+Laniyonu, Ayobami. 2018b. “The Political Consequences of Policing: Evidence from New York City.” Political Behavior pp. 1–32.
+Lawson, Jr., Edward. 2018. “Police Militarization and the Use of Lethal Force.” Political Research Quarterly 0(0):1–13.
+Lerman, Amy E and Vesla M Weaver. 2014a. Arresting citizenship: The democratic consequences of American crime control. University of Chicago Press.
+Lerman, Amy E. and Vesla M. Weaver. 2014b. “Staying out of Sight? Concentrated Policing and Local Political Action.” The Annals of the American Academy of Political and Social Science 651:202–219. URL: http://www.jstor.org/stable/24541702
+Lipsky, Michael. 1980. Street-Level Bureaucracy: The Dilemmas of the Individual in Public Service. Russell Sage Foundation.
+Lockwood, Brian, Matthew D Doyle and John G Comiskey. 2018. “Armed, but too dangerous? Factors associated with citizen support for the militarization of the police.” Criminal Justice Studies 31(2):113–127.
+Lutterbeck, Derek. 2005. “Blurring the dividing line: The convergence of internal and external security in Western Europe.” European security 14(2):231–253.
+Maltz, Michael D. 1999. Bridging gaps in police crime data. DIANE Publishing.
+29
+
+Masera, Federico. 2016. “Bringing War Home: Violent Crime, Police Killings and the Overmilitarization of the US Police.” (job market paper).
+Moule Jr., Richard K., Bryanna Hahn Fox and Megan M. Parry. 2018. “The Long Shadow of Ferguson: Legitimacy, Legal Cynicism, and Public Perceptions of Police Militarization.” Crime & Delinquency p. 0011128718770689.
+Muir, William K. 1979. Police: streetcorner politicians. University of Chicago Press. Mummolo, Jonathan. 2018. “Militarization fails to enhance police safety or reduce crime but may
+harm police reputation.” Proceedings of the National Academy of Sciences . National Academies of Sciences. 2018. Proactive policing: Eﬀects on crime and communities.
+National Academies Press. Radil, Steven M, Raymond J Dezzani and Lanny D McAden. 2017. “Geographies of US Police
+Militarization and the Role of the 1033 Program.” The Professional Geographer 69(2):203–213. Reingle Gonzalez, Jennifer M, Stephen A Bishopp, Katelyn K Jetelina, Ellen Paddock, Kelley Pettee
+Gabriel and M Brad Cannell. 2018. “Does military veteran status and deployment history impact oﬃcer involved shootings? A case–control study.” Journal of Public Health . Robinson, William S. 2009. “Ecological correlations and the behavior of individuals.” International journal of epidemiology 38(2):337–341. Roziere, Brendan and Kevin Walby. 2018. “The expansion and normalization of police militarization in Canada.” Critical criminology 26(1):29–48. Simon, Jonathan. 2007. Governing through crime: How the war on crime transformed American democracy and created a culture of fear. Oxford University Press. Soss, Joe and Vesla Weaver. 2017. “Police Are Our Government: Politics, Political Science, and the Policing of Race–Class Subjugated Communities.” Annual Review of Political Science 20:565– 591.
+30
+
+Turner, Frederick W and Bryanna Hahn Fox. 2017. “Public servants or police soldiers? An analysis of opinions on the militarization of policing from police executives, law enforcement, and members of the 114th congress US house of representatives.” Police Practice and Research pp. 1–17.
+Tyler, Tom R, Jonathan Jackson and Avital Mentovich. 2015. “The consequences of being an object of suspicion: Potential pitfalls of proactive police contact.” Journal of Empirical Legal Studies 12(4):602–636.
+United States Government Accountability Oﬃce. 2017. DOD Excess Property: Enhanced Controls Needed for Access to Excess Controlled Property. United States Government.
+Weiss, Tom´aˇs. 2011. “The blurring border between the police and the military: A debate without foundations.” Cooperation and Conﬂict 46(3):396–405.
+Wickes, Geoﬀrey C. 2016. “Demystifying “militarization“: A partial analysis of the impact of the U.S. Department of Defense’s ”1033“ equipment transfer program on police oﬃcer safety outcomes.” (unpublished master’s thesis).
+Wilson, James Q. 1978. Varieties of Police Behavior: The Management of Law and Order in Eight Communities. Harvard University Press.
+31
+
+Appendix
+
+Table of Contents
+
+A Independent Data Collection Details
+
+2
+
+A.1 Militarization Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+
+A.2 Creating Jurisdiction Dataset . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+
+A.3 Creating Aggregated County Dataset . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+
+A.4 Creating Summary Statistics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+B Bove and Gavrilova (2017) Replication Details
+
+8
+
+B.1 Source of Replication . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+B.2 Replication Diﬃculties . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+
+C Harris et al. (2017) Replication Details
+
+9
+
+C.1 Source of Replication . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+C.2 Replication Diﬃculties . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+D Subsetted Data Analysis: 2010 to 2012
+
+10
+
+D.1 Summary Statistics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+
+D.2 Bove and Gavrilova (2017) Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+
+D.3 Harris et al. (2017) Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+
+E Using the Complete Dataset
+
+14
+
+E.1 Bove and Gavrilova (2017) Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+
+E.2 Harris et al. (2017) Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+
+This appendix details the data collection and replication policies followed in this article. For ease of understanding, we separate these discussions into three categories: independent data collection details, replication details of Bove and Gavrilova (2017), and replication details of Harris et al. (2017).
+
+1
+
+A Independent Data Collection Details
+A.1 Militarization Variables
+In 2018, the DLA released information on the speciﬁc local law enforcement agencies that had requested military equipment. Previously, the only data available (and that used in both Bove and Gavrilova (2017) and Harris et al. (2017)) was militarization data aggregated to the county to which each item was shipped.
+The raw data is an agency-item dataset, whereby each entry is one item requested and received by an individual agency. The data, which we downloaded on March 31, 2018, provided an accurate inventory of the military items individual agencies held. Importantly, this data reﬂects inventory, meaning that items that had been returned and/or re-bought by the Department of Defense and/or cancelled by the agency would not be included in this count (United States Government Accountability Oﬃce 2017). Moreover, as Davenport et al. (2018) explains, there is an important distinction between controlled and non-controlled items. Controlled items are typically sensitive in nature and include items like tanks and guns, whereas non-controlled items include objects like oﬃce equipment. Non-controlled equipment drops oﬀ the Department of Defense books after one year of receipt (Davenport et al. 2018), meaning that the current inventory of military equipment could be missing those non-controlled items received by the agency more than one year prior.
+In the dataset, there are no broad categories of items (i.e. guns, trucks, etc.) already coded. Instead, the data contains a thirteen-digit national stock number (NSN) for each individual item that is comprised of three components: a federal supply code, country of origin, and two unique numbers indicating the item type. Each federal supply code is comprised of four digits, the ﬁrst two of which are the groups of items, whereas the next two identify the type of item. For our purposes, we only need the broad groups, the next two identify type of item, but for our purposes we only need the group. As an example, a 5.56 millimeter riﬂe’s NSN is 1005-01-128-9936 - we only need the ﬁrst four digits to identify group. Group 10 identiﬁes this item as a weapon, and the following 05 identiﬁes the item as a gun through 30 millimeters. We use this classiﬁcation to categorize our
+2
+
+items into broad groups (generally speaking, weapons, vehicles, gears following Bove and Gavrilova (2017)7 and weapons, optics, and vehicles following Harris et al. (2017)).
+We also spoke with a coordinator, Kenneth (Ken) MacNevin, the Chief Spokesperson for DLA Disposition Services, about the requisition process. Law enforcement agencies (LEAs) not only pay for the cost of the shipping of the items that they request, but they also make all arrangements through commercial transport/shipping companies for the delivery of the items. Sometimes LEAs will opt to use their own vehicles to go to the location of the item and pick it up themselves. This could either be at a disposition center or at the actual location of the item if not in a disposition center. Ken clariﬁed that for large items that the military gives to the 1033 program, the items might remain at the location of their last use and must be transported from there (rather than going through a disposition center).
+If an LEA opts for shipping, they have a good deal of ﬂexibility in where/how the item is shipped because they arrange the whole process. Ken shared examples of how some LEAs have arranged for items to be sent directly to repair shops ﬁrst and then later pick up the items from there (including a vehicle that was sent to a high school auto repair department). It is possible for LEAs to have items shipped to other LEAs for pickup there, but the main LESO oﬃce doesn’t keep track of it. If anyone keeps track of it, it would be the state coordinators. According to Ken, the state coordinators work with LEAs on any unusual shipping arrangements. The state coordinators have to approve all of their LEAs’ requests.
+In regards to the current LESO inventory data available, Ken clariﬁed that any damaged items are removed from the inventory after a period of time. LEAs contact their state coordinators about damaged items. Ken cited examples of airplane crashes, broken riﬂes, etc. He also emphasized that the purpose of the current inventory data is to keep a record of which LEAs are responsible for which controlled items. It is supposed to represent what the LEA would need to account for if a LESO representative arrived on site for an inspection. Damaged items would not be included in this.
+7Note, while Bove and Gavrilova (2017) provide a comprehensive list of all federal supply codes they use to classify items into these categories, Harris et al. (2017) does not, so we must rely on their description of their coding and subjective judgment to categorize the items.
+3
+
+A.2 Creating Jurisdiction Dataset
+To replicate and extend the analyses in Bove and Gavrilova (2017) and Harris et al. (2017), we gathered a set of demographic, economic, and crime variables for individual jurisdictions. The ﬁrst task in amassing this dataset is to create a universe of all jurisdictions in the United States that could theoretically request military aid from the government. We identiﬁed the universe of these jurisdictions as the entities that reported crime data to the FBI and while this is not a perfect delineation of every agency in the United States, provides a comprehensive set of the cities that experience crime and could request military aid to theoretically prevent incidences of crime.
+A large diﬃculty in creating this jurisdiction dataset was matching city names across a variety of datasets. Even within diﬀerent types of Census data ﬁles, cities would have slightly diﬀerent spellings or punctuations. As an example, in various states8, city names are followed by a description of the location in question - Andover Township rather than just Andover. We had to ensure there were not mismatches between cities that were slightly diﬀerent in one dataset than in another. Alternatively, if a city includes an accent in its name, it often showed up in our dataset as a set of random characters (like ‘\xb1’). We ﬁxed those issues as much as possible, though there could still remain cases where the merge did not match exactly.
+A.2.1 Crime Data
+There are approximately 9,000 cities in the United States that report crime data to the FBI annually. We acknowledge the real diﬃculties with this crime data: missingness and inaccurate counts of crimes within jurisdictions has been well-documented elsewhere (Maltz 1999). Nevertheless, because both Harris et al. (2017) and Bove and Gavrilova (2017) (as well as the broader literature) use these data, we similarly rely on the FBI ﬁgures to construct crime rates for a variety of oﬀenses: total crime, murder, robbery, assault, burglary, larceny, and vehicle theft. We collect this information from the FBI’s Uniform Crime Reports and calculate crime rates, the number of reported crimes by oﬀense type per 100,000 resident population in each jurisdiction.
+It is rare, but possible, that two agencies within one city received military equipment (a university police department and that city’s police department, for example). Both agencies would
+8In our data, we identiﬁed this problem occurring most frequently in Michigan, New York, New Jersey, Ohio, and Pennsylvania with endings like Town, Township, or Village.
+4
+
+report their crimes but they would be merged and reported for the city to the FBI. However, we are not concerned about aggregating to the jurisdiction. In some cases, there may be municipal law enforcement agencies with jurisdictions crossing county lines. For example, because the city of Atlanta includes large portions of Fulton County and smaller portions of DeKalb County, the Atlanta Police Department operates in both, which also have their own county-level departments. Because any city crimes regardless of county covered would be reported to the city police, we simply aggregate this data to the city without regard to the county.
+One diﬃculty with this data is that it is a rate, so smaller jurisdictions with more incidences of crime appear to have massive crime rates. In 2014 for example, Lakeside, Colorado, experienced 657 incidences of crime (the vast majority being property crime) when the reported population is only 8. The calculation of the total crime rate, then, results in a ﬁgure of 8,212,500 total crime rate. Another example is Vernon, California, which experienced one murder in 2012 but only had a population of 114. The murder rate for that city-year was over 800. Finally, Industry, California, had a population of 222 in 2011, but experienced 234 motor vehicle thefts, making the crime rate for car thefts extremely high. Therefore, there is some skew to the data, especially in the jurisdiction data with the much smaller population sizes. In the main analysis of the paper, we exclude any cities with a crime rate over 100,000, though we include all outliers in supplementary materials below.
+Finally, to replicate Harris et al. (2017), we needed to collect arrest data for counties and jurisdictions. The only diﬃculty in this is that cities do not report arrest rates for as many crimes as the counties do: in Table 8 of Harris et al. (2017), which is our main table we are extending, it lists arrest rates for gun assault. Though the FBI reports this information for the county, it does not do so for individual cities. Therefore, we were constrained in the types of arrest rates included in our analysis.
+A.2.2 Other Variables
+The remaining variables are collected from a variety of sources. Most control variables, like percent poverty, unemployment rate, median income, population, share male, share Black, and share of various age groups, come from a variety of datasets published by the Census Bureau.
+5
+
+A.2.3 Variables Used in Bove and Gavrilova (2017) Replication
+As mentioned in the main text, one of the variables used to calculate the instrument used in Bove and Gavrilova (2017) is the level of military expenditures for the United States. We gathered this information from the Stockholm International Peace Research Institute and it represents the military spending of the United States government (in thousands) in constant dollars.
+
+A.2.4 Variables Used in Harris et al. (2017) Replication
+One set of instrumental variables in Harris et al. (2017) relies on distance from the nearest DLA disposition centers. There are eighteen of these centers across the country. We calculated the Haversine distance (‘as the crow ﬂies’) between each jurisdiction and the nearest and sixth-nearest disposition center to calculate the comparable instruments for our data. In the Harris et al. (2017) replication ﬁles, only the instrumental variables are included: the raw distances from each county to the ﬁrst- and sixth-nearest disposition center, for example, are not included. However, to compare our distances calculated with theirs, we attempted to back out the distances used. Following the text in Harris et al. (2017, 302), the description of the instrument is as follows: “Our identiﬁcation strategy relies on instruments constructed from exogenous time-invariant cost shifters (distance to FACs) interacted with exogenously changing amounts of tactical items made available through the 1033 Program ... the inverse distance from the centroid of county j to the k-th closest ﬁeld activity center.“ Therefore, we expect the distance instruments to be calculated by multiplying the amount of aid given to jurisdiction j by the inverse distance to the ﬁrst- or sixth-nearest disposition center. If this equation is correct, we can back out the distance as follows, for the nearest disposition center:
+
+1 Instrument = T otal.Items ×
+Distance.to.N earest.Disposition.Center With a little arithmetic, this is how we would calculate the distance from having just the instrumental variable and the total number of items issued.
+
+I nstrument
+
+1
+
+=
+
+T otal.Items Distance.to.N earest.Disposition.Center
+
+T otal.Items = Instrument × Distance.to.N earest.Disposition.Center
+
+6
+
+T otal.Items Distance.to.N earest.Disposition.Center =
+I nstrument We then compare our independent calculation of our distances with their distances, as backed out from their analysis. The distances are roughly equal: our distances have a mean of 230.015 and a median of 192.546, whereas their mean and median are 215.318 and 191.301, respectively. The only diﬀerence appears to be that they do not include areas in Hawaii or Alaska in their analysis, as their maximum distance is approximately 700, whereas ours is over 2,000. The distance instruments, gleaned from the Stata replication .do ﬁle, are calculated by interacting the inverse distance to either the ﬁrst or sixth nearest disposition center with either total items issued or total value of items issued. The second set of instruments used in Harris et al. (2017) use two other pieces of information about jurisdictions: whether it was ever designated a high-intensity drug traﬃcking area (HIDTA) and its land area. We collected information on whether individual jurisdictions were ever HIDTAs and also collected data on the land area, in miles, of each jurisdiction from the Census Bureau. The instruments interact the dummy for a HIDTA and the log-land area of a county with either total items issued or total value of items issued.
+A.3 Creating Aggregated County Dataset
+To create the dataset at the aggregated county level, we utilize two approaches. First, for the militarization data, we group the data by county and sum all the military aid variables to the county. Second, for the remaining demographic and economic information for the counties - we use the values for each county that are reported to the Census Bureau. Finally, our crime data at the county level comes from the Inter-University Consortium for Political and Social Research (ICPSR) and represents all crimes reported to agencies within each county. This series, called the Uniform Crime Reporting Program Data: County-Level Detailed Arrest and Oﬀense Data, aggregates crime information for all agencies within each county, accounting for issues like agencies that span multiple counties and missing data, and is the data source reported explicitly in Bove and Gavrilova (2017) (and is likely the one used in Harris et al. (2017), though it is not referenced explicitly).
+7
+
+A.4 Creating Summary Statistics
+To properly compare our datasets with both Harris et al. (2017) and Bove and Gavrilova (2017), we calculated summary statistics, as seen in Table 3 in the main body of the paper. We calculated militarization variables in our dataset (as described above) and compared that to the total amount, in dollars, each jurisdiction received (the total raw and sum value variables in Bove and Gavrilova (2017) and Harris et al. (2017), respectively) and the total quantity of items received (the tot q and sum items variables in Bove and Gavrilova (2017) and Harris et al. (2017), respectively). Because all total values of militarization aid were logged in the Harris et al. (2017) materials, we exponentiated the logged values and assumed that any jurisdiction that had a quantity of one item after the exponentiation had zero awards in that year9.
+B Bove and Gavrilova (2017) Replication Details
+B.1 Source of Replication
+Using the code and data provided by Bove and Gavrilova (2017), we are able to replicate all tables in their paper in both Stata and R. All the coeﬃcient estimates are identical, but the standard errors are slightly diﬀerent between R and Stata due to diﬀerent methods for computing clustered standard errors.
+B.2 Replication Diﬃculties
+In Bove and Gavrilova (2017), the text mentions the use of interacted state-year ﬁxed eﬀects. The replication ﬁles have these ﬁxed eﬀects included in the data as a set of dummy variables, so those are the variables used in the main replication. However, if we simply multiply state and year manually or use an R package speciﬁcally for the estimation of ﬁxed eﬀects, the results change slightly. The ﬁxed eﬀects variables from Bove and Gavrilova (2017) have generic labels – not ones that clearly identify the state and year. We are unable to exactly replicate their indicator variables as there should be a unique indicator for every state-year pair but the data from Bove and Gavrilova (2017) have some indicators covering multiple states and/or years. For our analysis at the county and
+9In about 3% of jurisdictions, they only received one quantity item. Because the magnitude was so small, we merely assigned these jurisdictions to zero quantity.
+8
+
+agency level, we simply use additive ﬁxed eﬀects (i.e. county/agency + state + year) as the results are substantively similar to those when we interact them, and the additive ﬁxed eﬀects are simpler to interpret.
+C Harris et al. (2017) Replication Details
+C.1 Source of Replication
+Using the code and data provided by Harris et al. (2017), we are able to replicate all tables in their paper in both Stata and R. All the coeﬃcient estimates are identical, but the standard errors are slightly diﬀerent between R and Stata due to diﬀerent methods for computing clustered standard errors.
+C.2 Replication Diﬃculties
+Despite the close proximity of our instruments to those used in Harris et al. (2017), the summary statistics for the instruments used in the analysis reveal that there is a signiﬁcant diﬀerence between what we calculated and the variables found in the replication materials. However, because Harris et al. (2017) do not report their code for creating the instruments, we are left with the text of the paper to calculate the instruments—via the interaction of a variety of distances with total quantity and value of items issued and the interaction between a county’s HIDTA designation and log-land area and total quantity and value of items issued. We comparde our values of the instrument with theirs, to see if our values were simply orders of magnitude higher than theirs, but Harris et al. (2017) do not report either the county name, state, or county or state FIPS codes of the counties in their dataset. The authors sent a ﬁle that was supposed to contain details of matching their numbers in their dataset to county and state FIPS codes, but it was merely the same dataset as their replication ﬁles. We were unable to get the matching ﬁle, so we could not match the counties in our dataset with theirs. We then attempted to graph the two values on top of each other to compare their magnitudes. Our instruments did not seem to be some multiple of theirs, so we remain unsure about their calculation of the instruments.
+Second, there are a few inconsistencies and/or omissions when Harris et al. (2017) describe their modeling strategies in the text. First, though Harris et al.’s (2017) main equations of interest
+9
+
+(Equations 1 and 2 in the text) include year and county ﬁxed eﬀects, one of the main tables of interest in the paper drops the year ﬁxed eﬀects. Table 4, which analyzes how diﬀerent quantities of items aﬀect the number of citizen complaints against police oﬃcers, does not use year ﬁxed eﬀects. In every other table in their paper, Harris et al. (2017) use both county and year ﬁxed eﬀects. The authors do not explain why the year ﬁxed eﬀects are dropped in that table and not in the others. Most importantly, the signiﬁcant and negative results displayed in the instrumental variables section of Table 4 are no longer signiﬁcant when year ﬁxed eﬀects are included. The instrumental variables estimation in Table 4 contains another peculiar detail: while the control variables for the logged items dependent variable contain the lagged number of actual crimes, the control variables for the other dependent variables (logged weapons, optics, vehicles, and combat vehicles) contain the lagged number of arrests. There is no mention of this control variable discrepancy in the text and while including the actual number of crimes as control variables for the other dependent variables instead of arrests does not change the results, it reﬂects another inconsistency in the analysis with no mention of the change in the text. Similarly, Harris et al. (2017) use the lagged number of law enforcement oﬃcers and killed as control variables in their estimation of Table 3 (and in the description for Equation 1), but do not include those variables in any other table in the paper. We are unsure why there is inconsistency in the control variables used. Finally, in Panel A of Table 6, which analyzes the eﬀect of log tactical items on oﬃcers assaulted, is inexplicably missing one instrument: the interaction of the inverse distance to the sixth nearest disposition center with total items issued. Including that instrument does not substantively change results, but it is unclear from the text why this instrument is missing in Panel A of Table 6, and nowhere else in the analysis.
+D Subsetted Data Analysis: 2010 to 2012
+To ensure our analysis and the analysis conducted in Harris et al. (2017) and Bove and Gavrilova (2017) were comparable, we subsetted all data to 2010 to 2012, the years in which we all had observations, to compare our results.
+D.1 Summary Statistics
+First, we calculated summary statistics for this limited time period.
+10
+
+D.2 Bove and Gavrilova (2017) Analysis
+Next, we used the same speciﬁcation as in Table 2 of the main paper, comparing Bove and Gavrilova’s (2017) analysis and ours, on the subsetted data.
+11
+
+Table 6: Summary Statistics (2010-2012)
+
+12
+
+Crime rate Murder rate Robbery rate Assault rate Burglary rate Larceny rate Vehicle theft rate Aid value (B&G) Aid value (Harris et al.) Aid quantity (B&G) Aid quantity (Harris et al.) Percent poverty Median income Unemployment rate Population Share males Share blacks Share age 1519 Share age 2024 Share age 2534 Per cap income B&G IV Harris et al. IV 1 Harris et al. IV 2 Harris et al. IV 3 Harris et al. IV 4 Harris et al. IV 5 Harris et al. IV 6 Harris et al. IV 7 Harris et al. IV 8
+
+Mean
+
+Replication
+
+Agency
+
+County
+
+3,036.0
+
+2,181.5
+
+2.7
+
+2.8
+
+55.9
+
+32.5
+
+202.4
+
+170.9
+
+593.4
+
+518.4
+
+2,020.7
+
+1,327.8
+
+147.7
+
+105.5
+
+8,125.2
+
+28,990.3
+
+8,125.2
+
+28,990.3
+
+4.0
+
+13.6
+
+4.0
+
+13.6
+
+15.9
+
+15.9
+
+50,047.6
+
+45,030.1
+
+5.3
+
+4.8
+
+20,588.0
+
+97,901.7
+
+0.5
+
+0.5
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+25,632.9
+
+22,976.2
+
+1.5
+
+3.3
+
+0.2
+
+0.1
+
+0.0
+
+0.0
+
+37,708.4
+
+194,025.7
+
+8,628.9
+
+4,268.3
+
+282.8
+
+239.9
+
+18.5
+
+22.9
+
+62,901,016.2 332,080,032.3
+
+14,383,186.0
+
+7,305,321.9
+
+B&G County 2,380.8
+3.2 35.9 188.1 576.3 1,463.2 114.2 95,928.8
+122.8
+17.1 43,853.5
+8.7 95,699.8
+0.5 0.1 0.1 0.1 0.2
+4.3
+
+Harris et al. County
+3.0 32.9 927.4 533.6
+107.9
+184,088.2
+37.8
+8.5 99,578.1
+0.1
+36.4
+4,246.3 827.4
+3,405,376.3 86,066.8 0.1 0.0 49.8 1.3
+
+SD
+
+Replication
+
+B&G
+
+Agency
+
+County
+
+County
+
+6,594.8
+
+1,435.3
+
+1,410.6
+
+13.5
+
+5.3
+
+6.2
+
+242.6
+
+54.2
+
+58.1
+
+319.7
+
+164.3
+
+175.0
+
+899.7
+
+390.4
+
+413.4
+
+4,455.9
+
+898.4
+
+877.2
+
+1,243.0
+
+109.2
+
+109.2
+
+76,291.0
+
+147,503.9 1,704,975.5
+
+76,291.0
+
+147,503.9
+
+66.0
+
+122.3
+
+1,471.9
+
+66.0
+
+122.3
+
+9.7
+
+6.4
+
+6.5
+
+24,747.9
+
+11,757.9
+
+11,080.0
+
+2.7
+
+1.9
+
+3.0
+
+118,487.8
+
+311,575.0
+
+264,433.2
+
+0.7
+
+0.0
+
+0.0
+
+0.2
+
+0.1
+
+0.2
+
+0.1
+
+0.0
+
+0.0
+
+0.1
+
+0.0
+
+0.0
+
+0.2
+
+0.0
+
+0.0
+
+13,389.1
+
+5,465.6
+
+2.9
+
+3.8
+
+3.7
+
+0.7
+
+0.2
+
+0.0
+
+0.0
+
+49,018.0
+
+137,797.3
+
+16,397.4
+
+13,023.4
+
+1,046.0
+
+379.5
+
+11.2
+
+14.5
+
+70,580,427.0 198,413,877.9
+
+24,385,618.5 21,045,953.9
+
+The data come from the following sources: the Stockholm International Peace Research Institute (SIPRI), the Law Enforcement Support Oﬃce (LESO), the FBI’s Uniform Crime Reports (FBI UCR), and the Census Bureau (CB). All data are restricted to 2010 to 2012, the years for which the data overlap.
+
+Harris et al. County
+5.8 58.3 733.7 386.9
+108.3
+3,495,497.1
+166.6
+3.2 317,645.4
+0.1
+9.3
+7,446.8 288.7
+827,113.3 199,372.1
+0.1 0.0 6.8 2.8
+
+Median
+
+Replication
+
+B&G
+
+Agency
+
+County County
+
+2,387.0
+
+2,032.8 2,184.5
+
+0.0
+
+0.0
+
+0.0
+
+18.3
+
+13.5
+
+16.2
+
+113.3
+
+128.5
+
+145.1
+
+427.9
+
+449.4
+
+495.0
+
+1,570.1
+
+1,265.6 1,373.7
+
+78.6
+
+81.4
+
+89.2
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+14.4
+
+15.1
+
+16.3
+
+43,611.0
+
+43,191.0 42,004.0
+
+5.0
+
+4.7
+
+8.5
+
+5,117.0
+
+25,894.0 25,340.0
+
+0.5
+
+0.5
+
+0.5
+
+0.0
+
+0.0
+
+0.0
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.1
+
+0.2
+
+22,317.0
+
+22,268.0
+
+0.0
+
+2.7
+
+3.8
+
+0.1
+
+0.1
+
+0.0
+
+0.0
+
+21,909.5
+
+139,652.8
+
+0.0
+
+0.0
+
+136.7
+
+141.7
+
+15.6
+
+17.9
+
+45,551,960.9 253,400,767.6
+
+0.0
+
+0.0
+
+Harris et al. County
+0.0 13.8 792.8 460.4
+82.4
+2,995.0
+8.0
+8.4 25,981.5
+0.0
+34.5
+2,718.6 781.0
+3,312,755.8 0.0 0.0 0.0
+49.5 0.0
+
+Table 7: The Eﬀect of Military Aid on Substantiated Crime Rates (Table 2 in Bove and Gavrilova (2017)) - Subsetted to 2010-2012 Alone
+
+B&G
+
+OLS Replication
+
+First Stage
+
+B&G
+
+Replication
+
+Total Crime Rate
+
+B&G
+
+Replication
+
+County (1) County Agency County (2) County Agency County (3) County Agency
+
+Military exp. IV Lagged Total Aid
+
+0.73 (1.76)
+
+1.66 3.04 (2.90) (3.45)
+
+30.13∗∗∗ (6.90)
+
+0.81∗∗∗ 106.00∗∗∗ (0.01) (5.86)
+
+−11.63 (20.65)
+
+10.36 24.25∗ (11.96) (12.12)
+
+Num. obs.
+
+9014
+
+9392 24893
+
+9014
+
+9392 24893
+
+9014
+
+9392 24893
+
+Homicide
+
+B&G
+
+Replication
+
+Robbery
+
+B&G
+
+Replication
+
+Assault
+
+B&G
+
+Replication
+
+13
+
+County (4) County Agency County (5) County
+
+Lagged Total Aid
+
+−0.11 (0.17)
+
+0.02 0.09 (0.04) (0.11)
+
+−0.93 (0.62)
+
+0.63 (0.40)
+
+Num. obs.
+
+9014
+
+9392 24893
+
+9014
+
+9392
+
+Agency −0.30 (0.77) 24891
+
+Burglary
+
+B&G
+
+Replication
+
+B&G
+
+Larceny Replication
+
+County (6) County Agency
+
+1.85 (2.46)
+
+−0.10 0.22 (1.34) (2.00)
+
+9014
+
+9392 24864
+
+Vehicle Theft
+
+B&G
+
+Replication
+
+County (7) County Agency County (8) County Agency County (9) County Agency
+
+Lagged Total Aid
+
+0.90 (6.97)
+
+4.31 −3.52 (3.23) (3.71)
+
+−11.33 (12.48)
+
+4.22 (7.93)
+
+15.05 (8.24)
+
+−2.00 (1.95)
+
+1.43 0.57 (0.81) (1.05)
+
+Num. obs.
+
+9014
+
+9392 24866
+
+9014
+
+9392 24872
+
+9014
+
+9392 24890
+
+∗∗∗p < 0.001, ∗∗p < 0.01, ∗p < 0.05
+
+All regression speciﬁcations control for percent in poverty, logged median household income, unemployment, logged population, share male, share Black, share aged 15-19, share aged 20-24, share aged 25-34, and agency/county and year ﬁxed eﬀects. The B&G column numbers correspond to their models and can be matched back to their Table 2 results. All regressions are run on data from 2010 to 2012. We removed 12 outliers from the agency-level database that had total crime rates of over one hundred thousand in this time period.
+
+D.3 Harris et al. (2017) Analysis
+
+Finally, we used the same speciﬁcation as Table 3 in the main body of the paper, comparing Harris et al.’s (2017) and our analysis, on the subsetted data from 2010 to 2012.
+Table 8: The Eﬀect of Receiving Tactical Items on Substantiated Crime Rates (Table 8 in Harris et al. (2017)) - Subsetted to 2010-2012 Alone
+
+Homicide
+
+Harris et al.
+
+Replication
+
+Robbery Harris et al. Replication
+
+log itemst−1 log valuet−1 Num. obs.
+
+County (1)
+−1.59 (8.22) −0.14 (1.87)
+6112
+
+County
+−0.25 (0.74) 0.17 (0.38)
+9255
+
+Agency
+2.08 (1.81) 0.77 (0.54)
+22539
+
+County
+48.18 (41.51) 10.86 (8.04)
+6112
+
+County Agency
+
+23.42∗ (11.75) 10.92 (5.58)
+
+44.74∗∗∗ (9.26) 13.63∗∗∗ (3.02)
+
+9255 22537
+
+Assault
+
+Harris et al.
+
+Replication
+
+Vehicle Theft Harris et al. Replication
+
+County (4) County Agency County (5) County Agency
+
+log itemst−1 log valuet−1
+
+55.58 (534.51) 140.13 (127.04)
+
+−30.88∗ (13.96) −11.91∗ (6.03)
+
+174.27∗∗∗ (27.84) 55.90∗∗∗ (8.56)
+
+61.75 (77.73) 15.83 (16.98)
+
+0.00∗ (0.00) −0.00∗ (0.00)
+
+65.67∗∗∗ (16.90) 21.54∗∗∗ (5.42)
+
+Num. obs.
+
+6112
+
+9255 22511
+
+6112
+
+9255 22536
+
+∗∗∗p < 0.001, ∗∗p < 0.01, ∗p < 0.05
+
+All regression speciﬁcations control for lagged arrest rates, economic controls, county and year ﬁxed eﬀects. The Harris column numbers correspond to their models and can be matched back to their Table 8 results. All regressions are run on data from 2010-2012. We removed 12 outliers from the agency-level database that had total crime rates of over one hundred thousand in this time period.
+
+E Using the Complete Dataset
+In the main body of the paper, we eliminate 24 observations from the agency dataset that have total crime rates of over 100,000 to prevent these massive outliers from biasing our results. Here, we report the analysis done if we do not eliminate those outliers.
+
+14
+
+E.1 Bove and Gavrilova (2017) Analysis
+15
+
+Table 9: The Eﬀect of Military Aid on Substantiated Crime Rates (Table 2 in Bove and Gavrilova (2017)) - No Outliers Eliminated
+
+B&G
+
+OLS Replication
+
+First Stage
+
+B&G
+
+Replication
+
+Total Crime Rate
+
+B&G
+
+Replication
+
+Military exp. IV Lagged Total Aid Num. obs.
+
+County (1)
+0.69 (1.30) 17822
+
+County
+2.75 (2.31) 15653
+
+Agency
+−58.60 (63.67) 41395
+
+County (2) 17.59∗∗∗ (2.76)
+17822
+
+County 0.73∗∗∗ (0.01)
+15653
+
+Agency 4.00 (3.20)
+41395
+
+Homicide
+
+B&G
+
+Replication
+
+Robbery
+
+B&G
+
+Replication
+
+County (3) County Agency
+
+−59.29∗∗∗ (15.67)
+17822
+
+9.99 3915.99 (12.31) (5283.92)
+15653 41395
+
+B&G
+
+Assault Replication
+
+16
+
+Lagged Total Aid Num. obs.
+
+County (4) −0.06 (0.10) 17822
+
+County −0.00 (0.03) 15653
+
+Agency 0.49 (1.92) 41395
+
+County (5) −6.10∗∗∗ (1.21)
+17822
+
+County 0.63 (0.42) 15653
+
+Agency 26.36 (26.20) 41393
+
+Burglary
+
+B&G
+
+Replication
+
+B&G
+
+Larceny Replication
+
+County (6) County
+
+−5.31∗ (2.62)
+
+−0.16 (1.38)
+
+17822 15653
+
+Agency 64.10 (55.67) 41362
+
+Vehicle Theft
+
+B&G
+
+Replication
+
+County (7) County Agency County (8) County Agency County (9) County Agency
+
+Lagged Total Aid
+
+−8.75 (5.92)
+
+4.06 214.87 −27.43∗∗∗ (3.26) (188.61) (8.06)
+
+4.10 3481.63 −11.64∗∗∗ (8.10) (5040.35) (3.13)
+
+1.40 (0.83)
+
+16.12 (47.73)
+
+Num. obs.
+
+17822
+
+15653 41363
+
+17822
+
+15653 41361
+
+17822 15653 41389
+
+∗∗∗p < 0.001, ∗∗p < 0.01, ∗p < 0.05
+
+All regression speciﬁcations control for percent in poverty, logged median household income, unemployment, logged population, share male, share Black, share aged 15-19, share aged 20-24, share aged 25-34, and agency/county and year ﬁxed eﬀects. The B&G column numbers correspond to their models and can be matched back to their Table 2 results. The Replication regressions are run on County data from 2009-2013 and Agency data from 2010-2015. The Bove and Gavrilova (2017) County data is from 2005-2012. We included all observations in this analysis, including the outliers with crime rates of over 100,000.
+
+E.2 Harris et al. (2017) Analysis
+
+Table 10: The Eﬀect of Receiving Tactical Items on Substantiated Crime Rates (Table 8 in Harris et al. (2017)) - No Outliers Eliminated
+
+Homicide
+
+Harris et al.
+
+Replication
+
+Robbery Harris et al. Replication
+
+log itemst−1 log valuet−1 Num. obs.
+
+County (1)
+−0.22 (0.32) 0.35 (0.29)
+36671
+
+County
+−0.26 (0.55) 0.03 (0.17)
+15425
+
+Agency
+4.59∗∗∗ (1.00) 1.13∗∗∗ (0.18)
+45012
+
+Assault
+
+Harris et al.
+
+Replication
+
+County
+−15.39∗∗∗ (3.38) −6.23∗ (2.99)
+36671
+
+County Agency
+
+12.56∗ (6.24) 2.73 (1.48)
+
+72.50∗∗∗ (17.69) 14.33∗∗∗ (3.19)
+
+15425 45010
+
+Vehicle Theft Harris et al. Replication
+
+County (4) County Agency County (5) County Agency
+
+log itemst−1 log valuet−1
+
+−145.80∗∗∗ (35.07) −110.35∗ (44.03)
+
+−18.96∗∗ (7.32) −4.27∗ (1.72)
+
+193.81∗∗∗ (32.45) 37.89∗∗∗ (6.42)
+
+−114.51∗∗∗ (15.59) −55.94∗∗ (18.35)
+
+−0.00∗ (0.00) −0.00 (0.00)
+
+183.26 (94.80) 38.27∗ (15.58)
+
+Num. obs.
+
+36671
+
+15425 44978
+
+36671
+
+15425 45006
+
+∗∗∗p < 0.001, ∗∗p < 0.01, ∗p < 0.05
+
+All regression speciﬁcations control for lagged arrest rates, economic controls, and agency/county and year ﬁxed eﬀects. The Harris column numbers correspond to their models and can be matched back to their Table 8 results. The Replication regressions are run on County data from 2009-2013 and Agency data from 2010-2015. The Harris et al. (2017) County data is from 2000-2013. We included all observations in this analysis, including the outliers with crime rates of over 100,000.
+
+17
+

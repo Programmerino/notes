@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[101],{1349:function(n,o){n.exports=function(){for(var n={},o=0;o<arguments.length;o++){var p=arguments[o];for(var t in p)r.call(p,t)&&(n[t]=p[t])}return n};var r=Object.prototype.hasOwnProperty}}]);
+//# sourceMappingURL=https://fortune.com/static/js/npm.xtend.map?v=a10565e9

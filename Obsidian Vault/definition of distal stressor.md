@@ -1,0 +1,1 @@
+![[Douglass '22#Distal stressor and proximal stressor definition]]

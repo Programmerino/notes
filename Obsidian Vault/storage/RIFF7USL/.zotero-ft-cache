@@ -1,0 +1,283 @@
+
+This website uses cookies for navigation, order transactions, and general analytics. Learn more
+Got it!
+.logo_letters{fill:#e0e0f0}
+☰
+
+    Home
+    Books
+    Authors
+    Publish with Us
+    Support
+    Swag
+    Tips
+    My Orders
+
+Shopping cart Cart: 0
+
+    Prereqs
+    Resources
+    Extracts
+    Author
+
+Tweet this
+About This Title
+
+Pages: 282
+Published: July 2017
+ISBN: 9781680502336
+In Print
+Skill Level Meter
+
+Functional Programming: A PragPub Anthology
+Exploring Clojure, Elixir, Haskell, Scala, and Swift
+by Michael Swaine and the PragPub writers
+
+Explore functional programming and discover new ways of thinking about code. You know you need to master functional programming, but learning one functional language is only the start. In this book, through articles drawn from PragPub magazine and articles written specifically for this book, you’ll explore functional thinking and functional style and idioms across languages. Led by expert guides, you’ll discover the distinct strengths and approaches of Clojure, Elixir, Haskell, Scala, and Swift and learn which best suits your needs.
+
+Functional programming is on the rise because it lets you write simpler, cleaner code, and its emphasis on immutability makes it ideal for maximizing the benefits of multiple cores and distributed solutions. So far nobody’s invented the perfect functional language—each has its unique strengths. In Functional Programming: A PragPub Anthology , you’ll investigate the philosophies, tools, and idioms of five different functional programming languages.
+
+See how Swift, the development language for iOS, encourages you to build highly scalable apps using functional techniques like map and reduce. Discover how Scala allows you to transition gently but deeply into functional programming without losing the benefits of the JVM, while with Lisp-based Clojure, you can plunge fully into the functional style. Learn about advanced functional concepts in Haskell, a pure functional language making powerful use of the type system with type inference and type classes. And see how functional programming is becoming more elegant and friendly with Elixir, a new functional language built on the powerful Erlang base.
+
+The industry has been embracing functional programming more and more, driven by the need for concurrency and parallelism. This collection of articles will lead you to mastering the functional approach to problem solving. So put on your explorer’s hat and prepare to be surprised. The goal of exploration is always discovery.
+
+Five Questions for the Editor of Functional Programming: A PragPub Anthology
+
+Q: This book is titled “Functional Programming: A PragPub Anthology.” First question: What’s a PragPub?
+
+A: PragPub is a monthly magazine by and for software developers that I created in 2009 for the Pragmatic Programmers. It began as a showcase for the authors of their books, and has evolved into an independent publication. But we still have a close relationship with the Pragmatic Programmers, and we still feature many of their authors. This book, for example, includes chapters by Stuart Halloway, Venkat Subramaniam, and Dave Thomas, all of whom have written well-received books on the subjects they write about in this book.
+
+Q: OK, how about the Anthology part? This is a collection of articles from the magazine?
+
+A: It’s that, but I tried to put together a book that makes sense on its own. The chapters here are based on a selection from over a thousand articles we’ve published in the course of the past eight years. The idea was to look at one topic from a variety of perspectives, and with each perspective to have some introductory chapters and some more advanced chapters. Once I settled on a topic, I had a lot of articles on this topic to choose from, and I left out some really good ones because they didn’t fit the purpose of this particular book. Maybe they’ll be in the next one.
+
+Q: And that one topic is functional programming?
+
+A: Yes, and the different perspectives on it are its implementation five different languages: Clojure, Elixir, Haskell, Scala, and Swift. Each language embraces functional programming differently, implements functional capabilities in its own way, and encourages different styles of functional programming. It’s a matter of emphasis. I thought it would be useful to see these different perspectives on functional programming side by side.
+
+Q: So readers can see which approach they prefer?
+
+A: That, and because there’s virtue in seeing the same idea from different perspectives. You get a more rounded mental model of the concept. Take the avoidance of mutable state. That’s considered a defining feature of functional programming, but you see it differently if you think of it as a useful technique to use in certain circumstances as opposed to the default way to write functions. Seeing it from both those perspectives, I’m convinced, leads to a richer understanding.
+
+Q: You mentioned the next book. Will there be more PragPub Anthologies?
+
+A: The market willing. I have two more in the planning stages. Functional programming was a pretty obvious place to start. It’s a hot topic for programming books right now and it’s a particular interest of mine. We’ll probably return to it with a different approach, because there’s definitely a good solid book’s worth of functional programming material in the magazine. But the next one will probably be something quite different. And of course we keep publishing the magazine. The key article that the whole book coalesces around may be one we publish next month, or the next.
+What You Need
+Familiarity with one or more programming languages.
+Resources
+
+    Errata, typos, suggestions
+
+    Source Code (zip file)
+
+Releases:
+
+    P1.0 2017/07/25
+    B2.0 2017/07/12
+    B1.0 2017/05/16
+
+Contents & Extracts
+Introduction
+
+    The Functional Paradigm
+        Functional Programming Is Big Again
+            We’ve Seen This Movie Before
+            New Arguments for Functional Programming
+        Functional Thinking For The Imperative Mind
+            It’s About Functions
+            It’s About Immutability
+            It’s a Way of Thinking
+    Scala: a Hybrid Language
+        Scala and Functional Style
+            Functional Purity
+            Higher-Order Functions
+            A Simple Example
+            A Practical Example
+            What About Debugging and Performance?
+        Working with Scala Collections
+            Immutable Collections
+            Mutable Collections
+            Lazy Collections
+        Creating Higher Order Functions in Scala
+            Creating a Higher-Order Function
+            Multiple Parameter Lists
+            Function Values and the Loan Pattern
+    Clojure: the New Lisp
+        An Interview with Rich Hickey
+            Why Clojure?
+            The Infrastructure
+            Compared to What?
+        Getting Clojure: Why Lisp Still Matters
+            The REPL
+            Vectors and Keywords
+            Macros
+        Identity, Value, and State in Clojure
+            The Object-Oriented Model
+            The Clojure Model
+        Concurrent Programming in Clojure
+            A “Simple” Concurrent Programming Problem
+            Clojure’s Solution
+    Elixir: Making Programming Fun Again
+        Patterns and Transformations in Elixir
+            Pattern Matching
+            Pattern Matching Structured Data
+            Pattern Matching and Functions
+            Transformation Is Job #1
+        Getting Functional with Elixir
+            Anonymous Functions
+            Named Functions
+            A Practical Example
+            Refactor to Functional Style
+            What’s Different About this Code
+        Getting Parallel with Elixir
+            The Actor Model
+            Actors and Elixir
+            Messages
+            Monitoring Your Processes
+            A Final Example
+            Concurrency is the Core of Elixir
+    Haskell: The Researcher’s Playground
+        Functional Thinking and Haskell
+            What It’s all About
+            A Quick Exercise
+            Data Types Are Cheap
+            Pattern Matching
+            Recursion, Control, and Higher Order Functions
+            Further Features
+        Haskell Hands-on
+            One Step at a Time
+            Generating Candidates
+            Dictionary Filtering
+            Breadth-first Searching
+            Using the Search
+            Performance and Optimization
+    Swift: Functional Programming for Mobile Apps
+        Swift: What You Need to Know
+            Hello, Swift!
+            Functional Swift
+        Functional Thinking in Swift
+            Avoid Nil, Unless You Mean It
+            Avoid Mutable State
+            Use Higher-Order Functions
+    Going Deeper
+        Protocols in Swift vs. Ruby and Elixir
+            The Problem with Extensions
+            The Case for Protocols
+            Protocols and Extensions
+        Pattern Matching in Scala
+            Counting Coins
+            Matching All the Things
+            Using Extractions
+        Concurrency in Scala
+            Using Parallel Collections
+            Knowing when to Use Concurrency
+            Revisiting an Earlier Example
+        Clojure’s Exceptional Handling of Exceptions
+            A Simple Example
+            The Problem with Exceptions
+            A Solution: Conditions
+            Make Life Simple For Your Callers
+            Laziness and Errors
+        A Testing Framework for Elixir
+            Investing in Testing
+            One Experiment, Several Measurements
+            Optimizing Setup with TrueStory
+            Condense and Combine the Measurements
+            Controlling Setup Repetition with Nested Contexts
+            Controlling Setup Repetition with Story Pipes
+        Building Test Data with Elixir
+            The Typical Approaches
+            Beautiful Data for Beautiful Tests
+            Registering Templates and Prototypes with Forge
+            Instantiating Template Entries
+            Mutual Attributes and Having
+            Creating Structs
+            Creating Custom Entities
+            Customizing Persistence
+        Haskell’s Type System
+            TL;DR
+            What Are Types For?
+            A Concrete Example: Sorting
+            The Language of Haskell’s Type System
+            Type Inference and Type Checking
+            Some Examples
+            Comfort Break
+            Interfaces and Type Classes
+            Some Real-world Examples with Interfaces
+            Pros and Cons — the 80-20 Rule
+            Beyond Haskell: Dependent Types
+            Propositions are Types, and Proofs are Programs
+            Another Look at Sorting
+            Back to Earth
+        A Haskell Project: Testing Native Code
+            Our Native Code
+            Our Model
+            A Brief Introduction to Haskell’s FFI
+            Wrapping our Native Code in Haskell
+            Experimenting with GHCi
+            A Brief Introduction to QuickCheck
+            Writing an Equivalence Property
+            Defect Smashing
+        The Many Faces of Swift Functions
+            Anatomy of Swift Functions
+            Calling All Functions
+            Calling on Methods
+            Instance Methods Are Curried Functions
+            Init: A Special Note
+            Fancy Parameters
+            Access Controls
+            Fancy Return Types
+            Nested Functions
+        A Functional Approach to Lua
+            First-Class Functions in Lua
+            Recursion in Lua
+            Building with Functional Primitives
+            A Simple Game Animation
+
+Author
+The authors are all recognized experts in functional programming and languages. Rich Hickey created the Clojure language, Stuart Halloway and Aaron Bedra wrote Programming Clojure , Michael Bevilacqua-Linn wrote Functional Programming Patterns in Scala and Clojure , Venkat Subramaniam wrote Pragmatic Scala , Paul Callaghan lectures on Haskell and functional programming, José Valim created Elixir, Dave Thomas wrote Programming Elixir , Natasha (the Robot) Murashev is a leading authority on Swift, Tony Hillerson was an early Swift adopter, Josh Chisholm is a Lua expert, and Bruce Tate has written numerous books on programming languages. Michael Swaine is the former editor of Dr. Dobb’s Journal , current editor of PragPub magazine, and co-author of Fire in the Valley: the Birth and Death of the Personal Computer .
+eBook Formats:
+
+    PDF for desktop/tablets
+
+    epub for Apple Books, e-readers
+
+    mobi for Kindle readers
+
+Get all eBook formats here for $27.95 (USD)
+
+Add to Cart we accept visa, mastercard, amex, discover, paypal
+
+Paperback Formats:
+
+    Order via Bookshop (U.S. Only)
+
+Please support indie bookstores!
+Find indie bookstores in the U.S. Find indie bookstores around the world .
+Releases, Offers & More
+
+Be the first to hear about our newest content, best promotions and upcoming events. Plus get 25% off your next purchase.
+
+Newsletter Sign Up
+Related categories:
+
+    Architecture, Design, and Testing
+
+Related Titles:
+
+    Seven More Languages in Seven Weeks
+
+    Functional Programming Patterns in Scala and Clojure
+
+    Seven Languages in Seven Weeks
+
+    Contact
+    About Us
+    Privacy
+    Terms of Use
+    Security
+    Newsletter
+    Partnerships & Promotions
+    Careers
+
+© 1999-2022 The Pragmatic Programmers, LLC. All Rights Reserved.

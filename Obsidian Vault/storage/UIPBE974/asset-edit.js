@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){__tnt.isAuthor&&(document.querySelector(".asset-owner-content").style.display="block")});
+//# sourceMappingURL=asset-edit.b419cb3c218ef0da9fa281dd92729a83.js.map

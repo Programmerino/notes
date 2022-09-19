@@ -1,0 +1,3 @@
+* Arnauld explains that when an object is a sign, a person both considers the sign as a thing in itself, and the thing signified by the sign which is by nature the goal of the sign
+* In logic, something can be understood by means of simple apprehension (for example, seeing something) which provides raw material by which to think about, or by judgement in which the mind reasons about the consistency of concepts.
+* In logic, reasoning, which makes a conclusion which is either necessary, probable, or false, occurs either through analytic logic which can be used to deduce neccessity

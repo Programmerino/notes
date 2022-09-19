@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Barlow Regular'), local('Barlow-Regular'), url(https://fonts.gstatic.com/l/font?kit=7cHpv4kjgoGqM7EPDtl8wFwZrA0QQoSKCciD59iQ4F0MEfIkuFpI8qvegpC5HCrTPte7sTm3CvQLHCQ2y3LnHlms_cYijP0URHYpI9e-DA&skey=32d7acf8757dbad0&v=v4) format('woff2');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Barlow Bold'), local('Barlow-Bold'), url(https://fonts.gstatic.com/l/font?kit=7cHqv4kjgoGqM7E3t-4c5UhpvRkTR4OPCsWMkaLq5VoJEv8rtVlN9a7dn4-kHy_UO9S2vjSOMc0OGyE1xn3qHVyr-MU_k-AXQXEsINqxAY7xMw&skey=f60e73b1bbf362f3&v=v4) format('woff2');
+}

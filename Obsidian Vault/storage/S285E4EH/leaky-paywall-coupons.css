@@ -1,0 +1,18 @@
+.lp-coupon-form-div {
+	margin-top: 20px;
+}
+
+.lp-coupon-form-div .lp-coupon-input {
+	margin-bottom: 10px;
+}
+
+.lp-coupons-errors {
+	background: #FE9898;
+	border: 1px solid #FF0012;
+	padding: 10px;
+}
+
+.lp-coupons-errors .lp-coupons-error {
+	margin-bottom: 0;
+	color: #333;
+}

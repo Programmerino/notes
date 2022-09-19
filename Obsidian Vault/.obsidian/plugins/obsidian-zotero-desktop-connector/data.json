@@ -1,0 +1,28 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "zotero",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 100,
+  "citeFormats": [
+    {
+      "name": "Policy Debate Cite",
+      "format": "formatted-citation",
+      "cslStyle": "http://www.zotero.org/styles/policy-debate-citation"
+    }
+  ],
+  "exportFormats": [
+    {
+      "name": "Import",
+      "outputPathTemplate": "{{citekey}}.md",
+      "imageOutputPathTemplate": "{{citekey}}/",
+      "imageBaseNameTemplate": "image",
+      "cslStyle": "http://www.zotero.org/styles/policy-debate-citation",
+      "templatePath": "import template.md"
+    }
+  ],
+  "shouldShowCiteSuggest": true,
+  "exeVersion": "1.0.12",
+  "shouldConcat": true,
+  "pdfExportImageOCR": false
+}

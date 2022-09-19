@@ -1,0 +1,567 @@
+Physics
+Newton’s Laws of Motion
+carolinadistancelearning.com
+
+NEWTON’S LAWS OF MOTION
+
+Table of Contents
+2 Overview 2 Outcomes 3 Time Requirements 3 Background 6 Materials 7 Safety 7 Technology 7 Preparation 8 Activity 1 8 Activity 2 14 Disposal and Cleanup 14 Observations 16 Extension Activity
+
+Overview
+The combination of Newton’s laws of motion and Newton’s law of universal gravitation form the foundation of classical mechanics, which explains the motion of ordinary physical objects under everyday conditions. Newton’s first law of motion, or the law of inertia, states an object at rest remains at rest and an object in motion remains in motion at constant speed unless acted on by an unbalanced force. Newton’s second law of motion states that net force is equal to mass times acceleration. Newton’s third law of motion states for every action force there is an equal and opposite reaction force. In this investigation, you will explore Newton’s three laws of motion, giving you a better understanding of objects in motion.
+
+Outcomes
+• Demonstrate Newton’s first law of motion. • Determine the force required to move an object up an incline. • Calculate the acceleration of an object moving up an incline. • Verify Newton’s second law of motion.
+
+Key
+Personal protective equipment (PPE)
+goggles gloves apron
+
+follow photograph stopwatch link to results and required video submit
+
+warning corrosion flammable toxic environment health hazard
+
+Made ADA compliant by NetCentric Technologies using the CommonLook® software
+2 Carolina Distance Learning
+
+Time Requirements
+Preparation ........................................ 15 minutes Activity 1: Exploring Newton’s Laws of Motion
+First Demonstration of Newton’s First Law of Motion ...................... 20 minutes
+Second Demonstration of Newton’s First Law of Motion ...................... 25 minutes
+Activity 2: Verifying Newton’s Second Law of Motion
+First Angle..................... ……………15 minutes Second Angle ....................…………10 minutes Third Angle..................... ……………10 minutes Data Analysis .................................. 20 minutes
+Background
+Newton’s Laws of Motion Classical mechanics, also referred to as Newtonian mechanics, is the area of physics built on the works of Sir Isaac Newton (1643– 1727), comprising Newton’s three laws of motion and Newton’s law of universal gravitation. Newton’s laws of motion are given designations to aid in recalling them: Newton’s first law of motion is the law of inertia, Newton’s second law of motion is F = ma, and Newton’s third law of motion is action − reaction. The core of classical mechanics is the combination of these mathematical laws and principles: Newton’s first law of motion, Newton’s second law of motion, Newton’s third law of motion, Newton’s law of universal gravitation, law of conservation of energy, law of conservation of momentum, and Bernoulli’s principle.
+Newton’s first law of motion states that an object at rest will remain at rest or in uniform motion in a straight line unless acted upon by a net
+
+external force. This statement describes inertia, the tendency of an object to resist changes in motion; mass SI unit of kilogram [kg] is the quantitative measure of inertia. The International Committee for Weights and Measures has defined the kilogram by defining Planck’s constant to be exactly 6.62607015×10−34 kg m2 s−1, effectively defining the kilogram in terms of the second and the meter.
+Newton’s second law of motion is the mathematical relationship between force, mass, and acceleration or between force and the derivative with respect to time of momentum as shown in Equation 1.
+Equation 1.
+Force, F, is a vector with SI units of newtons [N = kg m/s2], and acceleration, a, is also a vector quantity with SI units of m/s2. Momentum, p, is equal to mass times velocity and is a vector with SI units of kg m/s. The force is the net external force and is applicable to a wide range of physical phenomena, but it is not a fundamental principle like the conservation laws. When the net force is defined as the rate of change of momentum, the relationship net force equals mass times acceleration will only apply if the mass is constant. A change in the acceleration of an object with a fixed mass will result in a corresponding change in the net force, such as when the acceleration of an object increases and the mass remains constant, the acceleration change was caused by an increase in the net force.
+
+continued on next page
+www.carolina.com/distancelearning 3
+
+NEWTON’S LAWS OF MOTION
+
+Background continued
+Newton's third law of motion states for every action there is an equal and opposite reaction; this means all forces in the universe occur in equal but oppositely directed pairs. For every external force acting on an object, there is a force with an equal magnitude in the opposite direction acting back on the object; these forces do not cancel because the action force and the reaction force act on different objects.
+Newton's law of universal gravitation describes the pull of gravity between two objects as being proportional to the masses of the objects, m1 and m2, and inversely proportional to the square of the distance between the masses, r, as shown in Equation 2.
+Equation 2.
+The Law of Conservation of Energy The law of conservation of energy states energy cannot be created nor destroyed; it is transformed from one type to another. For example, when a hydroelectric dam transforms the kinetic energy of water into electrical energy, when energy is transferred or transformed, the total amount of energy does not change.
+The Law of Conservation of Momentum The law of conservation of momentum states for an isolated system, where there is no external force, the total momentum before an event such as a collision is equal to the total momentum after the event. Equation 3 is the mathematical expression for the conservation of momentum, where momentum, p = mv.
+
+Equation 3.
+Bernoulli’s Principle Bernoulli's principle is a statement of conservation of energy for fluid flow. The total energy per unit mass of flowing fluid is the sum of the kinetic, potential, and fluid-pressure energies and their sum is equal to a constant. Bernoulli's Principle is stated mathematically in Equation 4.
+Equation 4.
+where P1 and P2 measure absolute pressure, which is equal to atmospheric pressure plus gauge pressure; fluid density is ρ [kg/m3]; fluid velocity is v [m/s]; g is the acceleration due to gravity, 9.80 m/s2; and the depth of the fluid is h [m].
+The combination of these laws and principles provides the foundation for explaining the motion of ordinary physical objects under normal conditions but not to situations when speeds are extremely high or objects are incredibly small. The inconsistencies resulting from the extremes speeds were remedied by Einstein's Special Theory of Relativity and were resolved for incredibly small objects by quantum mechanics.
+
+4 Carolina Distance Learning
+
+Newton’s Second Law Problem—Mass on an Incline Plane with a Pulley Newton’s second law can be applied to many situations to determine the acceleration of objects; an example is a two-mass system on an incline as shown in Figure 1. The first mass, m1, is placed on a frictionless incline of angle θ, and is attached to a hanging mass, m2, by a cord over a frictionless pulley. The hanging mass creates tension in the cord, which is used to accelerate the mass, m1, up the incline. Newton’s second law can then be used to determine the acceleration of the mass moving up the incline plane. Drawing free body diagrams will help visualize the forces acting on the masses. The free body diagrams are also shown in Figure 1.
+Figure 1.
+Mass on an Incline with a Pulley
+
+Tension in the cord is T, N is the normal force, and g is the acceleration due to gravity, 9.80 m/s2.
+Newton’s second law for mass, m1, using the forces along or parallel to the incline as shown in Figure 1, the direction of positive acceleration is up the incline.
+Solve for T = m1a + m1gsinθ Newton’s second law for mass, m2, as shown in Figure 1, the direction of positive acceleration is down.
+Solve for T:
+T = m2g − m2a Set the expressions for tension, T, equal as the tension in the cord is the same everywhere along the length of the cord.
+m1a + m1gsinθ = m2g − m2a Solve for a:
+m1a + m2a = m2g − m1gsinθ Equation 5.
+
+The acceleration of the system of masses,
+mass m1 and mass m2, is a single value that is calculated by applying Newton’s second law
+to each mass. The following steps show how
+the formula for the acceleration is determined.
+
+The acceleration of the system can be calculated using Equation 5 when the angle of the incline and the masses, m1 and m2, are known. The system shown in Figure 1 will be used in the Newton’s laws of motion activities to investigate force and acceleration as well as verify Newton’s second law of motion.
+
+www.carolina.com/distancelearning 5
+
+NEWTON’S LAWS OF MOTION
+Materials
+Needed from the equipment kit:
+
+String Beaker, 250 mL
+
+Measuring tape
+
+Protractor
+
+Electronic balance
+
+Paper clip
+
+Table clamp pulley
+
+Foamboard
+
+Needed but not supplied: • Table or desk at least 1 meter in length • Books • Digital camera or mobile device capable of
+recording photos and video • Scissors • Index card, 3 x 5" • 1 or more coins, any type (i.e., quarter, nickel,
+etc.) • Tap water • Paper or dish towels • Calculator • Optional but recommended: a volunteer to
+assist you
+
+15 Small washers
+
+1 Sheet of blank white paper
+
+Reorder Information: Replacement supplies for the Newton’s Laws of Motion investigation (item number 580271) can be ordered from Carolina Biological Supply Company.
+Call: 866.332.4478 to order.
+
+6 Carolina Distance Learning
+
+Safety
+Wear your safety goggles at all times while conducting this investigation. Read all the instructions for this activity before beginning. Follow the instructions closely, and observe established laboratory safety practices, including the use of appropriate personal protective equipment.
+Do not eat, drink, or chew gum while performing this investigation. Wash your hands with soap and water before and after the investigation and clean the work area with soap and water after finishing. Keep pets and children away from lab materials and equipment.
+Technology
+Alternate Methods for Collecting Data Using Digital Devices
+Much of the uncertainty in physics experiments arises from human reaction time error in measuring the times of events. Some of the time intervals are very short, which increases the effect of human error due to reaction time. Observing the experiment from a good vantage point that removes parallax errors and recording measurements for multiple trials helps to minimize error; using a digital device as an alternate method of data collection may further minimize error. Many digital devices, such as smartphones and tablets, have cameras and software that allow the user to pause or slow
+
+down the video. If you film the activity against a scale such as a tape measure, you can use your video playback program to record position and time data. This can provide more accurate data and may eliminate the need for multiple trials. If the time on your device’s playback program is not sufficiently accurate, you may download an app such as the following free apps:
+• OnForm iOS and Android (https://www.getonform.com/)
+• SloPro iOS (https://itunes.apple.com/us/app/slopro 1000fps-slow-motion/id507232505?mt=8)
+Android (https://slopro.en.uptodown.com/ android)
+Or you may upload the video to your computer. Your operating system or software suite may include video playback programs, or these programs may be available for download.
+Preparation
+1. Read through the procedure. 2. Gather the needed materials for this
+investigation. An alternative to using the foamboard is a table or desk item as the incline plane. 3. Clear the work area (table or desk) completely.
+
+www.carolina.com/distancelearning 7
+
+ACTIVITY
+
+ACTIVITY 1
+Exploring Newton’s Laws of Motion
+
+A First Demonstration of Newton’s First Law of Motion
+
+1. Set the plastic beaker on a table or desk. Place the index card over the opening of the beaker. Set one coin on top of and in the center of the index card.
+
+2. Set up the digital camera or mobile device to record a video of the beaker setup. It may be helpful to have a volunteer hold the recording device.
+
+3.
+
+Start recording a video. Try to drop the
+
+coin into the beaker without touching
+
+the coin. Use your finger and thumb to
+
+flick the index card out from under the coin
+
+and observe what happens. Then stop the
+
+recording.
+
+4. Flicking the index card may take some practice. Repeat Steps 1–3 as needed until the coin drops into the beaker.
+
+5. Try placing multiple coins at the center of the index card on the beaker. Then repeat Steps 2–3.
+
+B Second Demonstration of Newton’s First Law of Motion
+
+2. Fill the beaker halfway with water. Place the beaker at the center of the portion of the paper remaining on the table.
+
+3. Set up the digital camera or mobile device to record a video of the beaker setup. It may be helpful to have a volunteer hold the recording device.
+
+4.
+
+Start recording a video. Remove the
+
+paper from under the beaker without
+
+touching the beaker. Hold the paper where it
+
+hangs over the edge of the table and quickly
+
+jerk down on the paper. Stop the recording.
+
+5. Removing the paper may take some practice. Repeat Steps 1–4 as needed until the paper can be removed without tipping over the beaker.
+
+6. Try setting up the activity with an empty beaker. Repeat Steps 3 and 4.
+
+7. Empty the beaker and dry it out using a paper or dish towel before starting Activity 2.
+
+ACTIVITY 2
+Verifying Newton’s Second Law of Motion
+Note: All measurements need to be recorded in SI units and contain the correct number of significant digits.
+
+Important safety note: This activity involves water that may spill. Select a work area where spilled water will not cause any damage.
+1. Place a sheet of paper on the edge of the table so approximately one third of the length of the paper hangs over the edge.
+
+The following steps explain how to set up your pulley to perform Activity 2.
+1. Clamp the table clamp pulley to one end of the board or table.
+
+8 Carolina Distance Learning
+
+2. Use books, or similar items, to raise the pulley end of the board or table by 3 degrees from horizontal. If using the table as the incline plane, place the books under the legs of the table to adjust the angle of incline.
+3. Use the measuring tape to measure the length of the incline, or hypotenuse, and the height of the incline, or the opposite side, as shown in Figure 2. Figure 2.
+4. Using the inverse trigonometric function of sinθ, the angle can be calculated using the measurements of the length of the opposite side and the length of the hypotenuse as shown in Equation 6. Record these measurements in the Observations section for the first angle (see page 14). Determine the angle of your incline, and record this value in Data Table 1. Equation 6.
+5. Cut a 1.5-m piece of string. Tie one end of the string around the beaker.
+
+6. Place the beaker at the bottom of the incline. Extend the length of string across the pulley and down toward the floor. Tie a loop in the end of the string hanging from the pulley. The string should extend about 0.40 m down from the pulley.
+A First Angle
+Fashion a mass hanger out of a paper clip and attach it to the loop at the end of the string that will be hanging below the pulley.
+1. Use the electronic balance to determine the mass of the empty plastic beaker. Record this in the Observations section.
+2. Tie the end of the string, opposite the loop with paper clip mass hanger, around the beaker, place the beaker upside down near the bottom of the incline, extend the string over the pulley, and allow the looped end of the string with the paper clip mass hanger to hang below the pulley. Placing the beaker upside down reduces the amount of surface area that is in contact with the incline.
+3. Using the electronic balance, determine the mass of 3 of the washers. Record this mass in Data Table 1 as the hanging mass for Trial 1.
+4. When you add the hanging mass to the paper clip mass hanger, the beaker will move very rapidly up the incline. This is not the type of motion you want to achieve. You want the motion of the beaker to be steady and uniform so you can repeat it for additional trials. By adding mass to the beaker, you will be able to adjust the motion of the beaker.
+
+continued on next page
+www.carolina.com/distancelearning 9
+
+ACTIVITY
+
+ACTIVITY 2 continued
+
+5. The acceleration of the beaker should be approximately 2 m/s2. At this acceleration an object would begin moving, travel between 0.50 m and 0.60 m in ~0.80 seconds, and then slow and eventually stop. The object does not continue moving because of the presence of a friction force opposing its motion.
+
+6. Place a washer on top of the upside-down beaker. Replace the beaker at the bottom of the incline and release it.
+
+7. If the beaker moves too quickly, place another washer on top of the upside-down beaker. Replace the beaker at the bottom of the incline and release it. The beaker may not move all the way up the incline; it should start moving, travel at least half the distance of the incline, slow down, and stop.
+
+8. When you achieve a steady, uniform motion that you will be able to repeat, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 1 as the moving mass for Trial 1.
+
+9.
+
+Make a video recording, for inclusion in
+
+your lab report, of the beaker moving
+
+up the incline due to the tension in the
+
+string created by the weight of the 3-washer
+
+hanging mass.
+
+10. Use the electronic balance to determine the mass of an additional washer. Add this washer to the hanging mass and record this value in Data Table 1 as the hanging mass for Trial 2.
+11. Repeat the process of adding additional washers on top of the beaker to achieve the same steady, uniform motion achieved in Step 7.
+12. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 1 as the moving mass for Trial 2.
+13. Use the electronic balance to determine the mass of an additional washer. Add this washer to the hanging mass and record this value as the hanging mass for Trial 3 in Data Table 1.
+14. Repeat the process of adding additional washers on top of the beaker to achieve the same steady, uniform motion achieved in Step 7.
+15. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 1 as the moving mass for Trial 3.
+
+10 Carolina Distance Learning
+
+B Second Angle
+1. Increase the angle of the incline to ~6°. Use the measuring tape to measure the length of the incline (hypotenuse) and the height of the incline (opposite side). Record these lengths in the Observations section for the second angle.
+2. Determine the angle of your incline using Equation 6, and record this value in Data Table 2.
+Equation 6.
+3. Reset the beaker upside down near the bottom of the incline, extend the string over the pulley, and allow the looped end of the string with the paper clip mass hanger to hang below the pulley.
+4. Add 3 washers of known mass to the paper clip hanger; record the total mass of the washers in Data Table 2 as the hanging mass for Trial 1. If you keep track of the washers, the hanging mass will be the same as you used for Part A—First Angle.
+5. To start, add the same number of washers, used on top of the beaker as used for Part A—First Angle, Trial 1.
+6. Test the system to see if you get the same steady, uniform motion as you observed for Part A—First Angle. If the motion is not the same, place additional washers on top of the upside-down beaker; replace the beaker at the bottom of the incline and release it.
+7. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure
+
+the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 2 as the moving mass for Trial 1.
+
+8.
+
+Make a video recording, for inclusion in
+
+your lab report, of the beaker moving
+
+up the incline due to the tension in the
+
+string created by the weight of the 3-washer
+
+hanging mass.
+
+9. Use the electronic balance to determine the mass of an additional washer. Add this washer to the hanging mass and record this value as the hanging mass for Trial 2 in Data Table 2. If you keep track of the washers, the hanging mass will be the same as you used for Part A—First Angle.
+
+10. Repeat the process of adding additional washers on top of the beaker to achieve the same steady, uniform motion achieved in Step 6.
+
+11. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 2 as the moving mass for Trial 2.
+
+12. Use the electronic balance to determine the mass of an additional washer. Add this washer to the hanging mass and record this value as the hanging mass for Trial 3 in Data Table 2. If you keep track of the washers, the hanging mass will be the same as you used for Part A—First Angle.
+
+continued on next page
+
+www.carolina.com/distancelearning 11
+
+ACTIVITY
+
+ACTIVITY 2 continued
+13. Repeat the process of adding additional washers on top of the beaker to achieve the same steady, uniform motion achieved in Step 6.
+14. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 2 as the moving mass for Trial 3.
+C Third Angle
+1. Increase the angle of the incline to ~9°. Use the measuring tape to measure the length of the incline (hypotenuse) and the height of the incline (opposite side). Record these lengths in the Observations section for the third angle.
+2. Determine the angle of your incline using Equation 6, and record this value in Data Table 3.
+Equation 6.
+3. Reset the beaker upside down near the bottom of the incline, extend the string over the pulley, and allow the looped end of the string with the paper clip mass hanger to hang below the pulley.
+4. Add 4 washers of known mass to the paper clip hanger; record the total mass of the
+
+washers in Data Table 3 as the hanging mass for Trial 1. If you keep track of the washers, the hanging mass will be the same 4-washer mass as you used for Trial 2 of Part A—First Angle and Part B—Second Angle.
+
+5. To start, add the same number of washers used on top of the beaker for Trial 1 for Part A—First Angle and Part B—Second Angle.
+
+6. Test the system to see if you get the same steady, uniform motion as you observed for Part A—First Angle and Part B—Second Angle. If the motion is not the same, place additional washers on top of the upside-down beaker; replace the beaker at the bottom of the incline and release it.
+
+7. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 3 as the moving mass for Trial 1.
+
+8.
+
+Make a video recording, for inclusion in
+
+your lab report, of the beaker moving
+
+up the incline due to the tension in the
+
+string created by the weight of the 3-washer
+
+hanging mass.
+
+9. Use the electronic balance to determine the mass of an additional washer. Add this washer to the hanging mass and record this value as the hanging mass for Trial 2 in Data Table 3. If you keep track of the washers, the hanging mass will be the same 5-washer mass as you used for the Trial 3 of Part A— First Angle and Part B—Second Angle.
+
+12 Carolina Distance Learning
+
+10. Repeat the process of adding additional washers on top of the beaker to achieve the same steady, uniform motion achieved in Step 6.
+11. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 3 as the moving mass for Trial 2.
+12. Use the electronic balance to determine the mass of an additional washer. Add this washer to the hanging mass and record this as the hanging mass for Trial 3 in Data Table 3. (Your hanging mass for Trial 3 will be 6 washers.)
+13. Repeat the process of adding additional washers on top of the beaker to achieve the same steady, uniform motion achieved in Step 6.
+14. When you achieve the same steady, uniform motion, determine the amount of the moving mass. Use the electronic balance to measure the mass of the washers placed on top of the beaker. The moving mass is the total mass of the beaker plus the washers placed on top of the beaker; record this value in Data Table 3 as the moving mass for the Trial 3.
+
+D Data Analysis
+1. Using Equation 5, calculate the acceleration for each trial in Data Tables 1, 2, and 3 of the two-mass system on an incline. Record these acceleration values in Data Tables 1, 2, and 3, respectively. Equation 5.
+2. Calculate mean (average) acceleration, μ [m/s2] and the standard deviation, σ, (Equation 6) for the data in Data Tables 1, 2, and 3. Record these values in Data Table 4. Equation 6.
+where σ = standard deviation N = the size of the sample (number of entries) xi = each value from the sample µ = the sample mean Determination of standard deviation requires repeated calculations that require substituting each value of the sample into the same formula. For a small sample size, N, this can be done manually; however, for larger samples the calculation can be done in a spreadsheet program such as Excel or Google sheets. The function, STDEV, is used to determine the standard deviation of a sample. Refer to the spreadsheet program help and support centers for details on how to configure the STDEV function.
+
+continued on next page
+www.carolina.com/distancelearning 13
+
+ACTIVITY
+
+ACTIVITY 2 continued
+3. In distributions of data, about 95% of values will be within 2 standard deviations of the mean. Values that are within ±2 standard deviations of the mean represent measurements that are considered to be near the true value. Review the data from the investigation and determine whether your calculated accelerations are within ±2
+
+standard deviations. Report, using numerical values, whether your data for each angle is within ±2 standard deviations. Data Table 5 will help you evaluate your data.
+Disposal and Cleanup
+Return the materials to the equipment kit, and clean the area.
+
+Observations
+Note: All measurements need to use SI units and contain the correct number of significant digits.
+
+First Angle
+
+Length of opposite side: __________ Calculation of angle: __________________
+
+Length of hypotenuse: ____________ Mass of empty plastic beaker: __________
+
+Data Table 1.
+
+Trial
+
+Activity 2 Part A: First Angle
+
+Angle [degrees]
+
+Hanging mass Moving mass
+
+[kg]
+
+[kg]
+
+Calculated acceleration (Equation 5) [m/s2]
+
+1 2 3
+
+Second Angle
+
+Length of opposite side: __________ Calculation of angle: __________________
+
+Length of hypotenuse: ____________ Mass of empty plastic beaker: __________
+
+Data Table 2.
+
+Trial
+
+Activity 2 Part B: Second Angle
+
+Angle [degrees]
+
+Hanging mass Moving mass
+
+[kg]
+
+[kg]
+
+Calculated acceleration (Equation 5) [m/s2]
+
+1 2 3
+
+14 Carolina Distance Learning
+
+Third Angle
+Length of opposite side: __________ Length of hypotenuse: ____________ Data Table 3.
+
+Calculation of angle: __________________ Mass of empty plastic beaker: __________
+
+Trial
+
+Activity 2 Part C: Third Angle
+
+Angle [degrees]
+
+Hanging mass Moving mass
+
+[kg]
+
+[kg]
+
+Calculated acceleration (Equation 5) [m/s2]
+
+1
+
+2
+
+3
+
+Data Table 4.
+Angle First Second Third
+
+Statistical Data for Acceleration
+
+Mean acceleration, μ [m/s2]
+
+Standard Deviation, σ
+
+Data Table 5.
+Angle
+First Second
+Third
+
+Standard Deviations of the Mean
+
+Standard Deviation, σ (from Data Table 4)
+
+Mean acceleration, μ [m/s2] (from
+Data Table 4) +2σ
+
+Mean acceleration, μ [m/s2] (from
+Data Table 4) −2σ
+
+www.carolina.com/distancelearning 15
+
+EXTENSION ACTIVITY
+
+Extension Activity
+Newton’s Laws of Motion Demonstrated Using a Balloon Rocket
+Background
+A rocket’s movement depends on Newton’s third law of motion, which states for every action there is an equal and opposite reaction. When a rocket blows out gas at high speed in one direction (action force), the rocket is pushed in the opposite direction (reaction force). When there is a force on an object in one direction, another force is acting on the other object in the opposite direction. The gas pushes against the rocket, and the rocket pushes back just as hard against the gas.
+In the extension activity, a rocket will be simulated using a balloon on a string. The balloon will be attached to a drinking straw that has been strung through a long length of string allowing the attached balloon to travel along the string. The balloon will be filled with air that will be allowed to escape, propelling the balloon forward.
+Objectives
+• Observe action and reaction forces using a balloon traveling along a string.
+• Compare the distances a balloon travels on string when filled with different amounts of air.
+
+Materials
+• 1–6 Balloons of the same size and shape (You can perform the activity with 1 balloon, but it is a good idea to have extra balloons available in case it breaks.)
+• String from the materials kit, 15–16 feet (or less depending on the space you have available to set up the balloon rocket)
+• 2 Chairs with upright backs of the same height • Scissors • Measuring tape from the materials kit • Transparent tape • Drinking straw • Pen or marker • Cell phone or comparable mobile device for
+taking video and pictures • Optional but recommended: a volunteer to
+assist you in releasing the balloon or taking video of the balloon rocket
+Extension Activity 1
+A Full Balloon Rocket
+1. Locate an area with a long space free of obstructions, such as a hallway. If possible, locate a space where you can place the 2 chairs approximately 5 to 6 m (16–20 feet) apart. If not, locate the longest space you have available.
+2. Place the chairs at opposite ends of the space, backs of the chairs facing each other.
+3. Measure out enough string to go the length of the space between the backs of the chairs plus some additional string for tying the ends of the string to the chairs.
+4. Before tying the string to the backs of the chairs, place the straw on the string.
+
+16 Carolina Distance Learning
+
+5. Tie each end of the string to the back of a chair. Tighten the string so there is no slack in the string.
+6. Pull the straw up to the back of one of the chairs. Mark the starting position of the straw with a pen or marker. Mark the end of the straw closest to the back of the chair.
+7. Blow up a balloon full of air. Completely fill the balloon but do not over fill it. To fill the balloon to the same level for each trial, use the measuring tape to determine the circumference of the balloon at the largest section. Note this measurement, and fill the balloon to the same circumference for each trial.
+8. Hold the end of the balloon closed but do not tie it. Attach the balloon underneath the straw with a piece of transparent tape, as shown in Figure 3.
+Figure 3.
+
+location where the same end of the straw stopped. Record this measurement in Data Table E1 for Trial 1.
+12. Carefully remove the balloon from the straw; pull the straw back to the starting position. Ensure the string is still tight, and repeat Steps 7–11 (you do not need to video each trial) for Trial 2 with a full balloon. If your balloon breaks, replace it with a new one.
+13. Carefully remove the balloon from the straw; pull the straw back to the starting position. Ensure the string is still tight, and repeat Steps 7–11 (you do not need to video each trial) for Trial 3 with for a full balloon. If your balloon breaks, replace it with a new one.
+14. Review the measurements you made for the 3 trials for consistency. It may be difficult to get identical conditions for each trial, as the balloon’s flight may vary. You should have measurements that are not significantly different. Repeat trials if needed to get consistent data.
+
+9.
+
+Start recording a video, and then
+
+release your hold on the balloon.
+
+10. The force of the air being propelled out of the balloon will force it along the string. After the balloon stops, you can stop recording.
+
+11. Measure how far from its starting position the balloon traveled. Measure from the mark made near the back of the chair to the
+
+B Half-Full Balloon Rocket
+1. Carefully remove the balloon from the straw; pull the straw back to the starting position. Ensure the string is still tight. If your balloon breaks, replace it with a new one.
+2. Determine the radius and circumference of a half-full balloon. The volume of a sphere is (4/3)πr 3 so if the radius is halved, the volume is reduced to one-eighth the original volume. For half the volume, the radius of the balloon should be reduced by approximately 20% or be about 0.8 times the radius of the full balloon. Using this information, determine the circumference of a half-full balloon.
+continued on next page
+
+www.carolina.com/distancelearning 17
+
+EXTENSION ACTIVITY
+
+EXTENSION ACTIVITY continued
+
+3. Blow up the balloon so it is half full of air; use the measuring tape to determine the circumference of the balloon at the largest section and adjust the volume of air until you have the circumference of a half-full balloon.
+
+4. Hold the end of the balloon closed but do not tie it. Attach the balloon underneath the straw with a piece of transparent tape.
+
+5.
+
+Begin recording your video, then
+
+release your hold on the balloon.
+
+6. The force of the air being propelled out of the balloon will force it along the string. After the balloon stops you can stop recording.
+
+7. Measure how far from its starting position the balloon traveled. Measure from the mark made near the back of the chair to the location where the same end of the straw stopped. Record this measurement in Data Table E2 for Trial 1.
+
+8. Carefully remove the balloon from the straw; pull the straw back to the starting position. Ensure the string is still tight, and repeat Steps 3 through 7 (you do not need to video each trial) for Trial 2 for a half-full balloon.
+9. Carefully remove the balloon from the straw; pull the straw back to the starting position. Ensure the string is still tight, and repeat Steps 3 through 7 (you do not need to video each trial) for Trial 3 for a half-full balloon.
+10. Review the measurements you made for the 3 trials for consistency. It may be difficult to get identical conditions for each trial, but you should have measurements that are not widely varied. Repeat trials if needed to get consistent data.
+11. Clean your work space.
+
+Observations
+Data Table E1.
+
+Full Balloon Rocket
+
+Trial
+
+Distance Balloon Traveled [m]
+
+1
+
+2
+
+3
+
+Average
+
+Data Table E2.
+
+Half-Full Balloon Rocket
+
+Trial
+
+Distance Balloon Traveled [m]
+
+1
+
+2
+
+3
+
+Average
+
+18 Carolina Distance Learning
+
+NOTES
+www.carolina.com/distancelearning 19
+
+PHYSICS Newton’s Laws of Motion
+Investigation Manual
+www.carolina.com/distancelearning 866.332.4478
+Carolina Biological Supply Company
+www.carolina.com • 800.334.5551
+©2022 Carolina Biological Supply Company CB782262203
+

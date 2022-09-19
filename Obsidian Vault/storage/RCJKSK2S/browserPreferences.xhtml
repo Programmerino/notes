@@ -1,0 +1,141 @@
+// Return browser position X,Y, size width, height.
+function getWindowSize() {
+  var myWidth = 0, myHeight = 0;
+  if (typeof (window.innerWidth) == 'number') {
+    //Non-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if (document.documentElement) {
+    if (document.documentElement.clientWidth || document.documentElement.clientHeight) {
+      //IE 6+ in 'standards compliant mode'
+      myWidth = document.documentElement.clientWidth;
+      myHeight = document.documentElement.clientHeight;
+    }
+  } else if (document.body) {
+    if (document.body.clientWidth || document.body.clientHeight) {
+      //IE 4 compatible
+      myWidth = document.body.clientWidth;
+      myHeight = document.body.clientHeight;
+    }
+  }
+  var winX = (document.all)?window.screenLeft:window.screenX;
+  var winY = (document.all)?window.screenTop:window.screenY;
+  return [winY, winX, myWidth, myHeight];
+}
+
+// Set preferences with the defaults. 
+function setDefaults() {
+  document.getElementById("formBrowserPrefs:itemsPerPageSel").options[3].selected=true;
+  document.getElementById("formBrowserPrefs:displayTypeSel").options[0].selected=true;
+  document.getElementById("formBrowserPrefs:searchResultCompSel").options[0].selected=true;
+  document.getElementById("formBrowserPrefs:chkBrowserSizePos").checked=true;
+  
+  // Set window's size/position default values
+  document.getElementById("winTop").value=0;
+  document.getElementById("left").value=0;
+  document.getElementById("width").value=0;
+  document.getElementById("height").value=0;
+  
+  return true;
+}
+
+function isChromeXP() {
+    var ver = getInternetExplorerVersion();
+    var os = navigator.appVersion;
+    return ( os.indexOf("NT 5.1")!=-1 && os.indexOf("Chrome")!=-1 );    // If it's Crome on XP
+}
+
+function isIE8XP() {
+    var ver = getInternetExplorerVersion();
+    var os = navigator.appVersion;
+    return ( os.indexOf("NT 5.1")!=-1 && ver ==8 ); // If it's IE 8 on XP
+}
+
+//Returns the version of Internet Explorer or a -1
+//(indicating the use of another browser).
+function getInternetExplorerVersion() {
+    var rv = -1; // Return value assumes failure.
+    if (navigator.appName == 'Microsoft Internet Explorer') {
+         var ua = navigator.userAgent;
+         var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+         if (re.exec(ua) != null)
+           rv = parseFloat( RegExp.$1 );
+    }
+    return rv;
+}
+
+/************************ Standard References Logic. *************************/
+var stdRef=null;  // Get a reference to the last ajax call to get std reference url.
+
+// Open a PublicLaw at gpo based on congress/number found in an uscode standard reference.
+function openPLaw(congress, number) {
+    getPublicLaw(congress, number, "law");
+    stdRef=setTimeout("validateURL()",500);
+}
+
+// Get the url of the current public law or statute given: congress-number or volume-page. 
+function getPublicLaw(first, second, type) {
+  var form = getSrcForm();
+  form.first.value = first;
+  form.second.value = second;
+  form.type.value = type;
+  form.url.value = "";
+  form.stdRefBtn.click();
+  return false;
+}
+
+//Verify if the url of the plaw was loaded.
+function validateURL() {
+    var value = getURLVal();
+    if (value==null || value.length==0) {
+        stdRef=setTimeout("validateURL()",500);
+    } else {
+        clearTimeout(stdRef);
+        if (value=="DocNotFound") {
+            alert("Document not found!");
+        } else {
+            width=1024;
+            height=768;
+            if (window.screen) {
+                width = window.screen.availWidth;
+                height = window.screen.availHeight;
+            }
+            var props = 'top=0,left=0,width='+width+',height='+height+',resizable=1';
+            if (isIE8XP()) {
+                var popup = window.open("","",props);
+                popup.location.href=value;
+                popup.focus();
+            } else if (isChromeXP())
+                window.open(value,"pdf download",props);
+            else
+                window.open(value,"",props);
+        }
+    }
+}
+
+function getSrcForm() {
+  var srcForm=document.getElementById("formStdRef");
+    if (srcForm == null) {
+      srcForm=opener.document.getElementById("formStdRef");
+      if (srcForm == null) {
+        srcForm=opener.parent.document.getElementById("formStdRef")
+        if (srcForm == null) {
+          srcForm=opener.opener.document.getElementById("formStdRef")
+          if (srcForm == null) {
+            srcForm=opener.opener.parent.document.getElementById("formStdRef")
+          }
+        }
+      }
+    }
+
+    return srcForm;
+}
+
+function getURLVal() {
+  var srcForm=getSrcForm();
+  if (srcForm == null) {
+    return null;
+  }
+  return srcForm.url.value;
+}
+

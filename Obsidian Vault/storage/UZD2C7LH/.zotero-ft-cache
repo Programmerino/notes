@@ -1,0 +1,300 @@
+Articles
+https://doi.org/10.1038/s41562-020-00986-6
+
+Police demilitarization and violent crime
+Kenneth Lowande    ✉
+Policymakers and advocates make contradictory claims about the effects of providing military equipment to local law enforcement, but this intervention is not well understood because of severe data limitations and inferential challenges. I use 3.8 million archived inventory records to estimate the magnitude of sources of bias in existing studies of the 1033 Program. I show that most variation in militarization comes from previously unobserved sources, which implies that studies that show crime-reduction benefits are unreliable. I then leverage recent policy changes to evaluate the effect of military equipment: the Obama Administration recalled property under Executive Order 13688, which resulted in a forced demilitarization of several hundred departments. Difference-in-difference estimates of agencies that retained similar equipment show negligible or undetectable impacts on violent crime or officer safety. These findings do not suggest that similar scale federal reforms designed to demilitarize police would have the downside risks proposed by proponents of military transfers.
+
+Federal transfers of billions of dollars in military equipment to local law enforcement have fuelled an ongoing debate about the ‘militarization’ of police1–4. Proponents refer to this equipment as ‘life-saving’5 and critical to fighting violent crime. Announcing the reversal of Obama-era restrictions in August 2017, Jeff Sessions said that ‘studies have shown this equipment reduces crime rates, reduces the number of assaults against police officers, and reduces the number of complaints against police officers.’ Meanwhile, opponents suggest the equipment is to blame for excessive use of force by police and that its acquisition is motivated by racial threat.6,7
+However, systematic evidence evaluating these claims faces severe data limitations and inferential challenges. Numerous studies in circulation link military equipment to improved law enforcement outcomes8–12. Others link military equipment to worse law enforcement outcomes8,11,13. In a replication of two published studies, Gunderson et al. show that previous claims that suggest militarization reduces crime are not robust to agency-level analysis and alternative calculations of key instrumental variables14.
+More fundamentally, the publicly released data—on which all past work is based—is subject to substantial error. These data omit military equipment returned or destroyed before the first available records released in 2014, and conflate inter-agency transfers with new distributions. The severity of this error led Mummolo15, for example, to investigate the impact of the deployment of special weapons and tactics (SWAT) teams as an alternative measure of militarization. SWAT teams themselves have also received considerable scholarly attention16,17. Nonetheless, transfers of military weapons and equipment remain a highly contested aspect of policing in the United States, as well as the programmatic feature of police militarization most subject to federal-level reforms.
+This study reports estimates of the scale of error in past research on the effects of the 1033 Program. I leverage all active inventories of military equipment under the program from 2014 to 2020, which were obtained via a Freedom of Information Act (FOIA) request (Supplementary Tables 1 and 2). Comparing within-agency inventories over time enables parsing of attrition, inter-agency transfers and new distributions. I find that attrition within law enforcement inventories is common—about one in five weapons are returned or destroyed within 5 years—and that it is associated with some policing outcomes (Fig. 1). This implies that the estimated effects of equipment on crime are biased in all previous research that
+
+transforms one publicly available active inventory into a time series. As of 4 May 2020, there were at least 17 such studies (10 published in peer-reviewed journals) publicly available in the fields of economics, political science, public policy and policing. They have been cited 154 times according to Google Scholar, and the earliest was produced in 2015. The peer-reviewed work has also been cited by journalists and policymakers, and mostly includes studies that find evidence in support of violence-reduction claims.
+To avoid this bias, I then use recent regulatory changes to the 1033 Program to estimate the impact of demilitarization on violent crime and officer safety (Fig. 2). Public criticism of the program in 2015 led the Obama Administration to recall select property under Executive Order 13688 (ref. 18). Particular items were selected for recall and shipped, free of charge, back to federal processing facilities or otherwise destroyed (Supplementary Table 8). In effect, this forced the demilitarization of agencies who held this equipment, while allowing others to retain equipment criticized by groups opposed to the program as operationally equivalent. By identifying these items and tracking their attrition, I show that these orders were implemented effectively by administrators and led to a sudden demilitarization that was out of the hands of law enforcement agencies (LEAs; Fig. 3, Supplementary Tables 4 and 5 and Fig. 5).
+I leverage this sudden change to estimate difference in differences (DiD) by comparing over-time trends in crime and officer safety across demilitarized LEAs and unaffected LEAs matched on a set of pre-order characteristics (Fig. 4). With demilitarization pre-defined by the order, I also avoid vast researcher degrees of freedom available in past work—attributable to estimating the effects of a handful of the roughly 35,000 unique items of military equipment in these data19. I find little evidence that this demilitarization led to changes in either rates of violent crime or officer deaths and assaults. These findings are not sensitive to matching methodology, measurement strategies, estimation procedure or outcome measure. Put simply, the executive order had no detectable impact on violent crime or officer safety in these data.
+This information is valuable for those considering future reform. In the United States, the acquisition of federal military equipment monotonically increased beginning in the late 1990s. I provide the first counter-factual estimates of what would occur under similar, hypothetical demilitarization policies. Alongside studies that suggest that retaining military equipment poses risks to public support
+
+Department of Political Science, University of Michigan, Ann Arbor, MI, USA. ✉e-mail: lowande@umich.edu
+Nature Human Behaviour | www.nature.com/nathumbehav
+
+Articles
+
+NATurE HumAn BEhAvIOur
+
+Remaining (%)
+
+1.00
+0.75 Dec. 2014 inventory Assault rifles Handguns
+0.50 MRVs Shotguns
+0.25
+0 2015 2017 2019
+Fig. 1 | Roughly one in five controlled weapons turn over within 4 years. The proportion of December 2014 inventory remaining within police department as of December 2019. In the initial inventory, there were 82,634 assault rifles, 8,494 handguns, 625 mine-resistant vehicles (MRVs) and 1,074 shotguns.
+
+Murder Assault
+Rape Manslaughter
+Robbery Felonious officer deaths Accidental officer deaths Officer assaults (injury) Officer assaults (no injury)
+
+Sample Baseline Inclusive Restrictive
+
+–0.1 0 0.1 0.2
+
+Fig. 2 | Demilitarization did not lead to substantively significant increases or decreases in violent crime or officer safety. Point predictions and 90%, 95% and 99% confidence interval estimates from linear models with two-way fixed effects for the effect of demilitarization on policing outcomes, with observations weighted by matched LEA sample weights. The dataset includes six panels (three quarters before and after the executive order was implemented). ‘Sample’ refers to the number and degree of coarsening in pre-treatment covariates; ‘Restrictive’ includes 2,509 LEAs (n = 17, 570), ‘Baseline’ includes 5,315 LEAs (n = 37, 233) and ‘Inclusive’ includes 7,495 LEAs (n = 52, 514).
+
+of LEAs15,20, my findings imply that the downside risks of returning certain types of weapons and equipment are undetectable for many outcomes that law enforcement and the public care about.
+Police militarization has been defined as the adoption of weapons, equipment, tactics and organizational patterns of the military by LEAs21. While there is no scholarly consensus on the definition of police militarization, this definition is broadly inclusive22. There are, however, some aspects of militarization (for example, the adoption of military culture) that this study does not directly address. In the United States, the documented rise in police militarization1,16 has been attributed to the War on Drugs2, the War on Terror23 and US military interventions abroad3. Beyond explanations for this increase, critical debates centre around its impact on crime and public trust in law enforcement.
+This study investigates one aspect of militarization—the use of military equipment—for several reasons. First, though organizational features of LEAs receive public scrutiny (for example, civilian oversight boards and investigation procedures for officer misconduct), most are not adopted by LEAs as a result of a military analogue. Second, public debate on policing often centres around equipment, weapons and tactics. Weapons and equipment have received considerable attention from Congress and news organizations. In addition, though some argue that there is no clear political avenue for reversing trends in police militarization24, the distribution of weapons and equipment through the 1033 Program presents one of the few opportunities for a centralized policy response within the executive branch. In addition, materiel may have secondary effects on other aspects of militarization. Reduction in the use of military uniforms, for example, has been suggested as a means of affecting the cultural aspects of police militarization25. And while recent work has investigated the effects of controversial, military-style tactics, such as no-knock warrants and the deployment of SWAT teams15,26–28, the effects of weapons and equipment are contested because of straightforward—but critical—data integrity challenges.
+The basic problem is that the current scientific record, published and unpublished, treats data on equipment released by the Defense Logistics Agency (DLA) as a time series—when, in fact, it represents a point-in-time snapshot of active inventories. See Supplementary
+
+Fig. 13 to visualize one such snapshot. This conflates three sources of variation:
+• New distribution: equipment shipped from the DLA to a participating LEA.
+• Attrition: equipment either destroyed or returned to the DLA or a state coordinator. Attrition before 2014 is unobservable in the public records.
+• Transfer: equipment shipped from one LEA to another with a state coordinator as intermediary. When weapons are transferred, they retain their original shipment date in the DLA inventory. Transfer before 2014 is unobservable in the public records.
+Attrition and transfer are sources of unmodeled error in existing research. For example, the December 2014 DLA release indicates that the number of 5.56-mm assault rifles held by the Cambridge Police Department was 25. These gradually disappear from their inventories until March 2017, when all drop out. Inventory records from the LEAs themselves confirm that attrition like this is a regular part of the program (Supplementary Figs. 3 and 4). Earliest records indicate that the Yale Police Department held no equipment shipped in 2014, but by 2019, 69 rail-mounted optics appear. Before coming to New Haven, this equipment was likely held by another LEA in Connecticut. While both are examples of measurement error in the treatment, attrition is most problematic, as the decision to return or destroy an item may be driven by crime, officer safety or citizen complaints.
+Results The scale of error in prior research is substantial. I plot this error in Supplementary Figs. 1 and 2, recovered on the basis of a procedure described in detail in the Methods section. In the median 3-month period, more than 15,000 controlled items vanish from agency inventories and more than 4,000 items are received in transfer. Most of the variation in militarization during this period is due to these previously unobserved sources. Due to secular changes in defense procurement patterns after the height of the Iraq War (which influences the supply of equipment), the preceding 5–7 years are likely similar. A striking illustration of this pattern is AR-15-style 5.56-mm rifles, the most common weapon requested by agencies and the item on which some estimates of the effect of militarization
+
+Nature Human Behaviour | www.nature.com/nathumbehav
+
+NATurE HumAn BEhAvIOur
+600 30
+400 20
+
+Value ($ millions) Shipments
+
+10
+
+200
+
+Articles
+In circulation Attrition Transfers New distributions
+
+0 2015 2016 2017 2018 2019 2020
+
+0 2015 2016 2017 2018 2019 2020
+
+Fig. 3 | EO 13688 achieved near-perfect compliance and resulted in demilitarization among affected LEAs. Summary plots of recalled property (that is, grenade launchers, .50 calibre weapons, tracked armoured personnel carriers and bayonets) in active inventories from December 2014 to March 2020. Shaded bar indicates issuance of restrictions.
+
+LEA group Control
+Demilitarized
+
+Fig. 4 | Local LEAs with recalled equipment were concentrated in the South, Midwest, and California. Locations of demilitarized agencies (n = 315) and baseline set of unaffected agencies (n = 5, 000) assigned greater than zero weight, which are matched within state on the basis of pre-order department size, amount of 1033 equipment, and non-White population in jurisdiction. Shapefiles from US Census Bureau.
+
+on crime are based. Between 2016 and 2019, all 5.56-mm assault rifle variation is due to either the transfer of those already circulation among LEAs or the disposal of weapons that have fallen out of use. As Fig. 1 suggests, 5-year rates of attrition for other weapons and armoured vehicles are similar.
+Importantly, this approach also reproduces known patterns on the basis of top-down policy changes. The first quarter of 2015 sees little variation as it underwent review by a federal task force. Aside from the end of 2017 (when a subset of items was no longer designated as controlled), transfer and attrition track one another and transfers never outnumber attrition, suggesting that many items are returned to state coordinators for use in other departments. This suggests that the strategy for recovering this variation is valid.
+Most problematically, attrition appears to be correlated with policing outcomes, even after accounting for time-invariant dif-
+
+ferences across LEAs. Specifically, Supplementary Table 3 reports coefficients from two-way fixed effects models that account for over-time variation in inventory and recalled property. They suggest detectable, negative associations between attrition and four policing outcomes, including murder (β = − 0.0016, 95% CI (−0.0002, −0.0031), P = 0.048) and assaults against police officers with injury (β = −0.0023, 95% CI (−0.0011, −0.0036), P = 0.000). Thus, even the relatively short time series from the contemporary period (for example, March 2015 to March 2020) suggests that increases in crime are associated with whether LEAs return or destroy equipment, potentially biasing in favour of the positive relationships uncovered by past research. This also suggests that the measurement error in prior research is systematic, and thus, instrumental variable approaches cannot correct for it.
+
+Nature Human Behaviour | www.nature.com/nathumbehav
+
+Articles
+
+NATurE HumAn BEhAvIOur
+
+It is also important to note that these associations do not imply that the studies finding reductions in crime as a result of property distribution are underestimating the magnitude of its impact. In this case, transfers also occur, and are difficult to model. In addition, previous studies generally select some subset of complete weapons and equipment, which may have different attrition patterns in the periods of study. This poses another research challenge not discussed by these studies, as parts for weapons and equipment are also distributed, but often left out of analyses. For example, the upper receiver of an AR-15-style assault rifle is a controlled item, serialized, and legally considered the firearm itself. However, this item is excluded from studies’ measures of police militarization. When there is more than one source of error, and that error will likely exhibit temporal variation, it is difficult to be confident about the direction of the bias in any particular study. Instead, this should be taken as a demonstration that attrition and transfer occur, are substantial in scale and are likely not random.
+Thus, existing estimates of the effects of militarization on the basis of these data are seriously flawed. Moreover, the DLA did not retain active inventories before the first data release in 2014. This means that accurate time series records of military equipment on hand can only be obtained through another source—the records of LEAs themselves, which are highly decentralized and may be missing. This necessitates an alternative means of estimating the effect of militarization over the contemporary period for which more accurate records exist.
+Effects on violent crime and officer safety. To assess the claims of policymakers and past research, I estimate the effect of demilitarization in panels of demilitarized and matched agencies. As I describe in more detail in the Methods section, I present estimates from generalized difference-in-difference models with intercept shifts for agency and time. Diagnostic checks suggest that the demilitarized and matched agencies have similar pre-treatment trends in crime (Supplementary Table 7 and Figs. 6 and 7). This accounts for fixed features of LEAs and their jurisdictions that influence crime. Pre-processing to comparable sets reduces model dependence29 and the incidence of false negatives. Moreover, relying on a plausibly exogenous source of variation addresses inferential challenges common in studies of police militarization. The dependent variables are logged to reduce the influence of extreme cases.
+Figure 2 plots estimates of the 2015 demilitarization on violent crime and officer safety, leveraging various matched sets and the three quarters before and after the change. The treatment variable is a dichotomous indicator of when the police department complied with the demilitarization order (as described in the Methods section). Coefficients for violent crime are mixed. Estimates for the effect of demilitarization on murder and manslaughter allow us to statistically reject effect sizes of more than +/–5 percentage points. Estimates for effects on the incidence of robbery are not distinguishable from zero at conventional levels (β = 0.066, 95% CI (−0.00, 0.13), P = 0.063). Moreover, these effects are highly uncertain—even if conventionally distinguishable from zero under some model specifications and robustness checks reported in the supplementary information. Estimates for officer safety are near zero and are more consistent. Officer deaths are sufficiently rare that the effects are near (or in some specifications, at) zero. These allow us to reject effect sizes of greater than +/–1 percentage point. Officer assault estimates are near zero, suggestive of only minor effects, and inconsistently signed.
+This substantive interpretation of the findings is consistent across numerous robustness checks. Most obviously, the results are stable across different specifications of comparable departments. Estimated effects among the inclusive, baseline and restrictive samples are very similar, and narrowing or broadening the inclusion criteria is not associated with any consistent effect pattern.
+
+I describe each of these samples in detail in the Methods section. Another potential explanation for the estimated effects near zero is that demilitarization is thought to have an impact on crime, in general, rather than particular offences. In addition, unmodeled variation in the reporting and classification of particular offences can make them less reliable30. But in robustness checks that use linear, additive indices of violent crime and officer safety, we again cannot be confident about the sign of these effects (Supplementary Fig. 8).
+I adopted several approaches to ensure the results were not a function of dichotomous specification of the key independent variable. I use the amount of recalled equipment (log scale) and a threshold value of recalled equipment ($1,000) as alternative treatment variables. The estimates reported in Supplementary Fig. 9 show that neither specification provides evidence that the presence of recalled equipment had an impact on outcomes. Put differently, the results are robust to accounting for the magnitude of demilitarization within affected agencies. Some specifications for incidence of robbery are statistically distinguishable (by convention) from zero, but the scale of these effects is vanishingly small. The coefficients for the continuous treatment imply that the loss of all weapons and equipment led to a 0.8 percentage point increase in the incidence of robbery (95% CI (−0.003, −0.017), P = 0.012). The estimated coefficient for these outcomes is similar for the threshold version of the treatment, which essentially recodes departments with very little recalled equipment (typically several dozen bayonets) as untreated.
+These estimates do vary depending upon the length of the preand post-demilitarization period (Supplementary Figs. 11 and 12). The results reported in Fig. 2 include the second quarter of 2015 to the third quarter of 2016, which is two quarters before demilitarization and two quarters after all demilitarization was completed. But lengthening the post-treatment study period does not impact these estimates in a consistent direction, which would not be the case if the order had systematic, long-term effects.
+A narrower study period also lowers the chance that treated agencies will have ‘re-militarized’ via some unobserved means. In the contemporary period, for example, homeland security grants enable LEAs to purchase weapons and equipment. There is no centralized record of what is acquired through these grants. In addition, many grants ‘pass through’ other jurisdictions (that is, counties or states) and are then used for purchases at the municipal level. This is a persistent challenge for estimating the effect of weapons and equipment generally, which further suggests that examining the impact of a top-down policy change is more credible. In addition, for this reason, estimates that include a longer post-treatment time horizon should be treated with more scepticism.
+The results presented in Fig. 2 rely on the timing of observed compliance with the executive order as a treatment. Though this likely introduces additional error, since it is known that some agencies did not immediately demilitarize (see Methods section and Supplementary Table 5), an alternative specification would be to use the timing of the executive order itself. I report these results in Supplementary Fig. 10. Coefficients that use the release of the guidelines are consistent with the effects reported in Fig. 2, but moving the treatment timing one quarter later (until complete compliance is achieved for all agencies) reverses the sign of most coefficients. This again, underscores the lack of consistent evidence of significant effects of demilitarization on crime.
+This set of mostly null effects, of course, does not itself imply that demilitarization has no effect. To estimate the power of this research design, I simulated from the observed covariate distributions in the baseline matched sample. Given a true effect size, sample size, treatment assignment and research design, the simulation drew unit, time and error term effects from a standard normal distribution. The observed data were then regressed against the simulated dependent variable, which was then repeated 1,000 times to obtain false-negative rates by effect size and outcome. As Supplementary
+
+Nature Human Behaviour | www.nature.com/nathumbehav
+
+NATurE HumAn BEhAvIOur
+
+Articles
+
+Table 6 reports, this design should be capable of detecting effects as small as 0.1 standard deviation for the conventional power threshold of 80% with α = 0.05. This means that, for the highly variable outcomes (that is, assault, robbery and rape), the effects would have to be quite large to be reliably recovered with this research design. For other outcomes, such as murder and officer deaths or assaults, more confidence in the lack of even small, positive effects for demilitarization is warranted.
+In summary, there is little evidence from these data that the 2015 demilitarization of police departments participating in the 1033 Program had substantively significant impacts on violent crime or officer safety.
+Discussion
+Over the last three decades, local LEAs in the United States have acquired and routinized the use of weapons, equipment and tactics previously exclusive to the military. Weapons and equipment acquisition has been subsidized by federal authorities, but fundamental limitations in record-keeping about these transfers have rendered studies of their effects not credible. This has not, however, limited their reach and potential influence among policymakers. This study analysed archived federal inventory records to gauge the reliability of this work, while providing estimates of the effect of an instance of demilitarization with weaker identification assumptions.
+I find that most changes in police militarization in the contemporary period are the result of weapons and equipment already in circulation, and that attrition of these weapons is common. This is highly problematic for studies that estimate the effect of militarization (on any outcome) using data series that include years before 2014. In addition, this suggests that the secular trends in militarization through this program have levelled off—possibly due to the draw down of US military personnel abroad. Notably, however, there was a non-negligible increase in new distributions in late 2019 and early 2020 (Supplementary Fig. 2).
+Importantly, this means that the operative question facing interested parties is the potential effects of policy interventions that demilitarize departments with already acquired equipment. This study examined the only known effort to do so, which was implemented by the Obama Administration in 2015. Contrary to the claims of the Administration’s critics, this policy reduced the level of militarization in select agencies. This suggests that demilitarization by presidential fiat is indeed feasible for the set of 1033 Program participants. Finally, I find little to no evidence that demilitarization had an impact on violent crime or officer safety. Put differently, contrary to the claims of those who support the transfer of equipment, these data do not support the conclusion that militarization ‘saves lives’—or that demilitarization risks them.
+There are important limitations to this study and the conclusions that can be drawn from it. The demilitarization examined was limited to several categories of items, and several hundred of the roughly 6,000 departments participating in the 1033 Program (only accounting for less than half of the LEAs in the United States). This means that we cannot confidently state that this study provides evidence against small (and for some outcomes, moderately) sized effects. This is also a substantive scope condition for the present study. It examines the effects of recalling specific types of weapons and equipment for participants of a particular government program—not demilitarization, in general.
+These limitations notwithstanding, this study provides valuable evidence for those considering reform. Numerous comparable weapons, vehicles and types of equipment remain in circulation today. In companion with evidence about reputational costs of militarization15,20, these findings suggest that the downside risks of demilitarization would not be detectable for similar policy interventions.
+
+Methods
+To parse variation in attrition and transfer between departments, I obtained every quarterly inventory from 2014 to 2020 from the DLA via a Freedom of Information Act (FOIA) request. In total, these contain ~3.8 million shipment records from roughly 9,300 unique LEAs in 22 data releases (Supplementary Table 1). Individual shipments are identified and tracked by their shipment date, recipient and national stock number (NSN). Within agency inventories, I define a new distribution as a controlled item that appears in active inventory q + 1, but not q, with a shipment date after q. The technical definition of controlled item is one that has a demilitarization (DEMIL) code B, C, D, E, F, G or Q3. In general, a controlled item is one that requires some degree of physical destruction before disposal. Uncontrolled items do not have to be tracked by recipient agencies. The modal distribution in the 1033 Program is uncontrolled, and can include items such as exercise equipment, socks, computers or wiffle bats. Attrition corresponds to a controlled item that appears in inventory at q but not q + 1, and transfer to a new item with a shipment date before q. I identify each type of shipment variation for each agency and quarter after December 2014, then adjust the algorithm to account for the most common record-keeping errors to ensure that these are not counted as attrition or transfer (see Supplementary Information page A3). While this provides descriptive information about sources of error, it also allows us to validate reported patterns of attrition as a result of changes in policy.
+Identification strategy: Executive Order 13688. My approach for estimating the effect of military weapons and equipment relies on regulatory changes implemented by the Obama Administration in response to public scrutiny of the 1033 Program in late 2015. This allows us to estimate the average effect of the order for demilitarized agencies by comparing over-time changes in measures of violent crime and officer safety. This improves upon existing strategies that are not applicable to the contemporary period and which have themselves been critiqued14.
+This strategy addresses an important challenge for inference—that the distribution of weapons and equipment is endogenous to policing outcomes. Harris et al.31 and Bove and Gavrilova12 rely on instruments—county location and variation in military spending, respectively—to address this concern. Proximity to DLA distribution centres is thought to impact the likelihood of obtaining equipment because LEAs pay shipping costs. However, as Supplementary Fig. 2 shows, transfer accounts for most distributions, and these occur within state. Moreover, when transfers occur, changes in military spending will have very little purchase on the presence of equipment in individual LEAs.
+President Obama signed Executive Order 13688 on 15 January 2015, creating an inter-agency working group tasked with developing reform proposals for the distribution of military surplus. Their final report was released in May 2015 (ref. 32) and led to the recall of tracked armoured vehicles, grenade launchers and bayonets (Supplementary Table 8). Also banned was the distribution of small arms greater than or equal to .50 calibre, but no such weapons were ever distributed according to DLA inventories. I argue that this led to a demilitarization that was exogenous to policing outcomes. This is supported by key features of the regulations. First, the May 2015 report indicates that its authors did not know which agencies held recalled equipment, and only 7 of the nearly 10,000 LEAs in the program submitted comments. According to the report, at the time of its release “a Government-wide assessment [...] to identify the LEAs that have acquired the types of equipment identified on the recommended prohibited equipment list” was ongoing. This is evidence that the choice of recalled items could not have been influenced by lobbying or foreknowledge of the LEAs that would be impacted.
+Second, the items recalled have operationally equivalent analogues that suggest the LEAs that held this equipment at the time of the change were not unique among LEAs (Supplementary Table 8). The administration recalled bayonets, but not combat knives—though some officers reported that bayonets were used as “big, sturdy, knives”33. It prohibited .50 calibre weapons and ammo, but not other cartridges widely used by the military but not law enforcement. It recalled tracked vehicles, but allowed departments to retain mine-resistant vehicles with similar exterior armour. The reforms at the time were criticized by advocates for demilitarization as insufficient—with the implication that the items were selected for recall because of their appearance, rather than their use in the context of policing. One scholar referred to the reforms as “nothing more than symbolic politics”33. Nonetheless, at the time of the order, the recall affected nearly 350 LEAs and $30.3 million in equipment. This necessarily means that this study does not speak to all types of demilitarization via weapons and equipment. The policy intervention was important for the LEAs that were impacted because it tended to be a large share of their 1033 inventory. But it was also limited in scope, in that a small share of LEAs were demilitarized and several dozen items were recalled. Recalling different types of equipment with more impacted departments could, of course, result in different effects.
+This approach to estimating the effect of demilitarization assumes that the Obama Administration’s directive achieved full compliance from affected LEAs. But executive orders are non-justiciable, which implies that a private citizen cannot sue their police department because it did not comply34. This renders the most common legal enforcement mechanism moot. However, active inventories of recalled and banned equipment from 2014 to 2020 demonstrate that near full compliance was achieved. Figure 3 plots the drop in this equipment following the
+
+Nature Human Behaviour | www.nature.com/nathumbehav
+
+Articles
+
+NATurE HumAn BEhAvIOur
+
+release of the final recommendations. Recalled items that remain in circulation are concentrated in local branches of federal agencies still permitted to retain them. In addition, there were 88 departments that retained recalled property for either one or two additional quarters. But this delayed demilitarization is not associated with any observed feature of agencies or jurisdictions (Supplementary Tables 4 and 5 and Fig. 5). There is no corresponding re-militarization after the revocation of these restrictions in 2017, which can be explained by differences in the public management strategies of each administration (see Supplementary Methods section). Thus, it is appropriate to compare affected and unaffected agencies over the available time series.
+I link military equipment records with monthly policing outcomes recorded by the FBI’s Uniform Crime Reporting Program from 2014 to 2017 (refs. 35,36). Most LEAs that appear in the 1033 data can be matched, but the majority of LEAs nationwide do not participate (Supplementary Table 2). Note that this is an additional source of error for studies that aggregate to county or other geographic level. I then acquire a vector of pre-treatment covariates on which to prune the data into matched sets of demilitarized and comparable unaffected agencies. Specifically, I have available data on department size and 1033 inventory, as well as plausibly relevant data from the 2010 Census and 2014 American Community Survey: jurisdiction population size, demographics (for example, percentage African American or Hispanic), median household income, and unemployment. I also match LEAs to measures of jurisdiction political ideology: the average Democratic presidential candidate voteshare over the previous four elections, and multilevel regression with post-stratification estimates of conservatism37.
+I use coarsened exact matching38 to reweight agencies in these data with recalled equipment at the time of the order and comparable LEAs. To ensure that the results are not sensitive to this step, I iteratively impose additional covariates and coarsening strategies to produce three comparison sets, which I label ‘inclusive’, ‘baseline’ and ‘restrictive.’ The purpose of these three sets is illustrative. There are numerous potential matching strategies, but I have found the results to be mostly insensitive to the choice of matched set. The reported results are meant to demonstrate that imposing additional matching restrictions does not alter the main findings. I present matching diagnostics and additional descriptive information about the matched sets and procedure in the Supplementary Results section.
+In general, matching on the basis of these characteristics renders more plausible the parallel trends assumption necessary for valid DiD estimates. In this instance, their are two concerns worth noting. First, the 1033 Program represents only one avenue for the acquisition of military weapons and equipment. Departments may obtain similar weapons through other federal grants, or with their own budgets. Second, banned equipment itself might be associated with policing jurisdictions with trends in violent crime that diverge from others. Put differently, there may be different patterns of unobserved error in agencies that did and did not have recalled equipment. Thus, the most credible set of comparisons will attempt to select agencies with similar program take-up and similar jurisdictions to police.
+The inclusive set matches agencies within state on the basis of LEA size and the total value of their 1033 inventory. All departments are matched within state since transfers are thought to occur through state coordinators. Department size, measured as the number of sworn officers, and the present value of their 1033 inventory help ensure comparisons across units with similar levels of demand for equipment. Importantly, this present inventory value is not subject to the measurement error concerns laid out in the previous section. Matching within state will also approximate match on the basis of distance to relevant distribution centres. In addition to these variables, the baseline set matches on the basis of percentage African American and Hispanic in jurisdiction, since the distribution of particular types of equipment has been linked to the policing of minority communities6,39. The restrictive set adds median household income and Democratic presidential voteshare to the set of matching covariates. Income has well-established associations with crime rates. I have shown that there is no association between Democratic voteshare and time to compliance, but it is possible that some other, unobservable aspect of compliance (for example, usage or actual deployment) might be associated with local-level political preferences.
+Figure 4 locates the set of demilitarized and baseline control LEAs. Agencies in the South and Midwest held most recalled equipment. This differs from the overall distribution of equipment, which—in addition to representing city centres— also shows concentrations in border counties that have no recalled equipment (Supplementary Fig. 13). The spatial distribution may be partly determined by the storage location of recalled equipment.31 Many armoured units, for example, are stationed in the South (for example, Georgia, North Carolina and Texas).
+Though the parallel trends assumption is unverifiable, initial diagnostic checks in the pre-treatment period among matched agencies are reassuring. Supplementary Figs. 6 and 7 report mean outcome values by group and quarter along with bootstrapped confidence intervals. In addition, Supplementary Table 7 reports coefficients for time and treatment group interactions for the pre-treatment period. While demilitarized and unaffected agencies tend to have different baseline levels of crime, trends in each outcome do not differ across treated and matched sets during the pre-treatment period.
+Reporting Summary. Further information on research design is available in the Nature Research Reporting Summary linked to this article.
+
+Data availability
+The data supporting the findings reported in this study, along with the underlying 1033 Program inventory records, have been deposited in the Harvard Dataverse and can be found at https://doi.org/10.7910/DVN/XCTPNR.
+Code availability
+Replication code for the findings reported in this study has been deposited in the Harvard Dataverse and can be found at:https://doi.org/10.7910/DVN/XCTPNR.
+Received: 7 February 2020; Accepted: 24 September 2020; Published: xx xx xxxx
+References
+1. Kraska, P. B. Enjoying militarism: political/personal dilemmas in studying U.S. police paramilitary units. Justice Q. 13, 405–429 (1996).
+2. Balko, R. Rise of the Warrior Cop: The Militarization of America’s Police Forces (Public Affairs, 2013).
+3. C.J. Coyne & A.R. Hall Tyranny Comes Home: The Domestic Fate of U.S. Militarism (Stanford Univ. Press, 2018).
+4. Phillips, S.W. Police Militarization: Understanding the Perspectives of Police Chiefs, Administrators, and Tactical Officers (Routledge, 2018).
+5. Trump, D. J. Executive Order 13809–restoring state, tribal, and local law enforcement’s access to life-saving equipment and resources. Fed. Regist. 82, 45–59 (2017).
+6. Meeks, D. Police militarization in urban areas: the obscure war against the underclass. Black Scholar 35, 33–41 (2015).
+7. Bates, A. Trump’s decision on military-style weapons will harm communities. USA Today (31 August 2017).
+8. Haynes, J.B. Jr. & McQuoid, A.F. Bringing war home: violent crime, police killings and the overmilitarization of the US police. Preprint at SSRN https:// doi.org/10.2139/ssrn.2851522 (2018).
+9. O. Ajilore. Is there a 1033 effect? Police militarization and aggressive policing. Munich Personal RePEc Archive 82543 https://mpra.ub.uni-muenchen. de/82543/ (2017) .
+10. Haynes, J. B. Jr. & McQuoid, A. F. The thin blue line: police militarization and violent crime. NY Econ. Rev. 49, 26–62 (2018).
+11. Carriere, K.R. & Encinosa, W. The risks of operational militarization: increased confllict against militarized police. Peace Econ. Peace Sci. Public Policy 23, 1–13 (2017).
+12. Bove, V. & Gavrilova, E. Police officer on the frontline or a soldier? The effect of police militarization on crime. Am. Econ. J. Econ. Policy 9, 1–18 (2017).
+13. Delehanty, C., Mewhirter, R., Welch, R. & Wilks, J. Militarization and police violence: the case of the 1033 program. Res. Politics 4, 1–7 (2017).
+14. Gunderson, A., et al. Counterevidence of crime-reduction effects from federal grants of military equipment to local police. Nat. Hum. Behav. (in the press).
+15. Mummolo, J. Militarization fails to enhance police safety or reduce crime but may harm police reputation. Proc. Natl Acad. Sci. USA 11, 1–6 (2018).
+16. Kraska, P. B. & Kappeler, V. E. Militarizing American police: the rise and normalization of paramilitary units. Soc. Prob. 44, 1–18 (1997).
+17. Koslicki, W. SWAT mobilization trends: testing assumptions of police militarization. Policing 40, 733–747 (2017).
+18. Obama, B. H. Executive Order 13688–federal support for local law enforcement equipment acquisition. Fed. Regist. 8, 45–59 (2015).
+19. Simmons, J. P., Nelson, L. D. & Simonsohn, U. False-positive psychology: undisclosed flexibility in data collection and analysis allows presenting anything as significant. Psycol. Sci. 22, 1359–1366 (2011).
+20. Lockwood, B., Doyle, M. & Comiskey, J. Armed, but too dangerous? Factors associated with citizen support for the militarization of the police. Crim. Just. Stud. 31, 113–127 (2018).
+21. Kraska, P. B. Militarization and policing—its relevance to 21st century police. Policing 1, 501–513 (2007).
+22. Bieler, S. Police militarization in the USA: the state of the field. Policing 39, 586–600 (2016).
+23. Rizer, A. & Hartman, J. How the War on Terror has militarized the police. The Atlantic Monthly (2011). https://www.theatlantic.com/national/ archive/2011/11/how-the-war-on-terror-has-militarized-the-police/248047/.
+24. Hall, A. R. & Coyne, C. J. The militarization of U.S. domestic policing. Indep. Rev. 17, 485–504 (2013).
+25. Paul, J. & Birzer, M. L. The militarization of the American police force: a critical assessment. Crit. Issues Just. Politics 1, 15–30 (2008).
+26. Balko, R. Overkill: the Rise of Paramilitary Police Raids in America (Cato Institute, 2006).
+27. Phillips, S. W. & Kim, D.-Y. The effect of police paramilitary unit raids on crime at micro-places in Buffalo, New York. Int. J. Police Sci. Manage.18, 206–219 (2016).
+28. Moule, R. K. Jr., Parry, M. M. & Fox, B. Public support for police use of SWAT: examining the relevance of legitimacy. J Crime Just. 42, 45–59 (2019).
+
+Nature Human Behaviour | www.nature.com/nathumbehav
+
+NATurE HumAn BEhAvIOur
+
+Articles
+
+29. Iacus, S. M., King, G. & Porro, G. Causal inference without balance checking: coarsened exact matching. Polit. Anal. 20, 1–24 (2012).
+30. Mosher, C.J., Hart, T.C. & Terance, T.D. The Mismeasure of Crime (Sage, 2011).
+31. Harris, M. C., Park, J., Bruce, D. J. & Murray, M. N. Peacekeeping force: effects of providing tactical equipment to local law enforcement. Am. Econ. J. Econ. Policy 9, 291–313 (2017).
+32. Law Enforcement Equipment Working Group. Recommendations Pursuant to Executive Order 13688 Federal Support for Local Law Enforcement Equipment Acquisition. https://bja.ojp.gov/sites/g/files/xyckuh186/files/publications/ LEEWG_Report_Final.pdf (Bureau of Justice Assistance, 2015).
+33. McCarthy, T. & Gambino L. Obama ban on police military gear falls short as critics say it’s a ‘publicity stunt’. The Guardian (1–6 May 2015).
+34. Newland, E. Executive orders in court. Yale Law J. 124, 2026–2099 (2015). 35. Kaplan J. Uniform crime reporting program data: offenses known and
+clearances by arrest, 1960–2017 OpenICPSR https://doi.org/10.3886/ E100707V8 (2019). 36. Kaplan J. Uniform crime reporting program data: law enforcement officers killed and assaulted (LEOKA) 1960–2017. OpenICPSR https://doi.org/10.3886/ E102180V6 (2019). 37. Tausanovitch, C. & Warshaw, C. Measuring constituent policy preferences in Congress, state legislatures, and cities. J. Politics 75, 330–342 (2013). 38. Iacus, S., King, G. & Porro, G. Causal inference without balance checking: software for coarsened exact matching. J. Stat. Softw. 30, 1–24 (2012). 39. Ajilore, O. The militarization of local law enforcement: is race a factor? Appl. Econ. Lett. 22, 1089–1093 (2015).
+
+Acknowledgements
+The author received no specific funding for this work. The author thanks K. Crabtree, C. Davenport, J. Mummolo, J. Rogowski, B. Schneer, M. Sen, Y. Shiraito, S. Streeter, Y. Zhukov and seminar audiences at the University of Michigan and Harvard University for comments and suggestions. J. Beckman, A. Eldes, J. Fortney, S. Patel, B. Vomastek and J. Walden provided helpful research assistance.
+Author contributions
+K.L. designed and performed the research, analysed the data and wrote the paper.
+Competing interests
+The author declares no competing interests.
+Additional information
+Supplementary information is available for this paper at https://doi.org/10.1038/ s41562-020-00986-6. Correspondence and requests for materials should be addressed to K.L. Peer review information Primary handling editor: Aisha Bradshaw. Reprints and permissions information is available at www.nature.com/reprints. Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations. © The Author(s), under exclusive licence to Springer Nature Limited 2020
+
+Nature Human Behaviour | www.nature.com/nathumbehav
+
+nature research | reporting summary
+
+Corresponding author(s): Kenneth Lowande Last updated by author(s): Sep 14, 2020
+Reporting Summary
+Nature Research wishes to improve the reproducibility of the work that we publish. This form provides structure for consistency and transparency in reporting. For further information on Nature Research policies, see our Editorial Policies and the Editorial Policy Checklist.
+
+Statistics
+For all statistical analyses, confirm that the following items are present in the figure legend, table legend, main text, or Methods section.
+n/a Confirmed The exact sample size (n) for each experimental group/condition, given as a discrete number and unit of measurement A statement on whether measurements were taken from distinct samples or whether the same sample was measured repeatedly The statistical test(s) used AND whether they are one- or two-sided Only common tests should be described solely by name; describe more complex techniques in the Methods section. A description of all covariates tested A description of any assumptions or corrections, such as tests of normality and adjustment for multiple comparisons
+A full description of the statistical parameters including central tendency (e.g. means) or other basic estimates (e.g. regression coefficient) AND variation (e.g. standard deviation) or associated estimates of uncertainty (e.g. confidence intervals)
+For null hypothesis testing, the test statistic (e.g. F, t, r) with confidence intervals, effect sizes, degrees of freedom and P value noted Give P values as exact values whenever suitable.
+For Bayesian analysis, information on the choice of priors and Markov chain Monte Carlo settings For hierarchical and complex designs, identification of the appropriate level for tests and full reporting of outcomes Estimates of effect sizes (e.g. Cohen's d, Pearson's r), indicating how they were calculated
+Our web collection on statistics for biologists contains articles on many of the points above.
+
+Software and code
+Policy information about availability of computer code Data collection All data collection and manipulation was conducted in R.
+
+Data analysis
+
+All data analysis was conducted in R. Details regarding packages, versions, and custom code can be found in the deposited data and replication code.
+
+For manuscripts utilizing custom algorithms or software that are central to the research but not yet described in published literature, software must be made available to editors and reviewers. We strongly encourage code deposition in a community repository (e.g. GitHub). See the Nature Research guidelines for submitting code & software for further information.
+
+Data
+Policy information about availability of data All manuscripts must include a data availability statement. This statement should provide the following information, where applicable:
+- Accession codes, unique identifiers, or web links for publicly available datasets - A list of figures that have associated raw data - A description of any restrictions on data availability
+The data supporting the findings reported in this study, along with the underlying 1033 program inventory records, have been deposited in the Harvard Dataverse, and can be found at: https://doi.org/10.7910/DVN/XCTPNR
+
+April 2020
+
+1
+
+nature research | reporting summary
+
+Field-specific reporting
+
+Please select the one below that is the best fit for your research. If you are not sure, read the appropriate sections before making your selection.
+
+Life sciences
+
+Behavioural & social sciences
+
+Ecological, evolutionary & environmental sciences
+
+For a reference copy of the document with all sections, see nature.com/documents/nr-reporting-summary-flat.pdf
+
+Behavioural & social sciences study design
+
+All studies must disclose on these points even when the disclosure is negative.
+
+Study description
+
+The study is a quantitative, and estimates difference-in-differences among a set of matched units.
+
+Research sample
+
+Law enforcement agencies participating in the 1033 program.
+
+Sampling strategy
+
+To prune the sample to comparable agencies, units were matched on a set of pre-treatment covariates. These are described in detail in the methods section of the study. The sample sizes were determined to be sufficient to detect a 0.1 SD increase or decrease in the dependent variables with 80% power, according to the power simulation we detail in the Supplementary Information.
+
+Data collection
+
+All data is publicly available from the Law Enforcement Support Office of the Defense Logistics Agency, and from the FBI crime statistics reporting system.
+
+Timing
+
+The earliest data begin December 2014, and the latest were collected in March of 2020.
+
+Data exclusions
+
+The sample excludes statewise agencies, tribal agencies, and special districts.
+
+Non-participation
+
+There was no non-participation.
+
+Randomization
+
+There was no randomization.
+
+Reporting for specific materials, systems and methods
+
+We require information from authors about some types of materials, experimental systems and methods used in many studies. Here, indicate whether each material, system or method listed is relevant to your study. If you are not sure if a list item applies to your research, read the appropriate section before selecting a response.
+
+Materials & experimental systems
+n/a Involved in the study Antibodies Eukaryotic cell lines Palaeontology and archaeology Animals and other organisms Human research participants Clinical data Dual use research of concern
+
+Methods
+n/a Involved in the study ChIP-seq Flow cytometry MRI-based neuroimaging
+
+April 2020
+
+2
+

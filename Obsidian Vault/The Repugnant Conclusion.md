@@ -1,0 +1,4 @@
+The Repugnant Conclusion refers to a theoretical future which would be spawned if a moral system which inherently values lives were taken to its extreme. The Earth wouldn't have sufficient resources to sustain such a population, social services would likely be overrun, etc. all while people would procreate as fast as possible to their demise to satisfy this moral technicality.
+
+## Solutions
+The only way to solve this is to use a moral system which does not inherently value human life, and weighs it against some kind of quality metric or entirely disavows any inherent value to life. Discussion of this in the context of Consequentialism can be found in [[the definition of Consequentialism]]

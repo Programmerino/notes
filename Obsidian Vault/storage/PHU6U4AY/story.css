@@ -1,0 +1,92 @@
+/*
+ * Structure
+ */
+aside#primary {
+  clear: none;
+}
+#secondary {
+  float: right;
+}
+
+@media (max-width: 1257px) {
+  #secondary {
+    width: 316px!important;
+  }
+  #primary {
+    border-right: none;
+    margin-right: 318px;
+    width: auto;
+    right: auto;
+    float: none;
+  }
+  /* right rail */
+  #secondary .equal-heights-column-inner {
+    padding-right: 0;
+  }
+  #secondary .email-alerts {
+    display: block;
+  }
+  /* setup content to wrap around right sidebar's 300px */
+  #content {
+    width: auto!important;
+    float: none!important;
+    margin-right: 316px;
+    left: 0!important;
+  }
+  #content section article:after,
+  #content .full-article .row:after {
+    clear: none!important;
+  }
+  /* avoid adblade from clearing right sidebar float */
+  .adblade-dyna {
+    clear: none!important;
+  }
+}
+
+.share-and-comments .shareaholic-canvas {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70%;
+}
+.share-and-comments .expand-comments {
+  margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+  .col-xs-31 {
+      position: relative;
+      min-height: 1px;
+      padding-left: 8px;
+      padding-right: 8px;
+      width: 100% !important;
+      margin-right: 0 !important;
+      float: left;
+  }
+  .equal-heights-column-inner {
+      padding-right: 0 !important;
+  }
+  section#content section article .main-photo {
+      margin: 0 auto;
+  }
+}
+
+#show-comments, #hide-comments {
+    height: 52px;
+    width: 640px;
+    padding: 5px 0;
+    margin: 0 auto 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #af0021;
+    display: block;
+    border: 1px solid #BBBBBB;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    cursor: pointer;
+}
+#show-comments:hover, #hide-comments:hover {
+  background-color: rgba(238,239,242,0.5);
+}

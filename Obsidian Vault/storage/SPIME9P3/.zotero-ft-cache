@@ -1,0 +1,209 @@
+
+Omni Calculator logo
+We’re hiring! Embed
+Share via
+Inclined Plane Calculator
+Created by Wojciech Sas , PhD candidate
+Reviewed by Bogna Szyk and Steven Wooding
+Last updated: May 17, 2022
+0.5 Stars 1 Star 1.5 Stars 2 Stars 2.5 Stars 3 Stars 3.5 Stars 4 Stars 4.5 Stars 5 Stars
+Table of contents:
+
+    What is an inclined plane?
+    Basic parameters of the inclined plane
+    Inclined plane formulas for a cubic block
+    Rotary solids on an inclined plane
+    Cubic block – several computational examples
+    Rolling ball 
+
+This inclined plane calculator is a tool that helps you solve problems about an inclined plane with the friction coefficient taken into consideration. Read on to find the inclined plane definition and common computational inclined plane examples.
+What is an inclined plane?
+
+An inclined plane can be described as a flat surface that is lifted at one side to form an angle θ with the ground. You can find the examples of inclined planes in everyday life, such as ramps or door wedges. A funicular is a type of transport vehicle that also uses the concept of the inclined plane . The idea behind the simplicity and usefulness of the inclined plane is to reduce the force required to lift a body to some height.
+Basic parameters of the inclined plane
+An example of an inclined plane
+
+There are a few characteristics that can adequately describe a simple inclined plane. The primary one is the slope associated with the already mentioned angle θ . The next ones are height ( H ) which is the maximal level above the ground, and length ( L ) – the distance between the apex and the vertex at the angle θ . The side view of an inclined plane can be presented as a right triangle , so you can easily find a relationship between H , L , and θ if needed.
+
+Friction coefficient is another feature of the inclined plane, and it denotes the existence of a braking force that affects the body in motion or prevents the object from moving at all.
+Inclined plane formulas for a cubic block
+Forces acting on a body on an inclined plane
+
+While working out problems of this type, it is always worth finding forces which act on our body:
+
+    Gravitational force : F g = m × g F_g = m \times g F g ​ = m × g , where m m m is the mass of object and g g g is the gravitational constant. It can be divided into two components:
+        F i = F g × sin ⁡ θ F_i = F_g \times \sin\theta F i ​ = F g ​ × sin θ – parallel to inclined plane; and
+        F n = F g × cos ⁡ θ F_n = F_g \times\cos\theta F n ​ = F g ​ × cos θ – perpendicular one.
+
+    Force of friction which works in the opposite direction as F i F_i F i ​ , but depends on the value of normal force F n F_n F n ​ and friction coefficient f f f :
+
+    F f = f × F n F_f = f \times F_n F f ​ = f × F n ​
+
+    There is also ground reaction force N N N with the same value as F n F_n F n ​ and the opposite direction, but it doesn't have any influence on further calculations
+
+The resultant force F F F along the inclined plane can be worked out as a difference between F i F_i F i ​ and F f F_f F f ​ and thus rewritten as:
+F = F i − F f = F g × ( sin ⁡ θ − f cos ⁡ θ ) \footnotesize \begin{align*} F &= F_i - F_f\\ &= F_g \times (\sin\theta - f\cos\theta) \end{align*} F ​ = F i ​ − F f ​ = F g ​ × ( sin θ − f cos θ ) ​
+
+One important note: the above expression of the net force is only valid if the angle of the inclined plane is not greater than the angle of friction θ f \theta_f θ f ​ , which can be estimated as tan ⁡ θ f = f \tan\theta_f = f tan θ f ​ = f . Otherwise, the friction force compensates F i F_i F i ​ , and the object stays at rest.
+
+With the known expression of the resultant force, it is a piece of cake to find acceleration a a a , sliding time t t t , and final velocity V V V , using formulas from the acceleration calculator and the value of initial velocity V 0 V_0 V 0 ​ :
+a = F / m t = ( ( V 0 2 + 2 L a ) − V 0 ) / a V = V 0 + a t \footnotesize \begin{align*} a &= F / m\\\\ t & = \Big(\sqrt{(V_0^2 + 2La}) - V_0\Big) \Big/ a\\\\ V &= V_0 + at \end{align*} a t V ​ = F / m = ( ( V 0 2 ​ + 2 L a ​ ) − V 0 ​ ) / a = V 0 ​ + a t ​
+
+If the object starts moving without initial velocity, the expression for sliding time simplifies to:
+t = 2 L / a t = \sqrt{2 L / a} t = 2 L / a ​
+Rotary solids on an inclined plane
+Rotary object on an inclined plane
+
+It isn't difficult to imagine some round object which would rather roll down instead of sliding . Therefore, a different approach has to be adopted for rotary bodies. This time friction prevents objects from slippage and simultaneously allows rotation . We can repeat the calculating process from the previous section, taking into account both progressive and circular motions, which is quite tricky. Still, on the other hand, we can use the conservation of energy .
+
+It tells us that the sum of initial potential and kinetic energies equals the final kinetic energy. It's essential to remember that rotational kinetic energy is fixed in total kinetic energy. The acceleration formula changes as follows:
+a = F i / ( m + I r 2 ) \footnotesize a = F_i \Big/ \left(m + \frac{I}{r^2}\right) a = F i ​ / ( m + r 2 I ​ )
+
+where I I I is the object's moment of inertia and r r r is the radius between the axis of rotation and the surface of the inclined plane, which is usually equivalent to the body's radius (e.g., ball or cylinder). The remaining expressions for rolling time t t t and final velocity V V V are precisely the same as previously.
+
+If you're wondering how we arrived at this equation, make sure to read up on the potential energy formula .
+
+💡 Calculate the force of a linear actuator on an inclined plane with our linear actuator force calculator .
+Cubic block – several computational examples
+Example 1
+
+Let's assume that we need to find the sliding time and the final velocity of a sliding object with these input data: m = 2  kg m = 2\ \text{kg} m = 2   kg , θ = 40 ° \theta = 40\degree θ = 40° , f = 0.2 f = 0.2 f = 0.2 , H = 5  m H = 5\ \text m H = 5   m , V 0 = 0 V_0 = 0 V 0 ​ = 0 . You can obtain the solution with the following steps:
+
+    Calculate the gravitational force:
+
+F g = 2  kg × 9.807   m / s 2 = 19.614 \footnotesize\quad F_g = 2\ \text{kg}\times 9.807\ \rm{m/s^2} = 19.614 F g ​ = 2   kg × 9.807   m/ s 2 = 19.614
+
+    Divide it into two perpendicular components:
+
+F i = 19.614  N × sin ⁡ 40 ° = 12.607  N F n = 19.614  N × cos ⁡ 40 ° = 15.026  N \footnotesize\quad \begin{align*} F_i &= 19.614\ \text N \times \sin 40\degree\! = 12.607\ \text N\\ F_n &= 19.614\ \text N \times \cos 40\degree\! = 15.026\ \text N \end{align*} F i ​ F n ​ ​ = 19.614   N × sin 40° = 12.607   N = 19.614   N × cos 40° = 15.026   N ​
+
+    Determine the friction force:
+
+F f = 0.2 × 15.025  N = 3.005  N \footnotesize\quad F_f = 0.2 \times 15.025\ \text N = 3.005\ \text N F f ​ = 0.2 × 15.025   N = 3.005   N
+
+    Subtract F i F_i F i ​ F and F f F_f F f ​ to work out the resultant force:
+
+F = 12.607  N − 3.005  N = 9.602  N \footnotesize\quad F = 12.607\ \text N - 3.005\ \text N = 9.602\ \text N F = 12.607   N − 3.005   N = 9.602   N
+
+    Thus, acceleration can be derived:
+
+a = 9.602  N / 2  kg = 4.801   m / s 2 \footnotesize\quad a = 9.602\ \text N / 2\ \text{kg} = 4.801\ \rm{m/s^2} a = 9.602   N /2   kg = 4.801   m/ s 2
+
+    The length of the inclined plane equals:
+
+L = 5  m / sin ⁡ 40 ° = 7.779  m \footnotesize\quad L = 5\ \text m / \sin 40\degree = 7.779\ \text m L = 5   m / sin 40° = 7.779   m
+
+    So the sliding time can be obtained:
+
+t = 2 × 7.779  m / 4.801   m / s 2 = 1.8  s \footnotesize\quad \begin{align*} t &= \sqrt{2 \times 7.779\ \text m / 4.801\ \rm{m/s^2}}\\ &= 1.8\ \text s \end{align*} t ​ = 2 × 7.779   m /4.801   m/ s 2 ​ = 1.8   s ​
+
+and also the final velocity:
+V = 4.801   m / s 2 × 1.8  s = 8.642   m / s \footnotesize\quad \begin{align*} V &= 4.801\ \rm{m/s^2} \times 1.8\ \text s\\ &= 8.642\ \rm{m/s} \end{align*} V ​ = 4.801   m/ s 2 × 1.8   s = 8.642   m/s ​
+
+We can also estimate the energy loss , which is the difference between the initial potential energy and the final kinetic one:
+Δ E = m g H − m V 2 / 2 = 2  kg × 9.807   m / s 2 × 5  m  − 2  kg × ( 8.642   m / s ) 2 / 2 = 23.38  J \footnotesize\quad \begin{align*} \Delta E &= mgH - mV^2/2\\ &= 2\ \text{kg} \times 9.807\ \rm{m/s^2} \times 5\ \text m\ -\\ &\qquad2\ \text{kg} \times (8.642\ \rm{m/s})^2 / 2\\ &= 23.38\ \text J \end{align*} Δ E ​ = m g H − m V 2 /2 = 2   kg × 9.807   m/ s 2 × 5   m   − 2   kg × ( 8.642   m/s ) 2 /2 = 23.38   J ​
+
+The total energy isn't conserved, which is caused by the work done by the friction force. It's usually released in the form of heat.
+Example 2
+
+In the second example, let's find the same parameter, but with different values of input data: m = 2   k g m = 2\ \rm{kg} m = 2   kg , θ = 20 ° θ = 20\degree θ = 20° , f = 0.5 f = 0.5 f = 0.5 , H = 5   m H = 5\ \rm m H = 5   m , V 0 = 0 V_0 = 0 V 0 ​ = 0 .
+
+Firstly, we can work out the angle of friction for a given friction coefficient:
+θ f = tan ⁡ − 1 ( 0.5 ) = 26.565 ° \footnotesize \theta_f = \tan^{-1}(0.5) = 26.565\degree θ f ​ = tan − 1 ( 0.5 ) = 26.565°
+
+...which is greater than our angle θ \theta θ .
+
+It means that the body won't move due to sufficiently high friction force! As a result, we don't even have to repeat all these steps from the previous example because the object can't slide down without any external force.
+Example 3
+
+The last example uses the following data: m = 2   k g m = 2\ \rm{kg} m = 2   kg , θ = 90 ° θ = 90\degree θ = 90° , f = 0 f = 0 f = 0 , H = 5   m H = 5\ \rm m H = 5   m , V 0 = 0 V_0 = 0 V 0 ​ = 0 . At first glance it may look strange, but let's try to solve it:
+F g = 2   k g × 9.807   m / s 2 = 19.614   N F i = 19.614   N × sin ⁡ 90 ° = 19.614   N F n = 19.614   N × cos ⁡ 90 ° = 0   N F f = 0   N a = 19.614   N / 2   k g = 9.807   m / s 2 = g \footnotesize \begin{align*} F_g &= 2\ \rm{kg} \times 9.807\ \rm{m/s^2} = 19.614\ \rm N\\ F_i &= 19.614\ \rm N \times \sin 90\degree = 19.614\ \rm N\\ F_n &= 19.614\ \rm N \times \cos 90\degree = 0\ \rm N\\ F_f &= 0\ \rm N\\ a &= 19.614\ \rm N / 2\ \rm{kg} = 9.807\ \rm{m/s^2} = g \end{align*} F g ​ F i ​ F n ​ F f ​ a ​ = 2   kg × 9.807   m/ s 2 = 19.614   N = 19.614   N × sin 90° = 19.614   N = 19.614   N × cos 90° = 0   N = 0   N = 19.614   N/2   kg = 9.807   m/ s 2 = g ​
+
+It turns out that the acceleration equals the gravitational one . The angle θ = 90 ° \theta = 90\degree θ = 90° denotes vertical movement, and f = 0 f = 0 f = 0 indicates the lack of resistance, which means we are facing the problem of free fall . Once you notice this, you can find the sliding (falling) time with free fall calculator : t = 1.010   s t = 1.010\ s t = 1.010   s .
+
+However, all these results can be estimated without great effort, regardless of any further assumptions – just use our inclined plane calculator!
+Rolling ball
+
+To conclude, let's find out the rolling time of a ball for initial inclined plane parameters θ = 30 ° \theta = 30\degree θ = 30° , H = 5   m H = 5\ \rm m H = 5   m and V 0 = 0 V_0 = 0 V 0 ​ = 0 . The moment of inertia of a solid ball equals I = 2 / 5 × m × r 2 I = 2/5 \times m \times r^2 I = 2/5 × m × r 2 . We can start with extending the formula for acceleration, remembering that the resulting force is F i = m g sin ⁡ θ F_i = mg\sin\theta F i ​ = m g sin θ :
+a = F i / ( m + I r 2 ) = m g sin ⁡ θ / ( m + 2 m r 2 5 r 2 ) = 5 / 7 × g × sin ⁡ θ = 3.502   m / s 2 \footnotesize \begin{align*} a &= F_i \big/ \left(m + \frac{I}{r^2}\right)\\\\ &= mg\sin\theta \big/ \left(m + \frac{2mr^2}{5r^2}\right)\\\\ &= 5/7 \times g \times \sin\theta = 3.502\ \rm{m/s^2} \end{align*} a ​ = F i ​ / ( m + r 2 I ​ ) = m g sin θ / ( m + 5 r 2 2 m r 2 ​ ) = 5/7 × g × sin θ = 3.502   m/ s 2 ​
+
+We can see that the expression for a a a simplifies significantly, and actually, there is a general rule which says that for bodies with the moment of inertia in the form of I = k m r 2 I = kmr^2 I = km r 2 (where k k k is some constant factor) we can figure out the acceleration as:
+a = g sin ⁡ θ / ( 1 + k ) \footnotesize a = g\sin\theta / (1 + k) a = g sin θ / ( 1 + k )
+
+It's really striking that the result depends neither on mass nor the size of the ball ! The rest is a well-known procedure:
+L = 5   m / sin ⁡ 30 ° = 10   m t = 2 × 10   m / 3.502   m / s 2 = 2.390   s V = 3.502   m / s 2 × 2.309   s = 8.369   m / s \footnotesize\! \begin{align*} L &= 5\ \rm m / \sin 30\degree = 10\ \rm m\\\\ t &= \sqrt{2 \times 10\ \rm m / 3.502\ \rm{m/s^2}} = 2.390\ \rm s\\\\ V &= 3.502\ \rm{m/s^2} \times 2.309\ \rm s = 8.369\ \rm{m/s} \end{align*} L t V ​ = 5   m/ sin 30° = 10   m = 2 × 10   m/3.502   m/ s 2 ​ = 2.390   s = 3.502   m/ s 2 × 2.309   s = 8.369   m/s ​
+
+💡 What? Did you mean another type of "inclined plane"? At our angle of banking calculator , you will learn how much an aircraft has to tilt during a turn.
+Wojciech Sas , PhD candidate
+Select object and initial parameters
+Object
+Ball
+Mass (m)
+lb
+Gravitational acceleration (g)
+ft/s²
+Angle (θ)
+deg
+Initial velocity (V₀)
+ft/s
+Resulting force (F)
+N
+Height (H)
+in
+Length (L)
+ft
+Results
+Acceleration (a)
+ft/s²
+Rolling time (t)
+sec
+Final velocity (V)
+ft/s
+Simple mode Send this result
+Check out 79 similar classical mechanics calculators ⚙️
+Acceleration Bank angle Belt length … 76 more
+People also viewed…
+Flat vs. round Earth
+Omni's not-flat Earth calculator helps you perform three experiments that prove the world is round.
+Flat vs. Round Earth Calculator
+Helium balloons
+Wondering how many helium balloons it would take to lift you up in the air? Try this helium balloons calculator! 🎈
+Helium Balloons Calculator
+Pressure
+Use the pressure calculator to find the pressure which is exerted by force on a specific area.
+Pressure Calculator
+RLC circuit
+With this RLC circuit calculator you will calculate the characteristic frequency of the RLC circuit and its Q-factor.
+RLC Circuit Calculator
+Other physics calculators
+Omni Calculator
+
+    About us
+    All calculators
+    Blog
+    Calculator collections
+    Contact
+    Partnership
+    We’re hiring!
+    Press kit 
+
+Copyright by Omni Calculator sp. z o.o.
+Privacy policy & cookies
+
+    Biology (79)
+    Chemistry (81)
+    Construction (109)
+    Conversion (158)
+    Ecology (27)
+    Everyday life (151)
+    Finance (451)
+    Food (59)
+    Health (409)
+    Math (478)
+    Physics (400)
+    Sports (83)
+    Statistics (123)
+    Other (147)
+    Discover Omni (40) 
+
+main background

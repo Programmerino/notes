@@ -1,0 +1,476 @@
+Statistical Techniques in Robotics (16-831, F10) Lectures #20, #21 (Oct. 28, Nov 2)
+
+Lecturer: Drew Bagnell
+
+Kalman Filtering
+Scribe: Zachary Lamb, Jackie Libby1
+
+1 Introduction to Gaussian Filters
+Gaussian ﬁlters embody the ﬁrst practical implementations of Bayesian ﬁltering for continuous spaces. Despite a number of deﬁciencies, they are by far the most popular of techniques implemented to date.
+All Gaussians share the same basic idea that beliefs can be represented by multivariate normal distributions. This representation has important consequences. Since Gaussians are unimodal they possess only a single maximum; this can be readily applied to robot localiztion, for example, where the robot posterior is focused around the true state with some amount of uncertainty. These posteriors are of little use in problems that can have multiple hypotheses, such as global estimation problems.
+
+2 The Kalman Filter
+
+2.1 Introduction
+The Kalman ﬁlter was invented as a technique for ﬁltering and prediction in linear Gaussian systems. It implements belief computations (Bayesian ﬁltering) for continuous spaces and is not applicable to discrete/hybrid state spaces.
+Kalman ﬁlters represent beliefs by the moment parameterization, where the belief at time t is represented by a mean µt and covariance Σt. All computed posteriors are Gaussian if the following properties hold (Markov assumption must hold as well). These three items ensure that all posteriors are always Gaussian for any time t.
+
+1. The state transition probability p(xt|ut, xt−1) must be linear in their arguments and with added Gaussian noise. This probability therefore assumes linear dynamics and in this form is called linear Gaussian. It is represented by the following equation :
+
+xt+1 = Axt + ε, where ε ∼ N (0, Q)
+
+(2.1)
+
+2. The measurement probability p(yt|xt) must also be linear with its arguments and with added Gaussian noise. This probability is represented by the following probability:
+
+yt+1 = Cxt + δ, where ε ∼ N (0, R)
+
+(2.2)
+
+3. The initial belief must be normally distributed with some mean µ0 and covariance Σ0.
+1Some content adapted from previous scribs: Hyunggi Cho and Alberto Rodriguez
+
+1
+
+Combining (2.1) and (2.2) together, we can show how the state and measurment are thought to come from a normal distribution with a mean vector µ and covariance matrix Σ:
+
+x y
+
+∼N
+
+µx C µx
+
+,
+
+Σxx Σxy Σyx Σyy
+
+(2.3)
+
+We can further equate each of the terms in the covariance matrix in terms of the top left term Σxx.
+
+Since µy = Cµx, then we know,
+
+Σyy = R + CΣxxCT
+
+(2.4)
+
+Therefore, all that is left is to determine Σxy since Σyx = ΣTxy.
+
+Σxy = E x yT Since y = Cx + δ, where δ has a mean of 0 and is independent of all other observations, we have
+
+Σxy = E x(Cx + δ)T = E xxT CT + E xδT = E xxT CT + E [x] E δT = ΣxxCT + 0
+⇒ Σxy = ΣxxCT
+
+(2.5)
+
+2.2 The Kalman Filter Algorithm
+The Kalman ﬁlter algorithm is depicted in the table below. The input to the ﬁlter is the belief represented by the mean µt and covariance Σt at the previous timestep.
+Algorithm 1 Basic Kalman Filter Algorithm for all t do µ−t+1 = Aµt Σ−t+1 = AΣt+1AT + Q µt+1 = µ−t+1 + Σ−t+1CT (CΣ−t+1CT + R)−1(yt − Cµ−t ) Σt+1 = Σ−t+1 − Σ−t+1CT (CΣ−t+1CT + R)−1CΣ−t+1 end for
+The ﬁrst two lines of the algorithm calculate predicted beliefs represented by µ− and Σ− at the new time (t + 1) without incorporating the measurement yt. The mean is then updated using the deterministic version of the state transition function shown in (2.1) using the variables µ−t and Σ−t .
+In the ﬁnal two lines, the predicted belief is updated into the desired belief by incorporating the measurement yt. The quantity Σ−t+1CT (CΣ−t+1CT + R)−1 is known as the Kalman Gain. It details the degree to which each measurement is incorporated into the new state estimate. The third line manipulates the predicted mean in proportion to the Kalman Gain with the quantity (yt − Cµ−t ), known as the innovation.
+2
+
+This algorithm is computationally quite eﬃcient, with the only complexities arising from the matrix inversions in lines 3 and 4 (O(d2)) and the multiplications in line 4 (O(n2)).
+Taking (2.4) and (2.5) from above, we can evaluate the update rules in terms of the mean vector and covariance matrix.
+
+µx|y = µx + ΣxxCT (R + CΣxxCT )−1(y − Cµx) Σx|y = ΣxxCT (R + CΣxxCT )−1CΣxx ⇒ µx|y = µx + ΣxyΣ−yy1(y − Cµx) ⇒ Σx|y = Σxx − ΣxyΣ−yy1Σyx
+Where ΣxyΣ−yy1 is the Kalman Gain and (y − Cµx) is the innovation.
+2.3 Kalman Filter Illustration
+
+(2.6) (2.7)
+
+Figure 2.1: Kalman ﬁltering example for 1D localization
+Figure 2.1 above illustrates the Kalman ﬁlter algorithm for simple 1D localization. Supposing the robot moves in the horizontal direction, the prior of robot’s position is shown as the red line in (a). Polling its sensors gives the distribution shown by the green line in (a), and the blue line is a result of the ﬁnal two lines of the Kalman ﬁlter algorithm shown above. In (b) the robot has moved to a new position illustrated by the magenta line. It polls its sensor that report back the position given by the cyan line in (c), and the update from the algorithm gives the posterior given by the yellow line in (d).
+The Kalman ﬁlter alternates the sensor update step (lines 3-4), which incorporates sensor data into
+3
+
+the present belief, with the motion update step (lines 1-2), where the belief is predicted according to the action taken by the robot.
+3 The Extended Kalman Filter
+3.1 Why should we linearize?
+The assumptions of linearity for both the measurement and state transition are essential for the correctness of the Kalman ﬁlter. The observation that any linear transformation of a Gaussian random variable yields another Gaussian is important in the derivation of the Kalman ﬁlter algorithm, so what happens if state transitions and measurements are no longer linear? Figure 3.1 shows the eﬀect of a nonlinear transformation of a Gaussian random variable. The lower right graph shows the random variable distributed about its mean. It is passed through the nonlinear function represented by the upper right graph. The resulting distribution (upper left) is no longer gaussian in shape, rendering Kalman ﬁltering useless over the domain of the nonlinear function.
+Figure 3.1: Eﬀect of nonlinear transformation of Gaussian random variable.
+3.2 The Extended Kalman Filter
+Unfortunately, state transitions and measurements are rarely linear in practice. Thus, we would like to be able to model non-linear transformations with our ﬁlter. The Extended Kalman Filter or EKF relaxes the linearity assumption by assuming that the state transition and measurement
+4
+
+probabilities are governed nonlinear functions f and g, such that xt+1 = f (xt) + εt+1, where ε ∼ N (0, Q)
+
+(3.1)
+
+yt+1 = g(xt+1) + δt+1, where δ ∼ N (0, R)(3.2)
+Notice that the function f replaces the matrix A and the function g replaces C. For arbitrary functions f and g, the belief is no longer Gaussian. To combat this, the EKF calculates a Gaussian approximation to the true belief. This is shown in ﬁgure 3.2
+
+Figure 3.2: Illustration of EKF
+The dashed line on the upper left graph represents the Gaussian approximation (Linearization) to the density of the random variable y. Because it represents belief at some time t by some mean µt and covariance Σt, it still keeps from the original Kalman ﬁlter the gaussian belief distribution, but this belief is now an approximation. The goal of the EKF is therefore to eﬃciently estimate the mean and covariance of a posterior. Linearization approximates the nonlinear function f and g at the mean of the Gaussian. Projecting it through the linear function shown in the upper right graph of 3.2 a linear approximation is shown in red of the upper left graph.
+3.3 Linearization via the Taylor Series Expansion
+One way to perform this linearization is to use the Taylor expansion. In this case we approximate the transformations using the ﬁrst order Taylor expansion evaluated at the mean estimate of x at
+5
+
+time t, µt:
+
+∂f xt+1 ≈ f (µt) + ∂x (µt)(xt − µt) + ε
+
+yt+1
+
+≈
+
+g(µ−t+1)
+
++
+
+∂g ∂x
+
+(µ−t+1)(xt+1
+
+−
+
+µ−t+1)
+
++
+
+δ
+
+(3.3) (3.4)
+
+The
+
+ﬁrst
+
+order
+
+derivative
+
+terms
+
+∂f ∂x
+
+(µt)
+
+and
+
+∂g ∂x
+
+(µ−t+1),
+
+also
+
+referred
+
+to
+
+as
+
+the
+
+Jacobian,
+
+is
+
+used
+
+here
+
+as
+
+the linear transformation, while the f (µt) term just serves to shift the mean of the transformation.
+
+3.4 New Update Rules
+
+Using the non-linear transformation above, we get the following new update equations for our mean and variance estimates for the motion model:
+
+µ−t+1 = f (µ+t ) Σ−t+1 = Jf Σ+t JfT + Q
+
+(3.5) (3.6)
+
+And for the sensor model:
+µt+1 = µ−t+1 + Σ−t+1JgT (JgΣ−t+1JgT + R)−1[yt+1 − g(µ−t+1)] Σt+1 = Σ−t+1 − Σ−t+1JgT (JgΣ−t+1JgT + R)−1JgΣ−t+1
+
+(3.7) (3.8)
+
+where Jf
+
+=
+
+∂f ∂x
+
+(µ+t
+
+)
+
+and
+
+Jg
+
+=
+
+∂g ∂x
+
+(µ−t+1
+
+).
+
+These lines replace lines 3 and 4 in the Kalman ﬁlter
+
+algorithm presented above.
+
+3.5 Problems with Extended Kalman Filtering
+• Taylor expansion is a poor approximation of most non-linear functions. The goodness of the linearization depends on two factors: the degree of uncertainty and the amount of local nonlinearity in the functions being approximated.
+• Diﬀerentiation of the functions f and g can be slightly bothersome, both for you, personally, because you might have forgotten calculus, and because the function might not be continuous across the range in which the linearization is used. An example of a discontinuous function is the hinge loss function for SVM’s. Furthermore, for SVM’s, you will get driven towards this discontinuity. (Why? Someone ﬁgure this out and explain it to me.)
+• If the linearization is a poor approximation, the the conﬁdence ellipse will not encapsulate the correct answer unless you make it very large. For this reason, the ellipses are often overconﬁdent. An overconﬁdent ﬁlter can cause divergence, because it starts rejecting the measurements it is given. It prances oﬀ into a state of egotistical oblivion, giving no respect to the poor measurements that are just trying to help it out.
+• EKFs are notoriously bad at handling multiple distinct hypotheses.
+Extended Kalman Filters are only as good as their approximation about the mean of the estimate. It is important to keep the uncertainty of the state estimate small when applying EKFs to avoid negative eﬀects from the nonlinearities.
+6
+
+3.6 Example: Non-Linear Regression
+In this example we want to use an EKF for a non-linear regression problem. In this case our state vector is a set of weights w and we wish to estimate the mean and variance µw, Σw with our EKF, which we will just refer to as µ and Σ from here on.
+
+Table 1: Comparing a general Kalman Filter with a Bayes Linear Regression Example KF BLR Diﬀerence
+
+xw
+
+A I No process model for how weights are changing over time
+
+Ct xT Diﬀerent linearlization at every time step.
+
+Q 0 Growing uncertainty with time.
+
+Y
+
+y y = wT x +
+
+Σ0 Σw prior µ0 µw prior
+
+For
+
+our
+
+observation
+
+model
+
+we
+
+want
+
+to
+
+use
+
+the
+
+non-linear
+
+sigmoid
+
+function
+
+σ(x)
+
+=
+
+1 1+exp(x)
+
+:
+
+yt = σ(wT xt) + ε, where ε ∼ N (0, γ2)
+
+(3.9)
+
+Note that our output in this case is a single value, so our Jacobian will be a vector. We can ﬁnd
+
+the
+
+Jacobian
+
+Jσ
+
+using
+
+the
+
+chain
+
+rule
+
+and
+
+the
+
+fact
+
+that
+
+∂σ ∂x
+
+=
+
+σ(x)(1 − σ(x)).
+
+Here
+
+we
+
+actually
+
+want
+
+to ﬁnd the derivative of g(w) = σ(wT x), so we use the chain rule with z = wT x.
+
+∂g
+
+∂g ∂z
+
+=
+
+∂w
+
+∂z ∂w
+
+= σ(wT x)(1 − σ(wT x))xT
+
+∂g
+
+Jσ
+
+=
+
+(µ) ∂w
+
+= σ(µT x)(1 − σ(µT x))xT
+
+(3.10) (3.11) (3.12) (3.13)
+
+This gives update equations:
+µt+1 = µ+t + Σ+t JσT (JσΣ+t JσT + γ2)−1[yt+1 − σ(µ+t T x)] Σt+1 = Σ+t − Σ+t JσT (JσΣ+t JσT + γ2)−1JσΣ+t
+
+(3.14) (3.15)
+
+For this non-linear regression example, there is no motion step, so the update step just takes the output of the update step from the last round. In other words, µ−t+1 = µ+t and Σ−t+1 = Σ+t . Alternatively, we could add in a pseudo motion model to represent growing uncertainty with each
+time step:
+
+µ−t+1 = µt Σ−t+1 = Σt + λI
+
+(3.16) (3.17)
+
+where λ is forgetting factor and I is an identity matrix.
+
+7
+
+Also, since we use the sigmoid function for this example, we use γ2 instead of σ2 to denote the variance, to avoid confusion. More generally, this would be the covariance, R, but in this example the sigmoid function outputs a scalar.
+4 Other techniques to deal with nonlinear systems
+Assuming we have the general nonlinear system given by equations (3.1) and (3.2), we can use other approaches besides the EKF. A Statistically Linearized Kalman Filter tries to overcome that limitation by approximating the Jacobian matrix of the system in a broader region centered at the state of the system.
+4.1 Montecarlo Kalman Filter
+One example of such a ﬁlter is the Mantecarlo Kalman Filter (MCKF). This isn’t actually a real ﬁlter used in practice, but it is presented here for the sake of demonstration, as a precursor to the discussion of the Unscented Kalman Filter next.
+Motion Model
+Given the equation of the motion model xt+1 = f (xt) + , µt and Σt we need to estimate µ−t+1 and Σ−t+1. For that we draw samples from the prior distribution xit and pass them through f (x). That way, and with the law of large numbers in hand, we can estimate:
+
+µ−xt+1
+
+=
+
+1 N
+
+N
+
+f (xit)
+
+i=1
+
+Σ−xt+1
+
+=
+
+1 N
+
+f (xit) − µ−xt+1 · f (xit) − µ−xt+1 T + Q
+
+NOTE: Q is additive noise, uncorrelated with xt.
+
+(4.1) (4.2)
+
+Observation Model
+Given the equation of the observation model yt+1 = g(xt+1) + δ the update rules are the same as before:
+
+µ+xt+1 = µ−xt+1 + ΣXY Σ−Y 1Y (yt − µy) Σ+xt+1 = Σ−t+1 − ΣXY Σ−Y 1Y ΣY X
+But now we approximate µy, ΣY Y and ΣXY as:
+
+(4.3) (4.4)
+
+8
+
+µy
+
+=
+
+1 N
+
+N
+
+g(xit)
+
+i=1
+
+1 ΣY Y = N
+
+N
+g(xit) − µy · g(xit) − µy T + R
+
+i=1
+
+1 ΣXY = N
+
+N
+xit − µxt · g(xit) − µy T
+
+i=1
+
+(4.5) (4.6) (4.7)
+
+In the above equations, we can choose to replace µ−xt+1 with f (µxt) and µy with g(µ−xt+1). In other words, we take the mean of our samples and pass them through the nonlinear functions f and g, instead of passing every sample through the functions. If the samples were perfectly gaussian, these two methods would produce the same result.
+Note that last year’s lectures used xit+1 instead of xit in these update equations. I believe it is more correct to use xit. There can be two cases: case 1 is that we’re doing an update step on the same timestep as a motion step, (which is what the overall notation is suggesting with the +’s and -’s). In this case, we would not have xit+1’s to sample from, because we are still at time step t. Case 2 is that we’re doing an update step at the next timestep, and that we are treating the motion and update steps as asynchronous events that happen independently from each other. In this case, we would look at the update step separately from the motion step, and we could leave the time subscript out altogether because an update step happens at one moment in time.
+Comparing the Montecarlo Kalman Filter (MCKF) with the standard Particle Filter (PF):
+
+• Good things about the MCKF
+– The MCKF forces some smoothing on the uncertainty that simpliﬁes the process to get a solution.
+– The MCKF doesn’t need as many samples as the PF. The number of samples is on the order of O(d2). To estimate n parameters, we need O(n) particles. Here we have d2 parameters.
+• Bad things about the MCKF
+– The MCKF will always be unimodal, while a the PF can perfectly maintain several modes in the estimation of the distribution.
+
+4.2 Sigma-Point Filter
+A Sigma-Point Filter has exactly the same formulation as a Montecarlo Kalman Filter but it draws samples in a deterministic way from interesting locations. Suppose ∆i are the eigenvectors of the covariance matrix Σxt. Then we sample the points as:
+µxt ± λi∆i i = 1 . . . d
+9
+
+where d is the dimension of xt and λi is proportional to the eigenvalue corresponding to eigenvector ∆i. In other words, we pick one point along each eigenvector direction. We also sometimes pick the last point as the mean itself, so the number of points is 2d + 1. Then, the update rule for the motion model becomes:
+
+N
+
+µ−xt+1 = wi
+
+f (xit)
+
+i=1
+
+Σ−xt+1 = wi
+
+f (xit) − µ−xt+1 · f (xit) − µ−xt+1 T + Q
+
+(4.8) (4.9)
+
+This assumes the weights sum to 1. There are diﬀerent versions of Sigma-Point ﬁlters and they all diﬀer on how weights wi are selected. All versions choose weights so that the method behaves perfectly for a gaussian model (linear dynamics) and then optimize the weights for diﬀerent criteria. Diﬀerent versions include Unscented Kalman Filter, Central Diﬀerence Kalman Filter, ... The computational cost of Sigma-Point type ﬁlters is O(d3) for ﬁnding the eigenvectors (usually implemented by the SVD decomposition) plus 2d + 1 evaluations of the motion model f (x).
+Evaluating the Sigma-Point Filter:
+• Good things
+– It needs less particles to run, and hence reduces the number of motion model evaluations, which can be costly.
+– It only needs to be implemented once because the algorithm is generic, for any choice of your model, (f, g).
+– You don’t have pretend like you know calculus, because there are no Jacobians.
+• Bad things
+– It can perform really bad if facing an adversarial problem, because it samples the space in a deterministic way.
+– As the dimension goes up, the center weight can become negative. (One ﬁx is to leave the center value out for the variance calculations.)
+– The eigenvalue decomposition need to be done at every time step, which can be costly. Also, SVD is not always deterministic, so you count bound the computation time. This makes it diﬃcult to run online.
+The Unscented Kalman Filter (UKF) is a type of Sigma-Point Filter, for speciﬁc choices of λi’s and wi’s. Fig. 4.1 gives a pictorial representation of the UKF:
+
+10
+
+Figure 4.1: A comparison of the actual transformation, and the approximations given by the linear approximation and the unscented transformation. (Source: http://cslu.cse.ogi.edu/nsel/ukf/node6.html)
+11
+

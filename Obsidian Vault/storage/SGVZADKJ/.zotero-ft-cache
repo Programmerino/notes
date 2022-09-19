@@ -1,0 +1,840 @@
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+You have institutional access
+
+    View  PDF
+    Download full volume 
+
+Outline
+
+    Abstract
+    1. Localization for Emergency Responders: State of the Art
+    2. Implementation: Multimodal Sensing and Algorithms
+    3. System Evaluation
+    4. Conclusion
+    References 
+
+Show full outline
+Cited By (2)
+Figures (21)
+
+    Fig. 1. Transformation from sensor to world coordinates via the direction cosine…
+    Fig. 2. PDR algorithm: each step has a stance phase (shaded) and a swing phase
+    Fig. 3. Ultrasonic sensor node—microcontroller and radio transceiver on the top board,…
+    Fig. 4. Range and bearing measurement errors of the ultrasonic sensors
+    Fig. 5. Notations used for PDR measurements
+    Fig. 6. Notations used for ultrasound sensor coordinates, orientations, and measurements
+
+Show all figures
+Tables (1)
+
+    Table I 
+
+Elsevier
+Advances in Computers
+Volume 81 , 2011, Pages 103-160
+Advances in Computers
+Chapter 3 - SLAM for Pedestrians and Ultrasonic Landmarks in Emergency Response Scenarios ☆
+Author links open overlay panel Carl Fischer Kavitha Muthukrishnan Mike Hazas
+Show more
+Cite
+https://doi.org/10.1016/B978-0-12-385514-5.00003-3 Get rights and content
+Abstract
+
+Providing ad hoc solutions for positioning and tracking of emergency response teams is an important and safety-critical challenge. Although solutions based on inertial sensing systems are promising, they are subject to drift. We address the problem of positional drift by having the responders themselves deploy sensor nodes capable of sensing range and angle-of-arrival, as they progress into an unknown environment. Our research focuses on a sensor network approach that does not rely on preexisting infrastructure. This chapter targets two important aspects of such a solution: how to locate the deployed static sensor nodes, and how to track the responders by using a combination of ultrasound and inertial measurements. The main contributions of this chapter are: (i) a characterization of the errors encountered in inertial-based pedestrian dead-reckoning as well as ultrasound range and bearing measurements in a mobile setting, (ii) the formulation of an extended Kalman filter for simultaneously locating sensor nodes and tracking a pedestrian using a combination of ultrasound range/bearing measurements and inertial measurements, and (iii) the validation of the presented algorithms using data collected from real deployments.
+
+    Previous chapter in volume
+    Next chapter in volume 
+
+1. Localization for Emergency Responders: State of the Art
+
+Over the past decade, many researchers have attempted to use embedded sensing and computation to improve the safety and effectiveness of emergency responders . Despite recent progress in location systems and wearable computing , responders continue to use mostly traditional methods such as ropes and radios and suffer from their limitations. Wearable sensing and computing are promising technologies for providing location and navigation support but to date few systems are robust enough to be deployed in the field.
+
+In this section, we look at some of the problems faced by firefighters and other search and rescue workers operating indoors, and we examine the current practices and their limitations. We give an overview of the proposed sensing and algorithms that have been explored in research projects in this area. Finally, we conclude this section with a brief review of simultaneous localization and mapping (SLAM), since the new method we present in Section 1.2.4 employs such techniques.
+1.1. Application Overview
+
+Although localization is becoming available for the general public and for businesses via widespread use of GPS receivers and commercial indoor location systems (e.g., Ubisense, Sonitor, and Ekahau), many solutions are not suitable for use by emergency responders such as firefighters. The conditions they work in are significantly more demanding than nonemergency environments. Darkness, smoke, fire, power cuts, water, and noise can all prevent a location system from working, and heavy protective clothing, gloves, and facemasks make using a standard mobile computer impossible. In the past decade, much research effort has been put into this challenging problem and a wide variety of ideas have been developed.
+1.1.1. Scenarios
+
+Location and navigation support is useful in many everyday situations but essential in emergency response scenarios. Teams need to be able to reach safety quickly if conditions become too dangerous, and the incident commander needs to keep track of where teams are. The simple task of finding one's way in a building becomes a challenge when there is little or no visibility due to smoke and power failure. The high levels of mental and physical stress add to the difficulty. Getting lost in a burning or collapsing building can have fatal consequences for both the rescue personnel and the evacuees as oxygen supplies run out and medical attention is delayed.
+
+A report by the National Fire Protection Association (NFPA) [3] in the United States identifies “lost inside” as a major cause of traumatic injuries to firefighters. Reports by the National Institute for Occupational Safety and Health (NIOSH) [4] also reveal that disorientation and failure to locate victims are contributing factors to firefighter deaths.
+
+In case of a sudden increase in temperature, a firefighter may only have seconds to reach safety. They need to find the exit as fast as possible. In some cases, they may not be able to retreat along the same path due to a collapsed ceiling or floor. Alternative exits may be available but not clearly visible. When a firefighter radios a distress call because they are trapped or when someone fails to report back to the command post, the rescue team must be able to locate them. Even when situations are not immediately life-threatening, precious time can be wasted by searching the same room twice or failing to search another. The incident commander also needs to know elements of the building layout, where the team members are, and which parts of the building have been searched.
+
+Several recurring recommendations from the NIOSH reports [4] explicitly highlight the need for a navigation and tracking system, and suggest some solutions 1 :
+
+•
+
+    “train firefighters on actions to take if they become trapped or disoriented inside a burning structure”;
+•
+
+    “consider using exit locators such as high intensity floodlights, flashing strobe lights, hose markings, or safety ropes to guide lost or disoriented firefighters to the exit”;
+•
+
+    “ensure that the Incident Commander receives pertinent information (i.e., location of stairs, number of occupants in the structure, etc.) from occupants on scene and information is relayed to crews during size-up”;
+•
+
+    “working in large structures (high rise buildings, warehouses, and supermarkets) requires that firefighters be cognizant of the distance traveled and the time required to reach the point of suppression activity from the point of entry.”
+•
+
+    “conduct research into refining existing and developing new technology to track the movement of firefighters inside structures”;
+
+In addition to the location and navigation requirements, other reports emphasize the need for reliable communication of interior conditions to the incident commander and for monitoring building stability. Temperature, smoke, sounds, and vibrations are all indicators of the progression of the fire and the stability of the building.
+1.1.2. Current Practices
+
+Firefighters have developed their own specific navigation practices for use in poor visibility. Details vary but overall the same ideas are used worldwide. The methods tend to be simple and practical, and the equipment is seemingly low-tech and very robust.
+
+Following a hose is a simple method to find the exit through a dark or smokey building. If no hose is available, firefighters may use dedicated ropes called lifelines which connect them to a point outside the dangerous area. The other end can be left attached deep inside the building if a new team comes in to continue the search [5] . Additional lines may be attached to rings on the main lifeline to allow several firefighters to branch off in different directions, while remaining physically linked to the rest of their team. A series of knots on the main lifeline helps firefighters determine the direction and distance to the exit and can be used as reference points when radioing positions to the commander [6] . A flashlight left in the doorway of a room helps locate the exit and indicates to colleagues that the room is currently being searched, and a chalk mark on the door indicates that a room has already been searched [5] , [6] . Teams returning from a search mission sketch the layout of the building to assist the commander and any further teams.
+
+All firefighters entering hazardous areas wear a Personal Alert Safety System (PASS) device attached to their breathing apparatus [7] (as cited by Ref. [8] ). The PASS device sounds an alarm, if the firefighter does not move for a short time. At a fire scene, the sound of a PASS alarm is a signal that a firefighter is in distress. By following the sound, the rescue team can locate that firefighter. While not strictly a navigation tool , thermal imaging cameras can also be used for finding people and seeing walls, doorways, and windows when vision is obscured.
+
+Many firefighters are trained to search a dark room while keeping either their left or right hand in contact with the wall. This helps with orientation and provides a strategy for systematically exploring an unknown space [9] .
+
+Human contact and accountability are also essential. Searches are always performed in teams of at least two members who should avoid being separated [10] . During a lifeline search, one team member may remain at a fixed position to help with orientation and provide progress reports while their colleagues search further. Locations are reported as accurately as possible over the radio to the commander outside the building who keeps track of team locations on a whiteboard.
+
+The Pathfinder system produced by SummitSafety 2 consists of a handheld tracker and beacons which transmit powerful ultrasound pulses. Firefighters can use the tracker to locate a beacon placed at the exit, while rescue teams can use it to locate a beacon with a different frequency worn by a firefighter in distress. Ultrasound waves are blocked by walls but will find a path around corners and under doors; this path can be followed by firefighters. Smoke, heat, humidity, and audible sounds from the fire do not interfere with the ultrasonic waves and a directional receiver for ultrasound is a lot smaller than for audible sound. The tracker displays the amplitude of the detected signal on a bar graph so a firefighter can locate the direction of a beacon by scanning a 360° circle.
+1.1.3. Constraints and Limitations
+
+Although these methods become more effective with training, they are practical and simple to understand. However, they sometimes fail. A lifeline may become tangled in furniture, a flashlight may be buried under debris, and the temperature of the environment may make a thermal imaging camera unusable. But the principles behind these methods are familiar—the physical properties of a rope, the propagation of light, even the principle of thermal imaging. Failure is understood and even expected in certain conditions. The left hand method for finding an exit can also be misleading and a person can find themselves walking in circles around a large pillar or repeatedly visiting two or three rooms connected by several doors. These techniques are used to aid and support navigation rather than impose an inflexible method. Human error can occur especially during complex and prolonged incidents. Simple techniques such as taking notes (for the commander) or following a rope (for the search teams) are designed to reduce the mental load. As pointed out in the NIOSH reports, many improvements can be made by following procedures and through adequate training. But localization, sensing, and communication are all areas where embedded computers, body-worn sensors, and wireless sensor nodes could play a role if they can be adapted to the harsh conditions.
+
+Navigation by sight is impossible when darkness, smoke, or dust limit visibility to less than an arm's length. Persons or objects that are out of reach can be passed unnoticed. The environment can change as ceilings, floors, or shelves collapse, as furniture is moved and doors are opened or closed by people searching for an exit. The noise of the fire can mask PASS alarms, interfere with radio conversations, and make cries for help difficult to locate.
+
+High-tech systems are generally not adapted to these conditions. Propagation of radio, ultrasound, and laser signals typically used for location is hindered by high temperatures, thick smoke, noise, gusts of air, obstacles, and falling debris. A report by the City of Phoenix Fire Department [11] analyses problems with radio communications inside buildings and identifies unreliable radio links as the cause of several injuries. Sensors deployed in the environment may be kicked, fall through the floor, or be buried. Firefighters may crawl or walk in unusual patterns, and body-worn sensors may lie at odd angles. In addition, there is the issue of presenting the right amount of information to the firefighter in an accessible way and ensuring that devices can be used in the dark with gloves. Finally, the casing and electronics of all devices must be made as robust as possible in the same way as PASS devices and radios to withstand rough handling and very high temperatures [8] .
+
+The FIRE project at UC Berkeley reports on some of the major difficulties in designing high-tech location systems for the emergency services [12] . Reliability is more important than high resolution or fast updates. Consistent room-level locations every 20 s are deemed more useful than finer resolution updates with higher probability of error. And the firefighters must be able to customize and service the equipment themselves to some extent. All this is key to acceptance of new technologies.
+1.2. Existing Technologies and Systems
+1.2.1. SmokeNet
+
+Researchers at UC Berkeley have developed SmokeNet [13] , a preinstalled sensor network which tracks firefighters in a multistorey building. Sensor nodes installed in each room and approximately every 10   m along corridors provide room-scale location accuracy. Additional sensor nodes monitor smoke and temperature, and relay data to the command post. Color-coded LEDs show occupants which escape routes are safe. The Fire-Eye display mounted inside each firefighter's face mask displays a floorplan and short text messages from the command post. The incident commander uses the electronic Incident Command System to see the locations and health status of firefighters, and the status of the smoke detectors. At Carnegie Mellon University, researchers have used robots to autonomously map the positions of radio [14] or ultrasound [15] beacons. This map can then be used to monitor the progress of a fire and to track firefighters in a similar way. The method developed by Djugash et al. [15] is very similar to the method we describe in this chapter.
+1.2.2. LifeNet
+
+The LifeNet concept developed by Klann [5] is designed to provide the functionality of the traditional lifeline. It consists of beacons and a wearable device that senses nearby beacons and shows navigational guidance on a head-mounted display. The beacons are dropped automatically at appropriate intervals from a device attached to the firefighter's breathing apparatus and form a trail of “breadcrumbs.” Each beacon acts as a waypoint to guide the firefighter in either direction. Trails deployed by different firefighters combine to offer alternative escape routes, and loops create shortcuts instead of becoming a trap. The challenge is to present concise and clear information to the firefighters despite the inaccuracies in detecting the direction of the beacons.
+1.2.3. Relate Trails
+
+The Relate Trails project [16] provides navigation assistance by displaying an arrow on a head-mounted display to help a person retrace their path. Ultrasound beacons are dropped on the way in, and then used to correct pedestrian dead reckoning (PDR) position and direction estimates on the way out. Absolute positions may be inaccurate due to PDR drift over long distances but navigation only relies on the position of the user relative to the closest beacons. The use of PDR in addition to beacons allows the system to function to some extent even if beacons are destroyed or out of range.
+1.2.4. Dräger Patent
+
+Dräger Safety owns a patent covering a “device and process for guiding a person along a path traveled” [17] . Their system ejects transponders such as RFID tags as a person walks along a path. These transponders are detected by a portable receiver carried by the person and the direction to the nearest transponder is communicated via a visual or audio display. The system may use GPS to determine the absolute location of each transponder as it is dropped. The transponders can store an identification code and a sequence code that allow the system to cope with multiple users and loops. The transponders are carried in a container attached below the air canister. The ejection mechanism automatically drops a transponder at constant time intervals, at constant distance intervals, or based on the amplitude of the signal.
+1.2.5. Precision Personnel Location System
+
+The Precision Personnel Location (PPL) system [18] developed at the Worcester Polytechnic Institute uses RF receivers at fixed locations on emergency response vehicles outside the building to track the 3D position of personnel carrying a transmitter. The RF signals can be used alone to estimate location or they can be used to correct drift in dead-reckoned positions. The dead-reckoning is particularly useful in larger buildings where the RF position estimates are less accurate.
+1.2.6. Thales Indoor Positioning System
+
+The indoor positioning system [19] developed by Thales works similarly to GPS. Firetrucks parked around a building are located using standard GPS. Using ultrawide band (UWB) radio signals, firefighters inside the building can be located by means of time of arrival measurements. The system takes the GPS fixes of at least two firetrucks outside and their positions in the ad hoc network, and uses this information to calculate the location of the firefighters. The result is that the GPS signals aid position fixing, but do not need to penetrate the burning building.
+1.2.7. Flipside RFID
+
+A team from the National Institute of Standards and Technology (NIST) investigated how predeployed RFID tags embedded in the building could be used to correct PDR [20] . They call this the flipside of RFID because, unlike typical RFID systems, the tags are static and the mobile reader is worn by the firefighters. The range of the reader and the distance between tags are the key parameters. A long range will only give approximate locations but a short range will miss tags.
+1.2.8. Map Matching with RFID
+
+The drift in PDR position estimates can be corrected by using information from floorplans when these are available. A team from EPFL asks the first team of firefighters to identify doorways by placing an RFID tag on the frame as they pass through [21] . As each tag is placed, the location system adjusts the PDR position estimate based on the position of the nearest doorway on the floorplan. The system corrects the orientation estimate based on the direction in which the doorway must be crossed. Following teams wear an RFID reader which detects the tags deployed by the first team so that the system can correct the position and orientation estimates in the same way.
+1.2.9. Map Matching with Particle Filters
+
+Researchers from the WearIT@Work project also use floorplans to ensure that successive PDR position estimates do not pass through walls [22] . A particle filter keeps track of thousands of different position and orientation estimates (the particles) and each one is weighted according to how well it fits with the measurements from a wearable inertial sensor. Particles that pass through walls are eliminated and replaced by plausible ones. The map filtering method works with building outlines but benefits from more detailed floorplans. Woodman and Harle at the University of Cambridge use maps which also include vertical positions [23] to represent stairs. Their particle filter uses these 2.5-dimensional maps to track locations over several floors and improve estimates even further.
+1.3. Simultaneous Localization and Mapping
+
+The motivation for SLAM is to overcome the need for an a priori map and preinstalled infrastructure, and to enable mapping that is both extensible and adaptive to a changing environment. SLAM has been extensively used in the field of robotics [15] , [24] and has been specifically applied to a variety of environments such as indoor [25] , outdoor [26] , aerial [27] , and undersea [28] , [29] . In this section, we report briefly some of the work developed within the context of robotic SLAM and how the interest over years has been shifted to SLAM for pedestrians. For a more comprehensive review of SLAM, the reader is referred to Thrun [30] .
+1.3.1. SLAM in Robotics
+
+The basic setting for the SLAM problem is that a robot with a known kinematic model starts at an unknown location, and moves through an environment containing landmarks. The robot is equipped with sensors that can take measurements of the relative location between itself and any individual landmark . SLAM is performed by storing landmarks in a map, as they are observed by the sensors present in the robots, using the robot pose estimate (i.e., position and orientation) to determine the landmarks' locations (relative to the robot). At the same time, the algorithm utilizes these landmarks to improve the robot's pose estimate. As the landmarks are repeatedly observed, the confidence of their location estimates increases, and the map converges.
+
+Some of the notable problems that are widely researched in SLAM community are: (i) complexity —of the SLAM methods, which is compounded by the number of landmarks in the map and (ii) data association —to correctly associate observations of landmarks with landmarks held in the map. This is particularly important for “loop closure,” when a robot returns to a previously mapped region after traversing a long path. These problems are being addressed in detail within robotics research [31] , [32] .
+1.3.2. Approaches
+
+SLAM methods fall mainly in three categories: (i) EKF-SLAM, which employs an extended Kalman filter (EKF) to represent the joint state space of robot pose and all landmarks that have been identified; (ii) FastSLAM, which uses a Rao-Blackwellized particle filter in which each particle effectively represents a pose and a set of independent compact EKFs for each landmark; and (iii) GraphSLAM, which models the landmarks and the successive positions of the target as nodes of a graph, and measurements as edges of this graph.
+
+Although the EKF approach can be considered as the de facto standard in SLAM, it has two serious drawbacks that prevent it being applicable to large-scale real environments. First, quadratic complexity limits the number of landmarks that can be handled by this approach. Second, it relies heavily upon the assumption that the mapping between observations and landmarks is known. Associating a small number of observations with incorrect landmarks in the EKF can cause the filter to diverge. This shortcoming has been recognized and investigated by the community [33] , [34] . The computational effort has been reduced by using submapping methods—splitting the global map into a number of submaps [34] and by using sparse information matrices instead of covariance matrices [35] .
+
+FastSLAM was introduced by Montemerlo et al. [36] as an efficient SLAM algorithm. Basically, FastSLAM decomposes the SLAM problem into robot localization problem and landmark estimation problem that are conditioned on the robot's pose estimate. FastSLAM uses a particle filter for estimation. Each particle effectively represents a pose and a set of independent low-dimensional EKFs for every landmark. The conditioning on a pose allows the landmarks to be estimated independently, thus lowering the complexity. Further research by Montemerlo et al. [37] showed that FastSLAM is able to deal with ambiguous data association more reliably than EKF methods. This approach does have some drawbacks which are explored by Bailey et al. [38] . In particular, the uncertainty estimates inevitably become too optimistic and the filter is unable to explore the complete state space. A further publication by Brooks and Bailey [39] presents a hybrid approach combining the benefits of EKF-SLAM and FastSLAM.
+
+Graph-based methods represent the positions of the landmarks as nodes in a graph. The series of target positions (robot or pedestrian) are also nodes in the graph. Odometry or dead-reckoning measurements become edges between target positions, and landmark observations (e.g., range measurements) are edges between target positions and landmark positions. The graph can be optimized, for instance' by using a method such as gradient descent or MDS-MAP. Kleiner and Sun [40] use a graph representation to build a map of landmarks (the nodes of the graph) after several pedestrians have walked between them (thus measuring the edges of the graph). Djugash et al. [15] use a similar representation to initialize landmark positions but then use EKF-SLAM to track their robot. Thrun and Montemerlo [41] give a formal description of GraphSLAM. They present it as a solution to the offline SLAM problem for large environments. In other words, it can only be used after all the data have been collected, not in real time. Offline solutions such as GraphSLAM are able to produce more accurate maps and traces than online methods such as EKF-SLAM and FastSLAM, because they have more data to work with. However, they rely on a good initial estimate of node positions which can be difficult to achieve, given the drift in dead-reckoning over long distances.
+1.3.3. Common Sensing Modalities for SLAM
+
+SLAM implementations for robot positioning typically build on sensors and odometry as these are often readily available on robot platforms. In most cases, sensors used in the robots include precise laser scanners, or a single (monocular) or a multiple (stereo) cameras to gather landmark observations. Stereo cameras provide both range and bearing estimates to landmarks in the environment, while monocular camera provides only bearing information. Little prior work has addressed the problem of building maps with sensors providing range-only information or bearing-only information.
+
+Dead-reckoning traces its roots back to ship navigation. It is a common technique in robotics where it is often implemented using wheel odometry, but it is now becoming popular in the area of pedestrian tracking due to the miniaturization of inertial sensors. This method tracks the movements of the target (vehicle, robot, or person) and deduces their current position relative to their starting point and orientation. Not all SLAM methods rely on wheel-based odometry or inertial dead-reckoning. Camera-based methods often apply visual odometry [42] to estimate the trajectory of the camera using only a stream of images.
+
+SLAM with range-only sensors [29] , [43] and bearing-only sensors [44] shows that a single measurement does not contain enough information to estimate the location of landmark. It must be observed from multiple vantage points. This essentially means that we collect measurements over a period of time, and initializing the landmark is performed using a batch update scheme [31] , [32] .
+
+Range-only SLAM utilizes the range measurement between the robot and the landmarks. The distinct advantage of using range-only SLAM is that it does not have any data-association problems, as one can infer the unique correspondences between the sensed ranges and particular landmarks. This is because in the existing range-only SLAM systems, the identity of the landmark is encoded in the radio trigger packet. Olson et al. present a range-only approach which is robust in identifying the outliers in the range measurements. The initial position of the landmarks is computed using a voting scheme [29] . Once the initial estimation converges, a standard EKF-SLAM implementation is performed. Undersea range-only SLAM has also been demonstrated to give good results despite unreliable information from odometry [28] .
+
+There is also work done as an extension to range-only SLAM with the landmarks themselves able to measure range to each other, in addition to robot-landmark measurements. This will essentially improve the robot pose estimation and the resulting map of the landmark. Djugash et al. distinguish both these approaches in their work [25] , and illustrate that adding more observations to the SLAM algorithm yields better results.
+1.3.4. Aerial SLAM
+
+SLAM has also been applied to unmanned aerial vehicles (UAVs). Kim and Sukkarieh [27] utilize a single camera and inertial measurement unit (IMU) installed in a UAV. Their results show that both the map and the vehicle uncertainty are corrected even though the model of the system and observation is highly nonlinear. The results, however, also indicate that further work of observability and the relationship between vehicle model drift and the number and the location of landmarks need to be further analyzed, given the highly dynamic nature of the system.
+1.3.5. Pedestrian SLAM
+
+Some recent attention has been given to pedestrian SLAM systems. The primary goal is to automate the generation of maps that can be used later by others to navigate inside a building.
+
+HeadSLAM [45] uses a combination of dead-reckoning and measurements from a laser scanner (for detecting direction and distance to obstacles) for building the map of the environment and for positioning purposes. The scanner detects the direction and distance of obstacles such as walls. The map produced resembles an actual floorplan showing corridors, rooms, and doorways. SLAM can be very effective when a robot is allowed to repeatedly scan the environment but it is unclear how well it would perform for a pedestrian in an emergency.
+
+Recently, the SLAM problem has been addressed without using any visual or other type of sensors, thus leading to SLAM using only PDR measurements (known as FootSLAM ). This is challenging because of the inherent error associated with the dead-reckoning measurements, despite mitigation of drift using periodic resetting of velocities. Robertson et al. [46] demonstrate that a pedestrian's location and the building layout can be jointly estimated by using the pedestrian's odometry alone, as measured by the foot-mounted IMU. When a pedestrian walks within a constrained area such as a building, then even drift-prone odometry measurements can give information about certain features like turns, doors, and walls, which can then be used to build a map of the explored area. The authors use the FastSLAM approach whereby each particle assumes a certain pose history and estimates the motion probabilities at each location. In order to compute and store the probability distribution of the motion as a function of location, they have chosen to partition the space into a regular grid of adjacent and uniform hexagons. A usable map emerges once the pedestrian has covered the main walkable areas of the map several times.
+1.4. Multimodal Pedestrian SLAM
+
+Considering the pros and cons of the various techniques described in the previous section for tracking pedestrians indoors, we have chosen to use two key technologies: inertial dead-reckoning and ultrasonic range and bearing measurements.
+
+PDR using inertial sensors is one key sensing modality used in our work. The other modality is range and bearing estimation using ultrasound. By measuring the time of flight and amplitude of an ultrasonic pulse, we are able to estimate the range and bearing to a transmitter, relative to the receiver. By attaching such a sensor to our target (a pedestrian) and deploying other sensors on the ground, we obtain information that can be used to locate the target. This is achieved by combining these range and bearing measurements with the dead-reckoning estimates according to the methods described in the Section 2 .
+
+The benefits of inertial dead-reckoning are clear—it is able to track pedestrian motion using only a small foot-mounted sensor. We believe that the ultrasound sensors are a suitable technology for this application for three reasons: (1) each sensor has a unique identifier which is present in every measurement so landmark identification is not a problem, (2) each measurement contains explicit range and bearing information which does not need to be inferred from other types of data, and (3) sensors can be deployed as required, and their number and position can be chosen depending on the type of environment and the requirements of the situation. Visual landmarks satisfy none of these criteria. RFID tags provide unique identification and can be deployed as required, but they do not provide precise range and bearing information.
+2. Implementation: Multimodal Sensing and Algorithms
+
+In this section, we describe our implementation of a tracking system for emergency responders based on inertial PDR and ultrasonic sensors deployed by the responders as they explore a building. First, we implement an EKF which can track the pedestrian when the sensor positions are known. Second, we augment this EKF to track the pedestrian and simultaneously locate the sensors in the case where no prior knowledge is available.
+2.1. Sensing Technologies
+
+In this section, we start by describing PDR in detail, and discuss the inherent issue of drift. Then, we describe our ultrasound range and bearing sensors and characterize their error.
+2.1.1. Inertial PDR with Zero-Velocity Updates
+
+Dead-reckoning is a self-contained navigation technique in which measurements—typically from inertial sensors in the case of PDR—are used to update the position and orientation of an object, given an initial position, orientation, and velocity. No infrastructure is required but the position error can accumulate over time.
+
+XSens's MTx 3 is an IMU comprising a tri-axis accelerometer, gyroscope, and magnetometer. The on-board processor computes 3D orientation. Our PDR algorithm is similar to other work [47] , [48] which uses shoe-mounted IMUs and applies periodic zero velocity updates (ZUPTs). In order to convert the MTx measurements into meaningful positions, the raw accelerations are rotated from the sensor coordinate system into the world coordinate system using the rotation matrix computed by the MTx as shown in Fig. 1 . The transformed accelerations are then double integrated to yield position estimates in the world coordinate system.
+
+    Download : Download full-size image 
+
+Fig. 1 . Transformation from sensor to world coordinates via the direction cosine matrix: pos world   =   R sensor → world pos sensor .
+
+In order to reduce the position error which increases quadratically with time, we reset the integrated velocities to zero at each footstep [47] . This has the effect of reducing the error, making it linear with distance covered. Two phases in walking are identified: the stance phase, when the foot is in contact with the ground, and the swing phase. During the stance phase, the velocity is reset and kept at zero; during the swing phase, the acceleration is double integrated. Our algorithm detects the stance phase of each step by comparing a threshold to the product of the norm of the acceleration and the norm of the rate of turn [48] . If this product is below an empirically determined threshold for more than 200 ms, then a stance phase is detected. When the product rises above the threshold again, a swing phase is detected. This is illustrated in Fig. 2 . If steps are taken at a significantly faster pace, then the stance phase may not always be detected and some opportunities for ZUPTs may be missed.
+
+    Download : Download full-size image 
+
+Fig. 2 . PDR algorithm: each step has a stance phase (shaded) and a swing phase. Velocity is reset to zero during the stance phase, acceleration is double integrated during the swing phase.
+
+Although some distance drift is inevitable due to the integration of noise and small offsets in the raw sensor data, we also believe that most of the distance error is due to the MTx incorrectly estimating its orientation as explained by Foxlin [49] . Thus, we might interpret some of the forward motion as vertical motion, or vice versa. The traces appearing later in this chapter ( Fig. 10 ) show the effects of drift on position estimates. The MTx internal algorithm which supplies the rotation matrix has not been disclosed by XSens, and is effectively a “black box.” Thus, we have very little information about how the sensors (gyroscope, magnetometers, and accelerometers) are used in computing the MTx orientation, and little control over the unit's internal parameters. We assume that most of the heading errors are due to metallic objects or magnetic fields interfering with the MTx magnetometers, as we have observed that these errors occur systematically in the same locations. We also note that when using the system outdoors or in an open space, the results are much better and the orientation drift is often negligible. So it seems that magnetometers help in outdoor situations where they accurately determine magnetic North but that indoors they cause heading errors due to interference.
+
+Our PDR implementation is a naive version—(1) rotate the accelerations from the sensor coordinate system into the world coordinate system, (2) integrate the accelerations to determine the speed, (3) integrate the speed to determine the position, (4) if the accelerations and the gyroscope readings are small then reset the speed to zero. More advanced algorithms (such as the one described by Foxlin) use the ZUPTs to correct not only the speed but also the position, and to estimate accelerometer and gyroscope biases which are responsible for much of the error accumulation. Such methods are able to achieve better accuracy over longer distances through tighter integration of the orientation computation, the dead-reckoning, and the ZUPTs. This improvement in performance comes at the expense of greater complexity in the design of the algorithm (typically an EKF). Beauregard gives more details on the challenges in his thesis [50] . Irrespective of the method used for PDR, the output will inevitably suffer from error accumulation. A more advanced method than ours could simply be used as a drop-in replacement in the algorithm presented above. 4
+2.1.2. Ultrasonic Ranging and Angulation
+
+Our ultrasonic sensors [51] are able to determine range and bearing to each other. Each sensor contains a microcontroller , radio transceiver , and four ultrasonic transducers ( Fig. 3 ). The transmitter broadcasts a trigger radio packet just before it emits a series of ultrasonic pulses. Upon receiving the radio trigger, the sensors listen for the ultrasonic pulses and determine the distance to the transmitter based on the time of flight of the pulse. The angle-of-arrival is estimated based on the measured pulse amplitudes on the four ultrasonic transducers. The receiver measures the local temperature in order to more accurately estimate the speed of sound but variations in the environment can introduce error into the measurements. The largest errors are due to reflections, so some simple heuristics are applied to detect and eliminate some of these bad measurements.
+
+    Download : Download full-size image 
+
+Fig. 3 . Ultrasonic sensor node—microcontroller and radio transceiver on the top board, transducers, and amplification circuit on the lower board.
+
+The errors in the range and bearing measurements taken during our experiments are shown in Fig. 4 . Each line represents the range or bearing error distributions for one of our eight selected experiments. The large error for the range and bearing measurements in our pedestrian tracking experiment can be explained by three factors. (1) The true position of the pedestrian is measured by the Ubisense UWB location system 5 with an accuracy of 30 cm according to the manufacturers; this accuracy is worse than the ranging accuracy of our ultrasonic sensors, and is further limited by a challenging environment in terms of RF propagation. (2) The UWB transmitter used to track the true position of the pedestrian was not colocated with the foot-mounted ultrasonic transmitter but attached to his cap. (3) The ultrasonic transmitter was modified to fit around the pedestrian's shoe but this causes the alignment of the transducers to be suboptimal; the other foot can also block the line of sight between the transmitter and the sensors lying on the ground. Thus, to give a better indication of our sensors' accuracy, we have also plotted the error from a separate set of experiments in which we deployed five static sensors and one mobile sensor on a Lego MindStorms robot in a 2.75 × 2.00 m arena. The thick dotted line in Fig. 4 represents the range and bearing errors for over 60,000 measurements involving the mobile sensor in that arena. In these previous experiments, the true sensor positions were measured using visual markers on top of each sensor and camera tracking software which estimates positions with an accuracy of the order of a centimeter but over a small area.
+
+    Download : Download full-size image 
+
+Fig. 4 . Range and bearing measurement errors of the ultrasonic sensors . Each of the eight lines represents the error distribution for a different experiment. The thick dotted line is the error distribution measured in previous work using a more accurate visual fiducial-based tracking system to record the true positions of the mobile sensor. (A) Range errors. (B) Bearing errors.
+2.2. Localization and Mapping Algorithms
+
+We use inertial PDR and ultrasonic sensor nodes to simultaneously locate a pedestrian and map the positions of the nodes (which effectively serve as landmarks). The SLAM techniques which we use have been developed by robotics researchers since the 1980s, but have only been applied to pedestrian localization in the past 5 years. We first describe an implementation which assumes that sensor positions are known; then we describe an implementation that also estimates the positions of the sensors, thus requiring no prior knowledge of the environment.
+2.2.1. Kalman Filtering
+
+Kalman filtering is a form of Bayesian estimation. Fox et al. [52] give a concise overview of Bayesian principles applied to location estimation and we also restrict our explanations to the context of location estimation. A Bayesian filter estimates the probability distribution of the target's location based on a probabilistic model of its movement and of the measurements. Using the movement model, the filter attempts to predict the location of the target; then using the measurement model, it corrects the location estimate. The Kalman filter models all probabilities as Gaussian distributions and tracks their means and covariances noted state and P , respectively.
+
+In our application, we track a pedestrian. Their state is modeled as state p  = [ x p   y p   ψ p ] T , the two Cartesian coordinates and the direction of travel, or heading. We only address the two-dimensional problem in this work. Tracking the z -dimension is more challenging because our ultrasound sensors only measure bearings in the horizontal plane and because in our experience PDR systems tend to drift more along the z -axis than in the horizontal plane. If necessary, stairs could be detected and flagged separately. Tracking in the horizontal plane may be sufficient for many scenarios, including emergency response. We have measurements from two sources—PDR which measures the movement of the pedestrian, and ultrasound sensor nodes which measure the range and bearing of the pedestrian. The PDR measurements are used in the prediction phase and the ultrasonic measurements are used in the correction phase. The movement model (or process model) takes advantage of the PDR measurements [ d   δ ψ] T which tell us how the pedestrian has moved since the previous estimate. d is the distance traveled and δ ψ is the change in the direction of travel (heading) since the previous PDR measurement. We measure the change in heading because we know that the absolute heading measured inertially is prone to drift. These notations are presented in Eq. (1) and illustrated in Fig. 5 . (1) state p k + 1 = f state p k , meas PDR = x k + 1 y k + 1 ψ k + 1 = x k + d cos ( ψ k + δ ψ ) y k + d sin ( ψ k + δ ψ ) ψ k + δ ψ
+
+    Download : Download full-size image 
+
+Fig. 5 . Notations used for PDR measurements. d is the distance traveled and δ ψ is the change in heading since the previous PDR measurement.
+
+We assume that both elements of the PDR measurement are subject to additive Gaussian noise . Measurement noise has been omitted from the above process equation where each occurrence of d is actually d  +  dε d , and each occurrence of δ ψ is actually δ ψ  + dε δ ψ so that the noise is applied proportionally to the distance moved since the previous measurement. The covariance of the noise [ ε d ε δ ψ ] T is denoted by Q . By defining the process noise proportional to the distance traveled, we prevent the covariance (the position uncertainty) from increasing when the pedestrian is standing still. Unfortunately, this introduces additional nonlinearities which affect the pedestrian covariance as shown later in Fig. 11 .
+
+The ultrasound sensor nodes are able to measure the range r and the bearing θ to a compatible device attached to the pedestrian's boot and colocated (as closely as possible) with the IMU used to perform PDR. The state of each sensor i is modeled as state s i = [ x s i y s i ϕ s i ] T , the two Cartesian coordinates and the orientation. We can express the measurement as a function of the state of the pedestrian and of the relevant sensor as shown in Eq. (2) and illustrated in Fig. 6 . (2) meas us = h state p , state s i = r θ = x p − x s i 2 + y p − y s i 2 arctan y p − y s i x p − x s i − ϕ s i
+
+    Download : Download full-size image 
+
+Fig. 6 . Notations used for ultrasound sensor coordinates, orientations, and measurements. x rx , y rx , and ϕ rx are the coordinates and orientation of the receiver (deployed sensor). x tx and y tx are the coordinates of the transmitter (attached to the pedestrian). r and θ are the range and bearing measurements.
+
+We assume that the ultrasonic measurements are subject to additive Gaussian noise [ ε r ε θ ] T with covariance R . This has been omitted from the above measurement equation. It is important to ensure that all angles remain between −  π and π , so the filter can determine whether two angles are similar or not.
+
+The process function f ( Eq. (1) ) and the measurement function h ( Eq. (2) ) are both nonlinear functions of the state, measurements, and noise, so we will need to calculate their Jacobian matrices ( (3) , (4) , (5) ). The Jacobian W  = ∂  h /∂  ε us is the identity matrix because additive noise is applied directly to the measurement, it can therefore be omitted. (3) A = ∂ f ∂ state p = 1 0 − d sin ( ψ p ) 0 1 d cos ( ψ p ) 0 0 1 (4) H = ∂ h ∂ state p = x p − x s i ( x p − x s i ) 2 + ( y p − y s i ) 2 y p − y s i x p − x s i 2 + y p − y s i 2 0 − y p − y s i y p − y s i 2 + x p − x s i 2 x p − x s i y p − y s i 2 + x p − x s i 2 0 (5) V = ∂ f ∂ ε PDR = d cos ( ψ p ) − d 2 sin ( ψ p ) d sin ( ψ p ) d 2 cos ( ψ p ) 0 d
+
+We can apply the Kalman prediction equations whenever a PDR measurement is available ( Eq. (6) ). (6) predicted_state p = f ( state p , measurement PDR ) predicted_ P p = A P p A T + V Q V T
+
+Similarly, when an ultrasonic measurement is available, we can apply the Kalman update equations ( Eq. (7) ). (7) K = P H T ( H P H T + R ) − 1 updated_state p k + 1 = predicted_state p k + K ( meas us − predicted_meas us ) updated_ P p k + 1 = ( I − K H ) predicted_ P p k
+2.2.2. Pedestrian SLAM
+
+If the positions of the sensor nodes are unknown, then we have a SLAM problem where we must estimate the positions of the sensors (the map) in addition to the position of the pedestrian. This can be achieved by modifying the Kalman filter developed in the previous section. The positions of the sensors become variables instead of constants and the filter also tracks their covariances.
+
+The prediction equations remain the same—the filter uses the PDR measurements to predict the position of the pedestrian. The sensors are assumed to be static, so their position estimates remain the same during the prediction phase. However, the correction phase is slightly different because each ultrasonic measurement can correct both the pedestrian position estimate and the position estimate of the sensor which took the measurement.
+
+The state under consideration is now the concatenation of the position of the pedestrian and the position of the sensor i which took the measurement ( Eq. (8) ). The Jacobian matrix H is also different because now the elements of the sensor state state s i are also variable ( Eq. (4) ). (8) state p + s i = state p state s i P p + s i = P p 0 0 P s i (9) H = ∂ h ∂ state p + s i = x p − x s i x p − x s i 2 + y p − y s i 2 − y p − y s i x p − x s i 2 + y p − y s i 2 y p − y s i x p − x s i 2 + y p − y s i 2 x p − x s i x p − x s i 2 + y p − y s i 2 0 0 − x p − x s i x p − x s i 2 + y p − y s i 2 y p − y s i x p − x s i 2 + y p − y s i 2 − y p − y s i x p − x s i 2 + y p − y s i 2 − x p − x s i x p − x s i 2 + y p − y s i 2 0 − 1 T
+
+The combined state state p + s i is created when each ultrasonic measurement is received, and when the correction phase is finished, the position of the pedestrian and the position of the sensor are stored separately. This allows us to process data only of dimension six for each measurement which scales better and is computationally much less expensive than considering all sensors when doing the update. However, there is a tradeoff because we lose the information about the cross-correlations between the different sensor positions.
+
+In a typical Kalman filter, the covariance increases during the prediction phase due to the uncertainty of the process model and then decreases during the correction phase due to the information from the measurement. However, the covariances of the sensors never increase because they are modeled as static. To avoid the covariances decreasing too quickly, we use the fading memory technique described by Simon [53] which artificially increases the sensor covariances before each correction phase by multiplying P s i by a value slightly greater than one (Simon [53] suggests 1.01 2 and we also use this value).
+2.2.3. Sensor Initialization
+
+The first time a sensor reports a measurement, the filter has no information about it. A sensor cannot be initialized from a single measurement, so we delay initialization until we have at least three measurements taken from positions that are well spaced apart. Using these measurements, we can usually perform reliable trilateration using a nonlinear regression . However, if the points are nearly collinear there are two solutions. The bearing measurements can help us resolve such ambiguities, but we find that using them directly in the regression gives poor results. We adopt the following heuristic method for selecting the correct solution. First, we use only the range measurements in the regression. We know that the solution computed by the regression is either the true position of the sensor, or a position that is the symmetric of the true position with respect to the path traveled. Therefore, we estimate the least squares line which approximates the path traveled, and compute the symmetric of the estimated sensor position. One of these points should be close to the true sensor position. In other words, if there is indeed an ambiguity, we are likely to have found two local minima corresponding to the actual position of the sensor and its reflection. Using each of the bearing measurements, we estimate the orientation of the sensor for both positions. The correct position will yield similar orientation estimates for all of the bearing measurements. The incorrect symmetric position will yield inconsistent orientation estimates for each of the bearing measurements. We select the position which minimizes the bearing residuals (or the variance of the orientation estimates).
+
+Figure 7 illustrates the sensor initialization process . In this example, the pedestrian walked along a straight path for approximately 2  m. An ultrasound sensor took range and bearing measurements to the pedestrian and we recorded those that were at least 50  cm apart. The circles represent the range measurements taken at these different points, and their intersections are the possible positions of the sensor. There are two solutions because the pedestrian path was almost collinear. Using a single bearing measurement is not enough to choose the correct solution, but the sequence of bearing measurements is only consistent with the correct solution. This heuristic initialization method works well but, because of the noise in our bearing measurements, there are times when it is unable to choose correctly between the true sensor position and the symmetric.
+
+    Download : Download full-size image 
+
+Fig. 7 . Sensor initialization from a sequence of range/bearing measurements. First the ranges are used to determine the possible sensor locations. Then the bearings are used to select the correct one.
+
+Djugash et al. [15] use a similar method for initializing sensor positions in their work on range-only SLAM for robots, but they explain it differently (and do not have the benefit of bearing measurements). They represent the sensors as nodes in a graph, and robot positions as virtual nodes . The edges are either sensor-to-sensor ranges (which we do not use) or sensor-to-robot ranges. Based on this graph representation , they are able to determine the locations of sensor nodes and of the robot by running a batch optimization. Deans and Hebert [44] also use a comparable approach in their Kalman filter SLAM implementation for bearing-only measurements. They initialize a landmark position by performing bundle adjustment (a nonlinear optimization) over a section of the robot trajectory and the first few bearing measurements in order to optimize both the landmark position and the robot trajectory (we only optimize the landmark positions).
+3. System Evaluation
+
+We evaluate the EKF algorithm (with and without SLAM) described in the previous section using multiple sets of inertial and ultrasound measurements. These were recorded as a subject walked through an indoor office environment. In this section, we first describe the experimental setup, then we show the results achieved for different experiments before drawing conclusions about the suitability of this type of algorithm for emergency response scenarios.
+3.1. Description of Experiments
+
+Our experiments took place in an office building at the University of Twente in the Netherlands. The test area covered a large, mostly empty, office on one side of a corridor, and two smaller individual offices, each with a desk, on the other side of the corridor ( Fig. 8 ).
+
+    Download : Download full-size image 
+
+Fig. 8 . Test area: a large office, corridor, two smaller offices covering a total of 9 × 13 m.
+3.1.1. Inertial/Ultrasound Data Collection
+
+In this section, we characterize our algorithms using data gathered during eight different collection sessions, each lasting from 3 to 8 min. We placed 21 ultrasound sensors on the floor ( Fig. 9 A), and surveyed their positions by hand. We also surveyed six additional reference points which the pedestrian walked to and from in some of the experiments.
+
+    Download : Download full-size image 
+
+Fig. 9 . Experiment and data collection. (A) Sensor nodes deployed along the corridor. (B) Ultrasound transmitter strapped to the leg, and Xsens inertial measurement unit attached to the pedestrian's foot. (C) Data collection performed in the large office. Ultrasound sensors are deployed on the floor.
+
+During the data collection sessions, a pedestrian (one of the authors) walked within the test area at an average walking speed between 0.8 and 1.5 m/s. The pedestrian wore an MTx inertial sensor on his foot and an ultrasonic transmitter on his lower leg ( Fig. 9 B). The transducers of the transmitter were on flying leads and attached around the edge of the sole so they would be in the same plane as the sensors deployed on the ground. The paths are shown in Fig. 12 in Section 3.2 . Paths (A), (G), and (H) were constrained to the large room. All other paths covered the large room, both smaller rooms, and the corridor. For path (A), the pedestrian walked around the room once and then to reference point 1 (not shown), then around the room again and to reference point 2, and so on. For paths (B), (C), (D), and (E), he walked continuously between the rooms following the same path each time; the path in the large room is a straight line across the middle of the room, hence the “T” shape. Path (F) is similar but he walked around the large room instead of across it. For paths (G) and (H), the pedestrian stopped at each reference point (not shown) for approximately 10 s after walking arbitrarily about the room for approximately a minute between each reference point.
+3.1.2. Path Capture Using Ubisense
+
+Ground truth was measured using a Ubisense commercial UWB location system. 6 We deployed six Ubisense receivers at the edges of the measurement volume. This system was calibrated using the Ubisense software's “full calibration” mode. The pedestrian wore a Ubisense tag on a cap in order to measure reference location data.
+
+However, from our previous work, we know that the 90th percentile horizontal accuracy of this technology can vary from 11 cm to worse than 150 cm [ 54 , Fig. 4 and Table 2], depending on calibration effort invested, sensor density, and environmental conditions affecting UWB line-of-sight and multipath. Thus, the Ubisense accuracy can be considerably worse than the ultrasonic sensor ranging accuracy, which we measured in a separate set of experiments to be about 7  cm at the 90th percentile confidence level ( Fig. 4 ). It therefore cannot be used to characterize the lower bound of the accuracy for our pedestrian tracking and SLAM algorithms. However, it does give a reliable indication of the path traversed, and can to some extent be used to compare the relative accuracy of different types of path, side-by-side (assuming both types of path cover similar parts of the measurement volume, and thus will be subject to similar amounts of Ubisense tracking error).
+3.1.3. Error Characterization
+
+Typically, a location system is characterized by the error between the estimated positions of the pedestrian and of the sensors, and their true positions. For our system, this is not possible because the SLAM algorithm works in its own arbitrary coordinate system which can potentially change over time. In other words, the positions of the pedestrian and of the sensors can only be compared to each other, not to their true values. For this reason, we calculate the errors in the ranges and bearings between sensors and between sensors and pedestrian. We can then examine how these errors evolve over time and compare their distributions. The performance of the filter can also be evaluated to some degree without any ground truth by examining the innovations (i.e., the differences between the predicted ranges and bearings, and the actual measurements). If the innovation remains small, then the filter is likely to have correctly estimated the positions of the pedestrian and of the sensor.
+
+The estimated positions of the sensors may be aligned with their hand-surveyed positions either manually or by using a regression to determine the optimal translation and rotation to apply. This method can be useful for visualizing the output of the filter but it must be used with care because of the additional complexity introduced by the optimization and the fact that the coordinate system in which the filter locates the sensors and the pedestrian changes over time.
+3.1.4. Algorithm Parameters and SLAM Initialization
+
+The specific algorithm parameters we used are given in Table I . Note that the values we use for Q and R bear no clear relationship to measurable noise values, and were chosen empirically. This is a common situation when designing a Kalman filter for which the system model is not well known or not detailed enough; the modeled noise values need to be increased in order to account for the modeling “errors.” In our system, this is emphasized by our defining the process noise proportional to the distance traveled (rather than the time elapsed) and the nonlinearities that this introduces in the model.
+
+Table I . Parameters Used in Our SLAM Algorithm
+Name	Notation	Value
+PDR noise covariance	Q 	2 0 0 20 2
+Range/bearing measurement noise covariance	R 	2 0 0 1 2
+Initial sensor position covariance	P s i 0 	50 0 0 0 50 0 0 0 8.73 2
+Initial pedestrian position covariance	P p 0 	[0]
+Fading memory factor		1.01 2
+
+We use five ultrasonic measurements taken at least at 30   cm from each other to initialize the sensor positions . Measurements for which the range innovation divided by the square root of the sum of x and y covariances for the pedestrian and the relevant sensor are greater than 0.5 are discarded as outliers.
+
+In the case where we assume that the sensor positions are known in advance, we initialize them to their true values and set P s i to zero. The position of the pedestrian is set according to the Ubisense measurements. Their direction of travel is initialized by using the angular difference between the direction given by the first Ubisense measurements that are at least 3  m from each other, and the corresponding position estimates using PDR alone.
+3.2. Results and Analysis
+
+We now take a closer look at the different components of the system and how they perform on our datasets.
+3.2.1. Inertial Pedestrian Dead-Reckoning
+
+The inertial PDR measurements can be used for determining the path, but as explained in Section 2.1.1 , the estimated position drifts after a few meters. Figure 10 shows how the position estimates suffer from drift when the PDR measurements are used alone. In data sets (C), (E), and (F), the drift manifests itself only as a translation. This is because the magnetometer (digital compass) included in the IMU prevents orientation error from accumulating on the yaw or heading angle (in the horizontal plane). Data sets (B) and (D) were recorded after configuring the IMU to use only the inertial sensors and discard the magnetometer readings. These data sets clearly show drift accumulates on the yaw. However, there are also disadvantages to using the magnetometers. In previous work [16] , we observed that, in certain environments, the magnetometers suffer from interference due to metallic structures in the building fabric or heavy machinery. This causes drift that is unpredictable in the sense that it is dependent on the environment in which the system is used and not just on the characteristics of the sensor, the way it is attached, and the type of movement.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 10 . Paths estimated from inertial pedestrian dead reckoning alone. (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+Good results can be achieved without using the magnetometers. Data set (A) for instance displays very little drift in the yaw angle despite being recorded without using the magnetometers. In data set (D), there are four iterations which are nearly superimposed.
+
+Another cause for the variable quality of the dead-reckoning traces is the internal calibration algorithm of the IMU. The IMU we use is a generic sensor not designed specifically for PDR but for other forms of human motion capture or for augmenting machinery. The internal algorithm (an EKF according to the XSens documentation) adapts to the characteristics of the movement (amplitude of accelerations and rotations) and we have found that the results often improve during the course of the experiment. This may explain why the latter part of data set (D) displays much less drift than the initial part. This also explains why the first 30  s (which we removed from our data) from most of the PDR traces contain artifacts which badly distort them. (This issue is specific to this particular IMU and does not invalidate our results.)
+
+We know from observing these traces that the uncertainty in the PDR position estimates increases with distance traveled. The process model in our Kalman filter is designed to take this into account, and the value of the pedestrian position estimate covariance should therefore increase with distance traveled (and with time). Figure 11 shows how the position estimate covariance changes with time for experiment (A). We plot P p ( 1 , 1 ) + P p ( 2 , 2 ) (square root of the sum of the first two diagonal elements of the position estimate covariance) versus time which is an estimate of the pedestrian position uncertainty. The covariance starts at zero because we arbitrarily decide on the initial position of the pedestrian. We see that globally the uncertainty increases as expected but there are several instances where the uncertainty decreases. This occurs on corners when the change in heading is large. This decrease in uncertainty is normal, as position errors can cancel each other out for some time following a 180 degree turn. Wan and Foxlin give a more detailed analysis of PDR error [58] .
+
+    Download : Download full-size image 
+
+Fig. 11 . Change in the covariance of the pedestrian position estimate when PDR is used alone (dataset (A)).
+3.2.2. Kalman Filter Using Known Sensor Positions
+
+If the positions and orientations of the sensors are known in advance, we can use the first form of our Kalman filter which corrects the PDR location estimates. In our implementation of the Kalman filter, we set the sensor and pedestrian positions and orientations based on the surveyed positions. Setting the sensor position estimate covariances to zero ensures that their position estimates do not change as range and bearing measurements are processed by the filter, only the pedestrian position is affected.
+
+The results are shown in Fig. 12 . In Fig. 12 A, we see that all the branches of the path are clearly tracked and that the topology of the trace is close to the Ubisense groundtruth path. However, on the left part of the figure, there is an offset between the path estimated from our Kalman filter and the path estimated by Ubisense. This is also visible in other traces such as in Fig. 12 E. Many of these offsets seem to be consistent across all traces, so they may be due to inaccuracies of Ubisense which can worsen when the tracked tag is placed close to the limits of the covered area.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 12 . Paths estimated from inertial pedestrian dead reckoning and ultrasonic measurements from sensors with known positions. (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+Figure 13 illustrates how the covariance of the pedestrian position estimate evolves during these experiments when range and bearing measurements are taken into account. As they start to walk, the covariance increases due to the potential error in the PDR estimates, but when ultrasound measurements are received the covariance decreases due to the additional information. Eventually, a regular cycle of increases due to PDR and decreases due to ultrasonic measurements maintains the covariance around a constant value.
+
+    Download : Download full-size image 
+
+Fig. 13 . Change in the covariance of the pedestrian position estimate—increases due to PDR error accumulation, decreases when ultrasonic measurements from known sensors are available.
+3.2.3. SLAM
+
+Visualizing the output of the SLAM filter as we did when the sensor positions were known in advance can be misleading because the estimated coordinates of the sensors change during the course of the experiment as they are updated by the SLAM process. Figure 14 shows that in all the experiments, the estimated positions of the sensors change over time. Note that these plots are in an arbitrary coordinate system and do not directly map to the surveyed sensor positions without first finding and applying the most appropriate rotation and translation. Initially, they move a lot as more measurements are taken but even after they have stabilized they continue to drift slowly, and several sensors appear to move together in the same direction. Since our map is defined by the sensor positions, it also moves. In other words, this SLAM filter only gives positions of the sensors and of the pedestrian relative to the other sensors, not necessarily in an absolute coordinate system. This means that the filter might provide different coordinates for the pedestrian after he returns to a previous location but this could still be correct (in a relative sense) if the estimated positions of the sensors have also changed during that time. Conversely, if the estimated position of the pedestrian remains the same as previously but the estimated coordinates of the sensors have changed, the result could be incorrect (in a relative sense). This is because we are performing online SLAM. Offline methods such as GraphSLAM [41] , which optimize the complete trajectory estimate and map after all data has been recorded, do not suffer from this limitation. They can be used to display the complete path and the landmarks on a single map.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 14 . Changes in the estimated positions of the sensors during the experiments. Initially the estimates change a lot, then they stabilize but continue to drift slowly. (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+Because of the shifting position estimates of the sensors, it is not necessarily helpful to plot the estimated path of the user. However, we can show snapshots of the sensor position estimates. In Fig. 15 , we show the estimated positions of the sensors at the end of each experiment. These estimates were aligned to the surveyed sensor positions after running a nonlinear regression to determine the affine transformation (rotation and translation) that minimizes the sum of squared errors between surveyed and estimated positions. The line represents the Ubisense estimated path which is already in the same coordinate space as the surveyed sensor positions.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 15 . Estimated positions of sensors at the end of each experiment rotated and translated to minimize the distance with the surveyed positions. (We have chosen not to show the estimated pedestrian path for reasons explained in Section 3.2.3 ). (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+Three of the experiments give reasonable results in terms of sensor positions. Figure 15 F was based on PDR data with only a small amount of drift so good results are expected, but Fig. 15 E was similar in terms of drift but at least five of the sensors are placed more than 3 m away from where they should be. This is a consequence of the ambiguities in the initialization method—each of these sensors is placed on the wrong side of the path. As explained earlier in the chapter, this occurs due to the combination of two factors—(1) the measurements used for the initialization of the sensor are taken from points which are nearly collinear; (2) the bearing measurements are too noisy to determine which of the two possible positions is correct and our heuristic selection method ( Fig. 7 ) fails. The consequences can be quite small if the misplaced sensor is only in range of the straight section of path with which it was initialized, for instance the two sensors in the upper right corner of Fig. 15 E. But in general, these types of errors will create error in the pedestrian position estimates. This problem occurs for our data because the sensors were deployed in advance (although their positions were not made available to the SLAM algorithm). If the sensors were deployed by the pedestrian placing them at their feet as they walk around, then they could be directly initialized with the pedestrian's current position. The orientation would be trivial to initialize as the pedestrian moves on and a bearing measurement is taken. This type of manual deployment seems suitable for a real-world scenario if only a few sensors are required.
+
+Figure 15 G and H provides particularly good estimates. This is probably because these paths did not include any straight sections, therefore, the initialization was less likely to be ambiguous and sensors that were initialized incorrectly were adjusted thanks to the variety of range/bearing measurements taken from many different positions. In other words, the SLAM solution benefits from favorable geometric dilution of precision. This bears some similarity to situations where planes or ships are required to perform a particular maneuvre in order to improve tracking of a target [55] .
+
+In order to evaluate the performance of the filter in a more quantitative manner, we look at the range and bearing errors between the sensors, and between the sensors and the pedestrian for every update ( Fig. 16 , Fig. 17 ). These errors reflect how accurately the sensors and the pedestrian are positioned relative to each other in the case where sensor positions are known in advance, and in the complete SLAM case with no prior knowledge. As expected, the errors for SLAM are higher than when the sensor positions are known. But in Fig. 16 G and H, the range errors for SLAM seem to be quite close to the errors for the prior knowledge case, with a 90th percentile value of less than 1.2 m. This improved performance could be due to the type of path (random, unstructured) but we note that these data sets were recorded in the large office only, and did not cover the rest of the test area. In almost all cases, the 90th percentile range error between the pedestrian and the sensors is less than 2 m. This value reflects how well the pedestrian can be located in the map.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 16 . Cumulative range error distributions for the full duration of each experiment. (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 17 . Cumulative bearing error distributions for the full duration of each experiment. (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+Fig. 16 , Fig. 17 also show the innovations. The range innovations tend to be smaller than the corresponding estimated errors. This again suggests that using the position estimates from Ubisense as groundtruth overestimates some of the errors.
+
+The bearing errors from Fig. 17 are more difficult to interpret because they depend on the position error of the pedestrian and sensors, and on the orientation error of the sensors. For instance, if a sensor's orientation is correct but the pedestrian is estimated to be a few centimeters in front of it, instead of a few centimeters behind it, the bearing error could be 180°.
+
+In Fig. 16 , Fig. 17 , we showed errors between all sensors, but it would also be reasonable to only take into account sensors that are either close to or far from the pedestrian depending on whether we are interested in local accuracy (position relative to nearby sensors, necessary for navigation) or global accuracy (position relative to sensors which are far away, necessary for mission planning). In Fig. 18 , Fig. 19 , we have plotted separately the errors between sensors, and between pedestrian and sensors when they are less than 3 m apart, and those errors when they are more than 3 m apart. The 3 m limit is arbitrary, but corresponds to an area which could quickly be searched by a firefighter equipped with a long handled tool. These figures show that in many cases the local range error for SLAM is close to the error when the sensor positions are known. When the far range errors are larger than the local errors, this is due to large-scale distortion of the sensor positions. Large-scale distortion makes it difficult to overlay the estimated sensor positions onto a map or floorplan, but should not affect indoor navigation scenarios where a firefighter uses only nearby sensors as landmarks to progress toward a target in small steps.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 18 . Cumulative range error distributions for near sensors (≤ 3 m) and far sensors (> 3 m). (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 19 . Cumulative bearing error distributions for near sensors (≤ 3 m) and far sensors (> 3 m). (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+The bearing errors from far away sensors can be much smaller than the local bearing errors. Due to simple geometric properties, distance tends to dilute the effect of position error on the bearing. This is particularly visible in the case where sensor positions and orientations are known. SLAM bearing errors are generally large. Only Fig. 19 F and H shows 90th percentile of bearing errors less than 60° for both short range and long range.
+
+In some cases, despite our heuristic initialization method ( Fig. 7 ), the SLAM algorithm sometimes places sensors on the wrong side of a straight section of path due to the symmetry ambiguity. This does not affect local range errors between the sensor and the pedestrian because of the symmetry but the errors for far away sensors are increased. Sensors in this situation are likely to have very inconsistent orientations and thus the bearing errors for both near and far away sensors will be high ( Fig. 19 C and G).
+
+All our experiments can be split into sections of similar duration during which a similar path was walked. For experiments (B) to (F), the same path was repeated several times. For experiments (A), (G), and (H), the pedestrian returned to the same point at regular intervals. Whereas the previous figures show the aggregate errors over the full duration of the experiment, Fig. 20 , Fig. 21 give the median range and bearing errors for each section of the path. In a few cases, there is a noticeable improvement at each iteration but for the other cases the median error remains constant or even increases. For these latter cases, this could mean that sensor and pedestrian position estimates are as good as they are going to get after the first section and that there is no further improvement. After a firefighter has explored the building once and deployed the sensors, the system is immediately ready to help the following teams find their way.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 20 . Median range errors for each successive section of the path. (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+
+    Download : Download full-size image 
+
+    Download : Download full-size image 
+
+Fig. 21 . Median bearing errors for each successive section of the path. (A) Large room. (B) All rooms (T) 1. (C) All rooms (T) 2. (D) All rooms (T) 3. (E) All rooms (T) 4. (F) All rooms (O). (G) Random 1. (H) Random 2.
+3.3. Conclusions
+
+We evaluated our implementation of an ultrasound-assisted pedestrian tracking system by comparing the ranges computed using the estimated positions of sensors and pedestrian with the ranges computed using the groundtruth positions. Our implementation achieves a median relative position accuracy of between 0.3 and 0.6 m when the sensor positions are known in advance. When the sensor positions are unknown and we perform SLAM, our implementation achieves a median relative position accuracy of between 0.4 and 0.8 m. In the SLAM version, some of this error is caused by large-scale distortions in the map (the estimated positions of the sensors). We have shown that the relative position errors between the pedestrian and sensors closer than 3 m are comparable to the errors when the sensor positions are known.
+
+Correct initialization of sensor positions is essential in order for the SLAM method to perform well. It appears to perform better when the paths are unstructured (not following a sequence of straight segments). We believe that this is primarily because sensor positions are more likely to be initialized correctly when the path contains many turns than when it is mostly straight.
+
+For the SLAM method, there is no clear improvement of sensor position estimates as paths are repeated. However, the sensor orientations do improve with time. This result suggests that this type of SLAM system would work well if it was used in emergency response scenarios where the sensors are deployed on-the-fly, and where paths are not necessarily repeated many times.
+
+Finally, our results suggest that some of the error which appears in our plots is due to inaccuracies in the UWB reference location system. This could mean that our system actually performs better than indicated by the results given in this chapter.
+3.4. Improvements and Future Work
+
+Although we believe the results we have presented confirm the viability of this type of hybrid tracking and navigation system, there are a number of areas which require further work. Here, we discuss a few avenues for further investigation and improvement.
+3.4.1. Tracking Orientation
+
+At the time of the experiment, our PDR system did not keep track of the orientation of the pedestrian, but only their direction of travel. Estimating the orientation of the pedestrian is a requirement if we are to provide them with navigation assistance, since they need to know what direction their target is in. There is a simple relationship between the direction of travel and the orientation of the inertial sensor, but a number of challenges remain. First, the orientation of the foot-mounted sensor does not accurately represent the orientation of the pedestrian or of the graphical interface that we are using to display our map. Second, in our current SLAM system, the orientation (and direction of travel) can only be corrected when the pedestrian is moving, by using the cross-correlation between the error in the estimated direction of travel and the error in the estimated position (an error in the estimated direction of travel will cause an error in the estimated position). This could be improved by directly measuring the bearing from the pedestrian to the landmarks (e.g., landmark X is behind the pedestrian). (Currently, we measure bearing but only from the landmarks to the pedestrian, e.g., the pedestrian is to the right of landmark Y.) Finally, it is challenging to evaluate how well the orientation is being tracked because very few location systems which can be used as groundtruth provide reliable orientation (a digital compass may work quite well in open areas but will become unreliable in buildings). Tracking the orientation of the pedestrian remains an essential part of a navigation system, so it is important to improve our system in this respect.
+3.4.2. Multiple Sensors
+
+Groups of mobile sensors (both inertial and ultrasonic) could be used to great advantage. These sensors could be installed on both feet of the pedestrian or on multiple pedestrians traveling together. We anticipate that such scenarios would not only provide a lot more data than a single sensor in the same amount of time but would also benefit from the fact that the errors on each sensor are independent from the others. For instance, PDR errors are typically due to thermal noise and small vibrations in the MEMS components which will be different for each sensor particularly if they are mounted on different feet or different people. The ultrasonic measurements would also benefit from additional measurements from slightly different positions which could overcome many situations where the line of sight is blocked by the other foot. The challenge would be to initialize all the groups of sensors correctly so that they all start moving in the same direction. GPS could be used to synchronize the movements of sensors on different team members before they enter a building. If GPS is not a suitable solution maybe range and bearing measurements between pedestrians could be used to locate them relative to one another. Strömbäck et al. [56] have started investigating such a cooperative navigation system using UWB radios for ranging between two pedestrians.
+3.4.3. Loop Closure
+
+We have shown that some of the error in the SLAM output was due to large-scale distortions in the map. These distortions can often be corrected when the path contains large loops. Gutmann and Konolige [57] and others have shown that loops can be used to correct maps built from dense laser range scans. Many of the challenges they describe are nonexistent in our implementation because we use sparse landmarks with explicit identifiers. Unfortunately, our data do not contain such loops because each room only had a single entrance, so we have not been able to validate this aspect of our system.
+3.4.4. Alternative Bayesian Filter Implementations
+
+We have noted problems due to the nonlinearities in the process and measurement functions which cause the location estimate error to be underestimated. These could possibly be solved by using alternatives such as a particle filter or an unscented Kalman filter. The particle filter would also have the benefit of resolving the ambiguity in the initialization of sensor positions since it inherently allows multimodal solutions. The initialization problem may also be solved more simply by having the pedestrian deploy the sensors just next to their feet so that the sensor positions can be directly initialized using the position of the pedestrian.
+3.4.5. Evaluation Methods
+
+Finally, the evaluation of such infrastructure-less tracking and navigation systems is problematic. First, it is difficult to obtain any accurate ground truth for large areas inside buildings. Second, even when accurate, high-update rate, wide area ground truth is available, it cannot easily be aligned to the estimates due to coordinate systems which change slightly over time. Some of the methods we have used in this chapter are useful evaluation tools, but we hope that future research will provide additional methods of comparing different navigation systems before passing them over to users for testing.
+4. Conclusion
+
+In this chapter, we have focused on the use of a sensor network to provide positioning and tracking capabilities that can directly support emergency responders . Although the application of sensor networks to support emergency response and in particular firefighting has been explored in a range of projects by predeploying positioning infrastructure, our research in contrast focuses on an ad hoc approach that does not require any predeployment.
+
+Based on the understanding of the errors encountered in the PDR location estimates, we have looked into complementary technologies that can correct the drift. Specifically, we have used ultrasound sensors which have the capability to measure relative range and bearing.
+
+We have used an EKF-based SLAM method to concurrently estimate the location of the deployed landmarks and the position of the pedestrian. Fusing ultrasound measurements with inertial tracking enables us to prevent the drift which makes inertial tracking alone unreliable. Ninety percent of range errors in our tests were less than 2 m even when no prior information about the environment was available. The deployment of small sensors during an intervention is consistent with practices in certain firefighting units where a first team searches a building before further teams enter to assist victims and attack the fire. Although there is plenty of room for improvement, we believe our EKF implementation provides location estimates suitable for indoor navigation of emergency responders and shows that the combination of ultrasound sensors deployed on-the-fly and inertial PDR is a viable solution.
+
+We strongly believe that such a combination of modalities (inertial and ultrasound) can be extended to provide a fully functional ad hoc positioning system for tracking and guiding emergency responders. This chapter focused on the design of the system and we have shown using real-world data that this could be a viable solution; however, more work is required on both the sensing technology robustness and the algorithm to improve its characteristics.
+References
+
+[1]
+    C. Fischer, H. Gellersen
+    Location and navigation support for emergency responders: a survey
+    IEEE Pervasive Comput., 9 (2010), pp. 38-47
+    View Record in Scopus Google Scholar
+[2]
+    K. Muthukrishnan
+    Multimodal Localisation: Analysis, Algorithms and Experimental Evaluation
+    (2009)
+    Ph.D. dissertation, University of Twente
+    Google Scholar
+[3]
+    R.F. Fahy
+    U.S. Fire Service Fatalities in Structure Fires, 1977–2000
+    NFPA, Quincy, MA (2002)
+    Technical report
+    Google Scholar
+[4]
+    National Institute for Occupational Safety and Health
+    Fire Fighter Fatality Investigation and Prevention Program
+    http://www.cdc.gov/niosh/fire/ (2009)
+    (accessed 17.01.2011)
+    Google Scholar
+[5]
+    M. Klann
+    Tactical navigation support for firefighters: the LifeNet Ad-Hoc Sensor-Network and Wearable System
+    Mobile Response, Springer, Berlin (2009), pp. 41-56
+    CrossRef View Record in Scopus Google Scholar
+[6]
+    T.E. Sendelbach
+    Search Line Survival Training
+    (2002)
+    TES2 Training, Savannah, GA, 2002, http://www.tes2training.com/handouts/search_line_survival_training.pdf (accessed 17.01.2011)
+    Google Scholar
+[7]
+    National Fire Protection Association
+    NFPA 1500—Standard on Fire Department Occupational Safety and Health Program
+    National Fire Protection Association, Quincy, MA (2002)
+    Technical report
+    Google Scholar
+[8]
+    M.K. Donnelly, W.D. Davis, J.R. Lawson, M.J. Selepak
+    Thermal Environment for Electronic Equipment Used by First Responders
+    NIST (2006)
+    Technical report 1474, http://www.fire.nist.gov/bfrlpubs/fire06/art001.html (accessed 17.01.2011)
+    Google Scholar
+[9]
+    International Association of Fire Chiefs
+    Fundamentals of Fire Fighter Skills
+    Jones and Bartlett Publishers, Inc., Sudbury, MA (2004)
+    Google Scholar
+[10]
+    W.E. Clark
+    Firefighting Principles & Practices
+    PennWell Corporation, Tulsa, OK (1991)
+    Google Scholar
+[11]
+    M. Worrell, A. MacFarlane
+    Phoenix Fire Department Radio System Safety Project
+    City of Phoenix Fire Department, Phoenix, AZ (2004)
+    Technical report
+    Google Scholar
+[12]
+    D. Steingart, J. Wilson, A. Redfern, P. Wright, R. Romero, L. Lim
+    Augmented cognition for fire emergency response: an iterative user study
+    Augmented Cognition, Proceedings of the 11th International Conference on Human-Computer Interaction (HCI), Las Vegas, NV (2005)
+    Google Scholar
+[13]
+    J. Wilson, V. Bhargava, A. Redfern, P. Wright
+    A Wireless Sensor Network and Incident Command Interface for Urban Firefighting
+    Proceedings of the Fourth Annual International Conference on Mobile and Ubiquitous Systems: Networking & Services, IEEE (2007), pp. 1-7
+    Google Scholar
+[14]
+    G. Kantor, S. Singh, R. Peterson, D. Rus, A. Das, V. Kumar, et al.
+    Distributed search and rescue with robot and sensor teams
+    Proceedings of the 4th International Conference on Field and Service Robotics, vol. 24, Springer, Berlin (2003)
+    Google Scholar
+[15]
+    J. Djugash, S. Singh, G. Kantor, W. Zhang
+    Range-only SLAM for Robots operating cooperatively with sensor networks
+    Proceedings of International Conference on Robotics and Automation (ICRA), IEEE (2006), pp. 2078-2084
+    CrossRef View Record in Scopus Google Scholar
+[16]
+    C. Fischer, K. Muthukrishnan, M. Hazas, H. Gellersen
+    Ultrasound-aided pedestrian dead reckoning for indoor navigation
+    Proceedings of International Workshop on Mobile Entity Localization and Tracking in GPS-less Environments (MELT), ACM, New York, NY (2008), pp. 31-36
+    CrossRef View Record in Scopus Google Scholar
+[17]
+    Dräger Safety AG & Co
+    Device and process for guiding a person along a path traveled—United States Patent 7209036, 2007
+    http://www.freepatentsonline.com/7209036.html (2007)
+    (accessed 17.01.2011)
+    Google Scholar
+[18]
+    V. Amendolare, D. Cyganski, R.J. Duckworth, S. Makarov, J. Coyne, H. Daempfling, et al.
+    WPI precision personnel location system: inertial navigation supplementation
+    Position Location and Navigation Symposium, Monterey, CA, IEEE (2008)
+    Google Scholar
+[19]
+    D. Graham-Rowe
+    Indoor ‘sat-nav’ could save firefighters
+    New Sci., 196 (2634) (2007)
+    Google Scholar
+[20]
+    L.E. Miller
+    Indoor Navigation for First Responders: A Feasibility Study
+    National Institute of Standards and Technology (2006)
+    Technical report, http://www.antd.nist.gov/wctg/RFID/Report_indoornav_060210.pdf (accessed 17.01.2011)
+    Google Scholar
+[21]
+    V. Renaudin, O. Yalak, P. Tomé, B. Merminod
+    Indoor Navigation of Emergency Agents
+    Eur. J. Navigation, 5 (3) (2007), pp. 36-45
+    View Record in Scopus Google Scholar
+[22]
+    W. Widyawan, M. Klepal, S. Beauregard
+    A backtracking particle filter for fusing building plans with PDR displacement estimates
+    Proceedings of the 5th Workshop on Positioning, Navigation and Communication (WPNC'08), Hannover, Germany, IEEE (2008), pp. 207-212
+    CrossRef Google Scholar
+[23]
+    O. Woodman, R. Harle
+    Pedestrian localisation for indoor environments
+    Proceedings of the 10th international conference on Ubiquitous computing (Ubicomp), vol. 344, ACM, New York (2008), pp. 114-123
+    CrossRef View Record in Scopus Google Scholar
+[24]
+    M.W.M. Gamini Dissanayake, P. Newman, S. Clark, H.F. Durrant-Whyte, M. Csorba
+    A solution to the simultaneous localization and map building (SLAM) problem
+    IEEE Trans. Rob. Autom., 17 (3) (2001), pp. 229-241
+    View Record in Scopus Google Scholar
+[25]
+    J. Djugash, S. Singh, P. Corke
+    Further results with localization and mapping using range from radio
+    Proceedings of International Conference on Field & Service Robotics (FSR) (2005), pp. 231-242
+    Google Scholar
+[26]
+    J. Guivant, E. Nebot, S. Baiker
+    Autonomous navigation and map building using laser range sensors in outdoor applications
+    J. Rob. Syst., 17 (2000), pp. 3817-3822
+    Google Scholar
+[27]
+    J. Kim, S. Sukkarieh
+    Real-time implementation of airborne inertial-SLAM
+    Rob. Auton. Syst., 55 (2007), pp. 62-71
+    Article Download PDF CrossRef Google Scholar
+[28]
+    P. Newman, J. Leonard
+    Pure range-only sub-sea SLAM
+    Proceedings of the IEEE Conference on Robotics and Automation (ICRA) (2003), pp. 1921-1926
+    View Record in Scopus Google Scholar
+[29]
+    E. Olson, J. Leonard, S. Teller
+    Robust range-only beacon localization
+    IEEE J. Ocean. Eng., 31 (4) (2006), pp. 949-958
+    View Record in Scopus Google Scholar
+[30]
+    S. Thrun
+    Robotic mapping: a survey
+    Exploring Artificial Intelligence in the New Millenium, Morgan Kaufmann, Burlington, MA (2002)
+    Google Scholar
+[31]
+    H. Durrant-Whyte, T. Bailey
+    Simultaneous localisation and mapping (SLAM): part I the essential algorithms
+    IEEE Rob. Autom. Mag., 13 (2006), pp. 99-108
+    View Record in Scopus Google Scholar
+[32]
+    T. Bailey, H. Durrant-Whyte
+    Simultaneous localization and mapping (SLAM): part II
+    IEEE Rob. Autom. Mag., 13 (3) (2006), pp. 108-117
+    View Record in Scopus Google Scholar
+[33]
+    J. Guivant, E. Nebot
+    Optimization of the simultaneous localization and map building algorithm for real time implementation
+    IEEE Trans. Rob. Autom. (2001)
+    Google Scholar
+[34]
+    J.J. Leonard, H.J.S. Feder
+    A computationally efficient method for large-scale concurrent mapping and localization
+    Proceedings of the Ninth International Symposium on Robotics Research, Snowbird, UT, Springer-Verlag (2000)
+    Google Scholar
+[35]
+    S. Thrun, Y. Liu, D. Koller, A.Y. Ng, Z. Ghahramani, H. Durrant-Whyte
+    Simultaneous localization and mapping with sparse extended information filters
+    Int. J. Rob. Res., 23 (7/8) (2004)
+    693–716
+    Google Scholar
+[36]
+    M. Montemerlo, S. Thrun, D. Koller, B. Wegbreit
+    FastSLAM: a factored solution to the simultaneous localization and mapping problem
+    Proceedings of the AAAI National Conference on Artificial Intelligence, AAAI, Edmonton, Canada (2002)
+    Google Scholar
+[37]
+    M. Montemerlo, S. Thrun
+    Simultaneous localization and mapping with unknown data association using FastSLAM
+    Proceedings of IEEE International Conference on Robotics and Automation (ICRA) (2003), pp. 1985-1991
+    View Record in Scopus Google Scholar
+[38]
+    T. Bailey, J. Nieto, J. Guivant, M. Stevens, E. Nebot
+    Consistency of the EKF-SLAM algorithm
+    Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (2006)
+    Google Scholar
+[39]
+    A. Brooks, T. Bailey
+    HybridSLAM: combining FastSLAM and EKF-SLAM for reliable mapping
+    Algorithmic Foundation of Robotics VIII, Springer Tracts in Advanced Robotics, vol. 57, Springer, Berlin (2009), pp. 647-661
+    CrossRef Google Scholar
+[40]
+    A. Kleiner, D. Sun
+    Decentralized SLAM for pedestrians without direct communication
+    Proceedings of the IEEE/RSJ International Conference on Intelligent Robots & Systems (IROS) (2007)
+    Google Scholar
+[41]
+    S. Thrun, M. Montemerlo
+    The GraphSLAM algorithm with application to large-scale mapping of urban structures
+    Int. J. Rob. Res., 25 (5–6) (2006), pp. 403-429
+    CrossRef View Record in Scopus Google Scholar
+[42]
+    J.-P. Tardif, Y. Pavlidis, K. Daniilidis
+    Monocular visual odometry in urban environments using an omnidirectional camera
+    Proceedings of IEEE/RSJ International Conference on Intelligent Robots and Systems (2008)
+    Google Scholar
+[43]
+    J.-L. Blanco, J.-A. Fernandez-Madrigal, J. Gonzalez
+    Efficient probabilistic range-only SLAM
+    IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) (2008), pp. 1017-1022
+    CrossRef View Record in Scopus Google Scholar
+[44]
+    M. Deans, M. Hebert
+    Experimental comparison of techniques for localization and mapping using a bearing-only sensor
+    Proceedings of the ISER '00 Seventh International Symposium on Experimental Robotics, Springer-Verlag (2000)
+    Google Scholar
+[45]
+    B. Cinaz, H. Kenn
+    HeadSLAM—Head-mounted simultaneous localization and mapping for wearable computing applications
+    Adjunct Proceedings of Pervasive 2008, Sydney, Australia, Austrian Computer Society (2008), pp. 9-13
+    View Record in Scopus Google Scholar
+[46]
+    P. Robertson, M. Angermann, B. Krach
+    Simultaneous localization and mapping for pedestrians using only foot-mounted inertial sensors
+    Proceedings of UbiComp, Orlando, FL, ACM (2009)
+    Google Scholar
+[47]
+    E. Foxlin
+    Pedestrian tracking with shoe-mounted inertial sensors
+    Comp. Graph. Appl., IEEE, 25 (6) (2005), pp. 38-46
+    View Record in Scopus Google Scholar
+[48]
+    S. Beauregard
+    Omnidirectional pedestrian navigation for first responders
+    Proceedings of the 4th Workshop on Positioning, Navigation and Communication (WPNC'07) (2007), pp. 33-36
+    CrossRef View Record in Scopus Google Scholar
+[49]
+    E. Foxlin
+    Motion tracking requirements and technologies
+    Kay Stanney (Ed.), Handbook of Virtual Environment: Design, Implementation, and Applications, Lawrence Erlbaum Associates, Hillsdale, NJ (2002), pp. 163-210
+    View Record in Scopus Google Scholar
+[50]
+    S. Beauregard
+    Infrastructureless Pedestrian Positioning
+    (2009)
+    Ph.D. thesis, University of Bremen
+    Google Scholar
+[51]
+    M. Hazas, C. Kray, H. Gellersen, H. Agbota, G. Kortuem, A. Krohn
+    A relative positioning system for co-located mobile devices
+    Proceedings of the 3rd international conference on Mobile systems, applications, and services (MobiSys), ACM Press, New York, NY (2005), pp. 177-190
+    CrossRef View Record in Scopus Google Scholar
+[52]
+    D. Fox, J. Hightower, L. Liao, D. Schulz, G. Borriello
+    Bayesian filtering for location estimation
+    IEEE Pervasive Comput., 2 (3) (2003), pp. 24-33
+    View Record in Scopus Google Scholar
+[53]
+    D. Simon
+    Optimal State Estimation
+    (first ed.), John Wiley & Sons, Inc., Hoboken, NJ (2006)
+    Google Scholar
+[54]
+    K. Muthukrishnan, M. Hazas
+    Position estimation from UWB pseudorange and angle-of-arrival: a comparison of non-linear regression and Kalman filtering
+    Proceedings of Location and Context Awareness (LoCA), Tokyo, Japan, Springer-Verlag (2009)
+    Google Scholar
+[55]
+    T.L. Song
+    Observability of target tracking with range-only measurements
+    IEEE J. Ocean. Eng., 24 (1999), pp. 383-387
+    View Record in Scopus Google Scholar
+[56]
+    P. Strömbäck, J. Rantakokko, S.-L. Wirkander, M. Alexandersson, K. Fors, I. Skog, et al.
+    Foot-Mounted Inertial Navigation and Cooperative Sensor Fusion for Indoor Positioning
+    KTH, Stockholm, Sweden (2009)
+    Technical report
+    Google Scholar
+[57]
+    J.-S. Gutmann, K. Konolige
+    Incremental mapping of large cyclic environments
+    Proceedings of IEEE International Symposium on Computational Intelligence in Robotics and Automation, Daejeon, South Korea (1999)
+    Google Scholar
+[58]
+    S. Wan, E. Foxlin
+    Improved Pedestrian Navigation Based on Drift-Reduced MEMS IMU Chip, Proc. ION 2010
+    International Technical Meeting, San Diego, CA (2010), pp. 220-229
+    View Record in Scopus Google Scholar
+
+Cited by (2)
+
+    A loose-coupled fusion of inertial and UWB assisted by a decision-making algorithm for localization of emergency responders
+    2019, Electronics (Switzerland)
+    A concept for support of fireﬁghter frontline communication
+    2013, Future Internet
+
+☆
+
+    Portions of the state-of-the-art and literature review were previously published in a survey article [1] in IEEE Pervasive Computing Magazine , and the algorithms and analysis are based on initial research reported in Kavitha Muthukrishnan's Ph.D. dissertation [ 2 , Chapter 6 ].
+
+1
+
+    See in particular reports F2007-18, F2006-19, and F2008-09.
+
+2
+
+    http://www.summitsafetyinc.com
+
+3
+
+    http://www.xsens.com
+
+4
+
+    Since writing this chapter, we have implemented a Kalman filter based PDR system. The main improvement has been in the altitude estimation.
+
+5
+
+    http://www.ubisense.net
+
+6
+
+    http://www.ubisense.net
+
+View Abstract
+Copyright © 2011 Elsevier Inc. All rights reserved.
+Recommended articles
+
+    Concentration dependence of the optical limiting and nonlinear light scattering in aqueous suspensions of detonation nanodiamond clusters
+    Optical Materials, Volume 37, 2014, pp. 218-222
+    Download PDF View details
+    Structure and electronic properties of palladium chains supported by NiAl(1 1 0): A first-principles study
+    Computational Materials Science, Volume 124, 2016, pp. 398-402
+    Download PDF View details
+    Multimodal Localization for Embedded Systems: A Survey
+    Multimodal Scene Understanding, 2019, pp. 199-278
+    Download PDF View details
+
+1 2 Next
+Article Metrics
+Citations
+
+    Citation Indexes: 2 
+
+Captures
+
+    Readers: 25 
+
+plumX logo
+View details
+Elsevier logo with wordmark
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy 
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+Copyright © 2022 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+
+ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX group home page

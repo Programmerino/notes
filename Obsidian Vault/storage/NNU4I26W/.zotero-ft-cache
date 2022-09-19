@@ -1,0 +1,2702 @@
+ADh-IAll2/h58IMIII8IfI9I9MIHIIIINI
+
+0
+D TIC
+ELECTE f
+JAN8 1993
+C
+
+KALMAN FILTER TRACKING OF A BALLISTIC MISSILE USING FORWARD LOOKING INFRARED MEASUREMENTS
+AND DOPPLER RETURNS
+THESIS
+Michael L.G. Ching Captain, USAF
+AFIT/GWENG/92D-09
+
+""~ "
+
+-c.... "
+
+4
+
+AFIT/GF/ENG/92-D-09
+
+KALMAN FILTER TRACKING OF A BALLISTIC MISSILE USING FORWARD LOOKING INFRARED MEASUREMENTS
+AND DOPPLER RETURNS
+
+THESIS
+
+Presented to the Faculty of the School of Engineering of the Air Force Institute of Technology Air University In Partial Fulfillment of the Requirements for the Degree of
+Master of Science in Electrical Engineering
+
+Michael L.G. Ching. B.S.E.E. Captain, USAF
+
+NATISca'sg•il.IX,WFor
+
+L.IwU.•&c r'w1#f d
+
+r -]
+
+....
+
+7
+
+Approved for public release; distribution unlimited
+9( 1 04 164
+
+Acknowledgement
+This thesis, sponsored by the Phillips Laboratory, at Kirtland AFB, New Mexico, continues the development of a Kalman filter that uses a forward-looking infrared sensor and lowenergy laser measurements to track airborne targets. It is the most recent in a lengthy research program existing since 1978 and specifically concentrated on combining the measurements from both sensors into a single filter along with modeling the plume "pogo" affect I feel honored to have been afforded the opportunity to contribute to this research and deeply admire the achievements that have been made during the project. This thesis represents the culmination of 18 months of painful yet challenging and ultimately rewarding graduate studies. The learning experience gained throughout my endeavors would not have been complete without the help of several people.
+First and foremost, I wold like to thank my friends and comrades for helping me through the tough times. There are very few places where I've had the piivilege of being associated with such extreme professionalism, cempetence, and enthusiasm in a collection of people. The AFIT pressure cooker can be difficult to bear and the support of my peers went a long way toward helping me "blow off stee n" and handle the stress. The exchange of both friendship and technical knowledge that took place during our "AFIT experience" will not be forgotten.
+I would also like to acknowledge my predecessors, whose vast intellect was clearly evident in their work. The legacy left behind in their theses was invaluable to helping me understand and ccnquer the objectives of my research.
+ii
+
+Finally, I would like to thank Dr. Peter Maybeck. I've come to understand why he has been acknowledged in virtually every previous thesis for his iTnfiite patience and understanding and seemingly boundless wisdom. He had the uncanny ability to help me expand my mental horizons beyond what I thought possible. It ws my pleasine and good fortune to have Dr. Maybeck as an advisor. His guidance and insight into my problems were the key to my su,;cess.
+To everyone who made AFIT such a memorable experience, THANKS!!! Michael L.G. Ching
+iii
+
+Table of Contents
+
+Acknowledgem ent ...................................................
+
+ii
+
+List of Figures .......................................................
+
+xi
+
+List of Tables .....................................................
+
+xvi
+
+Abstract . ... ... ..................
+
+... ....... ... .........
+
+... ... ... . xvii
+
+I. Introduction .....................................................
+
+1-1
+
+1.1 Background ...............................................
+
+1-4
+
+1.2 Summary of Previous Research .................................
+
+1-6
+
+1.3 Thesis Objectives ..........................................
+
+1-25
+
+1.3.1 Observability Gramian Analysis .........................
+
+1-26
+
+1.3.2 Sensitivity Analysis of Single Filters .....................
+
+1-29
+
+1.3.3 Incorporation of Laser Measurements into Elemental Filters ..... .1-31
+
+1.3.4 Multiple Model Adaptive Filter Design and Analysis ..........
+
+1-32
+
+1.4 Thesis Overview ..........................................
+
+1-33
+
+II. Filtering Techniques and Reference Coordinate Systems ......................
+
+2-1
+
+2.1 Introduction ........
+
+......................................
+
+2-1
+
+2.2 Kalman Filter Theory ........................................
+
+2-2
+
+iv
+
+2.2,1 Introduction ........................................
+
+2-2
+
+2.2,2 Linear Kalman Filter .................................
+
+2-3
+
+2.2,3 Multiple Model Adaptive Algorithm ......................
+
+2-7
+
+2.3 Simulation Space ..........................................
+
+2-11
+
+2.3.1 Coordinate Frames ..................................
+
+2-12
+
+2.3.1.I Inertial Reference Frame .......................
+
+2-12
+
+2.3.1.2 Target Plume Reference Frame ..................
+
+2-12
+
+2.3.1.3 a - 0 - r Reference Frame ......................
+
+2-13
+
+2.3.1.4 a - 0 (FLIR Image) Plane ......................
+
+2-14
+
+2.3.1.5 Absolute a-p-r Reference Frame .................
+
+2-14
+
+2.3.1.6 Trans-FLIR Plane ............................
+
+2-15
+
+2.3.1.7 ALT/ACT Plane .............................
+
+2-15
+
+2.3.2 FU R Image Plane ..................................
+
+2-15
+
+2.3.2.1 FLIR Field-Of-View ..........................
+
+2-15
+
+2.3.2.2 Target Models on the FUR Plane ................
+
+2-17
+
+2.3.2.3 Target Plume Model oa the FIýR Plane ............
+
+2-18
+
+2.3.2.4 Target Plume Projection onto the FLIR Plane ........ 2-20
+
+2.3.2.5 Target Plume Velocity Projection onto the FLIR Plane .. 2-22
+
+2.3.3 FUR Sensor Poinding Controller ........................
+
+2-25
+
+2.3.4 Target Scenarios ...................................
+
+2-26
+
+2.4 Sum mary ...............................................
+
+2-27
+
+III. Truth M odel ....................................................
+
+3-1
+
+v
+
+3.1 Introduction ...............................................
+
+3-1
+
+3.2 Truth Dynamics Model .......................................
+
+3-2
+
+3.2.1 Target Dynamics State Description ........................
+
+3-7
+
+3.2.1.1 AFIT Discrete-Time Target Dynamics ...............
+
+3-9
+
+3.2.1.2 MSOFE Continuous-Time Target Dynamics .........
+
+3-10
+
+3.2.2 Atmosphe• ic Jitter Model .............................
+
+3-11
+
+3.2.3 Bending/Vibration Model .............................
+
+3-14
+
+3.2.4 Plume Pogo Model ..................................
+
+3-17
+
+3.3 Measurement Models .......................................
+
+3-20
+
+3.3.1 FLIR Model ......................................
+
+3-21
+
+3.3.2 Low-Energy Laser Speckle Reflection Model ................
+
+3-25
+
+3.3.2.1 The Hardbody Reflectivity Model ................
+
+3-25
+
+3.3.2.2 Plume Reflectance Model ......................
+
+3-32
+
+3.3.3 The Doppler Measurement Model .......................
+
+3-35
+
+3.3.3.1 The Doppler Effect ...........................
+
+3-36
+
+3.3.3.2 Hardbody Doppler Return ......................
+
+3-39
+
+3.3.3.3 Plume Doppler Return ........................
+
+3-40
+
+3.3.3.4 Doppler Measurement Noises ...................
+
+3-44
+
+3.4 Truth Model Parameters .....................................
+
+3-48
+
+3.4.1 Target Trajectory Initial Conditions ......................
+
+3-48
+
+3.4.2 Target Model, Dimensions, and Orientation .................
+
+3-48
+
+3.4.3 Intensity Functions ..................................
+
+3-49
+
+3.4.4 Atmospheric Jitter ..................................
+
+3-49
+
+vi
+
+3.4.5 Bending/Vibration ..................................
+
+349
+
+3.4.6 Plume Pogo Characteristics ............................
+
+3-49
+
+3.4.7 Spatially Correlated Background Noise ....................
+
+349
+
+3.4.8 Low-Energy Laser Speckle Return Measurement Dimensions .... 3-50
+
+3.4.9 Plume Reflectance Model .............................
+
+3-50
+
+3.4.10 Low-Energy Doppler Return Measurement Dimensions ....... 3-50
+
+3.4.11 Hardbody Reflectivity Measurement Model ................
+
+3-50
+
+3.5 Summary ...............................................
+
+3-51
+
+IV. Filter Models ...................................................
+
+4-1
+
+4.1 Introduction ...............................................
+
+4-1
+
+4.2 Dynamics Models ..........................................
+
+4-2
+
+4.2.1 Target Dynamics Model ................................
+
+4-6
+
+4.2.2 Atmospheric Disturbance Model ..........................
+
+4-7
+
+4.2.3 Pogo Dynamics Model .................................
+
+4-9
+
+4.2.4 Centroid Equilibrium Point/Center-of-Mass Offset Model ....... 4-10
+
+4.3 Measurement Models ........................................
+
+4-11
+
+4.3.1 FLIR Measurement Model ............................
+
+4-11
+
+4.3.1.1 Enhanced Correlator Algorithm ...................
+
+4-12
+
+4.3.1.2 Template Generation ..........................
+
+4-14
+
+4.3.1.3 "Pseudo-Measurements".. .....................
+
+4-16
+
+4.3.2 Doppler Measurement Model ...........................
+
+4-22
+
+4.3.3 Filter Parameters ................................
+
+.. 4-26
+
+vii
+
+4.3.3.1 Initial Conditions ............................
+
+4-26
+
+4.3.3.2 Tuning Values ..............................
+
+4-27
+
+4.4 Summ ary ...............................................
+
+4-28
+
+V. Observability Gramian and MSOFE Analysis ............................. 5.1 Introduction ............................................... 5.2 Stochastic Observability Tests .................................. 5.2.1 Background Review .................................. 5.2.2 The Stochastic Observability Test ........................ 5.2.3 Observability Test Results and Conclusions .................. 5.3 MSOFE Monte Carlo Analysis ................................. 5.3.1 MSOFE Filter Configurations ........................... 5.3.2 Monte Carlo Analysis Results .......................... 5.3.2.1 Linear Filter (Constant Of) vs Nonlinear Filter ........ 5.3.2.2 Position Accuracy ........................... 5.3.2.3 Atmospheric Jitter Estimation ................... 5.3.2.4 Plume P'ogo Estimation ........................ 5.3.2.5 Plume Pogo/Atmospheric Jitter Interaction .......... 5.3.2.6 Sensitivity to Different Plume Pogo Conditions ....... 5.4 Summary ...............................................
+
+5-1 5-1 5-2 5-2 5-4 5-5 5-7 5-9 5-12 5-12 5-13 5-14 5-15 5-15 5-16 5-18
+
+VI. APIT Elemental Filter Analysis Procedures and Results .....................
+
+6-1
+
+6.1 Introduction ...............................................
+
+6-1
+
+viii
+
+6.2 Performance Analysis Results ..................................
+
+6-3
+
+6.2.1 Position Estimation Accuracy ...........................
+
+6-4
+
+6.2.2 Velocity Estimation Accuracy ...........................
+
+6-4
+
+6.2.3 Atmospheric Jitter Estimation Accuracy ....................
+
+6-5
+
+6.2.4 Plume Pogo Position and Velocity Estimation Accuracy .........
+
+6-5
+
+6.2.5 Offset Estimation Accuracy .............................
+
+6-7
+
+6.2.6 Plume intensity Centroid Estimation Accuracy ...............
+
+6-7
+
+6.3 Potential Problems and Proposed Solutions .........................
+
+6-8
+
+6.3.1 Specific Problems Revealed by Analysis ....................
+
+6-8
+
+6.3.2 Miscellaneous Issues ................................
+
+6-11
+
+6.4 Summ ary ...............................................
+
+6-13
+
+VII. Conclusions and Recommendations ...................................
+
+7-1
+
+7.1 Introduction ...............................................
+
+7-1
+
+7.2 Conclusions ...............................................
+
+7-1
+
+7.2.1 Stochastic Observability Tests ...........................
+
+7-1
+
+7.2.2 MSOFE Monte Carlo Analysis Results .....................
+
+7-2
+
+7.2.3 AFIT Elemental Filter Performance .......................
+
+7-3
+
+7.3 Recommendations ..........................................
+
+7-5
+
+7.3.1 Stochastic Observabi'.ity ...............................
+
+7-6
+
+7.3.2 MSOFE Monte Carlo Analysis ..........................
+
+7-6
+
+7.3.3 AFIT Elemental Filter Research ..........................
+
+7-7
+
+7.3.4 General Software Upgrades .............................
+
+7-8
+
+ix
+
+Appendix A: Data Processing Statistics Method .............................
+
+A-I
+
+Appendix B: Examples of Performance Plots ...............................
+
+B-1
+
+Appendix C: MSOFE Analysis of Filter Models Using Linear Update .............
+
+C-1
+
+Appendix D: MSOFE Analysis Using Varying Pogo Conditions .................
+
+D- I
+
+Appendix E: AFIT Elemental Filter Performance Plots ........................
+
+E-I
+
+Bibliography .....................................................
+
+Bib-I
+
+Vita .........................................................
+
+VITA-1
+
+x
+
+List of Figures
+
+Figure 1.1 Ballistic Missile Tracking Scenario ............................... Figure 1.2 Multiple Model Adaptive Filter ................................ Figure 1.3 Data Processing Scheme using FFT and IFFT ...................... Figure 1.4 Linear Kalman Filter/Enhanced Correlator Algorithm ................. Figure 1.5 Discrete Implementation of Cross-Sectional Reflectivity Function ......... Figure 1.6 Pogo Phenomenon .......................................... Figure 2.1 Three Primary Coordinate Frames in Simulation Space ................ Figure 2.2 FUR Plane, Trans-FLIR Plane, and ALT-ACT Plane ................. Figure 2.3 Target Plume Image in 8 x 8 FLIR Field-of-View (FOV) .............. Figure 2.4 Spatial Relationship of Target Plume Gaussian Intensity Functions ........ Figure 2.5 Target Plume Intensity Centroid Projection Geometry ................. Figure 2.6 Intensity Centroid Dispersion Axes in FLIR Plane .................. Figure 2.7 Inertial Velocity FUR Plane Projection Geometry ................... Figure 3.1 Plume Intensity Function Position on FLIR Image Plane ................ Figure 3.2 Target Centroid Image on a-0 Plane with "Pseudo" Angles .............. Figure 3.3 Composite Plume Intensity Function on FUR Plane .................. Figure 3.4 3-d Hardbody Reflectivity Model Relative to FUR Image Plane ......... Figure 3.5 Discrete Implementation of Cross-Sectional Reflectivity Function [9] ...... Figure 3.6 Projection Geometry onto FLIR Image Plane ....................... Figure 3.7 Ideal Low-Energy Laser Scan .................................. Figure 3.8 Sweep Technique of Laser Scan ................................
+
+1-2 1-10 1-11 1-13 1-22 1-25 2-13 2-16 2-17 2-19 2-21 2-22 2-24 3-3 3-8 3-22 3-27 3-28 3-30 3-31 3-32
+
+xi
+
+Figure 3.9 Biased Offset Measurement Caused by Plume Reflectance .............. Figure 3.110 Spectra of Received Signals [43] ............................. Figure 3.11 Pulsed Signal Frequency Spectrum [44] .......................... Figure 3.12 Spectra of Coherent and Non-Coherent Pulsed Signals [44] ............ Figure 3.13 Spectra of Plume and Hardbody-Induced Doppler Returns ............. Figure 3.14 Detection Characteristics [43] ................................ Figure 4.1 Linear Kalman Filter/Enhanced Correlator Algorithm ................. Figure 4.2 Filter Estimate of Offset Distance (Ideal Corditions) .................. Figure B. I Example of State Plot and Error Statistics Plot ..................... Figure C. I Simulation #2, 0 = 600, X-Position ............................. Figure C.2 Simulation #2, 0 = 600, Y-Position .............................. Figure C.3 Simulation #2, 0 = 600, X-Velocity ............................. Figure C.4 Simulation #2, 0 = 600, Y-Velocity ............................. Figure C.5 Simulation #4, 0 = 600. X-Position .............................. Figure C.6 Simulation #4. 0 = 601, Y-Position .............................. Figure C.7 Simulation #4, 0 = 600, X-Velocity ............................. Figure C.8 Simulation #4, 0 = 60', Y-Velocity ............................. Figure C.9 Simulation #4, 0 = 600, X-Atmospheric Jitter ..................... Figure C. 10 Simulation #2, 0 = 60', Y-Atmospheric Jitter..................... Figure C.I1 Simulation #6, 0 = 600, X-Position ............................ Figure C.12 Simulation #6, 0 = 600, Y-Position ............................ Figure C.13 Simulation #6, 0 = 600, X-Velocity ........................... Figure C. 14 Simulation #6, 0 = 600, Y-Velocity ...........................
+
+3-34 3-38 3-40 3-41 3-42 3-47 4-12 4-23 B-3 C-2 C-3 C-4 C-5 C-6 C-7 C-8 C-9 C-10 C-11 C-12 C-13 C-14 C-15
+
+xii
+
+Figure C.15 Simulation #6, 0 = 600, Pogo Offset .... ..............
+
+C-16
+
+Figure C.16 Simulation #7, 0 = 600, X-Position ............................
+
+C-17
+
+Figure C.17 Simulation #7, 0 = 600, Y-P3sition ............................
+
+C-18
+
+Figure C.18 Simulation #7, 0 = 600, X-Velocity ...........................
+
+C.19
+
+Figure C.19 Simulation #7, 6 = 600, Y-Velocity ...........................
+
+C-20
+
+Figure C.20 Simulation #8, 0 = 60°, X-Position ............................
+
+C-21
+
+Figure C.21 Simulation #8, 0 = 600, Y-Position ............................
+
+C-22
+
+Figure C.22 Simulation #8, 0 = 600, X-Velocity ...........................
+
+C-23
+
+Figure C-23 Simulatioa #8, 0 = 600, Y-Velocity ...........................
+
+C-24
+
+Figure C.24 Simulation #8, 0 = 600, Pogo Offset ...........................
+
+C-25
+
+Figure C.25 Simulation #9, 0 = 600, X-Position ............................
+
+C-26
+
+Figure C.26 Simulation #9, 0 = 600, Y-Position ............................
+
+C-27
+
+Figure C.27 Simulation #9, 0 = 600, X-Velocity ...........................
+
+C-28
+
+Figur, '8 Simulation #9, 0 = 600, Y-Velocity ...........................
+
+C-29
+
+Figure 29 Simulation #9, 0 = 600, X-Atmospheric Jitter .....................
+
+C-30
+
+Figure C.30 Simulation #9, 0 = 600, Y-Atmospheric Jitter .....................
+
+C-31
+
+Figure C.31 Siniu~ition #10, 0 = 600, X-Position ...........................
+
+C-32
+
+Figure C.32 Simulation #10, 0 = 600, Y-Position ...........................
+
+C-33
+
+Figure C.33 Simulation #10, 0 = 600, X-Velocity ...........................
+
+C-34
+
+Figure C.34 Simulation #10, 0 = 600, Y-Velocity ...........................
+
+C-35
+
+Figure C.35 Simulation #10, 0 = 600, X-Atmospheric Jitter ...................
+
+C-36
+
+Figure C.36 Simulation #10, 0 = 600, Y-Atmospheric Jitter ....................
+
+C-37
+
+Figure C.37 Simulation #10, 0 = 600, Pogo Offset ..........................
+
+C-38
+
+xiii
+
+Figure D.I Pogo Condition #1, Simulation #10. General Angle, X-Position ..........
+
+D-2
+
+Figure D.2 Pogo Condition #1, Simulation #10, General Angle, Y-Position ..........
+
+D-3
+
+Figure D.3 Pogo Condition #1, Simulation #10, General Angle, X-Atmospheric Jitter .. D-4
+
+Figure D.4 Pogo Condition #1, Simulation #10, General Angle, Y-Atmospheric Jitter .. D-5
+
+Figure D.5 Pogo Condition #1, Simulation #10, General Angle, Pogo Offset .........
+
+D-6
+
+Figure D.6 Pogo Condition #2, Simulation #10, General Angle, X-Position ..........
+
+D-7
+
+Figure D.7 Pogo Condition #2, Simulation #10, General Angle, Y-Position ..........
+
+D-8
+
+Figurc D.8 Pogo Condition #2, Simulation #10, General Angle, X-Atmospheric Jitter D-9
+
+Figure D.9 Pogo Condition #2, Simulation #10, General Angle, Y.Atmospheric Jitter D-10
+
+Figure D. 10 Pogo Condition #2, Simulation #10, General Angle, Pogo Offset .......
+
+D- 11
+
+Figure D.11 Pogo Condition #3, Simulation #10, General A, . X-Position ........
+
+D-12
+
+Figure D. 12 Pogo Condition #3, Simulation #10, General An#; . Y-V kion ........
+
+D-13
+
+Figure D. 13 Pogo Condition #3, Simulation #10, General Angle =mosphcric Jitter. D-14
+
+Figure D.14 Pogo Condition #3, Simulation #10, General A- . Y-Atmospheric Jitter. D-15
+
+Figure D. 15 Pogo Condition #3, Simulation #10, General Angle. Pogo Offse .....
+
+D- 16
+
+Figure D. 16 Pogo Condition #4, Simulation #10, General Angle, X-Position ........
+
+D- 17
+
+Figure D.17 Pogo Condition #4, Simulation #10, General Angle, Y-Position ........
+
+D-18
+
+Figure D. 18 Pogo Condition #4, Simulation #10, General Angle, X-Atmospheric Jitter. D-29
+
+Figuw '). 19 Pogo Condition #4, Simulation #10, General Angle, Y-Atmospheric Jitter. D-20
+
+Figure D.20 Pogo Condition #4, Simulation #10, General Angle, Pogo Offset .......
+
+D-21
+
+Figure D.21 Pogo Condition #5, Simulation #10, General Angle, X-Position ........
+
+D-22
+
+Figure D.22 Pogo Condition #5, Simulation #10, General Angle, Y-Position ........
+
+D-23
+
+Figure D.23 Pogo Condition #5, Simulation #10, General Angle, X-Atmospheric Jitter. D-24
+
+xiv
+
+Figure D.24 Pogo Condition #5, Simulation 1: 1j. General Angle, Y-Atmospheric Jitter. D-25
+
+Figure D.25 Pogo Condition #5, Simulation #10. Gciaeal Angle, Pogo Offset .......
+
+D-26
+
+Figure D.26 Pogo Condition #6, Simulation #10, General Angle, X-Position ........
+
+D-27
+
+Figure D.27 Pogo Condition to, Simulation #10 -aeral Angle, Y-Position ........
+
+D-28
+
+Figure D.28 Pogo Condition #6, Simulation #10, General Angle, X-Atmospheric Jitter. D-29
+
+Figure D.29 Pogp Condition #6, Simulation #10, General Angle, Y-Atmospheric Jitter. D-30
+
+Figure D.30 Pogo Cond' on #6, Simulation #10, General Angle, Pogo Offset .......
+
+D-31
+
+Figure E. I X/Y Position Error Statistics ..................................
+
+E-2
+
+Figure E.2 X/Y Velocity Error Statistics ..................................
+
+E-3
+
+Figure E.3 X Atmospheric Jitttr .......................................
+
+E-4
+
+Figure E.4 Y Atmospheric Jitter ........................................
+
+E-5
+
+Figure E.5 Pogo Offset ..............................................
+
+E-6
+
+Figure E.6 Pogo Velocity ............................................
+
+E-7
+
+Figure E.7 Center-of-Mass to Equilibrium Point Offset ........................
+
+E-8
+
+Figure E.8 Plume Centroid Error Statistics ................................
+
+E-9
+
+xv
+
+List of Tables
+
+Table 1.1 Kalman Filter and Correlation Tracker Statistics Comparison ............
+
+1-8
+
+Table 1.2 Monte Carlo Analysis Combinations ..... ........................
+
+1-29
+
+Table 5.1 Filter States for Stochastic Observability Test.-.......................
+
+5-5
+
+Table 5.2 Filter/Truth Model Combinations Analyzed with MSOFE ................
+
+5-9
+
+Table 5.3 Pogo Conditions for Nonlinear Filter Analysis .......................
+
+5.11
+
+Table 5.4 P'ogo Error Statistics for Diffureat Pogo Conditions ...................
+
+5-17
+
+Table 6.1 Time-Averaged Error Statistics for Elemental Filter (Nominal Pogo
+
+Conditions) ................................................
+
+.6-3
+
+xvi
+
+Abstract
+The Air Force Institute of Technology (AFIT) has been involved in developing Kalman filter trackers for airborne targets for the last 14 years. The goal of this particular thesis was to track a ballistic missile in the boost phase at ranges up to 2000 kin, in order to control a high energy laser weapon designed to destroy the target. The filter developed combined an existing "FLIR" filter, which estimated location of the plume intensity centroid based on measurements from a forward looking infrared sensor (FLIR), and an existing "center-of-mass" filter, which estimated the offset between the plume and missile center-of-mass based on mea-,rements from low-energy laser reflections. In addition, the new filter modeled the oscillation of the rocket plume with respect to the missile hardbody, known as the "pogo" affect, in tho hopes of improving overall tracking performance. Filter performance is analyzed through use of Monte Carlo simulation software developed at AFIT.
+This thesis also performed observability tests on various filter configurations in order to gain insight into observability problems identified during earlier research. Observability of states is measured through the use of both stochastic observability testing and Monte Carlo analysis of the filter models using the Multimode Simulation for Optimal Filter Evaluation (MSOFE) software.
+xvii
+
+KALMAN FILTER TRACKING OF A BALLISTIC MISSILE USING FORWARD-LOOKING INFRARED AND DOPPLER RETURN MEASUREMENTS
+1. Introduction
+The radical changes in the geopolitical complexion of the world have triggered corresponding drastic adjustments to the defensive posture of the Unites States military complex. Despite major cutbacks, the US Government continues its commitment to develop a national ballistic missile defense system under the Strategic Defense Initiative (SDI). One of those technologically challenging programs within SDI is the research to design a space-based contingent that can destroy ballistic missiles immediately after launch while they are still in the boost phase.
+There are numerous technologies that must be employeI to solve the problem of acquiring, tracking, and pointing a high energy laser (HEL) weapon at a ballistic missile. The major technologies exploited in the solution to this problem are the Kalman filter, the laser, and the forward looking infrared sensor (FLIR). Although all three technologies matured independently, they must be combined in a single system to solve this problem.
+One of the SDI systems currently in development at the Phillips TaLoratory, Kirtland Air Force Base, New Mexico, is a space-based system that contains a defensive weapon, the HET,, and all associated sensors and hardware necessary for tracking and pointing the HEL. The main
+1-1
+
+Hardbody
+Plume Intensity
+Centroid -
+
+Apparmt Intenity
+od w
++X
+
+Figure 1.1 Ballistic Missile Tracking Scenario objective, shown pictorially in Figure 1.1, is to acquire a launched missile, track the missile precisely, and point and fire the laser. Figure 1.1 depicts a simplified relationship between the FLIR and the target. The FLIR plane shown is associated with tracker. The tracker centers the line-of-sight (LOS) vector of the FLIR plane on the target. It is eventually desired to point the LOS vector directly at the missile hardbody, since this is a shared optics device such that the laser will fire along that LOS. Since tracking and firing must take place rapidly, at extremely long distances, and through the atmosphere, this objective is quite challenging to achieve. A number of major difficulties that must be overcome in this tracking problem are considered and implemented in this thesis research. Atmospheric disturbances cause the image of the rocket plume image to jitter on the FLIR plane. The atmosphere will also attenuate and jitter both the
+1-2
+
+low energy laser (LEL) sensor (to be discussed subsequently) and the HEL, but to different extents. Bending of the space platform itself will also cause errors in pointing accuracy. The original tracker incorporated measurements from only the FU.R; however, it obtains information only on the high intensity infrared image of the plume. It is essential to locate the missile hardbody versus its plume centroid for firing ,h. HE!.. A phenomenon known as pogo causes the plume to oscillate with respect to the missile dnd makes estimation of the missile center-of-mass location difficult (if not impossible) based on FLIR data alone. For this reason, measurements from the LEL were incorporated to gain direct measurement information on the hardbody. Once FLIR measurements allow estimated motion of the plume center-of-intensity position and target velocity, the LEL is swept along the estimated velocity vector (as seen in the FLIR image plane), starting from the estimated center-of-intensity, in anticipation of intercepting the missile hardbody. Using reflected information from the LEL, the locations of the plume/hardbody interface and the hard body-nose/space-background interface would yield an estimate of the hardbody center-of-mass location. It was determiined that use of speckle reflectance information from the LEL did not allow clear distinction of the hardbody/plume interface and therefore resulted in biased calculations of tie hardbody center-of-mass. To alleviate this difficulty, a method to utilize the doppler shift frequencies in tho return was implemented to define thf, interface clearly.
+These anomalies must be considered indesign of a tracker and compensated, for such that the HEL beam can be maintained on a spot on the missile at a 2000 Km range during the firing sequence. To complicate matters further, the laser is not capable of destroying the missile instantaneously (like a kinetic kill weapon) but must be maintained within a small area on the target over a relatively long period of time [4]. This research specifically addresses the difficulties
+1-3
+
+with optimally combining measurements from the FUR and LEL in order to locate dhe missile center-of-mass in the presence of plume pogo.
+1.1 Background
+The Phillips Laboratory (formerly the Air Force Weapons Lar-ratory or AFWL), at Kirtland Air Force Base, New Mexico, has been sponsoring research for the past 14 years at the Air Force Institute of Technology (AFIT) in the use of directed energy weapons to destroy airborne targets [41]. This section provides a general overview of the sensor/tracker system in development by this research.
+The primary sensor being used to track the targets is a 300 x 500 picture element (pixel) array FLIR sensor. The FLIR is a passive sensor which detects the infrared radiation emitted by the missile plume. Each pixel in the array discerns infrared energy through an angle of 15 microradians in two orthogonal directions (azimuth and elevation) [40]. A smaller 8 x 8 pixel array is utilized as the tracking window, which will be referred to as the field of view (FOV) in this thesis [14,40]. The tracker has been found to be accurate enough to maintain the target within the smaller FOV, and the smaller number of pixels allows for less computational loading and time lag than required for a larger number of pixels.
+Excitations from detectors in the 8 x 8 FOV are fed to an enhanced image correlation algorithm (presented later in Figure 1.4). This algorithm compares the current raw FLIR data frame with a template which estimates the plume's intensity function [41]. The correlation then determines the optimal offsets in two orthogonal directions (defining the 17LIR plane) that yield maximum correlation with the template. These offsets are the "pseudo-measurements" for a linear
+1-4
+
+Kalman filter. The linear Kalman filter updates position estimates of the plume centroid location based on the pseudo-measurements and propagates an estimate of the offset (from the current center of the FOV) of the centroid at the next update frame. A controller applies the appropriate adjustments to the FLIR plane in order to kep tbe centroid in the center of the FOV, i.e., to point the LOS vector of Figure 1.1 at the predicted location of the target one sample period later.
+The previous three theses [8,9,14] incorporated use of a second sensor, a low energy laser, to obtain measurements of the location of the hardbody itself. The LEL is swept along the estimated target velocIty vector in the FLIR image plane, relative to the centroid estimate, in order to obtain the center-of-mass location. Prior research incorporated the LEL measurements into the tracking algorithm using two different methods. Either a single linear Kalnan filter (with decoupled models for incorporating the two types of measurements) accepted measurements from both the FLIR and the LEL, or two independent Kalman filters utilized the measurements separately. In either case, two independent estimates of intensity centroid location and the offset of the center-of-mass from that location were combined outside the filter to determine where to point the HEL.
+This research incorporates both types of measurements into a single Kalman filter that optimally combines the measurements to estimate the location of the missile center-of-mass directly. Unlike previous research, there will be no purposeful attempt to decouple the two types of measurements, but to process them with a full accounting for physical interrelationships.
+1-5
+
+.1.2 Summary of PreviousResearch
+The Air Force Institute of Technology has been engaged in supporting the Phlliips laboratory in the development of ballistic missile trackers since 1978 [31]. Sixteen theses and a number of other documents report the ongoing developments at AFIT. Each thesis contains a synopsis of previous woik. This section provides a general overview of the previous ballistic missile tracker research completed at AFIT. The information included in this section is essentially a replication of the version from Herrera's thesis [14] with minor alterations and comments added to include his own contributions.
+Research in this area was initiated by Mercier [31] in 1978, who compared extended Kalman filter (EKF) performance to that of the AFWL correlation tracker under identical conditious. An eight-state truth model was developed for simulation purposes, consisting of two target position states and six atmospheric jitter states. The position states defined the target location in each of two FUR plane coordinate directions (azimuth and elevation), by accurately portraying target trajectories in three-dimensional space and projecting onto the FLIR plane. The atmospheric jitter was modeled by a third order shaping filter driven by white noise for each FLIR plane axis, as provided by The Analytic Sciences Corporation (TASC) [21]; three states defined the atmospheric distortion in each of the two FLIR plane coordinate directions. The Kalman filter dynamics model consisted of four states: two states representing target position, and two representing the atmospheric jitter (based on reduced order models, versus the six states of the truth model). In both the truth model and filter dynamics model, the position states and atmospheric jitter states were defined in each of the two FUR plane coordinate directions. In the filter, the position and jitter states were each modeled as a first-order, zero-mean, Gauss-Markov
+1-6
+
+process. The FLIR provided sampled data measurements to the filter at a 30 Hertz (Hz) rate. The FLIR measurement noises corrupting each pixel output due to background clutter effects and internal FUR noises were modeled in the filter as both temporally and spatially uncorrelated. The target was considered as a point source of light (i.e., a long range target) having benign dynamics. The corresponding Airy disc on the FLIR image plane was modeled as a bivariate Gaussian distribution with circular equal intensity contours. The conventional correlation tracker and the extended Kalman filter were compared across three different signal-to-noise ratios (SNR), using a ten-run Monte Carlo analysis to obtain the tracker error statistics. The results of the comparison are shown in Table 1.1 for a Gaussian intensity function dispersion, a., equal to one pixel. (For a Gaussian intensity function dispersion equal to one pixel, most of the useful information is contained in an area cf about five pixels square.)
+While the correlation tracker showed dramatic performance degradation as the $NR was decreased, the Kalman filter showed only a minor change in its performance at the lowest SNR tested. The extended Kalman filter was shown to be superior to the correlation tracker by an order of magnitude in the root mean square (rms) tracking error, provided the models incorporated into the filter were a valid depiction of the tracking scenario. This success motiveted a follow-on thesis to improve filter modeling and thereby to enhance the performance.
+The research accomplished by Harnly and Jenson [13,25] investigated modeling improvements in the filter and tested more dynamic target simulations. A comparison was made between a new six-state fiter and a new eight-state filter. The six-state filter aynamics target model included the four previous states as well as two velocity states in the FLIR plane coordinates (azimuth and elevation); the dynamics model of the eight-state filter included two
+1-7
+
+Table 1.1 Kalman Filter and Correlation Tracker Statistics Comparison
+
+Signal-to Noise Ratio
+20 10 1
+
+Correlation Tracker
+
+Mean Error
+
+la
+
+7.0
+
+8.0
+
+8.0
+
+10.0
+
+15.0
+
+30.0
+
+Extended Kalman Filter
+
+Mean Error
+
+1a
+
+0.0
+
+0.2
+
+0.0
+
+0.2
+
+0.0
+
+0.8
+
+acceleration states in the FLIR coordinates as well. The acceleration was modeled as Brownian motion (BM) (d = w, where w is a zero-mean white Gaussian noise). The filter was also designed to perform residual monitoring, which allowed the filter to react adaptively, and maintain track, by quickly increasing the values in the filter-computed state covariance matrix P, which in turn increased the filter gain K. A recommendation was also made to examine increasing the FOV during target jinking maneuvers to avoid losing lock. The constant-intensity contours of the target were modeled as elliptical patterns as opposed to the earlier circular equal-intensity contours in order to simulate closer range targets. The major axis of the target FLIR image was aligned with the estimated velocity vector. A number of different target trajectories were tested against the sixstate and eight-state filters, and while the six-state filter performed well during moderate jinking maneuvers, the eight-state filter performed better while tracking high-g target maneuvers.
+Other approaches to modeling the dynamics of the target in the filter were considered by Flynn [11]. He used a Brownian motion (BM) acceleration target dynamics model [13] and a constant turn-rate (CTR) dynamics model. The CTR model portrayed the target behavior by modeling the acceleration as that associated with CTR dynamics. Concatenating sucb constant
+1-8
+
+turn-rate segments together provides an accurate portrayal of manned target evasive maneuver trajectories. Additionally, a Bayesian multiple model adaptive filter (MMAF) was developed using the BM dynamics model. A MMAF (Figure 1.2) consists of a bank of K independent Kalman filters, each of which is tuned to a specified target dynamics characteristic or parameter (a,, a2,...a,, in Figure 1.2). The time histories of the residuals (rx(t) in Figure 1.2) of these K Kalman filters are processed to compute the conditional probability (pA(t) in Figure 1.2) that each discrete parameter value is "correct." The residuals of the Kalman filter, based upon the "correct" model, are expected to be consistently smaller (relative to the filter's internally computed residual rms values) than the residuals of the other mismatched filters (i.e., based upon "incorrect" models) [11]. If that is true, then the MMAF algorithm appropriately weights that particular Kalman filter more heavily than the other Kalman filters. These values are used as weighting coefficients to produce a probability-weighted average of the elemental filter outputs [111]. Therefore, the state estimate (.,,•/t,) in Figure 1.2) is actually the probabilistically weighted average of the state estimates generated by each of the K separate Kalman filters (it(t) in Figure 1.2). Testing of the three filter models was conducted for three different flight trajectories which included 2-g, 10-g, and 20-g pull-up maneuvers. Unfortunately, the residuals of the K Kalman filter did not differ from each other enough to perform the weighting function properly, and MMAF did not track well. The BM and CTR filters both performed equally well at 2-g's. The CTR filter was found to be substantially better than the BM filter for 10-g and 20-g pull-up maneuvers.
+Mercit,- had assumed that the filter had a priori knowledge of the target shape and intensity profile. Singletery [42] improved the realism in the target model by developing a model in the FLIR plane which included multiple hot spots. However, he returned to the case of very benign targets. The filter did not assume a prioriknowledge of the target size, shape, or location.
+1-9
+
+Filter based
+
+on
+
+Filter based
+
+z (t, on a 2
+
+-r()
+
+A
+x 1(t- )
+
+XX_(2ti-
+
+-
+
+A
+Xm (tj)
+
+Filter based
+on a K
+
+A
+
+-X~i)
+r"KI(tl)
+
+F Hypothesisi conditional
+
+-
+
+probability
+
+calculation
+
+__
+
+P1(~,
+p 2 (01
+
+0
+
+-
+
+p0(t,)
+
+Figure 1.2 Multiple Model Adaptive Filter
+A new data processing scheme (Figure 1.3) was developed which included the use of the Fast Fourier Transform (FFT) and the Inverse Fast Fourier Transform (IFT), each of which can be produced with a lens if optical processing is used. The plan included two data paths for processing the intensity measurements z(t). On the first path, the 8 x 8 array of intensity measurements from the FUR are arranged into a 64-dimensional measurement vector. This measurement vector is applied to the extended Kalman filter (as in prior work). The purpose of the second path is to provide centered target shape functions to be time-averaged with previous centered shape functions in order to generate the estimated target template (h in Figure 1.3) and partial derivatives of it with respect to the states (H in Figure 1.3), as needed by the extended
+
+1-10
+
+Kalman filter. This invokes the shifting theorem of Fourier transforms. The shift theorem states that a translation of an image in the spatial domain results in a linear phase shift in the spatial frequency domain. To negate the translational effects of an uncentered target image in the spatial domain, the Fourier transform of the translated image is multiplied by the complex conjugate of the desired linear phase shift [42]. The extended Kalman filter model, in path one, which was developed by Mercier [31], was used to provide the optimal estimate of the required linear translation. The filter state estimates are used to develop the complex conjugate of the linear phase shift and provide the centered measurement functions. Before the IFFI" is taken, the
+
+x
+y
+
+_X
+"y
+
+d(tl a~t,)
+
+)++jX7 40
+
+(ti+) (t:)
+
+-
+
+8 X8
+
+Pad
+
+[F~ ~ Negating
+
+input Aray
+
+with Zeroes
+
+L
+jShift
+
+Phase
+
+Exponential
+
+SmoothlingF
+
+of Data
+
+T
+
+hh z(t,'),t]J]_
+
+_
+
+H [ (ti ), t, I
+
+z~~)____
+
+Results of Measurement Update
+
+Kalman Filterd
+
+Results of Propagation
+
+Yyd t: 1)
+
+Forward Backward Differencej Dfenc
+To_-____
+CTontroll
+
+Figure 1.3 Data Processing Scheme using FF1 and IFFT 1-li
+
+resulting pattern is exponentially smoothed to yield an approximation to averaging the result with previously centered frames of data, to minimize the effect of measurement noise. The result is a centered pattern with noise effects substantially reduced. Following the application of the IPFT to form the nonlinear function of intensity measurements (h of Figure 1.3), the spatial derivative is used to determine the linearized function of intensity measurements (H of Figure 1,3). These are both used by the Kalman filter in processing the next sampled measurement [42]. The results of this data processing scheme were inconclusive due to filter divergence problems. Despite the problems encountered with the filter, the concept was considered to have filter performance potential.
+Rogers [41] continued the work of developing a Kalman filter tracker which could handle inultiple-hotspots with no a priori information as to the size, shape. intensity, or location of the target. Moreover, he continued the application to benign target motion, as Singletary [42] had done before, in order to concentrate on the feasibility of adaptively identifying the target shape. Using digital signal processing on the FLIR data (as described above) to identify the target shape, the filter uses the information to estimate target offset from the center of the FOV, which in turn drives a controller to center the image in the FLIR plane. Algorithm improvements included replacing the Forward-Backward Difference block of Figure 1.3 with a partial differentiation operation accomplished as a simple multiplication before the IFFT block.
+Rogers also considered an alternative design that used the target image h (as generated in Figure 1.3) as a template for an enhanced correlator, as shown in Figure 1.4. The position offsets produced as outputs from the correlator were then used as "pseudo-measurement" inputs to a linear Kalman filter. The improved correlation algorithm of Figure 1.4 compares the FUIR
+1-12
+
+image to an estimated template instead of the previous image, as is done in the standard correlator. This tracking concept is thus a hybrid of correlation tracking and Kalnan filtering [41]. Its performance was compared to the results of earlier extended Kalman WUters that used the raw FLIR data as measurements [13]. Although the extended Kalman filter performed well without a priori knowledlge of the shape and location of the intensity centroid, the improved correlator useA with the linear Kalman filter outperformed the extended Kalman filter while providing reduc-A computational loading.
+
+Template Generation
+
+L8x8
+Input Array
+
+S
+I +)
+Negating Phase Shift
+
+Updated State Estimate
+
+Exponential Smoothing
+of Data
+
+Template
+
+Image Correlation
+(IFF') _[
+
+A
+h [x (t[), ti ]
+
+[^One Sample
+Period Image Storage
+
+z~t 1 __KalmnanFil t er
+
+X 'Xd(ti-+1) Results of Y " d(t +1)Propagation
+
+TTooFLM/~ er
+Controller
+
+Figure 1.4 Linear Kalman Filter/Enhanced Correlator Algorithm 1-13
+
+Millner [33] and Kozemchak (16] tested an extended Kalman filter and the linear Kalman filter/enhanced correlation algorithm against close range, highly maneuverable targets. The linear four-state filter uoed in the previous research was replaced by an eight-state filter consisting of position, velocity, acceleration, and atmospheric jitter states in the two coordinates of the FLIR plane (azimuth and elevation). Two target dynamics models were also developed. The target was first modeled as a first-order Gauss-Markov acceleration process, and secondly with a constant turn-rate model. Both filters performed well without a prioriknowledge of the target size, shape, and location, using the FFT data processing method for identifying the target shape function [41,42]. However, at target maneuvers approaching 5-g's, the filter performance degraded considerably. It was noted that the tracking was substantially better when the Kalman filtei dynamics model closely matched the target trajectory.
+The Bayesian MMAF technique [111 was reinvestigated by Suizu [45] based on the recommendations of the previous work. The MMAF (Figure 1.2) consisted of two elemental Kalman filters. One elemental filter was tuned for benign target maneuvers and obtained sampled measurement information from an 8 x 8 pixel FOV in the FLIR plane. A second filter was tuned for dynamic maneuveis and obtained sampled measurement information from a 24 x 24 pixel FOV in the FLIR plane. The technique allowed the MMAF to maintain track on benign target trajectories up to 20-g's at a distance of 20 kilometers. The MMAF was configured for both the linear Kalman filter/enhanced correlation algorithm [41] and the extended Kalmari filter. Both filtering schemes exhibited comparable rns tracking performance results, with the correlator/linean, Kalman filter having smaller mean errors and larger standard deviations than the extended Kalman filter, as seen in earlier work of Rogers [41]. The state rms tracking error was on the order of 0.2 to 0.4 pixels (one pixel being equivalent to 20 pirad on a side).
+1-14
+
+The potential of the MMAF technique with the FFT processing method was continued by Loving [19]. A third filter was added to the bank of filters, tuned for intermediate target maneuvers and obtaining sampled measurement information from the 8 x 8 FOV in the FUR plane. This MMAF showed significant performance advantages over all the previous filters. Additionally, a Maximum A Posterori (MAP) algorithm was developed and compared with the Bayesian MMAF. The MAP algorithm differs from the Bayesian MMAF of Figure 1.2 in that the MAP algorithm uses the residuals of the separate filters to select the one filter with the highest probabilistic validity, while the Bayesian MMAF uses a probability-weighted average of all filters in the bank. The Bayesian and the MAP techniques produced similar results and delivered performance that surpassed previous filters.
+Netzer [37] expanded the study of the MMAF algorithm. He investigated a steady-state bias error that resulted when tracking a target exhibiting a high-g constant turn-rate maneuver. A major cause of this bias is the MMAF mistuning the x-direction (azimuth) while maintaining lock on the highly dynamic y-direction (elevation) transient for a trajectory starting horizontally and then pulling up with a high-g maneuver. This motivates the concept of individual x- and ychannel target-motion models (and tuning parameters) in the elemental filters in the MMAF, which would allow adaptive filtering for maneuvers in the x- and y-channels independently [37]. The size of the FOV was also investigated. When a target zame to within five kilometers of the FLIR platform, the 8 x 8 FOV was saturated with the intensity centroid image, resulting in a loss of track. This analysis motivates a changing FOV to maintain lock for targets and also warrants the possibility of adding another Kalman filter which is tuned for extremely harsh maneuvers at close ranges. A study of the aspect ratio (AR) associated with target's intensity centroid was also accomplished to identify filter tracking characteristics for various target image functions [37].
+1-15
+
+This study used "greyscale plots" to support the a.,alysis. A greyscale plot is a pictorial display of an image in which shading of the image is used to indicate similar parameters. In this case, the plot indicates regions of varying levels of the intensity of the filter-reconstructed target image in a 24 x 24 pixel FOV. Four different AR values of 0.2, 0.5, 5, and 10 were compared to the nominal AR of 1. The results showed that tracking was slightly impaired for images with AR as high as 5. The reduced performance is primarily along the semi-major axis of an elliptically modeled intensity centroid. Additionally, a target-decoy experiment was conducted in which a high density decoy was also located in the FOV with the target. Since the decoy was modeled with different dynamics not given to the filter, it was hoped that the filter would reject the decoy. This was not the case; the filter locked onto the hotter decoy image. This indicates that the inability of the current filter algorithm to reject this type of bright hotspot requires isolating the target image in a small FOV or some other concept to ensure tracking of the desired target.
+The previous research efforts [19,37,45] used Gauss-Markov acceleration models in the development of the MMAF. Tobin [47] implemented the CTR dynamics model in another MMAF. His results showed that the Gauss-Markov MMAF exhibited smaller bias errors while the CTR MMAF gave smaller steady state standard deviation errors; both filters had comparable rms errors. Motivated by earlier research [37], he also developed an 8 x 24 pixel FOV for both the x- and y-directions of the FLIR image plane to be used with filters designed to anticipate harsh target accelerations in a specific direction (along which the longer side of the FOV would be oriented). The results showed that the filter maintained lock on a target during a highly dynamic maneuver in the y-direction while maintaining substantially better steady state bias performance in the benign x-direction.
+1-16
+
+Leeney [17] expanded the previously used Gauss-Markov truth model by incorporating bending vibrational states. The elemental filters in the MMAF were not modeled with this information through explicit state variables, but performed well up to a 10-g maneuver. A performance investigation was also conducted as to the effects of increasing the measurement update rate from the previously used 30 Hz to 50 Hz. The sampling rate of 50 Hz showed a minor performance improvement, but also increased the computational loading because of the higher rate. A preliminary study was also done on replacing the 8 x 24 pixel FOV in the x- and y-directions [47] on the FUR plane with a single 8 x 24 pixel FOV, which is also known as the rotating rectangular-field-of-view (RRFOV). The idea was to align the long side of the rectangular FOV with an estimate of the acceleration vector. The higher precision velocity estimate was actually used instead of the noisier acceleration estimate, and it was assumed that the acceleration direction would be essentially orthogonal to the cwT'ent velocity vector direction. Additionally, the five elemental Kalman filtqrs in the MMAF bank would be reduced to four by using this FOV rotation scheme. The results were not conclusive, but the insight provided motivation to continue the study.
+The RRFOV research was continued by Norton [38]. He discove1i-ýd ihat the appropriate choice of the filter dynamics driving noise strength Q dictated the filter's response to a high-g jinking maneuver, and that the size of the FOV could be ieduced to an 8 x 8 pixel rotating FOV, also known as the rotating square field of view (RSFOV). His investigation showed that a nonrotating square FOV could provide good performance, but that the dynamics noise strength Q matrix value must be large in the elements corresponding to the direction of the acceleration vector. A mathematical matrix transformation was deteloped which "rotated" the Q matrix to keep the larger values aligned with the acceleration vector. A study of both the rotating FOV and
+1-17
+
+rotating the Q matrix provided advantages and disadvantages for each method. Both methods are affected by the tuning parameters used to represent the rms level of acceleration of the target, which also contributes to error biases. The rotating FOV improves the x-direction (azimuth) estimation for dominant y-direction (elevation) dynamics from previous MMAF algorithms (on pull-up maneuvers), but does not improve y-direction estimation for dominant y-direction dynamics. Rotating the Q matrix adaptively improves estimation of both x- and y-directians and improves the jink maneuver error transients, but is dependent on the orthogonality of the velocity and acceleration vectors and proper initial tuning parameters. The conclusion was that both methods employed together provide the ability to adjust filter characteristics to differentiate between harsh and benign dynamics in any orientation of target acceleration (rotating Q) while at the same time maintaining appropriate view resolution in the directions of both benign and harsh dynamics (rotating FOV). Therefore, the combination allows for tracking highly maneuvering targets without sacrificing the resolution provided by the smaller RSFOV [38].
+The research up to this point was primarily directed towards tracking aircraft and missiles from a ground-based FLIR plane. Rizzo [40] initiated research on a space-based platform which could track targets using the same filtering techniques. Since the linear Kalman filter/enhanced correlator algorithm had proven to be computationally more efficient than the extended Kalman filter, it was chosen as the system filter. The plume "pogo" (oscillation) phenomenon of a missile in the boost phase of flight was modeled in the truth model and in one of two filters used for the analysis. The pogo was modeled as a second-order Gauss-Markov process, and applied in the direction of the missile velocity vector. The plan was to go adaptive on the pogo states using the MMAF algorithm, treating the pogo amplitude and oscillation frequency as uncertain parameters.
+1-18
+
+Although the elemental filters were developed, no MMAF performance was accomplished, due to elemental filter performance difficulties.
+Three rotation schemes were also developed and tested. The first scheme, referred to as the rotating field-of-view (RFOV), involved using the 8 x 8 FOV filter and aligning a single axis of the FLIR plane with the estimated velolty vector of the target; therefore one of the coordinate axes of the FOV would stay aligned with the oscillation of the plume. The second scheme, referred to as the diagonal rotating field-of-view (DRFOV), used the 8 x 8 FOV with the diagonal aligned with the oscillation of the plume. The motivation behind this scheme is that the 8 x 8 FOV is oriented in such a fashion will be able to "see" more of the target's intensity image, thus enabling the sensor to obtain more measurement information [40]. The third tracking scheme was the rotating rectangular field-of-view (RRFOV) algorithm developed from previous research [17,47]. The RFOV, DRFOV, and the RRFOV algorithms [37] were tested along with the nonrotating field-of-view (NRFOV) filter. The NRFOV is the standard tracker used in previous studies [17,37,47]. The DRFOV scheme was shown to be superior to the other three tested for providing enhanced tracking of a ndssile hardbody whose plumne is undergoing a pogo phenomenon.
+The eight-state filter (without pogo states; two target position states, two target velocity states, two target acceleration states, and two atmospheric jitter states) and the ten-state filter (with pogo states) surfaced a problem that may have gone unnoticed in previous work. Following tuning of the filters with the twelve-state truth model, it was discovered that the eight-state filter outperformed the ten-state filter. An investigation into the cause of the irregularity revealed that there was a serious observability problem in the both filters. The affected states were velocity and
+1-19
+
+acceleration. A recommendation was made to remove the acceleration states in the ten-state filter, and to model the velocity states in this new eight-state filter as a first-order Gauss-Markov process.
+Eden [8] resumed the research of the space-based FLIR platfo'm. The scope of the tracking problem was expanded by requiring the filter to track the hardbody of the missile rather than just the intensity centroid of the FLIR. Since the FLIR could not supply the needed information about the hardbody location relative to the image center-of-intensity to the Kalman filter, another measurement source was developed. Under the advisement of the Phillips Laboratory, the new measurement source was identified as a low-energy laser. The laser actively acquires measurement data while the FUR obtains its measurement information passively. This scheme calls for a six-state Kalman filter (consisting of two position states, two velocity states, and two atmospheric jitter states) to provide both a position vector and a velocity vector estimate for the target plume. The low-energy laser is scanned along this estimated velocity vector from the target plume image intensity center to intercept the hardbody. The hardbody is modeled as a rectangle with binary reflectivity. When the low-energy laser (modeled with a beam width of 2.75 meters at the target) illuminates the hardbody, the reflection is received by a low-energy laser sensor on the platform. This speckle information is provided to a single-state Kalman filter which estimates the distance between the center-of-mass and the center-of-intensity along the velocity vector direction. The center-of-mass is defined as the midpoint of the scan across the hardbody if the centerline of the laser beam crosses the aft end of the missile and the top (nose) of the hardbody, or if the laser beam crosses the aft end and one of the sides of the hardbody. The results of the laser scan show that the interception of the laser with the hardbody occurred only 10-20% of the time. This low ratio of hitting the target was attributed to the six-state filter being
+1-20
+
+tuned for estimating only the intensity centroid location on the FLIR plane and not for precise velocity estimation. Since the velocity vector must be accurately estimated for active illumination of the target to be a viable concept, it was recommended that the filter also be tuned for accurate velocity estimates.
+Tracking the center-of-mass of a missile hardbody using FUR measurements and lowenergy laser illumination was further investigated by Evans [9]. He surmised that the tracking error, represented by a straight line between the estimated target center-of-mass and the true center-of-mass [8]. could provide more insight if it were separated into the x- and y- (azimuth and elevation) components, or into along-track and across-track (2-d perpendicular axes of the hardbody) components. Evans proposed the latter method would provide better information relative to the principle axes directions of the error phenomenon. An eight-state filter was developed by augmenting Eden's six-state filter [8] with two additional bias states used to estimate the hardbody center-of-mass [9]. A comparison between the eight-state filter and Eden's one-state filter used in conjunction with the six-state FLIR filter, resulted in negligible difference in performance. Evans' analysis of the eight-state filter's error statistics showed that the tracking error is much greater in the along-track direction than in the across-track direction, and thus the separate one-state filter and six-state FUR filter performed as well as the all inclusive eight-state filter.
+Aside from investigating the tracking error statistics, Evans enhanced Eden's 2-d hardbody model (which treated reflectivity as a binary on/off function) with a 3-d hardbody reflectivity model to provide increased realism in the simulation. Two reflectivity functions, cross-sectional and longitudinal, were defined based upon empirical data obtained from a radar return off a 20
+1-21
+
+x 249 inch cylinder with hemispherical endcaps, rotated longitudinally in the plane of the radar source [10]. As shown in Figure 1.5, the cross-sectional and longitudinal reflectivity functions were incorporated into Eden's rectangular hardbody model as 29 discrete weighted line segments along the longitudinal axis of the hardbody.
+Evans also found that the sensitivity level of the low-energy sensor is a factor in determining the reflectivity received at the sensor [9]. The sensitivity level represents a threshold below which the reflected return is indistinguishable from sensor noise. A sensitivity factor, %, is incorporated in the simulation to define the appropriate sensitivity level required to detect a hardbody's return as well as represent the physical limitations of the sensor.
+
+Reflectivity Function Magnitude
+
+Values vs. Displacement from
+
+Hardbody Centerline
+
+1
+
+25 50 25
+
+1
+
+O
+
+1
+
+2 3 4 5913
+
+! 139 5 4 3 2
+
+0
+
+40.0 m
+
+3.0 m
+Figure 1.5 Discrete Implementation of Cross-Sectional Reflectivity Function 1-22
+
+Performance data collection from the eight-state filter and one-state/six-state filter combination hinged upon the successful illumination of the l'ardbody by the low-energy laser. Evans was faced with a low torget intercept rate (10% - 20%), which inhibited any useful error analysis of the center-of-mass filters. Realizing this, Evans generated an ad hoc technique of offsetting the low-energy laser scan relative to the FLIR estimated velocity vector and "sweeping" the scan across the hardbody, thus providing constant hardbody illumination information. However, the "sweep" is not an optimal tool and should only be used to test the center-of-mass filters in the simulation [9]. Both the 3-d reflectivity hardbody model and laser sweep were employed to evaluate the performance of the eight-state filter and one-state/six-state filter combination center-of-mass estimators.
+Herrera continued to investigate the use of laser returns to determine the offset between the hardbody and the plume intensity centroid, however, he used the information contained in the Doppler spectra of the returns as opposed to the speckle reflectance magnitude [ 14]. Experiments had shown that the laser speckle return of a solid-propellant rocket motor is of the same magnitude as that of the hardbody as a result of the metallic particles present in the propellant [2]. Th1. returns from the plume can cause a non-negligible bias in the intensity centroid to center-of-mass offset estimate of 25 to 30 meters, up to 90% of the times a laser scan is successful. This tendency was not incorporated into the simulations completed by Eden and Evans [8,91. Herrera first showed that, as suspected, a bias, dependant on plume speckle return, existed in the offset estimates using the one-state/six-state filter combination utilized by Eden and Evans.
+Herrera proposed that the two types of information in the Doppler frequency spectra, magnitude of frequency shift and spread of the return spectrum, could be used to obtain a finer
+1-23
+
+discernment of the plumelhardbody interface. This proposal was based on the fact that the spectral content of the hardbody and plume returns exhibit very different Doppler characteristics that should be readily distinguishable. His approach to using this information was not to simulate the Doppler phenomenon itself, but to simulate the quality of the returns provided as measurements to a single-state linear Kalman filter that estimates the offset. Herrera simulated the quality of the low energy laser return as a function of laser wavelength and signal-to-noise ratio, and simulated a specified probability of no Doppler information at a given sample time due to 'her the plume and hardbody spectra being indistinguishable or the low-power laser beam missing the target body [14].
+To prove the utility of using Doppler spectra, Herrera developed a one-state Doppler filter to replace the one-state offset estimator used by Eden and Evans [8,9]. He maintained the same Lndependent filter structure as used before, which utilized a six-state filter (four target dynamics and two atmospheric jitter states) in conjunction with the offset filter. He also developed a twostate Modified MAP MMAF that incorporated both the speckle return and the Doppler return measurements. Both configurations successfully showed that the Doppler return information allowed more accurate determination of the hardbody/plume interface. The one-state filter based only on Doppler measurement data delivered unbiased estimates of the offset, and in the case of the two-state adaptive filter based on both Doppler and speckle information, use of Doppler spectra permitted accurate calculation of the bias in the offset measurement from the speckle return [14].
+1-24
+
+1.3 Thesis Objectives
+Although the past three theses have concluded that LEL measurements can be successfully used In the tracker, they bave been based on a simplified target dynamics model without acceleration or pogo states in the simulation of the real world environment. It is very difficult to estimate the position of the hardbody itself using FUR measurements alone because the FUR only detects IR radiation from the plume. Two major problems must be addressed while designing an accurate tracking filter. The first is determining the observability problems in the filter, and the second is find-:i, location of the hardbody itself.
+
+ev
+
+ev•
+
+Plume
+
+Negative. Plume Pogo
+
+Plume Centroid and Equilibrium Point Co-Located
+
+0 Target Center of Mass 0 Pogo Equilibrium Point * Intensity Centroid
+
+Figure 1.6 Pogo Phenomenon 1-25
+
+Positive Plume Pogo
+
+Apparent motion of the plume centroid in the FUR plane (as modeled in the filter) can be caused by three major effects: motion of the target, the pogo effect, and jitter in the measurements caused by the atmosphere. 'The current filter design does not have the capability to observe the differences between the three effect-; fully. The next phase of research will finish identifying the specific observability problems discovered by Rizzo (40], and particularly will determine if there are observability problems associated with jitter and/or pogo. Next, a series of studies must be completed to incorporate the pogo effect into the model. The pogo effect, depicted in Figure 1.6, is the phenomenon in which the centroid of the plume oscillates along the target velocity vector about an offset distance from the hardbody center-of-mass.
+Once the observability problems are identified, design of a complete filter can be pursued. A complete filter model will include all ta zet dynamics states, the measurements from the FLIR, and the measurements from the LEL. The measurements from the LEL will provide information on the missile hardbody so that the filter may estimate hardbody location. Note that, due to the observability difficulties ideutified by Rizzo [40], the last three theses have not included pogo in either the truth or filter models. Therefore, the robustness of filters including LEL measurements in the in the presence of the pogo effect has not been validated. In addition, the structu-e of the filters including LEL measurements v is such that plume intensity centroid location and hardbody offset were determined independently and the center-of-mass was calculated outside the filter based on the estimates. This research will attempt to estimate the hardbody center-of-mass directly using a single filter.
+1.3.1 Observability Granian Analysis. The first main objective in the this thesis will resume the tests to determine what is causing the observability problems in the filter.
+1-26
+
+Observability gramians and eigenvalues for six different filter models will be investigated. It is suspected that the observability gramian matrix elgenvalues associated with either the pogo states, the jitter states, or both, are small relative to the other eigenvalues. If one set of e!genvalues is small in comparison to the other, then oscillation of the plume intensity centroid relative to the hardbody along the velocity vector would be dominated by a single effect and the filter would not be able to distinguish between the jitter and pogo effects by using only measurements on the rocket plume (in other words--only FUR measurements).
+The first stochastic observability tests will be performed on two linear Kalman filters without pogo states. One filter will have 12 states including a full a&mospheric jitter model of 6 states, 6 target dynamics states (position, velocity, and acceleration in the X and Y directions). The other filter will be an eight-state filter that has an approximated atmospheric jitter model (only two jitter states), and six target dynamics states.
+Next, the same models but without the acceleration states will be studied. Comparison of the observability tests on these 10-state and 6-state filters with the previous 12 and 8-state filters respectively, should provide insight into whether there is a fundamental problem with how the full atmospheric jitter model and acceleration states are affecting each other. These first two sets of tests should also indicate whether there is some interaction between the acceleration states and jitter states that may be causing degradation of filter performance.
+Observability will also be investigated for an alternate eight-state filter model that excludes the acceleration states. This model will include four target dynamic states, the two pogo states and the two-state jitter lodel. A velocity vector at a constant angle of 45 degrees will be simulated to implement thL. ogo states for these studies. These tests can be compared to results
+1-27
+
+from the same model with the pogo states removed to find any difficulties stemming from pogo/Jitter blending, The study will be repeated for the same filter models outlined above but with a general angle.
+The outcomes of the stochastic observability tests will also be analyzed for observability difficulties of jitter itself because previous research shows ( errors are so much worse than x(t, ) errors [8,9,14,40]. The differences in error performance (varying from a factor of two to over an order of magnitude) seem to be due to problems in estimating jitter. This research will attempt to determine whether there is a fundamental problem with the jitter model itself that causes such poor estimation of atmospheric disturbances over the filter propagation cycle.
+If the studies above confirm the suspicion that pogo and jitter states are difficult to distinguish, then one may conclude that measurements from the FLIR of the plume intensity centroid alone cannot provide the desired tracking performance of the missile hardbody due to limited estimation accuracy. Inclusion of additional measurements, such as laser Doppler and/or speckle, should increase filter performance for a number of reasons. Laser measurements provide information on the missile hardbody itself as opposed to just the missile plume. Furthermore. laser measurements should enhance observability of the pogo and jitter states. By "knowing" where the hardbody is in relation to the plume, the filter will be able to distinguish the fundamental difference between jitter and the pogo phenomenon. Atmospheric jitter will be manifested as oscillations of both the hardbody and plume in certain frequency ranges. Pogo should be differentiable as a relative oscillation between the hardbody and plume with a different characteristic power spectral density (PSD). A more thorough descriptions of the truth and filter models are contained in Chapters III and IV.
+1-28
+
+1.3.2 Sensitivity Analysis of Single Filters. In order to verify the results of the observability studies completed In the previous section, a series of 16 Monte Carlo performance analyses will be performed using a software package called Multimode Simulation for Optimal Filter Evaluation (MSOFE) [6]. Table 1.2 shows the combinations of truth versus filter models
+
+Table 1.2 Monte Carlo Analysis Combinations
+
+fPOGO IPOGOINI TRUTH MODEL
+
+FILTER MODEL
+
+SIMv NJ DYN
+
+ACCEL [JrrE ~jM1R DYN
+
+14 4 2 6 4 3 64 4 6 4 5 64
+
+4
+
+2 6
+
+2
+
+4
+
+4
+
+2
+
+4
+
+2 6
+
+2
+
+2
+
+4
+
+6
+
+2
+
+2
+
+4
+
+2 8
+
+6 6 4
+
+2
+
+7 8 4
+
+2
+
+8 8 4
+
+2
+
+1
+
+2 6
+
+2
+
+4
+
+4
+
+2
+
+4
+
+2 6
+
+9 84
+
+1
+
+10 8 4
+
+2
+
+2
+
+2
+
+4
+
+6
+
+2
+
+2
+
+4
+
+2 8
+
+11 8 4
+
+2
+
+2
+
+12 8 4
+
+2
+
+2
+
+13 10 4
+
+2
+
+2
+
+2
+
+14 10 4
+
+2
+
+2
+
+2
+
+4
+
+4
+
+4
+
+2 6
+
+4
+
+4
+
+4
+
+2 6
+
+15 10 4
+
+2
+
+2
+
+2
+
+2
+
+4
+
+6
+
+16 10 4
+
+2
+
+2
+
+2 L2
+
+4
+
+2 8
+
+1-29
+
+to be investigated and the states each model contains. A subset of the filter models studied in the previous section will be compared, via 10-run Monte Carlo analyses, against various truth models that incorporate different combinations of states. The number of analyses has been reduced to include only the combinations that should best provide insight into how the observability difficulties are affecting filter performance. Monte Carlo analysis should indicate how estimatable the individual states are for each combination of filter and truth model.
+The first five runs shown in Table 1.2 investigate performance of filter models with combinations of the approximated atmospheric jitter model and pogo states in comparison to a truth model with no pogo phenomenon modeled. The second five runs analyze the same filter models against a system model that includes the pogo states. These first two sets of Monte Carlo analyses should help to identify the relative effects of the jitter and pogo states in the filter model when presented with different real-world simulations. It is predicted the effects due to jitter are dominant in the filter model and addition of the pogo states may actually degrade filter performance due to potential observability difficulties. It is further suspected that filter performance against a system without pogo modeled will be better than performance against a system that incorporates the pogo phenomenology.
+The last six sets of Monte Carlo analyses utilize two different truth models with target dynamic acceleration states included. One truth model (10-state) incorporates jitter states and the other (8-state) does not. The performance of four different filtet models, with and without jitter and/or pogo states, are analyzed against the two truth models. The last sets of Monte Carlo runs will provide insight into what combinations of filter states provide the best performance when the target acceleration is present. Since target acceleration is extremely difficult to estimate in the
+1-30
+
+long range ballistic missile problem, it is suspected that performance of all filters wili oe oegraded by adding the target acceleration states to the truth model. In addition, it is doubtful that including the acceleration states !n the filter model will alleviate the problem. In fact, performance may be degraded by integrating the poorly estimated states.
+An additional benefit of using the MSOFE package for the aforementioned Monte Carlo analyses, is that it may (or may not) provide independent verification of results obtained from the AFIT software. Since the simulations in MSOFE will use continuous-time dynamics models and will be tested with independent software code, any major diffe'ences in results may shed light on the particular truth model simulation in the existing AFIT software.
+1.3.3 IncorporationofLarerMeasurementsinto ElementalFilters. Based on insight from previous research, it is expected that a truth model that incorporates the six-state jitter model, the pogo phenomenon and four target dynamics states will be used for this research. It is desired that the filter including the pogo states that performed best in the previous analysis be used to develop the optimal filter that directly estimates hardbody center-of-mass location.
+The results from the previous step will be combined with the last three years' research to design and evaluate a filter that incorporates the low energy laser measurements with no intentional decoupling of the offset state from the other states. This research will incorporate the Doppler measurement model developed by Herrera [141. The reason this model was chosen is that it delivers offset measurements that are not corrupted by any bias due to plume speckle reflectance. The Doppler measurement model is also a more realistic simulation of the real world since it incorporates the 3-dimensional reflectivity model developed by Evans [9]. To establish the validity of the new filter, the simulations will be chosen such that the highest quality of LEL
+1-31
+
+measurements are produced. Therefore, initial tests of the filter will be under the most benign conditions (i.e. low probability of miss, high signal-to-noise ratio, and short LEL wavelength as described by Herrera).
+The key difference of the new elemental filter will be the inclusion of the pogo dynamics model in the design, under the assumption that its undamped natural frequency and expctcd rms amplitude are known. Another key feature of the elemental filter will be the revision of the filter states such that the target dynamics states describe the hardbody center-of-mass, as opposed to the plume intensity centroid. Performance of the filter will be analyzed via Monte Carlo simulations in the AFIT software. The intent of this objective is to build a single elemental filter which can eventually be incorporated into a MMAF structure, allowing that adaptive structure to identify the actual undamped natural frequency and rms amplitude of the real-world pogo phenomenon.
+1.3.4 Multiple Model Adaptive FilterDesign and Analysis. After a single, optimal filter structure that utilizes all both the FLIR and LEL sensor measurements is established, the preliminary work for a MMAF can begin. The MMAF is an algorithm that incorporates several filters running simultaneously. The algorithm monitors the errors from each filter and selects the solutions from the filters with the lowest errors at any instant in time. A MMAF allows the tracker to use a filter that is tuned for the exact conditions in existence, as opposed to a general filter tuned for a wide variety of conditions. A block diagram of the structure of a MMAF is shown in Figure 1.2. In Figure 1.2, .^ is the filter estimate, r. is the error, or residual, and pK denotes the probability weighting factor that determines which individual filter solutions are used at the particular instant in time.
+1-32
+
+The first step in the design of the MMAF is to identify the elemental filters that will be used in the filter bank. The parameter values, a, that the filter is based on will be varied and the filter tuned for maximum performance based on those different assumed values. Since the design of the elemental filter described in the previous section was dependent on prior knowledge of the pogo conditions, frequency and amplitude of the pogo oscillation will be the parameters chosen for variation in the MMAF structure. The tuning process will result in a series of filters with identical structure, but each tuned for optimal performance under different target conditions (specifically, pogo conditions). A baseline performance for each of the above filters must be established through Monte Carlo analysis before moving to the next step. This research actually accomplishes the design of one such elemental filter, as the essential first step to the design and analysis of such an MMAF.
+Once the individual filters have been selected, they may be incorporated into the adaptive algorithm structure. Then, the entire MMAF could eventually be evaluated via Monte Carlo sensitivity analysis. This analysis could be compared to the baseline performances previously established with the elemental filters to determine adequacy of the adaptive parameter estimation. The observability tests described in the first objective, combined with the tuning accomplished for the elemental filters, may provide the insight to develop alternate adaptive algorithms. It is expected that the performance of the MMAF or MMAFs will eventually be better than any filters previously designed.
+1.4 Thesis Overview
+This chapter has described the past AFIT research in the use of Kalman filters to track airborne targets. It has also introduced the specific problem research that this thesis will be
+1-33
+
+directed toward solving, and the approach and objectives have been set in the process. Chapter II contains a basic discussion of linear Kalman filter theory and the multiple model adaptive algorithm. It also contains a description of the coordinate frames used in the thesis and how they relate to the simulated tracking scenario. The truth models used in the thesis are presented in Chapter III, as well as specifics on how the various FLIR and LEL measurements are modeled. Chapter IV contains a development of the filter models. Chapter V describes the procedures and results obtained from the preliminary observability studies, including both the observability gramian tests and the MSOFE Monte Carlo simulations. Chapter VI will portray results from the simulations completed with the AFi' software. Finally, Chapter VII lays out the conclusions and recommendations for future research efforts.
+1-34
+
+11. Filtering Techniques and Reference Coordinate Systems
+2.1 Introduction
+This chapter describes the technical filtering theory upon which the thesis is based. A brief review of the linear Kalman filter (LKF) is given. Since the new filter designs incorporating the plume pogo states and the low energy laser measurements require a nonlinear measurement update, the extended Kalman filter equations for a nonlinear update are also reviewed. This chapter is meant only as a review and the reader is referred to the source literature for a more thorough development of the topics [21]. The elemental filters are based on the theory presented in the Kalman filter (KF) section, but the structure of the Multiple Model Adaptive Filter (MMAF) is also discussed briefly in this theory chapter. Although this thesis did not develop an MMAF algorithm, the original intent was eventually to incorporate the elemental filter that was developed into a MMAF, so the theory is presented here for completeness
+In addition, the author has included a section that explains the reference coordinate systems utilized throughout the thesis. The reference system used for the real world three dimensional simulation space is presented first, followed by all the other reference systems and appropriate coordinate transformations necessary to accommodate the appropriate sensors and corresponding filter algorithms.
+None of the theory contained in this chapter has changed and all of it has been developed in previous theses. Consequently, the author has taken the liberty of borrowing heavily from the excellent presentations made by his predecessors [8,9,14,40].
+2-1
+
+2.2 Kalman Filter Theory
+
+2.2.1 Introduction. A Kalman filter (KF) is "an optimal recursive data processing algorithm" [21]. The KF uses all available information to estimate the current values of variables of interest (the state vector) of a system. The KF arrives at its estimate through a priori knowledge of the system and measurement device dynamics; statistics of noise corruption, uncertainties, and measurement errors; system noises and uncertainties; and initial conditions. The estimate provided by the KF is the optimal estimate if the system can be modeled as linear and driven by white Gaussian noise. The optimal estimate will be better than any estimate available from any single measuring device. The important feature about the KF is that it not only directly models the variables of interest, but also models errors so that it provides estimates of how accurate it "thinks" the state estimate is (through the filter covariance). The following is a simplified version of the development presented by Maybeck [21]. For a rigorous development of the Kalman Filter theory and MMAF algorithm, the reader is referred to Maybeck's Stochastic Models, Estimation, and Control, Vol. 1 and Vol. 2. The sections describing the Kalman filter were reproduced from Evans and Herrera [9,141 and the MMAF section is repeated in whole from Herrera [14].
+
+The a priori statistics of the mean and covariance provided to the filter as initial state
+
+conditions are defined by:
+
+E{tx()} = .
+
+(2-1)
+
+E{[x(to) - Ro][x(t.) - 2.°]} = P.
+
+(2-2)
+
+where the notation (^) indicates an estimated value, and El ) is the expectation, or ensemble
+
+average, of the possible outcomes. The Kalman filter receives measurements at a prescribed
+
+2-2
+
+sample rate and propagates the state conditioned upon the measurement time l story Z(t,), given as:
+
+Z(t1) = '(2-3)
+L.,J
+
+where z(t,) is the measurement data available at sample time tj. Then the conditional mean and
+
+covariance of the state variables are given by:
+
+I(t;) = E{x(t,) I Z(t@) = Z,}
+
+(2-4)
+
+p(t4) -=E{[x(ti) - g(t7)] [x(ti) - k(ti)] T I Z(t,) = Z,}
+
+(2-5)
+
+where Z, is a specific realization (observed set of values) of the measurement history Z(ti).
+
+2.2.2 LinearKalmanFilter. The simplest form of Kalman filter, the linear Kalman filter,
+
+is developed in this section. In order to develop the linear KF, a mathematical model of the
+
+system dynamics must be established and measurements must be available. A system is generally
+
+modeled with a set of linear state differential equations of the form:
+
+I(t) = F()x() + B()u(t) + GQ)w()
+
+(2-6)
+
+where
+
+F(t) x(t) B(t) u(t) G(0) w(t)
+
+= homogeneous state dynamics matrix = vector of states of interest = control input matrix = deterministic control input vector = driving noise input matrix = white Gaussian driving noise -,ector
+
+2-3
+
+The i•-, of the white Gaussian driving noise vector is:
+
+E(w(t)) = 0
+
+(2-7)
+
+and the noise strength is Q(t:
+
+E{w()w(t + r)r = QQ)6(t()
+
+(2-8)
+
+The equivalent discrete-time system model of Equation (2-6) is needed to implement the
+
+algorithm on a digital computer. The general form of the discrete-time state space form (denoted
+
+by the d subscript) of that model is given by:
+
+X041) = 4)(tiO1)tx(ti) + BD(td)uQt) + Wd(l)
+
+(2-9)
+
+where
+
+b(ti+j,tj) f= the n x n system state transition matrix that satisfies the differential equation and initial condition:
+
+and where
+
+[(,)]= dt
+
+FQ)(t)
+
+(tit)
+
+(2-10) (2-=1
+
+x(t1) = discrete-time vector of states of interest Bd~t) = discrete-time control input matrix u~t = discrete-time deterministic control input vector wd(ti) = discrete-time independent, white Gaussian noise process
+with mean and covariance statistics define' as:
+
+E(wdQ(,)) = 0
+
+E w,(,)wQT(i))
+
+{ d(ti)
+
+t jti
+
+0
+
+tj
+
+2-4
+
+(2-12) (2-13)
+
+with
+
+I,,'
+
+od = f4(tl.1,r)G(()Q()G r(t)4T(t ,) dt
+
+(2-14)
+
+The Kalman filter incorporates measurement information from external measuring devices
+
+to improve its estimate of a desired state. The discrete-time (sampled data), linear measurement
+
+model is of the form:
+
+z(t,) = H(tQ)x(t,) + vQt)
+
+(2-15)
+
+where
+
+z)
+
+mrn-dimensional measurement vector at sample time t,
+
+H(1t ) = state observation matrix x(t,) = vector of states of interest
+
+(tj) f= white Gaussian measurement noise
+
+The discrete white Gaussian measurement noise v is independent of both x(to) and w for all time,
+
+and has a mean and covariance, R, given by: E{v(t,)) = 0
+
+(2-16)
+
+E(V(t )VT(t )} = {
+
+tt=) j
+
+(2-17)
+
+The Kalman filter propaga..• the ztate conditional mean and its covariance from the instant in time immediately following the most recent measurement update, t,, to the instant in time immediately preceding the next measurement update, t,+', by numerical integration of the following equations:
+
+.(t/t,) = F(t)IQ/t,)
+
+(2-18)
+
+2-5
+
+P(t0t1) - F(t)P(t/1t ) + P(t/1t )FTQ) + GQ)QQ)GT()
+
+(2-19)
+
+where the notation .I (t:) denotes optimal esti aates of x at time t, conditioned on measurements
+
+through time t,, and with initial conditions:
+
+1(ti/ti) = l.t)
+
+(2-20)
+
+P(t,/tP) - pot")
+
+(2-21)
+
+where S,(t:,) and P(tQ) are the results of the previous measurement update cycle. At time to, io
+
+and P. from Equations (2-1) and (2-2) are used to initialize the first propagation.
+
+That update cycle, when a measurement becomes available at time t, is based on the following update equations:
+
+K(t,) = P(t())HT(t)[HI(t,)P(t[)HI(t,) + R(t,)]-l
+
+(2-22)
+
+2(t:t) = 2(ti') + K(t1)[z(t 1) - H(t,),t(t1 )]
+
+(2-23)
+
+P(t1 ') = P(t-) - K(t)H(Q)P(t(')
+
+(2-24)
+
+where K(t) is the time-varying Kaiman filter gain matrix that assigns "weights" to the new
+
+information (consisting of the difference between the actual measurement and the filter's
+
+prediction of the measurement, H(t)Q), as seen in Equation (2-23)) based on known
+
+measurement noise statistics and filter-computed covariances.
+
+In some instances (as with the case when pogo is included in the elemental filter), the discrete-time measurement update is a known nonlinear function of the state vector. In such cases,
+
+2-6
+
+the following nonlinear extended Kalman filter update model is used in place of Equation (2-15).
+
+The measurements are modeled as:
+
+z(t,) = h[x(t,), 1t ] + v(tQ)
+
+(2-25)
+
+where h[.,.] is a known vector of functions of state and time, and v is the same discrete white
+
+Gaussian measurement noise as defined before. When a nonlinear measurement is available,
+
+Equation (2-22) is still used to determine the Kalman filter gain matrix, but the matrix H is
+
+defined by:
+
+ah[x, t,]
+
+(2-26)
+
+The updated state vector becomes a function of the nonlinear residual, [z() - h[X(t1 ),t:)] and Equation (2-23) is modified to become:
+
+.t(t) = () + K(t,){z(t,) - hi2 t(),t]}
+
+(2-27)
+
+2.2.3 Multiple Model Adaptive Algorithm. The optimality of the state estimator is
+
+dependent upon complete knowledge of the parameters that define the best model for system dynamics, output relations, and statistical description of uncertainties [22]. For Kalman filter tracking applications, maximum performance is achieved when the parameters of the filter dynamics model match the parameters of the target being tracked. Often. the parameters are known only with some uncertainty and may exhibit time-varying characteristics (such as in the case of maneuvering targets with changing acceleration levels). Thus, there is a need to devise a method that produces optimum state estimates despite the incomplete a priori knowledge of parameter values, and provides the estimates in an adaptive, on-linc fashioa. The MMAF satisfies these requirements [22].
+
+2-7
+
+To implement the MMAF algorithm, it becomes necessary to discretize the parameter space by the judicious choice of discrete values that are representatively dispersed throughout the continuous range of possible values. For the tracking problem at hand, a target can display K different discrete sets of pogo conditions corresponding to one of K discrete combinations of pogo oscillation frequency and magnitude. As previously shown in Figure 1.2, a Kalman filter is then designed for each choice of parameter value, resulting in a bank of K separate elemental filters.
+
+Let a denote the vector of uncertain parameters in a given linear state model for a
+
+dynamic system. A system model would be represented by the following first-order, stochastic
+
+differential equation:
+
+.t() = F(a)x() + B(a)u(t) + G(a)w(t) with noise c upted, discrete-time measurements given by:
+
+(2-28)
+
+z(tQ) = H(a)x(tQ) + v(tQ)
+
+(2-29)
+
+where
+
+x(t) = n-dimensional system state vector u(t) = r-dimensional deterministic control vector w(t) = s-dimensional white, Gaussian, zero-mean noise vector
+process o0 strength Q(a) z(t) = mn-dimens onal measurement vector v(tj) = in-dimensional discrete-time white, Gaussian, zero-mean
+noise vector process of covariance R(a) F(a) = n x n system plant matrix B(a) = n x r input distribution matrix G(a) = n x s noise distribution matrAx H(a) = in x n matrix relating measurement to states
+
+2-8
+
+The parameter vector, a, is discretized !nto a set of K finite vector values, a,, a),...a., and
+
+associated with each ak is a different system model of the form given by Equations (2-28) and
+
+(2-29). Each elemental Kalman filter, tuned for a specific ak, produces a state estimate which is
+
+weighed appropriately using the hypothesis conditional probability Pk(4) to produce the state
+
+estimate 1,,, (t) as a probabilistically weighted sum, as shown in Figure 1.2 on page 1-9, where:
+
+f,(,,)I,.Z(,.,)(Z~ Iak,ZH~k •I)
+PA(tj) = K
+
+(2-30)
+
+j11
+
+{ f 1(t,)j
+
+z (,,
+
+.)(z
+
+jak
+
+.z
+
+,
+
+_0-
+
+-
+
+exp .
+(2it)m/n IAQ)
+
+112
+
+('1 = {-I--x)(tj;'(t.)rk(ti)
+
+(2-31)
+
+with
+
+Ak(tO) = kth filter's computed residual covariance
+
+=- Hk(t)PA(tj)HJk(t,) + Rk(ti)
+
+rk(tI) = =
+a. =
+
+kth filter's residual I z(t1) - Hk(tA)(tid) ] parameter value assumed in the kth filter
+
+Pk(ti) = kth filter's computed state error covariance before incorporating the measurement at time t,
+
+Z(tj.j = measurement history up to time t1.,
+
+The residual of the kth elemental Kaiman filter, that best matches the current pogo conditions associated with the parameter value ak, is expected to be smaller than the residuals of the other mismatched filters, so that the exponential term in Equation (2-31) is smallest for the kth elemental filter. Therefore, the hypothesis conditional probability given by Equation (2-30)
+
+2-9
+
+with index corresponding to the "correct" filter will then be the largest among the conditional probabilities, thus assigning the most weight to the "correct" state estimate. This algorithm performs well if each elemental filter is optimally tuned for best performance for specific pogo conditions, causing its residual to be distinguishable from those of the mismatched filters. It is also important not to add excessive amounts of pseudonoise to compensate for model inadequacies, as is often done in conservative tuning of single Kalman filters, since this tends to mask the distinction between good and bad models [21]. If the quadratic forms within the exponentials of Equation (2-31) are consistently of the same magnitude, then Equation (2-30) will result in the growth of the p. associated with the filter with the bmallest value of IAk L The values of I Ak I are independent not only of the residuals, but also of the "correctness" of the K models, and so the result would be totally erroneous [22]. Therefore, the scalar denominator of the exponential in Equation (2-31) might be removed in the final implementation of the algorithm.
+
+The output of the MMAF algorithm is the probability-weighted average of the elemental
+
+filter's estimates given by:
+
+K
+)= p(tj)2k(t1i.)
+k-l
+The conditional covariance matrix for the MMAF is computed as:
+
+(2-32)
+
+where
+
+K
+,,.f(ti ) = EPk(t,)[P(t) + 9Y,(t4').€(')]
+k-I
+
+(2-33)
+
+Y.k(ti) = ffi (t+) - S (ti)
+Pk = kth filter's conditional hypothesis probability
+
+2-10
+
+PA(ti*) - kth filter's state error covariance matrix after incorporating the measurement at time t,
+Since the values of pk(ti) and 2 (t:,) depend upon the disci ete measurements taken through time ti, P,,, (t:+) cannot be precomputed as in the case for the elemental filters. However, Equation (2-30) need not be computed for the on-line filter algorithm.
+The calculated probabilities of Equation (2-30) should be modified by an artificial lower bound [17,22,37]. This lower bound will prevent a mismatched filter's hypothesis conditional probability from converging to (essentially) zero. If a filter's ph should reach zero, it will remain zero for all time, as can be seen from the iterative nature of Equation (2-30). This effectively removes that filter from the bank and degrades the responsiveness of the MMVAF to future changes of the parameter values. If some future pogo condition matched the model for which the Pk was locked onto zero, that elemental filter's estimate would not be appropriately weighted and the MMAP estimate would be in error. In prtvious work, Tobin [47] established a lower bound of .00i for Pk(ti).
+2.3 Simulation Space
+Simulation of the tracking scenario, which encompasses the target trajectory, the FLIR sensor operation, and the low-energy laser illumination of the missil• hardbody and the generation of the speckle return and Doppler measurements, is performed on a digital computer. A 3dimensional "simulation space" is generated wherein a target plume 3s propagated along a realistic trajectory. Several coordinate frames in the simulation space provide the means of mathematically projecting the target plume's infrared image and velocity vector onto the two-dimensional FUR
+2-11
+
+image plane (13,16,37]. In addition, these frames are utilized to project a representation of the hardbody center-of-mass, as well as to define the start and orientation of the low-energy laser scan for generating speckle and Doppler measurements [8,9]. This section describes the different coordinate frames of the simulation space and covers the process of pointing the FLIR sensor at the target during tracking. The coordinate frame descriptions and figures in this section are repeated from Herrera [14].
+2.3.1 CoordinateFrames. As shown in Figure 2.1, three primary coordinate framcs are defined in the simulation space: a system inertial reference frame, a target reference frame, and an a-P-rreference frame. Each of these reference frames is described in the following paragraphs.
+2.3.1.1 InertialReference Frame. The inertial reference frame is a North-Up-East (NUE) frame wherein the target flight trajectory occurs.
+Origin: location of the FUR sensor Axes: e, - due north, tangent to the earth's surface, defines zero azimuth
+ey - inertial "up" with respect to fiat earth approximation e,- vector completing right-hand coordinate set, defines 90, azimuth Note: The azimuth angle (a) is measured eastward from e.. The elevation angle (P) is measured "up" from the horizontal plane defined by e, and e,.
+2.3.1.2 Target Plume Reference Frame. This frame is located at the target plume with one of its unit vectors co-linear with the target's velocity vector.
+Origin: plume intensity centroid Axes: e, - along the true velocity vector e., - out the right side of the target, orthogonal to both e, and the LOS vector ep:• - vector completing the right-hand coordinate set
+2-12
+
+Target Frame
+/-Hardbody
+eP
+
+Plume \ Intensity Centroid -
+er
+
++X
+LOS Vector
+
+ACpenptarroeindt IImntaegnesity
+East
+
+Up ey
+
+North e
+
+Inertial Frame
+
+a - [0 Plane
+
+÷YMM
+
+(FLIR)
+
+Figure 2.1 Three Primary Coordinate Frames in Simulation Space
+
+Note: , PY
+
+along the velocity vector perpendiculai to the velocity vector peipendicular to both, and p.
+
+2.3.1.3 a - P - r Reference Frame. The a-j3-r reference frame is defined by the azimuth angle a' and the elevation angle Pi' measured with respect to the FUR line-of-sight (LOS) vector e,. The true azimuth ax and the true elevation 0 are referenced from true north and the horizon. This frame is used to project the target's position and velocity onto the FLIR plane.
+Origin: center of FLIR FOV Axes: e,, coincident with the true sensor-to-target LOS vector
+2-13
+
+e,, and e, define a plane perpendicular to e, rotated from Inertial e, and ey by the azimuth angle (a) and elevation angle (0)
+There are three special coordinate frames associated with the at-p-r reference frame: the a-0 (FLIR) plane, the absolute a-p-r reference frame, and the trans-FLIR plane,
+2.3.1.4 a - 0 (FUR Image) Plane. The FUR plane is used to obtain the measurements of the target plume position and is the reference frame for the geometrically derived velocity vector components of the target's intensity centroid. The FUR plane is defined by the ea and e, unit vectors, with the LOS vector (orthogonal to the FLIR plane) representing the pointing orientation of the FLIR sensor, and the high and low-energy laser. Note the orientation of the +y,., axis in Figure 2.1, which allows the LOS vector to be positive towards the target when it is considered the third member of a right-handed set of coordinates as defined by the unit vectors e, - e. - e,
+Due to the large distance to the target (approximately 2,000 kilometers), small angle approximations are invoked, allowing the "pseudo" azimuth and elevation angles, a' and 03', to be linearly proportional to the x and y cartesian coordinates in the FLIR plane. The x and y coordinates are measured in pixels (a pixel of linear length corresponds to 15 pradians of arc) and will provide a means of evaluating the performance of the Kalman filter associated with tracking the intensity centroid of the target.
+2.3.1.5 Absolute a-p-r Reference Frame. The absolute a-p-r reference frame is fixed in inertial space at the initial ot-p-r coordinates of the target. This coordinate system defines the initial pointing direction of the FUR LOS vector e•, and is also used to define the true and filter estimated target positions and velocity components on the FLIR plane.
+2-14
+
+2.3.1.6 Trans-FLIRPlane. This plane is defined as the result of translating the center of the FLIR FOV to the true center-of-mass of the missile hardbody. The frame is used to determine the xna and yFLm coordinate errors of the hardbody center-of-mass filter's estimates, for performance analysis purposes.
+2.3.1.7 ALT/ACT Plane. This plane, shown in Figure 2.2, is a rotation of the trans-FLIR plane by the true orientation angle 0,, formed by the target trajectory with respect to the FUR coordinate plane. It is used to determine the along-track and across-track components of the tracking error mean and covariance of the hardbody center-of-mass estimates [9]. This frame was not used in this thesis.
+2.3.2 FUR Image Plane. All dynamic events associated with the target plume intensity "pattern" or "function," and the active illumination of the missile hardbody in 3-dimensional inertial space are projected onto the 2-dimensional FLIR image plane. The measurements generated as a result of IR detection by the FUR sensor are provided to the enhanced correlator algorithm, which produces "pseudo-measurements" to the Kalman filter to update its state estimates. For the missile hardbody, low-energy laser-generated measurements of the offset distance relative to the plume intensity centroid are geometrically projected onto the FLIR image plane. Thus, the FLIR image plane is the realm in which the performance of the Kalman filter is evaluated. Also note that it is a natural plane for such evaluation of a laser weapon, since pointing angle errors are critical and range is not. This section introduces the FLIR Field-Of-View (FOV) "tracking window," and discusses the construction and projection of the target models.
+2.3.2.1 FUR Field-Of-View. The FUR FOV, shown in Figure 2.3, consists of an 8 x 8 pixel sub-array (in the FUR sensor 300 x 500 pixel array) which provides sensed information as
+2-15
+
+"-YMatI -y FLM
+
+"-y5ranr , FUt.R
+
+True Hardbody
+
+...
+
+Ckenter-of-Mass"
+
+"+ALT(along track, and "a along true velocity vector)
+
++ACT (across track)
+ep
+Figure 2.2 FUR Plane, Trans-FLIR Plane, and ALT-ACT Plane a function of the varying intensifv of the plume IR image and the background and internal FLIR noise. Based upon this information, the position estimates from the nine-state Kalman filter serve to center the centroid of the plume IR image in the FOV. Since the low-energy laser is boresighted with the FOV, the filter position and velocity estimates of the intensity centroid define the origin and orientation of the laser scan to "paint" the. hardbody. The errors of the filter's estimates of position, velocity, and centroid/center-of-mass offset, are expressed in units of "pixels" or "pixels"/second. These errors become meaningful through a pixel proportionality constant, kP equal to 15 iiradians/pixel [14,40]. With this constant, 1 pixel corresponds to approximately 30 meters for a range of 2,000 kilometers.
+2-16
+
+8 x 8 A rray
+of Vzar~itay~~bl•te ezs
+Intensity P~ixels
+
+Target Plume Formed by
+
+Subtrectng
+
+from
+
+"Leading" Gaussian
+
+........................... ............... ............... ..
+
+Centroid of
+
+.........
+
+....................
+
+i.......... ... 'psc
+
+....
+
++..I.n...t..e...n....s..ity
+
+....
+
+...... Apparetnt PPTraoorfgmileet
+
+.................................... ....-...
+
+------
+
+~
+
+FUR
+
+2..`.1,1`.`..•.•.•`.;.•..`•.•...;!.`...•.`•.•.•..•.....••..`...•.•.•..••.. ...
+
+15 Israds..
+
+........ ....... ........ ........... ,r+Y (FLM)
+
+Figure 2.3 Target Plume Image in 8 x 8 FUIR Field-of-View (FOV)
+2.3.2.2 Target Models on the FUR Plane. The difference of two Gaussian intensity functions creates a planform that models the hotspot of the plume target on the FUR plane [40], as shown in Figure 2.3. The "trailing" function is subtracted from the "leading" function to construct a suitable approximation of empirically observed plume intensity p'ofiles. If the computed result is negative at some point, that negative value is replaced by zero. The missile li±3dbody is not sensed by the FUIR sensor. However, it is geometrically projected onto the FLIR plane as a rectangle, located an offset d[ ,efrom the plume centroid along the target's velocity vector. Since the FLIR sensor ca:i ly dLCr - IR intensity shape function of the plume, the
+
+2-17
+
+remainder of this discussion emphasizes the intensity centroid model. More about the hardbody model will be presented in Chapter TIT.
+
+2.3.2.3 Target Plume Model on ile FUR Plane. The radiated energy from each intensity function is represented as a bivariate Gaussian distribution with elliptical constant intensity contours. Each of the two bivariate Gaussian intensity functions is given by [40]:
+
+I [xy,ý,(),yP,,)] = lm.exp[-0.5(AxAy)PN1(AxAy) T 1
+
+(2-34)
+
+where
+
+Ax = (x - xpt.)cosO0 + ( y - ypk)sin0,, measured along the along-track (ALIT) axis of Figure 2.2
+Ay = ( y - ypdcosO, - (x - xpk)sinO,, measured along the across-track (ACT) axis of Figure 2.2
+O, = true target orientation angle between the projection of the velocity vector onto the FLIR plane and the x-axis in the FUR plane; see Figure 3.2
+x, y = coordinate axes on the a - P plane
+xp,., Ypp.e = peak intensity coordinates of the single Gaussian intensity function I,.,• = maximum intensity function P = 2 x 2 target dispersion matrix with eigenvalues (aY2 and FP2)vthat define the dispersion of the elliptical constant intensity contours, and eigenvectors that define the orientation of the principle axes of these ellipses
+Figure 2.4 illustrates the spatial relationship between the two intensity functions along the target
+e, axis. The displacement values are based on the assumption that the dispersion of the exhaust
+plume in the e,, direction (normal to both e, and the LOS vector) is approximately 20 times the
+diameter of the missile [40]. With the dimensions of the hardbody chosen as 40 meters long and
+3 meters in diameter, the centroid of the first intensity function is located 65 meters behind the
+
+2-18
+
+Ha-dbody Cenier-of-Mm
+
+Intntmaity Function
+
+...
+
+...
+
+I...
+
+.
+
+Gaussian Intensity Function
+1
+2
+
+Displacement of Centroid along e V
+-65 mters
+-110 meters
+
+Displacement of Centroid along e
+0 meters
+0Meters
+
+Displacement of Centrod Along e PP.
+0 meters
+0 Meterm
+
+Figure 2.4 Spatial Relationship of Target Plume Gaussian Intensity Functions hardbody center-of-mass. The placement of the first centroid simulates the composite centroid of the exhaust plume being close to the missile exhaust nozzle, whereas the position of the second centroid enables one to simulate different plume shapes. The second, "trailing" centroid is arbitrarily located 110 meters from the center-of-mass and the defined spatial relationship remains fixed in the target frame during the simulation. Any external forces acting on the missile other than thrust and gravity are assumed negligible, which thus yields an assumed zero sideslip angle as well as zero angle of attack. These assumptions allow the semi-major axes of the elliptical constant-intensity contours to be aligned with the projection of the target's velocity vector onto
+2-19
+
+the FLIR image plane, and provides a simplified simulation geometry while retaining the essential features of the trajectory simulation.
+
+2.3.2.4 TargetPlume Projectiunonto the FURPlane. As the target plume is propagated through inertial space, the output of the FUR pixels is simulated by projecting the two intensity functions onto the FLIR plane. The geometry of the projection is shown in Figure 2.5. The "reference target image" is oriented on the FLIR plane to correspond to the largest apparent planform (i.e., with its velocity vector orthogonal to the LOS vector) at a given initial reference range, r.. As seen in Figure 2.6, the target intensity image is defined by the dispersion along the principle axes of the two Gaussian intensity functions, given by:
+
+(r)
+
+(2-35)
+
+r
+
+r
+
+a, =- [ , p + (o CF- o Y). cosy)]
+
+(2-36)
+
+= apt. + VILOS (AR - 1)]
+where
+a,o, ap,,,, = the initial dispersions of the target intensity functions along e,, and ep, in the target frame of the reference image
+a,, a,,, = the -,urrent dispersions of the target image ro = initial sensor-to-target range of the reference image r = current sensor-to-target range v = initial velocity vector of the target v = magnitude of v
+VLOS ffi projection of v onto the a - 0 plane (FLIR); i.e., the component of v perpendicular to the LOS vector
+
+2-20
+
+ey
+Inertial Prre
+
+Target hnteztsity Centrold
+
+e z.
++xlqI
+
+..
+"ee LOS Vector
+
+a - 3Plane
+
+FUR
+
+(FIJR)
+
+Figure 2.5 Target Plume Intensity Centroid Projection Geometry = magnitude of V.•os:
+
+V.LOS = c +
+
+(2-37)
+
+y = target aspect angle between v and the a - Pp3lane (FLIR)
+0 = angle between v.Os and +Xnm AR = a,,Jcp,,,: aspect ratio of the reference image
+Referring back to Figure 2.4, the location of each intensity function, or "hotspot," is initialized as a displacement from the hardbody center-of-mass. The intensity functions are oriented in the FLIR plane via the true target orientation angle 0,. The relative positions of the
+
+2-21
+
+a j Plane (FUR)
+0,
+
+Resultant Plume Intensity Function
+
+Figure 2.6 Intensity Centroid Dispersion Axes in FLIR Plane
+
+two intensity functions in the FUR plane vary in response to the change in target aspect angle y (of Figure 2.5) while the spatial relationship of the hotspots remains the same in the threedimensional target frame. If the plume pogo forcing input is applied, the hotspots do not remain fixed in the target frame, causing the composite image centroid to oscillate along the velocity vector and produce additional perturbations to the hotspot image in the FLIR plane, as will be described in the truth and filter model sections in Chapters III and IV respectively.
+
+2.3.2.5 Target Plume Velocity Projectiononto the FUR Plane. The general discrete-time
+
+equation that models the target dynamics is given by:
+
+x(t1 .,) = 4(t~4 , t1)x(t,) + Bd(ti)U(ti) + Gd(tI)wd(t,)
+
+(2-38)
+
+2-22
+
+where
+
+cI(tj÷,, t:) = the system state transition matrix
+
+x(t)
+
+discrete-time vector of states of interest
+
+B1 (ti) = discrete-time control input matrix
+
+u(O = discrete-time deterministic control Input vector
+
+G1 (ti) = discrete-time driving noise input matrix wd (ti) = discrete-time, zero-mean, white Gaussian noise process with independent
+components and covariance Q.
+
+Based on the geometry shown previously in Figure 2.5, the projection of the target's inertial velocity vector onto the FLIR image plane is the deterministic input vector given by [13]:
+
+U"101) = [&() "/(to)]
+where u,d:,) = true target deterministic input vector W(ti) = target azimuth rate in the FUR plane 1(ti) = target elevation rate in the FLIR plane
+
+(2-39)
+
+As seen in the inertial frame diagrams of Figure 2.7, the azimuth angle can be defined as:
+
+a(t) = arctan N
+
+(2-40)
+
+Taking the time derivative of Equation (2-40) and noting that the sensor-to-target range is large so that a'(t,) = 6L(t1), the azimuth velocity in the FLIR plane is given by:
+
+'(t) = (t) = x(t)v,(t) - z(t)yv(t)
+x I() + z 2(t)
+
+(2-41)
+
+where
+
+v,, v, = components of the target's inertial velocity in the e, and e, directions
+
+2-23
+
+Similarly, the elevation velocity in the FLIR plane is given by:
+
+(t)
+
+rA(t)vP((t) - Y(th(t)
+
+r2 (
+
+(2-42)
+
+where
+
+vy = component of the target's inertial velocity in the e, direction = horizontal projection of the sensor-to-target range, with its time derivative. expressed as:
+
+h(t)th~=t)xfl)v,(t)r,+(t)z(t)v(t)
+
+(2-43)
+
+ey V
+
+Xý ex
+S:
+
+• ~~.. . .
+Zp
+
+. . "'--
+
+e .
+eyl rh
+
+zrh
+Azimuth Geometry
+
+Elevation Geometry
+
+Target Plume InteWty
+
+d
+
+r -0 + z2
+
+Figure 2.7 Inertial Velocity FLIR Plane Projection Geometry 2-24
+
+2.3.3 FUR Sensor PointingController. The Kalman filter's propagated estimates of the intensity centrold's position dictate the necessary change in azimuth and elevation that the FUR sensor should undergo over the next sample period to center the hotspot on the FLIR FOV plane at the next measurement sample time. Ideally, these positional estimates are fed as commands to a pointing controller that physically implements the directional changes within one sample period (1/60 see). The original sample period used in the recent past for the benign trajectory scenarios has been 1/30 second. For this thesis, the sample period was cut in half for two major reasons. First, It was hypothesized that the reduced sample period might allow for closer inspection of the difficulties surrounding estimation of the atmospheric jitter states. If the reduced sample period does not aid this investigation, it should at least reduce the differences in errors at the beginning and end of the propagation period. The second reason that the sample period was reduced to 1/60 second was to maintain conformity with the current hardware and software being developed at the Phillips Laboratory. The most recent programns utilizing the FLIR and LEL measurements for tracking and pointing a high energy laser are using the 1/60 second sample period [4].
+The activation and execution of the commands to the FUR for directional changes will not be perfect due to the lag dynamics inherent in the controller, and the resultant mis-positioning of the hotspot may be interpreted by the filter as target motion, causing inaccurate estimates of future states. Whether or not to include the controller lag dynamics in the simulation was the subject of a previous thesis [371. It was found that the apparent target motion caused by the lag dynamics are interpreted by the filter as atmospheric jitter (as a result of the choice of tuning parameters for the filter), implying a degree of robustness on the part of the filter to track a target. Moveover, the degradation in tracking performance due to the dynamic lag was found not to be of primary importance. Thds, the controller is modeled as lag-free in this research.
+2-25
+
+2.3.4 Target Scenarios. Two different scenarios were utilized for simulations in this research. The first scenario was employed for both the stochastic observability tests and the MSOFE Monte Carlo runs. The tracker was given the proper initial conditions of the target (to sirnilate a handoff from another tracker) and was to track a missile possessing the characteristics and following the profile of a Minuteman II [4,5]. Over the ten second simulation period, a nonminal intercept range of 200 km and negligible acceleration were assumed. In the MSOFE simulations, the truth model was programmed to maintain a constant velocity equal to the average value determined over the simulction period [5]. As with the reduced sample period, the reduced range (from 2000 Km to 200 Km) was derived from intercept scenarios recently developed for use at Phillips laboratory. The intent is eventually to revise the scenario modeled in the AFIT software and compare filter performance under the new conditions.
+The second scenario, used for the Monte Carlo simulations in the AFIT software and referenced throughout this thesis, was the same as used in previous theses. An Atlas type missile is simulated traveling at a range of 2000 km from the platform with a constant velocity. The original intent of the runs was to complete a few simulations with the old parameters and then eventually to update the conditions to match the first scenario. This was not done for two major reasons. The first reason was that a direct comparison of the new filter's performance with previous filters was desired and the second was that the new filter including pogo states was never satisfactorily tuned to elicit its maximum performance potential. A complete description of all initial conditions and flight parameters of the truth model is contained with the truth model description in Chapter IH.
+2-26
+
+2.4 Summary This chapter presented the theoretical background required to understand the research
+explained in the rest of the thesis. It briefly developed the linear Kalman filter for both continuous and discrete-time processing, and it also presented the extended Kalman filter modification to the update equations to allow for nonlinear measurement models to be used. The mathematical models presented in the Kalman filter section will relate directly to the truth and filter models described in Chapters III and IV respectively. Section three of this chapter contained a complete description of the various coordinate frames used for the simulations. The different coordinate frames were required in order to simulate the scenario realistically in inertial 3-space and to transform the missile trajectory into coordinate systems useful for sensor and computer processing. The third section also outlined the inter-relationships of the coordinate frames. Finally, this chapter briefly summarized the pointing controller for the HEL and the two target scenarios exploited in the thesis.
+2-27
+
+III. Truth Model
+3.1 Introduction
+In order to analyze the tracking algorithms of interest successfully, they must be subjected to as many of the dynamic variables that would be encountered in the real world as possible. The truth model is a mathematical model derived for simulation purposes which embodies all of pertinent states necessary to create a realistic environment in which the filter will operate [21]. In theory, an absolute truth model could be of infinite dimension. In practice, only the dominant characteristics that will affect the system of interest need be modeled. The truth model should be developed through thorough testing and analysis of data collected in the real world from the measuring instruments. Shaping filters should then be developed and compared to the empirical data to validate the model.
+This chapter will present the truth filter models used for development and testing of the elemental linear Kalman filters in the AFIT simulation. It will also cover the models used to generate measurements for the filter updates and the detailed parameters used for the truth model simulation (initial conditions, etc). Since the AFIT truth model has remained virtually unchanged since the previous thesis, the portions discussing the model were taken from Chapter IV of Herrera's thesis [14] with minor alterations.
+The models used for MSOFE [6] were reduced-order versions of the model used in the AFIT software and described in Section 3.2, that incorporated a subset of the major characteristics desired for the observability studies. They were also implemented as continuous-time
+3-1
+
+dynamics/discrete-time measurement models in MSOFE as opposed to the discrete-time dynamics equations employed in the AFIT software. The truth models and filter models used for MSOFE were identical except for the different tuning values that adjusted noise levels in the filter. The rFcader shi •Id review the next section for an understanding of the entire truth model and refer to Clhipter IV for the specific models used for MSOFE analyses.
+3.2 Truth Dynamics Model
+The essential conditions which must be generated in the AFIT truth model include the underlying dynamic states of the target, jitter from atmospheric disturbances, bending/vibration of the host platform, and measurement noises in the sensors. As previously noted in Chapter I, the truth model was originally developed when only FLIR measurements were available. As a result, the truth dynamics model defines the target in terms of the image intensity centroid, not the missile center-of-mass. The true location of the hardbody is determined by adding a constant centroid to center-of-mass offset (87.5 m) to the equilibrium point about which the centroid oscillates. The system describing the target image includes the following fourteen states [14,17,31,40]:
+2 target dynamic states 6 atmospheric states 4 mechanical bending states 2 pogo oscillation states The dynamics of the image intensity centroid are represented as positional changes in the FLIR plane, with the centroid components xe and y, being measured in pixels from the center of the FOV in the x and y FLIR plane directions. Referring to Figure 3.1, the position of the target image centroid at any one time is given by:
+3-2
+
+xý = X, +* + Xb + xPcosO,
+
+(3-1)
+
+yC= y, + y. + yb -xpSinO,
+
+(3-2)
+
+where
+
+xe, y, = target image intensity centroid coordinates x,, y, = coordinate deviation due to target dynamics
+
+xa, y. = coordinate deviation due to atmospheric jitter
+
+xb, Yb = coordinate deviation due to bending/vibration of optical hardware
+
+xP = coordinate deviation due to pogo oscillations along the velocity vector direction
+
+O, = true target orientation angle
+
+.................... ....... ........... .... ......... ...i......... ......i.
+
+Si.....................
+Plume Intensity Centroid-
+
+.........
+
+8x8 Array Of.Pixels
+
+t
+
+Y-L a - p Plane (FUR)
+Figure 3.1 Plume Intensity Function Position on FUR Image Plane 3-3
+
+Note the minus sign before the resolved pogo component in Equation (3-2) due to the coordinate definition of the FLIR coordinate frame. The states x., Xb, x, x.,, y Yb, and y, comprise the output states which are extracted from an overall state model in the form of fourteen coupled scalar stochastic differential equations. The states x, and y, are each modeled by first-order differential equations; x., Yb, and xP are each modeled by second-order differential equations; and x, and y. are each modeled with third-order differential equations. These differential equations, when in statespace format, comprise the dynamics portion of the FUR tracker truth model.
+
+The 14-state model state vector is described by a first-order, stochiastic differential
+
+equation given by (note the use of the capitol T subscript to denote reference to the truth model,
+
+as opposed to a lower case t to reference variables associated with target dynamics):
+
+It(t) = FTXT(t) + BrurQ) + GTWr(t)
+
+(3-3)
+
+where
+
+Fr = 14 x 14 time-invariant truth model plant matrix x. (t) = 14-dimensional truth model state vector
+BT = 14 x 2 time-invariant truth model control distribution matrix UT (W = 2-dimensional deterministic input vector
+GT = 14 x 14 noise distribution matrix (GT = 1) WT (t) = 14-dimensio ial, white Gaussian noise process with mean and covariance
+kernel statistics:
+
+E{wr(t)} = 0 E{wrt)wr T(t + ')) = r(t) To simulate the target dynamics model on a digital computex, the following equivalent discrete-time solution to Equation (3-3) is given by:
+
+3-4
+
+Xr(ti. 1) - Or(tQ t)XTQd) + B4dUrd(ti) + G 4Wr•(r4)
+
+(3-5)
+
+where the state transition matrix Or (ti,:) is the solution to the differential equation:
+
+di(t, Q = t,tt)
+
+(3-6)
+
+dt
+
+with the initial condition: 0. (ti, ti) = 1, (note that, for constant F,,- Or (41,) can be expressed
+
+as 0 7,(t-t)) and
+xT (t4) = 14-dimensional discrete-time truth model state vector BU = 14 x 2 discrete-time truth model control distribution matrix
+UTd (t4) = 2-dimensional discrete-time input vector Grd = 14 x 14 discrete-time noise distribution matrix, (G,, = /)
+w,, (t,) = 12-dimensional discrete time, white Gaussian noise process with mean and covariance statistics:
+
+E{wTd(ti)} = 0
+
+(3-7)
+
+f4 (rtJ)wr (t,)}= Qrd
+
+t'I,
+
+----.
+r(=t+,÷
+
+-
+
+r)G7 Q7,Gr
+
+(
+
+r )
+
+. - ')d'
+
+( -8
+(3-8)
+
+where QT is defined in Equation (34). The discrete-time input distribution matrix Bd is defined as:
+
+BU f .r(t@I.I - r)Brdr
+t't
+
+(3-9)
+
+Note that this computation assumes Ur (t) is constant over each sample period: UT (W)= UdtI) for
+
+all t E [tE.t,• ). This input simulates a true constant velocity trajectory for the missile.
+
+The fourteen states of the discrete-time truth model are defined in the x and y coordinate axes of the FUR plane as:
+
+3-5
+
+. . .. . ... . . .
+
+.. .. .
+
+. . ..
+
+XFUR
+
+YFUR
+
+I target state
+
+I target state
+
+3 atmospheric states
+
+3 atmospheric states
+
+2 bending/vibration states
+
+2 bending, ibration states
+
+2 plume pogo siates (position and velocity
+
+where the plume pogo states are in neither the XFUR nor YFUR direction but defined along the velocity vetor. These states are augmented into the truth model state vector:
+
+x,
+
+X.
+XT ff .... Xb
+x,
+
+(3-10)
+
+where x, = 2-dimensional target dynamics state vector x. = 6-dimensional atmospheric state vector xb = 4-dimensional bending/vibration state vector x = 2-dimensional plume pogo state vector
+The 14 x 14 discrete-time truth model state transition matrix OT is given by:
+
+(D,
+o
+T .,., ..
+
+0
+(kF
+....
+
+0 0 0
+....
+
+0 •I• 0 0. 0
+
+b
+
+0
+
+0
+
+P4'
+
+where the partitions correspond to the dimensionality of the states defmeu4 above. The 14 x 2 discrete-time truth model distribution matrix Brd is given by:
+
+3-6
+
+B~id[
+
+(3-12)
+
+where BTd is a 2 x 2 discrete-time control distribution matrix. The 14-dimensional discrete-time truth model white Gaussian noise process wd is given by:
+0
+
+T ,
+Wbd
+
+(3-13)
+
+where wjt) = 6-dimensional discrete-time, white Gaussian noise related to atmospheric jitter states w(t,) = 4-dimensional discrete-time, white Gaussian noise related to bending states w,,(t,) = 2-dimensional discrete-time, white Gaussian noie related to plume pogo states
+The block diagonal form of Equation (3-5), as seen in Equations (3-10) through (3-13), allows the models for target dynamics, atmospheric jitter, bending/vibration, and plume pogo to be presented separately. The following sections discuss each of the discrete state models which form the stochastic discrete-time truth model.
+3.2.1 Target Dynamics State Description. As depicted in Figure 3.2, the or-P plane (FUR image plane) is coincident with the FLIR sensor FOV, and perpendicular to the LOS vector e,. In the simulation, the 3-dimensional target dynamics are piojected onto the FLIR image plane, and the position components of the target's intensity centroid are obtained from the azimuth and elevation displacement angles (a" and P3-, respectively). Since the target distance is simulated
+3-7
+
+UP
+
+a - P3Plane
+
+LOS Vector
+
+ee
+Figure 3.2 Target Centroid Image on a-0 Plane with "Pseudo" Angles
+as 2,0A. ) kilometers, small angle approximations are used for measuring the angle displacements
+ini the cartesian coordinate system of the FUR image plane. These "pseudo" angles, x ' and P ',
+are referenced from the current LOS vector and measured in microradians. Note that the unusual orientation of the +y,, axis in Figure 3.2 allows the positive z axis to be in the positive e, direction (by the right-hand rule).
+The linear translational coordinates, x, and y, of Equations (3-1) and (3-2), locate the target intensity function on the FUR plane and are measured in pixels of displacement from the center of the FUR FOV. The angular and linear measurements are related by the pixel
+3-8
+
+proportionality constant k., which is the angular FOV of a single pixel. Presently, the value of ko is approximately 15 microradians per pixel for long range targets [8,40].
+
+3.2.1.1 AFIT Discrete-.T.'ne Target Dynamics. The derivation of the state space model of the texget dynamics assumes that the azimuth and elevation rates (ax and ý ", respectively) remain essentially constant over each sample period At. Then the discrete-time target dynamics model is:
+
+(t,.d = xC(t) + _(+OP)(A_t)(_0(315
+k
+([__)P(__ ytt.)=y,(t,) - _____
+
+(3-14) (3-15)
+
+Arranging these equations in state space form yields: x,(t.1) = 4P(tj•j,I,)x,(tQ) + But(ti)
+
+(3-16)
+
+(-17)
+where ax 'PO) = dx "/dt, measured in microradians/second and constant over the time interval At -(ti) = do3 7dt, measured in microradians/svcond and constant over the time interval At At = sample time interval, ti÷ - r1 (1/60 seconds) k' = pixel proportionality constant (15 microradians/pixel)
+
+3-9
+
+Using these iviationshlips in block form of the overall truth model, by inspection of Equation (3-11), the upper left block is:
+
+(b, and the upper block of Equation (3-12) is:
+
+0(3-18)
+
+Bd k A
+
+(3-19)
+
+and the input vector in Equation (3-5) is given by:
+
+ur' =1=a.'( ,1,))
+
+(3-20)
+
+i- niinus sign of the lower right term in Equation (3-19) is due to the difference in the y axis ofiencation between the inertial coordinate frame and the FUR coordinate plane.
+The two target dynamics states of Equation (3-10) are used to propagate the missile along its trajectory. The formulation of the truth model target dynamics states in deterministic state space form has two advantages. First, Equation (3-17) can be substituted back into Equation (3-5) to form a single augmented vector differential equation that defines the truth model. Second, the state space form allows the addition of white (or time-correlated) noise to Equation (3-17), if a stochastic, rather than a deterministic dynamics model, is desired.
+3.2.1.2 MSOFE Continuous-Time Target Dynamnics. As shown in Chapter IV, an equivalent continuous-time dynamics constant velocity model was simulated in MSOFE by letting the deterministic input vector of Equation (3-20) equal zero. Two velocity states (along the FLIR
+3-10
+
+plane axes) were augmented to the state vector for a total of four states describing target dynamics. The desired constant velocity trajectory is achieved by designing the plant matrix, F4, in Equation (3-3) such that the target dynamics are modeled by I = v and 0 = a = 0.
+
+3.2.2 Atmospheric Jitter Model. The model for the translational displacement of the intensity function due to atmospheric disturbances, is based on a study by The Analytic Sciences Corporation [311. Using power spectral density characteristics, the titmospheric jitter phenomenon in each FLIR plane axis direction can be modeled as the output of a third-order shaping filter driven by white Gaussian noise [31]. The Laplace domain representation of the shaping filter
+
+transfer function is given by:
+
+xe(s) -
+
+K i2
+
+Wo(s) (s + 01)(s + 02),
+
+(3-21)
+
+& = output of shaping filter (xýLm direction) w. = zero-mean, scalar, unit-strength white Gaussian noise
+Ko = gain, adjusted for desired atmospheric jitter rms value o1 = break frequency, 14.14 radians/second (02 = double-pole break frequency, 659.5 radia&sýsecond
+
+The atmospheric jitter effects can be modeled similarly in the y. direction, where y. would be the output of an identical shaping filter defined in Equation (3-21). The two shaping filters are assumed to be independent of each other and can thus be augmented to form a six-state model. The linear stochastic differential equation that describes the atmospheric jitter is given by:
+
+1.(t = FAx(t) + G.w.(O
+
+(3-22)
+
+where
+
+PC = 6 x 6 time-invariant atmospheric jitter plant matrix xo(t) = 6-dimensional atmospheric jitter state vector
+
+3-11
+
+G. = w,(t) =
+
+6 x 2 noise distribution matrix 2-dimensional, independent, zero mean white Gaussian noise with unit strength and independent components described as:
+
+E(w.(t,)) = 0
+
+[=J( ol E{~t)wT~j) - Q 8(t) 1 • C)
+
+(3-23)
+
+The six atmospheric states in the state vector correspond to the low frequency pole and the higher frequency double pole in the .n~jR and the y., directions. The atmospheric jitter plant matrix is defined in Jordan Canonical form as:
+
+-wo 0 0 0 0 0 0 -(02 1 0 0 0 0 0 -(02 0 0 0 0 0 0 -( 0 0
+0 0 0 0 -w', 1 0 0 0 0 0 -.
+The noise distribution matrix G. is:
+
+(3-24)
+
+3-12
+
+(0 1 - (02)2
+(CO+,- 09,)
+
+((01 - 02)
+
+(3-25)
+
+(CO - (02)2 ((I - (02)
+
+0(o - 2)
+
+The equivalent discrete-time model for Equation (3-22) is of the form:
+
+x.(ti14 ) = (4)(t,-.I)1X.(t1) + Wd.(ti)
+
+(3-26)
+
+The augmented six-state state transition matrix derived from the time-invariant plant matrix of
+
+Equation (3-24) is [31]:
+
+where
+
+ca 0 0 0 0 0
+
+0 4.22 aD.23 0
+
+0
+
+0
+
+(A)
+
+0 0 (P.33 0 0 0
+
+0 0 0 (P.44 0 0
+
+0 0 0 0 (P.55 (Pas6
+
+0 0 0 0 0 (.66
+
+D.11 =
+).a22=
+(D.2.1 =
+
+4),44 = exp(-(o0,A) (D.55 = exp(-wAt) (D,116 = At exp(-co2At)
+
+(3-27)
+
+3-13
+
+4D.33 = cD66 = exp(-co 2At) At = sample time interval, ti,, - t,
+
+The 6-dimensional, zero-mean, discrete-time, white, Gaussian noise w04(ti) has statistics defined as:
+
+E{wdd(t=)} 0
+
+141
+
+E(w ad(tO)WL(tO)} = Qod =
+
+(t.,-t)G.Q.G
+
+,(t.T -r)d
+
+(3-28)
+
+The individual components of Q,• are not included here due to their length and complexity; however the reader may refer to the software for a full description [30].
+
+For the approximated two-state atmospheric jitter model, only a single-pole shaping filter is used in each direction to produce the approximated PSD. The state space equations are truncated from six to two states with only the first the break frequency, o,, ,sed in each direction. The plant matrix in Equation (3-24) becomes a 2 x 2 with -(o, as the diagonal terms and Equation (3-25) also becomes 2 x 2 with K=w on the diagonal.
+
+3.2.3 Bending/VibrationModel. The mechanical bending states were added to the truth model to account for the vibrational effects in the FUR data that occur when the sensor is mounted on a moving, non-rigid optical platform [17]. Based on tests at the AFWL (now Phillips Laboratory), it was concluded in previous research [17] that bending effects in both the x.. and y•. directions can be represented by a second order shaping filter, driven by white Gaussian noise. The Laplace domain transfer function for the bending model is:
+
+7x(s) "W(b(S
+
+Kbwnh S2 + 2 ýbw. s + (1).b
+
+(3-29)
+
+3-14
+
+where
+x. = FLR plane positional offset (xFuR direction) due to mechanical bending disturbance
+Wb = zero-mean, unit strength, white Gaussian noise Kb = gain adjustment to obtain desired rms bending output,
+(Kb2 = 5 x 103 rad4/sec4) = damping coefficient, equal to 0.15 (o,, = undamped natural frequency for bending, (( = n rad/sec)
+
+The FLIR plane positional offset in the ym direction, Yb, is identically modeled with the
+
+shaping filter defined in Equation (3-29). The two shaping filters are assumed to be independent of each other and can thus be augmented to form a four-state model. The linear stochastic
+
+differential equation that describes the bending/vibration is given by:
+
+1,(t) = Fyvb(t) + Ghwb()
+
+(3-30)
+
+where
+
+Fb = 4 x 4 time-invariant bending plant matrix xb(t) = 4-dimensional bending state vector
+Gb = 4 x 2 noise distribution matrix wb(t) = 2-dimensional, white Gaussian noise process with unit strength
+components that are independent of each other:
+
+E{wb(t)} = 0
+
+E[wb(t)bW(t +l)) = g
+
+1 0
+
+(3-31)
+
+The bending/vibration plant matrix is defined as:
+
+3-15
+
+0
+
+1
+
+0
+
+0
+
+2
+
+Fb I).b -ýbwnb
+
+0
+
+0
+
+0
+
+0
+
+0
+
+1
+
+0
+
+0
+
+-(J)2nb -2•,0•n,
+
+(3-32)
+
+The noise distribution matrix Gb is:
+
+0 0
+
+t,0bkP 00
+[0 Onbkp
+
+(3-33)
+
+(Note that kP is the pixel proportionality constant.) The equivalent discrete-time model for
+
+Equation (3-30) is of the form:
+
+XbQ,+I)
+
+@(/i-l' ,)xQb(t) + Wbd(td)
+
+(3-34)
+
+where
+
+ObJ (D1I 0 0
+
+@,A)=0
+
+0b21 0b2c2 ~S0 ',J0Jb34 0 0 4)b33'
+
+(3-35)
+
+L 0 0
+
+b4 (b44
+
+and
+
+DbI I =
+,bl2 = (1b2I =
+Db22 =
+At =
+
+(b33 = exp(-o,4)[cos((ob&) + (ab/0L,) sin(wo )] Pb34 = exp(-cob4)[(I/ab) sin(w6 At)]
+(Ibj= eXp(_CyAO[_1 _(Gbj(Ob) 2 sin(wkb)]
+4)b = exp(-ot)[-cos(o(/0W) - (ab/0o) sin(oab)] sample time interval, ti+,-t,
+
+yb = real part of the root of the characteristic equation in Equation (3-29), (oh = 0.47124 second-)
+
+3-16
+
+COb = imaginary part of the root of the characteristic equation in Equation (3-29), (cob = 3.10605 radians/second)
+
+The 4-dimensional, discrete-time, white Gaussian noise process vector Wdb(t) has mean and
+
+covariance statistics:
+
+fw d(t)l = 0
+,,. EfwbdCtd)wrd~t)} = Q•d = f" b~ti, -x)GbobGrDtrtI-,) dc
+
+(3-36)
+
+3.2.4 Plume PogoModel. To account for the oscillatory nature of a typical missile plume in the boost phase, a plume pogo model was developed [40]. A second-order Gauss-Markov model was generated using physical insight, and visual observatioa of the pogo phenomenon. The model allows for the study of the amplitude and frequency characteristics of the oscillatory nature of the plume, and of the effect upon tracking a missile using a Kalman filter.
+
+The transfer function of the plume pogo model is described in the Laplace domain as:
+
+xP(s)
+
+K;__t__ _ _
+
+w2s) s 2++ C
+
+,.p
+
+(4-37)
+
+where
+xP = plume pogo shaping filter output along the direction of the velocity vector wp = zero-mean, unit strength, white Gaussian noise •p = assumed damping coefficient, (C = 0.05)
+a,• nominal undamped natural frequency for pogo; assumed range is 0.1 - 10 Hertz, with a nominal value of 1.0 Hertz
+KP= gain adjustment to obtain desired rms pogo amplitude determined by [40]:
+
+3-17
+
+KP - 2rjý
+
+(3-38)
+
+where ap = desired rms pogo along ttie velocity vector
+
+The linear stochastic differential equation that describes the plume pogo is given in state
+
+space form as:
+
+•t(t0) = L2.(
+
+[ t) + 2 w/t)
+
+(3-39)
+
+where
+
+x/t) = w/t) =
+
+2-dimensional pogo state vector composed of pogo position and velocity states
+1-dimensional zero-mean, white Gaussian noise with statistics:
+
+E{w,,t)} = 0 4ý(t))(3 E{w,(t)w,(t+'r)1= Qp b(t-'); QP = 1 The equivalent discrete-time model for Equation (3-39) is of the form:
+Xý(t.•) = O(t.f.t)xp(t,) + WPdQ)
+
+(4~ -40)
+(3-41)
+
+L41(Z)')1 xp(ti.1) = I"J_(At)
+2
+
+1 .I2((tAt) + WPd
+(,,22(Atf)
+
+(3-42)
+
+where
+
+3-18
+
+4)1t(At)
+
+C._e_xIp(-C,,'o.,At)sin •.-Ff , + arctan
+
+• 12(At) =,, 0- 1 -t2,exp(-CPW"At)sin ko w l )1
+
+(3-43)
+
+F-T, o = --%-- exp(- Po.,A t)sin (,)•V _C &t)
+
+OlP22(A)
+
+1- exp(-CPw,,PAt~sin we,,, -CP2At + arctan{
+
++~n
+
+The 2-dimensional, discrete time, white Gaussian noise piocess w1jt 1) has mean and covariance
+
+statistics:
+
+EfWpd(t) =-0
+
+fGPPG;,T(t EfwPd(ti)W_(t,)
+
+o Q
+
+i,.,
+
+-t)d
+
+(3-44)
+
+The individual components of Q• are not included here due to their length and cormplexity. The interested reader is referred to the software [30J for a full description.
+The 2-dimensional pogo state vector defines the position of the plume image intensity centroid relative to the equilibrium point of oscillation, and its velocity component due to the pogo phenomenon along the longitud~ial axis of the missile. For the simulation, it is assumed that the velocity vector lies coincident with the longitudinal axis of the hardbody. As shown in Figure 1.6, the plume oscillates about an equilibrium point also located on the longitudinal axis. This equilibrium point is defined by the initial positions of the two intensity functions in the target coordinate frame (to be discussed in Section 3.3.1), and remains at a constant distance from thL hardbody center-of-mass throughout the simulation (the spatial relationship of the intensity
+3-19
+
+functions can be seen in Figure 3.3 in Section 3.3.1). The crescent-shaped plume represents one of many equal-intensity contour lines of the actual plume. The angle of attack and sideslip angle of the missile are also assumed negligible, and have zero values for the :imulation [40].
+3.3 Measurement Models
+A major factor in formulating an authentic simulation is creating realistic measurements for the Kalman filter state estimate updates. The measurements generated in a simulation are based on prior 1,nowledge and/or physical insight into the characteristics of the sensor devices. This knowledge not only includes what the measurement properties themselves should be for the chosen scenario (i.e. dependent on the current state of the truth and filter model), but also any imperfections that would exist due to background noises in the environment and the measurement devices themselves. Two types of measurements are provided to the linear Kalman filter in this simulation.
+The first type are the "pseudo-measurements" generated by the enhanced correlation algorithm from the raw FLIR data [41]. These two measurements describe the position of the intensity centroid after undergoing changes due to dynamics, atmospheric jitter, bending/vibration and pogo oscillations. In the truth model, the image intensity function is corrupted with two types of measurement noise before bei:,,g processed by the enhanced correlation algorithm -- spatially correlated noise from the target background, and spatially uncorrelated noise to simulate internal FLIR sensor noises.
+The second type of measurement fed to the filter is from the low energy laser (LEL). This measurement is obtained by scanning the LEL relative to the plume centroid and recording
+3-20
+
+any backscatter that may (or may not) result from intercepting the hardbody. Since the Kalman filter may utilize the magnitude of speckle return, the Doppler frt~qliency spectra ttributes, or both, the generated LEL measurement must emulate ali those properties. For this research, only the Doppler measurement model was used. The objective in this simulation was rot to recreate the physical processes of the laser speckle (or Doppler) return itself, but to imitate and provide the expected quality of measurements based on those processes, the chosen scenario, and the various scan techniques employed. Noises to account for imperfections and device limitations are also modeled in the LEL measurements.
+The following subsections describe how the measurements were generated for this simulation, A full description of the FUR model is included es well as how LEL reflections from the plume and hardbody are modeled. In addition, a brief review of the Doppler enect is included to assist in understanding the section on how Doppler measurements are modeled. As with the truth dynamics model, the measurement model was not revived from the last thesis, so the following descriptions were transcribed from Herrera's thesis [14] with modifications made to ensure the information is germane to this thesis.
+3.3.1 FUR Model. The FUR sensor model is composed of an 8 x 8 pixel array "tracking window" extracted from the total array of 300 x 500 pixels. The missile plume is projected onto the FUR focal plane, with its characteristic crescent-shaped intensity function formed as the difference of two bivariate Gaussian intensity functions, as shown in Figure 3.3. This model depends upon knowledge of several parameters: the size of the major and minor axes of the elliptical contours of each bivariate Gaussian function, and the orientation of the principal axes in the FLIR image plane (the. major axis of each ellipse points along the velocity vector in the
+3-21
+

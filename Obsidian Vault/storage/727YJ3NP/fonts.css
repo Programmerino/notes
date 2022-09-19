@@ -1,0 +1,238 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Solano Gothic', 'Helvetica', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fortune.com/static/media/solano_gothic.b84807e4.eot);
+  src: url(https://fortune.com/static/media/solano_gothic.b84807e4.eot?#iefix) format('embedded-opentype'),
+    url(https://fortune.com/static/media/solano_gothic.691abe8a.woff) format('woff'),
+    url(https://fortune.com/static/media/solano_gothic.a27a8c8a.woff2) format('woff2'),
+    url(https://fortune.com/static/media/solano_gothic.97de6d83.ttf) format('truetype');
+}
+
+/* SAOL TEXT */
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: normal;
+  src: url(https://fortune.com/static/media/SaolText-Regular.b8b425b0.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: normal;
+  src: url(https://fortune.com/static/media/SaolText-Bold.c36bd7c6.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fortune.com/static/media/SaolText-Light.c66e13db.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fortune.com/static/media/SaolText-Medium.0756c7fb.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fortune.com/static/media/SaolText-Semibold.47ca58d3.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: italic;
+  src: url(https://fortune.com/static/media/SaolText-BoldItalic.98d8ab5d.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: italic;
+  src: url(https://fortune.com/static/media/SaolText-LightItalic.333ce270.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: italic;
+  font-weight: 500;
+  src: url(https://fortune.com/static/media/SaolText-MediumItalic.6bbb810b.woff2) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text';
+  font-style: italic;
+  font-weight: 600;
+  src: url(https://fortune.com/static/media/SaolText-SemiboldItalic.6a991c2b.woff2) format('woff');
+}
+
+/* SAOL TEXT BOOK */
+
+@font-face {
+  font-family: 'Saol Text Book';
+  font-style: normal;
+  src: url(https://fortune.com/static/media/SaolText-Book.13800493.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text Book';
+  font-style: italic;
+  src: url(https://fortune.com/static/media/SaolText-BookItalic.03b047e0.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text Regular';
+  font-style: italic;
+  src: url(https://fortune.com/static/media/SaolText-RegularItalic.bea1f7ff.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Saol Text Monospaced';
+  font-style: normal;
+  font-weight: 800;
+  src: url(https://fortune.com/static/media/SaolText-Monospaced.9236f0bc.woff) format('woff');
+}
+
+/* GRAPHIK */
+
+@font-face {
+  font-family: 'Graphik';
+  src: url(https://fortune.com/static/media/Graphik-Regular-Web.02f085a8.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 200;
+  src: url(https://fortune.com/static/media/Graphik-Thin-Web.3a9b6e1e.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 400;
+  src: url(https://fortune.com/static/media/Graphik-Regular-Web.02f085a8.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 600;
+  src: url(https://fortune.com/static/media/Graphik-Semibold-Web.66ab1f7c.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 700;
+  src: url(https://fortune.com/static/media/Graphik-Bold-Web.f3e9acfc.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 500;
+  src: url(https://fortune.com/static/media/Graphik-Medium-Web.22c6144b.woff2) format('woff2');
+}
+
+/* GRAPHIK COMPACT */
+
+@font-face {
+  font-family: 'Graphik Compact';
+  font-weight: 500;
+  src: url(https://fortune.com/static/media/GraphikCompact-Medium-Web.8745f21d.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Compact';
+  font-weight: 700;
+  src: url(https://fortune.com/static/media/GraphikCompact-Semibold-Web.9a48cc55.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Compact';
+  src: url(https://fortune.com/static/media/GraphikCompact-Regular-Web.60fed58c.woff2) format('woff2');
+}
+
+/* GRAPHIK CONDENSED */
+
+@font-face {
+  font-family: 'Graphik Condensed';
+  src: url(https://fortune.com/static/media/GraphikCondensed-Semibold-Web.bc37e5c0.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Condensed';
+  font-weight: 200;
+  src: url(https://fortune.com/static/media/GraphikCondensed-Semibold-Web.bc37e5c0.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Condensed';
+  font-weight: 300;
+  src: url(https://fortune.com/static/media/GraphikCondensed-Light-Web.39f77272.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Condensed';
+  font-weight: 400;
+  src: url(https://fortune.com/static/media/GraphikCondensed-Regular-Web.cd4db59e.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Condensed';
+  font-weight: 500;
+  src: url(https://fortune.com/static/media/GraphikCondensed-Medium-Web.d5c0cd34.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Condensed';
+  font-weight: 600;
+  src: url(https://fortune.com/static/media/GraphikCondensed-Semibold-Web.bc37e5c0.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik Condensed';
+  font-weight: 700;
+  src: url(https://fortune.com/static/media/GraphikCondensed-Bold-Web.40ccab3e.woff2) format('woff2');
+}
+
+/* BLOKK */
+
+@font-face {
+  font-family: 'BLOKK';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fortune.com/static/media/BLOKKNeue-Regular.77d2d9e3.woff) format('woff');
+}
+
+/* MILLER */
+
+@font-face {
+  font-family: 'Miller';
+  font-weight: 400;
+  src: url(https://fortune.com/static/media/MillerText-Roman.b5bcb551.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Miller';
+  font-style: bold;
+  font-weight: 700;
+  src: url(https://fortune.com/static/media/MillerText-Bold.5aad97a5.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Miller';
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://fortune.com/static/media/MillerText-BoldItalic.188e7605.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Miller';
+  font-style: italic;
+  src: url(https://fortune.com/static/media/MillerText-Italic.6881b2e1.woff) format('woff');
+}
+
+
+/*# sourceMappingURL=https://fortune.com/static/js/fonts.5dae4145.map*/

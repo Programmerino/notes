@@ -1,0 +1,112 @@
+function openView(req, f, num, page, perPage, highlight, edition, granuleId)
+{
+    var prefs = 'width=789,height=643,left=430,top=23,resizable=1,status=no';
+    try  {
+      
+      // Load window's size/position preferences.
+      var winTop = document.getElementById("winTop").value;
+      var left = document.getElementById("left").value;
+      var width = document.getElementById("width").value;
+      var height = document.getElementById("height").value;
+      if (!(winTop=="0" && left=="0" && width=="0" && height=="0")) {
+        var prefs = "top=" + winTop +
+                    ",left=" + left +
+                    ",width=" + width +
+                    ",height=" + height +
+                    ",resizable=1,status=no";
+      }
+    } catch(e) {}
+    var popup = window.open('view.xhtml','',prefs);
+    if (!popup) return false;
+    var html = "";
+    var number = num + page * perPage;
+    html += "<html><head></head><body><form id='formid' method='get' action='view.xhtml'>";
+    html += "<input type='hidden' name='req' value='" + req + "'/>";
+    html += "<input type='hidden' name='f' value='" + f + "'/>";
+    html += "<input type='hidden' name='fq' value='true'/>";
+    html += "<input type='hidden' name='num' value='" + number + "'/>";
+    html += "<input type='hidden' name='hl' value='" + highlight + "'/>";
+    html += "<input type='hidden' name='edition' value='" + edition + "'/>";
+    html += "<input type='hidden' name='granuleId' value='" + granuleId + "'/>";
+    html += "</form><script type='text/javascript'>";
+    html += "document.getElementById(\"formid\").submit()";
+    html += "</script></body></html>";
+    popup.document.write(html);
+    popup.focus();
+    return popup;
+}
+
+function openPrint(s, d, sort) {
+    var w = window.open('print.xhtml?s=' + s + '&d=' + d + '&sort=' + sort,'','width=800,height=650,left=430,top=23,scrollbars=yes');
+    w.focus();
+    return w;
+}
+
+
+
+
+//Open pending updates window
+function openPendingUpdates(title, section, appendix, lawsInEffectDate, lawsInEffectException) {
+  // Belongs this title to an Appendix?
+  if (arguments.length==5) {
+    if (appendix=="appendix")
+      title+="a";
+    openUpdates(title, section, lawsInEffectDate, lawsInEffectException);
+  } else {
+    // When 3 arguments the real value of 'lawsInEffectData' comes in 'appendix'
+    //alert(appendix+"--"+lawsInEffectDate);
+    openUpdates(title, section, appendix, lawsInEffectDate);    
+  } 
+}
+
+
+function openUpdates(title, section, lawsInEffectDate, lawsInEffectException) {
+    var w = window.open('updates.xhtml?title=' + title + '&section=' + section+ "&lawsInEffectDate=" + lawsInEffectDate  + "&lawsInEffectException=" + lawsInEffectException, '','width=480,height=280,left=430,top=300,scrollbars=yes');
+    w.focus();
+    return w;
+}
+
+// Called from view document when a edition is selected from the dropdown.
+function getEditionById(obj) {
+  try {
+    var select = document.getElementById(obj);          
+    
+    document.getElementById(select.form.id +  ":searchEdition").value = select.options[select.selectedIndex].value;
+    document.getElementById(select.form.id +  ":lnkVersion").click();
+  }
+  catch (e) {}
+}
+
+// View current document in a previous version.
+function getPrevious(obj) {
+  try {
+    var select = document.getElementById(obj.form.id +  ":versionsSel");
+    var index = select.selectedIndex;
+    
+    if (index==(select.options.length-1)) return false;
+    
+    document.getElementById(select.form.id +  ":searchEdition").value = select.options[index+1].value;
+    document.getElementById(select.form.id +  ":lnkVersion").click();
+
+  } catch (e) {
+    return false;
+  }
+  return true;
+}
+
+// View current document in a newer version.
+function getNext(obj) {
+  try {
+    var select = document.getElementById(obj.form.id +  ":versionsSel");
+    var index = select.selectedIndex;
+    
+    if (index==0) return false;
+    
+    document.getElementById(select.form.id +  ":searchEdition").value = select.options[index-1].value;
+    document.getElementById(select.form.id +  ":lnkVersion").click();
+
+  } catch (e) {
+    return false;
+  }
+  return true;
+}

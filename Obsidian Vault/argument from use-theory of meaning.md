@@ -1,0 +1,4 @@
+An argument from use-theory of meaning contends that a word should exclusively be used in the context of how it is regularly used by competent users. It is a go-to method for countering absurd definitions of words which often confuse their opponents into disagreeing even though they would likely agree if language was used properly.
+
+### Misuse
+While it is valuable, it should be noted that many debates aim to dissect the essence of a word on a philosophical level rather than argue if the word should be used in that manner. For example, in a debate of whether or not a brain is a computer, this argument is probably shit since it is posing a question of what makes a brain distinguished from a computer if anything, and making this argument is likely missing the point. It's use is valuable when it is being used in a context which makes this philosophical underpinning unclear (e.g. [[The Nonzero Degrees of Racism Argument]])

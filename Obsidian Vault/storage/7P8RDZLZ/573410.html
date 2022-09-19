@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+<html class="no-js wf-ffmetaserifwebpro-n7-active wf-ffmetaserifwebpro-n5-active wf-ffmetaserifwebpro-n6-active wf-ffmetaserifwebpro-n3-active wf-active" dir="ltr" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge"><script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_rendering_2020030501.js"></script><script async="" src="obtp.js" type="text/javascript"></script><script type="text/javascript" async="" src="insight.js"></script><script src="1217855981616946.js" async=""></script><script src="identity.js" async=""></script><script async="" src="fbevents.js"></script><script id="twitter-wjs" src="widgets.js"></script><script type="text/javascript" async="" src="bat.js"></script><script type="text/javascript" async="" src="js"></script><script type="text/javascript" async="" src="recaptcha__en.js"></script><script type="text/javascript" async="" src="mixpanel-2.js"></script><script async="" src="analytics.js"></script><script type="text/javascript" async="" src="lio.js"></script><script src="kgg2svk.js" async=""></script><script async="" src="gtm.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"9c8be68c12",applicationID:"1793432"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"9c8be68c12","agent":"","transactionName":"ZVJSZRFXWUVWABJbX1wYdkQNVUNfWA1JXFVFRB5HClNARQ0NA0VDbVNVRQJfWw==","applicationID":"1793432","errorBeacon":"bam.nr-data.net","applicationTime":547}</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        
+        
+
+        
+
+        
+        
+        
+        
+            <title>US manufacturing hit by coronavirus but maintains growth | Supply Chain Dive</title>
+        
+
+        
+            <meta name="description" content="
+                    Supply chain and logistics news">
+        
+
+        
+            <meta name="sailthru.tags" content="supplychain,type-newspost,supplychain-operations,supplychain-procurement,supplychain-risk,supplychain-tag-coronavirus,supplychain-tag-demand-planning,supplychain-tag-financial-risk,supplychain-tag-labor,supplychain-tag-sales-operations,supplychain-tag-supplier,supplychain-tag-trade">
+        
+
+        
+
+        
+            <meta property="fb:pages" content="609358982577446">
+        
+
+        
+            
+            <script>
+                window.dive_location = "NonEU";
+                window.dive_limit_data_processing = false;
+                
+                
+            </script>
+        
+
+        
+
+
+        <!-- ====== FAVICONS ======= -->
+        
+            <!-- regular favicons -->
+            <link rel="shortcut icon" type="image/png" href="https://www.supplychaindive.com/static/images/favicons/favicon.ico?550216110918">
+            <link rel="shortcut icon" type="image/png" sizes="16x16" href="https://www.supplychaindive.com/static/images/favicons/favicon-16.png?550216110918">
+            <link rel="shortcut icon" type="image/png" sizes="32x32" href="https://www.supplychaindive.com/static/images/favicons/favicon-32.png?550216110918">
+            <link rel="shortcut icon" type="image/png" sizes="96x96" href="https://www.supplychaindive.com/static/images/favicons/favicon-96.png?550216110918">
+            <!-- apple touch favicon icons -->
+            <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-57.png?550216110918">
+            <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-60.png?550216110918">
+            <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-72.png?550216110918">
+            <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-76.png?550216110918">
+            <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-114.png?550216110918">
+            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-144.png?550216110918">
+            <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-152.png?550216110918">
+            <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://www.supplychaindive.com/static/images/favicons/apple-touch-icon-180.png?550216110918">
+            <!-- ms tile favicon icons -->
+            <meta name="msapplication-TileColor" content="#ffffff">
+            <meta name="theme-color" content="#ffffff">
+            <meta name="msapplication-TileImage" content="/static/images/favicons/ms-tile-144.png?550216110918">
+        
+
+        
+            <link rel="alternate" type="application/rss+xml" title="Latest News Feed" href="https://www.supplychaindive.com/feeds/news/">
+        
+        
+            <link rel="canonical" href="https://www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/">
+
+            
+            
+
+        
+        
+    
+    <meta name="title" content="US manufacturing hit by coronavirus but maintains growth">
+    <meta name="medium" content="news">
+    <meta name="date" content="2020-03-03">
+
+
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content="Supply Chain Dive">
+    
+        <meta name="twitter:site" content="@SupplyChainDive">
+    
+
+    
+    <meta property="og:title" name="og:title" content="US manufacturing hit by coronavirus but maintains growth">
+    <meta property="og:site_name" name="og:site_name" content="Supply Chain Dive">
+    <meta property="og:type" name="og:type" content="article">
+    <meta name="article_date_original" content="Tuesday, March 03, 2020, 03:00 PM">
+    <meta property="og:url" name="og:url" content="https://www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/">
+    
+        
+        
+        
+        
+        <meta property="og:image" name="og:image" content="https://www.supplychaindive.com/user_media/cache/7b/4b/7b4b7ea38f5e79a55f47103ba82c2789.jpg">
+        
+    
+    
+        <meta property="og:description" name="og:description" content="Although the purchasing managers index found the manufacturing sector just within growth territory, coronavirus-related complications are causing supply delays and longer lead times.">
+    
+
+    
+    
+    <meta name="sailthru.date" content="2020-03-03T15:00:00">
+    <meta name="sailthru.expire_date" content="2030-02-19T15:00:00">
+    
+      <meta name="sailthru.author" content="Morgan Forde">
+    
+    
+        
+            
+                <meta name="sailthru.image.full" content="https://www.supplychaindive.com/user_media/cache/2d/e0/2de03171b0e3d72ff4332d4648392d40.jpg"> <!-- 770x364 -->
+            
+        
+        
+            
+                <meta name="sailthru.image.thumb" content="https://www.supplychaindive.com/user_media/cache/87/f5/87f509ebbc72c36d3d93906c100e3286.jpg"> <!-- 106x50 -->
+            
+        
+    
+    
+    
+    
+        <meta name="sailthru.description" content="Although the purchasing managers index found the manufacturing sector just within growth territory, coronavirus-related complications are causing supply delays and longer lead times.">
+    
+
+    
+    
+
+
+        
+
+        
+        
+        <link rel="stylesheet" href="dive_app.css">
+        <link rel="stylesheet" media="print" href="print.css">
+
+        
+        
+
+
+<script src="loglevel.js"></script>
+<script>
+window.diveLog = log.noConflict();
+diveLog.setDefaultLevel('warn');
+</script>
+
+        
+<script src="bugsnag.js"></script>
+<script>
+    var bugsnagUserId = '';
+    var bugsnagUserName = '';
+    var bugsnagUserRoles = [];
+    window.bugsnagClient = bugsnag({
+        apiKey: 'b78c0f8dcaa1b7ff5fb5bdf5f2a110db',
+        releaseStage: 'production',
+        notifyReleaseStages: [ 'qa', 'production' ],
+        collectUserIp: false,
+        user: {
+    
+            id: bugsnagUserId,
+            name: bugsnagUserName,
+            roles: bugsnagUserRoles
+        }
+    });
+</script>
+
+
+        
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-T4473V9');</script>
+            <!-- End Google Tag Manager -->
+        
+
+        
+
+
+<!--[if lt IE 10]>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<![endif]-->
+<!--[if gte IE 10]><!-->
+  <script src="jquery_224.js"></script>
+    
+    
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'kgg2svk',
+          scriptTimeout: 6000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+    
+<!--<![endif]-->
+
+        <!--[if gte IE 10]><!-->
+            
+
+<script>
+    
+    // waitForTriggerHandler() is library for queuing up javascript to be stored and then executed when a trigger
+    // function is called. You can push() any number of functions which will be stored unless and until trigger()
+    // is called. Once trigger() is called any future functions that you push() in will be executed immediately.
+    // It is safe to call .trigger() multiple times. Any arguments passed to .trigger() will also be passed along
+    // to the associated function
+
+    function waitForTriggerHandler() {
+        var function_queue = [];
+        var trigger_arguments = [];
+        this._triggered = false;
+
+        this.push = function(fn) {
+            if (this._triggered) {
+                // just run it immediately if handler has already been triggered
+                fn.apply(null, trigger_arguments);
+            }
+            else {
+                // otherwise add to the queue to run later
+                function_queue.push(fn);
+            }
+        };
+
+        this.trigger = function() {
+            // any arguments passed to trigger(foo, bar, baz) will also be passed along to functions in the queue
+
+            // first convert any arguments to an array
+            trigger_arguments = Array.prototype.slice.call(arguments);
+            while (function_queue.length){
+                // for each function in the queue, pop it off and then execute it while passing in any
+                // args that may have been passed to trigger().
+                function_queue.pop().apply(null, trigger_arguments);
+                // The "null" above is for the value of "this".
+                // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply#Parameters
+            }
+            this._triggered = true;
+        }
+
+    }
+    
+    // set up waitToLoadAds handler
+    window.waitToLoadAds = new waitForTriggerHandler();
+    // We set up the triggers for this below, they depend on whether we're loading lytics on the page
+</script>
+
+
+
+    <script type="text/javascript">
+        // This token is here for test_lytics_snippet.py test: lytics-is-enabled
+        
+        window.googletag = window.googletag || {};
+        googletag.cmd = googletag.cmd || [];
+
+        // initialize callback (source: https://learn.lytics.com/product-docs/lytics-javascript-tag/receiving-data-from-lytics)
+        !function (l, a) { a.liosetup = a.liosetup || {}, a.liosetup.callback = a.liosetup.callback || [], a.liosetup.addEntityLoadedCallback = function (l, o) { if ("function" == typeof a.liosetup.callback) { var i = []; i.push(a.liosetup.callback), a.liosetup.callback = i } a.lio && a.lio.loaded ? l(a.lio.data) : o ? a.liosetup.callback.unshift(l) : a.liosetup.callback.push(l) } }(document, window);
+
+
+        // custom init + lytics default install tag from https://activate.getlytics.com/connect?aid=2751
+        // see https://learn.lytics.com/understanding/product-docs/lytics-javascript-tag/configuration#configuration-options
+        
+            var lyticsCid = '44fda7674f94228540d8fba6786f9770';
+            diveLog.warn('You are using the Lytics Prod account');
+        
+
+        var lytics_init_options = {
+            cid: lyticsCid,
+            url: "//c.lytics.io",
+            min: true,
+            loadid: true
+        };
+        window.jstag=function(){function t(t){return function(){return t.apply(this,arguments),this}}function n(){var n=["ready"].concat(c.call(arguments));return t(function(){n.push(c.call(arguments)),this._q.push(n)})}var i={_q:[],_c:{},ts:(new Date).getTime(),ver:"2.0.0"},c=Array.prototype.slice;return i.init=function(t){return i._c=t,t.synchronous||i.loadtagmgr(t),this},i.loadtagmgr=function(t){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=t.url+"/api/tag/"+t.cid+"/lio.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(n,i)},i.ready=n(),i.send=n("send"),i.mock=n("mock"),i.identify=n("identify"),i.pageView=n("pageView"),i.bind=t(function(t){i._q.push([t,c.call(arguments,1)])}),i.block=t(function(){i._c.blockload=!0}),i.unblock=t(function(){i._c.blockload=!1}),i}(),window.jstag.init(lytics_init_options);
+
+        
+        (function(){
+            var sailthru_cookie, sailthru_user_id;
+            function read_cookie(cookieName) {
+              var re = new RegExp('[; ]'+cookieName+'=([^\\s;]*)');
+              var sMatch = (' '+document.cookie).match(re);
+              if (cookieName && sMatch) return unescape(sMatch[1]);
+              return '';
+            }
+            sailthru_cookie = read_cookie('sailthru_hid');
+            if (sailthru_cookie.length > 56) {
+              sailthru_user_id = sailthru_cookie.slice(32,56);
+              jstag.send({ st_profile_id: sailthru_user_id });
+            }
+        })();
+
+        
+        
+        
+        
+        window.liosetup.addEntityLoadedCallback(waitToLoadAds.trigger);  // trigger ads when lytics loads
+        setTimeout(waitToLoadAds.trigger, 1000);  // also trigger lytics if it's taking too long
+
+        
+        
+        waitToLoadAds.push(function (lytics_data) {
+            // lytics_data won't be defined if lytics failed to load correctly. In that case
+            // we don't need to set any segments.
+            if (lytics_data && lytics_data.segments) {
+                googletag.cmd.push(function() {
+                    googletag.pubads().setTargeting("LyticsSegments", lytics_data.segments);
+                });
+            }
+        });
+
+    </script>
+
+
+
+            
+                
+
+<script type="text/javascript" src="mailcheck.js"></script>
+<script type="text/javascript" src="dive_mailcheck.js"></script>
+
+            
+        <!--<![endif]-->
+
+        
+        <script src="app.js"></script>
+
+        
+            <script type="text/javascript">
+                var divecounter_settings = {};
+                
+                    divecounter_settings.showSignupAd = true;
+                
+                
+            </script>
+        
+        <script type="text/javascript" src="divecounter.js"></script>
+
+        <script type="text/javascript">
+        // Special unbounce signup thing for google traffic. Test with ?test_unbounce in the URL
+        // Note: divecounter must already be loaded. Only enabled on pages that would normally have signup ads
+        // Note: showSignupAd is always off if prestitial is enabled!
+        if ((typeof divecounter !== "undefined") && ($(window).width() > 640)) {
+          var test_unbounce = (window.location.href.indexOf("?test_unbounce")>=0);
+          var force_unbounce = (window.location.href.indexOf("signupbounce=1")>=0) ||
+                                (window.location.href.indexOf("utm_campaign=Linked-HR")>=0) ||
+                                (window.location.href.indexOf("utm_source=outbrain")>=0);
+          if (test_unbounce ||
+            force_unbounce ||
+            (document.referrer.match(/^https?:\/\/(www\.google\.|news\.google\.|t\.co|twitter\.com|www\.facebook\.com)/i) &&
+              divecounter.getOption('showSignupAd') && divecounter.canShow(1,1)) ) {
+            // dyanmically load ouibounce.js only on pages where its needed
+            $.getScript("/static/js/ouibounce.min.js?550216110918", function(){
+                // Once ouibounce.js loads, call the script
+                // We're reusing divecounter's modal instead of OuiBounce's modal code (that's why we pass it 'false')
+                var _ouibounce = ouibounce(false, {
+                  aggressive: test_unbounce, // ignore cookie in test mode
+                  cookieName: '_viewedOuiBounce', // underscored cookies should be ignored by Varnish
+                  callback: function() {
+                    divecounter_open_ad('Unbounce');
+                  }
+                });
+            });
+          } // end should show unbounce
+        } // end divecounter defined
+        </script>
+
+        
+            
+
+
+
+    <script type="text/javascript" src="urlCleaner.js"></script>
+    <script type="text/javascript">
+        // We always send to two properties: the individual site and the aggregate
+        // essentially the pageUrlSemaphore count is how many things need the UTM querystring, and those UTM params
+        // were getting dropped between the calls to GA orig.send and agg.send for google analytics because it was
+        // only incrementing by 1. We should make sure to increment this by the proper amount if we add other calls in the future
+        
+            window.urlCleaner.pageUrlSemaphore += 2;
+        
+
+        
+            window.urlCleaner.pageUrlSemaphore++;
+        
+    </script>
+
+    
+        <script type="text/javascript">
+            // Load analytics.js (universal analytics) first
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            // set all the variables that are per-session or per-visit
+            
+                ga(
+                    'create',
+                    'UA-19684343-49',
+                    'auto',
+                    {'name': 'orig'},
+                    {'siteSpeedSampleRate': 2}
+                );
+            
+
+            
+            
+                ga('orig.require', 'GTM-5BJLWMM');
+            
+
+            // Set the same variables for aggregate data profile
+            ga(
+                'create',
+                'UA-19684343-45',
+                'auto',
+                {'name': 'agg'},
+                {'siteSpeedSampleRate': 2}
+            );
+
+            //GA.js for tracking outbound links
+            function trackOutboundLink(link, category, action, redirect) {
+                try{
+                    ga('orig.send', 'event', category, action, {
+                        hitCallback: function() {
+                            window.urlCleaner.attemptCleanUrl();
+                        }
+                    });
+                } catch(err) {}
+
+                try{
+                    ga('agg.send', 'event', category, action, {
+                        hitCallback: function() {
+                            window.urlCleaner.attemptCleanUrl();
+                        }
+                    });
+                } catch(err) {}
+
+                //Timer to prevent redirect before processing data - not necessary if opening tab in new window
+                if(redirect){
+                    setTimeout(function(){
+                        document.location.href = link.href;
+                        }, 100);
+                }
+            }
+            $(document).ready(function() {
+              $(".outboundlink").click(function() {
+                trackOutboundLink(this, 'outboundlink', this.link, this.target != '_blank');
+              });
+            });
+            
+                
+                    ga("orig.set", {
+                        "dimension1": "Morgan Forde",
+                        "dimension2": "Mar 03, 2020",
+                        "dimension3": "Operations, Procurement, Risk/Resilience",
+                        "dimension4": "Coronavirus, Demand Planning, Financial Risk, Labor, Sales & Operations Planning, Supplier, Trade",
+                        "dimension5": "20200303",
+                        "dimension6": "Brief",
+                        
+                        
+                        "dimension11": "False",
+                        
+                    });
+                
+                
+                    ga("agg.set", {
+                        "dimension3": "Morgan Forde",
+                        "dimension7": "Mar 03, 2020",
+                        "dimension5": "Operations, Procurement, Risk/Resilience",
+                        "dimension6": "Coronavirus, Demand Planning, Financial Risk, Labor, Sales & Operations Planning, Supplier, Trade",
+                        "dimension4": "20200303",
+                        "dimension8": "Brief",
+                        
+                        
+                        "dimension11": "False",
+                        
+                    });
+                
+            
+
+            
+            
+                var diveSendPageviewEvent = true;
+            
+
+            
+            if (diveSendPageviewEvent === true) {
+                ga('orig.send', 'pageview', {
+                    'hitCallback': function() {
+                        window.urlCleaner.attemptCleanUrl();
+                    }
+                });
+                ga('agg.send', 'pageview', {
+                    'hitCallback': function() {
+                        window.urlCleaner.attemptCleanUrl();
+                    }
+                });
+
+                diveLog.info('Queued sending of the pageview event to Google Analytics.');
+            }
+            else{
+                diveLog.warn('Sending the Google Analytics pageview event is disabled for this page.');
+            }
+
+            // Actually track outbound links
+            // Not sure if this is being used?
+            var trackOutboundRegisterLink = function (url) {
+               ga('agg.send', 'event', 'event_register', url, 'Registered for event', {'hitCallback':
+                 function () {
+                     document.location = url;
+                 }
+               });
+            };
+            // Not sure if this is being used?
+            var trackOutboundWebsiteLink = function (url) {
+               // No need to manually change document.location; website opens in new tab
+               ga('agg.send', 'event', 'event_website', url, 'Visited event site');
+            };
+
+        </script>
+    
+
+    
+    
+        <!-- Start Mixpanel -->
+        <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+        mixpanel.init("08fd38d945f3577b09226c184d101277");</script>
+        <!-- end Mixpanel -->
+
+        <script type="text/javascript">
+            
+            mixpanel.set_config({track_links_timeout: 500, track_pageview: false});
+            var superprops = {
+                'site_name':'Supply Chain Dive',
+                'limited_data_processing': window.dive_limit_data_processing
+            };
+            
+              superprops.divesite_is_staff = false;
+            
+
+            
+              // read UID from sailthru cookie
+              function read_cookie(cookieName) {
+                var re = new RegExp('[; ]'+cookieName+'=([^\\s;]*)');
+                var sMatch = (' '+document.cookie).match(re);
+                if (cookieName && sMatch) return unescape(sMatch[1]);
+                return '';
+              }
+              var hid = read_cookie('sailthru_hid');
+              if (hid.length > 56) {
+                superprops.sailthru_hid = hid;
+                superprops.sailthru_user_id = hid.slice(32,56);
+              }
+              var divelink_cookie_id = parseInt(read_cookie('_divelink_cookie'));
+              if ( !isNaN(divelink_cookie_id) ) {
+                superprops.divelink_id = divelink_cookie_id;
+              }
+            
+
+            
+            mixpanel.register(superprops);
+            
+
+            function mixpanel_track_pageview(event_name, more_props){
+              var event_name = event_name ? event_name : "pageview"; //default event name
+              var pathparts = window.location.pathname.split('/');
+              var pageview_props = {
+                url: window.location.href.replace(/[\?\#].*$/,''), // no parameters or tracking codes
+                full_url: window.location.href, // everything in URL bar
+                page_title: document.title,
+                // ignore pathparts[0] since it's always empty string
+                // special case: root of site is "/" not "" for url_path_part_1
+                url_path_part_1: (pathparts.length > 1) && (pathparts[1] !== "") ? pathparts[1] : "/",
+                url_path_part_2: pathparts.length > 2 ? pathparts[2] : "",
+                url_path_part_3: pathparts.length > 3 ? pathparts[3] : ""
+              }
+              
+              
+                
+                try {
+                      var divecounter_data = divecounter.getData();
+                      pageview_props['page_view_count'] = divecounter_data.hits;
+                }
+                catch (err) {
+                    // swallow errors and just log them to console (if console exists)
+                    window.console && console.log && console.log( "Error getting divecounter hit count", err);
+                }
+              
+              for (var attrname in more_props) { if(more_props.hasOwnProperty(attrname)) pageview_props[attrname] = more_props[attrname]; }
+
+                mixpanel.track(event_name, pageview_props, function() {
+                    window.urlCleaner.attemptCleanUrl();
+                });
+            }
+
+            var pageview_props = {"item_force_to_weekender": false, "tags": ["supplychain-tag-coronavirus", "supplychain-tag-demand-planning", "supplychain-tag-financial-risk", "supplychain-tag-labor", "supplychain-tag-sales-operations", "supplychain-tag-supplier", "supplychain-tag-trade"], "topics": ["Operations", "operations", "Procurement", "procurement", "Risk/Resilience", "risk-resilience", "Risk"], "item_model_app": "news", "item_sponsored": false, "item_featured": false, "item_id": 573410, "item_pub_date": "2020-03-03T15:00:00", "item_authors": ["Morgan Forde"], "item_type": "newspost", "item_opinion": false, "item_model": "newspost", "item_touched": true};
+            mixpanel_track_pageview("pageview", pageview_props);
+
+            // mixpanel special link tracking, ported from actions.js
+            $(document).ready(function(){
+              if ($(".menu-bar a").length > 0) {
+                mixpanel.track_links(".menu-bar a","Topics Drawer Click",function(elem){
+                  return {'topic': $(elem).text()};
+                });
+              }
+              setTimeout(function(){
+                // need to wait a little while for Sailthru code to load
+                if ($(".sailthruRecommendation a").length > 0){
+                  mixpanel.track_links(".sailthruRecommendation a","Recommendation Click", function(elem){
+                    var $elem = $(elem);
+                    return {'label': $elem.text().trim(), 'href':$elem.attr('href'), 'from_page':window.location.href, 'style':'concierge'}
+                  });
+                }
+              },500);
+            })
+        </script>
+        
+    
+
+    
+
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            jQuery.browser = {};
+            (function () {
+                jQuery.browser.msie = false;
+                jQuery.browser.version = 0;
+                if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+                    jQuery.browser.msie = true;
+                    jQuery.browser.version = RegExp.$1;
+                }
+            })();
+        </script>
+        <!-- for modal signup form -->
+
+        <script type="text/javascript" src="jquery_002.js"></script>
+
+        
+
+        <style>
+
+            /* dynamic style overrides based on DB go here*/
+            
+        </style>
+
+        
+    
+
+    <meta name="sailthru.title" content="US manufacturing hit by coronavirus but maintains growth">
+    <meta name="sailthru.post_type" content="Brief">
+    
+    <meta name="lytics:topics" content="Sales &amp; Operations Planning, Operations, Risk, Labor, Financial Risk, Procurement, Coronavirus, Supplier, Trade, Demand Planning">
+    
+    
+
+    
+        <meta name="news_keywords" content="Operations,operations,Procurement,procurement,Risk/Resilience,risk-resilience,Risk">
+    
+
+    
+    
+
+    <style>
+        #colorbox img {
+            max-width: 100%;
+        }
+
+        #colorbox figure {
+            margin: 0;
+        }
+
+    </style>
+    <link href="colorbox.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+
+    
+    <script type="text/javascript">
+
+        /** Stolen from http://stackoverflow.com/questions/24816/escaping-html-strings-with-jquery **/
+        $(document).ready(function () {
+            //"Tweet this" pullquote sections
+
+            // This is used in the processing of 'tweet this' pull quotes
+            function escapeHtml(string) {
+                var entityMap = {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': '&quot;',
+                    "'": '&#39;',
+                    "/": '&#x2F;'
+                };
+                return String(string).replace(/[&<>"'\/]/g, function (s) {
+                    return entityMap[s];
+                });
+            }
+
+            // Process the twitter pullquote sections:
+            // * create the link
+            // * create the text ('tweet this quote') for the link
+            $(".pquote").each(function (index) {
+                var j_words;
+
+                if ($(this).data('twitter-text') != 'undefined') {
+                    j_words = $(this).children('.tweetwords').first();
+                } else {
+                    j_words = $(this).data('twitter-text');
+                }
+
+                var j_replace = $(this).children('.tweetquote').first();
+
+                var clean_text = escapeHtml(j_words.text());
+                var link_attributes = 'href="https://twitter.com/intent/tweet?text=' + clean_text + '%20https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/' + '" class="popup share_mixpanel_event button twitter" data-sharebutton="tweet_quote" data-shareusing="twitter"';
+                var img = '<img src="/static/img/social_icons/twitter-follow-icon.png?550216110918" alt="Share on Twitter"/>';
+
+                var link = '<a ' + link_attributes + '>Tweet this quote' + img + '</a>';
+                j_replace.html(link);
+            });
+        });
+
+
+
+        
+        
+    </script>
+    
+
+    
+
+    
+
+
+
+        
+        <!--[if lt IE 9]>
+
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+            <link rel="stylesheet"
+              href="/static/css/ie8-fixes.css?082716240919">
+        <![endif]-->
+
+        
+        
+            
+
+
+
+    <script type="text/javascript" src="prestitial.js"></script>
+
+
+
+    <script async="async" src="gpt.js"></script>
+
+
+
+
+
+<script>
+    
+    var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+    
+    eventer(messageEvent, function (e) {
+        var key = e.message ? "message" : "data";
+        var data = e[key];
+
+        var eventName = data.message || 'ignore';
+
+        if (eventName == 'adContentAvailable') {
+            var $ad_element = $('div').filter('[data-container-ad-unit-id="' + data.adUnit + '-' + window.dfp_visibility + '"]');
+            
+            $ad_element.html(data.content);
+            
+            $ad_element.siblings().hide()
+        }
+
+        
+    }, false);
+
+    
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    googletag.cmd.push(function () {
+        var desktopWidth = 1024;
+        
+        if (window.innerWidth >= desktopWidth) {
+            window.dfp_visibility = 'desktop';
+        }
+        else {
+            window.dfp_visibility = 'mobile';
+        }
+
+        var dfpDisplayConfiguration = {
+            "prestitialEnabled": true,
+            "leaderboardEnabled": true,
+            "sidebarAdsEnabled": true,
+            "visibility": window.dfp_visibility
+        };
+
+        diveLog.debug(dfpDisplayConfiguration);
+
+        if (window.dfp_visibility == 'desktop') {
+            
+            if (typeof prestitialAds == 'object' && prestitialAds.pageIsPrestitialEligible()) {
+                googletag.defineSlot('/21662595662/supplychaindive/supplychaindiveprestitial', [[500, 300], [640, 480]], 'paychekgoeshere').addService(googletag.pubads());
+            }
+            if (dfpDisplayConfiguration.leaderboardEnabled) {
+                googletag.defineSlot('/21662595662/supplychaindive/supplychaindiveleaderboard', [[970, 180], [728, 90], [970, 90]], 'dfp-leaderboard-desktop').addService(googletag.pubads());
+            }
+
+            if (dfpDisplayConfiguration.sidebarAdsEnabled) {
+                googletag.defineSlot('/21662595662/supplychaindive/supplychaindivehybrid1', [[300, 250], 'fluid', [160, 600]], 'dfp-hybrid1-desktop').addService(googletag.pubads());
+            }
+
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivehybrid2', [[300, 250], 'fluid'], 'dfp-hybrid2-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivehybrid3', [[300, 250], 'fluid'], 'dfp-hybrid3-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivehybrid4', [[300, 250], 'fluid'], 'dfp-hybrid4-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivethankyouhybrid1', ['fluid'], 'dfp-thankyouhybrid1-desktop').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivethankyouhybrid2', ['fluid'], 'dfp-thankyouhybrid2-desktop').addService(googletag.pubads());
+
+        }
+        else {
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivehybrid1', [[300, 250], 'fluid'], 'dfp-hybrid1-mobile').addService(googletag.pubads());
+            
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivehybrid3', [[300, 250], 'fluid'], 'dfp-hybrid3-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivehybrid4', [[300, 250], 'fluid'], 'dfp-hybrid4-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivethankyouhybrid1', ['fluid'], 'dfp-thankyouhybrid1-mobile').addService(googletag.pubads());
+            googletag.defineSlot('/21662595662/supplychaindive/supplychaindivethankyouhybrid2', ['fluid'], 'dfp-thankyouhybrid2-mobile').addService(googletag.pubads());
+        }
+
+        
+
+
+        
+        
+            googletag.pubads().setTargeting("topics", ["Operations","operations","Procurement","procurement","Risk/Resilience","risk-resilience","Risk"]);
+        
+        
+            googletag.pubads().setTargeting("tags", ["supplychain-tag-coronavirus","supplychain-tag-demand-planning","supplychain-tag-financial-risk","supplychain-tag-labor","supplychain-tag-sales-operations","supplychain-tag-supplier","supplychain-tag-trade"]);
+        
+
+        if ((typeof divecounter !== "undefined") && (divecounter.getData().is_subscriber)) {
+            googletag.pubads().setTargeting("is_subscriber", "yes");
+        }
+
+        
+        
+            googletag.pubads().setTargeting("articleID", "573410");
+            googletag.pubads().setTargeting("slug", "us manufacturing growth coronavirus");
+        
+
+        
+        
+
+        // Make sure we check that we have the things present in localStorage that we want to check before we add targeting on them.
+        // This is what sets targeting on trendline native ad units to make sure we only get ads associated with the
+        // content gate that a user filled out if they visited the page previously.
+        
+
+        googletag.pubads().setCentering(true);
+        googletag.pubads().collapseEmptyDivs(true);
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+
+        
+        <script src="api.js" async="" defer="defer"></script>
+        
+            <script type="application/javascript" src="pathfora.js"></script><style type="text/css">[data-pftrigger], [data-pfrecommend]{ display: none; }</style><link rel="stylesheet" type="text/css" href="pathfora.css">
+            <script src="job_graph_v2.js"></script><link rel="preload" href="integrator.js" as="script"><script type="text/javascript" src="integrator.js"></script><script src="pubads_impl_2020030501.js" async=""></script><script type="text/javascript" src="io.js"></script><style type="text/css">.tk-ff-meta-serif-web-pro{font-family:"ff-meta-serif-web-pro",serif;}</style><style type="text/css">@font-face{font-family:tk-ff-meta-serif-web-pro-n7;src:url(https://use.typekit.net/af/6da54c/00000000000000003b9b06f7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/6da54c/00000000000000003b9b06f7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/6da54c/00000000000000003b9b06f7/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:tk-ff-meta-serif-web-pro-n5;src:url(https://use.typekit.net/af/8e6183/00000000000000003b9b06f2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/8e6183/00000000000000003b9b06f2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/8e6183/00000000000000003b9b06f2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:tk-ff-meta-serif-web-pro-n6;src:url(https://use.typekit.net/af/c82052/00000000000000003b9b06f5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/c82052/00000000000000003b9b06f5/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/c82052/00000000000000003b9b06f5/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:tk-ff-meta-serif-web-pro-n3;src:url(https://use.typekit.net/af/d03d8b/00000000000000003b9b06f1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/d03d8b/00000000000000003b9b06f1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/d03d8b/00000000000000003b9b06f1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}</style>
+            <script type="application/javascript">
+            if (typeof dive_demographics_job_graph == 'undefined') {
+                // we couldn't get job_graph_v2.js. load the local fallback
+                var jobGraphFallback = $('<script>').attr('src','/static/job_graph/job_graph_v2.js?550216110918');
+                $('body').append(jobGraphFallback);
+            }
+            </script>
+         
+        <script src="dive-form-fields.js"></script><style type="text/css">@font-face{font-family:ff-meta-serif-web-pro;src:url(https://use.typekit.net/af/6da54c/00000000000000003b9b06f7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/6da54c/00000000000000003b9b06f7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/6da54c/00000000000000003b9b06f7/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:ff-meta-serif-web-pro;src:url(https://use.typekit.net/af/8e6183/00000000000000003b9b06f2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/8e6183/00000000000000003b9b06f2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/8e6183/00000000000000003b9b06f2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:ff-meta-serif-web-pro;src:url(https://use.typekit.net/af/c82052/00000000000000003b9b06f5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/c82052/00000000000000003b9b06f5/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/c82052/00000000000000003b9b06f5/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:ff-meta-serif-web-pro;src:url(https://use.typekit.net/af/d03d8b/00000000000000003b9b06f1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/d03d8b/00000000000000003b9b06f1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/d03d8b/00000000000000003b9b06f1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}</style>
+    <link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-37/html/container.html"></head>
+
+
+    
+
+    <body class="flush-top article-page news topic- operations procurement risk-resilience">
+
+    
+        
+
+        
+            <!-- Google Tag Manager (noscript) -->
+                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4473V9" height="0" width="0" style="display:none;visibility:hidden">
+                </iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        
+
+        
+            
+
+
+    
+        <style>
+            /* initial white overlay so google ads doesn't get mad */
+            .prestitial-init {
+                width: 100% !important;
+                height: 100% !important;
+                z-index: 600;
+                top: 0;
+                left: 0;
+                position: fixed;
+                background-color: #ffffff;
+            }
+
+            /* overlay that blocks out the content behind the prestitial */
+            .content-overlay {
+              width: 100% !important;
+              height: 100% !important;
+              z-index: 500;
+              top: 0;
+              left: 0;
+              position: fixed;
+              background-color: #434649;
+            }
+
+            .prestitial .paychek-page-wrapper .paychek-button {
+                color: #fff;
+                cursor: pointer;
+                font-size: 28px;
+                font-weight: bold;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            
+            .prestitial .paychek-page-wrapper .paychek {
+                text-align: center;
+            }
+
+            
+            .prestitial .paychek-page-wrapper .paychek .clickarea {
+                margin: 0 auto;
+            }
+
+            
+            .prestitial .paychek-page-wrapper {
+                margin-top: 1rem;
+            }
+
+            @media screen and (min-width: 64em) {
+                
+                .prestitial .paychek-page-wrapper {
+                    margin-top: 0;
+                    position: relative;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+
+                .prestitial .paychek-page-wrapper .paychek, .prestitial .paychek-page-wrapper .paychek-button {
+                    text-align: left;
+                    height: 480px;
+                }
+
+                .prestitial .paychek-page-wrapper .paychek-button div, .prestitial .paychek #paychekgoeshere {
+                    position: relative;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+
+                .prestitial .paychek-page-wrapper .paychek .clickarea {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (min-width: 72em) {
+                .prestitial .paychek-page-wrapper {
+                    font-size: 34px;
+                }
+            }
+        </style>
+
+        
+        <div id="prestitial-init" style="display: none;" class="prestitial-init"></div>
+        <div id="prestitial-outer" class="prestitial content-overlay" style="display:none;">
+            <section class="site-menu">
+                <div class="site-menu-inner">
+                    <img src="supplychain_white.svg" class="pub-logo">
+                </div>
+            </section>
+            <section class="paychek-page-wrapper row">
+                <div class="paychek-button large-4 large-push-8 columns">
+                    <div>
+                        CONTINUE TO SITE ➞
+                    </div>
+                </div>
+                <div class="paychek large-8 large-pull-4 columns">
+                    
+                    <div id="paychekgoeshere"></div>
+                    <script type="text/javascript">
+                        
+                        if (typeof prestitialAds !== 'undefined' && prestitialAds.pageIsPrestitialEligible()) {
+                          prestitialAds.initialize(7);
+                          
+                          prestitialAds.setPrestitialPossibleCookie();
+                          var prestitial_ad_is_loaded = false;
+                          var prestitial_ad_is_empty = false;
+
+                          googletag.cmd.push(function () {
+                            googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+                              
+                              if (event.slot.getAdUnitPath() == '/21662595662/supplychaindive/supplychaindiveprestitial') {
+                                if (event.isEmpty || prestitialAds.testingNoAd()) {
+                                  prestitial_ad_is_empty = true;
+                                  prestitialAds.closePrestitial();
+                                }
+                                else {
+                                  prestitial_ad_is_loaded = true;
+                                  $.modal.close();
+                                  $('div#prestitial-init').hide(); // hide the all white overlay
+                                  prestitialAds.setCookie(
+                                    "_prestitialViewed",
+                                    (new Date()).getTime(),
+                                    prestitialAds.daysBetweenPrestitial
+                                  );
+                                }
+                              }
+                            });
+                          });
+
+                          
+                          if (prestitialAds.testingNoAd()) {
+                            
+                          } else {
+                            
+                            
+                            
+                            waitToLoadAds.push(function() {
+                              
+                              googletag.cmd.push(function () {
+                                
+                                googletag.display('paychekgoeshere');
+                              });
+                            });
+                          }
+
+                          
+                          setTimeout(
+                            function () {
+                              if (!prestitial_ad_is_loaded && !prestitialAds.overrideTimeout()) {
+                                
+                                if (!prestitial_ad_is_empty) {
+                                  
+                                  // if the prestitial is already hidden, then don't hide it again.
+                                  if (!prestitialAds.prestitialAdIsClosed()) {
+                                    prestitialAds.closePrestitial();
+                                    prestitialAds.logClosePrestitialAdBy('failed');
+                                  }
+                                }
+                              } else if (!prestitialAds.overrideTimeout()) {
+                                
+                                setTimeout(
+                                  function () {
+                                    // if the prestitial is already hidden, then don't hide it again.
+                                    if (!prestitialAds.prestitialAdIsClosed()) {
+                                      prestitialAds.closePrestitial();
+                                      prestitialAds.logClosePrestitialAdBy('timeout');
+                                    }
+                                  },
+                                  prestitialAds.timeoutSeconds()
+                                );
+                              } else {
+                                
+                              }
+
+                            },
+                            
+                            2900
+                          );
+                        }
+                    </script>
+                </div>
+            </section>
+        </div>
+    
+
+
+        
+
+        
+        
+
+        <!--'Update your browser' message if IE < 11 -->
+        <!--[if lt IE 11]>
+        <div class="site-alert site-alert--loud">
+            <div class="row">
+                <div class="columns">
+                    <div class="site-alert__message site-alert__message--inverse">
+                        Industry Dive is supported on Chrome, Safari, Firefox and Internet Explorer 11+. If you have trouble viewing our site, please upgrade your browser</a>.
+                        <div class="site-alert__close">
+                            <img src="/static/img/close-white.svg?274214160519" alt="close">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <![endif]-->
+
+        
+            
+        
+
+        <!-- leaderboard -->
+        
+            
+            
+                
+<div class="hide-small show-large">
+
+    <div data-container-ad-unit-id="/21662595662/supplychaindive/supplychaindiveleaderboard-desktop"></div>
+    <div id="dfp-leaderboard-desktop">
+        <script>
+        waitToLoadAds.push(function() {
+	        googletag.cmd.push(function() {
+	            if (window.dfp_visibility == 'desktop') { googletag.display('dfp-leaderboard-desktop'); }
+	        })
+	    });
+        </script>
+    </div>
+</div>
+
+            
+        
+
+        <div class="page-container">
+            
+            
+            <header role="banner">
+                <nav id="top" class="site-menu">
+                    <div class="site-menu-inner">
+                        <!-- logo -->
+                        <div class="pub-logo-wrapper">
+                            <a href="https://www.supplychaindive.com/">
+                                <img class="pub-logo" src="supplychain_white.svg" alt="website logo">
+                            </a>
+                        </div>
+                        <!-- desktop menu, not visible on mobile/tablet -->
+                        <div class="menu-content-wrapper">
+                            <ul class="desktop-menu-main">
+                                
+                                  <li>
+                                      <a href="https://www.supplychaindive.com/deep-dive/">Deep Dive</a>
+                                  </li>
+                                
+                                
+                                    <li>
+                                        <a href="https://www.supplychaindive.com/opinion/">Opinion</a>
+                                    </li>
+                                
+                                
+                                    <li><a href="https://www.supplychaindive.com/data">Data</a></li>
+                                
+                                
+                                
+                                
+                                    <li>
+                                        <a href="https://www.supplychaindive.com/library/">Library</a>
+                                    </li>
+                                
+                                
+                                    <li>
+                                        <a href="https://www.supplychaindive.com/events/">Events</a>
+                                    </li>
+                                
+                                
+                                <li class="topics top-nav-dropdown-item js-top-nav-item-visible">
+                                    <a>
+                                        Topics
+                                        <span class="dropdown-toggle-arrow"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- mobile menu toggle icon, not visible on desktop -->
+                            <button class="mobile-menu-toggle">
+                                Menu
+                                <img src="menu.svg" alt="menu">
+                            </button>
+                            <!-- newsletter, courses and search, only shown on desktop -->
+                            <ul class="desktop-menu-sub list-no-bullets">
+                                
+                                <li>
+                                    <a href="https://www.supplychaindive.com/signup/">
+                                        <img src="email-icon-white.png">
+                                        
+                                            Sign Up
+                                        
+                                    </a>
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="javascript:void(0)" class="search-toggle">
+                                        <img src="search-glass-white.png">
+                                        
+                                            <span class="sub-link">Search</span>
+                                        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="menu-search js-search-hide" style="position: absolute;">
+                <div class="menu-search-inner-wrapper row"> 
+                    <form action="/search/" method="GET" data-ajax="false">
+                        <label for="search">
+                            <span class="screen-reader-text search">Search</span>
+                        </label>
+                        <input id="search" name="q" placeholder="search" data-role="none" type="search">
+                        <button type="submit" value="" data-role="none">
+                            <img src="input-search.svg" alt="search">
+                        </button>
+                        <span class="close">x</span>
+                    </form>
+                </div>
+            </div>
+            <nav class="topics menu-bar js-menu-bar-hide" style="position: absolute; left: 469px;">
+                <ul class="list-no-bullets">
+                    
+                        
+                        
+                            <li>
+                                <a class="" href="https://www.supplychaindive.com/topic/regulation/">Regulation</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class="" href="https://www.supplychaindive.com/topic/freight/">Freight</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class="" href="https://www.supplychaindive.com/topic/logistics/">Logistics</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class="" href="https://www.supplychaindive.com/topic/operations/">Operations</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class="" href="https://www.supplychaindive.com/topic/procurement/">Procurement</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class="" href="https://www.supplychaindive.com/topic/technology/">Technology</a>
+                            </li>
+                        
+                    
+                        
+                        
+                            <li>
+                                <a class="" href="https://www.supplychaindive.com/topic/risk-resilience/">Risk</a>
+                            </li>
+                        
+                    
+                </ul>
+            </nav>
+            
+            
+
+            
+            <div class="page-wrapper">
+
+                
+                <div class="search-overlay"></div>
+
+                <!-- logo for print -->
+                <div class="printed-branding">
+                    <span class="promoted-branded-copy">An article from</span>
+                    <img src="supplychaindive.jpg" alt="site logo">
+                </div>
+
+                <div class="page-inner-wrapper">
+
+                
+                
+                
+
+                
+
+                    <div class="row">
+                        <div class="medium-10 medium-centered large-12">
+                            <section id="main-content" class="main-content large-8 columns">
+
+                                
+
+                                
+                                    
+
+
+
+
+
+                                
+
+                                
+                                    
+                                    
+                                
+
+                                
+
+
+
+
+
+
+<article class="brief">
+
+        
+        <div class="article-title-wrapper">
+            
+
+
+
+
+    
+    
+    
+        
+        <span class="post-label post-label--loud">Brief</span>
+    
+
+
+            <h1 class="display-heading-04">
+                US manufacturing hit by coronavirus but maintains growth
+                
+            </h1>
+            
+
+        </div>
+        
+
+        
+        
+            
+            
+                
+                
+                    
+                        <figure class="inside_story">
+                            <div class="figure_content article-hero-img">
+                                <img itemprop="image" alt="" src="7b4b7ea38f5e79a55f47103ba82c2789.jpg">
+                                
+                                    
+                                        <figcaption class="inside_story_caption">
+                                            <div class="source_text"><a href="https://media.gm.com/media/us/en/gm/photos.detail.html/content/Pages/galleries/us/en/facilities/components-holdings/gr-rapids-operations.html" target="_blank">GM</a></div>
+                                        </figcaption>
+                                    
+                                
+                            </div>
+                        </figure>
+                
+            
+        
+
+        <div class="row">
+            
+            <div class="byline-large-2 columns">
+                <div class="article-byline">
+                    
+                    
+                        
+                        <div class="author">
+                            
+                            <h4 class="hide-small byline-show-large">Author</h4>
+                            
+                            <span class="byline-hide-large">By</span>
+
+                            
+                            
+                                
+                                    <div class="author-name">
+                                        
+                                        
+                                        
+                                        
+                                            <a rel="author" href="https://www.supplychaindive.com/editors/mforde/">Morgan Forde</a>
+                                        
+                                        
+
+                                        
+                                        
+                                            <a href="https://www.twitter.com/morgan_forde_" class="twitter hide-small byline-show-large">@morgan_forde_</a>
+                                        
+                                    </div>
+                                
+                            
+                        </div>
+                    
+                    <div class="date">
+                        
+                        <div class="published-info">
+                            <h4>Published</h4>
+                            March 3, 2020
+                        </div>
+                    </div>
+                    <div class="social-share">
+                        <h4 class="hide-small byline-show-large">Share it</h4>
+                        <ul class="rrssb-buttons clearfix">
+                            <li class="rrssb-linkedin">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/&amp;title=US%20manufacturing%20hit%20by%20coronavirus%20but%20maintains%20growth" class="popup share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="linkedin">
+                                    <span class="rrssb-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"></path></svg>
+                                    </span>
+                                    <span class="rrssb-text">post</span>
+                                </a>
+                            </li>
+                            <li class="rrssb-facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/" class="popup share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="facebook">
+                                    <span class="rrssb-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"></path></svg>
+                                    </span>
+                                  <span class="rrssb-text">share</span>
+                                </a>
+                            </li>
+                            <li class="rrssb-twitter">
+                                <a href="https://twitter.com/intent/tweet?text=US%20manufacturing%20hit%20by%20coronavirus%20but%20maintains%20growth%20https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/%20via%20@SupplyChainDive" class="popup share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="twitter">
+                                    <span class="rrssb-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62a15.093 15.093 0 0 1-8.86-2.32c2.702.18 5.375-.648 7.507-2.32a5.417 5.417 0 0 1-4.49-3.64c.802.13 1.62.077 2.4-.154a5.416 5.416 0 0 1-4.412-5.11 5.43 5.43 0 0 0 2.168.387A5.416 5.416 0 0 1 2.89 4.498a15.09 15.09 0 0 0 10.913 5.573 5.185 5.185 0 0 1 3.434-6.48 5.18 5.18 0 0 1 5.546 1.682 9.076 9.076 0 0 0 3.33-1.317 5.038 5.038 0 0 1-2.4 2.942 9.068 9.068 0 0 0 3.02-.85 5.05 5.05 0 0 1-2.48 2.71z"></path></svg>
+                                    </span>
+                                    <span class="rrssb-text">tweet</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="article-large-10 columns article-wrapper">
+                
+
+
+                <div class="print-wrapper"> 
+                    
+
+                    
+
+                    
+
+                    
+
+                    <div class=" article-body">
+                        
+
+<h3>Dive Brief:</h3>
+<ul>
+<li><span>The purchasing managers index (PMI) declined from 50.9 to 50.1
+ in February, keeping the manufacturing sector in growth territory (a 
+figure above 50 indicates growth and less than 50 shows 
+contraction),&nbsp;</span>according to a report from the <a href="https://www.instituteforsupplymanagement.org/ISMReport/MfgROB.cfm?navItemNumber=30455&amp;SSO=1" target="_blank">Institute for Supply Management</a>&nbsp;(ISM).<span>&nbsp;</span></li>
+<li>"Overall, sentiment this month is marginally positive regarding 
+near-term growth,"&nbsp;Timothy Fiore, chair of ISM's Manufacturing 
+Business Survey Committee, said in a statement.&nbsp;<span>However, the report showed new orders fell and backlogs increased amid coronavirus challenges.</span></li>
+<li>Some ISM survey respondents reported production delays, longer lead 
+times, lack of supplier visibility and difficulty sourcing parts as a 
+result of the outbreak.</li>
+</ul>
+
+<div class="hybrid-ad-wrapper show-small hide-large">
+<div class="hybrid-ad-inner-wrapper">
+<div class="show-small hide-large">
+<div data-container-ad-unit-id="/21662595662/supplychaindive/supplychaindivehybrid1-mobile"></div>
+<div id="dfp-hybrid1-mobile" style="display: none;">
+<script>
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'mobile' ) { googletag.display('dfp-hybrid1-mobile'); }
+                        });
+                    });
+                </script>
+<div id="google_ads_iframe_/21662595662/supplychaindive/supplychaindivehybrid1_0__container__" style="border: 0pt none; margin: auto; text-align: center; width: 300px; height: 250px;"></div></div>
+</div>
+</div>
+</div>
+<div class="hybrid-ad-wrapper hide-small show-large">
+<div class="hybrid-ad-inner-wrapper">
+<div class="hide-small show-large">
+<div data-container-ad-unit-id="/21662595662/supplychaindive/supplychaindivehybrid2-desktop"></div>
+<div id="dfp-hybrid2-desktop">
+<script>
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'desktop' ) { googletag.display('dfp-hybrid2-desktop'); }
+                        });
+                    });
+                </script>
+</div>
+</div>
+</div>
+</div>
+<h3>Dive Insight:</h3>
+<p>Across sectors,&nbsp;decreasing raw material prices were a bright 
+spot in ISM's report. Amid softening demand, prices fell for "steel, 
+scrap steel, aluminum, natural gas, corrugate, copper and all basic 
+manufacturing fundamentals,"&nbsp;according to Fiore.</p>
+<p>In China, however, manufacturing levels hit lows not seen since January 2005, posting <a href="https://www.supplychaindive.com/news/china-manufacturing-index-dips-below-recession-levels/573284/" target="_blank">a PMI of 35.7%</a>
+ for February. The coronavirus outbreak has suspended or slowed factory 
+operations and shipments of goods, sharply reversing the stability of 
+the previous months, in a trend analysts and business leaders estimate 
+could continue <a href="https://www.nytimes.com/2020/03/02/business/economy/global-economy-coronavirus.html" target="_blank">through the second quarter</a>.</p>
+<figure class="inside_story">
+<div class="figure_content">
+<div><img class="is_expandable" data-expandable-type="dive_expand_same" data-expandable-url="" data-imagemodel="-1" src="As_the_US_PMI_maintains_growth_China_posts_record_decline.svg"></div>
+</div>
+<figcaption class="inside_story_caption">
+<div class="caption_text" style="display: none;"></div>
+<div class="source_text">Morgan Forde / Supply Chain Dive, data from ISM and the National Bureau of Statistics of China.</div>
+<div class="clearfix">&nbsp;</div>
+</figcaption>
+</figure>
+<p>As a result, it is possible ISM's latest PMI isn't yet capturing the domino effects of China's manufacturing slowdown,&nbsp;<span>Andrew Hunter, senior U.S. economist at Capital Economics, told <a href="https://finance.yahoo.com/news/covid-19-s-economic-impact-data-lag-morning-brief-111039747.html" target="_blank">Yahoo Finance</a>.</span></p>
+<p>"With the virus continuing to spread around the world and a more 
+serious outbreak within the U.S. now looking increasingly likely, the 
+disruption is likely to worsen over the coming weeks," Hunter said.</p>
+<p>Some companies, such as Levi's, have already been pulling production 
+out of China due to trade war tariffs. Levi's CEO Chip Bergh recently 
+credited the move for <a href="https://www.supplychaindive.com/news/levis-ceo-reducing-china-operations-during-trade-war-mitigating-coronavir/573338/" target="_blank">mitigating the outbreak's impact</a>
+ on its supply chain in a panel discussion at the Retail Industry 
+Leaders Association conference.&nbsp;However, he said the company is 
+watching the outbreak's spread closely as the virus' spread to Europe 
+threatens another one of its production and supply bases.</p>
+<p>Apple, which maintains significant manufacturing operations and sourcing in China, has experienced <a href="https://www.supplychaindive.com/news/coronavirus-outbreak-leads-to-supply-shortages-for-apple/572444/" target="_blank">concerns over delayed product</a>&nbsp;for the year as the outbreak has shut down key factories in quarantined regions of the country.</p>
+<p>To hedge against further disruptions, supply chain managers should 
+map their supply chains and identify key or at-risk suppliers as soon as
+ possible, according to resarch from <a href="https://hbr.org/2020/02/prepare-your-supply-chain-for-coronavirus" target="_blank">Harvard Business Review</a>.
+ They can take present uncertainty as an opportunity to redesign their 
+supply chains, identifying secondary sourcing backups or new production 
+markets to build greater resiliency.</p>
+<p>Identifying alternatives throughout the supply chain is key as ocean carriers blank <a href="https://www.supplychaindive.com/news/blank-sailings-demand-drop-ocean-carriers/573366/" target="_blank">sailings in and out of China</a>&nbsp; and <a href="https://www.supplychaindive.com/news/coronavirus-airline-market-freight-cargo/572803/" target="_blank">flights are severely curtailed</a>,&nbsp;causing
+ concerns over the industry's ability to work through increasing 
+backlogs by the time local operations return to normal. Preparing for 
+continued slowdowns now, could save valuable time activating alternate 
+shipping plans once production lines begin moving, and when the next 
+disruption strikes in the future.</p>
+                    </div>
+
+                    
+                        
+                    
+
+                    
+                    
+                        <div class="reading-list">
+                            
+
+                            
+                                <h3>Recommended Reading:</h3>
+                            
+                            <ul class="list-no-bullets">
+                                
+                                    <li>
+                                        <span class="label label--soft">
+                                            <img src="favicons_003.png">
+                                            
+                                                <span>Supply Chain Dive</span>
+                                            
+                                        </span>
+                                        <a href="https://www.supplychaindive.com/news/coronavirus-supply-chain-risk-management/572670/">
+                                        Coronavirus: A lesson in supply chain risk management<img src="offsite_black.png" class="off-site-link" alt="offsite link"></a>
+                                    </li>
+                                
+                                    <li>
+                                        <span class="label label--soft">
+                                            <img src="favicons_002.png">
+                                            
+                                                <span>Supply Chain Dive</span>
+                                            
+                                        </span>
+                                        <a href="https://www.supplychaindive.com/news/a-break-from-trade-uncertainty-is-a-good-time-to-future-proof-your-supply-c/572399/">
+                                        A break from trade uncertainty is a good time to future-proof your supply chain<img src="offsite_black.png" class="off-site-link" alt="offsite link"></a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                    
+
+                    
+                    
+                        <div class="editor-box">
+                            
+                                <p>Follow
+                                    
+                                    <span rel="author">
+                                        Morgan Forde
+                                    </span>
+                                    on
+                                    
+                                    
+                                        <a href="https://www.twitter.com/morgan_forde_">
+                                            Twitter
+                                        </a>
+                                    
+                                </p>
+                            
+                        </div>
+                    
+
+                    
+                    
+
+                    <div class="post-article-wrapper">
+                        
+                        <div class="share-buttons">
+                            <ul class="rrssb-buttons clearfix">
+    <li class="rrssb-facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/" class="popup share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="facebook">
+            <span class="rrssb-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"></path></svg>
+            </span>
+          <span class="rrssb-text">share</span>
+        </a>
+    </li>
+    <li class="rrssb-twitter">
+        <a href="https://twitter.com/intent/tweet?text=US%20manufacturing%20hit%20by%20coronavirus%20but%20maintains%20growth%20https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/%20via%20@SupplyChainDive" class="popup share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="twitter">
+            <span class="rrssb-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62a15.093 15.093 0 0 1-8.86-2.32c2.702.18 5.375-.648 7.507-2.32a5.417 5.417 0 0 1-4.49-3.64c.802.13 1.62.077 2.4-.154a5.416 5.416 0 0 1-4.412-5.11 5.43 5.43 0 0 0 2.168.387A5.416 5.416 0 0 1 2.89 4.498a15.09 15.09 0 0 0 10.913 5.573 5.185 5.185 0 0 1 3.434-6.48 5.18 5.18 0 0 1 5.546 1.682 9.076 9.076 0 0 0 3.33-1.317 5.038 5.038 0 0 1-2.4 2.942 9.068 9.068 0 0 0 3.02-.85 5.05 5.05 0 0 1-2.48 2.71z"></path></svg>
+            </span>
+            <span class="rrssb-text">tweet</span>
+        </a>
+    </li>
+    <li class="rrssb-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/&amp;title=US%20manufacturing%20hit%20by%20coronavirus%20but%20maintains%20growth" class="popup share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="linkedin">
+            <span class="rrssb-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"></path></svg>
+            </span>
+            <span class="rrssb-text">post</span>
+        </a>
+    </li>
+    <li class="rrssb-email">
+        <a href="mailto:?Subject=US%20manufacturing%20hit%20by%20coronavirus%20but%20maintains%20growth&amp;Body=https%3A//www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/" class="share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="email">
+            <span class="rrssb-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.386 2.614H2.614A2.345 2.345 0 0 0 .279 4.961l-.01 14.078a2.353 2.353 0 0 0 2.346 2.347h18.771a2.354 2.354 0 0 0 2.347-2.347V4.961a2.356 2.356 0 0 0-2.347-2.347zm0 4.694L12 13.174 2.614 7.308V4.961L12 10.827l9.386-5.866v2.347z"></path></svg>
+            </span>
+            <span class="rrssb-text">email</span>
+        </a>
+    </li>
+    <li class="rrssb-print">
+        <a href="javascript:window.print()" class="share_mixpanel_event button" data-sharebutton="rrssb_share" data-shareusing="print">
+            <span class="rrssb-icon">
+                <svg viewBox="0 0 24 24"><path fill="#000000" d="M18,3H6V7H18M19,12A1,1 0 0,1 18,11A1,1 0 0,1 19,10A1,1 0 0,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z"></path></svg>
+            </span>
+            <span class="rrssb-text">print</span>
+        </a>
+    </li>
+</ul>
+
+                        </div>
+
+                        
+                        <div class="post-article-topics">
+                            
+                                
+                                    <span>Filed Under:</span>
+                                    
+                                        <a class="topic" href="https://www.supplychaindive.com/topic/operations/">Operations</a>
+                                        
+                                    
+                                        <a class="topic" href="https://www.supplychaindive.com/topic/procurement/">Procurement</a>
+                                        
+                                    
+                                        <a class="topic" href="https://www.supplychaindive.com/topic/risk-resilience/">Risk/Resilience</a>
+                                        
+                                    
+                                
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    
+
+
+
+                            </section>
+                            <aside class="sidebar large-4 columns">
+                                
+    
+    
+    
+
+                                    
+                                    
+                                        
+<div class="hybrid-ad-wrapper hide-small show-large">
+    <div class="hybrid-ad-inner-wrapper">
+        
+        <div class="hide-small show-large">
+        
+            <div data-container-ad-unit-id="/21662595662/supplychaindive/supplychaindivehybrid1-desktop"></div>
+            <div id="dfp-hybrid1-desktop">
+                <script>
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'desktop' ) { googletag.display('dfp-hybrid1-desktop'); }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                                    
+
+                                    
+                                        
+
+
+
+
+ 
+    
+    
+        
+            <div class="signup sidebar-box hide-small show-large" data-box-priority="0">
+                <h3 class="sidebar-box__header">Get the Newsletter</h3>
+                <p class="sidebar-box__description">Subscribe to <strong>Supply Chain Dive</strong> to get the must-read news &amp; insights in your inbox.</p>
+        
+
+            <form class="form js-form-email-validate" name="signup" action="/signup/" method="POST" id="signup_right_sidebar">
+
+                
+
+                
+                
+                    <label for="id_28c5c6_email" class="email-input js-email-input">
+                        <span class="screen-reader-text">Email:</span>
+                        <input name="email" required="" placeholder="Enter your work email" class="email" id="id_28c5c6_email" type="email">
+                    </label>
+                
+
+                <input name="signup_box_location" value="sidebar" type="hidden">
+
+                
+                    <input name="signup_url" value="https://www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/" id="id_28c5c6_signup_url" type="hidden">
+                
+                    <input name="js_enabled" id="id_28c5c6_js_enabled" value="1" type="hidden">
+                
+
+                
+                <ul class="signup-list list-no-bullets">
+                
+                    
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="55" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive</span>
+                            
+                                <p class="newsletter-description">Topics covered: logistics, freight, operations, procurement, regulation, technology, risk/resilience and more.</p>
+                            
+                            
+                                <span class="secondary-label">Daily</span>
+                            
+                            
+                                <a class="primary-link" href="https://www.supplychaindive.com/user_media/thumbnails/newsletter_lists/sc_2018.png" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="326" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive: Operations</span>
+                            
+                            
+                                <span class="secondary-label">Weekly</span>
+                            
+                            
+                                <a class="primary-link" href="https://www.supplychaindive.com/user_media/thumbnails/newsletter_lists/sc_operations_2018.png" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="719" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive: Procurement</span>
+                            
+                            
+                                <span class="secondary-label">Weekly</span>
+                            
+                            
+                        </li>
+                    
+                    
+                
+
+                    <li>
+                        <label><span class="screen-reader-text">Select user consent:</span></label>
+                        <input name="user_consent" id="id_user_consent" value="1" class="checkbox" type="checkbox">
+                        <span class="signup-user-consent_box">
+                            <span>By signing up to receive our newsletter, you agree to our <a href="https://www.industrydive.com/terms-of-use/" target="_blank">Terms of Use</a> and <a href="https://www.industrydive.com/privacy-policy/" target="_blank">Privacy Policy</a>. You can unsubscribe at anytime.</span>
+
+                        </span>
+                    </li>
+                </ul>
+
+                
+                
+
+                
+                <button class="button button--loud button--full-width" type="submit" value="Sign up">
+                    <img class="button__icon button__icon--left" src="email.svg" alt="email icon"> Sign up
+                </button>
+
+                
+                <label class="error email_error" style="display:none;">A valid email address is required.</label>
+                <label class="error newsletter-error" style="display:none;">Please select at least one newsletter.</label>
+
+            </form>
+        </div>
+
+        
+        
+            <div class="subscriber-demographics demographics-form" id="demographics-box-sidebar"></div>
+            <script src="subscriberDemographicsForm.js"></script>
+            <script>
+                var siteName = 'Supply Chain Dive' || null;
+                if (siteName) {
+                    setupFormCallbackAndCreateFormIfSub(siteName, 'sidebar');
+                }
+            </script>
+            
+            <style>
+                .subscriber-demographics-form {
+                    width: 100%;
+                }
+            </style>
+        
+    
+
+
+                                    
+
+                                    
+                                        
+
+
+
+    
+    <div class="sidebar-box" data-box-priority="2">
+        <h3 class="sidebar-box__header"><img src="fire.svg" class="sidebar-box__header-icon">Most Popular</h3>
+        <ol class="sidebar-box-list sidebar-box-list--ordered">
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        <!-- image -->
+                        <a class="hide-small show-large" href="https://www.supplychaindive.com/news/costco-coronavirus-demand-procurement-supply-chain/573628/">
+                            
+                            
+                                <img class="sidebar-box-list__image" src="0a9cf1ec81d89684f59e793aab109e3e.jpg" alt="story image">
+                            
+                        </a>
+
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/news/costco-coronavirus-demand-procurement-supply-chain/573628/">Costco: It could take weeks to reach routine supply chain operations</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/news/cma-cgm-will-return-to-normal-china-operations-in-mid-march/573726/">CMA CGM expects normal operations to resume in China mid-March</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+
+                        <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/news/coronavirus-supply-chain-risk-management/572670/">Coronavirus: A lesson in supply chain risk management</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/news/Amazon-prime-same-day-delivery-mini-fulfillment-centers/573379/">Amazon launches faster same-day delivery with mini-fulfillment centers</a> <!--Article Title-->
+                    
+                </li>
+            
+                <li class="sidebar-box-list__item sidebar-box-list__item--ordered">
+                    
+                        
+
+
+
+
+    
+    
+    
+            
+        
+
+
+                        <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/news/air-cargo-demand-slides-february-report-to-shed-light-on-full-impact-of-co/573716/">Coronavirus adds hurdle for air cargo industry saddled with demand slump</a> <!--Article Title-->
+                    
+                </li>
+            
+        </ol>
+    </div>
+    
+
+
+                                    
+
+                                    
+
+                                    
+                                        
+                                            
+
+
+    
+        
+        <div class="sidebar-box hide-small show-large" data-box-priority="3">
+            <h3 class="sidebar-box__header">What We're Reading</h3>
+
+            
+            
+
+                <ul class="sidebar-box-list">
+                    
+                    
+                        
+                            <li class="sidebar-box-list__item">
+                                <img src="favicons_004.png">
+                                <span class="label label--soft">Transport Dive</span>
+                                <a class="sidebar-box-list__item-title" href="https://www.transportdive.com/news/most-congested-cities-challenges-trucking/573803/" target="_blank">
+                                    Most congested cities pose challenges for trucking
+                                    <img src="offsite_black.png" class="off-site-link" alt="offsite link">
+                                </a>
+                                <span class="secondary-label">March 10</span>
+                            </li>
+                        
+                    
+                        
+                            <li class="sidebar-box-list__item">
+                                <img src="favicons.png">
+                                <span class="label label--soft">Commercial Carrier Journal</span>
+                                <a class="sidebar-box-list__item-title" href="https://www.ccjdigital.com/walmart-fleet-growth-driver-hiring/?mod=djemlogistics_h" target="_blank">
+                                    Walmart set to expand private fleet by 500 drivers
+                                    <img src="offsite_black.png" class="off-site-link" alt="offsite link">
+                                </a>
+                                <span class="secondary-label">March 10</span>
+                            </li>
+                        
+                    
+                        
+                            <li class="sidebar-box-list__item">
+                                <img src="favicons_005.png">
+                                <span class="label label--soft">The Wall Street Journal</span>
+                                <a class="sidebar-box-list__item-title" href="https://www.wsj.com/articles/coronavirus-pressures-supply-chain-for-protective-masks-11583552527?mod=djemlogistics_h" target="_blank">
+                                    Critical component of protective masks in short supply
+                                    <img src="offsite_black.png" class="off-site-link" alt="offsite link">
+                                </a>
+                                <span class="secondary-label">March 10</span>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+            
+            <a class="sidebar-box__cta" href="https://www.supplychaindive.com/what-we-are-reading">View all</a>
+        </div>
+    
+
+
+                                        
+                                    
+
+                                    
+                                        
+
+
+
+    <div class="sidebar-box hide-small show-large" data-box-priority="6">
+        <h3 class="sidebar-box__header"><img src="calendar.svg" class="sidebar-box__header-icon" height="35">Events</h3>
+        <ul class="sidebar-box-list">
+            
+                <li class="sidebar-box-list__item">
+                    <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/events/sustainable-packaging-opportunities-in-life-scienc-webinar-2pm-et-mar-17-2020-supply-chain-dive/">Sustainable Packaging Opportunities in Life Sciences</a>
+                    
+                    <span class="secondary-label">Webinar 2pm ET</span>
+                    
+                    <span class="secondary-label">
+                     • 
+                        Mar 17, 2020
+                    </span>
+                </li>
+            
+                <li class="sidebar-box-list__item">
+                    <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/events/3-keys-to-increasing-retail-customer-lifetime-valu-webinar-2pm-et-apr-01-2020-supply-chain-dive/">3 Keys to Increasing Retail Customer Lifetime Value</a>
+                    
+                    <span class="secondary-label">Webinar 2pm ET</span>
+                    
+                    <span class="secondary-label">
+                     • 
+                        Apr 1, 2020
+                    </span>
+                </li>
+            
+                <li class="sidebar-box-list__item">
+                    <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/events/modex-2020-atlantas-georgia-wo-mar-09-2020-supply-chain-dive/">MODEX 2020</a>
+                    
+                    <span class="secondary-label">Atlanta's Georgia World Congress Center</span>
+                    
+                    <span class="secondary-label">
+                     • 
+                        Mar 9 – Mar 12, 2020
+                    </span>
+                </li>
+            
+                <li class="sidebar-box-list__item">
+                    <a class="sidebar-box-list__item-title" href="https://www.supplychaindive.com/events/the-supply-chain-education-exposure-conference-plainfield-in-mar-11-2020-supply-chain-dive/">The Supply Chain Education &amp; Exposure Conference</a>
+                    
+                    <span class="secondary-label">Plainfield, IN</span>
+                    
+                    <span class="secondary-label">
+                     • 
+                        Mar 11 – Mar 13, 2020
+                    </span>
+                </li>
+            
+        </ul>
+        <a class="sidebar-box__cta" href="https://www.supplychaindive.com/events/">View all events</a>
+    </div>
+
+
+                                    
+
+                                    
+                                        
+
+                                    
+
+                                    
+                                        
+
+
+
+
+
+
+                                    
+
+                                    
+                                        
+
+
+    <div class="sidebar-box hide-small show-large" data-box-priority="4">
+        <h3 class="sidebar-box__header">Library</h3>
+        <ul class="sidebar-box-list">
+            
+                <li class="sidebar-box-list__item">
+                     
+                        
+                            <span class="label label--soft">Whitepaper</span>
+                        
+                        <a class="sidebar-box-list__item-title" target="_blank" href="https://dive.pub/2U9LzgI">The Ultimate Guide to Pick, Pick &amp; Ship Like A Top Player in Ecommerce</a>
+                        
+                            <span class="secondary-label">Descartes</span>
+                        
+                   
+                </li>
+            
+                <li class="sidebar-box-list__item">
+                     
+                        
+                            <span class="label label--soft">eBook</span>
+                        
+                        <a class="sidebar-box-list__item-title" target="_blank" href="https://dive.pub/31SVlW0">A new approach to planning – industry experts weigh in</a>
+                        
+                            <span class="secondary-label">Kinaxis</span>
+                        
+                   
+                </li>
+            
+        </ul>
+        <a class="sidebar-box__cta" href="https://www.supplychaindive.com/library/">View all</a>
+    </div>
+
+
+                                    
+
+                                    
+                                    
+                                        
+<div class="hybrid-ad-wrapper hide-small show-large">
+    <div class="hybrid-ad-inner-wrapper">
+        
+        <div class="hide-small show-large">
+        
+            <div data-container-ad-unit-id="/21662595662/supplychaindive/supplychaindivehybrid3-desktop"></div>
+            <div id="dfp-hybrid3-desktop">
+                <script>
+                    waitToLoadAds.push(function() {
+                        googletag.cmd.push(function() {
+                            if (window.dfp_visibility == 'desktop' ) { googletag.display('dfp-hybrid3-desktop'); }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                                    
+                            </aside>
+                        </div>
+                    </div>
+
+                
+
+                </div> <!-- ends page-inner-wrapper -->
+
+                <section class="pre-footer">
+                    
+    
+    
+    
+    
+    <section class="signup call-out">
+        <div class="row">
+            
+
+
+
+
+ 
+    
+    
+        
+            <div class="large-9 medium-10 medium-centered columns">
+                <h3>Get Supply Chain Dive in your inbox</h3>
+                <p class="subhead">The free newsletter covering the top industry headlines</p>
+        
+
+            <form class="form js-form-email-validate" name="signup" action="/signup/" method="POST" id="signup_right_sidebar">
+
+                
+
+                
+                
+                    <label for="id_f0ae63_email" class="email-input js-email-input">
+                        <span class="screen-reader-text">Email:</span>
+                        <input name="email" required="" placeholder="Enter your work email" class="email" id="id_f0ae63_email" type="email">
+                    </label>
+                
+
+                <input name="signup_box_location" value="bottom" type="hidden">
+
+                
+                    <input name="signup_url" value="https://www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/" id="id_f0ae63_signup_url" type="hidden">
+                
+                    <input name="js_enabled" id="id_f0ae63_js_enabled" value="1" type="hidden">
+                
+
+                
+                <ul class="signup-list list-no-bullets">
+                
+                    
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="55" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive</span>
+                            
+                                <p class="newsletter-description">Topics covered: logistics, freight, operations, procurement, regulation, technology, risk/resilience and more.</p>
+                            
+                            
+                                <span class="secondary-label">Daily</span>
+                            
+                            
+                                <a class="primary-link" href="https://www.supplychaindive.com/user_media/thumbnails/newsletter_lists/sc_2018.png" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="326" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive: Operations</span>
+                            
+                            
+                                <span class="secondary-label">Weekly</span>
+                            
+                            
+                                <a class="primary-link" href="https://www.supplychaindive.com/user_media/thumbnails/newsletter_lists/sc_operations_2018.png" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="719" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive: Procurement</span>
+                            
+                            
+                                <span class="secondary-label">Weekly</span>
+                            
+                            
+                        </li>
+                    
+                    
+                
+
+                    <li>
+                        <label><span class="screen-reader-text">Select user consent:</span></label>
+                        <input name="user_consent" id="id_user_consent" value="1" class="checkbox" type="checkbox">
+                        <span class="signup-user-consent_box">
+                            <span>By signing up to receive our newsletter, you agree to our <a href="https://www.industrydive.com/terms-of-use/" target="_blank">Terms of Use</a> and <a href="https://www.industrydive.com/privacy-policy/" target="_blank">Privacy Policy</a>. You can unsubscribe at anytime.</span>
+
+                        </span>
+                    </li>
+                </ul>
+
+                
+                
+
+                
+                <button class="button button--loud button--full-width" type="submit" value="Sign up">
+                    <img class="button__icon button__icon--left" src="email.svg" alt="email icon"> Sign up
+                </button>
+
+                
+                <label class="error email_error" style="display:none;">A valid email address is required.</label>
+                <label class="error newsletter-error" style="display:none;">Please select at least one newsletter.</label>
+
+            </form>
+        </div>
+
+        
+        
+    
+
+
+        </div>
+    </section>
+    
+
+                </section>
+
+                
+                <hr class="footer-hr">
+                <footer>
+                    <div class="custom-article-footer">
+                        <div class="row">
+                            <div class="medium-6 columns footer-links">
+                                <h4 class="uppercase-heading-01">Explore</h4>
+                                        <ul class="list-no-bullets footer-links">
+                                            
+                                            <li>
+                                                <a href="https://www.supplychaindive.com/submit-tip/">Submit A Tip</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.supplychaindive.com/editors/">Editorial Team</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.supplychaindive.com/about/">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.supplychaindive.com/signup/">Newsletter</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.industrydive.com/article-reprints/">Article Reprints</a>
+                                            </li>
+
+                                            
+                                            
+                                                <li>
+                                                    <a href="https://www.supplychaindive.com/press-release/">Press Releases</a>
+                                                </li>
+                                            
+                                            
+                                                <li>
+                                                    <a href="https://www.supplychaindive.com/what-we-are-reading/">What We're Reading</a>
+                                                </li>
+                                            
+                                            
+                                                <li>
+                                                    <a href="https://www.supplychaindive.com/advertise/">Advertising</a>
+                                                </li>
+                                            
+                                            <li>
+                                                
+                                                <a href="https://www.supplychaindive.com/feedback/">Contact</a>
+                                            </li>
+                                            
+                                        </ul>
+                                
+                                    
+                                        <h4 class="uppercase-heading-01">Related Publications</h4>
+                                        <ul class="list-no-bullets footer-links">
+                                        
+                                            <li><a href="https://www.marketingdive.com/">Marketing Dive</a></li>
+                                        
+                                            <li><a href="https://www.retaildive.com/">Retail Dive</a></li>
+                                        
+                                        </ul>
+                                    
+                                
+                                <h4 class="uppercase-heading-01">Follow</h4>
+                                
+                                <a href="https://twitter.com/SupplyChainDive" class="button social"><img src="twitter-follow-icon-black.png" alt="Twitter"></a>
+                                
+
+                                
+                                <a href="https://www.facebook.com/SupplyChainDive/" class="button social"><img src="facebook-follow-icon-black.png" alt="Facebook"></a>
+                                
+
+                                
+                                <a href="https://www.linkedin.com/company/supply-chain-dive-supply-chain-and-logistics-news" class="button social"><img src="linkedin-follow-icon-black.png" alt="LinkedIn"></a>
+                                
+
+                                
+                                    <a href="https://www.supplychaindive.com/feeds/news/" class="button social"><img src="rss-follow-icon-black.png" alt="LinkedIn"></a>
+                                
+                            </div>
+
+                            <!-- Footer feedback form -->
+                            <div class="medium-6 columns">
+                                <form id="footer-feedback-form" class="form js-form-email-validate" method="POST" action="/feedback/" onsubmit="javascript:$('#feedback-footer-canary').val('(blank)');$('#mixpanel_id').val(mixpanel.get_distinct_id());">
+                                    <h4 class="uppercase-heading-01">Feedback</h4>
+
+                                    <label for="email" class="email-input">Work email: <span class="form__required-tag">*</span></label>
+                                    <input id="email" name="email" placeholder="Enter your work email" required="" type="email">
+
+                                    <label for="feedback">Message: <span class="form__required-tag">*</span></label>
+                                    <textarea id="feedback" name="feedback" placeholder="Send us your feedback here" required=""></textarea>
+
+                                    <div class="g-recaptcha" data-sitekey="6LfnFggUAAAAAKaDTgN6vqjZtnNENIqa--TCG9F4"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfnFggUAAAAAKaDTgN6vqjZtnNENIqa--TCG9F4&amp;co=aHR0cHM6Ly93d3cuc3VwcGx5Y2hhaW5kaXZlLmNvbTo0NDM.&amp;hl=en&amp;v=v1QHzzN92WdopzN_oD7bUO2P&amp;size=normal&amp;cb=icoijn2sw4be" role="presentation" name="a-h8sqz4r6u85y" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+
+                                    <button type="submit" class="button button--soft">Submit</button>
+
+                                    <div style="display:none">
+                                        <label for="feedback-footer-canary">Please leave this field blank
+                                            <input id="feedback-footer-canary" name="canary" type="text">
+                                            <input id="mixpanel_id" name="mixpanel_id" value="blank" type="text">
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <hr class="footer-hr">
+                <div class="baseline-footer-wrapper">
+                    <!-- smt user footer --> 
+
+<div class="baseline-footer">
+    © 2020 <a href="http://www.industrydive.com/">Industry Dive</a>. All rights reserved. | View our <a href="http://www.industrydive.com/industries/">other publications</a>
+    | <a href="http://www.industrydive.com/privacy-policy/">Privacy policy</a>
+    | <a href="http://www.industrydive.com/terms-of-use/">Terms of use</a>
+    | <a href="http://www.industrydive.com/takedown-policy/">Take down policy</a>.
+</div>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <!-- mobile menu, not visible on desktop, must go AFTER footer -->
+        
+        <nav class="mobile-menu">
+            <div class="mm-top-bar">
+                <button class="mobile-menu-toggle">
+                    <img src="close_white.svg" alt="menu">
+                </button>
+                <div class="mm-search">
+                    <form action="/search/" method="GET" data-ajax="false">
+                        <label for="search">
+                            <span class="screen-reader-text">Search</span>
+                            <input id="search" name="q" placeholder="search" data-role="none" type="search">
+                        </label>
+                        <button type="submit" value="" data-role="none">
+                            <img src="search.svg" alt="search">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <ul class="mm-list list-no-bullets">
+                <li>
+                    <a href="https://www.supplychaindive.com/" class="">
+                        <img src="home.svg" alt="home" width="20" height="20">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mm-accordion">
+                    <button>
+                        <img src="topics.svg" alt="topics" width="20" height="20">
+                        <span>Topics</span>
+                        <span class="accordion-toggle-arrow">
+                            <img src="chevron_down.svg" alt="down arrow">
+                        </span>
+                    </button>
+                    <ul class="list-no-bullets" style="display: none;">
+                        
+                            
+                            
+                                <li>
+                                    <a class="" href="https://www.supplychaindive.com/topic/regulation/">Regulation</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class="" href="https://www.supplychaindive.com/topic/freight/">Freight</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class="" href="https://www.supplychaindive.com/topic/logistics/">Logistics</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class="" href="https://www.supplychaindive.com/topic/operations/">Operations</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class="" href="https://www.supplychaindive.com/topic/procurement/">Procurement</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class="" href="https://www.supplychaindive.com/topic/technology/">Technology</a>
+                                </li>
+                            
+                        
+                            
+                            
+                                <li>
+                                    <a class="" href="https://www.supplychaindive.com/topic/risk-resilience/">Risk</a>
+                                </li>
+                            
+                        
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="https://www.supplychaindive.com/deep-dive/" class="">
+                         <img src="deep_dive.svg" alt="deep dive" width="20" height="20">
+                        <span>Deep Dive</span>
+                    </a>
+                </li>
+                
+                
+                    <li>
+                        <a href="https://www.supplychaindive.com/opinion/">
+                            <img src="opinion.svg" alt="opinion" width="20" height="20">
+                            <span>Opinion</span>
+                        </a>
+                    </li>
+                
+                
+                
+                    <li>
+                        <a href="https://www.supplychaindive.com/library/" class="">
+                            <img src="library.svg" alt="library" width="20" height="20">
+                            <span>Library</span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a href="https://www.supplychaindive.com/events/" class="">
+                            <img src="events.svg" alt="events" width="20" height="20">
+                            <span>Events</span>
+                        </a>
+                    </li>
+                
+                
+
+                
+            </ul>
+            
+                
+                <section class="signup mm-signup">
+                    <div class="row">
+                        
+
+
+
+
+ 
+    
+    
+        
+            <div class="large-9 medium-10 medium-centered columns">
+                <h3>Get Supply Chain Dive in your inbox</h3>
+                <p class="subhead">The free newsletter covering the top industry headlines</p>
+        
+
+            <form class="form js-form-email-validate" name="signup" action="/signup/" method="POST" id="signup_right_sidebar">
+
+                
+
+                
+                
+                    <label for="id_766ccb_email" class="email-input js-email-input">
+                        <span class="screen-reader-text">Email:</span>
+                        <input name="email" required="" placeholder="Enter your work email" class="email" id="id_766ccb_email" type="email">
+                    </label>
+                
+
+                <input name="signup_box_location" value="integrated_menu" type="hidden">
+
+                
+                    <input name="signup_url" value="https://www.supplychaindive.com/news/us-manufacturing-growth-coronavirus/573410/" id="id_766ccb_signup_url" type="hidden">
+                
+                    <input name="js_enabled" id="id_766ccb_js_enabled" value="1" type="hidden">
+                
+
+                
+                <ul class="signup-list list-no-bullets">
+                
+                    
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="55" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive</span>
+                            
+                                <p class="newsletter-description">Topics covered: logistics, freight, operations, procurement, regulation, technology, risk/resilience and more.</p>
+                            
+                            
+                                <span class="secondary-label">Daily</span>
+                            
+                            
+                                <a class="primary-link" href="https://www.supplychaindive.com/user_media/thumbnails/newsletter_lists/sc_2018.png" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="326" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive: Operations</span>
+                            
+                            
+                                <span class="secondary-label">Weekly</span>
+                            
+                            
+                                <a class="primary-link" href="https://www.supplychaindive.com/user_media/thumbnails/newsletter_lists/sc_operations_2018.png" target="_blank">view sample</a>
+                            
+                        </li>
+                    
+                        <li>
+                            <label><span class="screen-reader-text">Select Newsletter:</span></label>
+                            <input name="site_newsletters" value="719" class="checkbox" type="checkbox">
+                            <span class="newsletter-title">Supply Chain Dive: Procurement</span>
+                            
+                            
+                                <span class="secondary-label">Weekly</span>
+                            
+                            
+                        </li>
+                    
+                    
+                
+
+                    <li>
+                        <label><span class="screen-reader-text">Select user consent:</span></label>
+                        <input name="user_consent" id="id_user_consent" value="1" class="checkbox" type="checkbox">
+                        <span class="signup-user-consent_box">
+                            <span>By signing up to receive our newsletter, you agree to our <a href="https://www.industrydive.com/terms-of-use/" target="_blank">Terms of Use</a> and <a href="https://www.industrydive.com/privacy-policy/" target="_blank">Privacy Policy</a>. You can unsubscribe at anytime.</span>
+
+                        </span>
+                    </li>
+                </ul>
+
+                
+                
+
+                
+                <button class="button button--loud button--full-width" type="submit" value="Sign up">
+                    <img class="button__icon button__icon--left" src="email.svg" alt="email icon"> Sign up
+                </button>
+
+                
+                <label class="error email_error" style="display:none;">A valid email address is required.</label>
+                <label class="error newsletter-error" style="display:none;">Please select at least one newsletter.</label>
+
+            </form>
+        </div>
+
+        
+        
+    
+
+
+                    </div>
+                </section>
+            
+        </nav>
+        
+
+        
+    <script src="news.js" async=""></script>
+    
+    <script>
+        //Add styling for pdf only if admin button is clicked
+        $(".download-promoted-story-button").click(function(){
+            $("body").addClass("admin-pdf-styling");
+        });
+        $(".rrssb-print").click(function(){
+            if ($("body").hasClass("admin-pdf-styling")){
+                $("body").removeClass("admin-pdf-styling");
+            }
+        });
+
+    </script>
+
+
+        
+
+        
+
+
+        
+
+        <!--[if lt IE 9]>
+            <script type="text/javascript" src="/static/js/rem.min.js?550216110918" ></script>
+        <![endif]-->
+
+         
+    
+        
+        <!-- Sailthru Horizon -->
+
+
+<!-- <script type="text/javascript" src="https://ak.sail-horizon.com/horizon/v1.js"></script> -->
+<script src="spm.js"></script>
+<script type="text/javascript">
+    $(function() {
+        // Sailthru Personalization Engine Setup
+        var sailthru_setup = {
+            customerId: '12ab35a80530ffa5450add9c09f5de04',
+            domain: 'horizon.supplychaindive.com',
+            spider: true
+        };
+        
+        if (window.Sailthru) {
+            Sailthru.init(sailthru_setup);
+        }
+    });
+</script>
+
+    
+
+
+        <script async="" type="text/javascript" src="shared.js"></script>
+
+        <script>
+            // Set cookie if we're on mobile app. Expire if we're not. This affects
+            // which template is used to display the site to the user.
+            $(document).ready(function() {
+                // Get integer value of mobileapp param from URL and default to 0 if it doesn't exist
+                var mobileapp = '';
+
+                // Set cookie if mobileapp is 1 or 2 or expire cookie if mobileapp == 0
+                if (mobileapp == '0') {
+                    document.cookie = 'mobileapp=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                } else if (mobileapp == '1' || mobileapp == '2') {
+                    document.cookie = 'mobileapp=' + mobileapp + '; path=/;';
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
+            function alert_recaptcha(event) {
+                /*
+                Generic function to check whether the recaptcha widget in the page has been checked or not.
+                If not, does not submit the form and instead prompts the user with a modal to do so.
+                Can/should be used against submit events for forms installed with a google recaptcha widget.
+                I abstracted it here because I use it on other derived pages and wanted to keep it a bit more DRY.
+                */
+                var recaptcha_checked = grecaptcha.getResponse().length > 0;
+                if (!recaptcha_checked) {
+                    event.preventDefault();
+                    alert("Please verify that you are not a robot")
+                }
+            }
+
+            $('#footer-feedback-form').submit(function(event){
+                // check if the user filled out the recaptcha widget
+                alert_recaptcha(event)
+            });
+        </script>
+    
+
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.8912624061102891"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.2652298485913809" alt="" src="0.txt" width="0" height="0"></div>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1217855981616946",{em:"insert_email_variable,"});fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1217855981616946&amp;ev=PageView&amp;noscript=1"></noscript>
+
+<script type="text/javascript" id="">_linkedin_data_partner_id="70140";</script><script type="text/javascript" id="">(function(){var b=document.getElementsByTagName("script")[0],a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";b.parentNode.insertBefore(a,b)})();</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=70140&amp;fmt=gif">
+</noscript><script type="text/javascript" id="">!function(d,e){var b="0089be3aaf6aadd50cfb43aa324d1fedc4";if(d.obApi){var c=function(a){return"[object Array]"===Object.prototype.toString.call(a)?a:[a]};d.obApi.marketerId=c(d.obApi.marketerId).concat(c(b))}else{var a=d.obApi=function(){a.dispatch?a.dispatch.apply(a,arguments):a.queue.push(arguments)};a.version="1.1";a.loaded=!0;a.marketerId=b;a.queue=[];b=e.createElement("script");b.async=!0;b.src="//amplify.outbrain.com/cp/obtp.js";b.type="text/javascript";c=e.getElementsByTagName("script")[0];
+c.parentNode.insertBefore(b,c)}}(window,document);obApi("track","PAGE_VIEW");</script><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div><div style="display: none;"><img src="As_the_US_PMI_maintains_growth_China_posts_record_decline.svg" alt="story image"></div><iframe scrolling="no" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.0ab153032b20288d9a500659d8c7ba17.html?origin=https%3A%2F%2Fwww.supplychaindive.com" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=v1QHzzN92WdopzN_oD7bUO2P&amp;k=6LfnFggUAAAAAKaDTgN6vqjZtnNENIqa--TCG9F4&amp;cb=j1cmr2wbih0z" style="width: 100%; height: 100%;" name="c-h8sqz4r6u85y" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" frameborder="0"></iframe></div></div><script async="" type="text/javascript" src="https://c.lytics.io/api/experience/candidate/44fda7674f94228540d8fba6786f9770/config.js"></script></body></html>

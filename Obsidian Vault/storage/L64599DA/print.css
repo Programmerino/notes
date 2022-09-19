@@ -1,0 +1,115 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 90%;
+  line-height: 1em;
+  font-weight: normal;
+  color: #000000;
+  margin: 1em;
+}
+
+#topbar { display: none; }
+
+#header { height: 1.5em; padding-bottom: 0.5em; border-bottom: 0.1em solid #666666; }
+#header #title img { display: none; } /* 25.08.2008 */
+#header #title h1 { float: left; font-size: 1.5em; line-height: 1em; font-weight: bold; color: #005689; }
+#header #title h2 { display: none; }
+#header #title span {
+  display: block; 
+  float: right;
+  width: auto;
+  font-size: 1.25em;
+  font-weight: bold;
+  line-height: 1em;
+  padding-top: 0.1em;
+}
+#header #search { display: none; }
+#navigation { display: none; }
+
+#content #tools { display:none; }
+#content #tools a { color:#005689; text-decoration:none; }
+#content #article-tools { display:none; }
+#content #bookmarks { display:none; }
+#content p.path { display:none; }
+
+#content div.imageLeft { float: left; width: auto; margin: 15px 10px 10px 0; }
+#content div.imageRight { float: right; width: auto; margin: 15px 0 10px 10px; }
+#content div.imageLeft img,
+#content div.imageRight img { float: none; margin: 0; padding: 0; }
+#content div.imageLeft span,
+#content div.imageRight span,
+#content div.imageFull span { display: block; font-style: italic; padding-left: 2px; }
+#content div.imageFull { float: none; width: 480px; margin: 15px auto 10px auto; }
+#content div.imageLeft { display: none; }
+#content div.imageRight { display: none; }
+#content div.imageFull { display: none; }
+
+#content h2 { font-size: 1.750em; line-height: 1.2em; font-weight: bold; margin-top: 1em; }
+#content h3 { font-size: 0.750em; line-height: 1.3em; margin-top: 1em; }
+#content h4 { font-size: 0.875em; line-height: 1.3em; margin-top: 1em; }
+#content h5 { font-size: 0.750em; line-height: 1.3em; margin-top: 1.5em; }
+#content h6 { font-size: 1.000em; line-height: 1.3em; margin-top: 1em; }
+#content p { 
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-top: 0.8em;
+}
+#content a { color: #000000; text-decoration: none; }
+
+/* added by FR (06.09.2013) */
+#content blockquote p {
+  padding-left: 3em;
+}
+
+/* added by FR (15.06.2010) */
+#content ul,
+#content ol { 
+  font-size: 1em;
+  line-height: 1.3em;
+  margin-top: 1em;
+  margin-left: 1.8em;
+}
+
+#sidebar { display:none; }
+
+#footer { margin-top: 2em; padding-top: 1em; border-top: 0.1em solid #666666; }
+#footer p { font-size: 0.75em; line-height: 1.2em; text-align: center; }
+#footer p.right { display: none; }
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */
+
+/* changes for hiding the breadcrumbs */
+#content h3 { height: 1em; }
+#content h3 span.breadcrumb { display: none; }
+
+/* funds appeal */
+#attention,
+#inline-appeal,
+#bottom-appeal {
+  display:none;
+}
+
+@media screen {
+  #content #tools { display:block; }
+}

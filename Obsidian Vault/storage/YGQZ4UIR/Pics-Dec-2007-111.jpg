@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'/>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: #011010;
+			padding: 5px;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.page {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.section {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		@media only screen and (min-width: 1338px) {
+			.banner-top,
+			.banner-bottom {
+				width: calc(100vw - 610px);
+				height: 90px;
+			}
+			.left-rail,
+			.right-rail {
+				width: 300px;
+				height: calc(100vh - 10px);
+				min-height: 600px;
+			}
+			.content {
+				width: calc(100vw - 610px);
+				height: calc(100vh - 190px);
+				min-height: 420px;
+			}
+		}
+
+		@media only screen and (min-width: 738px) and (max-width: 1337px) {
+			.banner-top,
+			.banner-bottom {
+				width: calc(100vw - 10px);
+				height: 90px;
+			}
+			.left-rail,
+			.right-rail {
+				display: none;
+			}
+			.content {
+				width: calc(100vw - 10px);
+				height: calc(100vh - 190px);
+				min-height: 400px;
+			}
+		}
+
+		@media only screen and (max-width: 737px) {
+			.banner-top,
+			.banner-bottom {
+				width: calc(100vw - 10px);
+				height: 50px;
+			}
+			.left-rail,
+			.right-rail {
+				display: none;
+			}
+			.content {
+				width: calc(100vw - 10px);
+				height: calc(100vh - 110px);
+				min-height: 200px;
+			}
+		}
+	</style>
+	<script async="" src="https://confiant-integrations.global.ssl.fastly.net/ymiwMRFNbiCYd33dSe-U0uABa94/gpt_and_prebid/config.js"></script>
+</head>
+<body>
+	<div class='page'>
+		<div class='section left-rail'>
+			<div id="z694856d3-3460-43e3-88d1-1b9aeb99052e_1" style='display:none'></div>
+			<script>
+				! function(a, n, e, t, r) {
+					tagsync = e;
+					var c = window[a];
+					if (tagsync) {
+						var d = document.createElement("script");
+						d.src = "https://3855.tm.zedo.com/v1/57660879-a05e-49da-83b5-a01f7a594b6d/atm.js", d.async = !0;
+						var i = document.getElementById(n);
+						if (null == i || "undefined" == i) return;
+						i.parentNode.appendChild(d, i), d.onload = d.onreadystatechange = function() {
+							var a = new zTagManager(n);
+							a.initTagManager(n, c, this.aync, t, r)
+						}
+					} else document.write("<script src='https://3855.tm.zedo.com/v1/57660879-a05e-49da-83b5-a01f7a594b6d/tm.js?data=" + a + "'><" + "/script>")
+				}("datalayer", "z694856d3-3460-43e3-88d1-1b9aeb99052e_1", true, 1, 1);
+			</script>
+		</div>
+		<div>
+			<div class='section banner-top'>
+				<div id="zca7a07d2-e5c0-462c-b55b-59106420b18e_9" style='display:none'></div>
+				<script>
+					! function(a, n, e, t, r) {
+						tagsync = e;
+						var c = window[a];
+						if (tagsync) {
+							var d = document.createElement("script");
+							d.src = "https://3855.tm.zedo.com/v1/caa45178-9185-46e1-a7ea-63586a36fa64/atm.js", d.async = !0;
+							var i = document.getElementById(n);
+							if (null == i || "undefined" == i) return;
+							i.parentNode.appendChild(d, i), d.onload = d.onreadystatechange = function() {
+								var a = new zTagManager(n);
+								a.initTagManager(n, c, this.aync, t, r)
+							}
+						} else document.write("<script src='https://3855.tm.zedo.com/v1/caa45178-9185-46e1-a7ea-63586a36fa64/tm.js?data=" + a + "'><" + "/script>")
+					}("datalayer", "zca7a07d2-e5c0-462c-b55b-59106420b18e_9", true, 1, 1);
+				</script>
+			</div>
+			<div class='section content'>
+				<img id='image'>
+			</div>
+			<div class='section banner-bottom'>
+				<div id="zca7a07d2-e5c0-462c-b55b-59106420b18e_10" style='display:none'></div>
+				<script>
+					! function(a, n, e, t, r) {
+						tagsync = e;
+						var c = window[a];
+						if (tagsync) {
+							var d = document.createElement("script");
+							d.src = "https://3855.tm.zedo.com/v1/caa45178-9185-46e1-a7ea-63586a36fa64/atm.js", d.async = !0;
+							var i = document.getElementById(n);
+							if (null == i || "undefined" == i) return;
+							i.parentNode.appendChild(d, i), d.onload = d.onreadystatechange = function() {
+								var a = new zTagManager(n);
+								a.initTagManager(n, c, this.aync, t, r)
+							}
+						} else document.write("<script src='https://3855.tm.zedo.com/v1/caa45178-9185-46e1-a7ea-63586a36fa64/tm.js?data=" + a + "'><" + "/script>")
+					}("datalayer", "zca7a07d2-e5c0-462c-b55b-59106420b18e_10", true, 1, 1);
+				</script>
+			</div>
+		</div>
+		<div class='section right-rail'>
+			<div id="z694856d3-3460-43e3-88d1-1b9aeb99052e_2" style='display:none'></div>
+			<script>
+				! function(a, n, e, t, r) {
+					tagsync = e;
+					var c = window[a];
+					if (tagsync) {
+						var d = document.createElement("script");
+						d.src = "https://3855.tm.zedo.com/v1/57660879-a05e-49da-83b5-a01f7a594b6d/atm.js", d.async = !0;
+						var i = document.getElementById(n);
+						if (null == i || "undefined" == i) return;
+						i.parentNode.appendChild(d, i), d.onload = d.onreadystatechange = function() {
+							var a = new zTagManager(n);
+							a.initTagManager(n, c, this.aync, t, r)
+						}
+					} else document.write("<script src='https://3855.tm.zedo.com/v1/57660879-a05e-49da-83b5-a01f7a594b6d/tm.js?data=" + a + "'><" + "/script>")
+				}("datalayer", "z694856d3-3460-43e3-88d1-1b9aeb99052e_2", true, 1, 1);
+			</script>
+		</div>
+	</div>
+	<script>
+		const path = window.location.pathname;
+		document.title = "Photobucket | " + path;
+		const img = "https://hosting.photobucket.com" + path;
+		//const img = "https://d3bales44trg2h.cloudfront.net" + path; // dev
+		//const img = "https://hosting.photobucket.com/images/n627/ContentMod/-0/dfc33fa2-d1f7-4acc-beba-330150fc51f5-original.jpg?width=1920&height=1080&fit=bounds";
+		document.getElementById("image").src = img;
+	</script>
+</body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html class="jetpack-lazy-images-js-enabled js sans-fonts-loaded serif-fonts-loaded fontawesome-i2svg-active fontawesome-i2svg-complete" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8"><script type="text/javascript" async="" src="conversion_async.js"></script><script src="rules-p-ddPr1r_sBVpOs.js" async=""></script><script src="osd.js"></script><script type="text/javascript" async="" src="js.js"></script><script src="show_ads_impl.js" id="google_shimpl"></script><script src="quant.js" async="" type="text/javascript"></script><script async="" src="analytics.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"51a9741afb",applicationID:"191772526"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1169.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arming police with lots of military gear has done more harm than good | MinnPost</title>
+<style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link rel="dns-prefetch" href="https://use.fontawesome.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="stylesheet" id="all-css-0" href="a.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" id="minnpost-fonts-css" href="cxj7fzg.css" media="all">
+<link rel="stylesheet" id="all-css-2" href="style.css" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-2" href="print.css" type="text/css" media="print">
+<script>
+var related_posts_js_options = {"post_heading":"h4"};
+</script>
+<script type="text/javascript" src="a_003"></script>
+<script defer="defer" crossorigin="anonymous" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" src="all.js"></script>
+<script type="text/javascript" src="intersection-observer.js"></script>
+<script src="arcads.js"></script>
+<script>
+			const arcAds = new ArcAds({
+				dfp: {
+					id: '1035012',
+					collapseEmptyDivs: '1',
+				}
+			});
+			
+
+				window.addLazyLoad = function( ad ) {
+					return new Promise( function( resolve, reject ) {
+						// The 'ad' argument will provide information about the unit
+						var this_ad_id = ad.adId;
+						var options    = {
+						  rootMargin: '300px 0px'
+						}
+						// If you do not resolve the promise the advertisement will not display
+						function handler( entries, observer ) {
+						  for ( entry of entries ) {
+						    if ( entry.isIntersecting ) {
+						      resolve();
+						    }
+						  }
+						}
+						let observer = new IntersectionObserver( handler, options );
+						observer.observe( document.getElementById( this_ad_id ) );
+					});
+				}
+				
+</script><script src="gpt.js" async="" defer="defer"></script>
+<link rel="https://api.w.org/" href="https://www.minnpost.com/wp-json/">
+<link rel="canonical" href="https://www.minnpost.com/community-voices/2020/07/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good/">
+<link rel="alternate" type="application/json+oembed" href="https://www.minnpost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.minnpost.com%2Fcommunity-voices%2F2020%2F07%2Farming-police-with-lots-of-military-gear-has-done-more-harm-than-good%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.minnpost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.minnpost.com%2Fcommunity-voices%2F2020%2F07%2Farming-police-with-lots-of-military-gear-has-done-more-harm-than-good%2F&amp;format=xml">
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<!-- Global site tag (gtag.js) - Google Ads: 976620175 --><script async="" src="js_002.js"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-976620175'); </script>
+
+<script data-ad-client="ca-pub-1368619780705816" async="" src="adsbygoogle.js" data-checked-head="true"></script>		<link rel="manifest" href="https://www.minnpost.com/wp-json/wp/v2/web-app-manifest">
+		<meta name="theme-color" content="#801018">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="YES">
+							<link rel="apple-touch-startup-image" href="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/favicon.ico">
+		
+				<meta name="apple-mobile-web-app-title" content="MinnPost">
+		<meta name="application-name" content="MinnPost">
+		<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://www.minnpost.com"><link rel="https://theeventscalendar.com/" href="https://www.minnpost.com/wp-json/tribe/events/v1/"><style type="text/css">img#wpstats{display:none}</style>
+		<style>
+		#wp-admin-bar-item_unpublishd div, #wpadminbar:not(.mobile) #wp-admin-bar-item_unpublishd:hover div {
+			text-transform: uppercase;
+			background: #b60;
+			color: #fff;
+		}
+	    </style>		<meta property="og:site_name" content="MinnPost">
+		<link rel="shortcut icon" href="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/favicon.ico?v=1592584327" type="image/x-icon">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/favicon-16x16.png?v=1592584327">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/favicon-32x32.png?v=1592584327">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/apple-touch-icon.png?v=1592584327">
+		<link rel="mask-icon" href="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/safari-pinned-tab.svg?v=1592584327" color="#801018">
+		<meta name="msapplication-TileColor" content="#801018">
+		<meta name="msapplication-TileImage" content="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/mstile-144x144.png?v=1592584327">
+		<meta name="msapplication-config" content="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/app-icons/browserconfig.xml?v=1592584327">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="alternate" type="application/rss+xml" title="MinnPost articles | RSS Feed" href="https://www.minnpost.com/feed/">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:url" content="https://www.minnpost.com/community-voices/2020/07/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good/">
+		<meta name="twitter:site" content="@MinnPost">
+					<meta property="og:title" content="Arming police with lots of military gear has done more harm than good | MinnPost">
+							<meta name="description" content="Police departments that get more equipment from the military kill more civilians than departments that get less military gear.">
+			<meta property="og:description" content="Police departments that get more equipment from the military kill more civilians than departments that get less military gear.">
+			<meta property="twitter:description" content="Police departments that get more equipment from the military kill more civilians than departments that get less military gear.">
+						<meta property="og:type" content="article">
+		<meta property="article:published_time" content="2020-07-09T09:26:18-05:00">
+		<meta property="article:modified_time" content="2020-07-09T09:29:39-05:00">
+							<meta property="twitter:card" content="summary_large_image">
+		
+					<meta property="og:image" content="https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png">
+			
+							
+		
+		
+				<script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>');</script>
+				<link rel="preconnect" href="https://use.typekit.net/">
+		<script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>');</script>
+					<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		<!-- Begin WP Analytics Tracking Generator analytics.js code -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga( 'create', 'UA-3385191-1', 'auto' );
+	ga( 'require', 'GTM-KRDHJG8' );
+			ga( 'set', 'dimension3', '1386661' );
+			ga( 'set', 'dimension4', 'Community Voices' );
+			ga( 'set', 'dimension1', 'Not Logged In' );
+	ga('send', 'pageview');
+</script>
+<!-- End WP Analytics Tracking Generator analytics.js code -->
+<script src="a_002"></script><link rel="preload" href="integrator.js" as="script"><script type="text/javascript" src="integrator.js"></script><script src="pubads_impl_2020072001.js" async=""></script><link rel="prefetch" href="https://c13954ce9e623c007cdd81af1a3f671b.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html"><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-37/html/container.html"><style>div.m-wp-insert-message-editor{background-color: #D6D6DA}</style><style>div.m-wp-insert-message-item{background-color: #5E99B5}</style><style>div.m-wp-insert-message-item>h3{color: rgb(255, 255, 255)}</style><style>button.a-button-next{background-color: #FBD341}</style><style>button.a-button-next{color: rgb(26, 24, 24)}</style></head>
+
+<body class="post-template-default single single-post postid-1386661 single-format-standard tribe-js">
+
+	<div class="m-ad-region m-ad-region-leaderboard">
+		<div class="o-wrapper">
+			<div class="acm-ad ad-leaderboard" id="acm-ad-tag-leaderboard" data-google-query-id="COCNmK7o8OoCFeyapwodt3kIrA"><div id="google_ads_iframe_/1035012/dfp_default_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1035012/dfp_default_0" title="3rd party ad content" name="google_ads_iframe_/1035012/dfp_default_0" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" data-google-container-id="1" width="970" height="90" frameborder="0"></iframe></div></div><div><script>arcAds.registerAd({id: 'acm-ad-tag-leaderboard',slotName: 'dfp_default',dimensions: [[970,90],[728,90],[970,250],[300,50],"fluid"],targeting: {"id":"1386661","url_type":"post"},});</script></div>		</div>
+	</div>
+
+	<header id="masthead" class="o-header">
+		<div class="o-wrapper o-wrapper-site-header">
+			<div class="a-site-branding">
+		<a class="a-logo a-logo-svg" rel="home" href="https://www.minnpost.com/" title="Return to MinnPost Homepage">
+		<picture>
+			<source type="image/svg+xml" srcset="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/minnpost-logo.svg">
+			<img src="logo.png" alt="MinnPost">
+		</picture>
+	</a>
+</div><!-- .a-site-branding -->
+			
+<div class="m-support-cta m-support-cta-top">
+	<h2 class="a-support-tagline">Nonprofit, nonpartisan journalism. Supported by&nbsp;readers.</h2>
+			<a class="a-button a-support-button a-support-button-with-heart" href="https://www.minnpost.com/support"><svg class="svg-inline--fa fa-heart fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg><!-- <i class="fas fa-heart" aria-hidden="true"></i> -->Donate</a>
+	</div>
+		</div>
+		<div class="o-wrapper o-wrapper-site-navigation">
+			<nav id="navigation-primary" class="m-main-navigation">
+				<button class="menu-toggle" aria-controls="primary-links" aria-expanded="false">
+					<svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg><!-- <i class="fas fa-bars"></i> --><span>Menu</span>
+				</button>
+				<ul id="primary-links" class="m-menu m-menu-primary-links" hidden=""><li><a href="https://www.minnpost.com/">Home</a></li><li><a href="https://www.minnpost.com/news">News</a></li><li><a href="https://www.minnpost.com/arts-culture">Arts &amp; Culture</a></li><li><a href="https://www.minnpost.com/health">Health</a></li><li class="active-parent  current-post-ancestor current-post-parent"><a href="https://www.minnpost.com/opinion">Opinion</a></li></ul><ul id="primary-actions" class="m-menu m-menu-primary-actions"><li class="events" data-menu-item-priority="20"><a href="https://www.minnpost.com/events">Events</a></li><li class="about-us"><a href="https://www.minnpost.com/about"><span class="a-label-xxs">About</span><span class="a-label-xs">About Us</span></a></li><li class="newsletters"><a href="https://www.minnpost.com/newsletters">Newsletters</a></li><li class="search"><a href="https://www.minnpost.com/?s="><svg title="Search" class="svg-inline--fa fa-search fa-w-16" aria-labelledby="svg-inline--fa-title-ewsmMZwi4Bcf" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><title id="svg-inline--fa-title-ewsmMZwi4Bcf">Search</title><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg><!-- <i title="Search" class="fas fa-search"></i> --></a><form role="search" method="get" class="m-form m-form-search" action="https://www.minnpost.com/" hidden="">
+	<fieldset>
+		<label class="a-search-label screen-reader-text" for="s">Search MinnPost			<p id="error" role="alert"></p>
+		</label>
+		<div class="a-input-with-button a-button-sentence">
+			<input class="search-field" placeholder="Search MinnPost" name="s" maxlength="128" type="search">
+			<input class="search-submit" value="Search" type="submit">
+		<div class="a-close-holder"><a href="#" class="a-close-button a-close-search"><svg class="svg-inline--fa fa-times fa-w-11" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg=""><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg><!-- <i class="fas fa-times"></i> --></a></div></div>
+	</fieldset>
+</form>
+</li><li class="your-minnpost-account"><a href="https://www.minnpost.com/user"><svg title="Your MinnPost account" class="svg-inline--fa fa-user fa-w-14" aria-labelledby="svg-inline--fa-title-tTSlHuw3Ln7K" data-prefix="fas" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><title id="svg-inline--fa-title-tTSlHuw3Ln7K">Your MinnPost account</title><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg><!-- <i title="Your MinnPost account" class="fas fa-user"></i> --></a><ul hidden=""><li class="log-in"><a href="https://www.minnpost.com/user/login/?redirect_to=/community-voices/2020/07/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good/">Log In</a></li><li class="create-account"><a href="https://www.minnpost.com/user/register">Create Account</a></li></ul></li></ul>			</nav><!-- #navigation-primary -->
+		</div>
+		<div class="o-wrapper o-wrapper-sub-navigation o-wrapper-topics-navigation">
+			<a class="a-subnav-label a-topics-label" href="https://www.minnpost.com/topics/">Topics</a>
+			<div class="m-sub-navigation m-topics">
+				<nav id="navigation-topics" class="m-subnav-navigation m-topics-navigation">
+					<ul id="topics" class="m-menu m-menu-sub-navigation m-menu-topics"><li><a href="https://www.minnpost.com/metro">Metro</a></li><li><a href="https://www.minnpost.com/state-government">State Government</a></li><li><a href="https://www.minnpost.com/greater-minnesota">Greater Minnesota</a></li><li><a href="https://www.minnpost.com/national">National</a></li><li><a href="https://www.minnpost.com/education">Education</a></li><li><a href="https://www.minnpost.com/environment">Environment</a></li><li><a href="https://www.minnpost.com/mental-health-addiction">Mental Health &amp; Addiction</a></li><li><a href="https://www.minnpost.com/new-americans">New Americans</a></li><li><a href="https://www.minnpost.com/economy">Economy</a></li></ul>				</nav><!-- #navigation-topics -->
+				<button class="nav-scroller-btn nav-scroller-btn--left" aria-label="Scroll left">
+					<svg class="svg-inline--fa fa-chevron-left fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg><!-- <i class="fas fa-chevron-left"></i> -->
+				</button>
+				<button class="nav-scroller-btn nav-scroller-btn--right" aria-label="Scroll right">
+					<svg class="svg-inline--fa fa-chevron-right fa-w-10" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg><!-- <i class="fas fa-chevron-right"></i> -->
+				</button>
+			</div>
+		</div>
+	</header><!-- #masthead -->
+
+	
+	
+	<div id="content" class="o-wrapper o-wrapper-content">
+
+	<div id="primary" class="m-layout-primary">
+		<main id="main" class="site-main">
+			
+<article id="post-1386661" class="m-post m-post-single post-1386661 post type-post status-publish format-standard hentry category-community-voices category-opinion category-perspectives">
+
+			<div class="m-post-classification">
+							<div class="a-breadcrumbs a-breadcrumbs-opinion"><div class="a-breadcrumb a-category-group"><a href="https://www.minnpost.com/opinion/">Opinion</a></div><div class="a-breadcrumb a-category-name"><a href="https://www.minnpost.com/community-voices/">Community Voices</a></div></div>								</div>
+	
+	<div class="a-sponsorship"><p><em>Community Voices features opinion pieces from a wide variety of authors and perspectives. (<a href="https://www.minnpost.com/community-voices-guidelines" target="_self">Submission Guidelines</a>)</em></p>
+</div>
+	
+	<header class="m-entry-header m-entry-header-singular m-entry-header-single">
+		<h1 class="a-entry-title">Arming police with lots of military gear has done more harm than good</h1>
+			
+												<div class="m-entry-excerpt">
+						<p>Police departments that get more equipment from the military kill more civilians than departments that get less military gear.</p>
+					</div><!-- .m-entry-excerpt -->
+							
+							<div class="m-entry-byline">
+					By Casey Delehanty				</div>
+			
+		
+	</header><!-- .m-entry-header -->
+
+				<figure class="m-post-image m-post-image-full">
+				<img src="LongBeachPolice640.png" class="jetpack-lazy-image jetpack-lazy-image" alt="Police in riot gear on an armored vehicle in Long Beach, California, on May 31." loading="lazy" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png?w=640&amp;strip=all 640w, https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png?w=190&amp;strip=all 190w, https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png?w=400&amp;strip=all 400w, https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png?w=200&amp;strip=all 200w, https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png?w=130&amp;strip=all 130w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2020/07/LongBeachPolice640.png?fit=640%2C427&amp;strip=all&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="640" height="427">								<figcaption>
+											<div class="a-media-meta a-media-caption">Police in riot gear on an armored vehicle in Long Beach, California, on May 31.</div>
+																<div class="a-media-meta a-media-credit">REUTERS/Patrick T. Fallon</div>
+									</figcaption>
+							</figure><!-- .post-image -->
+		
+		<div class="o-entry">
+				<div class="m-entry-meta">
+							<time class="a-entry-date published updated" datetime="July 9, 2020">July 9, 2020</time>								<ul class="m-entry-share m-entry-share-top">
+			<li class="a-share a-share-facebook">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.minnpost.com%2Fcommunity-voices%2F2020%2F07%2Farming-police-with-lots-of-military-gear-has-done-more-harm-than-good%2F" aria-label="Share this article on Facebook." data-share-action="Facebook">
+					<svg class="svg-inline--fa fa-facebook-f fa-w-10" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg><!-- <i class="fab fa-facebook-f" aria-hidden="true"></i> -->
+				</a>
+			</li>
+			<li class="a-share a-share-twitter">
+				<a href="https://twitter.com/intent/tweet?via=MinnPost&amp;text=Police%20departments%20that%20get%20more%20equipment%20from%20the%20military%20kill%20more%20civilians%20than%20departments%20that%20get%20less%20military%20gear.&amp;url=https%3A%2F%2Fwww.minnpost.com%2Fcommunity-voices%2F2020%2F07%2Farming-police-with-lots-of-military-gear-has-done-more-harm-than-good%2F" aria-label="Share this article on Twitter." data-share-action="Twitter">
+					<svg class="svg-inline--fa fa-twitter fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg><!-- <i class="fab fa-twitter" aria-hidden="true"></i> -->
+				</a>
+			</li>
+			<li class="a-share a-share-email">
+				<a href="mailto:?subject=Arming%20police%20with%20lots%20of%20military%20gear%20has%20done%20more%20harm%20than%20good%20|%20MinnPost&amp;body=https%3A%2F%2Fwww.minnpost.com%2Fcommunity-voices%2F2020%2F07%2Farming-police-with-lots-of-military-gear-has-done-more-harm-than-good%2F" aria-label="Email this article." data-share-action="Email">
+					<svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg><!-- <i class="far fa-envelope" aria-hidden="true"></i> -->
+				</a>
+			</li>
+			<li class="a-share a-share-print">
+				<a href="#" aria-label="Print this article." data-share-action="Print">
+					<svg class="svg-inline--fa fa-print fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="print" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"></path></svg><!-- <i class="fas fa-print"></i> -->
+				</a>
+			</li>
+			<li class="a-share a-share-copy-url">
+				<a href="#" aria-label="Copy the article link to your clipboard." data-share-action="Copy" data-tlite="Link copied">
+					<svg class="svg-inline--fa fa-link fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg><!-- <i class="fas fa-link"></i> -->
+				</a>
+			</li>
+		</ul>
+				</div><!-- .m-entry-meta -->
+
+		<div class="m-entry-content">
+						<p>Police departments that get more equipment from the military <a href="https://doi.org/10.1177/2053168017712885">kill more civilians</a>
+ than departments that get less military gear. That’s the finding from 
+research on a federal program that has operated since 1997 that I have 
+helped conduct as a scholar of police militarization.</p>
+<p>That finding was recently <a href="https://doi.org/10.1177/1065912918784209">confirmed and expanded by Edward Lawson Jr.</a> at the University of South Carolina.</p>
+<p>This federal effort is called the “<a href="https://www.dla.mil/DispositionServices/Offers/Reutilization/LawEnforcement/JoinTheProgram.aspx">1033 Program</a>.” It’s named after the section of the <a href="https://www.govtrack.us/congress/bills/104/hr3230/text">1997 National Defense Authorization Act</a> that allows the U.S. Defense Department to <a href="https://www.fastcompany.com/90513061/eliminating-this-federal-program-would-play-a-major-part-in-demilitarizing-the-police">give police agencies</a> around the country equipment, including weapons and ammunition, that the military no longer needs.</p>
+<p>Much of the equipment is <a href="https://www.cnbc.com/2014/09/11/40-percent-of-used-military-equipment-given-to-police-is-brand-new.html">brand new</a> and some is innocuous – like file cabinets and fax machines. But the program has also equipped local police with <a href="https://www.npr.org/2014/09/02/342494225/mraps-and-bayonets-what-we-know-about-the-pentagons-1033-program">armored vehicles and helicopters</a>,
+ as well as weapons meant to be used against people, like bayonets, 
+automatic rifles and grenade launchers used to deploy tear gas.</p>
+<div class="acm-ad-container acm-ad-container-bordered">
+<div class="a-text-around-ad a-text-before-ad">
+<p>Article continues after advertisement</p>
+</div>
+<div class="acm-ad ad-x100" id="acm-ad-tag-x100"></div>
+</div>
+<div><script>arcAds.registerAd({id: 'acm-ad-tag-x100',slotName: 'dfp_default',dimensions: [[300,250]],targeting: {"pos":"x100","id":"1386661","url_type":"post"},prerender: window.addLazyLoad,});</script></div>
+<p>The seeds of this program came in 1988 as the Cold War was ending. 
+The military was shrinking, while police were feeling overwhelmed 
+fighting the drug war. A <a href="https://www.govtrack.us/congress/bills/101/hr2461/text">provision in the National Defense Authorization Act</a>
+ allowed military surplus to be distributed to state and federal 
+agencies combating drugs. In 1997, the program was expanded to include 
+all law enforcement agencies – <a href="https://www.npr.org/sections/thetwo-way/2014/09/13/348242448/san-diego-school-district-s-new-15-ton-armored-vehicle-creates-stir">including school districts</a>.
+ That additional eligibility led to a dramatic expansion in the program,
+ and over the past 23 years police all across America received billions 
+of dollars in military-grade hardware often <a href="https://apps.dtic.mil/dtic/tr/fulltext/u2/a502075.pdf">designed specifically to fight in the battlefields of Afghanistan and Iraq</a>.</p>
+<p>And yet, all that equipment has done more harm than good. Militarization of police <a href="https://doi.org/10.1073/pnas.1805161115">doesn’t reduce crime or improve officer safety</a> – but it does make civilians less trusting of the police, with good reason.</p>
+<p>In our study, my coauthors and I found that the police agencies who <a href="https://www.washingtonpost.com/news/monkey-cage/wp/2017/06/30/does-military-equipment-lead-police-officers-to-be-more-violent-we-did-the-research/">received the most military gear</a> had, in the year after getting the equipment, a <a href="https://doi.org/10.1177/2053168017712885">rate of civilian killings more than double</a>
+ that of police departments that had received the least amount of 
+military equipment through the 1033 Program. While data limitations 
+limited our analysis to four states, our findings were replicated with <a href="https://doi.org/10.1177/1065912918784209">nationwide data</a>.</p>
+<figure class="align-center "><figcaption></figcaption></figure>
+<h4>On a wartime footing</h4>
+<p>Federal records of how much <a href="https://www.dla.mil/DispositionServices/Offers/Reutilization/LawEnforcement/PublicInformation/">military gear has actually been given</a> to local police are <a href="https://doi.org/10.1111/1745-9125.12212">inconsistent, poorly maintained and sometimes missing altogether</a>. But between 2006 and 2014, the available records reveal that <a href="https://www.npr.org/2014/09/02/342494225/mraps-and-bayonets-what-we-know-about-the-pentagons-1033-program">more than $1.4 billion worth of equipment was distributed</a>.
+ While the 1033 Program is the most significant source of military gear 
+for police in general, it is not the only source of military equipment 
+for police: There are other similar federal and state grant programs, 
+and many big-city police departments have <a href="https://www.bostonglobe.com/2020/06/23/metro/boston-police-spent-more-than-200000-militarized-equipment-during-first-five-months-this-year/">massive equipment budgets</a> of their own with which they can purchase military-grade hardware.</p>
+<p></p><figure id="attachment_1386761" class="m-content-media wp-caption alignright"><img class="size-full wp-image-1386761 jetpack-lazy-image" src="CaseyDelehanty150.jpg" alt="Casey Delehanty" data-recalc-dims="1" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&amp;strip=all?w=150&amp;strip=all 150w, https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&amp;strip=all?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&amp;strip=all?w=87&amp;strip=all 87w" data-lazy-sizes="(max-width: 150px) 100vw, 150px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&amp;is-pending-load=1#038;strip=all" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="150" height="225"><noscript><img class="size-full wp-image-1386761" src="https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&#038;strip=all" alt="Casey Delehanty" width="150" height="225" srcset="https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&#038;strip=all?w=150&amp;strip=all 150w, https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&#038;strip=all?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2020/07/CaseyDelehanty150.jpg?resize=150%2C225&#038;strip=all?w=87&amp;strip=all 87w" sizes="(max-width: 150px) 100vw, 150px" data-recalc-dims="1" /></noscript><figcaption class="m-content-caption wp-caption-text"><div class="a-media-meta a-media-caption">Casey Delehanty</div></figcaption></figure>The 1033 Program often requires receiving agencies to <a href="https://www.aclu.org/report/war-comes-home-excessive-militarization-american-police">use the equipment within the first year</a>
+ after getting it, according to research done by the American Civil 
+Liberties Union, even if a situation may not truly need it. That 
+requirement exists alongside the proliferation of <a href="https://www.pbs.org/independentlens/content/the-rise-of-swat-sources/">heavily armed SWAT teams</a> and other military-style units <a href="https://www.cato.org/sites/cato.org/files/pubs/pdf/balko_whitepaper_2006.pdf">in U.S. police departments</a>, officers’ veneration of the revenge-killing comic-book character “<a href="http://archive.jsonline.com/watchdog/watchdogreports/112982324.html">The Punisher</a>” <a href="https://www.inverse.com/article/39633-marvel-netflix-punisher-skull-meaning-cops-soldiers">and adoption of its logo</a>, as well as militaristic training programs such as “<a href="https://www.washingtonpost.com/news/the-watch/wp/2017/02/14/a-day-with-killology-police-trainer-dave-grossman/">killology</a>.”<p></p>
+<p>Together, research has shown, those influences lead <a href="https://doi.org/10.1093/police/pam065">police to emphasize the use of force</a>
+ to solve problems they encounter in the community. The equipment comes 
+at no cost to the departments, but they have to pay to maintain it, 
+which can be <a href="https://www.nwherald.com/2014/09/24/mchenry-county-police-deal-with-hidden-cost-of-government-surplus-of-military-supplies-vehicles/axo0yhn/">very expensive</a>.
+ To justify the costs, and help defray them, police often use the gear 
+to serve search warrants targeting drug crimes. That can make the 
+departments <a href="https://www.salon.com/test2/2013/07/13/radley_balko_once_a_town_gets_a_swat_team_you_want_to_use_it/">eligible for additional federal grants</a> – and for a <a href="https://www.drugpolicy.org/issues/asset-forfeiture-reform">share of the value</a> of any property and money seized during drug raids.</p>
+<div class="acm-ad-container acm-ad-container-bordered">
+<div class="a-text-around-ad a-text-before-ad">
+<p>Article continues after advertisement</p>
+</div>
+<div class="acm-ad ad-x101" id="acm-ad-tag-x101"></div>
+</div>
+<div><script>arcAds.registerAd({id: 'acm-ad-tag-x101',slotName: 'dfp_default',dimensions: [[300,250]],targeting: {"pos":"x101","id":"1386661","url_type":"post"},prerender: window.addLazyLoad,});</script></div>
+<p>As a result, supposedly free weapons and vehicles can lead some 
+police to use aggressive deployment strategies that make civilian 
+casualties more likely. Other departments may <a href="https://www.msn.com/en-us/news/us/the-militarization-of-local-police-has-been-decades-in-the-making/ar-BB14WA8H">already have a military-style mindset</a> and are taking advantage of an opportunity to stockpile more equipment.</p>
+<p>These increasingly aggressive deployment strategies of militarized 
+police disproportionately harm communities of color, for instance in 
+Maryland, where <a href="https://doi.org/10.1073/pnas.1805161115">SWAT raids consistently target majority-Black neighborhoods</a>.</p>
+<h4>Tragic, and deadly, results</h4>
+<p>While police often claim that militarized gear is a necessity in order to prepare for “<a href="https://www.newsobserver.com/news/state/north-carolina/article243766852.html">worst-case scenarios</a>,” there is ample evidence that receiving agencies use military gear in inappropriate situations. While the killing of <a href="https://www.usatoday.com/story/news/nation/2020/05/14/breonna-taylor-what-know-louisville-emt-killed-police/5189743002/">Black EMT Breonna Taylor</a> in her home in March grabbed headlines, she is but one of <a href="https://reason.com/2020/03/16/maryland-man-killed-in-no-knock-swat-raid-was-shot-while-asleep-family-says/">many civilians</a> <a href="https://www.houstonchronicle.com/news/houston-texas/houston/article/Court-filing-raises-more-questions-about-official-14131979.php">killed by police</a> <a href="https://www.kwtx.com/content/news/Family-files-lawsuit-in-no-knock-raid-that-left-local-man-dead-570853461.html">under</a> <a href="https://www.washingtonpost.com/news/the-watch/wp/2014/12/31/a-drug-informant-lied-swat-pounced-a-man-died/">questionable</a> <a href="https://www.huffpost.com/entry/jose-guerena_n_3988658?guccounter=1&amp;guce_referrer=aHR0cHM6Ly90aGVhcHBlYWwub3JnL2hvdy1hLW5vLWtub2NrLXJhaWQtaW4tYXVzdGluLXR1cm5lZC1pbnRvLWEtbGV0aGFsLXNob290b3V0Lw&amp;guce_referrer_sig=AQAAADAluqwD7seYf7ux8B92E92KoRpOD8GScYMNHrr0fHOTagQMB8CfQGupyafOdwTBg6QfVhNOD-nTDfLxu7slFtO4kaRSJXgmOoy9qg88OTMcfPDaqcUs7wLehOEyzFVMSspso7hqOw2NOD-cgUqM6JH0fazYZntZANkJPLQwUNU6">circumstances</a> <a href="https://github.com/newsdev/nyt-forcible-entry">during no-knock raids</a>, when police force entry into a building or home without announcing themselves.</p>
+<p>For obvious reasons, such raids carry an unreasonably high probability of death in a <a href="https://www.washingtonpost.com/news/wonk/wp/2018/06/19/there-are-more-guns-than-people-in-the-united-states-according-to-a-new-study-of-global-firearm-ownership/">country with more guns than people</a>.
+ These and other overaggressive deployments are the direct result of 
+public policy that gives militarized gear to local police, with little 
+training or oversight.</p>
+<p>In our research, we don’t make any determination of whether specific 
+killings by police were justified or not. In our view, too often the 
+question of legal justification <a href="https://www.nytimes.com/2015/12/29/us/tamir-rice-police-shootiing-cleveland.html">takes a very narrow look at the few seconds just prior to a lethal interaction</a>.
+ We believe that a wider perspective is useful: Local, state and federal
+ rules and training influence the behavior of police agencies across the
+ country. When policing strategies are overly aggressive, an increase in
+ civilian casualties tends to follow. While the resulting killings are 
+often called “justified,” they’re more often the avoidable result of 
+policy decisions made well before the incident in question.<!-- Below is The Conversation's page counter tag. Please DO NOT REMOVE. --><img style="border: none !important; box-shadow: none !important; margin: 0 !important; max-height: 1px !important; max-width: 1px !important; min-height: 1px !important; min-width: 1px !important; opacity: 0 !important; outline: none !important; padding: 0 !important; text-shadow: none !important;" src="count.gif" alt="The Conversation" data-recalc-dims="1" data-lazy-src="https://i1.wp.com/counter.theconversation.com/content/141421/count.gif?resize=1%2C1&amp;is-pending-load=1#038;strip=all&amp;ssl=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class=" jetpack-lazy-image" width="1" height="1"><noscript><img style="border: none !important; box-shadow: none !important; margin: 0 !important; max-height: 1px !important; max-width: 1px !important; min-height: 1px !important; min-width: 1px !important; opacity: 0 !important; outline: none !important; padding: 0 !important; text-shadow: none !important;" src="https://i1.wp.com/counter.theconversation.com/content/141421/count.gif?resize=1%2C1&#038;strip=all&#038;ssl=1" alt="The Conversation" width="1" height="1" data-recalc-dims="1" /></noscript><em><!-- End of code. If you don't see any code above, please get new code from the Advanced tab after you click the republish button. The page counter does not collect any personal data. More info: https://theconversation.com/republishing-guidelines --></em></p>
+<p><em><a href="https://gardner-webb.edu/academic-programs-and-resources/colleges-and-schools/arts-and-sciences/schools-and-departments/social-sciences/faculty-and-staff/casey-delehanty/index">Casey Delehanty</a>,&nbsp;Ph.D., is an assistant professor of global studies at <a href="https://gardner-webb.edu/">Gardner-Webb University</a>.</em></p>
+<p><em><a href="https://theconversation.com/police-with-lots-of-military-gear-kill-civilians-more-often-than-less-militarized-officers-141421">This article</a> is republished from <a href="https://theconversation.com/">The Conversation</a>.</em></p>
+					</div><!-- .m-entry-content -->
+	</div><!-- .o-entry -->
+
+	
+			
+	
+
+	<aside class="o-site-message-container wp-message-inserter-message wp-message-inserter-message-post-template-default wp-message-inserter-message-single wp-message-inserter-message-single-post wp-message-inserter-message-postid-1386661 wp-message-inserter-message-single-format-standard wp-message-inserter-message-tribe-no-js  wp-message-inserter-message-email-form-article-bottom wp-message-inserter-message-region-article_bottom wp-message-inserter-message-id-676523 wp-message-inserter-message-editor wp-message-inserter-message-1">
+		
+														<div class="m-wp-insert-message-item m-wp-insert-message-editor m-wp-insert-message-item-0">
+						<h3>Get MinnPost in your email inbox:</h3>
+<form action="https://www.minnpost.com/wp-admin/admin-post.php" method="post" class="m-form m-form-instory m-form-minnpost-form-processor-mailchimp">
+	<input name="minnpost_form_processor_mailchimp_nonce" value="6f4d4b6d45" type="hidden">
+			<input name="user_id" value="0" type="hidden">
+		<input name="mailchimp_user_id" value="" type="hidden">
+		<input name="first_name" value="" type="hidden">
+		<input name="last_name" value="" type="hidden">
+						<input name="action" value="newsletter_form" type="hidden">
+				<input name="redirect_url" value="https://www.minnpost.com/community-voices/2020/07/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good/" type="hidden">
+			<div class="m-form-container">
+						<div class="m-form-message m-form-message-ajax m-form-message-ajax-placeholder"></div>		<fieldset>
+			<div class="a-input-with-button a-button-sentence">
+				<input name="email" placeholder="Your email address" required="" type="email">
+				<button type="submit" name="subscribe" class="a-button a-button-next a-button-choose">Sign up</button>
+			</div>
+		</fieldset>
+			</div>
+</form>
+
+<p>You can also <a href="https://www.minnpost.com/newsletters/">learn about all our free newsletter options</a>.</p>
+											</div>
+										</aside>
+
+	
+			<aside class="m-related">
+					<h3 class="a-related-title a-related-title-automated">
+							Read these stories next					</h3>
+		<ul class="a-related-list a-related-list-automated">
+			
+<li>
+				<div class="a-breadcrumbs a-breadcrumbs-opinion"><div class="a-breadcrumb a-category-group"><a href="https://www.minnpost.com/opinion/">Opinion</a></div><div class="a-breadcrumb a-category-name"><a href="https://www.minnpost.com/letters/">Letters</a></div></div>		<header class="m-entry-header">
+		<h4 class="a-entry-title"><a href="https://www.minnpost.com/letters/2020/07/letter-submission-dave-kenney-07-09-2020/">The militarization of Twin Cities police goes way back</a></h4>
+									<div class="m-entry-byline">
+					By Dave Kenney, Roseville				</div>
+						<div class="m-entry-meta">
+									<time class="a-entry-date published updated" datetime="July 10, 2020">July 10, 2020</time>							</div><!-- .m-entry-meta -->
+			</header>
+</li>
+
+<li>
+				<a class="m-post-image m-post-thumbnail m-post-thumbnail-feature-medium" href="https://www.minnpost.com/greater-minnesota/2020/06/how-common-is-it-for-minnesota-police-departments-to-authorize-chokeholds-neck-restraints/">
+				<img src="WeCantBreatheShirtThumb.png" class="jetpack-lazy-image jetpack-lazy-image" alt="&quot;We Can't Breathe&quot;" location="related" loading="lazy" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2020/06/WeCantBreatheShirtThumb.png?w=400&amp;strip=all 400w, https://www.minnpost.com/wp-content/uploads/2020/06/WeCantBreatheShirtThumb.png?w=130&amp;strip=all 130w, https://www.minnpost.com/wp-content/uploads/2020/06/WeCantBreatheShirtThumb.png?w=190&amp;strip=all 190w, https://www.minnpost.com/wp-content/uploads/2020/06/WeCantBreatheShirtThumb.png?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2020/06/WeCantBreatheShirtThumb.png?w=200&amp;strip=all 200w" data-lazy-sizes="(max-width: 190px) 100vw, 190px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2020/06/WeCantBreatheShirtThumb.png?resize=190%2C125&amp;strip=all&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="190" height="125">			</a>
+						<div class="a-breadcrumbs a-breadcrumbs-news"><div class="a-breadcrumb a-category-group"><a href="https://www.minnpost.com/news/">News</a></div><div class="a-breadcrumb a-category-name"><a href="https://www.minnpost.com/greater-minnesota/">Greater Minnesota</a></div></div>		<header class="m-entry-header">
+		<h4 class="a-entry-title"><a href="https://www.minnpost.com/greater-minnesota/2020/06/how-common-is-it-for-minnesota-police-departments-to-authorize-chokeholds-neck-restraints/">How common is it for Minnesota police departments to authorize chokeholds, ‘neck restraints’?&nbsp;</a></h4>
+									<div class="m-entry-byline">
+					By&nbsp;<a href="https://www.minnpost.com/author/walker-orenstein/" rel="author" class="a-entry-author">Walker Orenstein</a>&nbsp;|&nbsp;<span class="a-entry-author-job-title">MinnPost Staff Writer</span>				</div>
+						<div class="m-entry-meta">
+									<time class="a-entry-date published updated" datetime="June 15, 2020">June 15, 2020</time>							</div><!-- .m-entry-meta -->
+			</header>
+</li>
+
+<li>
+				<a class="m-post-image m-post-thumbnail m-post-thumbnail-feature-medium" href="https://www.minnpost.com/metro/2020/06/why-are-cops-in-minnesota-so-rarely-charged-in-officer-involved-deaths/">
+				<img src="DerekChauvinThumb.jpg" class="jetpack-lazy-image jetpack-lazy-image" alt="Derek Chauvin" location="related" loading="lazy" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2020/05/DerekChauvinThumb.jpg?w=400&amp;strip=all 400w, https://www.minnpost.com/wp-content/uploads/2020/05/DerekChauvinThumb.jpg?w=130&amp;strip=all 130w, https://www.minnpost.com/wp-content/uploads/2020/05/DerekChauvinThumb.jpg?w=190&amp;strip=all 190w, https://www.minnpost.com/wp-content/uploads/2020/05/DerekChauvinThumb.jpg?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2020/05/DerekChauvinThumb.jpg?w=200&amp;strip=all 200w" data-lazy-sizes="(max-width: 190px) 100vw, 190px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2020/05/DerekChauvinThumb.jpg?resize=190%2C125&amp;strip=all&amp;is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="190" height="125">			</a>
+						<div class="a-breadcrumbs a-breadcrumbs-news"><div class="a-breadcrumb a-category-group"><a href="https://www.minnpost.com/news/">News</a></div><div class="a-breadcrumb a-category-name"><a href="https://www.minnpost.com/metro/">Metro</a></div></div>		<header class="m-entry-header">
+		<h4 class="a-entry-title"><a href="https://www.minnpost.com/metro/2020/06/why-are-cops-in-minnesota-so-rarely-charged-in-officer-involved-deaths/">Why are cops in Minnesota so rarely charged in officer-involved deaths?</a></h4>
+									<div class="m-entry-byline">
+					By&nbsp;<a href="https://www.minnpost.com/author/pat-borzi/" rel="author" class="a-entry-author">Pat Borzi</a>&nbsp;|&nbsp;<span class="a-entry-author-job-title">MinnPost contributing writer</span>				</div>
+						<div class="m-entry-meta">
+									<time class="a-entry-date published updated" datetime="June 1, 2020">June 1, 2020</time>							</div><!-- .m-entry-meta -->
+			</header>
+</li>
+		</ul>
+										<h3 class="a-related-title a-related-title-category">
+					<a href="https://www.minnpost.com/community-voices/">
+						More Community Voices articles					</a>
+				</h3>
+											</aside>
+	
+	<!-- Required values for loading comments via ajax -->
+<input name="llc_ajax_url" id="llc_ajax_url" value="https://www.minnpost.com/wp-admin/admin-ajax.php" type="hidden">
+<input name="llc_post_id" id="llc_post_id" value="1386661" type="hidden">
+<div id="llc_comments">
+	<div>
+		<div id="llc-comments-loader" style="display: none;">
+			<!-- Filter to disable loader element if not needed -->
+							<!-- Filter to change loader element -->
+				<img src="spinner.gif" srcset="https://www.minnpost.com/wp-admin/images/spinner.gif 1x, https://www.minnpost.com/wp-admin/images/spinner-2x.gif 2x,">					</div>
+		<!-- Show comments button if "On Click" option is set -->
+					<!-- Filter to modify loading button text and button class -->
+			<button id="llc_comments_button" class="btn a-button a-button-next a-button-choose a-button-show-comments">Show comments or leave a comment</button>
+			</div>
+</div>
+</article><!-- #post-## -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+
+<aside id="secondary" class="o-site-sidebar" role="complementary">
+	<div class="m-ad-region m-ad-region-sidebar">
+		<div class="acm-ad ad-halfpage-default" id="acm-ad-tag-halfpage-default" data-google-query-id="CNCvl67o8OoCFZCTpwodbUkHnQ"><div id="google_ads_iframe_/1035012/dfp_default_3__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1035012/dfp_default_3" title="3rd party ad content" name="google_ads_iframe_/1035012/dfp_default_3" scrolling="no" marginwidth="0" marginheight="0" style="border: 0px none; vertical-align: bottom;" srcdoc="" data-google-container-id="2" width="300" height="600" frameborder="0"></iframe></div></div><div><script>arcAds.registerAd({id: 'acm-ad-tag-halfpage-default',slotName: 'dfp_default',dimensions: [[300,600]],targeting: {"id":"1386661","url_type":"post"},});</script></div>	</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x01">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x02">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x03">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x04">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x05">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x06">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x07">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x08">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x09">
+				<script type="text/javascript" src=""></script>			</div>
+						<div class="m-ad-region m-ad-region-sidebar m-ad-region-x10">
+				<script type="text/javascript" src=""></script>			</div>
+											<section id="zoninator-zoneposts-widget-2" class="m-widget m-widget-zone-posts"><h3 class="a-widget-title">MinnPost Recommends</h3><div class="m-widget-contents"><ul><li><a href="https://www.minnpost.com/metro/2020/05/what-we-know-about-the-events-surrounding-george-floyds-death-and-its-aftermath-a-timeline/">
+						Seven days in Minneapolis: a timeline of what we know about the death of George Floyd and its aftermath					</a></li><li><a href="https://www.minnpost.com/metro/2019/02/with-covenants-racism-was-written-into-minneapolis-housing-the-scars-are-still-visible/">
+						With covenants, racism was written into Minneapolis housing. The scars are still visible.					</a></li><li><a href="https://www.minnpost.com/health/2020/03/tracking-the-minnesota-covid-19-numbers/">
+						Tracking the Minnesota COVID-19 numbers					</a></li><li><a href="https://www.minnpost.com/state-government/2019/12/whos-running-for-the-minnesota-legislature-in-2020/">
+						Who’s running for the Minnesota Legislature in 2020					</a></li><li><a href="https://www.minnpost.com/national/2020/02/whos-running-for-congress-in-minnesota-in-2020/">
+						Who’s running for Congress in Minnesota in 2020					</a></li></ul></div></section>		<section id="most-commented-widget-2" class="m-widget m-widget-most-commented"><h3 class="a-widget-title">Most Commented Stories</h3><p>This list spans the last seven days.</p>
+<div class="m-widget-contents"><ol><li><a href="https://www.minnpost.com/health/2020/07/walz-to-order-mask-wearing-statewide/">What to know about Minnesota's new statewide mask mandate</a></li><li><a href="https://www.minnpost.com/state-government/2020/07/how-the-bonding-bill-went-bust/">How the bonding bill went bust</a></li><li><a href="https://www.minnpost.com/eric-black-ink/2020/07/trumps-approval-ratings-are-dropping/">Trump's approval ratings are dropping</a></li><li><a href="https://www.minnpost.com/politics-policy/2020/07/urban-planning-as-a-tool-of-white-supremacy-the-other-lesson-from-minneapolis/">Urban planning as a tool of white supremacy – the other lesson from Minneapolis</a></li><li><a href="https://www.minnpost.com/second-opinion/2020/07/which-cloth-masks-are-best-the-more-layers-the-better-a-new-study-suggests/">Which cloth masks are best? The more layers the better, a new study suggests</a></li></ol></div></section>	</aside><!-- #secondary -->
+
+	</div>
+
+	<footer id="site-footer" class="o-footer">
+
+		<div class="o-wrapper o-wrapper-site-footer">
+
+			<aside class="o-footer-hat">
+				<section id="custom_html-65" class="m-widget m-widget-text m-widget-custom-html m-widget-sponsor-list"><h3 class="a-widget-title">Thanks to our major sponsors</h3><div class="m-widget-contents m-textwidget m-custom-html-widget"><ul class="a-sponsor-list a-sponsor-list-columns-one"><li class="a-sponsor"><a href="https://greatriverenergy.com/"><figure><img src="GRE_Logo_H_Stack.jpg" class="jetpack-lazy-image jetpack-lazy-image" alt="Great River Energy logo" location="footer" loading="lazy" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2019/02/GRE_Logo_H_Stack.jpg?w=136&amp;strip=all 136w, https://www.minnpost.com/wp-content/uploads/2019/02/GRE_Logo_H_Stack.jpg?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2019/02/GRE_Logo_H_Stack.jpg?w=130&amp;strip=all 130w" data-lazy-sizes="(max-width: 136px) 100vw, 136px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2019/02/GRE_Logo_H_Stack.jpg?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="136" height="63"></figure></a></li><li class="a-sponsor"><a href="http://www.ucare.org/"><figure><img src="ucare-1.png" class="jetpack-lazy-image jetpack-lazy-image" alt="UCare logo" location="footer" loading="lazy" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2019/02/ucare-1.png?w=150&amp;strip=all 150w, https://www.minnpost.com/wp-content/uploads/2019/02/ucare-1.png?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2019/02/ucare-1.png?w=130&amp;strip=all 130w" data-lazy-sizes="(max-width: 150px) 100vw, 150px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2019/02/ucare-1.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="150" height="40"></figure></a></li><li class="a-sponsor"><a href="http://www.ywcampls.org/"><figure><img src="YWCAsmlogo.gif" class="jetpack-lazy-image jetpack-lazy-image" alt="" location="footer" loading="lazy" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2018/09/YWCAsmlogo.gif?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="136" height="68"></figure></a></li><li class="a-sponsor"><a href="https://www.minnpost.com/community-sketchbook"><figure><img src="mplssmall032018.jpg" class="jetpack-lazy-image jetpack-lazy-image" alt="Minneapolis Foundation logo" location="footer" loading="lazy" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2019/02/mplssmall032018.jpg?w=150&amp;strip=all 150w, https://www.minnpost.com/wp-content/uploads/2019/02/mplssmall032018.jpg?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2019/02/mplssmall032018.jpg?w=130&amp;strip=all 130w" data-lazy-sizes="(max-width: 150px) 100vw, 150px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2019/02/mplssmall032018.jpg?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="150" height="49"></figure></a></li><li class="a-sponsor"><a href="https://ottobremer.org/"><figure><img src="obt.png" class="jetpack-lazy-image jetpack-lazy-image" alt="Otto Bremer Trust logo" location="footer" loading="lazy" data-lazy-srcset="https://www.minnpost.com/wp-content/uploads/2019/02/obt.png?w=150&amp;strip=all 150w, https://www.minnpost.com/wp-content/uploads/2019/02/obt.png?w=75&amp;strip=all 75w, https://www.minnpost.com/wp-content/uploads/2019/02/obt.png?w=130&amp;strip=all 130w" data-lazy-sizes="(max-width: 150px) 100vw, 150px" data-lazy-src="https://www.minnpost.com/wp-content/uploads/2019/02/obt.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="150" height="50"></figure></a></li></ul><h3 class="a-heading-donor-thanks">Additional thanks to our <a href="https://www.minnpost.com/major-supporters/">top philanthropic supporters</a>.</h3></div></section>
+<section id="custom_html-70" class="m-widget m-widget-text m-widget-custom-html m-widget-site-branding"><div class="m-widget-contents m-textwidget m-custom-html-widget"><div class="a-site-branding">
+	<a class="a-logo a-logo-svg" rel="home" href="https://www.minnpost.com/" title="MinnPost">
+		<picture>
+			<source type="image/svg+xml" srcset="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/minnpost-logo.svg">
+			<img src="logo-bw.png" alt="MinnPost" data-lazy-src="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/logo-bw.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class=" jetpack-lazy-image"><noscript><img src="https://www.minnpost.com/wp-content/themes/minnpost-largo/assets/img/logo-bw.png" alt="MinnPost"></noscript>
+		</picture>
+	</a>
+</div><!-- .a-site-branding -->
+<p class="a-tagline-bottom">is a 501(c)(3) nonprofit newsroom</p></div></section>
+				
+<section class="m-support-cta m-support-cta-bottom">
+				<header class="m-membership-intro m-membership-support-intro">
+			<h1 class="a-standalone-title">Support MinnPost’s nonprofit journalism</h1>
+		</header>
+		<form action="https://support.minnpost.com/give/" method="get" class="m-form m-form-membership m-form-membership-support">
+					<p><span style="font-weight: 400;">Member donations are crucial to 
+the work of our nonprofit newsroom. Our reporters are only able to do 
+their work thanks to support at all levels.</span></p>
+				<section class="m-membership-fast-select">
+			<fieldset>
+				<div class="m-form-item-wrap">
+										<div class="m-amount-group">
+						<label for="amount" class="a-fast-select-currency">$</label>
+						<div id="amount-item" class="m-form-item">
+														<input id="amount" min="1" name="amount" value="15" type="number">
+						</div>
+					</div>
+																<div class="m-form-radios">
+																							<div class="m-form-item">
+									<input name="frequency" value="monthly" checked="checked" id="frequencies-1" type="radio">
+									<label for="frequencies-1" class="a-frequency-option">Monthly</label>
+								</div>
+																							<div class="m-form-item">
+									<input name="frequency" value="yearly" id="frequencies-2" type="radio">
+									<label for="frequencies-2" class="a-frequency-option">Yearly</label>
+								</div>
+																							<div class="m-form-item">
+									<input name="frequency" value="one-time" id="frequencies-3" type="radio">
+									<label for="frequencies-3" class="a-frequency-option">One Time</label>
+								</div>
+													</div>
+									</div>
+			</fieldset>
+		</section>
+
+		<div class="m-form-actions m-membership-form-actions">
+			<button type="submit" name="give" class="a-button">Donate</button>
+		</div>
+
+	</form>
+
+</section>
+			</aside>
+
+			<aside class="o-footer-links">
+				<nav id="footer-primary" class="m-secondary-navigation">
+					<ul id="footer-primary-links" class="menu"><li><a href="https://www.minnpost.com/about">About Us</a></li><li><a href="https://www.minnpost.com/advertise">Advertise</a></li><li><a href="https://www.minnpost.com/support">Membership</a></li><li><a href="https://www.minnpost.com/help">Help</a></li><li><a href="https://www.minnpost.com/contact-us">Contact</a></li><li><a href="https://www.minnpost.com/minnpost-code-of-ethics">Code of Ethics</a></li><li><a href="https://www.minnpost.com/terms-of-use">Terms of Use</a></li><li><a href="https://www.minnpost.com/privacy">MinnPost Privacy Policy</a></li></ul>				</nav><!-- #footer-primary -->
+
+				<nav id="footer-network" class="m-secondary-navigation">
+					<ul id="minnpost-network" class="menu"><li><a href="https://twitter.com/MinnPost"><svg title="Twitter" class="svg-inline--fa fa-twitter-square fa-w-14" aria-labelledby="svg-inline--fa-title-HagdB88FieBx" data-prefix="fab" data-icon="twitter-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><title id="svg-inline--fa-title-HagdB88FieBx">Twitter</title><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-48.9 158.8c.2 2.8.2 5.7.2 8.5 0 86.7-66 186.6-186.6 186.6-37.2 0-71.7-10.8-100.7-29.4 5.3.6 10.4.8 15.8.8 30.7 0 58.9-10.4 81.4-28-28.8-.6-53-19.5-61.3-45.5 10.1 1.5 19.2 1.5 29.6-1.2-30-6.1-52.5-32.5-52.5-64.4v-.8c8.7 4.9 18.9 7.9 29.6 8.3a65.447 65.447 0 0 1-29.2-54.6c0-12.2 3.2-23.4 8.9-33.1 32.3 39.8 80.8 65.8 135.2 68.6-9.3-44.5 24-80.6 64-80.6 18.9 0 35.9 7.9 47.9 20.7 14.8-2.8 29-8.3 41.6-15.8-4.9 15.2-15.2 28-28.8 36.1 13.2-1.4 26-5.1 37.8-10.2-8.9 13.1-20.1 24.7-32.9 34z"></path></svg><!-- <i title="Twitter" class="fab fa-twitter-square"></i> --></a></li><li><a href="https://www.facebook.com/MinnPost"><svg title="Facebook" class="svg-inline--fa fa-facebook-square fa-w-14" aria-labelledby="svg-inline--fa-title-spWUXSjjpox0" data-prefix="fab" data-icon="facebook-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><title id="svg-inline--fa-title-spWUXSjjpox0">Facebook</title><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg><!-- <i title="Facebook" class="fab fa-facebook-square"></i> --></a></li><li><a href="https://www.instagram.com/MinnPost"><svg title="Instagram" class="svg-inline--fa fa-instagram-square fa-w-14" aria-labelledby="svg-inline--fa-title-S5DN5I297pHk" data-prefix="fab" data-icon="instagram-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><title id="svg-inline--fa-title-S5DN5I297pHk">Instagram</title><path fill="currentColor" d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"></path></svg><!-- <i title="Instagram" class="fab fa-instagram-square"></i> --></a></li><li><a href="https://www.minnpost.com/rss-feed-list"><svg title="RSS Feeds List" class="svg-inline--fa fa-rss-square fa-w-14" aria-labelledby="svg-inline--fa-title-PKkeCYgEO8Mn" data-prefix="fas" data-icon="rss-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><title id="svg-inline--fa-title-PKkeCYgEO8Mn">RSS Feeds List</title><path fill="currentColor" d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zM112 416c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm157.533 0h-34.335c-6.011 0-11.051-4.636-11.442-10.634-5.214-80.05-69.243-143.92-149.123-149.123-5.997-.39-10.633-5.431-10.633-11.441v-34.335c0-6.535 5.468-11.777 11.994-11.425 110.546 5.974 198.997 94.536 204.964 204.964.352 6.526-4.89 11.994-11.425 11.994zm103.027 0h-34.334c-6.161 0-11.175-4.882-11.427-11.038-5.598-136.535-115.204-246.161-251.76-251.76C68.882 152.949 64 147.935 64 141.774V107.44c0-6.454 5.338-11.664 11.787-11.432 167.83 6.025 302.21 141.191 308.205 308.205.232 6.449-4.978 11.787-11.432 11.787z"></path></svg><!-- <i title="RSS Feeds List" class="fas fa-rss-square"></i> --></a></li></ul>				</nav><!-- #footer-network -->
+
+									<p class="a-footer-message">MinnPost | P.O. Box 18438 | Minneapolis, MN 55418 | <a href="tel:612.455.6950">612.455.6950</a></p>
+				
+			</aside>
+
+			<a href="https://wpvip.com/?utm_source=vip_powered_wpcom&amp;utm_medium=web&amp;utm_campaign=VIP%20Footer%20Credit&amp;utm_term=www.minnpost.com" rel="generator nofollow" class="powered-by-wpcom"><img src="vip-powered-light-small.png" alt="Powered by WordPress.com VIP" width="187" height="26"></a>
+		</div>
+	</footer>
+
+		<script type="text/javascript">
+						var _sf_async_config={};
+			_sf_async_config.uid = 27923;
+			_sf_async_config.domain = "minnpost.com";
+			_sf_async_config.useCanonical = true;
+				(function(){
+			        function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				  }
+				  var oldonload = window.onload;
+				  window.onload = (typeof window.onload != 'function') ?
+					 loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+				})();
+		</script>
+<script>
+/* <![CDATA[ */
+var google_conversion_id = 1002275927;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script src="conversion.js"></script>
+<noscript>
+<div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1002275927/?value=0&guid=ON&script=0"></div>
+</noscript>
+
+<!-- Quantcast Tag -->
+<script>
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-ddPr1r_sBVpOs"
+});
+</script>
+
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-ddPr1r_sBVpOs.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+<!--
+Start Here
+Tag: MinnPost - Audience
+URL: https://www.minnpost.com/
+-->
+<script>
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+document.write('<div style="display:none;"><img src="https://ad.doubleclick.net/ddm/activity/src=9728734;type=invmedia;cat=minnp0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;ord=' + a + '?" width="1" height="1" alt=""/></div>');
+</script><div style="display:none;"><img src="src9728734" alt="" width="1" height="1"></div>
+<noscript>
+<div style="display:inline;"><img src="https://ad.doubleclick.net/ddm/activity/src=9728734;type=invmedia;cat=minnp0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;ord=1?" width="1" height="1" alt=""/></div>
+</noscript>
+<!-- End of Part A: Please do not remove -->
+<script src="nsjs"></script><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1368619780705816&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1595969141&amp;plat=1%3A32776%2C2%3A32776%2C9%3A32776%2C10%3A32%2C11%3A32%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C40%3A32&amp;guci=2.2.0.0.2.2.0.0&amp;format=0x0&amp;url=https%3A%2F%2Fwww.minnpost.com%2Fcommunity-voices%2F2020%2F07%2Farming-police-with-lots-of-military-gear-has-done-more-harm-than-good%2F&amp;ea=0&amp;flash=0&amp;pra=5&amp;wgl=1&amp;dt=1595969141702&amp;bpp=9&amp;bdt=677&amp;idt=207&amp;shv=r20200723&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;nras=1&amp;correlator=900767598341&amp;frm=20&amp;pv=2&amp;ga_vid=742970071.1595969142&amp;ga_sid=1595969142&amp;ga_hid=905660512&amp;ga_fc=0&amp;icsg=577212113747952&amp;dssz=43&amp;mdo=0&amp;mso=0&amp;u_tz=-360&amp;u_his=1&amp;u_java=0&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1080&amp;u_aw=1920&amp;u_cd=24&amp;u_nplug=0&amp;u_nmime=0&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1920&amp;bih=0&amp;scr_x=0&amp;scr_y=0&amp;eid=21066623%2C21066752%2C21066806&amp;oid=3&amp;pvsid=570689010679492&amp;pem=64&amp;rx=0&amp;eae=2&amp;fc=1920&amp;brdim=%2C%2C1920%2C0%2C1920%2C0%2C1920%2C1043%2C1920%2C0&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=8192&amp;bc=29&amp;ifi=0&amp;uci=a!0&amp;dtd=224" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!0" data-load-complete="true" frameborder="0"></iframe></ins></ins></ins>
+<!-- End of Part B: Please do not remove -->		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		
+<!-- Schema & Structured Data For WP v1.9.45 - -->
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https:\/\/schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https:\/\/www.minnpost.com#Organization","name":"MinnPost","url":"https:\/\/www.minnpost.com","sameAs":["https:\/\/www.facebook.com\/MinnPost","https:\/\/twitter.com\/minnpost","https:\/\/instagram.com\/minnpost","https:\/\/www.linkedin.com\/company\/minnpost.com\/"],"logo":{"@type":"ImageObject","url":"https:\/\/www.minnpost.com\/wp-content\/uploads\/2020\/04\/minnpost-app-icon.png","width":"512","height":"512"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","telephone":"+1-612-455-6950","url":"https:\/\/www.minnpost.com\/contact-us"}},{"@type":"WebSite","@id":"https:\/\/www.minnpost.com#website","headline":"MinnPost","name":"MinnPost","description":"Nonprofit, nonpartisan journalism. Supported by readers.","url":"https:\/\/www.minnpost.com","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.minnpost.com\/?s={search_term_string}","query-input":"required name=search_term_string"},"publisher":{"@id":"https:\/\/www.minnpost.com#Organization"}},{"@context":"https:\/\/schema.org","@type":"WebPage","@id":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/#webpage","name":"Arming police with lots of military gear has done more harm than good","url":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/","lastReviewed":"2020-07-09T09:29:39-05:00","reviewedBy":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https:\/\/www.minnpost.com\/wp-content\/uploads\/2020\/04\/minnpost-app-icon.png","width":"512","height":"512"},"name":"MinnPost"},"inLanguage":"en-US","description":"Police departments that get more equipment from the military kill more civilians than departments that get less military gear.","primaryImageOfPage":{"@id":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/#primaryimage"},"isPartOf":{"@id":"https:\/\/www.minnpost.com#website"}},{"@type":"NewsArticle","@id":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/#newsarticle","url":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/","headline":"Arming police with lots of military gear has done more harm than good | MinnPost","mainEntityOfPage":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/#webpage","datePublished":"2020-07-09T09:26:18-05:00","dateModified":"2020-07-09T09:29:39-05:00","description":"Police departments that get more equipment from the military kill more civilians than departments that get less military gear.","articleSection":"Perspectives","articleBody":"Police departments that get more equipment from the military kill more civilians than departments that get less military gear. That\u2019s the finding from research on a federal program that has operated since 1997 that I have helped conduct as a scholar of police militarization.    That finding was recently confirmed and expanded by Edward Lawson Jr. at the University of South Carolina.    This federal effort is called the \u201c1033 Program.\u201d It\u2019s named after the section of the 1997 National Defense Authorization Act that allows the U.S. Defense Department to give police agencies around the country equipment, including weapons and ammunition, that the military no longer needs.    Much of the equipment is brand new and some is innocuous \u2013 like file cabinets and fax machines. But the program has also equipped local police with armored vehicles and helicopters, as well as weapons meant to be used against people, like bayonets, automatic rifles and grenade launchers used to deploy tear gas.    The seeds of this program came in 1988 as the Cold War was ending. The military was shrinking, while police were feeling overwhelmed fighting the drug war. A provision in the National Defense Authorization Act allowed military surplus to be distributed to state and federal agencies combating drugs. In 1997, the program was expanded to include all law enforcement agencies \u2013 including school districts. That additional eligibility led to a dramatic expansion in the program, and over the past 23 years police all across America received billions of dollars in military-grade hardware often designed specifically to fight in the battlefields of Afghanistan and Iraq.    And yet, all that equipment has done more harm than good. Militarization of police doesn\u2019t reduce crime or improve officer safety \u2013 but it does make civilians less trusting of the police, with good reason.    In our study, my coauthors and I found that the police agencies who received the most military gear had, in the year after getting the equipment, a rate of civilian killings more than double that of police departments that had received the least amount of military equipment through the 1033 Program. While data limitations limited our analysis to four states, our findings were replicated with nationwide data.    On a wartime footing  Federal records of how much military gear has actually been given to local police are inconsistent, poorly maintained and sometimes missing altogether. But between 2006 and 2014, the available records reveal that more than $1.4 billion worth of equipment was distributed. While the 1033 Program is the most significant source of military gear for police in general, it is not the only source of military equipment for police: There are other similar federal and state grant programs, and many big-city police departments have massive equipment budgets of their own with which they can purchase military-grade hardware.    The 1033 Program often requires receiving agencies to use the equipment within the first year after getting it, according to research done by the American Civil Liberties Union, even if a situation may not truly need it. That requirement exists alongside the proliferation of heavily armed SWAT teams and other military-style units in U.S. police departments, officers\u2019 veneration of the revenge-killing comic-book character \u201cThe Punisher\u201d and adoption of its logo, as well as militaristic training programs such as \u201ckillology.\u201d    Together, research has shown, those influences lead police to emphasize the use of force to solve problems they encounter in the community. The equipment comes at no cost to the departments, but they have to pay to maintain it, which can be very expensive. To justify the costs, and help defray them, police often use the gear to serve search warrants targeting drug crimes. That can make the departments eligible for additional federal grants \u2013 and for a share of the value of any property and money seized during drug raids.    As a result, supposedly free weapons and vehicles can lead some police to use aggressive deployment strategies that make civilian casualties more likely. Other departments may already have a military-style mindset and are taking advantage of an opportunity to stockpile more equipment.    These increasingly aggressive deployment strategies of militarized police disproportionately harm communities of color, for instance in Maryland, where SWAT raids consistently target majority-Black neighborhoods.  Tragic, and deadly, results  While police often claim that militarized gear is a necessity in order to prepare for \u201cworst-case scenarios,\u201d there is ample evidence that receiving agencies use military gear in inappropriate situations. While the killing of Black EMT Breonna Taylor in her home in March grabbed headlines, she is but one of many civilians killed by police under questionable circumstances during no-knock raids, when police force entry into a building or home without announcing themselves.    For obvious reasons, such raids carry an unreasonably high probability of death in a country with more guns than people. These and other overaggressive deployments are the direct result of public policy that gives militarized gear to local police, with little training or oversight.    In our research, we don\u2019t make any determination of whether specific killings by police were justified or not. In our view, too often the question of legal justification takes a very narrow look at the few seconds just prior to a lethal interaction. We believe that a wider perspective is useful: Local, state and federal rules and training influence the behavior of police agencies across the country. When policing strategies are overly aggressive, an increase in civilian casualties tends to follow. While the resulting killings are often called \u201cjustified,\u201d they\u2019re more often the avoidable result of policy decisions made well before the incident in question.    Casey Delehanty,\u00a0Ph.D., is an assistant professor of global studies at Gardner-Webb University.    This article is republished from The Conversation.","keywords":"","name":"Arming police with lots of military gear has done more harm than good","thumbnailUrl":"https:\/\/www.minnpost.com\/wp-content\/uploads\/2020\/07\/LongBeachPolice640.png","wordCount":"1074","timeRequired":"286","mainEntity":{"@type":"WebPage","@id":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/"},"author":[{"@type":"Person","name":"Susan Albright","description":"Susan Albright is MinnPost's managing editor. Among her responsibilities are the supervision of Community Voices; education, health, environment and arts coverage; Greater Minnesota news.","email":"salbright@minnpost.com","image":"https:\/\/www.minnpost.com\/wp-content\/uploads\/sites\/default\/files\/imagecache\/author_photo\/images\/author\/SusanAlbrightIllo.png"}],"publisher":{"@id":"https:\/\/www.minnpost.com#Organization"},"comment":[{"@type":"Comment","dateCreated":"2020-07-10T11:41:54-05:00","description":"It's human nature to want to use that New Thing, and to find any excuse to do so. When the police get military equipment, they will seize on any justification to deploy it.\r\n\r\nIn a more innocent time, it was known as \"using up all the cop equipment they had hanging around the police officer station.\"","author":{"@type":"Person","name":"RB Holbrook","url":""}},{"@type":"Comment","dateCreated":"2020-07-10T05:54:24-05:00","description":"Where are the voices of limited government reminding us that \"free stuff\" from the feds isn't really free?","author":{"@type":"Person","name":"Frank Phelan","url":""}},{"@type":"Comment","dateCreated":"2020-07-09T13:40:07-05:00","description":"Our police have been and must continue to be our peace keepers and partners in a polite society. Not weaponized military acting oppressively. We have a democracy, not a dictatorship.","author":{"@type":"Person","name":"LK WOODRUFF","url":""}},{"@type":"Comment","dateCreated":"2020-07-09T13:08:34-05:00","description":"This makes perfect sense, although it's a shame that the Pentagon's pervasive incompetence makes tracking the surplus equipment so difficult, if not impossible.  Of course, it's also very curious how so much expensive military equipment falls into the \"surplus\" category so soon. Thank goodness our endless Mideast wars offer so much necessity for the obscenely bloated \"defense\" budgets of the 21st Century. Everyone \"wins\"!\r\n\r\nWhat's most problematic here is that the ordinary line cops seem so desirous of playing occupying-force \"soldier\" in the nation's cities.  But doesn't this report also indicate that it was the mayors, city councils and police chiefs of these cities who were too quick to see some value in having a militarized police force? Aren't they the ones who had the power to say \"No Thanks\" to having a militarized force of warrior-coppers outfitted with Pentagon hand-me-downs? Surely the Pentagon isn't forcing the old equipment on them, although it surely wants to clear out the nation's overstocked armories and bases for the ceaseless torrent of new equipment. As everyone knows, you have to get rid of your old junk somehow!\r\n\r\nI suppose attempting to resist getting \"free stuff\" for your city's warrior-wannabe cops was\/is just impossible, even though the cost of maintaining a municipal  warehouse of (aging) army equipment must be significant.  But then, when this militarization insanity got underway in 1997, there were no reports (such as this) finding the extremely problematic results of coppers attending the Pentagon's annual garage sales and flea markets....one hopes some city officials read them!","author":{"@type":"Person","name":"BK Anderson","url":""}},{"@type":"Comment","dateCreated":"2020-07-09T13:06:55-05:00","description":"What I find funny about this is the same folks who say they need their Military Style Weapons, AKs and ARs, to defend against a tyrannical government, will also tell you shipping Military hardware to every town in Minnesota is a good thing. I guess they figure when it happens the local constabulary will be on their side. I guess we've seen some support for that in the deference police show toward armed protesters, like those who took over the Michigan State house and the violence they show nonviolent Black Lives Matter protesters.","author":{"@type":"Person","name":"Henk Tobias","url":""}}],"isPartOf":{"@id":"https:\/\/www.minnpost.com\/community-voices\/2020\/07\/arming-police-with-lots-of-military-gear-has-done-more-harm-than-good\/#webpage"}}]}]
+</script>
+
+<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script>	<script>
+		if ( navigator.serviceWorker ) {
+			window.addEventListener( 'load', function() {
+									{
+						navigator.serviceWorker.register(
+							"\/?wp_service_worker=1",
+							{"scope":"\/"}						).then( reg => {
+													} );
+					}
+							} );
+		}
+	</script>
+	<script type="text/javascript" src="photon.js"></script>
+<script>
+var minnpost_membership_data = {"member_level_prefix":"member_","current_user":{"can_access":true},"url_access_level":""};
+var minnpost_membership_settings = {"ajaxurl":"https:\/\/www.minnpost.com\/wp-admin\/admin-ajax.php"};
+</script>
+<script src="minnpost-membership-front-end.js"></script>
+<script>
+jQuery(document).ready(function ($) {
+					$('.m-form-membership').minnpostMembership();
+					$('.m-form-membership').minnpostTrackSubmit();
+					$('.m-form-membership').minnpostAmountSelect();
+				});
+</script>
+<script>
+var analytics_tracking_settings = {"analytics_type":"analyticsjs","scroll":{"enabled":true,"minimum_height":0,"percentage":"true","user_timing":"true","pixel_depth":"true","non_interaction":"true","scroll_elements":".ad-middle, .ad-x100, .ad-x101, .m-form-instory, #comments, #footer, .ad-middle3, .ad-right1, .ad-bottomright, .ad-x01, .ad-x02, .ad-x03, .ad-x04, .ad-x05, .ad-x06, .ad-x07, .ad-x08, .ad-x09, .ad-x10"},"special":{"enabled":true,"download_regex":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"fragment":{"enabled":true},"form_submissions":{"enabled":true},"track_adblocker":{"enabled":true}};
+</script>
+<script>
+var params = {"ajaxurl":"https:\/\/www.minnpost.com\/wp-admin\/admin-ajax.php","gtag_sendto":"AW-976620175\/jqCyCL7atXkQj5XY0QM"};
+</script>
+<script>
+var params = {"ajaxurl":"https:\/\/www.minnpost.com\/wp-admin\/admin-ajax.php"};
+</script>
+<script>
+var llcstrings = {"loading_error":"Error occurred while loading comments. Please reload this page."};
+</script>
+<script type="text/javascript" src="a"></script>
+<script type="text/javascript" src="e-202031.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.7.1',blog:'150509612',post:'1386661',tz:'-5',srv:'www.minnpost.com'} ]);
+	_stq.push([ 'clickTrackerInit', '150509612', '1386661' ]);
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"51a9741afb","applicationID":"191772526","transactionName":"MVVVZ0dZC0ZYUE0PWAgfdlBBUQpbFkBQCFAKVQ==","queueTime":0,"applicationTime":660,"atts":"HRJCEQ9DGBkbUhtcTBtN","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+
+
+
+
+	<aside class="o-site-message-container wp-message-inserter-message wp-message-inserter-message-post-template-default wp-message-inserter-message-single wp-message-inserter-message-single-post wp-message-inserter-message-postid-1386661 wp-message-inserter-message-single-format-standard wp-message-inserter-message-tribe-no-js wp-message-inserter-message-general-membership-toaster-6 wp-message-inserter-message-region-popup wp-message-inserter-message-id-823061 wp-message-inserter-message-banner wp-message-inserter-message-1 wp-message-inserter-message-popup-visible" data-close-time-days="5">
+		
+			
+			<div class="m-wp-insert-message-item m-wp-insert-message-item-0 m-wp-insert-message-item-banner" style="background: linear-gradient(
+				#11628a,
+				#11628a
+			);color: #ffffff;max-width:100%;">
+
+									<!-- Dual Col -->
+					<div class="dual-wrap ">
+						
+						<div class="col col-text">
+							
+	<h3>This article isn't free.</h3>
+	<p>High-quality journalism costs money to produce. MinnPost's nonprofit
+ reporting is available paywall-free thanks to the financial support of 
+loyal readers like you. <strong>Are you with us?</strong></p>
+													</div>
+						<div class="col col-button">
+															
+				<a class="a-button" style="background: #c12026;color: #ffffff;" href="https://www.minnpost.com/support?campaign=7012I000001JdTYQA0&amp;source=4">
+							<svg class="svg-inline--fa fa-heart fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg><!-- <i class="fas fa-heart" aria-hidden="true"></i> -->
+										DONATE NOW					</a>
+															
+						</div>
+					</div>
+				
+													<a href="#" class="sm-close-btn" aria-label="Close"><svg class="svg-inline--fa fa-times-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="times-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"></path></svg><!-- <i class="far fa-times-circle" aria-hidden="true"></i> --></a>
+							</div>
+			</aside>
+<img src="g.gif" alt=":)" id="wpstats" width="6" height="5"><iframe id="google_osd_static_frame_6817176250444" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20200723/r20190131/zrt_lookup.html#" style="display: none;" data-ad-client="ca-pub-1368619780705816"></iframe></html>

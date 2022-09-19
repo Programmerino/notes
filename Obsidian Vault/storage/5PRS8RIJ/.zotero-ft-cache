@@ -1,0 +1,3973 @@
+Perceus: Garbage Free Reference Counting with Reuse
+
+Microsoft Technical Report, MSR-TR-2020-42, 2020-11-22. (update v4, 2021-06-07).
+
+Alex Reinking∗
+Microsoft Research Redmond, WA, USA alex_reinking@berkeley.edu
+
+Ningning Xie∗
+University of Hong Kong Hong Kong, China nnxie@cs.hku.hk
+
+Leonardo de Moura
+Microsoft Research Redmond, WA, USA leonardo@microsoft.com
+Abstract
+We introduce Perceus, an algorithm for precise reference counting with reuse and specialization. Starting from a functional core language with explicit control-flow, Perceus emits precise reference counting instructions such that (cycle-free) programs are garbage free, where only live references are retained. This enables further optimizations, like reuse analysis that allows for guaranteed in-place updates at runtime. This in turn enables a novel programming paradigm that we call functional but in-place (FBIP). Much like tail-call optimization enables writing loops with regular function calls, reuse analysis enables writing in-place mutating algorithms in a purely functional way. We give a novel formalization of reference counting in a linear resource calculus, and prove that Perceus is sound and garbage free. We show evidence that Perceus, as implemented in Koka, has good performance and is competitive with other state-of-the-art memory collectors.
+Keywords: Reference Counting, Algebraic Effects, Handlers
+1 Introduction
+Reference counting [7], with its low memory overhead and ease of implementation, used to be a popular technique for automatic memory management. However, the field has broadly moved in favor of generational tracing collectors [31], partly due to various limitations of reference counting, including cycle collection, multi-threaded operations, and expensive in-place updates.
+In this work we take a fresh look at reference counting. We consider a programming language design that gives strong compile-time guarantees in order to enable efficient reference counting at run-time. In particular, we build on the pioneering reference counting work in the Lean theorem prover [46], but we view it through the lens of language design, rather than purely as an implementation technique.
+We demonstrate our approach in the Koka language [23, 25]: a functional language with mostly immutable data types together with a strong type and effect system. In contrast
+∗The first two authors contributed equally to this work.
+
+Daan Leijen
+Microsoft Research Redmond, WA, USA daan@microsoft.com
+to the dependently typed Lean language, Koka is generalpurpose, with support for exceptions, side effects, and mutable references via general algebraic effects and handlers [39, 40]. Using recent work on evidence translation [50–52], all these control effects are compiled into an internal core language with explicit control flow. Starting from this functional core, we can statically transform the code to enable efficient reference counting at runtime. In particular: • Due to explicit control flow, the compiler can emit precise
+reference counting instructions where a (non-cyclic) reference is dropped as soon as possible. We call this garbage free reference counting as only live data is retained (§ 2.2). • We show that precise reference counting enables many optimizations, in particular drop specialization which removes many reference count operations in the fast path (Section 2.3), reuse analysis which updates (immutable) data in-place when possible (Section 2.4), and reuse specialization which removes many in-place field updates (Section 2.5). The reuse analysis shows the benefit of a holistic approach: even though the surface language has immutable data types with strong guarantees, we can use dynamic run-time information, e.g. whether a reference is unique, to update in-place when possible. • The in-place update optimization is guaranteed, which leads to a new programming paradigm that we call FBIP: functional but in-place (Section 2.6). Just like tail-call optimization lets us write loops with regular function calls, reuse analysis lets us write in-place mutating algorithms in a purely functional way. We showcase this approach by implementing a functional version of in-order Morris tree traversal [35], which is stack-less, using in-place tree node mutation via FBIP. • We present a formalization of general reference counting using a novel linear resource calculus, 𝜆1, which is closely based on linear logic (Section 3), and we prove that reference counting is sound for any program in the linear resource calculus. We then present the Perceus1 algorithm
+1Perceus, pronounced per-see-us, is a loose acronym of “PrEcise Reference Counting with rEUse and Specialization”.
+
+MSR-TR-2020-42, Nov 22, 2020,
+as a deterministic syntax-directed version of 𝜆1, and prove that it is both sound (i.e. never drops a live reference), and garbage free (i.e. only retains reachable references). • We demonstrate Perceus by providing a full implementation for the strongly typed functional language Koka [1]. The implementation supports typed algebraic effect handlers using evidence translation [51] and compiles into standard C11 code. The use of reference counting means no runtime system is needed and Koka programs can readily link with other C/C++ libraries. • We show evidence that Perceus, as implemented for Koka, competes with other state-of-the-art memory collectors (Section 4). We compare our implementation in allocation intensive benchmarks against OCaml, Haskell, Swift, and Java, and for some benchmarks to C++ as well. Even though the current Koka compiler does not have many optimizations (besides the ones for reference counting), it has outstanding performance compared to these mature systems. As a highlight, on the tree insertion benchmark, the purely functional Koka implementation is within 10% of the performance of the in-place mutating algorithm in C++ (using std::map [13]). Even though we focus on Koka in this paper, we believe that Perceus, and the FBIP programming paradigm we identify, are both broadly applicable to other programming languages with similar static guarantees for explicit control flow. There is an accompanying technical report [41] containing all the proofs and further benchmark results.
+2 Overview
+Compared to a generational tracing collector, reference counting has low memory overhead and is straightforward to implement. However, while the cost of tracing collectors is linear in the live data, the cost of reference counting is linear in the number of reference counting operations. Optimizing the total cost of reference counting operations is therefore our main priority. There are at least three known problems that make reference counting operations expensive in practice and generally inferior to tracing collectors: • Concurrency: when multiple threads share a data structure,
+reference count operations need to be atomic, which is expensive. • Precision: common reference counted systems are not precise and hold on to objects too long. This increases memory usage and prevents aggressive optimization of many reference count operations. • Cycles: if object references form a cycle, the runtime needs to handle them separately, which re-introduces many of the drawbacks of a tracing collector. We handle each of these issues in the context of an eager, functional language using immutable data types together with a strong type and effect system. For concurrency, we precisely track when objects can become thread-shared (Section 2.7.2). For precision, we introduce Perceus, our algorithm
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+for inserting precise reference counting operations that can be aggressively optimized. In particular, we eliminate and fuse many reference count operations with drop specialization (Section 2.3), turn functional matching into in-place updates with reuse analysis (Section 2.4), and minimize field updates with reuse specialization (Section 2.5).
+Finally, although we currently do not supply a cycle collector, our design has two mitigations that reduces the occurrences of cycles in the first place. First, (co)inductive data types and eager evaluation prevent cycles outside of explicit mutable references, and it is statically known where cycles can possibly be introduced in the code (Section 2.7.4). Second, being a mostly functional language, mutable references are not often used – moreover, reuse analysis greatly reduces the need for them since in-place mutation is typically inferred.
+The reference count optimizations are our main contribution and we start with a detailed overview in the following sections, ending with details about how we mitigate the impact of concurrency and cycles.
+
+2.1 Types and Effects
+
+We start with a brief introduction to Koka [23, 25] – a strongly typed, functional language that tracks all (side) effects. For example, we can define a squaring function as:
+
+fun square( x : int ) : total int { x * x }
+Here we see two types in the result: the effect type total and the result type int. The total type signifies that the function can be modeled semantically as a mathematically total function, which always terminates without raising an exception (or having any other observable side effect). Effectful functions get more interesting effect types, like:
+
+fun println( s : string ) : console () fun divide( x : int, y : int ) : exn int
+
+where println has a console effect and divide may raise an exception (exn) when dividing by zero. It is beyond the scope
+
+of this paper to go into full detail, but a novel feature of Koka is that it supports typed algebraic effect handlers which can
+
+define new effects like async/await, iterators, or co-routines
+
+without needing to extend the language itself [24–26].
+
+Koka uses algebraic data types extensively. For example,
+
+we can define a polymorphic list of elements of type a as:
+
+type list ⟨a⟩ { Cons( head : a, tail : list ⟨a⟩ ) Nil
+}
+
+We can match on a list to define a polymorphic map function that applies a function f to each element of a list xs:
+
+fun map( xs : list ⟨a⟩, f : a -> e b ) : e list ⟨b⟩ {
+
+match(xs) {
+
+Cons(x,xx) -> Cons(f(x), map(xx,f))
+
+Nil
+
+-> Nil
+
+}
+
+}
+
+Here we transform the list of generic elements of type a to a list of generic elements of type b. Since map itself has no
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+intrinsic effect, the overall effect of map is polymorphic, and equals the effect e of the function f as it is applied to every element. The map function demonstrates many interesting aspects of reference counting and we use it as a running
+example in the following sections.
+2.2 Precise Reference Counting An important attribute that sets Perceus apart is that it is precise: an object is freed as soon as no more references remain. By contrast, common reference counting implementations
+tie the liveness of a reference to its lexical scope, which might
+retain memory longer than needed. Consider:
+fun foo() { val xs = list(1,1000000) // create large list val ys = map(xs, inc) // increment elements print(ys)
+}
+Many compilers emit code similar to:
+fun foo() { val xs = list(1,1000000) val ys = map(xs, inc) print(ys) drop(xs) drop(ys)
+}
+where we use a gray background for generated operations. The drop(xs) operation decrements the reference count of an object and, if it drops to zero, recursively drops all chil-
+dren of the object and frees its memory. These “scoped lifetime” reference counts are used by the C++ shared_ptr⟨T⟩ (calling the destructor at the end of the scope), Rust’s Rc⟨T⟩ (using the Drop trait), and Nim (using a finally block to call destroy) [53]. It is not required by the semantics, but Swift typically emits code like this as well [14].
+Implementing reference counting this way is straightfor-
+ward and integrates well with exception handling where the
+drop operations are performed as part of stack unwinding.
+But from a performance perspective, the technique is not always optimal: in the previous example, the large list xs is retained in memory while a new list ys is built. Both exist for the duration of print, after which a long, cascading chain of drop operations happens for each element in each list.
+Perceus takes a more aggressive approach where ownership of references is passed down into each function: now map is in charge of freeing xs, and ys is freed by print: no drop operations are emitted inside foo as all local variables are consumed by other functions, while the map and print functions drop the list elements as they go. In this example, Perceus generates the code for map as given in Figure 1b. In the Cons branch, first the head and tail of the list are dupped, where a dup(x) operation increments the reference count of an object and returns itself. The drop(xs) then frees the initial list node. We need to dup f as well as it is used twice, while x and xx are consumed by f and map respectively.
+
+At first blush, this seems more expensive than the scoped
+approach but, as we will see, this change enables many fur-
+ther optimizations. More importantly, transferring owner-
+ship, rather than retaining it, means we can free an object
+immediately when no more references remain. This both
+increases cache locality and decreases memory usage. For map, the memory usage is halved: the list xs is deallocated while the new list ys is being allocated.
+2.3 Drop Specialization
+Once we change to precise, ownership-based reference count-
+ing, there are many further optimization opportunities. After the initial insertion of dup and drop operations, we perform a drop specialization pass. The basic drop operation is defined in pseudocode as:
+fun drop( x ) { if (is-unique(x)) then drop children of x; free(x) else decref(x)
+}
+and drop specialization essentially inlines the drop operation specialized at a specific constructor. Figure 1c shows the drop specialization of our map example. Note that we only apply drop specialization if the children are used, so no specialization takes place in the Nil branch.
+Again, it appears we made things worse with extra opera-
+tions in each branch, but we can perform another transformation where we push down dup operations into branches followed by standard dup/drop fusion where corresponding dup/drop pairs are removed. Figure 1d shows the code that is generated for our map example.
+After this transformation, almost all reference count op-
+erations in the fast path are gone. In our example, every node in the list xs that we map over is unique (with a reference count of 1) and so the if (is-unique(xs)) test always succeeds, thus immediately freeing the node without any
+further reference counting.
+2.4 Reuse Analysis
+There is more we can do. Instead of freeing xs and immediately allocating a fresh Cons node, we can try to reuse xs directly as first described by Ullrich and de Moura [46]. Reuse analysis is performed before emitting the initial reference counting operations. It analyses each match branch, and tries to pair each matched pattern to allocated constructors of the same size in the branch. In our map example, xs is paired with the Cons constructor. When such pairs are found, and the matched object is not live, we generate a drop-reuse operation that returns a reuse token that we attach to any constructor paired with it:
+fun map( xs, f ) { match(xs) { Cons(x,xx) { val ru = drop-reuse(xs) Cons@ru( f(x), map(xx, f)) } Nil -> Nil }
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+fun map( xs : list ⟨a⟩, f : a -> e b ) : e list ⟨b⟩ {
+
+match(xs) {
+
+Cons(x,xx) -> Cons(f(x), map(xx,f))
+
+Nil
+
+-> Nil
+
+}
+
+}
+
+(a) A polymorphic map function
+
+(a) (b) (c) (d) (e) (f) (g)
+
+fun map( xs, f ) { match(xs) { Cons(x,xx) { dup(x); dup(xx); drop(xs) Cons( dup(f)(x), map(xx, f)) } Nil { drop(xs); drop(f); Nil } }
+}
+(b) dup/drop insertion (2.2)
+
+fun map( xs, f ) { match(xs) { Cons(x,xx) { dup(x); dup(xx) if (is-unique(xs)) then drop(x); drop(xx); free(xs) else decref(xs) Cons( dup(f)(x), map(xx, f)) } Nil { drop(xs); drop(f); Nil } }
+}
+(c) drop specialization (2.3)
+
+fun map( xs, f ) { match(xs) { Cons(x,xx) { if (is-unique(xs)) then free(xs) else dup(x); dup(xx); decref(xs) Cons( dup(f)(x), map(xx, f)) } Nil { drop(xs); drop(f); Nil } }
+}
+(d) push down dup and fusion (2.3)
+
+fun map( xs, f ) { match(xs) { Cons(x,xx) { dup(x); dup(xx); val ru = drop-reuse(xs) Cons@ru( dup(f)(x), map(xx, f)) } Nil { drop(xs); drop(f); Nil } }
+}
+(e) reuse token insertion (2.4)
+
+fun map( xs, f ) {
+
+fun map( xs, f ) {
+
+match(xs) {
+
+match(xs) {
+
+Cons(x,xx) {
+
+Cons(x,xx) {
+
+dup(x); dup(xx);
+
+val ru = if (is-unique(xs))
+
+val ru = if (is-unique(xs))
+
+then &xs
+
+then drop(x); drop(xx); &xs
+
+else dup(x); dup(xx);
+
+else decref(xs); NULL
+
+decref(xs); NULL
+
+Cons@ru( dup(f)(x), map(xx, f))
+
+Cons@ru( dup(f)(x), map(xx, f))
+
+}
+
+}
+
+Nil { drop(xs); drop(f); Nil }
+
+Nil { drop(xs); drop(f); Nil }
+
+}
+
+}
+
+}
+
+}
+
+(f) drop-reuse specialization (2.4)
+
+(g) push down dup and fusion (2.4)
+
+Fig. 1. Drop specialization and reuse analysis for map.
+
+}
+The Cons@ru annotation means that (at runtime) if ru==NULL then the Cons node is allocated fresh, and otherwise the memory at ru is of the right size and can be used directly. Figure 1e shows the generated code after reference count insertion.
+Compared to the program in Figure 1b, the generated code now consumes xs using drop-reuse(xs) instead of drop(xs).
+Just like with drop specialization we can also specialize drop-reuse. The drop-reuse operation is specified in pseudocode as:
+fun drop-reuse( x ) { if (is-unique(x)) then drop children of x; &x else decref(x); NULL
+}
+where &x returns the address of x. Figure 1f shows the code for map after specializing the drop-reuse. Again, we can push down and fuse the dup operations, which finally results in the code shown in Figure 1g. In the fast path, where xs is uniquely owned, there are no more reference counting operations at all! Furthermore, the memory of xs is directly reused to provide the memory for the Cons node for the returned list – effectively updating the list in-place.
+2.5 Reuse Specialization The final transformation we apply is reuse specialization, by which we can further reuse unchanged fields of a constructor.
+
+A constructor expression like Cons@ru(x,xx) is implemented in pseudocode as:
+
+fun Cons@ru( x, xx) {
+
+if (ru!=NULL)
+
+then { ru->head := x; ru->tail := xx; ru } // in-place
+
+else Cons(x,xx)
+
+// malloc’d
+
+}
+
+However, for our map example there would be no benefit to specializing as all fields are assigned. Thus, we only specialize
+
+constructors if at least one of the fields stays the same. As
+
+an example, we consider insertion into a red-black tree [17].
+
+We define red-black trees as:
+
+type color { Red; Black } type tree {
+Leaf Node(color: color, left: tree, key: int,
+value: bool, right: tree) }
+
+The red-black tree has the invariant that the number of black
+
+nodes from the root to any of the leaves is the same, and that
+
+a red node is never a parent of red node. Together this ensures
+
+that the trees are always balanced. When inserting nodes,
+
+the invariants need to be maintained by rebalancing the
+
+nodes when needed. Okasaki’s algorithm [37] implements
+
+this elegantly and functionally (the full algorithm can be
+
+found in accompanying technical report [41]):
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+void inorder( tree* root, void (*f)(tree* t) ) { tree* cursor = root; while (cursor != NULL /* Tip */) { if (cursor->left == NULL) { // no left tree, go down the right f(cursor->value); cursor = cursor->right; } else { // has a left tree tree* pre = cursor->left; // find the predecessor while(pre->right != NULL && pre->right != cursor) { pre = pre->right; } if (pre->right == NULL) { // first visit, remember to visit right tree pre->right = cursor; cursor = cursor->left; } else { // already set, restore f(cursor->value); pre->right = NULL; cursor = cursor->right;
+}}}}
+Fig. 2. Morris in-order tree traversal algorithm in C.
+fun bal-left( l : tree, k : int, v : bool, r : tree ): tree { match(l) { Node(_, Node(Red, lx, kx, vx, rx), ky, vy, ry) -> Node(Red, Node(Black, lx, kx, vx, rx), ky, vy, Node(Black, ry, k, v, r)) ...
+} fun ins( t : tree, k : int, v : bool ): tree {
+match(t) { Leaf -> Node(Red, Leaf, k, v, Leaf) Node(Red, l, kx, vx, r) // second branch -> if (k < kx) then Node(Red, ins(l, k, v), kx, vx, r) ... Node(Black, l, kx, vx, r) -> if (k < kx && is-red(l)) then bal-left(ins(l,k,v), kx, vx, r) ...
+}
+For this kind of program, reuse specialization is effective. For
+example, if we look at the second branch in ins we see that
+the newly allocated Node has almost all of the same fields as
+t except for the left tree l which becomes ins(l,k,v). After
+reuse specialization, this branch becomes:
+Node(Red, l, kx, vx, r) { // second branch val ru = if (is-unique(t)) then &t else { dup(l); dup(kx); dup(vx); dup(r); NULL } if (dup(k) < dup(kx)) { val y = ins(l,k,v) if (ru!=NULL) then { ru->left := y; ru } // fast path else Node(Red, y, kx, vx, r) }
+In the fast path, where t is uniquely owned, t is reused
+directly, and only its left child is re-assigned as all other
+fields stay unchanged. This applies to many branches in this
+example and saves many assignments.
+Moreover, the compiler inlines the bal-left function. At
+that point, every matched Node constructor has a correspond-
+ing Node allocation – if we consider all branches we can see
+that we either match one Node and allocate one, or we match three nodes deep and allocate three. With reuse analysis this
+
+type visitor { Done BinR( right:tree, value : int, visit : visitor ) BinL( left:tree, value : int, visit : visitor )
+} type direction { Up; Down }
+
+fun tmap( f : int -> int, t : tree,
+
+visit : visitor, d : direction ) : tree {
+
+match(d) {
+
+Down -> match(t) { // going down a left spine
+
+Bin(l,x,r) -> tmap(f,l,BinR(r,x,visit),Down) // A
+
+Tip
+
+-> tmap(f,Tip,visit,Up)
+
+// B
+
+}
+
+Up -> match(visit) { // go up through the visitor
+
+Done
+
+-> t
+
+// C
+
+BinR(r,x,v) -> tmap(f,r,BinL(t,f(x),v),Down) // D
+
+BinL(l,x,v) -> tmap(f,Bin(l,x,t),v,Up)
+
+// E
+
+}}}
+
+Fig. 3. FBIP in-order tree traversal algorithm in Koka.
+means that every Node is reused in the fast path without doing any allocations!
+Essentially this means that for a unique tree, the purely functional algorithm above adapts at runtime to an in-place mutating re-balancing algorithm (without any further allocation). Moreover, if we use the tree persistently [36], and the tree is shared or has shared parts, the algorithm adapts to copying exactly the shared spine of the tree (and no more), while still rebalancing in place for any unshared parts.
+
+2.6 A New Paradigm: Functional but In-Place (FBIP)
+
+The previous red-black tree rebalancing showed that with Perceus we can write algorithms that dynamically adapt to use in-place mutation when possible (and use copying when used persistently). Importantly, a programmer can rely on this optimization happening, e.g. they can see the match patterns and match them to constructors in each branch.
+This style of programming leads to a new paradigm that we call FBIP: “functional but in place”. Just like tail-call optimization lets us describe loops in terms of regular function calls, reuse analysis lets us describe in-place mutating imperative algorithms in a purely functional way (and get persistence as well). Consider mapping a function f over all elements in a binary tree in-order:
+
+type tree {
+
+Tip
+
+Bin( left: tree, value : int, right: tree )
+
+}
+
+fun tmap( t : tree, f : int -> int ) : tree {
+
+match(t) {
+
+Bin(l,x,r) -> Bin( tmap(l,f), f(x), tmap(r,f) )
+
+Tip
+
+-> Tip
+
+}
+
+}
+
+This is already quite efficient as all the Bin and Tip nodes are reused in-place when t is unique. However, the tmap function
+
+is not tail-recursive and thus uses as much stack space as the
+
+depth of the tree.
+
+In 1968, Knuth posed the problem of visiting a tree in-
+
+order while using no extra stack- or heap space [22] (For
+
+MSR-TR-2020-42, Nov 22, 2020,
+readers not familiar with the problem it might be fun to try this in your favorite imperative language first and see that it is not easy to do). Since then, numerous solutions have appeared in the literature. A particularly elegant solution was proposed by Morris [35]. This is an in-place mutating algorithm that swaps pointers in the tree to “remember” which parts are unvisited. It is beyond this paper to give a full explanation, but a C implementation is shown in Figure 2. The traversal essentially uses a right-threaded tree to keep track of which nodes to visit. The algorithm is subtle, though. Since it transforms the tree into an intermediate graph, we need to state invariants over the so-called Morris loops [29] to prove its correctness.
+We can derive a functional and more intuitive solution using the FBIP technique. We start by defining an explicit visitor data structure that keeps track of which parts of the tree we still need to visit. In Koka we define this data type as visitor given in Figure 3. (Interestingly, our visitor data type can be generically derived as a list of the derivative of the tree data type2 [20, 30]). We also keep track of which direction we are going, either Up or Down the tree.
+We start our traversal by going downward into the tree with an empty visitor, expressed as tmap(f, t, Done, Down). The key idea is that we are either Done (C), or, on going downward in a left spine we remember all the right trees we still need to visit in a BinR (A) or, going upward again (B), we remember the left tree that we just constructed as a BinL while visiting right trees (D). When we come back (E), we restore the original tree with the result values. Note that we apply the function f to the saved value in branch D (as we visit in-order), but the functional implementation makes it easy to specify a pre-order traversal by applying f in branch A, or a post-order traversal by applying f in branch E.
+Looking at each branch we can see that each Bin matches up with a BinR, each BinR with a BinL, and finally each BinL with a Bin. Since they all have the same size, if the tree is unique, each branch updates the tree nodes in-place at runtime without any allocation, where the visitor structure is effectively overlaid over the tree nodes while traversing the tree. Since all tmap calls are tail calls, this also compiles to a loop and thus needs no extra stack- or heap space.
+Finally, just like with re-balancing tree insertion, the algorithm as specified is still purely functional: it uses in-place updating when a unique tree is passed, but it also adapts gracefully to the persistent case where the input tree is shared, or where parts of the input tree are shared, making a single copy of those parts of the tree.
+
+2Conor McBride [30] describes how we can generically derive a zipper [20]
+
+visitor for any recursive type 𝜇x. F as a list of the derivative of that type,
+
+namely
+
+list
+
+(
+
+𝜕 𝜕x
+
+F
+
+|x
+
+=𝜇x.F)
+
+.
+
+In
+
+our
+
+case,
+
+calculating
+
+the
+
+derivative
+
+of
+
+the
+
+inductive tree, we get 𝜇x. 1 + (tree × int × x) + (tree × int × x), which
+
+corresponds to the visitor datatype.
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+2.7 Static Guarantees and Language Features
+So far we have shown that precise reference counting en-
+ables powerful analyses and optimizations of the reference
+counting operations. In this section, we use Koka as an exam-
+ple to discuss how strong static guarantees at compile-time
+can further allow the precise reference counting approach
+to be integrated with non-trivial language features.
+2.7.1 Non-Linear Control Flow. An essential requirement of our approach is that programs have explicit control
+flow so that it is possible to statically determine where to insert dup and drop operations. However, it is in tension with functions that have non-linear control flow, e.g. may throw an exception, use a longjmp, or create an asynchronous continuation that is never resumed. For example, if we look at the code for map before applying optimizations, we have:
+fun map( xs, f ) { match(xs) { Cons(x,xx) { dup(x); dup(xx); drop(xs); dup(f) Cons( f(x), map(xx, f) ) } ...
+If f raised an exception and directly exited the scope of map, then xx and f would leak and never be dropped. This is one reason why a C++ shared_ptr is tied to lexical scope; it integrates nicely with the stack unwinding mechanism for exceptions that guarantees each shared_ptr is dropped eventually.
+In Koka, we guarantee that all control-flow is compiled to
+explicit control-flow, so our reference count analysis does
+not have to take non-linear control-flow into account. This is achieved through effect typing (Section 2.1) where every function has an effect type that signifies if it can throw ex-
+ceptions or not. Functions that can throw are compiled into
+functions that return with an explicit error type that is either Ok, or Error if an exception is thrown. This is checked and propagated at every invocation3.
+For example, for map the compiled code (before optimization) becomes like:
+fun map( xs, f ) { match(xs) { Cons(x,xx) { dup(x); dup(xx); drop(xs); dup(f) match(f(x)) { Error(err) -> { drop(xx); drop(f); Error(err); } Ok(y) -> { match(map(xx, f)) { Error(err) -> drop(y); Error(err) Ok(ys) -> Cons(y,ys) } ...
+At this point all errors are explicitly propagated and all
+control-flow is explicit again. Note the we have no reference count operations on the error values as these are implemented as value types which are not heap allocated.
+3Koka actually generalizes this using a multi-prompt delimited control monad that works for any control effect, with essentially the same principle.
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+This is similar to error handling in Swift [21] (although it requires the programmer to insert a try at every invocation), and also similar to various C++ proposals [44] where exceptions become explicit error values.
+The example here is specialized for exceptions but the actual Koka implementation uses a generalized version of this technique to implement a multi-prompt delimited control monad [18] instead, which is used in combination with evidence translation [51] to express general algebraic effect handlers (which in turn subsume all other control effects, like exceptions, async/await, probabilistic programming, etc).
+2.7.2 Concurrent Execution. If multiple threads share a reference to a value, the reference count needs to be incremented and decremented using atomic operations which can be expensive. Ungar et al. [47] report slowdowns up to 50% when atomic reference counting operations are used. Nevertheless, in languages with unrestricted multi-threading, like Swift, almost all reference count operations need to assume that references are potentially thread-shared.
+In Koka, the strong type system gives us additional guarantees about which variables may need atomic reference count operations. Following the solution of Ullrich and de Moura [46], we mark each object with whether it can be thread-shared or not, and supply an internal polymorphic operation tshare : forall a. a -> io () which marks any object and its children recursively as being thread-shared. Even though marking is linear, it happens at most once for any object since shared objects cannot be unshared. All objects start out as unshared, and are only marked through explicit operations. In particular, when starting a new thread, the argument passed to the thread is marked as thread-shared. The only other operation that can cause thread sharing is setting a thread-shared mutable reference but this is quite uncommon in typical Koka code. The drop and dup operations can be implemented efficiently by avoiding atomic operations in the fast path by checking the thread-shared flag.
+For example, drop may be implemented in C as:
+static inline void drop( block_t* b ) { if (b->header.thread_shared) { if (atomic_dec(&b->header.rc) == 1) drop_free(b); } else if (b->header.rc-- == 1) drop_free(b);
+}
+However, this may still present quite some overhead as many drop operations are emitted.
+In Koka we encode the reference count for thread-shared objects as a negative value. This enables us to use a single inlined test to see if we need to take the slow path for either a thread-shared object or an object that needs to be freed; and we can use a fast inlined path for the common case4:
+static inline void drop( block_t* b ) {
+4Since the thread-shared sign-bit is stable, we can do the test b->header.cr <= 1 without needing expensive atomic operations and can use a memory_order_relaxed atomic read.
+
+if (b->header.rc <= 1) drop_check(b); // slow path else b->header.rc--;
+}
+The drop_check function checks if the reference count is 1 to release it, or otherwise it adjusts the reference count
+atomically. We also use the negative values to implement a sticky range where very large reference counts (230 in our implementation) stay without being further adjusted
+(preventing overflow, and keeping them alive for the rest of
+the program).
+
+2.7.3 Mutation. Mutation in Koka is done through explicit mutable references. Here we look at first-class mutable
+
+reference cells, but Koka also has second-class mutable local
+
+variables that can be more convenient. A mutable reference cell is created with ref, dereferenced with (!) and updated using (:=):
+
+fun ref( init : a )
+
+: st ⟨h⟩ ref⟨h,a⟩
+
+fun (!)( r : ref ⟨h,a⟩ )
+
+: st ⟨h⟩ a
+
+fun (:=)( r : ref ⟨h,a⟩, x : a ) : st ⟨h⟩ ()
+
+where each operation has a stateful effect st⟨h⟩ in some heap h. A reference cell of type ref⟨h,a⟩ is a first-class value that contains a reference to a value of type a. As such, there are
+always two reference counts involved: that of the reference
+
+itself, and that of value that is referenced.
+
+When a mutable reference cell is thread-shared, this presents a problem as an update operation may race with a read operation to update the reference counts. The pseudocode
+
+implementation of both operations is:
+
+fun (!)( r ) { val x = r->value dup(x) x
+}
+
+fun (:=)( r, x ) { val y = r->value r->value := x drop y
+}
+
+The read operation (!) first reads the current reference in x, and then increments its reference count. Suppose though that before the dup, the thread is suspended and another thread writes to the same reference: it will read the same object into y, update the reference, and then drop y – and if y has a reference count of 1 it will be freed! When the other thread resumes, it will now try to dup the just-freed object.
+To make this work correctly, we need to perform both op-
+
+erations atomically, either through a double-CAS [9], using
+
+hazard pointers [15, 33], or using some other locking mecha-
+
+nism. Either way, this can be quite expensive. Fortunately,
+
+in our setting, we can avoid the slow path in most cases.
+
+First of all, since FBIP allows for the efficiency of in-place
+
+updates with a purely functional specification (Section 2.6),
+
+we expect mutable references to be a last resort rather than
+
+the default. Secondly, as discussed in Section 2.7.2, we can
+
+also check if a mutable reference is actually thread-shared
+
+and thus avoid the atomic code path almost all of the time.
+
+2.7.4 Cycles. A known limitation of reference counting is that it cannot release cyclic data structures. Just like with
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+mutability, we try to mitigate its performance impact by reducing the potential for this to occur in the first place. In Koka, almost all data types are immutable and either inductive or coinductive. It can be shown that such data types are never cyclic (and functions that recurse over such data types always terminate).
+In practice, mutable references are the main way to construct cyclic data. Since mutable references are uncommon in our setting, we leave the responsibility to the programmer to break cycles by explicitly clearing a reference cell that may be part of a cycle. Since this strategy is also used by Swift, a widely used language where most object fields are mutable, we believe this is a reasonable approach to take for now. However, we have plans for future improvements: since we know statically that only mutable references are able to form a cycle, we could generate code that tracks those data types at run time and may perform a more efficient form of incremental cycle collection.
+2.7.5 Summary. In summary, we have shown how static guarantees at compile-time can be used to mitigate the performance impact of concurrency and the risk of cycles. This paper does not yet present a general solution to all problems with reference counting and future work is required to explore how cycles can be handled more efficiently, and how well Perceus can be used with implicit control flow. Yet, we expect that our approach gives new insights in the general design space of reference counting, and showcase that precise reference counting can be a viable alternative to other approaches. In practice, we found that Perceus has good performance, which is discussed in Section 4.
+3 A Linear Resource Calculus
+In this section we present a novel linear resource calculus, 𝜆1, which is closely based on linear logic. The operational semantics of 𝜆1 is formalized in an explicit heap with reference counting, and we prove that the operational semantics is sound. We then formalize Perceus as a sound and precise syntax-directed algorithm of 𝜆1 and thus provide a theoretic foundation for Perceus.
+3.1 Syntax Figure 4 defines the syntax of our linear resource calculus 𝜆1. It is essentially an untyped lambda calculus extended with explicit binding as val x = e1; e2, and pattern matching as match. We assume all patterns in match are mutually exclusive, and all pattern binders are distinct. Syntactic constructs in gray are only generated in derivations of the calculus and are not exposed to users. Among those constructs, dup and drop form the basic instructions of reference counting.
+Contexts Δ, Γ are multisets containing variable names. We use the compact comma notation for summing (or splitting) multisets. For example, (Γ, x) adds x to Γ, and (Γ1, Γ2) appends two multisets Γ1 and Γ2. The set of free variables of
+
+Expressions
+
+e ::= v | e e
+
+(value, application)
+
+| val x = e; e
+
+(bind)
+
+| match x { pi → ei } (match)
+
+| dup x; e
+
+(duplicate)
+
+| drop x; e
+
+(drop)
+
+| match e { pi → ei } (match expr)
+
+v ::= x | 𝜆x. e
+
+(variables, functions)
+
+| C v1 . . . vn
+
+(constructor of arity n)
+
+p ::= C b1 . . .bn b ::= x | _
+
+(pattern) (binder or wildcard)
+
+Contexts Δ, Γ : := ∅ | Δ ∪ x
+
+Syntactic shorthands
+e1; e2 ≜ val x = e1; e2 𝜆_. e ≜ 𝜆x. e 𝜆x. e ≜ 𝜆ysx. e
+
+sequence, x ̸∈ fv(e2) x ̸∈ fv(e) ys = fv(e)
+
+Fig. 4. Syntax of the linear resource calculus 𝜆1.
+
+Δ | Γ ⊢ e ⇝ e′
+
+↑↑ ↑
+
+↓
+
+(↑ is input, while ↓ is output)
+
+[var] Δ|x ⊢ x ⇝x
+
+Δ | Γ, x ⊢ e ⇝ e′ x ∈ Δ, Γ
+
+Δ | Γ ⊢ e ⇝ dup x; e′
+
+[dup]
+
+Δ | Γ ⊢ e ⇝ e′ [drop]
+Δ | Γ, x ⊢ e ⇝ drop x; e′
+
+Δ, Γ2 | Γ1 ⊢ e1 ⇝ e1′ Δ | Γ2 ⊢ e2 ⇝ e2′
+
+Δ | Γ1, Γ2
+
+⊢
+
+e1 e2
+
+⇝
+
+e′
+1
+
+e′
+2
+
+[app]
+
+∅ | Γ, x ⊢ e ⇝ e′ Γ = fv(𝜆x. e)
+
+Δ | Γ ⊢ 𝜆x. e ⇝ 𝜆Γx. e′
+
+[lam]
+
+x ̸∈ Δ, Γ1, Γ2 Δ, Γ2 | Γ1 ⊢ e1 ⇝ e1′ Δ | Γ2, x ⊢ e2 ⇝ e2′
+
+Δ | Γ1, Γ2
+
+⊢
+
+val x
+
+=
+
+e1;
+
+e2
+
+⇝ val x
+
+=
+
+e′;
+1
+
+e′
+2
+
+[bind]
+
+[match]
+
+Δ | Γ, bv(pi) ⊢ ei ⇝ ei′
+
+Δ | Γ, x ⊢ match x { pi ↦→ ei } ⇝ match x { pi ↦→ ei′ }
+
+Δ, Γi+1, . . ., Γn | Γi ⊢ vi ⇝ vi′ 1 ⩽ i ⩽ n
+
+Δ | Γ1, . . ., Γn
+
+⊢
+
+C v1 . . . vn
+
+⇝
+
+C
+
+v′
+1
+
+.
+
+.
+
+.
+
+vn′
+
+[con]
+
+Fig. 5. Declarative linear resource rules of 𝜆1.
+
+an expression e is denoted by fv(e), and the set of bound variables of a pattern p by bv(p).
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+E ::= □ | E e | v E | val x = E; e
+
+e −→ e′ E[e] ↦−→ E[e′] [eval]
+
+(app) (bind) (match)
+
+(𝜆x. e) v
+
+−→ e[x:=v]
+
+val x = v ; e −→ e[x:=v]
+
+match (C v1 . . . vn) {pi → ei}
+
+−→ ei [x1:=v1, . . ., xn:=vn]
+
+with pi = C x1 . . . xn
+
+Fig. 6. Standard strict semantics for 𝜆1.
+
+3.2 The Linear Resource Calculus The derivation Δ | Γ ⊢ e ⇝ e′ in Figure 5 reads as follows: given a borrowed environment Δ, a linear environment Γ, an expression e is translated into an expression e′ with explicit reference counting instructions. We call variables in the linear environment owned.
+The key idea of 𝜆1 is that each resource (i.e., owned variable) is consumed exactly once. That is, a resource needs to be explicitly duplicated (in rule dup) if it is needed more
+than once; or be explicitly dropped (in rule drop) if it is not
+needed. The rules are closely related to linear typing.
+Following the key idea, the variable rule var consumes a resource when we own and only own x exactly once in the owned environment. For example, to derive the K combinator, 𝜆x y. x, we need to apply drop to be able to discard y, which gives 𝜆x y. drop y; x.
+The app rule splits the owned environment Γ into two separate contexts Γ1 and Γ2 for expression e1 and e2 respectively. Each expression then consumes its corresponding owned environment. Since Γ2 is consumed in the e2 derivation, we know that resources in Γ2 are surely alive when deriving e1, and thus we can borrow Γ2 in the e1 derivation. The rule is quite similar to the [let!] rule of Wadler’s linear type
+rules [48,pg.14] where a linear type can be “borrowed” as a
+regular type during evaluation of a binding. Borrowing is important as it allows us to conduct a dup
+as late as possible, or otherwise we will need to duplicate
+enough resources before we can divide the owned environment. Consider 𝜆f g x. (f x) (g x). Without borrowing, we have to duplicate x before the application, resulting in 𝜆f g x. dup x; (f x) (g x). With the borrowing environment it is now possible to derive a translation with the dup right before passing x to f : 𝜆f g x. (f (dup x; x)) (g x)). Notice rule dup allows dup from the borrowing environment, where drop only applies to the owned environment.
+The lam rule is interesting as it essentially derives the body of the lambda independently. The premise Γ = fv(𝜆x.e) requires that exactly the free variables in the lambda are owned
+– this corresponds to the notion that a lambda is allocated
+as a closure at runtime that holds all free variables of the lambda (and thus the lambda expression consumes the free variables). The body of a lambda is evaluated only when
+
+applied, so it is derived under an empty borrowed environ-
+ment only owning the argument and the free variables (in
+the closure). The translated lambda is also annotated with Γ, as 𝜆Γx. e, so we know precisely the resources the lambda should own when evaluated in a heap semantics. We often
+omit the annotation when it is irrelevant. The bind rule is similar to application and borrows Γ2 in
+the derivation for the bound expression. This is the main reason to not consider val x = e1; e2 as syntactic sugar for (𝜆x. e2) e1. The match rule consumes the scrutinee and owns the bound variables in each pattern for each branch. For constructors (rule con), we divide the owned environment into n parts for each component, and allow each component deriva-
+tion to borrow the owned environment of the components
+derived later. We use the notation ⌈e⌉ to erase all drop and dup in the
+expression e. We can now state that derivations leave expressions unchanged except for inserting dup/drop operations: if Δ | Γ ⊢ e ⇝ e′ then e = ⌈e′⌉.
+3.3 Semantics Figure 6 defines standard semantics for 𝜆1 using strict evalu-
+ation contexts [49]. The evaluation contexts uniquely deter-
+mine where to apply an evaluation step. As such, evaluation
+contexts neatly abstract from the usual implementation context of a stack and program counter. Rule (match) replies on the internal form of expression match e { pi → ei }: after substitution (app), values may appear in positions where only variables were allowed, and this is exactly what enables
+us to do pattern match on a data constructor.
+In Figure 7 we define our target semantics of a reference
+counted heap, so sharing of values becomes explicit and sub-
+stitution only substitutes variables. Here, each heap entry x ↦→n v points to a value v with a reference count of n (with n ⩾ 1). In these semantics, values other than variables are allocated in the heap with rule (lamr ) and rule (conr ). The evaluation rules discard entries from the heap when the refer-
+ence count drops to zero. Any allocated lambda is annotated as 𝜆ysx. e to clarify that these are essentially closures holding an environment ys and a code pointer 𝜆x. e. Note that it is important that the environment ys is a multi-set. After the initial translation, ys will be equivalent to the free variables in the body (see rule lam), but during evaluation substitution
+may substitute several variables with the same reference. To
+keep reference counts correct, we need to keep considering
+each one as a separate entry in the closure environment. When applying an abstraction, rule (appr ) needs to sat-
+isfy the assumptions made when deriving the abstraction in rule lam. First, the (appr ) rule inserts dup to duplicate variables ys, as these are owned in rule lam. It then drops the reference to the closure itself. Rule (matchr ) is similar to rule (appr ), which duplicates the newly bound pattern bindings
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+H : x → (N+, v) E ::= □ | E e | x E | val x = E; e
+| C x1 . . . xi E vj . . . vn
+
+H | e −→r H′ | e′ H | E[e] ↦−→r H′ | E[e′]
+
+[eval]
+
+(lamr ) (conr )
+
+H | (𝜆ys x. e) H | C x1 . . . xn
+
+−→r H, f ↦→1 𝜆ysx. e
+
+|f
+
+−→r H, z ↦→1 C x1 . . . xn | z
+
+fresh f fresh z
+
+(appr ) H | f z
+
+−→r H | dup ys; drop f ; e[x:=z] (f ↦→n 𝜆ysx. e) ∈ H
+
+(matchr ) H | match x {pi → ei} −→r H | dup ys; drop x; ei [xs:=ys] with pi = C xs and (x ↦→n C ys) ∈ H
+
+(bindr ) H | val x = y ; e
+
+−→r H | e[x:=y]
+
+(dupr ) H, x ↦→n v
+
+| dup x; e −→r H, x ↦→n+1 v | e
+
+(dropr ) H, x ↦→n+1 v | drop x; e −→r H, x ↦→n v | e
+
+(dlamr ) H, x ↦→1 𝜆ysz.e | drop x; e −→r H | drop ys; e
+
+(dconr ) H, x ↦→1 C ys | drop x; e −→r H | drop ys; e
+
+if n ⩾ 1
+
+Fig. 7. Reference-counted heap semantics for 𝜆1.
+
+and drops the scrutinee5. Rule (bindr ) simply substitutes the bound variable x with the resource y.
+Duping a resource is straightforward as rule (dupr ) merely increments the reference count of the resource. Dropping is more involved. Rule (dropr ) just decrements the reference count when there are still multiple copies of it. But when the reference count would drop to zero, rule (dlamr ) and rule (dconr ) actually free a heap entry and then dynamically insert drop operations to drop their fields recursively.
+The tricky part of the reference counting semantics is showing correctness. We prove this in two parts. First, we prove that the reference counting semantics is sound and corresponds to the standard semantics. Below we use heaps as substitutions on expressions. We write [H]e to mean H applied as a substitution to expression e.
+Theorem 1. (Reference-counted heap semantics is sound) If we have ∅ | ∅ ⊢ e ⇝ e′ and e ↦−→∗ v, then we also have ∅ | e′ ↦−→∗r H | x with [H]x = v.
+To prove this theorem we need to maintain strong invariants
+at each evaluation step to ensure a variable is still alive if it is
+going to be referred later. Second, we prove that the reference counting semantics never hold on to unused variables. We first define the notion of reachability.
+Definition 1. (Reachability) We say a variable x is reachable in terms of a heap H and an expression e, denoted as reach(x, H | e), if (1) x ∈ fv(e); or (2) for some y, we have reach(y, H | e) ∧ y ↦→n v ∈ H ∧ reach(x, H | v).
+5A difference between (appr ) and (matchr ) is that for application the free variables ys are dynamic and thus the duplication must be done at runtime. In contrast, a match knows the the bound variables in a pattern statically. In
+practice we therefore generate the required dup and drop operations during
+elaboration for each branch – this is essential as that enables the further
+optimizations as shown in Section 2.2.
+
+With reachability, we can formally show:
+Theorem 2. (Reference counting leaves no garbage) Given ∅; ∅ ⊢ e ⇝ e′, and ∅ | e′ ↦−→∗r H | x, then for every intermediate state Hi | ei, we have for all y ∈ dom(Hi), reach(y, Hi | ei).
+In the accompanying technical report [41], we further show
+that the reference counts are exactly equal to the number
+of actual references to the resource. Notably, to capture the essence of precise reference counting, 𝜆1 does not model mutable references (Section 2.7.3). From Theorem 2 we see that mutable references are indeed the only source of cycles.
+A natural extension of the system is to include mutable ref-
+erences and thus cycles. In that case, we could generalize
+Theorem 2, where the conclusion would be that for all re-
+source in the heap, it is either reachable from the expression,
+or it is part of a cycle.
+These theorems establish the correctness of the reference-
+counted heap semantics. However, correctness does not imply precision, ie. that the heap is garbage free. Eventually all live data is discarded but it may well hold on to live data too long by delaying drop operations. As an example, consider y ↦→1 () | (𝜆x. x) (drop y; ()), where y is reachable but dropped too late: it is only dropped after the lambda gets allocated. In contrast, a garbage free algorithm would produce y ↦→1 () | drop y; (𝜆x. x) (). In the next section we present Perceus as a syntax directed algorithm of the linear resource calculus and show that it is garbage free.
+3.4 Perceus Figure 8 defines syntax directed derivation ⊢s for our resource calculus and as such specifies our Perceus algorithm. Like before, Δ | Γ ⊢s e ⇝ e′ translates an expression e to e′ under an borrowed environment Δ and an owned environment Γ. During the derivation, we maintain the following invariants: (1) Δ ∩ Γ = ∅; (2) Γ ⊆ fv(e); (3) fv(e) ⊆ Δ, Γ; and (4)
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Δ | Γ ⊢s e ⇝ e′
+
+↑↑ ↑
+
+↓
+
+Δ ∩ Γ = ∅ Γ ⊆ fv(e) fv(e) ⊆ Δ, Γ multiplicity of each member in Δ, Γ is 1
+
+[svar] Δ | x ⊢s x ⇝ x
+
+[svar-dup] Δ, x | ∅ ⊢s x ⇝ dup x; x
+
+Δ, Γ2 | Γ − Γ2 ⊢s e1 ⇝ e1′ Δ | Γ2 ⊢s e2 ⇝ e2′
+
+Δ | Γ ⊢s
+
+e1 e2
+
+⇝
+
+e′
+1
+
+e′
+2
+
+Γ2 = Γ ∩ fv(e2)
+
+[sapp]
+
+x ∈ fv(e) ∅ | ys, x ⊢s e ⇝ e′ ys = fv(𝜆x. e) Δ1 = ys − Γ
+Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. e′
+
+[slam]
+
+x ̸∈ fv(e) ∅ | ys ⊢s e ⇝ e′ ys = fv(𝜆x. e) Δ1 = ys − Γ
+Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. (drop x; e′)
+
+[slam-d]
+
+x ∈ fv(e2) x ̸∈ Δ, Γ
+
+Δ, Γ2 | Γ − Γ2 ⊢s e1 ⇝ e1′
+
+Δ | Γ2, x
+
+⊢s
+
+e2
+
+⇝
+
+e′
+2
+
+Γ2 = Γ ∩ (fv(e2) − x)
+
+Δ|Γ
+
+⊢s
+
+val x
+
+=
+
+e1;
+
+e2
+
+⇝ val x
+
+=
+
+e′;
+1
+
+e′
+2
+
+[sbind]
+
+x ̸∈ fv(e2), Δ, Γ
+
+Δ, Γ2 | Γ − Γ2 ⊢s e1 ⇝ e1′
+
+Δ | Γ2
+
+⊢s
+
+e2
+
+⇝
+
+e′
+2
+
+Γ2 = Γ ∩ fv(e2)
+
+Δ|Γ
+
+⊢s
+
+val x
+
+=
+
+e1;
+
+e2
+
+⇝ val x
+
+=
+
+e′;
+1
+
+drop x;
+
+e′
+2
+
+[sbind-d]
+
+Δ | Γi ⊢s ei ⇝ ei′ Γi = (Γ, bv(pi)) ∩ fv(ei) Γi′ = (Γ, bv(pi)) − Γi [smatch] Δ | Γ, x ⊢s match x { pi ↦→ ei } ⇝ match x { pi ↦→ drop Γi′; ei′ }
+
+Δ, Γi+1, . . ., Γn | Γi ⊢ s vi ⇝ vi′ 1 ⩽ i ⩽ n Γi = (Γ − Γi+1 − . . . − Γn) ∩ fv(vi) Δ | Γ ⊢ s C v1 . . . vn ⇝ C v1′ . . . vn′
+Fig. 8. Syntax-directed linear resource rules of 𝜆1.
+
+[scon]
+
+multiplicity of each member in Δ, Γ is 1. We ensure these properties hold by construction at any step in a derivation.
+The Perceus rules are set up to do precise reference counting: we delay a dup operation to come as late as possible, pushing them out to the leaves of a derivation; and we generate a drop operation as soon as possible, right after a binding or at the start of a branch.
+Rule svar-dup borrows x by inserting a dup. The sapp rule now deterministically finds a good split of the environment Γ. We pass the intersection of Γ with the free variables in e2 to the e2 derivation. Otherwise the rule is the same as in the declarative system. For abstraction and binding we
+have two variants: one where the binding is actually in the
+free variables of the expression (rule slam and sbind), and
+one where the binding can be immediately dropped as it is
+unused (rule slam-d and sbind-d). In the abstraction rule, we know that Γ ⊆ fv(𝜆x.e) and thus Γ ⊆ ys. If there are any free variables not in Γ, they must be part of the borrowed environment (as Δ1) and these must be duplicated to ensure ownership. The bind rules are similarly constructed as a
+mixture of sapp and slam.
+The smatch rule is interesting as in each branch there may
+be variables that can to be dropped as they no longer occur
+as free variables in that branch. The owned environment Γi in the ith branch is the intersection of (Γ, bv(pi)) and the free variables in that branch; any other owned variables (as Γi′) are dropped at the start of the branch. Rule scon deterministically splits the environment Γ as in rule sapp.
+
+We show that the Perceus algorithm is sound by showing
+that for each rule there exists a derivation in the declarative
+linear resource calculus.
+Theorem 3. (Syntax directed translation is sound.) If Δ | Γ ⊢s e ⇝ e′ then also Δ | Γ ⊢ e ⇝ e′.
+More importantly, we prove that any translation resulting from the Perceus algorithm is precise, where any intermediate state in the evaluation is garbage free:
+Theorem 4. (Perceus is precise and garbage free) If ∅ | ∅ ⊢s e ⇝ e′ and ∅ | e′ ↦−→∗r H | x , then for every intermediate state Hi | ei that is not at a dup/drop operation (ei ≠ E[drop x; ei′] and ei ≠ E[dup x; ei′]), we have that for all y ∈ dom(Hi), reach(y, Hi | ⌈ei⌉).
+This theorem states that after evaluating any immediate ref-
+erence counting instructions, every variable in the heap is reachable from the erased expression. This rules out, for example, y ↦→1 () | (𝜆x. x) (drop y; ()) as y is not in the free variables of the erased expression. Just like Theorem 2, if
+the system is extended with mutable references, then Theo-
+rem 4 could be generalized such that every resource is either
+reachable from the erased expression, or it is part of a cycle.
+The implementation of Perceus is further extended with
+the optimizations described in Section 2. As the component
+transformations, including inlining and dup/drop fusion, are
+standard, the soundness of those optimizations follows natu-
+rally and a proof is beyond the scope of this paper.
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+· · · 10.27 · · · 3.96
+
+2.45 2.40 · · · 7.85
+
+1.00 1.86
+1.69 · · · 9.52 · · · 3.84
+1.69 NA
+
+relative time (lower is better)
+
+2.08 2.23
+
+2.5x
+
+2.0x
+
+1.00 1.54
+
+1.00 1.05
+1.45 1.33 0.79
+
+1.00 1.05
+1.43 0.86
+1.33
+
+1.00 1.26 1.67
+0.92
+
+1.5x
+
+1.0x
+
+0.5x
+
+0x
+rbtree
+
+rbtree-ck
+
+deriv
+
+nqueens
+
+Koka Swift
+
+Koka,no-opt Java
+
+OCaml C++
+
+Haskell
+
+cfold
+
+· · · 3.12 · · · 2.94
+
+1.00 1.00
+1.79 · · · 3.54 · · · 3.15 · · · 3.27 · · · 3.01
+
+1.99 1.89
+2.25
+
+1.00 1.00
+1.20 · · · 9.81
+1.59 2.33
+NA
+
+· · · 10.25
+
+2.5x
+
+1.00 0.89
+0.97 1.09 1.71
+
+1.68 1.61
+
+1.00 1.00 0.92
+1.07
+
+1.00 1.00
+1.22 1.19
+
+relative rss (lower is better)
+
+2.0x
+
+1.5x
+
+1.0x
+
+0.5x
+
+0x
+rbtree
+
+rbtree-ck
+
+deriv
+
+nqueens
+
+cfold
+
+Fig. 9. Relative execution time and peak working set with respect to Koka. Using a 6-core 64-bit AMD 3600XT 3.8Ghz with 64GiB 3600Mhz memory, Ubuntu 20.04.
+4 Benchmarks
+In this section we discuss initial benchmarks of Perceus as implemented in Koka, versus state-of-the-art memory reclamation implementations in various other languages. Since we compare across languages we need to interpret the results with care – the results depend not only on memory reclamation but also on the different optimizations performed by each compiler and how well we can translate each benchmark to that particular language. We view these results therefore mostly as evidence that the Perceus reference counting technique is viable and can be competitive and not as a direct comparison of absolute performance between systems.
+As such, we selected only benchmarks that stress memory allocation, and we tried to select mature comparison systems that use a range of memory reclamation techniques and are considered best-in-class. The systems we compare are: • Koka 2.0.3, compiling the generated C code with gcc 9.3.0
+using a customized version of the mimalloc allocator [27].
+
+· · · 5.05 · · · 4.52 · · · 7.87 · · · 3.18 · · · 3.33
+
+We also run Koka “no-opt” with drop/reuse specialization and reuse analysis disabled to measure the impact of those optimizations. • OCaml 4.08.1. This has a stop-the-world generational collector with a minor and major heap. The minor heap uses a copying collector, while a tracing collector is used for the major heap [11, 34,Chap.22]. The Koka benchmarks correspond essentially one-to-one to the OCaml versions. • Haskell, GHC 8.6.5. A highly optimizing compiler with a multi generational garbage collector. The benchmark sources again correspond very closely, but since Haskell has lazy semantics, we used strictness annotations in the data structures to speed up the benchmarks, as well as to ensure that the same amount of work is done. • Swift 5.3. The only other language in this comparison where the compiler uses reference counting [6, 47]. The benchmarks are directly translated to Swift in a functional style without using direct mutation. However, we translated tail-recursive definitions to explicit loops with local variables. • Java SE 15.0.1. Uses the HotSpot JVM and the G1 concurrent, low-latency, generational garbage collector. The benchmarks are directly translated from Swift. • C++, gcc 9.3.0 using the standard libc allocator. A highly optimizing compiler with manual memory management. Without automatic memory management, many benchmarks are difficult to express directly in C++ as they use persistent and partially shared data structures. To implement these faithfully would essentially require manual reference counting. Instead, we use C++ as our performance baseline: if provided, we either use in-place updates without supporting persistence (as in rbtree which uses std::map) or we do not reclaim memory at all (as in deriv, nqueens, and cfold). The benchmarks are all chosen to be medium sized and nontrivial, and all stress memory allocation with little computation. Most of these are based on the benchmark suite of Lean [46] and all are available in the Koka repository [1]. The execution times and peak working set as the median over 10 runs and normalized to Koka are given in Figure 9 (each benchmark runs between 1 to 5 seconds for Koka, and uses up to 300MiB). When a benchmark is not available for a particular language, it is marked as “NA” in the figures. • rbtree: this benchmark performs 42 million insertions into a red-black balanced tree and after that folds over the tree counting the true elements. Here the reuse analysis of Koka (as shown in Section 2.4) is doing well compared to the other systems. OCaml is close in performance – rebalancing generates lots of short-lived object allocation which are a great fit a minor heap copying-collector with fast aggregated bump-pointer allocation. The C++ benchmark is implemented using the in-place updating std::map implementation, which internally uses an optimized red-black tree implementation [13]. Surprisingly,
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+the purely functional Koka implementation is within 10% of the C++ performance. Since the insertion operations are the same, we believe this is partly because C++ allocations must be 16-byte aligned while the Koka allocator can use 8-byte alignment in the allocations and thus allocate a bit less (as apparent in Figure 9) (and similarly, bump pointer allocation in OCaml can be faster than general malloc/free). Java performs close to C++ here but also uses almost 10× the memory of Koka (1.7GiB vs. 170MiB, Figure 9). This can be reduced to about 1.5× by providing tuning parameters on the command line but that also made it slower on our system. This benchmark also shows the potential effectiveness of the reference count optimizations where the “no-opt” version is more than 2× slower. However, in benchmarks with lots of sharing, like deriv and nqueens, the optimizations are less effective. More generally, we expect a GC to do better when reuse optimization is not triggered, and there is lots of short-lived object allocation. • rbtree-ck: it has been suggested that rbtree is biased to reference counting as it has no shared subtrees and thus reuse analysis can use in-place updates all the time. The rbtree-ck benchmark remedies this and is a variant of rbtree that keeps a list of every 5th tree generated and thus shares many subtrees. This pattern occurs often in practice, for example in compilers using scoped environments, or in backtracking searches where the original state is shared among different exploratory branches. Again though the reference counting strategy outperforms all other systems. Haskell and OCaml are now relatively slower than in rbtree – we conjecture this is due to extra copying between generations, and perhaps due to increased tracing cost. We have no C++ version of this benchmark as that would essentially require a persistent implementation of std::map. • deriv: calculates the derivative of large symbolic expressions (up to 10M nodes). Interestingly, the memory usage of OCaml is slightly less here than Koka – since Perceus is garbage free we would expect though that Koka always uses less memory than a GC based system. From studying the generated code of OCaml we believe that it is because the optimizing OCaml compiler can avoid some allocations by applying inlining with “case of case” transformations [38] which the naive Koka compiler is not (yet) doing. It is also interesting to see that the “no-opt” Koka is only just slightly slower than optimized Koka here. This is probably due to the sharing of many sub-expressions when calculating the derivative – this in turn causes the code resulting from drop/reuse specialization and reuse analysis to mostly use the “slow” path which is equivalent to the one in “no-opt”. • nqueens: calculates all solutions for the n-queens problem of size 13 into a list, and returns the length of that list. The solution lists share many sub-solutions and, as in deriv,
+
+for the C++ version we do not free any memory (but do allocate the same objects as the other benchmarks). Again, Koka is quite competitive even with the large amount of shared structures, and the peak working set is significantly lower. • cfold: performs constant-folding over a large symbolic expression (2M nodes). This benchmark is similar to the deriv benchmark and manipulates a complex expression graph. Koka does significantly better than other systems. Just as in deriv, we see that OCaml uses slightly less memory as it can avoid some allocations by optimizing well. The “no-opt” version of Koka also uses 11% less memory; this is because the reuse analysis essentially holds on to memory for later reuse. Just like with scoped based reference counting that may lead to increased memory usage in some situations. An interesting overall observation is that the reference counting implementation of Swift seems less effective than Koka – this may be partly due to the language and compiler, but we also believe that this may be a confirmation of our initial hypothesis where we argue that a combination of static compiler optimizations with dynamic runtime checks (e.g. is-unique) are needed for best results. As discussed for example in Section 2.7.2, some of the optimizations we perform are difficult to do in Swift as the static guarantees of the language are not strong enough. More research is needed though to confirm this as there may be other causes well unrelated to reference counting as such. Finally, we also ran our benchmarks using just atomic operations for our reference counts to see the impact of the thread-shared flag. We observed a slowdown from 5% (rbtree) up to 59% (nqueens) across our benchmarks. This matches the observations by Ungar et al. [47] who performed a similar experiment in Swift.
+5 Related Work
+Our work is closely based on the reference counting algorithm in the Lean theorem prover as described by Ullrich and de Moura [46]. They describe reuse analysis based on reset/reuse instructions, and describe both reference counting based on ownership (i.e. precise) but also support borrowed parameters. We extend their work with drop- and reuse specialization, and generalize to a general purpose language with side-effects and complex control flow. We also introduce a novel formalization of reference counting with the linear resource calculus, and define our algorithm in terms of that. As such, the Perceus algorithm may differ from the Lean one as that is specified over a lower-level calculus that uses explicit partial application nodes (pap) and has no first-class lambda expressions. Schulte [43] describes an algorithm for inserting reference count instructions in a small first-order language and shows a limited form of reuse analysis, called “reusage” (transformation T14).
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+Using explicit reference count instructions in order to optimize them via static analysis is described as early as Barth [3]. Mutating unique references in place has traditionally focused on array updates [19], as in functional array languages like Sisal [32] and SaC [16, 42]. Férey and Shankar [12] provide functional array primitives that use in-place mutation if the array has a unique reference; we plan to add these to Koka. We believe this would work especially well in combination with reuse-analysis for BTree-like structures using trees of small functional arrays.
+The 𝜆1 calculus is closely based on linear logic. Turner and Wadler [45] give a heap-based operational interpretation which does not need reference counts as linearity is tracked by the type system. In contrast, Chirimar et al. [5] give an interpretation of linear logic in terms of reference counting, but in their system, values with a linear type are not guaranteed to have a unique reference at runtime.
+Generally, a system with linear types [48], like linear Haskell [4], or the uniqueness typing of Clean [2, 8], can offer static guarantees that the corresponding objects are unique at runtime, so that destructive updates can always be performed safely. However, this usually also requires writing multiple versions of a function for each case (uniqueversus shared argument). By contrast, reuse analysis relies on dynamic runtime information, and thus reuse can be performed generally. This is also what enables FBIP to use a single function that can be used for both unique or shared objects (since the uniqueness property is not part of the type). These two mechanisms could be combined: if our system is extended with unique types, then reuse analysis could statically eliminate corresponding uniqueness checks.
+The Swift language is widely used in iOS development and uses reference counting with an explicit representation in its intermediate language. There is no reuse analysis but, as remarked by Ullrich and de Moura [46], this may not be so important for Swift as typical programs mutate objects in-place. There is no cycle collection for Swift, but despite the widespread usage of mutation this seems to be not a large problem in practice. Since it can be easy to create accidental cycles through the self pointer in callbacks, Swift has good support for weak references to break such cycles in a declarative manner. Ungar et al. [47] optimize atomic reference counts by tagging objects that can be potentially thread-shared. Later work by Choi et al. [6], uses biased reference counting to avoid many atomic updates.
+
+The CPython implementation also uses reference counting, and uses ownership-based reference counts for parameters but still only drops the reference count of local variables when exiting the frame. Another recent language that uses reference counting is Nim. The reference counting method is scope-based and uses non-atomic operations (and objects cannot be shared across threads without extra precautions). Nim can be configured to use ORC reference counting which extends the basic ARC collector with a cycle collection [53]. Nim has the acyclic annotation to identify data types that are (co)-inductive, as well as the (unsafe) cursor annotation for variables that should not be reference counted.
+In our work we focus on precise and garbage free reference counting which enables static optimization of reference count instructions. On the other extreme, Deutsch and Bobrow [10] consider deferred reference counting – any reference count operations on stack-based local variables are deferred and only the reference counts of fields in the heap are maintained. Much like a tracing collector, the stack roots are periodically scanned and deferred reference counting operations are performed. Levanoni and Petrank [28] extend this work and present a high performance reference counting collector for Java that uses the sliding view algorithm to avoid many intermediate reference counting operations and needs no synchronization on the write barrier.
+6 Conclusion and Future Work
+In this paper we present Perceus, a precise reference counting system with reuse and specialization, which is built upon 𝜆1, a novel linear resource calculus closely based on linear logic. Our implementation in Koka is competitive with other mature memory collectors over our benchmark suite but more experimentation in larger systems is needed. We would like to integrate selective “borrowing” into Perceus – this would make certain programs no longer be garbage free, but we believe it could deliver further performance improvements if judiciously applied. It also remains to be seen how to handle cycle collection efficiently. Finally, the explicit control-flow is not zero-cost (like C++ exception handling), and it would be interesting to see if this can be improved further.
+Acknowledgements
+We like to thank Erez Petrank for the discussions on the race conditions that can occur with in-place updates and reference counts. Alex Reinking was supported by the United States National Science Foundation under Grant 1723445.
+
+Perceus: Garbage Free Reference Counting with Reuse
+References
+[1] Koka repository. 2019. URL https://github.com/koka-lang/koka. [2] Erik Barendsen and Sjaak Smetsers. Uniqueness typing for functional
+languages with graph rewriting semantics. Mathematical Structures in Computer Science, 6 (6): 579–612, 1996. doi:10.1017/S0960129500070109. [3] Jeffrey M. Barth. Shifting garbage collection overhead to compile time.
+Technical Report UCB/ERL M524, EECS Department, University of California, Berkeley, Jun 1975. URL http://www2.eecs.berkeley. edu/Pubs/TechRpts/1975/29109.html. [4] Jean-Philippe Bernardy, Mathieu Boespflug, Ryan R. Newton, Simon
+Peyton Jones, and Arnaud Spiwack. Linear haskell: Practical linearity in a higher-order polymorphic language. Proc. ACM Program. Lang., 2 (POPL), December 2017. doi:10.1145/3158093.
+[5] Jawahar Chirimar, Carl A. Gunter, and Jon G. Riecke. Reference counting as a computational interpretation of linear logic. Journal of Functional Programming, 6: 6–2, 1996.
+[6] Jiho Choi, Thomas Shull, and Josep Torrellas. Biased reference counting: Minimizing atomic operations in garbage collection. In Proceedings of the 27th International Conference on Parallel Architectures and Compilation Techniques, PACT ’18, 2018. doi:10.1145/3243176.3243195.
+[7] George E Collins. A method for overlapping and erasure of lists. Communications of the ACM, 3 (12): 655–657, 1960.
+[8] Edsko de Vries, Rinus Plasmeijer, and David M. Abrahamson. Unique-
+ness typing simplified. In Olaf Chitil, Zoltán Horváth, and Viktória Zsók, editors, Implementation and Application of Functional Languages (IFL’08), pages 201–218. Springer, 2008. ISBN 978-3-540-85373-2. [9] David L. Detlefs, Paul A. Martin, Mark Moir, and Guy L. Steele Jr. Lockfree reference counting. In in Proceedings of the 20th Annual ACM Symposium on Principles of Distributed Computing, pages 190–199, 2001.
+[10] L. Peter Deutsch and Daniel G. Bobrow. An efficient, incremental, automatic garbage collector. Communications of the ACM, 19 (9): 522–526, September 1976. ISSN 0001-0782. doi:10.1145/360336.360345.
+[11] Damien Doligez and Xavier Leroy. A concurrent, generational garbage collector for a multithreaded implementation of ML. In Proceedings of the 20th ACM Symposium on Principles of Programming Languages (POPL), pages 113–123. ACM press, January 1993.
+[12] Gaspard Férey and Natarajan Shankar. Code generation using a for-
+mal model of reference counting. In Sanjai Rayadurgam and Oksana Tkachuk, editors, NASA Formal Methods, pages 150–165. Springer International Publishing, 2016. ISBN 978-3-319-40648-0.
+[13] Free Software Foundation, Silicon Graphics, and Hewlett–Packard
+Company. Internal red-black tree implemention for “stl::map”. URL https://code.woboq.org/gcc/libstdc++-v3/src/c++98/tree. cc.html. [14] Matt Gallagher. Reference counted releases in Swift. Blog post, December 2016. URL https://www.cocoawithlove.com/blog/resourcesreleases-reentrancy.html. [15] A. Gidenstam, M. Papatriantafilou, H. Sundell, and P. Tsigas. Efficient
+and reliable lock-free memory reclamation based on reference counting. In 8th International Symposium on Parallel Architectures,Algorithms and Networks (ISPAN’05), 2005. [16] Clemens Grelck and Kai Trojahner. Implicit memory management for SAC. In 6th International Workshop on Implementation and Application of Functional Languages (IFL’04), September 2004. [17] Leo J Guibas and Robert Sedgewick. A dichromatic framework for balanced trees. In 19th Annual Symposium on Foundations of Computer Science (sfcs 1978), pages 8–21. IEEE, 1978. [18] Carl A. Gunter, Didier Rémy, and Jon G. Riecke. A generalization of exceptions and control in ml-like languages. In Proceedings of the Seventh International Conference on Functional Programming Languages and Computer Architecture, FPCA ’95, page 12–23. ACM, 1995. ISBN 0897917197. doi:10.1145/224164.224173.
+
+MSR-TR-2020-42, Nov 22, 2020,
+[19] Paul Hudak and Adrienne Bloss. The aggregate update problem in functional programming systems. In Proceedings of the 12th ACM SIGACT-SIGPLAN Symposium on Principles of Programming Languages, POPL ’85, page 300–314. ACM, 1985. ISBN 0897911474. doi:10.1145/318593.318660.
+[20] Gérard P. Huet. The zipper. Journal of Functional Programming, 7 (5): 549–554, 1997.
+[21] Apple Inc. The Swift guide: Error handling. 2017. URL https://docs. swift.org/swift-book/LanguageGuide/ErrorHandling.html.
+[22] Donald E. Knuth. The Art of Computer Programming, Volume 1 (3rd Ed.): Fundamental Algorithms. Addison Wesley Longman Publishing Co., Inc., 1997. ISBN 0201896834.
+[23] Daan Leijen. Koka: Programming with row polymorphic effect types. In MSFP’14, 5th workshop on Mathematically Structured Functional Programming, 2014. doi:10.4204/EPTCS.153.8.
+[24] Daan Leijen. Algebraic effects for functional programming. Technical
+Report MSR-TR-2016-29, Microsoft Research technical report, August
+2016. Extended version of [25].
+[25] Daan Leijen. Type directed compilation of row-typed algebraic effects. In Proceedings of the 44th ACM SIGPLAN Symposium on Principles of Programming Languages (POPL’17), pages 486–499, January 2017a. ISBN 978-1-4503-4660-3. doi:10.1145/3009837.3009872.
+[26] Daan Leijen. Structured asynchrony with algebraic effects. In Proceedings of the 2nd ACM SIGPLAN International Workshop on Type-Driven Development, TyDe 2017, pages 16–29, 2017b. ISBN 978-1-4503-5183-6. doi:10.1145/3122975.3122977.
+[27] Daan Leijen, Zorn Ben, and Leo de Moura. Mimalloc: Free list sharding in action. Programming Languages and Systems, 11893, 2019. doi:10.1007/978-3-030-34175-6_13. APLAS’19.
+[28] Yossi Levanoni and Erez Petrank. An on-the-fly reference-counting garbage collector for java. ACM Trans. Program. Lang. Syst., 28 (1): 1–69, January 2006. ISSN 0164-0925. doi:10.1145/1111596.1111597.
+[29] Prabhaker Mateti and Ravi Manghirmalani. Morris’ tree traversal algorithm reconsidered. Science of Computer Programming, 11 (1): 29–43, 1988. ISSN 0167-6423. doi:10.1016/0167-6423(88)90063-9.
+[30] Conor McBride. The derivative of a regular type is its type of onehole contexts, 2001. URL http://strictlypositive.org/diff.pdf. (Extended Abstract).
+[31] John McCarthy. Recursive functions of symbolic expressions and their computation by machine, part i. Communications of the ACM, 3 (4): 184–195, 1960.
+[32] J. McGraw, S. Skedzielewski, S. Allan, D. Grit, R. Oldehoeft, J. Glauert,
+I. Dobes, and P. Hohensee. SISAL: streams and iteration in a single-
+assignment language. language reference manual, version 1. 1. Techni-
+cal Report LLL/M-146, ON: DE83016576, Lawrence Livermore National
+Lab., CA, USA, 7 1983.
+[33] Maged M. Michael. Hazard pointers: Safe memory reclamation for lock-free objects. IEEE Trans. Parallel Distrib. Syst., 15 (6): 491–504, June 2004. doi:10.1109/TPDS.2004.8.
+[34] Yaron Minsky, Anil Madhavapeddy, and Jason Hickey. Real World OCaml: Functional programming for the masses. 2012. ISBN 9781449323912. URL https://dev.realworldocaml.org.
+[35] Joseph M. Morris. Traversing binary trees simply and cheaply. Information Processing Letters, 9 (5): 197 – 200, 1979. doi:10.1016/00200190(79)90068-1.
+[36] Chris Okasaki. Purely Functional Data Structures. Colombia University, June 1999a. ISBN 9780521663502.
+[37] Chris Okasaki. Red-black trees in a functional setting. Journal of Functional Programming, 9 (4): 471–477, 1999b. doi:10.1017/S0956796899003494.
+[38] Simon L. Peyton Jones and André L. M. Santos. A transformationbased optimiser for haskell. Science of Computer Programming, 32 (1): 3 – 47, 1998. doi:10.1016/S0167-6423(97)00029-4.
+[39] Gordon D. Plotkin and John Power. Algebraic operations and generic effects. Applied Categorical Structures, 11 (1): 69–94, 2003.
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+doi:10.1023/A:1023064908962. [40] Gordon D. Plotkin and Matija Pretnar. Handling algebraic effects.
+volume 9, 2013. doi:10.2168/LMCS-9(4:23)2013. [41] Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen.
+Perceus: Garbage free reference counting with reuse. Technical Report MSR-TR-2020-42, Microsoft Research, November 2020. [42] Sven-Bodo Scholz. Single Assignment C: Efficient support for high-level array operations in a functional setting. Journal of Functional Programming, 13 (6): 1005–1059, November 2003. doi:10.1017/S0956796802004458. [43] Wolfram Schulte. Deriving residual reference count garbage collectors. In Manuel Hermenegildo and Jaan Penjam, editors, Programming Language Implementation and Logic Programming (PLILP), pages 102–116, Berlin, Heidelberg, 1994. Springer Berlin Heidelberg. ISBN 978-3-54048695-4. [44] Herb S. Sutter. Zero-overhead deterministic exceptions: Throwing values. C++ open-std proposal P0709 R2, 10 2018. [45] David N. Turner and Phillip Wadler. Operational interpretations of linear logic. (227): 231–248, 1999. [46] Sebastian Ullrich and Leonardo de Moura. Counting immutable beans – reference counting optimized for purely functional programming. In Proceedings of the 31st symposium on Implementation and Application of Functional Languages (IFL’19), September 2019.
+
+[47] David Ungar, David Grove, and Hubertus Franke. Dynamic atomicity: Optimizing swift memory management. In Proceedings of the 13th ACM SIGPLAN International Symposium on on Dynamic Languages, DLS 2017, page 15–26, 2017. doi:10.1145/3133841.3133843.
+[48] Phillip Wadler. Linear types can change the world! In Programming Concepts and Methods, 1990.
+[49] Andrew K. Wright and Matthias Felleisen. A syntactic approach to type soundness. Inf. Comput., 115 (1): 38–94, November 1994. doi:10.1006/inco.1994.1093.
+[50] Ningning Xie and Daan Leijen. Effect handlers in Haskell, evidently. In Proceedings of the 2020 ACM SIGPLAN Symposium on Haskell, Haskell’20, August 2020. doi:10.1145/3406088.3409022.
+[51] Ningning Xie and Daan Leijen. Generalized evidence passing for
+effect handlers. Technical Report MSR-TR-2021-5, Microsoft Research,
+March 2021.
+[52] Ningning Xie, Jonathan Brachthäuser, Phillip Schuster, Daniel Hillerström, and Daan Leijen. Effect handlers, evidently. In Proceedings of the 25th ACM SIGPLAN International Conference on Functional Programming (ICFP’2020), ICFP ’20, August 2020. doi:10.1145/3408981.
+[53] Danil Yarantsev. Orc - nim’s cycle collector. October 2020. URL https://nim-lang.org/blog/2020/10/15/introduction-toarc-orc-in-nim.html.
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+1.00 1.25 3.54 3.09 5.65 2.18 2.34
+
+1.00 0.96
+1.23 6.68 4.11
+1.49 0.70
+
+1.00 1.04
+1.38 1.98 2.40
+0.75 1.22
+
+1.00 1.63
+1.46 8.45 3.48
+1.43 ×
+
+2.12 2.16 7.46 1.73
+
+type color { Red Black
+}
+
+type tree { Leaf Node(color:color, left:tree, key:int, value:bool, right:tree)
+}
+
+fun is-red(t : tree) : bool {
+
+match(t) {
+
+Node(Red) -> True
+
+_
+
+-> False
+
+}}
+
+fun bal-left(l:tree, k: int, v: bool, r: tree): tree { match(l) { Leaf -> Leaf Node(_, Node(Red, lx, kx, vx, rx), ky, vy, ry) -> Node(Red, Node(Black, lx, kx, vx, rx), ky, vy, Node(Black, ry, k, v, r)) Node(_, ly, ky, vy, Node(Red, lx, kx, vx, rx)) -> Node(Red, Node(Black, ly, ky, vy, lx), kx, vx, Node(Black, rx, k, v, r)) Node(_, lx, kx, vx, rx) -> Node(Black, Node(Red, lx, kx, vx, rx), k, v, r)
+}}
+
+fun bal-right(l: tree, k: int, v: bool, r: tree): tree { match(r) { Leaf -> Leaf Node(_, Node(Red, lx, kx, vx, rx), ky, vy, ry) -> Node(Red, Node(Black, l, k, v, lx), kx, vx, Node(Black, rx, ky, vy, ry)) Node(_, lx, kx, vx, Node(Red, ly, ky, vy, ry)) -> Node(Red, Node(Black, l, k, v, lx), kx, vx, Node(Black, ly, ky, vy, ry)) Node(_, lx, kx, vx, rx) -> Node(Black, l, k, v, Node(Red, lx, kx, vx, rx))
+}}
+
+fun ins(t: tree, k: int, v: bool): tree { match(t) { Leaf -> Node(Red, Leaf, k, v, Leaf) Node(Red, l, kx, vx, r) -> if (k < kx) then Node(Red, ins(l, k, v), kx, vx, r) elif (k == kx) then Node(Red, l, k, v, r) else Node(Red, l, kx, vx, ins(r, k, v)) Node(Black, l, kx, vx, r) -> if (k < kx) then (if (is-red(l)) then bal-left(ins(l,k,v), kx, vx, r) else Node(Black, ins(l, k, v), kx, vx, r)) elif (k == kx) then Node(Black, l, k, v, r) elif (is-red(r)) then bal-right(l, kx, vx, ins(r,k,v)) else Node(Black, l, kx, vx, ins(r, k, v))
+}}
+
+fun set-black(t: tree) : tree { match(t) { Node(_, l, k, v, r) -> Node(Black, l, k, v, r) _ -> t
+}}
+
+fun insert(t: tree, k: int, v: bool): tree { if (is-red(t)) then set-black(ins(t, k, v)) else ins(t, k, v)
+}
+
+2.0x
+
+1.00 1.17
+1.06
+
+relative time (lower is better)
+
+1.5x
+
+1.0x
+
+0.5x
+
+0x
+rbtree
+
+rbtree-ck
+
+deriv
+
+nqueens
+
+cfold
+
+Koka Swift
+
+Koka,no-opt Java
+
+OCaml C++
+
+Haskell
+
+2.00 1.89
+2.26
+
+2.0x
+
+1.73 3.13 2.97
+
+1.00 1.00
+1.77 3.56 3.17 3.55 3.02
+
+1.00 0.89
+0.99 1.10
+
+1.00 1.00 0.93
+1.07
+
+1.00 1.00
+1.21 9.89
+1.61 2.22
+×
+
+1.69 1.62
+13.50
+
+1.00 1.00
+1.22 1.20
+
+relative rss (lower is better)
+
+1.5x
+
+1.0x
+
+0.5x
+
+0x
+rbtree
+
+rbtree-ck
+
+deriv
+
+nqueens
+
+cfold
+
+Fig. 11. Relative execution time and peak working set with respect to Koka (lower is better). On a 10-core Intel Core i9-7900X at 4.30GHz, Ubuntu 20.04.
+Appendix A Red-black tree implementation
+Figure 10 shows balanced insertion into a red-black tree using Okasaki’s algorithm [37].
+B Further Benchmarks
+Figure 11 show execution time and peak working sets on a 10-core Intel Core i9-7900X at 4.30GHz, Ubuntu 20.04.
+
+Fig. 10. Red-black tree balanced insertion in Koka
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+C Proofs
+C.1 A Heap Reference Counting Calculus
+
+H ⊢ v1 ⊣ H1 . . . Hn−1 ⊢ vn ⊣ Hn [drcon] H ⊢ C v1 . . . vn ⊣ Hn
+
+H, x ↦→n+1 v ⊢ x ⊣ H, x ↦→n v [drvar]
+
+H ⊢ ys ⊣ H1 [drvarlam]
+H, x ↦→1 𝜆ysz. e ⊢ x ⊣ H1
+
+H ⊢ ys ⊣ H1 [drvarcon]
+H, x ↦→1 C ys ⊢ x ⊣ H1 H, x ↦→n+1 v ⊢ e ⊣ H1 [drdup]
+H, x ↦→n v ⊢ dup x; e ⊣ H1 H, x ↦→n v ⊢ e ⊣ H1 [drdrop]
+H, x ↦→n+1 v ⊢ drop x; e ⊣ H1
+
+H ⊢ drop ys; e ⊣ H1 [drdropcon]
+H, x ↦→1 C ys ⊢ drop x; e ⊣ H1
+
+H ⊢ drop ys; e ⊣ H1 [drdroplam]
+H, x ↦→1 𝜆ysz. e ⊢ drop x; e ⊣ H1
+
+H ⊢ ys ⊣ H1 ys ↦→1 (), x ↦→1 () ⊢ e ⊣ ∅ [drlam]
+H ⊢ 𝜆ys x. e ⊣ H1
+
+H ⊢ e1 ⊣ H1 H1 ⊢ e2 ⊣ H2 [drapp] H ⊢ e1 e2 ⊣ H2
+
+H ⊢ e1 ⊣ H1 H1, x ↦→1 () ⊢ e2 ⊣ H2 x ̸∈ H, H2 [drbind]
+H ⊢ val x = e1 ; e2 ⊣ H2
+
+H ⊢ x ⊣ H1 H1, bv(pi) ⊢ ei ⊣ H′ bv(pi) ̸∈ H, H′ H ⊢ match x { pi ↦→ ei } ⊣ H′
+Lemma 1. (Heap Reference Counting Free variables) If H1 ⊢ e ⊣ H2, then fv(e) ∈ H1, and fv(H2) ∈ H1 with same domains.
+
+[drmatch]
+
+Proof. (Of Lemma 1) By a straightforward induction on the rules. □
+
+Definition 2. (Extension) H is extended with x, denoted as H ++ x, where ++ works as follows: (1) if H = H′, x ↦→n v, then H ++ x = H′, x ↦→n+1 ys; (2) if x ̸∈ H, then H ++ x = (H, x ↦→1 v) ++ fv(v). We omit the domain of x in H ++ x for simplicity. The domain should always be available by inspecting the heap (in (1)) or via
+explicit passing (in (2)).
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+We only focus on situations where there is no cycles in the dependency of x (but we are fine with existing cycles in H), so that the extension terminates. That implies (H, x ↦→1 v) ++ fv(v) = H ++ fv(v), x ↦→1 v in (2).
+Lemma 2. (Drop is dual to extension) If H1 ⊢ drop x; () ⊣ H2, then H1 = H2 ++ x. Similarly, if H1 ⊢ x ⊣ H2, then H1 = H2 ++ x.
+Proof. (Of Lemma 2) By induction on the judgment. case
+
+H, x ↦→n+1 ys ⊢ drop x; () ⊣ H, x ↦→n ys drdrop, drcon case
+
+H, x ↦→1 𝜆ysz. e ⊢ drop x; () ⊣ H1 H ⊢ drop ys; () ⊣ H1 H = H1 ++ ys H, x ↦→1 𝜆ysz.e = H1 ++ x
+case
+
+given drdroplam I.H. by definition
+
+H, x ↦→1 C ys ⊢ drop x; () ⊣ H1 H ⊢ drop ys; () ⊣ H1 H = H1 ++ ys H, x ↦→1 C ys = H1 ++ x
+□
+
+given drdropcon I.H. by definition
+
+Lemma 3. (Extension is dual to drop) H ++ x ⊢ drop x; () ⊣ H. Similarly, H ++ x ⊢ x ⊣ H.
+
+Proof. (Of Lemma 3) By induction on ++x. case
+
+H = H′, x ↦→n ys H++x = H′, x ↦→n+1 ys H′, x ↦→n+1 ys ⊢ drop x; () ⊣ H
+case
+
+if by definition drdrop
+
+x ̸∈ H ys = fv(v) H ++ x = H ++ ys, x ↦→1 v H ++ ys ⊢ ys ⊣ H H ++ ys, x ↦→1 v ⊢ x ⊣ H
+□
+
+if let by definition I.H. drvarlam or drvarcon
+
+Lemma 4. (Extension Commutativity) H ++ x ++ y = H ++ y ++ x.
+
+Proof. (Of Lemma 4) By induction on ++x and ++y, then we do case analysis. case x ∈ H. Then H = H′, x ↦→n v. By definition, H ++ x ++ y = (H′, x ↦→n+1 v) ++ y. Since the way ++ works only depends on whether x exists but not the exact number of its occurrence, we can decrease the number of x, do ++y and then add x back. That is, (H′, x ↦→n+1 v) ++ y = (H′, x ↦→n v) ++ y ++ x = H ++ y ++ x.
+case y ∈ H is similar as the previous case.
+case x, y ̸∈ H. Then H ++ x = H ++ xs, x ↦→1 v where xs = fv(v).
+subcase Assume ++y won’t cause ++x, then ++y doesn’t care about the existance of x.
+So (H ++ xs, x ↦→1 v) ++ y = H ++ xs ++ y, x ↦→1 v
+= H ++ y ++ xs, x ↦→1 v by I.H.
+= H ++ y ++ x by definition.
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+subcase Or otherwise ++y will cause ++x. Since there is no cycle in the dependency, that means ++x won’t cause ++y. Then we can prove it as in the previous case. □
+
+C.1.1 Relating to linear resource calculus.
+Definition 3. (Context to Dependency Heap) Given a context Γ, Γ defines a dependency heap, with all x becoming x ↦→n () if x appears n times in Γ.
+
+Lemma 5. Γ, x ⊢ x ⊣ Γ . Similarly, if Δ ⊢ e ⊣ H, then Γ, x ⊢ drop x; e ⊣ H.
+Proof. The goal holds by rule drvar (drdrop) when x ∈ Γ or by rule drvarcon (drdropcon) if x ̸∈ Γ. □
+Lemma 6. (linear resource calculus relates to reference counting) If Δ | Γ ⊢ e ⇝ e′, then Δ, Γ ⊢ e′ ⊣ Δ .
+Proof. (Of Lemma 6) By induction on the elaboration. case
+
+Δ | x ⊢ x ⇝ x given Δ, x ⊢ x ⊣ Δ Lemma 5 case
+
+Δ | Γ ⊢ e ⇝ dup x; e′ Δ | Γ, x ⊢ e ⇝ e′
+x ∈ Δ, Γ Δ, Γ, x ⊢ e′ ⊣ Δ Δ, Γ ⊢ dup x; e′ ⊣ Δ
+case
+
+given given given I.H. drdup
+
+Δ | Γ, x ⊢ e ⇝ drop x; e′ Δ | Γ ⊢ e ⇝ e′ Δ, Γ ⊢ e′ ⊣ Δ Δ, Γ, x ⊢ drop x; e′ ⊣ Δ
+case
+
+given given I.H. Lemma 5
+
+Δ | Γ ⊢ 𝜆x. e ⇝ 𝜆ys x. e′ ∅ | ys, x ⊢ e ⇝ e′
+ys = fv(𝜆x. e)
+Δ, ys ⊢ ys ⊣ Δ ys, x ⊢ e′ ⊣ ∅ Δ, ys ⊢ 𝜆ys x. e ⊣ Δ
+case
+
+given given given Lemma 5 I.H. drlam
+
+Δ | Γ1, Γ2
+
+⊢
+
+e1 e2
+
+⇝
+
+e′
+1
+
+e′
+2
+
+Δ, Γ2 | Γ1 ⊢ e1 ⇝ e1′
+
+Δ | Γ2 ⊢ e2 ⇝ e2′
+
+Δ, Γ1, Γ2 ⊢ e1′ ⊣ Δ, Γ2
+
+Δ, Γ2
+
+⊢ e′ ⊣
+2
+
+Δ
+
+Δ, Γ1, Γ2
+
+⊢ e′ e′ ⊣
+12
+
+Δ
+
+case
+
+given given given I.H. I.H. drapp
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+Δ | Γ1, Γ2
+
+⊢
+
+val x
+
+=
+
+e1; e2
+
+⇝ val x
+
+=
+
+e′;
+1
+
+e′
+2
+
+Δ, Γ2 | Γ1
+
+⊢
+
+e1
+
+⇝
+
+e′
+1
+
+Δ | Γ2, x
+
+⊢
+
+e2
+
+⇝
+
+e′
+2
+
+x ̸∈ Δ, Γ1, Γ2
+
+Δ, Γ1, Γ2 ⊢ e1′ ⊣ Δ, Γ2 Δ, Γ2, x ⊢ e2′ ⊣ Δ
+
+x ̸∈ Δ
+
+Δ, Γ1, Γ2 ⊢ val x = e1′; e2′ ⊣ Δ
+
+case
+
+given given given given I.H. I.H. follows drbind
+
+Δ | Γ, x ⊢ match x { pi Δ | Γ, bv(pi) ⊢ ei ⇝ ei′
+
+↦→ ei }
+
+⇝ match x { pi
+
+↦→ ei′ }
+
+Δ, Γ, x ⊢ x ⊣ Δ, Γ
+
+Δ, Γ, bv(pi) ⊢ ei′ ⊣ Δ
+
+Δ, Γ ⊢ match x { pi ↦→ ei′ } ⊣ Δ case
+
+given given Lemma 5 I.H. drmatch
+
+Δ | Γ1, . . ., Γn ⊢ C v1 . . . vn ⇝ C v1′ . . . vn′ Δ, Γi+1, . . ., Γn | Γi ⊢ vi Δ, Γi, Γi+1, . . ., Γn ⊢ vi − | Δ, Γi+1, . . ., Γn Δ, Γ1, . . ., Γn ⊢ C v1 . . . vn ⊣ Δ
+□
+
+given given I.H. drcon
+
+C.1.2 Weakening. Lemma 7. (Weakening) If H1 ⊢ e ⊣ H2, then H1 ++ x ⊢ e ⊣ H2 ++ x.
+Proof. (Of Lemma 7) By induction on the judgment. case
+
+H ⊢ C v1 . . . vn − | Hn H ⊢ vi ⊣ Hi H++x ⊢ vi ⊣ Hi++x H++x ⊢ C v1 . . . vn ⊣ Hn ++ x
+case
+
+given drcon I.H. drcon
+
+H ⊢ y ⊣ H2 H = H2 ++ y H ++ x = H2 ++ y ++ x = H2 ++ x ++ y H2 ++ x ++ y ⊢ y ⊣ H2 ++ x
+
+given Lemma 2
+Lemma 4 Lemma 3
+
+case
+
+H, y ↦→n ys ⊢ dup y; e ⊣ H1 H, y ↦→n+1 ys ⊢ e ⊣ H1 (H, y ↦→n ys) ++ y ⊢ e ⊣ H1 (H, y ↦→n ys) ++ y ++ x ⊢ e ⊣ H1 ++ x (H, y ↦→n ys) ++ y ++ x = (H, y ↦→n ys) ++ x ++ y (H, y ↦→n ys) ++ x ++ y ⊢ e ⊣ H1 ++ x (H, y ↦→n ys) ++ x ⊢ dup y; e ⊣ H1 ++ x
+case
+
+given drdup definition of ++ I.H.
+Lemma 4 By substitution drdup
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+H ⊢ drop y; e ⊣ H2 H ⊢ drop y; () ⊣ H3 H3 ⊢ e ⊣ H2 H = H3 ++ y H ++ x = H3 ++ y ++ x = H3 ++ x ++ y H3 ++ x ++ y ⊢ drop y; () ⊣ H3 ++ x H3 ++ x ⊢ e ⊣ H2 ++ x H3 ++ x ++ y ⊢ drop y; e ⊣ H2 ++ x H ++ x ⊢ drop y; e ⊣ H2 ++ x
+case
+
+given follows above Lemma 2
+Lemma 4 Lemma 3 I.H. Follows By substitution
+
+H ⊢ 𝜆ys z. e ⊣ H1 H ⊢ ys ⊣ H1 ys ↦→1 (), z ↦→1 () ⊢ e ⊣ ∅ H ++ x ⊢ ys ⊣ H1 ++ x H ++ x ⊢ 𝜆z. e ⊣ H1 ++ x
+case
+
+given given given I.H. drlam
+
+H ⊢ e1 e2 ⊣ H2 H ⊢ e1 ⊣ H1 H1 ⊢ e2 ⊣ H2 H ++ x ⊢ e1 ⊣ H1 ++ x H1 ++ x ⊢ e2 ⊣ H2 ++ x H ++ x ⊢ e1 e2 ⊣ H2 ++ x
+case
+
+given given given I.H. I.H. drapp
+
+H ⊢ val z = e1 ; e2 ⊣ H2 H ⊢ e1 ⊣ H1 H1, z ↦→1 () ⊢ e2 ⊣ H2 z ̸∈ H H ++ x ⊢ e1 ⊣ H1 ++ x (H1, z ↦→1 ()) ++ x ⊢ e2 ⊣ H2 ++ x z ̸∈ H1 H1, z ↦→1 () = H1 ++ z (H1, z ↦→1 ()) ++ x = H1 ++ z ++ x = H1 ++ x ++ z = H1 ++ x, z ↦→1 () H1 ++ x, z ↦→1 () ⊢ e2 ⊣ H2 ++ x H ++ x ⊢ e1 e2 ⊣ H2 ++ x
+case
+
+given given given given I.H. I.H. Lemma 1
+Lemma 4
+by substitution drbind
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+H ⊢ match z { pi ↦→ ei } ⊣ H′ H ⊢ z ⊣ H1 H1, Hi ⊢ ei ⊣ H′ Hi = bv(pi) H ++ x ⊢ z ⊣ H1 ++ x (H1, Hi) ++ x ⊢ ei ⊣ H′ ++ x bv(pi) fresh H1, Hi = H1 ++ bv(pi) (H1, Hi) ++ x = H1 ++ bv(pi) ++ x = H1 ++ x ++ bv(pi) = H1 ++ x, Hi H1 ++ x, Hi ⊢ ei ⊣ H′ ++ x H ++ x ⊢ match z { pi ↦→ ei } ⊣ H′ ++ x
+□
+
+given given given given I.H. I.H. assume
+Lemma 4
+by substitution drmatch
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+C.2 Soundness of Reference Counting Semantics
+
+Lemma 8. (Reference counting semantics is sound (small step))
+If e1 −→ e2, and H1 ok, and e1′ ok, and [H1]e1′ = e1, and H1 ⊢ e1′ ⊣ H1′ , then there exists H2, e2′ such that H1 | e1′ ↦−→∗r H2 | e2′, and [H2]e2′ = e2.
+
+Proof. (Of Lemma 8) By induction on the evaluation judgment.
+
+case (app) (𝜆x. e) v −→ e[x:=v]
+
+[H1]
+
+e′
+1
+
+=
+
+(𝜆x. e) v
+
+given
+
+subcase e′ = f z.
+1
+
+[H1] (f z) = (𝜆x. e) v
+
+given
+
+[H1]f = (𝜆x. e)
+
+follows
+
+[H1]z = v
+
+f ↦→n 𝜆ys x. e′ ∈ H1
+
+[H1]e′ = e
+
+H1 | f z −→r H1 | dup ys; drop f ; e′[x:=z]
+
+H1 ⊢ f z ⊣ H1′
+
+H1
+
+=
+
+H′ ++ f
+1
+
+++ z
+
+H1 ok
+
+ys ∈ H1
+
+H1 | dup ys; drop f ; e′[x:=z]
+
+−→r H1 ++ ys | drop f ; e′[x:=z]
+
+H1 ++ ys = H1′ ++ f ++ z ++ ys
+
+= H1′ ++ ys ++ z ++ f
+
+H1 ++ ys | drop f ; e′[x:=z]
+
+−→r
+
+H′ ++ys
+1
+
+++
+
+z
+
+| e′[x:=z]
+
+H′ ++ ys ++ z ⊢ e′[x:=z] ⊣ H′
+
+1
+
+1
+
+fv(e′[x:=z]) ∈ H′ ++ ys ++ z
+
+1
+
+H1
+
+=
+
+H′ ++ f
+1
+
+++ z
+
+ys ∈ H1
+
+fv(e′[x:=z]) ∈ H1
+
+[H1′ ++ys++z] (e′[x:=z]) = [H1] (e′[x:=z])
+= ( [H1]e′) [x:=[H1]z]
+
+follows follows above (app) given Lemma 2 given f ↦→n 𝜆ys x · e′ ∈ H1
+(dup) and ++
+Lemma 4
+(drop) and Lemma 3 Lemma 13 Lemma 1 known known follows
+follows by substitution
+
+= e[x:=v]
+
+subcase e′ = (𝜆x. e′) z.
+1
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+[H1] ((𝜆x. e′) z) = (𝜆x. e) v [H1]e′ = e
+[H1]z = v H | (𝜆x. e′) z ↦−→ H, f ↦→1 𝜆ysx. e′ | f z f fresh, ys = fv(𝜆x. e′) H, f ↦→1 𝜆ysx.e′ ⊢ f z ⊣ H1′ H, f ↦→1 𝜆ysx.e′ ok
+f z ok [H, f ↦→1 𝜆ysx.e′] (f z) = (𝜆x. e v)
+
+given follows follows (lam) and step above Lemma 14 above above by substitution
+
+follows by the previous subcase
+
+subcase The rest subcases are e′ = f v′ and e′ = (𝜆x. e′) v′ where v′ is not a variable. Both cases are similar as the
+
+1
+
+1
+
+previous one, with values stored in the heap first and the expression being f z as in the first subcase.
+
+case (match) match (C v1 . . . vn) {pi → ei} −→ ei [x1:=v1, . . ., xn:=vn] with pi = C x1 . . . xn.
+
+[H1]
+
+e′
+1
+
+=
+
+match (C v1 . . . vn) {pi → ei}
+
+e′
+1
+
+=
+
+match x {pi → ei′}
+
+[H1]x = C v1 . . . vn
+
+[H1]ei′ = ei
+
+x ↦→n C y1 . . . yn ∈ H1
+
+given follows above above follows
+
+[H1]y1 = v1, . . ., [H1]yn = vn
+
+H1 | match x {pi → ei′} −→r H1 | dup ys; drop x; ei′[xs:=ys]
+
+pi = C xs
+
+H1
+
+⊢
+
+match x {pi → ei′}
+
+⊣
+
+H′
+1
+
+H1 ⊢ x ⊣ H2
+
+H2, xs ⊢ ei ⊣ H′
+
+above
+(match) above given drmatch above
+
+H1 = H2 ++ x
+
+Lemma 2
+
+H1 | dup ys; drop x; ei [xs:=ys]
+
+−→r H1 ++ ys | drop x; ei [xs:=ys]
+
+(dup) and ++
+
+H1 ++ ys = H2 ++ x ++ ys
+
+= H2 ++ ys ++ x
+
+Lemma 4
+
+H1 ++ ys | drop x; ei [xs:=ys] −→r H2++ys | ei [xs:=ys] (drop) and Lemma 3
+
+H1 = H2 ++ x
+
+known
+
+H1 and H2 ++ ys differs only in x H2 ++ ys ⊢ ei [xs:=ys] ⊣ H1′
+fv(ei [xs:=ys]) ∈ H2++ys
+
+Lemma 14 Lemma 1
+
+[H2++ys] (ei [xs:=ys]) = [H1] (ei [xs:=ys])
+
+( [H1]ei) (xs:=[H1]ys)
+
+by substitution
+
+(ei) (xs:=vs)
+
+case (dup) dup x; e −→ e
+
+[H1]
+
+e′
+1
+
+=
+
+dup x;
+
+e
+
+e1′ = dup x; e′
+
+[H1]e′ = e
+
+H1 ⊢ dup x; e′ ⊣ H1′
+
+x ∈ H1
+
+H1 | dup x; e′ −→r H1 ++ x | e′
+
+[H1 ++ x]e′ = [H1]e′ = e
+
+given follows above given follows (dup) and ++
+
+case (drop) drop x; e −→ e
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+[H1]
+
+e′
+1
+
+=
+
+drop x;
+
+e
+
+e′ = drop x; e′
+
+1
+
+[H1]e′ = e
+
+H1
+
+⊢
+
+drop x;
+
+e′
+
+⊣
+
+H′
+1
+
+H1 ⊢ drop x; () ⊣ H2
+
+H2 ⊢ e′ ⊣ H1′
+
+H1 = H2 ++ x
+
+H1 | drop x; e′ −→r H2 | e′
+
+H2
+
+⊢
+
+e′
+
+⊣
+
+H′
+1
+
+fv(e′) ∈ H2
+
+[H2]e′ = [H1]e′ = e
+
+□
+
+given follows above given follows above Lemma 2 (drop) and Lemma 3 Lemma 14 Lemma 1
+
+Lemma 9. (Reference counting semantics is sound (big step, part 1))
+Given E[e1], and H1 ok, and e1′ ok, and [H1]e1′ = E[e1], and H1 ⊢ e1′ ⊣ H1′ , then there exists H2, E′′ and e2′ such that H1 | e1′ −→∗r H2 | E′[e2′], and [H2]E′ = E, and [H2]e2′ = e1.
+
+Proof. (Of Lemma 9) By induction on the evaluation context E.
+
+case E
+
+=
+
+□. Let E′
+
+=
+
+□
+
+and
+
+e′
+2
+
+=
+
+e′, then the goals follow trivially.
+1
+
+case E = E1 e.
+
+[H1]e1′ = E1 [e1] e
+
+e′ = e′ e′
+
+1
+
+23
+
+[H1]
+
+e′
+2
+
+=
+
+E1 [e1]
+
+[H1]
+
+e′
+3
+
+=
+
+e
+
+H1
+
+⊢
+
+e′ e′
+23
+
+⊣
+
+H′
+1
+
+H1 ⊢ e2′ ⊣ H3
+
+H3 ⊢ e3′ ⊣ H1′
+
+H1 ⊢ e2′ −→∗r H2 | E′ [e2′]
+
+[H2]E′ = E1
+
+[H2]
+
+e′
+2
+
+=
+
+e1
+
+E′′ = E′ e′
+
+3
+
+H1
+
+⊢
+
+e′
+2
+
+e′
+3
+
+−→∗r
+
+H2
+
+|
+
+E′[e′]
+2
+
+e′
+3
+
+H1
+
+⊢
+
+e′
+1
+
+−→∗r
+
+H2
+
+| E′′[e′]
+2
+
+H2 ⊢ E′ [e2′] e3′ ⊣ H1′
+
+fv(e3′) ∈ H2
+
+[H2]E′′ = [H2]E′ [H2]e3′
+
+= [H2]E′ [H1]e3′
+
+= E1 e
+
+given for some e′, e′
+23
+follows follows given drapp above I.H. above above let step by substitution Lemma 14 Lemma 1
+
+case E = x E1.
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+[H1]
+
+e′
+1
+
+=
+
+x E1 [e1]
+
+e′ = y e′
+
+1
+
+3
+
+[H1]y = x
+
+[H1]
+
+e′
+3
+
+=
+
+E1 [e1]
+
+H1 ⊢ y e3′ ⊣ H1′
+
+H1 ⊢ y ⊣ H3
+
+H3 ⊢ e3′ ⊣ H1′
+
+H1 = H3 ++ y
+
+H1
+
+⊢
+
+e′
+3
+
+⊣
+
+H′ ++ y
+1
+
+H1
+
+⊢
+
+e′
+3
+
+−→∗r
+
+H2
+
+|
+
+E′[e′]
+2
+
+[H2]E′ = E1
+
+[H2]
+
+e′
+2
+
+=
+
+e1
+
+E′′ = y E′
+
+H1 ⊢ y e3′ −→∗r H2 | y E′[e2′] H1 ⊢ e1′ −→∗r H2 | E′′ [e2′] H2 ⊢ y E′[e2′] ⊣ H1′
+
+y ∈ H2
+
+[H2]E′′ = [H2]y [H2]E′
+
+= [H1]y [H2]E′
+
+given for some y, e′
+3
+follows follows given drapp above Lemma 2 Lemma 7 I.H. above above let step by substitution Lemma 14 Lemma 1
+
+= x E1
+
+case E = v E1 where v is not a variable.
+
+[H1]e1′ = v E1 [e1] e1′ = v′ e3′ [H1]v′ = v
+
+[H1]e3′ = E1 [e1]
+
+H1
+
+⊢
+
+v′ e′
+3
+
+⊣
+
+H′
+1
+
+H1 ⊢ v′ ⊣ H3
+
+H3
+
+⊢
+
+e′
+3
+
+⊣
+
+H′
+1
+
+H1 = H3 ++ fv(v′)
+
+H1 ⊢ v′ e3′ −→ H1, z ↦→1 v′ | z e3′
+H1, z ↦→1 v′ ⊢ e3′ ⊣ H1′ ++ fv(v′), z ↦→1 v′
+H1, z ↦→1 v′ ⊢ e3′ −→∗r H2 | E′[e2′] [H2]E′ = E1
+
+[H2]
+
+e′
+2
+
+=
+
+e1
+
+E′′ = z E′
+
+H1
+
+⊢
+
+v′
+
+e′
+3
+
+−→∗r
+
+H2
+
+|
+
+z
+
+E′[e′]
+2
+
+H1
+
+⊢
+
+e′
+1
+
+−→∗r
+
+H2
+
+|
+
+E′′ [e ′ ]
+2
+
+H2 ⊢ v′ E′[e2′] ⊣ H1′
+
+fv(v′) ∈ H2
+
+[H2]E′′ = [H2]v′ [H2]E′
+
+= [H1]v′ [H2]E′
+
+given for some v′, e3′ follows follows given drapp above Lemma 2 (lam) or (con) Lemma 7 I.H. above above let step by substitution Lemma 14 Lemma 1
+
+= v E1
+
+case E = val x = E1; e.
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+[H1]
+
+e′
+1
+
+=
+
+val x
+
+=
+
+E1 [e1];
+
+e
+
+e′ = val x = e′; e′
+
+1
+
+23
+
+[H1]
+
+e′
+2
+
+=
+
+E1 [e1]
+
+[H1]
+
+e′
+3
+
+=
+
+e
+
+H1 ⊢ val x = E1 [e1]; e ⊣ H1′
+
+H1 ⊢ e2′ ⊣ H3
+
+H1 ⊢ e2′ −→∗r H2 | E′ [e2′]
+
+[H2]E′ = E1
+
+[H2]
+
+e′
+2
+
+=
+
+e1
+
+E′′ = val x = E′; e′
+
+3
+
+H1
+
+⊢
+
+val x
+
+=
+
+e′;
+2
+
+e′
+3
+
+−→∗r
+
+H2
+
+|
+
+val
+
+x
+
+=
+
+E′[e′];
+2
+
+e′
+3
+
+H1
+
+⊢
+
+e′
+1
+
+−→∗r
+
+H2
+
+| E′′[e′]
+2
+
+H2 ⊢ val x = E′[e2′]; e3′ ⊣ H1′
+
+fv(e3′) ∈ H2, x
+
+[H2]E′′ = val x = [H2]E′; [H2]e3′
+
+= [H2]E′ [H1]e3′
+
+= E1 e
+
+□
+
+given for some e′, e′
+23
+follows follows given drbind I.H. above above let step by substitution Lemma 14 Lemma 1
+
+Lemma 10. (Reference counting semantics is sound (big step, part 2))
+
+If
+
+E[e1]
+
+↦−→
+
+E[e2],
+
+and
+
+H1
+
+ok,
+
+and
+
+E′[e′]
+1
+
+ok,
+
+and
+
+[H1]E′
+
+=
+
+E,
+
+and
+
+[H1
+
+]e′
+1
+
+=
+
+e1, and H1
+
+⊢
+
+E[e′]
+1
+
+⊣
+
+H′ ,
+1
+
+then
+
+there
+
+exists
+
+H2,
+
+e′
+2
+
+such
+
+that
+
+H1
+
+|
+
+E′[e′]
+1
+
+−→∗r
+
+H2
+
+|
+
+E′[e′],
+2
+
+and
+
+[H2]E′
+
+=
+
+E.
+
+and
+
+[H2]
+
+e′
+2
+
+=
+
+e2.
+
+Proof. (Of Lemma 10) By induction on the evaluation context E. Note that following Lemma 14 and 1, we have fv(E′) ∈ H2.
+
+So [H2]E′ = [H1]E′ = E.
+
+case E = □. Then E′ = □. The goal follows by Lemma 8.
+
+case E
+
+=
+
+E1 e, then E′
+
+=
+
+E′ e′.
+1
+
+[H1]E′ = E1 e
+
+given
+
+[H1]
+
+E′
+1
+
+=
+
+E′
+
+[H1]e′ = e
+
+above above
+
+E1 [e1] ↦−→ E1 [e2]
+
+given
+
+H1 ⊢ E1′ [e1′] e′ ⊣ H1′
+
+H1
+
+⊢
+
+E1′
+
+[e′
+1
+
+]
+
+⊣
+
+H2
+
+H2
+
+⊢
+
+e′
+
+⊣
+
+H′
+1
+
+H1
+
+|
+
+E′ [e′]
+11
+
+−→∗r
+
+H3
+
+|
+
+E′ [e′]
+12
+
+[H3]
+
+e′
+2
+
+=
+
+e2
+
+H1
+
+|
+
+E′ [e′]
+11
+
+e′
+
+−→r
+
+H3
+
+|
+
+E′ [e′]
+12
+
+e′
+
+given drapp above I.H. above ↦−→
+
+case E
+
+=
+
+v E1, then E′
+
+=
+
+x E′.
+1
+
+[H1]E′ = v E1
+
+given
+
+[H1]x′ = v
+
+above
+
+[H1]
+
+E′
+1
+
+=
+
+E1
+
+above
+
+E1 [e1] ↦−→ E1 [e2]
+
+given
+
+H1 ⊢ x E1′ [e1′] ⊣ H1′
+
+given
+
+H1 ⊢ x ⊣ H2
+
+drapp
+
+H2 ⊢ E1′ [e1′] ⊣ H1′
+
+above
+
+H1 = H2 ++ x
+
+Lemma 2
+
+H1
+
+⊢
+
+E′ [e′]
+11
+
+⊣
+
+H′ ++ x
+1
+
+H1
+
+|
+
+E′ [e′]
+11
+
+−→r
+
+H3
+
+|
+
+E′ [e′]
+12
+
+[H3]
+
+e′
+2
+
+=
+
+e2
+
+H1
+
+|
+
+x
+
+E′ [e′]
+11
+
+−→r
+
+H3
+
+|
+
+x
+
+E′ [e′]
+12
+
+Lemma 7 I.H. above ↦−→
+
+case E = val x = E1; e, then E′ = val x = E1′ ; e′.
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+[H1]E′ = val x = E1; e
+
+[H1]
+
+E′
+1
+
+=
+
+E′
+
+[H1]e′ = e
+
+E1 [e1] ↦−→ E1 [e2]
+
+H1 ⊢ val x = E1′ [e1′]; e′ ⊣ H1′
+
+H1 ⊢ E1′ [e1′] ⊣ H2
+
+H1 | E1′ [e1′] −→∗r H3 | E1′ [e2′]
+
+[H3] e2′ = e2
+
+H1 | val x
+
+=
+
+E′ [e′];
+11
+
+e′ −→r H3 | val x
+
+=
+
+E′ [e′];
+12
+
+e′
+
+□
+
+given above above given given drbind I.H. above ↦−→
+
+Lemma 11. (Reference counting semantics is sound (big step))
+
+If
+
+e1
+
+↦−→
+
+e2,
+
+and
+
+H1
+
+ok,
+
+and
+
+e′
+1
+
+ok,
+
+and
+
+[H1]
+
+e′
+1
+
+=
+
+e1, and H1
+
+⊢
+
+e′
+1
+
+⊣
+
+H′ , then there
+1
+
+exists
+
+H2
+
+and
+
+e′
+2
+
+such that
+
+H1
+
+|
+
+e′
+1
+
+−→∗r
+
+H2
+
+|
+
+e′,
+2
+
+and
+
+[H2]
+
+e′
+2
+
+=
+
+e2.
+
+Proof. (Of Lemma 11)
+
+e1 ↦−→ e2
+
+e1 = E[e3]
+
+e2 = E[e4]
+
+E[e3] ↦−→ E[e4]
+
+e′
+1
+
+=
+
+E1
+
+[e′]
+2
+
+H1
+
+|
+
+E1
+
+[e′
+2
+
+]
+
+−→∗r
+
+H2
+
+|
+
+E2
+
+[e′
+3
+
+]
+
+[H2]E2 = E
+
+[H2]e3′ = e3
+
+H2 ok
+
+E2 [e3′] ok
+
+H2 ⊢ E2 [e3′] ⊣ H1′
+
+H2
+
+|
+
+E2
+
+[e′
+3
+
+]
+
+−→
+
+H3
+
+|
+
+E2
+
+[e′]
+4
+
+[H3]E2 = E
+
+[H3]
+
+e′
+4
+
+=
+
+e4
+
+[H3]
+
+(E2
+
+[e′]
+4
+
+)
+
+=
+
+( [H3]E2) [
+
+[H3]
+
+e′
+4
+
+]
+
+= E[e4] = e2
+
+□
+
+given suppose suppose given suppose Lemma 9 above above Lemma 14 above above Lemma 10 above above by substitution
+
+Proof. (Of Theorem 1)
+
+∅ | ∅ ⊢ e ⇝ e′ given
+
+e ↦−→∗ v
+
+given
+
+e′ ↦−→∗ v
+
+Theorem 5
+
+H ok
+e′ ok
+∅ ⊢ e′ ⊣ ∅ e′ ↦−→∗r H2 | v′ [H2]v′ = v
+
+from lam Lemma 6 Lemma 11 above
+
+case v′ = x. Then the goal is proved.
+case v′ is not a variable. Then by (lam) or (con) we have H2 | v′ −→r H2, z ↦→1 v′ | z, with z fresh. Then [H2, z ↦→1 v′]z = [H2, z ↦→1 v′]v′ = [H2]v′ = v. □
+
+C.3 No Garbage
+C.3.1 Extending strict evaluation semantics. If we add dup e and drop e in the syntax, as well as add to the standard semantics in Figure 6 the following rules: (dup) dup e′; e −→ e (drop) drop e′; e −→ e
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+we immediately see that translations does not change evaluation:
+Theorem 5. (Translation is sound) If e ↦−→∗ v with ∅ | ∅ ⊢ e ⇝ e′, then also e′ ↦−→∗ v.
+Proof. (Of Theorem 5) Follows directly from Lemma 12 and the two reduction rule (dup) and (drop). □
+Lemma 12. (Translation only inserts dup/drop) If Δ | Γ ⊢ e ⇝ e′ then e = ⌈e′⌉.
+Proof. (Of Lemma 12) By straightforward case analysis of each derivation. □
+
+C.3.2 Evaluation retains Heap Reference Counting.
+Definition 4. (Well-formed Abstractions) If e ok, then all (𝜆ys x.e1) in e satisfies ys, x ⊢ e1 ⊣ ∅.
+
+Definition 5. (Well-formed Heap) If H ok, then (1) if x ↦→n v ∈ H, then fv(v) ∈ H, and v ok; (2) there is no dependency cycles in H.
+
+Lemma 13. (No Garbage (Small step)) Given H1 ok and e1 ok if H1 ⊢ e1 ⊣ H′, and H1 | e1 −→r H2 | e2, then H2 ok, e2 ok, and H2 ⊢ e2 ⊣ H′.
+
+Proof. (Of Lemma 13) When we a new variable z ↦→1 v in the heap (e.g., (lam)), z is fresh so its domain cannot refer to z (even indirectly). So there is no dependency cycle. Also, in those cases, since H1 ⊢ v ⊣ H′, by Lemma 1, we know fv(v) ∈ H1.
+Moreover we have v ok as a precondition. Heap reduction retains abstractions, with the only change being substitution. If ys, x ⊢ e ⊣ ∅, then ys[y:=z], x ⊢ e[y:=z] ⊣ ∅
+
+by substitution.
+
+Now we prove H2 ⊢ e2 ⊣ H′ by induction on the judgment.
+
+case (appr ) H | f z −→r H | dup ys; drop f ; e[x:=z] (f ↦→n 𝜆ysx. e) ∈ H
+
+H ⊢ f z ⊣ H1
+
+given
+
+H = H1 ++ f ++ z
+
+Lemma 2
+
+ys ∈ H1 ++ f ++ z
+
+f ↦→ 𝜆ysx. e
+
+H ⊢ dup ys; () ⊣ H ++ ys
+
+by definition
+
+H ++ ys = H1 ++ f ++ z ++ ys = H1 ++ ys ++ z ++ f H1 ++ ys ++ z ++ f ⊢ drop f ; () ⊣ H1 ++ ys ++ z ys, x ⊢ e ⊣ ∅ ys, z ⊢ e[x:=z] ⊣ ∅ H1 ++ ys ++ z ⊢ e[x:=z] ⊣ H1
+
+Lemma 4
+Lemma 3 𝜆ysx. e ok by substitution
+Lemma 7
+
+case (matchr ) H | match x {pi → ei} −→r H | dup ys; drop x; ei [xs:=ys] with pi = C xs and (x ↦→n C ys) ∈ H
+
+H ⊢ match x {C xs → ei} ⊣ H′
+
+given
+
+H ⊢ x ⊣ H1 H1, xs ⊢ ei ⊣ H′
+
+given given
+
+xs ̸∈ Hi
+
+given
+
+H = H1 ++ x (x ↦→n C ys) ∈ H
+
+Lemma 2 given
+
+ys ∈ H
+
+H ok
+
+H ⊢ dup ys; () ⊣ H ++ ys
+
+by definition
+
+H ++ ys = H1 ++ x ++ ys
+
+= H1 ++ ys ++ x
+
+Lemma 4
+
+H1 ++ ys ++ x ⊢ drop x; () ⊣ H1 ++ ys Lemma 3
+
+H1 ++ ys ⊢ ei [xs:=ys] ⊣ H′
+
+by substitution
+
+case (lamr ) H | (𝜆ys x. e) −→h H, f ↦→1 𝜆ys x. e | f fresh f
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+H ⊢ 𝜆ys x. e ⊣ H1
+
+given
+
+H ⊢ ys ⊣ H1
+
+given
+
+H, f ↦→1 𝜆ys x. e ⊢ f ⊣ H1 drvar
+
+case (conr ) H | C x1 . . . xn −→r H, z ↦→1 C x1 . . . xn | z fresh z
+
+H ⊢ C x1 . . . xn ⊣ H1
+
+given
+
+H, z ↦→1 C x1 . . . xn ⊢ z ⊣ H drcon
+
+case (dupr ) H, x ↦→n v | dup x; e −→r H, x ↦→n+1 v | e
+
+H, x ↦→n v ⊢ dup x; e ⊣ H1 given
+
+H, x ↦→n+1 v ⊢ e ⊣ H1
+
+drdup
+
+case (dropr ) H, x ↦→n+1 v | drop x; e −→r H, x ↦→n v | e
+
+H, x ↦→n+1 v ⊢ drop x; e ⊣ H1 given
+
+H, x ↦→n v ⊢ e ⊣ H1
+
+$[drdrop]
+
+if n ≥ 1
+
+case (dlamr ) H, x ↦→1 𝜆ysz.e | drop x; e −→r H | drop ys; e
+
+H, x ↦→1 𝜆ysz.e ⊢ drop x; e ⊣ H1 given
+
+H ⊢ drop ys; e ⊣ H1
+
+drdroplam
+
+case (dconr ) H, x ↦→1 C ys | drop x; e −→r H | drop ys; e
+
+H, x ↦→1 C ys ⊢ drop x; e ⊣ H1 given
+
+H ⊢ drop ys; e ⊣ H1
+
+drdropcon
+
+□
+
+The ok part reasoning of Lemma 13 can be easily generalized to big step. So from now on we will implicitly assume every expression and heap we discuss is ok.
+
+Lemma 14. (No Garbage (big step)) If H1 ⊢ E[e1] ⊣ H′, and H1 | E[e1] ↦−→r H2 | E[e2], then H2 ⊢ E[e2] ⊣ H′.
+
+Proof. (Proof for Lemma 14) By induction on E.
+
+case E = □. Follows by Lemma 13.
+
+case E = E1 e.
+
+H1 ⊢ E1 [e1] e ⊣ H2 given
+
+H1 ⊢ E1 [e1] ⊣ H3 H3 ⊢ e ⊣ H2 H1 ⊢ E1 [e2] ⊣ H3 H1 ⊢ E1 [e2] e ⊣ H2
+
+drapp given I.H. drapp
+
+case E = x E1.
+
+H1 ⊢ x E1 [e1] ⊣ H2 given
+
+H1 ⊢ x ⊣ H3
+
+drapp
+
+H3 ⊢ E1 [e1] ⊣ H2 given
+
+H3 ⊢ E1 [e2] ⊣ H2 I.H.
+
+H1 ⊢ x E1 [e2] ⊣ H2 drapp
+
+case E = val x = E1; e.
+
+H1 ⊢ val x = E1 [e1]; e ⊣ H2 H1 ⊢ E1 [e1] ⊣ H3 H3, x ↦→1 () ⊢ e ⊣ H2 x ̸∈ H2 H1 ⊢ E1 [e2] ⊣ H3
+
+given drbind given given I.H.
+
+H1 ⊢ val x = E1 [e2] ; e ⊣ H2 drbind
+
+case E = C x1 . . . xi E1 vj . . . vn.
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+H1 ⊢ C x1 . . . xi E1 [e1] vj . . . vn ⊣ H2 H1 ⊢ x1 . . . xi ⊣ H3 H3 ⊢ E1 [e1] ⊣ H4 H4 ⊢ vj . . . vn ⊣ H2 H3 ⊢ E1 [e2] ⊣ H4 H1 ⊢ C x1 . . . xi E1 [e2] vj . . . vn ⊣ H2
+□
+
+given drcon given given I.H. drcon
+
+Theorem 6. (No garbage) Given ∅; ∅ ⊢ e ⇝ e1, and ∅ | e1 ↦−→∗r Hi | ei, then Hi ⊢ ei ⊣ ∅.
+
+Proof. (Of Theorem 6)
+
+∅ ok e1 ok ∅ ⊢ e1 ⊣ ∅ Hi ⊢ ei ⊣ ∅
+□
+
+by construction by lam Lemma 6 Lemma 14
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+C.3.3 No Garbage. Lemma 15. (Reachability) If H1 ⊢ e ⊣ H2, then there for all y ∈ dom(H1) − dom(H2), reach(y, H1 | e). For ease of reference, we denote it as reach(H1 − H2, H1 | e)
+Proof. (Of Lemma 15) By induction on the judgment. case
+
+H0 ⊢ C v1 . . . vn ⊣ Hn H0 ⊢ v1 ⊣ H1 . . . Hn−1 ⊢ vn ⊣ Hn reach(Hi−1 − Hi, Hi−1 | vi) reach(Hi−1 − Hi, H0 | vi) reach(Hn − H0, H0 | C v1 . . . vn)
+case
+
+given drcon I.H. Lemma 1 Follows
+
+H, x ↦→n+1 v ⊢ x ⊣ H, x ↦→n v
+
+given
+
+dom(H, x ↦→n+1 v) − dom(H, x ↦→n v) = ∅
+
+case
+
+H, x ↦→1 𝜆ysz. e ⊢ x ⊣ H1
+H ⊢ ys ⊣ H1
+reach(H − H1, H | ys) reach(H − H1, H | 𝜆ysz. e) reach((H, x ↦→1 𝜆ysz. e) − H1, (H, x ↦→1 𝜆ysz. e) | x)
+case
+
+given drvarlam I.H. by definition follows
+
+H, x ↦→1 C ys ⊢ x ⊣ H1 H ⊢ ys ⊣ H1 reach(H − H1, H | ys) reach(H − H1, H | C ys) reach((H, x ↦→1 C ys) − H1, (H, x ↦→1 C ys) | x)
+case
+
+given drvarcon I.H. by definition follows
+
+H, x ↦→n v ⊢ dup x; e ⊣ H1 H, x ↦→n+1 v ⊢ e ⊣ H1 reach((H, x ↦→n+1 v) − H1, (H, x ↦→n+1 v) | e)
+reach((H, x ↦→n v) − H1, (H, x ↦→n v) | dup x; e)
+
+given drdup I.H. follows
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+case
+
+H, x ↦→n+1 v ⊢ drop x; e ⊣ H1 H, x ↦→n v ⊢ e ⊣ H1 reach((H, x ↦→n+1 v) − H1, (H, x ↦→n+1 v) | e) reach((H, x ↦→n v) − H1, (H, x ↦→n v) | drop x; e)
+case
+
+given drdrop I.H. follows
+
+H, x ↦→1 C ys ⊢ drop x; e ⊣ H1 H ⊢ drop ys; e ⊣ H1 reach(H − H1, H | drop ys; e) reach((H, x ↦→1 C ys) − H1, (H, x ↦→1 C ys) | drop x; e)
+case
+
+given drdropcon I.H. follows
+
+H, x ↦→1 𝜆ysz. e ⊢ drop x; e ⊣ H1 H ⊢ drop ys; e ⊣ H1 reach(H − H1, H | drop ys; e) reach((H, x ↦→1 𝜆ysz. e) − H1, (H, x ↦→1 𝜆ysz. e) | drop x; e)
+case
+
+given drdroplam I.H. follows
+
+H ⊢ 𝜆ys x. e ⊣ H1 H ⊢ ys ⊣ H1 reach(H − H1, H | ys) reach(H − H1, H | 𝜆ysx. e)
+case
+
+given drlam I.H. follows
+
+H ⊢ e1 e2 ⊣ H2 H ⊢ e1 ⊣ H1 H1 ⊢ e2 ⊣ H2 reach(H − H1, H | e1) reach(H1 − H2, H1 | e2) reach(H1 − H2, H | e2) reach(H − H2, H | e1 e2)
+case
+
+given drapp drapp I.H. I.H. Lemma 1 follows
+
+H ⊢ val x = e1 ; e2 ⊣ H2 H ⊢ e1 ⊣ H1 H1, x ↦→1 () ⊢ e2 ⊣ H2 x ̸∈ H, H2 reach(H − H1, H | e1) reach((H1, x ↦→1 ()) − H2, (H1, x ↦→1 ()) | e2) reach((H1, x ↦→1 ()) − H2, (H, x ↦→1 ()) | e2) dom(H1) ⊆ dom(H1, x ↦→1 ()) reach(H1 − H2, (H, x ↦→1 ()) | e2) x ̸∈ H x ̸∈ dom(H) − dom(H2) reach(H − H2, H | val x = e1; e2)
+case
+
+given drbind drbind drbind I.H. I.H. Lemma 1
+follows known follows follows
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+H ⊢ match x { pi ↦→ ei } ⊣ H′
+H ⊢ x ⊣ H1 H1, bv(pi) ⊢ ei ⊣ H′ bv(pi) ̸∈ H, H′
+reach(H − H1, H | x) reach((H1, bv(pi) ) − H′, (H1, bv(pi) ) | ei) reach((H1, bv(pi) ) − H′, (H, bv(pi) ) | ei)
+dom(H1) ⊆ dom(H1, bv(pi) ) reach(H1 − H′, (H, bv(pi) ) | ei)
+bv(pi) ̸∈ H bv(pi) ̸∈ dom(H) − dom(H′) reach(H − H′, H | match x { pi ↦→ ei } )
+□
+
+given drmatch drmatch drmatch I.H. I.H. Lemma 1
+follows known follows follows
+
+Proof. (Of Theorem 2)
+
+∅; ∅ ⊢ e ⇝ e′ Hi ⊢ ei ⊣ ∅ reach(Hi − ∅, Hi | ei)
+□
+
+given Theorem 6 Lemma 15
+
+C.4 Soundness of Syntax-directed Translation
+Proof. (Of Theorem 3) By induction on the judgment. case
+
+Δ | x ⊢s x ⇝ x given Δ | x ⊢ x ⇝ x var
+case
+
+Δ, x | ∅ ⊢s x ⇝ dup x; x Δ, x | x ⊢ x ⇝ x Δ, x | ∅ ⊢ x ⇝ dup x; x
+case
+
+given var dup
+
+Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. e′
+x ∈ fv(e) ∅ | ys, x ⊢s e ⇝ e′
+ys = fv(𝜆x. e)
+Δ1 = ys − Γ ∅ | ys, x ⊢ e ⇝ e′ Δ, Δ1 | Γ, Δ1 ⊢s 𝜆x. e ⇝ 𝜆ys x. e′ Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. e′
+case
+
+given slam slam slam slam I.H. lam dup
+
+Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. (drop x; e′) x ̸∈ fv(e) ∅ | ys ⊢s e ⇝ e′ ys = fv(𝜆x. e)
+Δ1 = ys − Γ ∅ | ys ⊢ e ⇝ e′ ∅ | ys, x ⊢ e ⇝ drop x; e′
+ys = fv(𝜆x. drop x; e) Δ, Δ1 | Γ, Δ1 ⊢s 𝜆x. e ⇝ 𝜆ys x. drop x; e′ Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. e′
+
+given slam-d slam-d slam-d slam-d I.H. drop follows lam dup
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+case
+
+Δ | Γ ⊢s
+
+e1 e2
+
+⇝
+
+e′
+1
+
+e′
+2
+
+Δ, Γ2 | Γ − Γ2
+
+⊢s
+
+e1
+
+⇝
+
+e′
+1
+
+Δ | Γ2 ⊢s e2 ⇝ e2′
+
+Γ2 =ˆ Γ ∩ fv(e2)
+
+Δ, Γ2 | Γ − Γ2 ⊢ e1 ⇝ e1′
+
+Δ | Γ2 ⊢ e2 ⇝ e2′
+
+Δ|Γ
+
+⊢
+
+e1 e2
+
+⇝
+
+e′
+1
+
+e′
+2
+
+case
+
+given sapp sapp sapp I.H. I.H. app
+
+Δ | Γ ⊢s val x = e1; e2 ⇝ val x = e1′; e2′
+
+x ∈ fv(e2)
+
+x ̸∈ Δ, Γ
+
+Δ, Γ2 | Γ − Γ2
+
+⊢s
+
+e1
+
+⇝
+
+e′
+1
+
+Δ | Γ2, x ⊢s
+
+e2
+
+⇝
+
+e′
+2
+
+Γ2 =ˆ Γ ∩ (fv(e2) − x)
+
+Δ, Γ2
+
+| Γ − Γ2
+
+⊢
+
+e1
+
+⇝
+
+e′
+1
+
+Δ | Γ2, x
+
+⊢
+
+e2
+
+⇝
+
+e′
+2
+
+Δ | Γ ⊢ val x = e1; e2 ⇝ val x = e1′; e2′
+
+case
+
+given sbind sbind sbind sbind sbind I.H. I.H. bind
+
+Δ|Γ
+
+⊢s
+
+val x
+
+=
+
+e1;
+
+e2
+
+⇝ val x
+
+=
+
+e′;
+1
+
+drop x;
+
+e′
+2
+
+x ̸∈ fv(e2), Δ, Γ
+
+Δ, Γ2 | Γ − Γ2
+
+⊢s
+
+e1
+
+⇝
+
+e′
+1
+
+Δ | Γ2 ⊢s e2 ⇝ e2′
+
+Γ2 =ˆ Γ ∩ fv(e2)
+
+Δ, Γ2 | Γ − Γ2 ⊢ e1 ⇝ e1′
+
+Δ | Γ2 ⊢ e2 ⇝ e2′
+
+Δ | Γ2,
+
+x
+
+⊢
+
+e2
+
+⇝ drop x;
+
+e′
+2
+
+Δ|Γ
+
+⊢
+
+val x
+
+=
+
+e1; e2
+
+⇝ val x
+
+=
+
+e′;
+1
+
+drop x; e′
+2
+
+case
+
+given sbind-d sbind-d sbind-d sbind-d I.H. I.H. drop bind
+
+Δ | Γ, x ⊢s match x { pi ↦→ ei } ⇝ match x { pi ↦→ drop Γi′; ei′ }
+
+Δ | Γi ⊢s ei ⇝ ei′
+
+Γi =ˆ (Γ, bv(pi)) ∩ fv(ei)
+
+Γi′ = (Γ, bv(pi)) − Γi
+
+Δ | Γi ⊢ ei ⇝ ei′
+
+Δ Δ
+
+| |
+
+Γi, Γi′ ⊢ ei Γ, bv(pi) ⊢
+
+⇝ ei
+
+drop Γi′; ⇝ drop
+
+Γeii′′;
+
+ei′
+
+Δ | Γ, x ⊢ match x { pi ↦→ ei } ⇝ match x { pi ↦→ drop Γi′; ei′ }
+
+case
+
+given smatch smatch smatch I.H. drop by substitution match
+
+Δ|Γ
+
+⊢ s C v1 . . . vn
+
+⇝
+
+C
+
+v′
+1
+
+.
+
+.
+
+.
+
+vn′
+
+Δ, Γi+1, . . ., Γn | Γi ⊢ s vi ⇝ vi′
+
+Γi =ˆ (Γ − Γi+1 − . . . − Γn) ∩ fv(vi)
+
+1⩽i⩽n
+
+Δ, Δ
+
+Γi+1, . |Γ ⊢
+
+. ., C
+
+Γn v1
+
+| .
+
+Γi ⊢ . . vn
+
+vi ⇝
+
+⇝ Cv
+
+′vi′.
+
+1
+
+.
+
+.
+
+vn′
+
+□
+
+given scon scon scon I.H. con
+
+C.5 Precision C.5.1 A Heap Reference Counting Calculus for the Algorithm.
+
+Perceus: Garbage Free Reference Counting with Reuse
+H ⊢ s v1 ⊣ H1 . . . Hn−1 ⊢ s vn ⊣ Hn [srcon] H ⊢ s C v1 . . . vn ⊣ H1
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+H, x ↦→n+1 v ⊢ s x ⊣ H, x ↦→n v [srvar]
+
+H ⊢ s ys ⊣ H1
+
+[srvarlam]
+
+H, x ↦→1 𝜆ysz. e ⊢ s x ⊣ H1
+
+H ⊢ s ys ⊣ H1
+
+[srvarcon]
+
+H, x ↦→1 C ys ⊢ s x ⊣ H1
+
+H ⊢ s ys ⊣ H1 ys ↦→1 (), x ↦→1 () ⊢ s e ⊣ ∅ [srlam1] H ⊢ s 𝜆ys x. e ⊣ H1
+
+H ⊢ s ys ⊣ H1 ys ↦→1 () ⊢ s e ⊣ ∅ [srlam2] H ⊢ s 𝜆ys x. drop x; e ⊣ H1
+
+H ⊢ s e1 ⊣ H1 H1 ⊢ s e2 ⊣ H2 [srapp] H ⊢ s e1 e2 ⊣ H2
+
+H ⊢ s e1 ⊣ H1
+
+H1, x ↦→1 () ⊢ s e2 ⊣ H2
+
+x ̸∈ H, H2 [srbind1]
+
+H ⊢ s val x = e1 ; e2 ⊣ H2
+
+H ⊢ s e1 ⊣ H1
+
+H1 ⊢ s e2 ⊣ H2
+
+x ̸∈ H [srbind2]
+
+H ⊢ s val x = e1 ; drop x; e2 ⊣ H2
+
+H ⊢ s x ⊣ H1 H1, bv(pi) ⊢ r drop ysi; () ⊣ Hi Hi ⊢ s ei ⊣ H′ bv(pi) ̸∈ H, H′ ysi ⊆ fv( ⌈ei⌉) ∪ bv(pi)
+H ⊢ s match x { pi ↦→ drop ysi; ei } ⊣ H′
+
+[srmatch]
+
+H, x ↦→n+1 v ⊢ s e ⊣ H1
+
+[srdup]
+
+H, x ↦→n v ⊢ s dup x; e ⊣ H1
+
+Where drop, and dup followed by drop are only allowed in:
+
+H, x ↦→n+1 v ⊢ r e ⊣ H1
+
+[rrdup]
+
+H, x ↦→n v ⊢ r dup x; e ⊣ H1
+
+H, x ↦→n v ⊢ r e ⊣ H1 H, x ↦→n+1 v ⊢ r drop x; e ⊣ H1
+
+[rrdrop]
+
+H ⊢ r e ⊣ H1
+
+[rrdropunit]
+
+H, x ↦→1 () ⊢ r drop x; e ⊣ H1
+
+H ⊢ r drop ys; e ⊣ H1
+
+[rrdroplam]
+
+H, x ↦→1 𝜆ysz. e ⊢ r drop x; e ⊣ H1
+
+H ⊢ r drop ys; e ⊣ H1
+
+[rrdropcons]
+
+H, x ↦→1 C ys ⊢ r drop x; e ⊣ H1
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+H ⊢ s e ⊣ H1 [rrsub] H ⊢ r e ⊣ H1
+
+C.5.2 Properties. Those properties are essentially the same as the lemma for the heap reference counting calculus. Definition 6. (Well-formed Abstractions) If e okr , then all (𝜆ys x.e1) in e satisfies (1) ys, x ⊢ r e1 ⊣ ∅; or (2) e1 = drop x; e2, and ys ⊢ r e2 ⊣ ∅.
+Definition 7. (Well-formed Heap) If H ok, then (1) if x ↦→n v ∈ H, then fv(v) ∈ H, and v okr ; (2) there is no dependency cycles in H.
+Lemma 16. (Heap Reference Counting Free variables) If H1 ⊢ r e ⊣ H2 or H1 ⊢ s e ⊣ H2, then fv(e) ∈ H1, and fv(H2) ∈ H1 with same domains.
+Lemma 17. (Drop is dual to extension) If H1 ⊢ r drop x; () ⊣ H2, then H1 = H2 ++ x. Similarly, if H1 ⊢ r x ⊣ H2 or H1 ⊢ s x ⊣ H2, then H1 = H2 ++ x.
+Lemma 18. (Extension is dual to drop) H ++ x ⊢ r drop x; () ⊣ H. Similarly, H ++ x ⊢ s x ⊣ H and H ++ x ⊢ s x ⊣ H.
+Lemma 19. Γ, x ⊢ r x ⊣ Γ . Similarly, if Δ ⊢ r e ⊣ H, then Γ, x ⊢ r drop x; e ⊣ H.
+Theorem 7. (No garbage) Given ∅; ∅ ⊢ r e ⇝ e1, and ∅ | e1 ↦−→∗r Hi | ei, then Hi ⊢ r ei ⊣ ∅.
+
+C.5.3 Relating to linear resource calculus. Lemma 20. (Algorithmic linear resource calculus relates to reference counting) If Δ | Γ ⊢ s e ⇝ e′, then Δ, Γ ⊢ s e′ ⊣ Δ . By rrsub we also have Δ, Γ ⊢ r e′ ⊣ Δ .
+Proof. (Of Lemma 20) During the proof, we reply on the fact that source program (i.e., e) has no drop or dup. By induction on the elaboration. case
+
+Δ | x ⊢ s x ⇝ x given Δ, x ⊢ s x ⊣ Δ Lemma 19 case
+
+Δ, x | ∅ ⊢ s x ⇝ dup x; x Δ, x ++ x ⊢ s x ⊣ Δ, x Δ, x ⊢ s dup x; x ⊣ Δ, x case
+
+given Lemma 18 srdup
+
+Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. e′
+x ∈ fv(e) ∅ | ys, x ⊢s e ⇝ e′
+ys =ˆ fv(𝜆x. e)
+Δ1 = ys − Γ ys, x ⊢ s e′ ⊣ ∅ Δ, Δ1, ys ⊢ s ys ⊣ Δ, Δ1 Δ, Δ1, Γ, Δ1 ⊢ s ys ⊣ Δ, Δ1 Δ, Δ1, Γ, Δ1 ⊢ s 𝜆ys x. e′ ⊣ Δ, Δ1 Δ, Δ1, Γ ⊢ s dup Δ1; 𝜆ys x. e′ ⊣ Δ, Δ1
+case
+
+given slam slam slam slam I.H. Lemma 18 by substitution srlam1 srdup
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+Δ, Δ1 | Γ ⊢s 𝜆x. e ⇝ dup Δ1; 𝜆ys x. (drop x; e′)
+x ̸∈ fv(e) ∅ | ys ⊢s e ⇝ e′
+ys =ˆ fv(𝜆x. e)
+Δ1 = ys − Γ ys ⊢ s e′ ⊣ ∅ Δ, Δ1, ys ⊢ s ys ⊣ Δ, Δ1 Δ, Δ1, Γ, Δ1 ⊢ s ys ⊣ Δ, Δ1 Δ, Δ1, Γ, Δ1 ⊢ s 𝜆ys x. drop x; e ⊣ Δ, Δ1 Δ, Δ1, Γ ⊢ s dup Δ1; 𝜆ys x. drop x; e′ ⊣ Δ, Δ1
+case
+
+given slam-d slam-d slam-d slam-d I.H. Lemma 18 by substitution srlam2 srdup
+
+Δ | Γ ⊢s e1 e2 ⇝ e1′ e2′
+
+Δ, Γ2 | Γ − Γ2 ⊢s e1 ⇝ e1′
+
+Δ | Γ2
+
+⊢s
+
+e2
+
+⇝
+
+e′
+2
+
+Γ2 =ˆ Γ ∩ fv(e2)
+
+Δ, Γ
+
+⊢
+
+s
+
+e′
+1
+
+⊣
+
+Δ, Γ2
+
+Δ, Γ2
+
+⊢
+
+s
+
+e′
+2
+
+⊣
+
+Δ
+
+Δ, Γ ⊢ s e1′ e2′ ⊣ Δ
+
+case
+
+given sapp sapp sapp I.H. I.H. srapp
+
+Δ|Γ
+
+⊢s
+
+val x
+
+=
+
+e1;
+
+e2
+
+⇝ val x
+
+=
+
+e′;
+1
+
+e′
+2
+
+x ∈ fv(e2)
+
+x ̸∈ Δ, Γ
+
+Δ, Γ2 | Γ − Γ2
+
+⊢s
+
+e1
+
+⇝
+
+e′
+1
+
+Δ | Γ2, x ⊢s e2 ⇝ e2′
+
+Γ2 =ˆ Γ ∩ (fv(e2) − x)
+
+Δ, Γ ⊢ s e1′ ⊣ Δ, Γ2
+
+Δ, Γ2, x
+
+⊢
+
+s
+
+e′
+2
+
+⊣
+
+Δ
+
+x ̸∈ Δ
+
+x ̸∈ Δ, Γ
+
+Δ, Γ
+
+⊢ s val x
+
+=
+
+e′;
+1
+
+e′
+2
+
+⊣
+
+Δ
+
+case
+
+given sbind sbind sbind sbind sbind I.H. I.H. follows follows srbind1
+
+Δ | Γ ⊢s val x = e1; e2 ⇝ val x = e1′; drop x; e2′
+
+x ̸∈ fv(e2), Δ, Γ
+
+Δ, Γ2 | Γ − Γ2
+
+⊢s
+
+e1
+
+⇝
+
+e′
+1
+
+Δ | Γ2
+
+⊢s
+
+e2
+
+⇝
+
+e′
+2
+
+Γ2 =ˆ Γ ∩ fv(e2)
+
+Δ, Γ ⊢ s e1′ ⊣ Δ, Γ2 Δ, Γ2 ⊢ s e2′ ⊣ Δ
+
+x ̸∈ Δ, Γ
+
+Δ, Γ ⊢ s val x = e1′; drop x; e2′ ⊣ Δ
+
+case
+
+given sbind-d sbind-d sbind-d sbind-d I.H. I.H. follows srbind2
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+Δ | Γ, x ⊢s match x { pi ↦→ ei } ⇝ match x { pi ↦→ drop Γi′; ei′ } Δ | Γi ⊢s ei ⇝ ei′ Γi =ˆ (Γ, bv(pi)) ∩ fv(ei) Γi′ = (Γ, bv(pi)) − Γi Δ, Γ, x ⊢ x ⊣ Δ, Γ Δ, Γi′, Γi ⊢ drop Γi′ ; () ⊣ Δ, Γi Δ, Γi ⊢ ei′ ⊣ Δ bv(pi) ̸∈ Δ, Γ, x
+bv(pi) ̸∈ Δ Γi′ = (Γ, bv(pi)) − Γi Γi′ ⊆ (Γ, bv(pi)) Γ, x ⊆ fv(match x { pi ↦→ ei })
+Γ, x ⊆ (x, fv(ei))
+multiplicity of each member in Γ, x is 1
+Γ ⊆ fv(ei)
+fv( ⌈ei′⌉) = fv(ei) Γ ⊆ fv( ⌈ei′⌉) Δ, Γ ⊢ match x { pi ↦→ drop Γi′; ei′ } ⊣ Δ
+case
+
+given smatch smatch smatch Lemma 19 Lemma 19 I.H. assume bv(pi) fresh follows known follows invariant definition of fv invariant follows Lemma 12 by substitution
+srmatch
+
+Δ | Γ ⊢ C v1 . . . vn ⇝ C v1′ . . . vn′ Δ, Γi+1, . . ., Γn | Γi ⊢ s vi ⇝ vi′ Γi =ˆ (Γ − Γi+1 − . . . − Γn) ∩ fv(vi) Δ, Γi, Γi+1, . . ., Γn ⊢ s vi ⊣ Δ, Γi+1, . . ., Γn Δ, Γ ⊢ s C v1 . . . vn ⊣ Δ
+□
+
+given scon scon I.H. srcon
+
+C.5.4 Precision. Lemma 21. (Reachability for erased expressions) If H1 ⊢ s e ⊣ H2, then reach(H1 − H2, H1 | ⌈e⌉).
+Proof. (Of Lemma 21) By induction on the judgment. case
+
+H ⊢ s C v1 . . . vn ⊣ H1 H ⊢ s v1 ⊣ H1 . . . Hn−1 ⊢ s vn ⊣ Hn reach(Hi−1 − Hi, Hi−1 | ⌈vi⌉) reach(Hi−1 − Hi, H0 | ⌈vi⌉) reach(Hn − H0, H0 | ⌈C v1 . . . vn⌉)
+case
+
+given srcon I.H. Lemma 16 Follows
+
+H, x ↦→n+1 v ⊢ s x ⊣ H, x ↦→n v
+
+given
+
+dom(H, x ↦→n+1 v) − dom(H, x ↦→n v) = ∅
+
+case
+
+H, x ↦→1 𝜆ysz. e ⊢ s x ⊣ H1 H ⊢ s ys ⊣ H1 reach(H − H1, H | ⌈ys⌉) reach(H − H1, H | ⌈𝜆ysz. e)⌉ reach((H, x ↦→1 𝜆ysz. e) − H1, (H, x ↦→1 𝜆ysz. e) | ⌈x⌉)
+case
+
+given srvarlam I.H. by definition follows
+
+Perceus: Garbage Free Reference Counting with Reuse
+
+H, x ↦→1 C ys ⊢ s x − | H1 H ⊢ s ys ⊣ H1 reach(H − H1, H | ⌈ys⌉) reach(H − H1, H | ⌈C ys⌉) reach((H, x ↦→1 C ys) − H1, (H, x ↦→1 C ys) | ⌈x⌉)
+case
+
+given srvarcon I.H. by definition follows
+
+H ⊢ s 𝜆ys x. e ⊣ H1 H ⊢ s ys ⊣ H1 reach(H − H1, H | ⌈ys⌉) reach(H − H1, H | ⌈𝜆ysx. e)⌉
+case
+
+given srlam1 I.H. follows
+
+H ⊢ s 𝜆ys x. e ⊣ H1 H ⊢ s ys ⊣ H1 reach(H − H1, H | ⌈ys⌉) reach(H − H1, H | ⌈𝜆ysx. drop x; e)⌉
+case
+
+given srlam2 I.H. follows
+
+H ⊢ s e1 e2 ⊣ H2 H ⊢ s e1 ⊣ H1 H1 ⊢ s e2 ⊣ H2 reach(H − H1, H | ⌈e1⌉) reach(H1 − H2, H1 | ⌈e2⌉) reach(H1 − H2, H | ⌈e2⌉) reach(H − H2, H | ⌈e1 e2⌉)
+case
+
+given srapp srapp I.H. I.H. Lemma 16 follows
+
+H ⊢ s val x = e1 ; e2 ⊣ H2 H ⊢ s e1 ⊣ H1 H1, x ↦→1 () ⊢ s e2 ⊣ H2 x ̸∈ H, H2 reach(H − H1, H | ⌈e1⌉) reach((H1, x ↦→1 ()) − H2, (H1, x ↦→1 ()) | ⌈e2⌉) reach((H1, x ↦→1 ()) − H2, (H, x ↦→1 ()) | ⌈e2⌉) dom(H1) ⊆ dom(H1, x ↦→1 ()) reach(H1 − H2, (H, x ↦→1 ()) | ⌈e2⌉) x ̸∈ H x ̸∈ dom(H) − dom(H2) reach(H − H2, H | ⌈val x = e1; e2⌉)
+case
+
+given srbind1 srbind1 srbind1 I.H. I.H. Lemma 16
+follows known follows follows
+
+H ⊢ s val x = e1 ; drop x; e2 ⊣ H2 H ⊢ s e1 ⊣ H1 H1 ⊢ s e2 ⊣ H2 x ̸∈ H reach(H − H1, H | ⌈e1⌉) reach((H1 − H2, H1 | ⌈e2⌉) reach((H1 − H2, H | ⌈e2⌉) x ̸∈ H x ̸∈ dom(H) − dom(H2) reach(H − H2, H | ⌈val x = e1; drop x; e2⌉)
+case
+
+given srbind2 srbind2 srbind2 I.H. I.H. Lemma 16 known follows follows
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+MSR-TR-2020-42, Nov 22, 2020,
+
+H ⊢ s match x { pi ↦→ drop ysi; ei } ⊣ H′ H ⊢ s x ⊣ H1
+H1, bv(pi) ⊢ r drop ysi; () ⊣ Hi Hi ⊢ s ei ⊣ H′ bv(pi) ̸∈ H, H′
+ysi ⊆ fv( ⌈ei⌉) ∪ bv(pi) reach(H − H1, H | x)
+H1, bv(pi) = Hi ++ ysi reach((Hi − H′, Hi | ⌈ei⌉) reach((Hi − H′, (H, bv(pi) ) | ⌈ei⌉)
+ysi ⊆ fv( ⌈ei⌉) ∪ bv(pi) reach((Hi++ysi − H′, H | bv(pi); ⌈ei⌉) reach((H1, bv(pi) − H′, H | bv(pi); ⌈ei⌉)
+bv(pi) ̸∈ H bv(pi) ̸∈ dom(H) − dom(H′) reach(H − H′, H | match x { pi ↦→ ⌈ei⌉ } )
+case
+
+given srmatch srmatch srmatch srmatch srmatch I.H. Lemma 17 I.H. Lemma 16 known follows by substitution known follows follows
+
+H, x ↦→n v ⊢ s dup x; e ⊣ H1 H, x ↦→n+1 v ⊢ s e ⊣ H x ∈ fv( ⌈e⌉) reach((H, x ↦→n+1 v) − H, (H, x ↦→n+1 v) | e) reach((H, x ↦→n v) − H, (H, x ↦→n v) | e)
+□
+
+given srdup srdup I.H. Follows
+
+Proof. (Of Theorem 4)
+
+∅ | ∅ ⊢s e ⇝ e′ ∅ ⊢ r e′ ⊣ ∅ Hi ⊢ r ei ⊣ ∅ ei ≠ E[dup x; ei′] Hi ⊢ s e′ ⊣ ∅ reach(Hi − ∅, Hi | ⌈e⌉) all y ∈ dom(Hi), reach(y, Hi | ei)
+□
+
+given Lemma 20 Theorem 7 given rrsub Lemma 21 follows
+
+Alex Reinking, Ningning Xie, Leonardo de Moura, and Daan Leijen
+
+Created with Madoko.net.
+

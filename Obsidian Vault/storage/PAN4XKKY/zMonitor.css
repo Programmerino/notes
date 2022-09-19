@@ -1,0 +1,35 @@
+﻿.rgMonitorMasterTable{
+  width:100%;
+  border-collapse: collapse;
+
+}
+.rgMonitorMasterTable tr {
+
+    border: 1px solid #cdcdcd;
+
+}
+
+.rgMonitorHeader 
+{
+    background-color: whitesmoke;
+    line-height: 20.88px;
+    color: #2883b2;
+    text-decoration: underline;
+    text-align: left;
+    height: 50px;
+    font-weight: normal;
+}
+
+.rgMonitorHeaderNoUnderline
+{
+    background-color: whitesmoke;
+    line-height: 20.88px;
+    color: #2883b2;
+    text-align: left;
+    height: 50px;
+    font-weight: normal;
+}
+.rgMonitorRow td, .rgMonitorAltRow td
+{
+   padding: 7px 2px 2px 7px;
+}

@@ -1,0 +1,284 @@
+var stopAjax = false;   // To active/inactive ajax.
+var win=null;           // A reference to the popup document to be printed.
+function printDocument() {
+    var viewFrame = document.getElementById("viewFrame");
+    if (viewFrame != null) {
+        viewFrame.focus();
+        viewFrame.print();
+    }
+    else {
+        var viewDiv = document.getElementById("docViewer");
+        if (viewDiv != null) {
+            win = window.open('', '', 'width=789,height=643');
+            var html = "<html><head> " +
+                "<link type=\"text/css\" rel=\"stylesheet\" href=\"javax.faces.resource/documentPrint.css.xhtml?ln=css\" />" +
+                "<link type=\"text/css\" rel=\"stylesheet\" href=\"javax.faces.resource/usc.css.xhtml?ln=css\" />" +
+                "<style type=\"text/css\">" +
+                "div.documenViewer * {font-size: 12pt; }" +
+                "div.documentViewer .note-head { font-size: 13pt; }" +
+                "div.documentViewer h3.section-head { font-size: 13pt; }" +
+                "</style>" +
+                "</head><body>" +
+                "<div class=\"documentViewer\">";
+            try {
+                win.document.writeln(html, viewDiv.innerHTML, "</div></body></html>");
+                win.document.close();
+                win.focus();
+                printPopUp();
+            } catch (e) {}
+        }
+    }
+}
+
+// Validates if popup windows is ready to print.
+function printPopUp() {
+    if (win.document.readyState == 'complete') {
+        win.print();
+        win.close();
+        win = null;
+        return;
+    }
+    setTimeout('printPopUp()',1000);
+}
+
+// Print document's selection.
+function printSelection() {
+    try {
+        var userSelection;
+        if (window.getSelection) {
+            // W3C Ranges
+            userSelection = window.getSelection ();
+            // Get the range:
+            if (userSelection.getRangeAt)
+                var range = userSelection.getRangeAt (0);
+            else {
+                var range = document.createRange ();
+                range.setStart (userSelection.anchorNode, userSelection.anchorOffset);
+                range.setEnd (userSelection.focusNode, userSelection.focusOffset);
+            }
+            // And the HTML:
+            var clonedSelection = range.cloneContents ();
+            var div = document.createElement ('div');
+            div.appendChild (clonedSelection);
+            html=div.innerHTML;
+        } else if (document.selection) {
+            // Explorer selection, return the HTML
+            userSelection = document.selection.createRange ();
+            html=userSelection.htmlText;
+        } else {
+            html='';
+        }
+
+        win = window.open('', '', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=600,height=520,left = 400,top = 200');
+
+        var htmlb = "<html><head> " +
+            "<link type=\"text/css\" rel=\"stylesheet\" href=\"javax.faces.resource/documentPrint.css.xhtml?ln=css\" />" +
+            "<link type=\"text/css\" rel=\"stylesheet\" href=\"javax.faces.resource/usc.css.xhtml?ln=css\" />" +
+            "<style type=\"text/css\">" +
+            "div.documenViewer * {font-size: 12pt; }" +
+            "div.documentViewer .note-head { font-size: 13pt; }" +
+            "div.documentViewer h3.section-head { font-size: 13pt; }" +
+            "</style>" +
+            "</head><body>" +
+            "<div class=\"documentViewer\">";
+        win.document.write(htmlb);
+        win.document.write(html);
+        win.document.write("</div></body></html>");
+        win.document.close();
+        win.focus();
+        //win.print();
+        //win.close();
+        printPopUp();
+
+    } catch (e) {
+        //TODO: Remove
+        alert("Error printing the document");
+    }
+}
+
+function resize_div()
+{
+    var height = document.getElementById("container").clientHeight -  document.getElementById("top").clientHeight;
+    //resize the iframe according to the size of the
+    //window (all these should be on the same line)
+    document.getElementById("content").style.height=parseInt(height)+"px";
+}
+
+window.onload=onload_event;
+window.onresize=onresize_event;
+
+// Called during window's onload event.
+function onload_event() {
+    try {
+        displayBackButton();
+		//replaceCurrencyInfo();
+        if (!opener.resized) opener.resized = true;
+    } catch (e) {}
+
+    resize_div();
+}
+
+function replaceCurrencyInfo(){
+ var regex = /(Text contains those laws in effect on .*? \d{1,2}, 201\d)/;
+ document.body.innerHTML = document.body.innerHTML.replace(regex, "Text contains laws through Pub. L. 113-271, except Pub. L. 113-235");
+}
+
+
+// Resize Div and recalculate window properties.
+// opener.resized is null meanwhile is not called.
+function onresize_event() {
+    try {
+        if (!opener.resized) return;
+
+        var myWidth = 0, myHeight = 0;
+        var winX = (document.all)?window.screenLeft:window.screenX;
+        var winY = (document.all)?window.screenTop:window.screenY;
+        if (typeof (window.innerWidth) == 'number') {
+            //Non-IE
+            myWidth = window.innerWidth;
+            myHeight = window.innerHeight;
+        } else if (document.documentElement) {
+            if (document.documentElement.clientWidth || document.documentElement.clientHeight) {
+                //IE 6+ in 'standards compliant mode'
+                myWidth = document.documentElement.clientWidth;
+                myHeight = document.documentElement.clientHeight;
+            }
+        } else if (document.body) {
+            if (document.body.clientWidth || document.body.clientHeight) {
+                //IE 4 compatible
+                myWidth = document.body.clientWidth;
+                myHeight = document.body.clientHeight;
+            }
+        }
+        // Update windows values in the input html.
+        document.getElementById("winTop").value = winY;
+        document.getElementById("left").value = winX;
+        document.getElementById("width").value = myWidth;
+        document.getElementById("height").value = myHeight;
+
+        updateWindowProperties();
+    } catch(e) {}
+
+    resize_div();
+}
+
+// Update the window properties(size,position).
+function updateWindowProperties() {
+
+    // Doesn't execute the code if there's a pending ajax transaction.
+    if (stopAjax) return;
+
+    // Save event and called the ajax to do the update.
+    stopAjax = true;
+    setTimeout("ajaxUpdateProperties()", 500);
+}
+
+// Ajax code to update window properties.
+function ajaxUpdateProperties() {
+    document.getElementById("submitBtn").click();
+}
+
+// Each time an ajax request sent back a response verify if it's complete to
+// do available the next request.
+function ajaxMonitoringEvent(e) {
+    if (e.status == 'complete') {
+        stopAjax = false;
+
+        // When ajax request is completed, refresh windows properties in the opener object.
+        try {
+            var parentRefreshBtn = null;
+            if (opener.document.getElementById("refreshBtn"))
+                parentRefreshBtn = opener.document.getElementById("refreshBtn");
+            else
+                parentRefreshBtn = opener.parent.document.getElementById("refreshBtn");
+            parentRefreshBtn.click();
+        } catch(e) {}
+    }
+}
+
+// Open a document based on section/title found in an uscode standard reference.
+function openDocument(section, title, chapter) {
+    var q = '';
+    var input = document.getElementById("j_idt30:formResults:versionsSel");
+    var editionValue = input.options[input.selectedIndex].value;
+    if (section != '' && title != '')
+        q = '?req=(title:' + title + ' section:' + section +' edition:' + editionValue + ') OR (granuleid:USC-'+ editionValue + '-title' + title + '-section' + section + ')&f=treesort' + '&num=0';
+    else if (chapter != '' && title != '')
+        q = '?req=(title:' + title + ' chapter:' + chapter +' edition:' + editionValue + ') OR (granuleid:USC-'+ editionValue + '-title' + title + '-chapter' + chapter + ')&f=treesort' + '&num=0';
+    else if (title != '')
+        q = '?req=(title:' + title +' edition:' + editionValue + ')&f=treesort';
+    else
+        return false;
+
+    //alert(q);
+
+    // Store the location of the original document.
+	//@mod 2019-07-17 added check for null opener so internal USC links will still work on direct link URLs from other sites.
+	if (opener != null){
+     if (!opener.originURL)
+      opener.originURL = location.href;
+	}
+
+    this.location.href='view.xhtml' + q  + '&edition=' + editionValue;
+}
+
+// Called on onlick method of Back to Original document button,
+// replace current url with opener's url.
+function backToOpener() {
+    var url = opener.originURL;
+    opener.originURL=null;
+    window.location.href=url;
+    return false;
+}
+
+// Called on onload method to make visible the Back to Original document button.
+function displayBackButton() {
+    if (opener.originURL) {
+        var backBtn = document.getElementById("frmNav:backBtn");
+        if (backBtn) {
+            backBtn.className="";
+            backBtn.style.visibility="visible";
+            backBtn.style.display="block";
+            backBtn.onclick=backToOpener;
+        }
+    }
+}
+
+//Open a PopUp with url sent as parameter and the same current window dimension.
+function openPopUp(url) {
+    var prefs = "top=" + document.getElementById("winTop").value +
+                ",left=" + document.getElementById("left").value +
+                ",width=850" +
+                ",height=350" +
+                ",resizable=1";
+    window.open(url,'',prefs);
+}
+
+var stdRef=null;  // Get a reference to the last ajax call to get std reference url.
+function openPLaw(congress, number) {
+    var parentObj = getPLawOpener();
+    if (parentObj!=null) {
+        parentObj.getPublicLaw(congress, number, "law");
+        stdRef=setTimeout("validateURL()",500);
+    }
+}
+
+function openStatute(volume, page) {
+    var parentObj = getPLawOpener();
+    if (parentObj!=null) {
+        parentObj.getPublicLaw(volume, page, "statute");
+        stdRef=setTimeout("validateURL()",500);
+    }
+}
+
+//Get reference to object that contains function:getPublicLaw.
+function getPLawOpener() {
+    if (opener.getPublicLaw)
+        return opener;
+    else if (opener.top.getPublicLaw)
+        return opener.top;
+    else if (opener.opener.getPublicLaw)
+        return opener.opener;
+    else
+        return null;
+}

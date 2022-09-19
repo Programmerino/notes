@@ -1,0 +1,664 @@
+DE GRUYTER
+
+Peace Economics, Peace Science and Public Policy. 2017; 20170016
+
+Kevin R. Carriere1,2 / William Encinosa2
+The Risks of Operational Militarization:
+Increased Confllict Against Militarized Police
+1 Georgetown University, Department of Psychology, Washington, DC, 20057, United States of America, Phone: 401-644-8040, E-mail: krcarriere@gmail.com
+2 Georgetown University, McCourt School of Public Policy, Washington, DC 20057, United States of America, E-mail: krcarriere@gmail.com
+Abstract: The current state of race relations in the United States have brought to light the issue of the militarization of local police, where oﬀicers are being provided with unused equipment from the government’s war chest through the 1033 Program. But, is this increase in militarization beneﬁcial, or does it harm relations between citizens and police? Using data on purchases provided by the Defense Logistics Agency, this paper analyzes eﬀects of military purchases on assaults on police oﬀicers. Fixed eﬀects negative binomial regressions on state-month level data show that stockpiling of material militarization equipment (guns, armor, and clothing) exhibits a statistically signiﬁcant decrease in assaults, with guns showing no signiﬁcant relation on assaults. However, operational militarization purchases (surveillance, sonar, and radar) lead to an increase of assaults, suggesting that there may be unforeseen consequences of increased militarization due to a change of structure and information gathering. Keywords: assaults on police, material militarization, operational militarization, soft policing, Velcro eﬀect DOI: 10.1515/peps-2017-0016
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+1 Introduction
+“We’ve seen how militarized gear can sometimes give people a feeling like there’s an occupying force, as opposed to a force that’s part of the community that’s protecting them and serving them. It can alienate and intimidate local residents, and send the wrong message.” (Obama, 2015)
+The image of two mine-resistant ambush protected (MRAP) vehicles rolling down the streets of Ferguson, Missouri made national news in 2014. The increase in a heavily armed police force is in large part due to the 1033 Program under the National Defense Authorization Act of 1997, which authorizes transfers of Department of Defense equipment to Federal and State police agencies for generalized enforcement needs (Excess personal property: Sale or donation for law enforcement activities, 1997; U.S. Senate, Committee on Homeland Security and Governmental Aﬀairs, 2016).
+Beyond armored cars, land mines, and rocket-propelled grenades, the transfers extend to undergarments, air conditioners, riﬂes, sonar equipment, and more. Departments are required to use the equipment within a year, lest it be sent back to the Defense Logistics Agency (Walker, 2014). This incentivizes the police to use these purchases in the general public. These transfers are purchased at exceedingly low rates – a $733,000 mineresistant, ambush protected vehicle was sold to Connecticut for $2800 (Woﬀord, 2014). However, while police departments are incentivized to purchase and use the equipment, recent backlash from citizens and community activists question the necessity and utility of these items.
+This current study evaluates the eﬀects of material militarization (overt, visible qualities of warfare – weapons, armor, and military garb) and operational militarization (such as intelligence and supervision – cameras, radar, and sonar) (Kraska, 2007) on assaults against police oﬀicers. An increase in militarization could cause fear in the average citizen, motivating one to lash out and aggress against the police, as we witnessed in the backlash and investigations that followed Ferguson, Missouri. But, the purchases should display a more well-equipped, professional police force and discourage violence against police oﬀicers. This research ﬁlls the gap by examining if military purchases are protecting oﬀicers, and how this relationship varies by the magnitude, functionality, and rate of change of the purchases. Implications for future research in police-citizen interactions are discussed.
+
+Kevin R. Carriere is the corresponding author. ©2017 Walter de Gruyter GmbH, Berlin/Boston.
+
+Brought to you by | University of Saskatchewan
+Authenticated 1
+Download Date | 8/8/17 6:53 PM
+
+Carriere and Encinosa
+
+DE GRUYTER
+
+2 Previous research
+2.1 Militarization and police weapons
+The number of police paramilitary units (PPUs), or SWAT teams, has been growing since the 1970’s in an attempt to curb the war on crime and drugs (Kraska, 2001). SWAT teams have been adopting military-force traits in an eﬀort to defend against for violent conﬂict (Kraska, 2007). However, a large percentage of departments use their tactical operations units in patrols in hot spot crime areas (Kraska & Kappeler, 1997) and 80 percent of SWAT activity is proactive, not reactive (DeMichele & Kraska, 2001). A majority of the units across the United States frequently mix their duties between SWAT and police, so public exposure to the more paramilitary aspect of policing is growing substantially (Balko, 2013), and SWAT use has transformed from hostage negotiations and active shooters to primarily serving search and arrest warrants (Kraska & Kappeler, 1997). In a recent review of the literature, it was concluded that there is an indeed increase in militarization of police across the United States (Bieler, 2016).
+There are four main indicators of police militarization – material (weaponry and technology), cultural (beliefs and values), organizational (having elite squads patrolling high crime areas) and operational (intelligence and supervision) (Kraska, 2007). The interrelated mix of the four indicators provides that militarization exists along a continuum, growing or shrinking interdependently of the four categories. Below, we brieﬂy review the impact of all four categories of militarization on the community.
+
+2.2 Cultural and organizational evidence of militarization
+State police departments are becoming increasingly militarily organized. SWAT teams are deployed at rates of 100 homes per day (Balko, 2013), with some SWAT teams, such as in Minneapolis, increasing their yearly deployment rate 2000% from 1987 to 1996 (Balko, 2006). Police units are trained alongside army and naval oﬀicers and are taught to view their environment as a war zone (Kappeler & Kraska, 2013; Meeks, 2006). The ‘cross-fertilization’ (Den Heyer, 2014) of police and military units has coincided with a shift from solving crimes towards preventing future crimes (Tyler, Jackson & Mentovich, 2015). While the proactive strategy was aimed to bring down crime rates and increase contact with the community (Goldstein, 1987), it also brought greater suspicion and distrust against citizens [see New York’s stop and frisk policy (Goldstein, 2013)]. By approaching individuals with suspicion, the police are perceived as being unfair and not genuinely caring about the community’s needs (Gau & Brunson, 2010), breaking relational bonds and damaging the identity of the community as one of “us” to one of “us versus them” (Tyler & Lind, 1992).
+
+2.3 Operational militarization
+Operationally, police departments have seen increases in their information gathering from a variety of sources, with the Patriot Act expanding the methods in which the government could collect information on its citizens. The rise of no-knock search warrants (c.f. Balko, 2006), are pushing police to become more military-minded and aggressive with the new information they have on hand. However, not all technological advancements have negative consequences. The advancement of body camera technology has shown less assaults on citizens, on oﬀicers, and less complaints against oﬀicers (Ariel, Farrar & Sutherland, 2015).
+
+2.4 Material militarization and the Velcro e昀ffect
+Material militarization goes beyond the use of weapons (guns, batons, pepper spray, and tasers) to the symbolic appearance of a ready-to-engage, professional oﬀicer (Bell, 1982). While use of pepper spray has shown a general decrease in assaults against oﬀicers (Ashcroft, Daniels & Hart, 2003; Kaminski, Edwards & Johnson, 1998), the sound of pepper spray being removed from its Velcro could be enough of a deterrent to stop resisting (Buttle, 2005). This “Velcro Eﬀect” theory suggests that it is the threat of the weapon that matters in police conﬂicts. Evidence of the Velcro Eﬀect is emerging through the results of ‘soft’ policing. This type of policing involves the use of civilian uniformed police staﬀ who carry no weapon and have little arrest power. When deployed in areas of high crime, those who merely had the symbolic presence of a police authority – a uniform and two way radio – reduced the number of incidents and the number of crimes by about 39% (Ariel, Weinborn & Sherman, 2016). More explicitly, recent work examining the eﬀects of the 1033 Program have shown that weapon purchases are
+
+Brought to you by | University of Saskatchewan
+
+2
+
+Authenticated
+
+Download Date | 8/8/17 6:53 PM
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+DE GRUYTER
+
+Carriere and Encinosa
+
+not reducing crime rates, but instead, the purchase of other observable military equipment – vehicles, gears, and clothing – seems to be reducing crime rates the most (Bove & Gavrilova, 2017).
+
+2.5 Perceptions of police from citizens
+Increased militarization may not be a problem if the public is compliant. However, across time we have seen a decrease in the trust of police oﬀicers – 53% reported having high conﬁdence in police in 2014, dropping 11% in the previous ten years (Gallup, 2015). Citizens grant police their legitimacy through believing they share a moral purpose with the police and are recognized as the state’s monopoly of acceptable force to curtail social misbehaviors (Jackson et al., 2013). Feeling suspected by police is linked with negative beliefs of police motives, lower legitimacy of police, and higher levels of disorder in the community (Tyler, Jackson & Mentovich, 2015). If more resources are being piled into police departments, it can be perceived as a threat to one’s identity (you are not a citizen, you are a potential criminal) (see Lieblich & Shinar, 2017, for expansion of this idea). If this threat of identity is taken seriously, the police may become seen as illegitimate (Bradford, 2014), and one may lash out against this identity threat. In an executive review of the 1033 Program, the Executive Oﬀice commented that “the show of force typically associated with military operations, when employed by civilian police, can weaken community trust – especially in communities with a history of strained relationships between the community and local law enforcement” (Executive Oﬀice of the President, 2014, p. 5) and that true costs of militarization is found in the fear of the citizen in relation to the police (Institute for Intergovernmental Research, 2015, xvii).
+
+2.6 Mediating factors in assaults on police
+While the external eﬀects of militarized fear have not been studied in police and citizen interactions, other threats to individuals and the outcomes of police relations have been studied on the community level. Stability of residency is a strong predictor when analyzing assaults on police (Regens et al., 1974), while resource deprivation has been associated with a 31% increase in assaults on police oﬀicers (Kaminski, Jeﬀeris & Gu, 2003). Communities with lower unemployment rates (and therefore, less resource deprivation) has been found to be signiﬁcantly associated with lower crime rates (Kapuscinski, Braithwaite & Chapman, 1998) which itself has been associated with decreases of assaults on police oﬀicers (Kaminski, Jeﬀeris & Gu, 2003) and increases in police trust (Wilson, 1975).
+In summary, there is an increased presence of military-trained and dressed police oﬀicers in the United States. We see reductions in crime not in terms of weapon purchases, but clothing, military regalia (Bove & Gavrilova, 2017), and body cameras (Ariel, Farrar & Sutherland, 2015), suggesting support for the existence of Buttle (2005) “Velcro Eﬀect”. It is not the weapon that is disincentivizing citizens to aggress, but their symbolic presence of a well-trained threat. At the same time, we are seeing a public become more distrustful in the police. This distrust can lead to a community divided and unwilling to help out or support its own law enforcement. But does this distrust and anger translate into aggression against the police, or does the “Velcro Eﬀect” reign supreme in maintaining peace?
+This present study addresses these questions of trust and militarization. This study examines the eﬀect of both material and operational militarization purchases on trust of police oﬀicers, operationalized as the amount of assaults against police oﬀicers. We ask three questions: (1) Do military-grade purchases in 1 month increase assaults against oﬀicers in a future month? (2) Does the increased presence of military grade purchases over time increase assaults against oﬀicers? And (3) Does the marginal eﬀect of this increased stockpile of military grade purchases on assaults change with the size of the stockpile?
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+3 Method
+3.1 Data
+3.1.1 The Defense Logistics Agency
+The Defense Logistics Agency provided information about all acquisitions from the 1033 Program (Bowden, 2015). Once collapsed and cleaned, there are 4282 state-month observations across 54 states from January 1991 through September of 2015, including Virgin Islands, Guam, District of Columbia, and Puerto Rico. All purchases for Federal agencies were removed from analysis.
+Brought to you by | University of Saskatchewan
+Authenticated 3
+Download Date | 8/8/17 6:53 PM
+
+Carriere and Encinosa
+
+DE GRUYTER
+
+3.1.2 The law enforcement o昀fﬁcers killed and assaulted dataset
+The FBI provided information about assaults against police oﬀicers through the Law Enforcement Oﬀicers Killed and Assaulted (LEOKA) dataset (United States Department of Justice & Federal Bureau of Investigation, 2014b). The LEOKA dataset compiles oﬀicer assaults and injuries by month. It was combined together from 1998 until 2014. Fifty-four states reported their assault data, including the District of Columbia, Puerto Rico, Canal Zone, and Guam. In total, across this seventeen year span, there were a total of 11,016 state-month observations in LEOKA.
+
+3.1.3 Other controls datasets
+The Uniform Crime Reporting data from 1998 to 2014 provided month-level crime rates (United States Department of Justice & Federal Bureau of Investigation, 2014a). Demographic information on racial breakdown and median household income was provided by the Census Bureau on a yearly basis (United States Census Bureau 2014a; 2014b). The seasonally adjusted unemployment rate was provided yearly from the Bureau of Labor Statistics (United States Department of Labor & Bureau of Labor Statistics, 2014). All year-level datasets were replicated by twelve to properly merge into a month-level format. RStudio was used to convert and merge all datasets together. All scripts, functions, and documentation to replicate this study can be found online (Carriere, 2017).
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+3.2 Analytic sample
+Florida was removed from all analyses due to only having observations of assaults in December. The Virgin Islands and Puerto Rico had no reported assault data, and The Canal Zone had no reported purchases, so all three were also removed from analyses. Rhode Island and Alabama only reported crime rates per quarter, so they were removed from all analysis. While LEOKA reports even if a state reported no assaults against their oﬀicers across the whole year, these observations were left at zero assaults. However, all results maintain the same direction and signiﬁcance if these years of full zero values are coded as missing. 312 observations follow this pattern of a full year of zero assaults in a given year. In total, after combining the data, there are a total of 9726 observations across 47 states.
+Data was collapsed to a state-level for a number of reasons. Firstly, since crime has a very seasonal, intertemporal pattern within the year, we wanted to reﬁne the analysis to the month level. Thus, we chose the statemonth level. The county-month level was too sparse in terms of the number of observations per cell and, thus, was not econometrically viable. Hence, our only option was the state-month level. We believe this state-month approach is an advancement over the past literature (county-year level) and gives us more conﬁdence that we are capturing important inter-temporal trends that would be missed in county-year analyses. This improved approach better allows us to identify causation by allowing us to better time the deployment of military equipment vis-a-vis subsequent assaults. Secondly, there has been some concern over the use of county-level analyses in using the UCR and LEOKA datasets (Maltz, 2006; Maltz & Targonski 2002; 2003). Secondly, many counties have inter-jurisdictional co-operation agreements in place across the United States (Leipnik, Ye & Wu, 2013), so to assume that the deployment of these purchases is restricted to a given county would be inaccurate. Beyond assisting other counties and cities when needed, sales to state police departments would otherwise be limited to the county under which the department is located, while failing to account for their breadth of coverage for the whole state. Most importantly, we are simply seeking to examine state-level variation. Individuals cross county lines every day and are exposed to various police departments and their equipment. The overt nature of militarization in one police department may create geographic spillovers and inﬂuence one’s decision making in other counties (c.f. Bronars & Lott, 1998). By combining over the whole state, we try to account for the diverse nature of each individual state.
+
+3.3 Measures
+
+3.3.1 Dependent variable
+
+3.3.1.1 Assaults with injury against police o昀fﬁcers States report on assaults against police oﬀicers through the LEOKA dataset (United States Department of Justice & Federal Bureau of Investigation 2014a; 2014b). Each county reported on how many oﬀicers were assaulted,
+
+Brought to you by | University of Saskatchewan
+
+4
+
+Authenticated
+
+Download Date | 8/8/17 6:53 PM
+
+DE GRUYTER
+
+Carriere and Encinosa
+
+and what type of call they were responding to when the assault occurred, with what weapon was used for the assault, and if there was bodily injury as a result of the assault. As research is mixed on type of call being the most dangerous (Ellis, Choi & Blaus, 1993; Hirschel, Dean & Lumb, 1994; Stanford & Mowry, 1990), this analysis takes a summation of assaults on all possible call categories within a given state-month. Since research argues that aggravated assaults are far less likely to be underreported (Kaminski, Jeﬀeris & Gu, 2003; Margarita, 1980), we reduced our analysis to examining only those assaults in which an injury was reported.
+
+3.3.2 Independent variables
+3.3.2.1 Purchases of material and operational militarization As the 1033 program oﬀered items at reduced cost, equipment transfers will be counted by quantity bought. This present research will be analyzing the militarization of police through two speciﬁc indicators of police militarization – of material and of operational (Kraska, 2007). Material militarization refers to visible qualities of militarization – weapons, body armor, and military clothing. Operational militarization is deﬁned as “patterns of activity modeled after the military such as in the areas of intelligence, supervision, handling high-risk situations, or war-making/restoration” (Kraska, 2007, p. 3) and therefore includes sonar, radar, photography, bomb kits, disaster relief, and communication-based devices. In short, operational militarization should encompass all purchases that assist in surveillance or high-risk scenarios.
+Equipment needs time to ship, unload, be trained, and potentially for it be noticed by the public. To account for this delay in eﬀect, all equipment purchases will be lagged 6 months in time. This will control for directionality – purchases 6 months prior are being used to predict contemporary assaults. Because the equipment comes with a “use it or lose it” attachment (Walker, 2014), one can assume that the equipment has been used at least once (and therefore, should have an eﬀect) and stays with the department and can be considered stockpiled over time. Sensitivity analysis will be checked at 3 and 12 month lagged eﬀects to substantiate any results from the proceeding analyses (Bove & Gavrilova, 2017; Wickes, 2015).
+
+3.4 Analytic strategy
+We improve on prior research (Bove & Gavrilova, 2017; Harris et al., 2017) by using cross-time negative binomial regression model with state and month ﬁxed eﬀects (Dietz et al., 2003) to predict assaults on oﬀicers and purchases by the state. Negative binomial regressions were chosen, in comparison to instrumented panels (Harris et al., 2017) or linear regression (Bove & Gavrilova, 2017), due to the nature of the dependent variable. The dependent variable of interest (assaults on oﬀicers) is a highly negatively skewed discrete count variable with overdispersion, having a variance 162 times larger than the mean. Our choice of using month-level eﬀects, instead of year-level eﬀects (Bove & Gavrilova, 2017; Harris et al., 2017), allows for a more nuanced approach to these eﬀects and provides us with more power to justify our results with the increase in observations per state. And, as stated in Analytic Sample, since crime has a seasonal, inter-temporal pattern within the year, using a month level analysis allows us a more nuanced examination of the results.
+The negative binomial model includes an exposure variable in order to account for the fact that diﬀerent states may have a diﬀerent amount of face-time with citizens, which would increase the risk of being assaulted. In all models, we use the violent crime rate as the exposure variable within the negative binomial model. States with higher crime rates should have higher volumes of calls, higher volume of interactions with citizens, and more opportunity to expose citizens to their militarized equipment. Exposure variables adjust the dependent variable to become a rate of events (assaults) per unit exposure (crime).
+We run three models. The ﬁrst model will be the number of assaults with injury police oﬀicers in state i at time t as predicted by 6-month prior purchases of both material and operational militarization equipment. Notably, purchases are not lost at the next month, but states continually acquire more equipment. A more meaningful measure of purchases is the cumulative summation of purchases for each state i at time t, which will be the second model, scaled to every 100 purchases. The coeﬀicients represent change in predicted assaults for every one hundred additional units of militarized equipment purchased since 1992, the ﬁrst year in which the dataset reports purchases. The third model will add a quadratic term to each purchase category to examine if there are nonlinear marginal eﬀects over time. All control and exposure variables will be used in all three models, along with state and month ﬁxed eﬀects.
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+Brought to you by | University of Saskatchewan
+Authenticated 5
+Download Date | 8/8/17 6:53 PM
+
+Carriere and Encinosa
+
+DE GRUYTER
+
+4 Results
+4.1 Descriptive statistics
+Across all states, an average of 93 assaults (26 with injury) were reported per month with 16 weapons purchased and around 7 units of operational equipment purchased per month (see Table 1). There are an average of 1.7 oﬀicers per 1000 citizens and an average state population of around six million individuals. The crime rate is counted at the month level, and if scaled up by twelve, would hit the national average – about 358 crimes per 100,000 citizens.
+
+Table 1: Descriptive statistics.
+Variable
+Dependent  1. Total assaults  2. Assaults with injury Controls (percent)  2. Crime rate  3. Population  4. Police rate  5. Unemploy. %  6. Log(income)  6. % State Black Independent (per 100 units)  7a. Clothing purchases  7b. Clothing stockpile  8. Armor purchases  8b. Armor stockpile  9. Weapons purchases  9b. Weapons stockpile  10. Operational purchases  10b. Operational stockpile
+
+Mean
+93.17 25.66
+29.83 5.93 1.78 5.65 10.75 10.54
+0.04 0.24 0.01 0.10 0.16 7.11 0.07 1.71
+
+Data drawn from Defense Logistic Agency, FBI, Census, and Department of Labor. Acquisitions are in terms of hundred units of purchases.
+
+SD
+123.88 36.75
+15.12 6.61 0.59 2.01 0.18 9.41
+0.62 2.05 0.27 0.95 1.12 15.27 0.99 7.82
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+4.2 Cross-time negative binomial models predicting assaults that caused injury
+Model 1 in Table 2 examines the impact of 6-month prior purchases on assaults with injury against oﬀicers. All estimates are displayed as incidence risk ratios (IRR). All controls were signiﬁcantly associated with the assault rate. However, none of the main predictors were signiﬁcantly associated with the assault rate, suggesting it is not possible to predict future assaults by a single month of purchases by a state.
+
+Table 2: State and month ﬁxed eﬀects negative binomial regression predicting assaults with injury against police oﬀicers 6 month lag.
+
+Model 1
+
+Model 2
+
+Model 3
+
+Clothing(t − 6) Clothing
+stockpile(t − 6) Clothing stockpile2(t − 6) Armor(t − 6) Armor
+stockpile(t − 6) Armor stockpile2(t − 6) Weapons(t − 6)
+
+IRR 0.975
+
+SE 0.229
+
+0.960
+
+0.021+
+
+0.998
+
+0.006
+
+IRR 0.947
+
+SE 0.006****
+
+0.924
+
+0.007****
+
+IRR 0.917 1.001
+0.819 1.009
+
+SE 0.014**** 0.001****
+0.027**** 0.001****
+
+Brought to you by | University of Saskatchewan
+
+6
+
+Authenticated
+
+Download Date | 8/8/17 6:53 PM
+
+DE GRUYTER
+
+Carriere and Encinosa
+
+Weapons stockpile(t − 6) Weapons stockpile2(t − 6) Operational(t − 6) Operational stockpile(t − 6) Operational stockpile2(t − 6) Oﬀicers per 1000 Pop. in millions Log(Income) Unemployment % Percent Black Intercept Exposure (violent crime) Log likelihood Wald χ2 Likelihoodratio test
+
+1.025
+
+0.015+
+
+1.236
+1.039
+2.263 1.011
+0.983 0.001
+–
+
+0.037**** 0.003**** 0.222****
+0.006+
+0.003**** 0.001****
+−41958.22 983.46
+
+0.997
+
+0.001****
+
+1.046
+
+0.003****
+
+1.143
+1.015
+2.232 1.019
+
+0.035****
+0.004****
+0.217**** 0.006***
+
+0.990 0.001
+–
+
+0.003**** 0.001****
+
+−30600.013 1144.64
+
++p < 0.10, *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001. Acquisitions are in terms of hundreds of purchases. Data drawn from Defense Logistic Agency, FBI, Census, and Department of Labor.
+
+0.998 0.999
+
+0.001 0.001
+
+1.080 0.999 1.154 1.017 2.406 1.015
+
+0.006**** 0.001**** 0.035**** 0.003**** 0.233****
+0.006*
+
+0.989 0.001
+–
+
+0.003**** 0.001****
+
+−30560.902
+1171.11 LR χ2(4) = 78.22, p < 0.0001
+
+Model 2 examines the eﬀect of additional cumulative purchases of militarization on assaults against police oﬀicers given a 6-month lag. Material militarization decreases assaults, but increases in operational militarization purchases increase assaults. Speciﬁcally, army clothing reduces assaults by 5.3% for each 100 purchases, armor reduces assaults by 7.6% per 100, and weapons reduce assaults by 0.3% per 100 purchases. Every 100 operational purchases increase the rate of assaults on oﬀicers by 4.6%. The control variables remain signiﬁcant from the prior model and their interpretation remains the same, with every additional oﬀicer per 1000 citizens increasing assaults by 14.3%, slightly lower than Model 1.
+Model 2 assumes that the marginal eﬀect of each additional one hundred purchases is the same across time. However, it may be the case that there are decreased rates of return for these purchases, or that there is a tipping point of stockpile before it becomes too much. Model 3 uses a quadratic model, allowing the marginal impact of the independent variable to change at diﬀerent levels of the independent variable. A likelihood ratio test shows a signiﬁcant improvement in the model using the quadratic terms, LR χ2(4) = 78.22, p < 0.0001.
+In this model, additional armor purchases reduce assaults to their lowest level, with 0.716 assaults with injury at 1125 cumulative purchases, holding all other variables at their means, a decrease from the 1.819 predicted assaults at 25 purchases. It then increases to the maximum amount of purchases in the dataset at 1.693 assaults for 2175 purchases of armor. To clarify the substantive meaning of this eﬀect, we compare the number of assaults at the mean level of militarized armor gear in 2014 to a state-month with no amount of purchases. The average stockpile of armor in 2014 for a given state was about 159 purchases, which is estimated to be associated with 1.584 assaults. Given that the average amount of armor is well below the turning point, the average state only sees positive eﬀects of fewer assaults from buying armor. Army clothing showed the second largest decrease in assaults, with a 8.3% reduction in assaults per crime rate for every 100 purchases of clothing. Holding all else at its mean, clothing reduces assaults from 1.818 assaults per crime rate to 1.733 assaults at the 2014 average stockpile of clothing of 145 purchases. There was no signiﬁcant relation between weapon purchases and injurious assaults in this model. Operational militarization increases with decreasing rates, with the ﬁrst one hundred purchases increasing assaults by 8.00%, and decreases in impact by less than one tenth of a percent per additional one hundred purchases. Examining the average stockpile of operational militarization in 2014, assaults increase from 1.703 assaults at 50 purchases to 2.076 assaults at 530 purchases.
+Sensitivity analysis was applied to vary the lag length of purchases by twice the amount of time and half the amount of time (Table 3 and Table 4). A few trending results appear, and all signiﬁcant results remain. Model 3 across Table 3 and Table 4 shows some clear variability in armor stockpile depending on time, with a
+
+Brought to you by | University of Saskatchewan
+Authenticated 7
+Download Date | 8/8/17 6:53 PM
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+Carriere and Encinosa
+
+DE GRUYTER
+
+1 year lag showing a 51% decrease in injurious assaults at the ﬁrst one hundred purchases, but with a sharp increasing rate as purchases continue, and a 3-month lag showing a 12.8% decrease on assaults with a much lower, albeit signiﬁcant, increasing rate as purchases continue. However, weapons remain non-signiﬁcant and both other models exhibit better rates of protection than the chosen 6-month model. Visualization of results using all three time points is provided (Figure 1).
+
+Table 3: State and month ﬁxed eﬀects negative binomial regression predicting assaults with injury against police oﬀicers, 12 month lag.
+
+Model 1
+
+Model 2
+
+Model 3
+
+IRR
+
+SE
+
+IRR
+
+SE
+
+IRR
+
+SE
+
+Clothing(t − 12) Clothing
+stockpile(t − 12) Clothing stockpile2(t − 12) Armor(t − 12) Armor
+stockpile(t − 12) Armor stockpile2(t − 12) Weapons(t − 12) Weapons
+stockpile(t − 12) Weapons stockpile2(t − 12) Operational(t − 12) Operational
+stockpile(t − 12) Operational stockpile2(t − 12) Oﬀicers per
+1000
+Pop. in
+millions
+Log(income)
+Unemploy-
+ment
+%
+Percent Black
+Intercept
+Exposure(vio-
+lent
+crime)
+
+1.104
+
+0.050*
+
+0.828
+
+0.128
+
+0.995
+
+0.006
+
+1.003
+
+0.007
+
+1.246
+1.040
+2.338 1.010
+0.982 0.001
+–
+
+0.038**** 0.040**** 0.233****
+0.006
+0.003**** 0.001****
+
+1.003
+
+0.016
+
+0.745
+
+0.029****
+
+0.999
+
+0.001
+
+1.041
+
+0.004****
+
+1.145
+1.018
+2.480 1.015
+0.988 0.001
+–
+
+0.036**** 0.004**** 0.244****
+0.006*
+0.003**** 0.001****
+
+0.865 1.002
+0.490 1.500
+1.002 1.000
+1.071 0.999 1.166 1.022 2.554 1.008
+0.987 0.001
+–
+
+0.045** 0.008**
+0.060**** 0.109****
+0.001 0.001*
+0.006**** 0.001**** 0.037**** 0.004**** 0.253****
+0.006
+0.003**** 0.001****
+
+Log likelihood Wald χ2 Likelihoodratio test
+
+−29843.446 793.45
+
+−29768.461 1113.39
+
++p < 0.10, *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001. Acquisitions are in terms of hundreds of purchases. Data drawn from Defense Logistic Agency, FBI, Census, and Department of Labor.
+
+−29742.783
+1155.44 LR χ2(4) = 51.36, p < 0.0001
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+Table 4: State and Month ﬁxed eﬀects negative binomial regression predicting assaults with injury against police oﬀicers, 3 month lag.
+
+Model 1
+
+Model 2
+
+Model 3
+
+IRR
+
+SE
+
+IRR
+
+SE
+
+IRR
+
+SE
+
+Brought to you by | University of Saskatchewan
+
+8
+
+Authenticated
+
+Download Date | 8/8/17 6:53 PM
+
+DE GRUYTER
+
+Clothing(t − 3) Clothing
+stockpile(t − 3) Clothing stockpile2(t − 3) Armor(t − 3) Armor
+stockpile(t − 3) Armor stockpile2(t − 3) Weapons(t − 3) Weapons
+stockpile(t − 3) Weapons stockpile2(t − 3) Operational(t − 3) Operational
+stockpile(t − 3) Operational stockpile2(t − 3) Oﬀicers per
+1000
+Pop. in
+millions
+Log(Income)
+Unemploy-
+ment
+%
+Percent Black
+Intercept
+Exposure(Vi-
+olent
+Crime)
+Log
+likelihood Wald χ2
+Likelihood-
+ratio
+test
+
+0.959*
+
+0.019
+
+0.957*
+
+0.018
+
+1.003
+
+0.005
+
+1.028*
+
+0.012
+
+1.228
+1.004
+2.207 1.011
+
+0.036****
+0.003****
+0.215**** 0.006+
+
+0.984 0.001
+–
+
+0.003**** 0.001****
+
+−31,061.266 777.99
+
+0.949
+
+0.006****
+
+0.930
+
+0.006****
+
+0.998
+
+0.001****
+
+1.041
+
+0.003****
+
+1.142
+1.018
+2.151 1.017
+
+0.034****
+0.004****
+0.208**** 0.006**
+
+0.989 0.001
+–
+
+0.003**** 0.001****
+
+−30,972.984 1141.67
+
++p < 0.10, *p < 0.05, **p < 0.01, ***p < 0.001, ****p < 0.0001. Acquisitions are in terms of hundreds of purchases. Data drawn from Defense Logistic Agency, FBI, Census, and Department of Labor
+
+Carriere and Encinosa
+
+0.910 1.002
+
+0.012**** 0.001****
+
+0.872 1.007
+0.998 1.000
+
+0.023**** 0.001****
+0.001+ 0.001
+
+1.067 0.999 1.151 1.020 2.264 1.012
+
+0.005**** 0.005**** 0.034**** 0.003**** 0.219****
+0.006*
+
+0.989 0.001
+–
+
+0.003**** 0.001****
+
+−30,947.18
+1157.99 LR χ2(4) = 51.36, p < 0.0001
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+Brought to you by | University of Saskatchewan
+Authenticated 9
+Download Date | 8/8/17 6:53 PM
+
+Carriere and Encinosa
+Figure 1: Militarization purchases and eﬀects on assaults against police. Margins represent 95% conﬁdence intervals.
+
+DE GRUYTER
+
+5 Discussion
+Since 1993, police forces across the country have been purchasing military gear in order to both more eﬀectively prevent and ﬁght crime and to keep their oﬀicers safe. This analysis explored empirically whether assaults against police oﬀicers were related to the purchase of military equipment from the 1033 Program. Results from this analysis were mixed; although some types of gear (armor and clothing) had a negative relationship with police assaults, some types of gear (sonar, radar, cameras, and recording devices) increased violence against police. Moreover, we found no signiﬁcant relationship between one month’s purchases and a future month’s assaults, but instead found signiﬁcant relationships when we accounted for the continual purchasing of equipment by states.
+The results suggest that material militarization purchases are decreasing assaults against oﬀicers. However, the strength in the reduction comes mainly within the clothing and armor of the police oﬀicers, not the weapons, which had no eﬀect on reducing assaults. This corroborates prior research showing no eﬀect of weapon purchases on crime rate (Bove & Gavrilova, 2017). However, this work showed signiﬁcant reductions in assaults due to armor and clothing purchases, in comparison to no eﬀect (Bove & Gavrilova, 2017, Table 5) and an increase in assaults due to operational purchases, in comparison to all purchases reducing assaults (Harris et al., 2017, Table 9). The results of clothing and armor reducing assaults suggests that there is credence to the Velcro Eﬀect (Buttle, 2005) – that the appearance an oﬀicer gives oﬀ is the most important factor inﬂuencing one’s decision to aggress.
+The novel key ﬁnding is that operational militarization was increasing assaults against police oﬀicers. The majority of purchases within this category were regular cameras, night vision goggles, and audio-visual technology, but also included bomb disposal robots, spotlights, and mine detectors. It may be the case that operational equipment is more readily assisting the oﬀicers with ﬁnding out more information on criminals, which is increasing their interactions with criminals and therefore increasing assaults. However, such an assumption should be controlled through the exposure variable of crime rate. Instead, we may be observing the same reaction police give when asked about the idea of a body camera (Ybarra, 2015) – that citizens feel an infringement on their rights to privacy. Further research should explore this result in more detail.
+
+5.1 Limitations
+
+There are a few limitations that must be considered in interpreting the results. While we collapsed our data to the state level in order to account for geographical spillover (Bronars & Lott, 1998), we were unable to account for any inter-state eﬀects that may also arise from this spillover. Future work should explore how purchases from a neighboring state may or may not inﬂuence decision making in another state. While we believe our models are strong in their ability to reach causality through the exposure of crime rate and varying the lagged purchases (via monthly data), we should recognize that there may be diﬀerences between states in how military equipment is utilized, and, therefore, should note that our Incident Risk Ratios are not equal across all states. Diﬀerent approaches to the deployment and use of such equipment may diﬀer at a state level, and this was only able to be captured through the state ﬁxed eﬀects. Controls surrounding the demographic characteristics of the state, including race, income, and population could all only be obtained at a year-level basis, and were replicated across each year to ﬁt a month-level analysis. This replication may be losing nuance in the variation across states. Yet, we believe it is a reasonable assumption that these controls are relatively stable across a given state, and that the variation is negligible.
+A recent working group examined the usefulness of LEOKA data, and pointed out three caveats to the use of this data – it is released too slowly, it is underreported, and it is not often used in academic work (Kuhns et al., 2016, p. 6). The ﬁrst – that it is released too slowly, is not a large issue, as we examined what should be a general trend visible across the whole time-series we have available. The third – that it is not used in academic work, we do not see as a deterrence, but instead simply motivation for continued exploration of this dataset, though support the call for a stronger maintenance and rigor to future waves of the data. The second problem – of underreporting – we recognize as an issue. However, as research argues that aggravated assaults are far less likely to be underreported (Kaminski, Jeﬀeris & Gu, 2003; Margarita, 1980), we feel more conﬁdent in our outcomes and believe any missing data is otherwise random.
+Our analysis is unable to examine other factors of discontent and legitimacy of police oﬀicers. While we found a reduction in assaults when purchases of armor, it does not mean that continued purchases of armor and
+
+Brought to you by | University of Saskatchewan
+
+10
+
+Authenticated
+
+Download Date | 8/8/17 6:53 PM
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+DE GRUYTER
+
+Carriere and Encinosa
+
+weapons are necessarily helping oﬀicers in other manners of their functionality. Citizens could still be increasing in their distrust and decreasing their willingness to assist police oﬀicers, but such measures were unable to be examined in this current study. Future work, especially in nationally representative samples, should continue to pursue the trust and legitimacy of police oﬀicers and the perception of the equipment they carry.
+Finally, the major question this paper points to – but fails to answer – is the question of assaults on citizens by the police (for a starting discussion on this, see Maguire, Nix & Campbell, 2017). This work can only examine the reverse – when citizens strike out against oﬀicers, which still points to a growing tension between the two groups. If police are experiencing more assaults, they may react more impulsively in their interactions with citizens, and drawing their weapons at faster rates and making quicker decisions.
+
+6 Policy implications and conclusions
+Despite these limitations, the presented study still provides a necessary and unique insight into citizen and police relations. Through examining injurious assaults on police with lagged ﬁxed eﬀects negative binomial models, there was evidence that an increase in operational militarization purchases by states was associated with an increase in future assaults on police oﬀicers. There was also evidence that material militarization purchases were associated with decreases in assaults, the most substantive of eﬀects being provided by armor-based purchases. However, weapon purchases – including pistols and M4 riﬂes, showed no beneﬁt in reducing injuries among police oﬀicers.
+These results bring a critical question to the continued use of the 1033 Program. In the more overt forms of protection, the 1033 transfers seem to be doing their job of protecting oﬀicers. However, it is not clear that protection of assaults strictly falls under the law’s requirements of “suitable for use by the agencies in law enforcement activities, including counterdrug, counterterrorism, and border security activities” (Excess personal property: Sale or donation for law enforcement activities, 1997, section a.A). Even if it did, results suggest that decreased assaults are not a guaranteed outcome. Instead, these results may be picking up on a growing discontentment with police and their use of military-grade equipment, and further work exploring other options – such as the promising use of soft-policing (Ariel, Weinborn & Sherman, 2016) should be given more consideration.
+Overall, this work is the one of the ﬁrst to examine personal safety outcomes of oﬀicers from citizens in regards to the 1033 Program. Further research is required in order to more holistically understand why increased surveillance purchases is increasing assaults against oﬀicers, and at the same time, try and understand why weapons seem to have no eﬀect on the amount of assaults oﬀicers receive. Whatever the outcome of future work, this research provides us with recognition of the potential unseen consequences of an increase in militarization.
+Conﬂict of interest: The authors report no conﬂicts of interest regarding the manuscript or the data.
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+References
+Ariel, B., Farrar, W. A. & Sutherland, A. (2015). The e昀ffect of police body-worn cameras on use of force and citizens’ complaints against the police: A randomized controlled trial. Journal of Quantitative Criminology, 31(3), 509–535.
+Ariel, B., Weinborn, C. & Sherman, L. W. (2016). “So昀tt” policing at hot spots - Do police community support o昀fﬁcers work? A randomized controlled trial. Journal of Experimental Criminology, 12(3), 277–317.
+Ashcro昀tt, J., Daniels, D. J. & Hart, S. V. (2003). The e昀ffectiveness and safety of pepper spray (pp. 1–19, Rep. No. NCJ 195739). Washington, DC: National Institute of Justice.
+Balko, R. (2006). Overkill: The rise of paramilitary police raids in America Retrieved from http://www.cato.org/publications/white-paper/overkillrise-paramilitary-police-raids-america.
+Balko, R. (2013). Rise of the warrior cop: The militarization of America’s police forces. New York, NY: PublicA昀ffairs. Bell, D. J. (1982). Police uniforms, attitudes, and citizens. Journal of Criminal Justice, 10(1), 45–55. Bieler, S. (2016). Police militarization in the USA: The state of the ﬁeld. Policing: An International Journal of Police Strategies & Management, 39(4),
+586–600. Bove, V. & Gavrilova, E. (2017). Policeman on the frontline or a soldier? The e昀ffect of police militarization on crime. American Economic Journal:
+Economic Policy, 9(3), 1–18. DOI:10.1257/pol.20150478. Bowden, J. A. (2015). LESO 1033 - Open Virginia. Retrieved March 20, 2016 Available from http://data.openva.com/dataset/leso-1033. Bradford, B. (2014). Policing and social identity: Procedural justice, inclusion and cooperation between police and public. Policing and Society,
+24(1), 22–43.
+Brought to you by | University of Saskatchewan
+Authenticated 11
+Download Date | 8/8/17 6:53 PM
+
+Carriere and Encinosa
+
+DE GRUYTER
+
+Bronars, S. G. & Lott, J. R. (1998). Criminal deterrence, geographic spillovers, and the right to carry concealed handguns. The American Economic Review, 88(2), 475–479.
+Buttle, J. W. (2005). Unravelling the ‘Velcro E昀ffect’: Is deterring assaults against the police indicative of a more aggressive style of policing? International Journal of Police Science & Management, 8(2), 133–142.
+Carriere, K. R. (2017). [Analysis of the LESO 1033 Program on LEOKA Data]. Unpublished raw data. https://github.com/krcarriere/PoliceAssaults.
+DeMichele, M. T. & Kraska, P. B. (2001). Community policing in battle garb: A paradox or coherent strategy?. Kraska, P.B. (Ed.), Militarizing the American criminal justice system: The changing roles of the Armed Forces and the police (pp. 82–101). Boston: Northeastern University Press.
+Den Heyer, G. (2014). Mayberry revisited: A review of the inflluence of police paramilitary units on policing. Policing and Society, 24(3), 346–361. Dietz, J., Robinson, S. L., Folger, R., Baron, R. A. & Schulz, M. (2003). The impact of community violence and an organization’s procedural
+justice climate on workplace aggression. Academy of Management Journal, 46(3), 317–326. Ellis, D., Choi, A. & Blaus, C. (1993). Injuries to police o昀fﬁcers attending domestic disturbances: An empirical study. Canadian Journal of Crimi-
+nology, 35, 149–168. Excess personal property: Sale or donation for law enforcement activities. § 153-2576a 1997. Executive O昀fﬁce of the President. Review: Federal support for local law enforcement equipment acquisition. Washington, DC: Executive O昀fﬁce of the
+President 2014. Gallup. (2015). Conﬁdence in institutions Retrieved from http://www.gallup.com/poll/1597/conﬁdence-institutions.aspx. Gau, J. M. & Brunson, R. K. (2010). Procedural justice and order maintenance policing: A study of inner‐city young men’s perceptions of po-
+lice legitimacy. Justice Quarterly, 27(2), 255–279. Goldstein, H. (1987). Toward community-oriented policing: Potential, basic requirements, and threshold questions. Crime & Delinquency, 33(1),
+6–30. Goldstein, J. (2013). Judge rejects New York’s stop-and-frisk policy. New York Times Retrieved from http://www.ny-
+times.com/2013/08/13/nyregion/stop-and-frisk-practice-violated-rights-judge-rules.html. Harris, M. C., Park, J. S., Bruce, D. J. & Murray, M. N. (2017). Peacekeeping force e昀ffects of providing tactical equipment to local law enforce-
+ment. American Economic Journal: Economic Policy, 9(3), 291–313. DOI:10.1257/pol.20150525. Hirschel, D. J., Dean, C. W. & Lumb, R. C. (1994). The relative contribution of domestic violence to assault and injury of police o昀fﬁcers. Justice
+Quarterly, 11(1), 99–117. DOI:10.1080/07418829400092151. Institute for Intergovernmental Research. A昀tter-Action assessment of the police response to the August 2014 Demonstrations in Ferguson, Missouri.
+COPS O昀fﬁce Critical Response Initiative. Washington, D.C: O昀fﬁce of Community Oriented Policing Services 2015. Jackson, J., Huq, A. Z., Bradford, B. & Tyler, T. R. (2013). Monopolizing force? Police legitimacy and public attitudes toward the acceptability of
+violence. Psychology, Public Policy, and Law, 19(4), 479–497. Kaminski, R. J., Edwards, S. M. & Johnson, J. W. (1998). The deterrent e昀ffects of oleoresin capsicum on assaults against police: Testing the
+velcro-e昀ffect hypothesis. Police Quarterly, 1(2), 1–20. Kaminski, R. J., Je昀fferis, E. & Gu, J. (2003). Community correlates of serious assaults on police. Police Quarterly, 6(2), 119–149. Kappeler, V. E. & Kraska, P. B. (2013). Normalising police militarisation, living in denial. Policing and Society, 25(3), 268–275. Kapuscinski, C. A., Braithwaite, J. & Chapman, B. (1998). Unemployment and crime: Toward resolving the paradox. Journal of Quantitative
+Criminology, 14(3), 215–243. Kraska, P. B. (2001). Militarizing the American criminal justice system: The changing roles of the armed forces and the police. Boston, MA: Northeastern
+University Press. Kraska, P. B. (2007). Militarization and policing—Its relevance to 21st century police. Policing, 1(4), 501–513. Kraska, P. B. & Kappeler, V. E. (1997). Militarizing American police: The rise and normalization of paramilitary units. Social Problems, 44(1), 1–18. Kuhns, J. B., Dolliver, D., Bent, E. & Maguire, E. R. (2016). Understanding ﬁrearms assaults against law enforcement o昀fﬁcers in the United States.
+Washington, DC: O昀fﬁce of Community Oriented Policing Services. Leipnik, M. R., Ye, X. & Wu, L. (2013). Jurisdictional boundaries and crime analysis: Policy and practice. Regional Science Policy & Practice, 5(1),
+45–65. Lieblich, E. & Shinar, A. (2017). The case against police militarization. Available at SSRN: https://ssrn.com/abstract=2840715 or
+http://dx.doi.org/10.2139/ssrn.2840715. Maguire, E. R., Nix, J. & Campbell, B. A. (2017). A war on cops? The e昀ffects of Ferguson on the number of U.S. police o昀fﬁcers murdered in the
+line of duty. Justice Quarterly, 34(5), 739–758. Maltz, M. D. (2006). Analysis of missingness in UCR crime data (pp. 1–20, Rep). Washington, DC: U.S. Department of Justice. Maltz, M. D. & Targonski, J. (2002). A note on the use of county-level UCR data. Journal of Quantitative Criminology, 18(3), 297–318. Maltz, M. D. & Targonski, J. (2003). Measurement and other errors in county-level UCR data: A reply to Lott and Whitley. Journal of Quantita-
+tive Criminology, 19(2), 199–206. Margarita, M. (1980). Criminal violence against police. Ann Arbor, MI: University Microﬁlms. Meeks, D. (2006). Police militarization in urban areas: The obscure war against the underclass. The Black Scholar, 35(4), 33–41. Obama, B. H. Remarks by the President on Community Policing. The White House, O昀fﬁce of the Press Secretary, 2015. Regens, J., Meyer, C., Swanson, C., Chapman, S. & Wilson, L. (1974). An analysis of assaults on municipal police o昀fﬁcers in 46 south central cities (pp.
+1–23, Rep. No. NCJ 027932). Oklahoma, MI: Bureau of Government Research. Stanford, R. & Mowry, B. L. (1990). Domestic disturbance danger rate. Journal of Police Science and Administration, 17(4), 244–249. Tyler, T. R. & Lind, E. A. (1992). A relational model of authority in groups. Advances in Experimental Social Psychology, 25, 115–191. Tyler, T. R., Jackson, J. & Mentovich, A. (2015). The consequences of being an object of suspicion: Potential pitfalls of proactive police contact.
+Journal of Empirical Legal Studies, 12(4), 602–636. United States Census Bureau. (2014a). Historical income tables Retrieved from https://www.census.gov/hhes/www/income/data/historical/-
+household/.
+
+Brought to you by | University of Saskatchewan
+
+12
+
+Authenticated
+
+Download Date | 8/8/17 6:53 PM
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+DE GRUYTER
+
+Carriere and Encinosa
+
+United States Census Bureau. (2014b). Population estimates Retrieved from https://www.census.gov/popest/data/state/asrh/2009/SCEST2009-03.html.
+United States Department of Justice & Federal Bureau of Investigation. Uniform crime reporting program data: O昀ffenses known and clearances by arrest, 2014. Ann Arbor, MI: Inter-university Consortium for Political and Social Research (ICPSR) 2014a. DOI:10.3886/ICPSR36391.v1.
+United States Department of Justice & Federal Bureau of Investigation. (2014b). Uniform crime reporting program data: Police employee (LEOKA) data, 2014 Ann Arbor, MIInter-university Consortium for Political and Social Research (ICPSR). DOI:http://doi.org/10.3886/ICPSR36395.v1.
+United States Department of Labor & Bureau of Labor Statistics. (2014). Civilian noninstitutional population and associated rate and ratio measures for model-based areas. Retrieved from http://www.bls.gov/lau/rdscnp16.htm.
+U.S. Senate, Committee on Homeland Security and Governmental A昀ffairs. Oversight of federal programs for equipping state and local law enforcement agencies (pp. 1–534). Washington, DC: U.S. Government Publishing O昀fﬁce 2016[S. 113-767 from 113th Cong., 2nd sess.].
+Walker, R. (2014). US police go military with 1033 program|Americas|DW.COM|15.08.2014 Retrieved from http://www.dw.com/en/us-police-gomilitary-with-1033-program/a-17857709.
+Wickes, G. C. Demystifying ‘militarization’: A partial analysis of the impact of the U.S. Department of Defense’s ‘1033’ equipment transfer program on police o昀fﬁcer safety outcomes. unpublished Masters Thesis Georgetown University, 2015:1–29.
+Wilson, J. Q. (1975). Thinking about crime. New York, NY: Basic Books. Wo昀fford, T. (2014). How America’s police became an army: The 1033 program Retrieved from http://www.newsweek.com/how-americas-police-
+became-army-1033-program-264537. Ybarra, M. (2015). Police body cameras raise privacy concerns Retrieved from http://www.washingtontimes.com/news/2015/may/12/police-body-
+cameras-raise-privacy-concerns/.
+
+Automatically generated rough PDF by ProofCheck from River Valley Technologies Ltd
+
+Brought to you by | University of Saskatchewan
+Authenticated 13
+Download Date | 8/8/17 6:53 PM
+

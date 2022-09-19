@@ -1,0 +1,284 @@
+Home
+Notifications
+Lists
+Stories
+Write
+The Pragmatic Programmers
+Published in
+
+The Pragmatic Programmers
+PragPub
+PragPub
+
+Aug 31
+·
+6 min read
+·
+
+Listen
+collage of Pragpub magazine covers
+Take a step back in history with the archives of PragPub magazine. The Pragmatic Programmers hope you’ll find that learning about the past can help you make better decisions for the future.
+FROM THE ARCHIVES OF PRAGPUB MAGAZINE DECEMBER 2017
+Refactoring to Functional Style in Java 8: Using Infinite Sequences
+By Venkat Subramaniam
+
+    All this year, Venkat is exploring how to exploit the benefits of functional style in Java. In this final installment of his series, he looks at the elegance and power of infinite sequences.
+
+https://pragprog.com/newsletter/
+https://pragprog.com/newsletter/
+
+A charming benefit of lazy evaluation is that streams of data may be unbounded. Infinite sequences, as they’re called, offer a powerful, simple, and elegant way to solve some problems. In this final article in this series on refactoring to functional style, we’ll refactor some rather verbose code into something pleasant using infinite streams.
+Death by Looping
+
+Let’s start with some example code:
+
+ public static double compute(int n, int k) {
+int index = n;
+int count = 0;
+double result = 0;
+while(count < k) {
+if(index % 3 == 0) {
+result += Math.sqrt(index);
+count++;
+}
+index++;
+}
+return result;
+} 
+
+Both while and for loops are common in the imperative style of programming. Java code is filled with those, and we sprinkle if , else , break , and continue to alter the flow of control within loops. All these unfortunately make the code complex and often hard to understand and maintain.
+
+This code solves a rather simple problem and yet it’s so verbose. Given two numbers n and k , it returns the sum of square roots of k numbers, starting with n , that are divisible by 3 .
+
+The code has all the symptoms of imperative style: garbage variables, verbosity, dwelling on the details of how, and explicitly managing the iteration and the flow of control.
+
+We can reduce the complexity in this code and make the code fluent and elegant by using the functional style. But first, let’s go over a few concepts that will make that transition smooth.
+Lazy Evaluations
+
+Lazy evaluation is a key feature of functional programming. In eager evaluation an expression is evaluated as soon as it’s encountered. In contrast, lazy evaluation will postpone execution with the hope that the evaluation may be totally skipped. After all, skipping steps that do not really matter towards a final result is the most efficient option where possible.
+
+Java 8 Streams have two category of methods: intermediate and terminal . The lambda expressions passed to intermediate methods do not execute right away. Instead they’re fused with other lazy operations and saved for delayed execution. If a terminal operation is never called on a stream, then the delayed executions are discarded. In the event a terminal operation is called, then the delayed expressions are evaluated, but only minimally as necessary to yield the expected result.
+
+We can readily identify intermediate operations of a Stream — these methods have a return type of Stream . Examples of intermediate functions include filter and map , to mention just two. Terminal operations, on the other hand, return some other result instead of Stream . The methods collect , reduce , and findFirst are some examples of terminal functions.
+Infinite Sequences
+
+An infinite sequence is an unbounded collection of values. It typically starts with an initial seed value and an expression that knows how to yield subsequent values. For example, here is a snippet of code that creates an infinite sequence of integer values starting from 0 .
+
+Stream.iterate(0, number -> number + 1);
+
+The iterate() method takes as first parameter the seed value, 0 in this example. The second argument is a UnaryOperator<T> ; in this example, the second argument takes a value and returns the next value in the series.
+
+Since the series is unbounded, generally we will include some condition to bound the series — after all, we will not want it to run indefinitely. The easiest way to set the bound is using the limit() method. For example, the following code will produce values from 1 to 12 :
+
+ Stream.iterate(1, number -> number + 1)
+.limit(12); 
+
+The method limit is an intermediate function as well — its return type is Stream . This method is called on what’s possibly an unbounded Stream , and it returns a bounded Stream .
+Revisiting the Problem at Hand
+
+Now let’s revisit the problem we started with. While we walk through it, let’s explore the functional style alternatives to the previous imperative solution.
+
+    We want to iterate starting with a number n . We can use the iterate method for that.
+    We want to process only numbers that are divisible by 3 . That’s the filter operation in the function pipeline.
+    We want to compute the square root of selected numbers. That’s the map operation. However, since we’re dealing with double values, we want to use mapToDouble .
+    We want to process only k values, and that can be satisfied using a call to limit(k) .
+    Finally, we want to total the square roots of the selected numbers. That final step can be achieved using sum . This terminal operation will trigger the evaluation of the pipeline. The limit will ensure that the infinite sequence does not run off to infinity, but terminates as soon as k values pass through.
+
+Let’s put this functional style thinking into code.
+Refactored Code
+
+This problem nicely illustrates how the functional style code reads like the problem statement. Here’s the problem statement:
+
+Given a number n , get all values starting from that number, pick only numbers divisible by 3 , compute the square roots of those, and finally total only k selected values. Here’s the code for doing just that:
+
+ public static double compute(int n, int k) {
+return Stream.iterate(n, e -> e + 1)
+.filter(e -> e % 3 == 0)
+.mapToDouble(Math::sqrt)
+.limit(k)
+.sum();
+} 
+
+The iterate , filter , mapToDouble , and limit methods are all intermediate operations that are triggered only when the terminal operation sum is invoked. The lambda expression passed as the second argument to the iterate method is invoked lazily and only on demand. At the time the terminal operation is invoked, the lambda expression is evaluated, but only as long as the limit function is not satisfied. Once k values pass through the limit, it shuts the door.
+
+We could compose this differently. In this code we placed the call to the limit function right before the terminal operation sum. The call to limit is not required to appear always before the terminal operation. For instance, in this example, we can move the call to limit to before the call to mapToDouble . However, we cannot move it to before the call to filter.
+
+What would happen if limit were moved to before filter? While syntactically that’s permissible, if we place limit before filter, we will end up with a wrong result, different from what we intend. If we wanted to take k values and then pick only numbers divisible by 3 , then it’s ok to place limit before filter. However, we wanted to pick k values that are divisible by 3 , so the limit should come after filter. It may come either immediately after filter or it may appear after mapToDouble as well. Place it anywhere you like as long as the result of the execution is semantically equivalent.
+Conclusion
+
+Throughout this series we have seen how the functional style leads to more concise, elegant, and expressive code. In this final article in this series, we make use of lazy evaluation and infinite streams to remove complexity from the code to solve a simple problem. Simple problems deserve simple solutions. Functional style makes that quite possible.
+About Venkat Subramaniam
+
+Dr. Venkat Subramaniam is an award-winning author, founder of Agile Developer, Inc., and an instructional professor at the University of Houston. He has trained and mentored thousands of software developers in the U.S., Canada, Europe, and Asia, and is a regularly invited speaker at several international conferences. Venkat helps his clients effectively apply and succeed with agile practices on their software projects. Venkat is a (co)author of multiple books, including the 2007 Jolt Productivity award-winning book Practices of an Agile Developer .
+Cover from PragPub, December 2017 featuring red-haired woman sitting outside writing in a notebook
+Cover from PragPub, December 2017
+
+14
+
+14
+Sign up for Pragmatic Voices
+By The Pragmatic Programmers
+
+A monthly summary of what's happening on Medium with The Pragmatic Programmers  Take a look.
+
+Get this newsletter
+
+By signing up, you will create a Medium account if you don’t already have one. Review our Privacy Policy for more information about our privacy practices.
+More from The Pragmatic Programmers
+Follow
+
+We create timely, practical books and learning resources on classic and cutting-edge topics to help you practice your craft and accelerate your career.
+PragPub
+
+PragPub
+
+· Updated Aug 17
+Geographically Distributed Agile Teams, Part II: Communications Technology
+
+By Johanna Rothman and Mark Kilby — The key is to provide an appropriate combination of tools that support “rich” and “natural” communication.
+Johanna Rothman
+
+4 min read
+Geographically Distributed Agile Teams, Part II: Communications Technology
+
+Share your ideas with millions of readers.
+Write on Medium
+PragPub
+
+PragPub
+
+· Updated Sep 2
+Geographically Distributed Agile Teams, Part I: Distributed Team Workspaces Start with Hours of Overlap
+
+By Johanna Rothman and Mark Kilby — The first in a series on geographically distributed agile teams.
+Johanna Rothman
+
+6 min read
+Geographically Distributed Agile Teams, Part I: Distributed Team Workspaces Start with Hours of…
+PragPub
+
+PragPub
+
+· Updated Aug 15
+Testing Arduino Code: An Everyday JRuby Adventure
+
+By Erin Dees — Erin brings the testing power of the Ruby-based Cucumber testing library to the Arduino.
+April 2011
+
+11 min read
+Testing Arduino Code: An Everyday JRuby Adventure
+PragPub
+
+PragPub
+
+· Updated Aug 18
+Geographically Distributed Agile Teams, Part III: Serendipitous Communications
+
+By Johanna Rothman and Mark Kilby — In this third article in their series, Mark and Johanna show how team cohesion and accomplishment can grow…
+Johanna Rothman
+
+7 min read
+Geographically Distributed Agile Teams, Part III: Serendipitous Communications
+PragPub
+
+PragPub
+
+· Updated Aug 12
+Everyday JRuby Part 2: Sharing Your Software
+
+By Erin Dees — Erin continues her series series on Everyday JRuby by showing how to build a game and share it…
+January 2011
+
+11 min read
+Everyday JRuby Part 2: Sharing Your Software
+Read more from The Pragmatic Programmers
+Recommended from Medium
+ESQ Legal Practice Blog
+
+ESQ Legal Practice Blog
+“show_on_front”: “value”: “page”, “type”: “option”, “user_id”: 3, “date_modified_gmt”…
+OnecdotIN
+
+OnecdotIN
+Metadata structure to show NFTs on Opensea
+Vihanga Liyanage
+
+Vihanga Liyanage
+Writing a Custom Local Authenticator with WSO2 Identity Server
+Vuong Tran
+
+Vuong Tran
+How to resolve error Amazon S3-RequestTimeTooSkewed
+Edward Shoup
+
+Edward Shoup
+Disputes Among Contractors
+disputes among contractors
+Unicorn Developer
+
+Unicorn Developer
+Support of Visual Studio 2017 and Roslyn 2.0
+James Edward Peter Estrella
+
+James Edward Peter Estrella
+LIS 160 Portfolio 3: Git and Github
+Rajesh
+
+Rajesh
+Dockerize Spark Jobs with Databricks Container Services
+Get started
+
+Sign In
+PragPub
+PragPub
+1.7K Followers
+
+The Pragmatic Programmers bring you archives from PragPub, a magazine on web and mobile development (by editor Michael Swaine, of Dr. Dobb’s Journal fame).
+Follow
+More from Medium
+Glauber Costa
+
+Glauber Costa
+
+in
+
+ChiselStrike
+Never ever use a database as a message queue. Do this instead.
+Software Surplus
+
+Software Surplus
+High Performing Developers Are Underpaid
+Ben "The Hosk" Hosking
+
+Ben "The Hosk" Hosking
+
+in
+
+Dev Genius
+Most Software Developers Fail the Yellow Cat Test
+Ray Epps
+
+Ray Epps
+
+in
+
+Vanguards of Code
+You’re Not a Senior Software Engineer
+
+Help
+
+Status
+
+Writers
+
+Blog
+
+Careers
+
+Privacy
+
+Terms
+
+About
+
+Knowable

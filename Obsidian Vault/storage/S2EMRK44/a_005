@@ -1,0 +1,933 @@
+window.addEventListener("load", function() {
+    console.info("Sailthru onsite JS is loaded. Initializing Sailthru...");
+    if (tag.isCustom) {
+        jQuery(function($) {
+            Sailthru.init({
+                customerId: tag.options.customerId,
+                isCustom: true,
+                autoTrackPageview: tag.options.autoTrackPageview,
+                useStoredTags: tag.options.useStoredTags,
+                excludeContent: tag.options.excludeContent,
+            });
+        });
+    } else {
+        Sailthru.init({
+            customerId: tag.options.customerId
+        });
+    }
+});;
+/*\
+|*|
+|*|  :: cookies.js ::
+|*|
+|*|  A complete cookies reader/writer framework with full unicode support.
+|*|
+|*|  Revision #1 - September 4, 2014
+|*|
+|*|  https://developer.mozilla.org/en-US/docs/Web/API/document.cookie
+|*|  https://developer.mozilla.org/User:fusionchess
+|*|
+|*|  This framework is released under the GNU Public License, version 3 or later.
+|*|  http://www.gnu.org/licenses/gpl-3.0-standalone.html
+|*|
+|*|  Syntaxes:
+|*|
+|*|  * docCookies.setItem(name, value[, end[, path[, domain[, secure]]]])
+|*|  * docCookies.getItem(name)
+|*|  * docCookies.removeItem(name[, path[, domain]])
+|*|  * docCookies.hasItem(name)
+|*|  * docCookies.keys()
+|*|
+\*/
+
+var docCookies = {
+  getItem: function (sKey) {
+    if (!sKey) { return null; }
+    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+  },
+  setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+    if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+    var sExpires = "";
+    if (vEnd) {
+      switch (vEnd.constructor) {
+        case Number:
+          sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+          break;
+        case String:
+          sExpires = "; expires=" + vEnd;
+          break;
+        case Date:
+          sExpires = "; expires=" + vEnd.toUTCString();
+          break;
+      }
+    }
+    document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "") + "; SameSite=None";
+    return true;
+  },
+  removeItem: function (sKey, sPath, sDomain) {
+    if (!this.hasItem(sKey)) { return false; }
+    document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "");
+    return true;
+  },
+  hasItem: function (sKey) {
+    if (!sKey) { return false; }
+    return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+  },
+  keys: function () {
+    var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+    for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) { aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]); }
+    return aKeys;
+  }
+};;
+var pnWeatherCookieHandler = {
+
+	setPostmediaAdConfig: function() {
+
+		if( typeof Postmedia !== 'undefined' ){
+
+			// Check if pn_weather cookie exists
+			var weather_data = docCookies.getItem('pn_weather');
+
+			weather_data = JSON && JSON.parse( weather_data ) || jQuery.parseJSON( weather_data );
+
+			var pn_weather = new Array();
+
+			if ( null != weather_data ) {
+
+				pn_weather['wc'] = weather_data.wc;
+
+				pn_weather['wt'] = weather_data.wt;
+
+				pn_weather['ww'] = weather_data.ww;
+
+				return pn_weather;
+
+			} else if ( typeof pn_Gpt_Weather !== 'undefined' ) { // get the default city and provinces weather
+
+				// if Weather Ads are enabled, then pn_Gpt_Weather is written in the head 
+				// and contains the default weather based on the province and city defined in the dfp settings 
+
+				pn_weather['wc'] = pn_Gpt_Weather.wc
+
+				pn_weather['wt'] = pn_Gpt_Weather.wt;
+
+				pn_weather['ww'] = pn_Gpt_Weather.ww;
+
+				return pn_weather;
+
+			} else {
+
+				return null;
+
+			}
+
+		}
+
+	}
+
+}
+
+
+;
+/*
+ *
+ * Utility functions
+ *
+ * @author rclarkson
+ *
+ */
+Postmedia.Utils = (function ($) {
+
+    var isProduction = IsProduction(),
+        userAgent = GetUserAgent();
+
+    function Init() {
+        // Add Constructor Code
+    }
+
+    function Log(a) {
+
+        if(userAgent !== "msie" && isProduction == false){
+            console.log(a);
+        }
+    }
+
+    /**
+    * Capitalizes first letter of string.
+    * Should Refactor into Utils.
+    * @return {String} - 'String' from 'string'
+    * @param {String} string
+    * @method capitaliseFirstLetter
+    */
+    function CapitaliseFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function GetScreenSize(){
+
+        var screenSize = "small";
+
+        if( $( window ).width() > 1200 ){
+
+		    screenSize = "large";
+
+	    }else if( $( window ).width() > 768 ){
+
+		    screenSize = "medium";
+
+	    }
+
+        return screenSize;
+    }
+
+    function GetImageSize(){
+
+        var imageSize = "320";
+
+        switch(GetScreenSize()){
+
+            case "large":
+                imageSize = "1200";
+                break;
+            case "medium":
+                imageSize = "768";
+                break;
+        }
+
+        if(Postmedia.Properties.isModal){
+            imageSize = "modal";
+        }
+
+        return imageSize;
+    }
+
+    function PreventKeyScroll() {
+
+        document.onkeydown = function (evt) {
+
+            evt = evt || window.event;
+            var keyCode = evt.keyCode;
+
+            if (keyCode >= 37 && keyCode <= 40) {
+                return false;
+            }
+
+        };
+    }
+
+    function GetQueryString(name) {
+
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        
+        var regexS = "[\\?&]" + name + "=([^&#]*)",
+        	regex = new RegExp(regexS),
+        	results = regex.exec(window.location.href);
+        
+        if (results == null)
+            return "";
+        else
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+	function GetHashTagString(name) {
+
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        
+        var regexS = "[\\#&]" + name + "=([^&#]*)",
+        	regex = new RegExp(regexS),
+        	results = regex.exec(window.location.href);
+        
+        if (results == null)
+            return "";
+        else
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    function GetUserAgent() {
+
+        var retAgent,
+	        userAgents = [];
+
+        userAgents = userAgents.concat(Postmedia.Properties.userAgents, Postmedia.Properties.mobileAgents);
+
+        for (var i = 0; i < userAgents.length; i++) {
+
+            if (navigator.userAgent.toLowerCase().indexOf(userAgents[i]) > -1) {
+                retAgent = userAgents[i];
+            }
+
+        }
+
+        return retAgent;
+    }
+
+    function IsMobile() {
+
+        var retVal = false;
+
+        for (var i = 0; i < Postmedia.Properties.mobileAgents.length; i++) {
+
+            if (navigator.userAgent.toLowerCase().indexOf(Postmedia.Properties.mobileAgents[i]) > -1) {
+                retVal = true;
+                break;
+            }
+        }
+
+        return retVal;
+    }
+
+    function GetDeviceWidth() {
+        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        return width;
+    }
+
+    function IsProduction() {
+
+        if (window.location.href.search("o.canada.com") != -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+	function GetRelativeTimeMessage(time, isApiFeed) {
+
+        var dateTime, temp;
+
+        // This is a bit of a hack because we have two different feeds with two different UTC dateTime formats
+        // API.twitter - Wed Jul 04 18:50:00 +0000 2012
+        // Search.twitter - Wed, 04 Jul 2012 18:51:59 +0000
+        // Needs to be done properly
+        if((isApiFeed || !userAgent === "msie")){
+
+	        dateTime = Date.parse(time);
+	        temp = new Date(time);
+
+        } else {
+
+	        dateTime = parseDate(time);
+	        temp = parseDate(time);
+
+        }
+
+        dateTime = Date.UTC(temp.getUTCFullYear(), temp.getUTCMonth(), temp.getUTCDate(), temp.getUTCHours(), temp.getUTCMinutes(), temp.getUTCSeconds()) / 60000;
+
+        var local = new Date(),
+	        local = Date.UTC(local.getUTCFullYear(), local.getUTCMonth(), local.getUTCDate(), local.getUTCHours(), local.getUTCMinutes(), local.getUTCSeconds()) / 60000,
+	        minutes = Math.floor(local - dateTime);
+
+        // Format the response message
+        if (minutes < 1) {
+            return 'less than a minute ago';
+        }
+        else if (minutes < 2) {
+            return '1 minute ago';
+        }
+        else if (minutes < 59) {
+            return (minutes + ' minutes ago');
+        }
+
+        var hours = Math.floor(minutes / 60);
+        if (hours < 2) {
+            return '1 hour ago';
+        }
+        else if (hours < 24) {
+            return (hours + ' hours ago');
+        }
+
+        var days = Math.floor(hours / 24);
+        if (days < 2) {
+            return '1 day ago';
+        }
+        return (days + ' days ago');
+    }
+
+    function parseDate(str) {
+        var v = str.split(' ');
+        return new Date(Date.parse(v[1]+" "+v[2]+", "+v[5]+" "+v[3]+" UTC"));
+    }
+
+    function CleanForJS(s){
+
+        s = s.replace(/'/g, "\\\'");
+        s = s.replace(/\"/g, "\\\'");
+
+        return s;
+    }
+
+    function PopupCenter(pageUrl, title,w,h) {
+
+        var left = (screen.width/2)-(w/2),
+        	top = (screen.height/2)-(h/2),
+        	targetWin = window.open( pageUrl, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left );
+
+        Log(pageUrl);
+
+    }
+
+    return {
+        Init: Init,
+        Log: Log,
+        CapitaliseFirstLetter: CapitaliseFirstLetter,
+        CleanForJS : CleanForJS,
+        GetQueryString: GetQueryString,
+		GetHashTagString:GetHashTagString,
+        GetDeviceWidth: GetDeviceWidth,
+        PreventKeyScroll: PreventKeyScroll,
+        IsMobile: IsMobile,
+        GetScreenSize : GetScreenSize,
+        GetImageSize : GetImageSize,
+		GetRelativeTimeMessage : GetRelativeTimeMessage,
+        isProduction: isProduction,
+        PopupCenter: PopupCenter,
+        userAgent : userAgent
+    };
+
+} (jQuery));;
+/*
+ *
+ * Handles Ajax Requests
+ *
+ * @author rclarkson
+ * @todo code the damn thing!
+ *
+ */
+Postmedia.Data = (function ($) {
+
+    function Init() {
+        // Add Constructor Code
+    }
+
+    /*
+    *
+    * Makes AJAX call using jQuery getScript.
+    * @param {String} - API being called
+    * @param {Object} - callback function called on ajaxSuccess
+    * @method GetScript
+    *
+    */
+    function GetScript(service, callback) {
+
+        $.getScript(service, function () {
+            callback();
+        });
+    }
+
+    function Ajax(service, callbackFunction, dataType, callType, jsonData, context) {
+
+        // Should make some defaults here
+        // Log(decodeURI(service));
+
+        $.ajax({
+            url: service,
+            data: jsonData,
+            type: callType,
+            dataType: dataType,
+            async: true,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data, textStatus, XMLHttpRequest) {
+
+                if (data !== null) {
+                    callbackFunction(data, context);
+                } else {
+                    data = {};
+                    callbackFunction(data, context);
+                }
+
+                Log("Postmedia.Data.AjaxCall : success():  " + decodeURI(service));
+            },
+
+            error: function (data, textStatus, errorThrown) {
+
+                data.PMerror = true;
+                data.PMlength = 0;
+                data.PMmsg = data.Message;
+
+                callbackFunction(data, context);
+                Log("Postmedia.Data.AjaxCall : error():<br><br>Details:<br>" + "XHR: " + decodeURI(service) + " XHRStatus: " + textStatus + "XHRError: " + errorThrown);
+            },
+            statusCode: {
+                400: function() {
+                    data.PMerror = true;
+                    data.error = "400";
+                    callbackFunction(data, context);
+                }
+            },
+            complete: function (XMLHttpRequest, textStatus) {
+                Log("Postmedia.Data.AjaxCall : complete():  " + decodeURI(service));
+            }
+
+        });
+
+    }
+
+    function GetCachedScript(url, options) {
+
+        options = $.extend(options || {}, {
+            dataType: "script",
+            cache: true,
+            url: url
+        });
+
+        return $.ajax(options);
+
+    }
+
+    function AppendScript(src, node) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = src;
+        $(node).append(script);
+    }
+
+    function WriteScript(src, isInline) {
+
+        // REFACTOR
+        if (isInline) {
+            document.write('<scr' + 'ipt type="text/javascript">' + src + '<\/sc' + 'ript>');
+        } else {
+            document.write('<scr' + 'ipt type="text/javascript" src="' + src + '"></scr' + 'ipt>');
+        }
+    }
+
+    /*
+    *
+    * Checks the returned JSON object for errors. Removes the ajax throbber gif.
+    * @param {Object} response - returned JSON object
+    * @return {Boolean}
+    * @method dataOk
+    *
+    */
+    function DataOk(response) {
+        // $m.utils.hideAjaxLoader();
+        // return response.ResponseBatch.Messages[0].Message == "ok" ? true : false;
+    }
+
+    function Log(a) {
+
+         Postmedia.Utils.Log(a);
+
+    }
+
+    return {
+        Init: Init,
+        AppendScript: AppendScript,
+        GetScript: GetScript,
+        GetCachedScript: GetCachedScript,
+        WriteScript: WriteScript,
+        Ajax : Ajax
+    };
+
+} (jQuery));;
+document.documentElement.className = document.documentElement.className.replace( /(\s|^)no-js(\s|$)/, '' );;
+(function ($) {
+	"use strict";
+	$(function () {
+		$('#sailthru-modal').hide();
+
+		$( ".show_shortcode" ).on( "click", function( e ) {
+			e.preventDefault();
+			var posTop = $(this).offset().top;
+			var modal = $( "#sailthru-modal");
+   		 	modal.css("top", '100px');
+   		 	modal.css("left", Math.max(0, (($(window).width() - $(modal).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+
+   		 	$('.sailthru_shortcode_hidden .sailthru-signup-widget-close').show();
+   		 	modal.fadeIn();
+
+		});
+
+		$('#sailthru-modal .sailthru-signup-widget-close').click(function(){
+			$('#sailthru-modal ').fadeOut();
+		}) ;
+
+		// when a user clicks subscribe
+		$(".sailthru-add-subscriber-form").submit( function( e ){
+
+			e.preventDefault();
+			var user_input = $(this).serialize();
+			var form = $(this);
+			$.ajax({
+                url: sailthru_vars.ajaxurl,
+                type: 'post',
+                data: user_input,
+                dataType: "json",
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (data, status) {
+                    if (data.success == false) {
+                        $('#' + form.attr('id') + " .sailthru-add-subscriber-errors").html(data.message);
+                    } else {
+                        $('#sailthru-modal .sailthru-signup-widget-close').fadeIn();
+                        $(form).html('');
+                        $(form).parent().find(".success").show();
+                    }
+                }
+            } );
+
+		});
+
+
+	});
+}(jQuery));
+;
+var videoItem = 0;
+if ( typeof videoCollection === 'undefined' ) {
+	videoCollection = [];
+}
+
+function display_video_overlay( imgId, vidId, vidTitle, pubId, divId, shareUrl, isMobile, videoWidth, videoHeight ) {
+	function videoItems( imgId, vidId, vidTitle, pubId, divId, shareUrl, isMobile, videoWidth, videoHeight ) {
+		this.container = 'container-' + imgId;
+		this.videoContainer = 'pn_video_' + divId;
+		this.linkId = 'link-' + imgId;
+		this.imgId = 'img-' + imgId;
+		this.vidId = vidId;
+		this.pubId = pubId;
+		this.vidTitle = vidTitle;
+		this.shareUrl = shareUrl;
+		this.isMobile = isMobile;
+		this.width = videoWidth;
+		this.height = videoHeight;
+	};
+
+	videoCollection[ videoItem ] = new videoItems( imgId, vidId, vidTitle, pubId, divId, shareUrl, isMobile, videoWidth, videoHeight );
+
+	var autoplay = 'true',
+		videoId = videoCollection[ videoItem ].vidId,
+		targetId = videoCollection[ videoItem ].videoContainer,
+		publicationId = videoCollection[ videoItem ].pubId,
+		shareUrl = typeof videoCollection[ videoItem ].shareUrl !== 'undefined' ? videoCollection[ videoItem ].shareUrl : '';
+
+	if ( 'undefined' === typeof videoCollection[ videoItem ].isMobile || '' == videoCollection[ videoItem ].isMobile ) {
+		videoCollection[ videoItem ].isMobile = 'false';
+	}
+
+	if ( 'true' == videoCollection[ videoItem ].isMobile ) {
+		autoplay = 'false';
+	}
+
+	function isIE() {
+		var browser = navigator.userAgent.toLowerCase();
+		return ( browser.indexOf( 'msie' ) != -1 ) ? parseInt( browser.split( 'msie' )[1] ) : false;
+	}
+
+	if ( isIE() ) {
+		videoCollection[ videoItem ].shareUrl = 'false';
+	}
+
+	function addPlayer( targetId, videoId ) {
+		var pScript,
+			appServiceUrl = PostmediaVO.appServiceUrl;
+
+		// Validate appService URL
+		if ( -1 == appServiceUrl.indexOf( 'app.canada.com/video/video.svc' ) && -1 == appServiceUrl.indexOf( 'appt.staging.canada.com/video/video.svc' ) &&
+			-1 == appServiceUrl.indexOf( 'app2.qa.canada.com' ) && -1 == appServiceUrl.indexOf( 'app2.dev.canada.com' ) ) {
+			appServiceUrl = 'https://app.canada.com/video/video.svc';
+		}
+
+		pScript = appServiceUrl;
+		pScript += '/loader/?videoId=' + encodeURIComponent( videoId );
+		pScript += '&autoplay=' + encodeURIComponent( autoplay );
+		pScript += '&shareURL=' + encodeURIComponent( shareUrl );
+		pScript += '&deferLoad=true';
+		pScript += '&targetId=' + encodeURIComponent( targetId );
+		if ( '' != publicationId ) {
+			pScript = pScript + '&pubId=' + encodeURIComponent( publicationId );
+		}
+		jQuery.getScript( pScript );
+	}
+
+	addPlayer( targetId, vidId );
+	videoItem++;
+}
+
+function loadPlayer( parentFigure, index ) {
+	videoCollection[ index ].width = parentFigure.width();
+	videoCollection[ index ].height = parentFigure.height();
+
+	PmVids.Loader[ videoCollection[ index ].videoContainer ].Config.player.autoMute = false;
+	PmVids.Loader[ videoCollection[ index ].videoContainer ].RenderPlayer();
+}
+
+function swapImageWithVideo( parentFigure, index ) {
+	parentFigure.find( '#' + videoCollection[ index ].container ).css( { 'width': videoCollection[ index ].width, 'height': videoCollection[ index ].height } );
+	parentFigure.find( '.videoParentContainer' ).css( { 'height': videoCollection[ index ].height } );
+	parentFigure.find( '#' + videoCollection[ index ].imgId ).css( { 'display': 'none' } );
+}
+
+jQuery( document ).ready(function() {
+	jQuery( 'button.play-button' ).css( { 'pointer-events': 'auto' } );
+
+	var playButtons = jQuery( '.play-button' );
+	playButtons.each(function( index ) {
+		var playButton = jQuery( this );
+		var parentArticle = playButton.parents( 'article' );
+		var parentFigure = parentArticle.find( 'figure.thumbnail' );
+		var parentFigureImg = parentFigure.find( 'img#' + videoCollection[ index ].imgId );
+		var playControls = playButton.add( parentFigureImg );
+
+		playControls.on( 'click', function() {
+			loadPlayer( parentFigure, index );
+			swapImageWithVideo( parentFigure, index );
+
+			var hideElements = parentArticle.find( '.hide-on-video-play' );
+			if ( hideElements.length > 0 ) {
+				hideElements.css( { 'display': 'none' } );
+			}
+
+			playButton.css( { 'display': 'none' } );
+
+			var header = playButton.parent( 'header' );
+			if ( header.length > 0 ) {
+				if ( ! playButton.parents( 'li' ).hasClass( 'mobile-video' ) ) {
+					header.css( { 'display': 'none' } );
+				}
+			} else {
+				parentFigure.find( '.vjs-control-content' ).css( { 'display': 'none' } );
+			}
+
+			jQuery( '#' + videoCollection[ index ].container ).addClass( 'inline-video-background' );
+		});
+	});
+});
+
+jQuery( window ).bind( 'resize orientationchange', function() {
+	var inlineVideoBackgrounds = jQuery( '.inline-video-background' );
+	inlineVideoBackgrounds.each(function() {
+		var inlineVideoBackground = jQuery( this );
+		var height = inlineVideoBackground.find( 'img' ).outerHeight();
+		inlineVideoBackground.height( height );
+	});
+});
+;
+function pnLoadVideo( player_path, video_id, div_id, width, height, options ) {
+    // If no video id, there's nothing to do
+	if( typeof video_id === 'undefined' ) {
+		return;
+    }
+    if( typeof div_id === 'undefined' ) {
+        return;
+    }
+    if ( typeof player_path === 'undefined' ) {
+        player_type = 'videos';
+    }
+    var params = {
+        target: div_id,
+        width: width,
+        height: height
+    }
+
+	if ( 'undefined' !== typeof options ) {
+		if ( 'is_mobile' in options ) {
+			delete options['is_mobile']; // don't want this used as a querystring param
+		}
+	}
+
+	var url = PN_VO.appServiceUrl + '/media/' + player_path + '/' + video_id + '/player?';
+	for (var key in params) {
+		if (params[key] != '' && params[key] != 'undefined' && typeof params[key] != undefined ) {
+			url += key + '=' + escape(params[key]) + '&';
+		}
+    }
+	options = options || {};
+	for ( var key in options ) {
+		if ( options.hasOwnProperty( key ) ) {
+			url += key + '=' + escape( options[ key ] ) + '&';
+		}
+	}
+
+    var pv = document.createElement('script');
+    pv.type = 'text/javascript';
+    pv.async = true;
+    pv.src = url.slice(0, -1);
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(pv, s);
+}
+;
+(function($) {
+	$( document ).ready( function() {
+		var windowWidth = $( window ).width();
+		var stickyStart = false;
+		var isSticky = false;
+		var sidebar = $( '.l-constrained > .l-sidebar' );
+		var stickyLeftPos;
+		var featuredPlayerWrap = $( '.featured-video' );
+		var featuredPlayerID;
+		var featuredPlayerObj;
+		var featuredPlayer;
+		var videoTitle;
+		var videoTitleDOM;
+		var videoDurationDOM;
+		var closeBtnDOM;
+		var startingWidth;
+		var startingHeight;
+		var stickyDesktopWidth = 300;
+		var stickyDesktopHeight = 190;
+
+		if( featuredPlayerWrap[0] && !( windowWidth > 767 && !( sidebar[0] ) ) && ! ( $( '.featured-video .s2nFriendlyFrame' )[0] ) ) { //don't load sticky player when S2N player is in featured video position
+			$( window ).on( 'scroll', initSticky );
+			$( window ).on( 'scroll', stickyVideo );
+		}
+
+		function initSticky() {
+			var playerState;
+
+			if( $( window.pmplayers )[0] ) {
+				featuredPlayerID = $( '.featured-video iframe' ).attr('id');
+				featuredPlayerObj = window.pmplayers[ "pmPlayer_" + featuredPlayerID ];
+				featuredPlayer = $( featuredPlayerWrap.children()[0] );
+				closeBtnDOM = $( '<a>' , { 'class' : 'sticky-close-btn', 'href': 'javascript:void(0)', 'title' : 'Close Player' } );
+				startingWidth = featuredPlayer.width();
+				startingHeight = featuredPlayer.height();
+				featuredPlayerWrap.css( { 'min-height' : startingHeight } );
+
+				if (typeof featuredPlayerObj.player.getPlayerState === "function") {
+					playerState = featuredPlayerObj.player.getPlayerState();
+				} else {
+					playerState = -1;
+				}
+
+				closeBtnDOM.prependTo( featuredPlayer ).on( 'click' , function( evt ) {
+					featuredPlayerObj.pauseVideo();
+					removeStickyVideo();
+					$( window ).off( 'scroll', stickyVideo );
+					$( window ).off( 'resize', onWindowResizeListener );
+					featuredPlayerObj.player.removeEventListener( 'onStateChange', onStateChangeListener );
+				});
+
+				videoTitle = '';
+				videoTitleDOM = $( '<div>' , { 'class' : 'sticky-video-title'} );
+				videoDurationDOM = $( '<span>' , { 'class' : 'sticky-video-duration'} );
+				videoTitleDOM.prependTo( featuredPlayer );
+				setVideoTitleAndDuration( playerState );
+
+				if( playerState !== YT.PlayerState.CUED ) {
+					stickyStart = true;
+				}
+
+				if( windowWidth > 767 ) {
+					stickyLeftPos = sidebar.offset().left;
+				}
+
+				featuredPlayerObj.player.addEventListener( 'onStateChange', onStateChangeListener );
+
+				$( window ).resize( onWindowResizeListener );
+
+				$( window ).off( 'scroll', initSticky );
+			}
+		}
+
+		function onStateChangeListener( evt ) {
+			if ( evt.data === YT.PlayerState.UNSTARTED || evt.data === YT.PlayerState.PLAYING ) {
+				stickyStart = true;
+			}
+
+			setVideoTitleAndDuration( evt.data );
+		}
+
+		function onWindowResizeListener( evt ) {
+			windowWidth = $( window ).width();
+			if( windowWidth > 767 ) {
+				stickyLeftPos = $('.l-constrained > .l-sidebar').offset().left;
+
+				if( isSticky ){
+					featuredPlayer.css( { 'left': stickyLeftPos } );
+				}
+			} else {
+				startingWidth = featuredPlayer.width();
+				startingHeight = featuredPlayer.height();
+				featuredPlayerWrap.css( { 'min-height' : startingHeight } );
+			}
+		}
+
+		function setVideoTitleAndDuration( state ) {
+			var videoDuration;
+
+			if( state === YT.PlayerState.UNSTARTED ) {
+				videoTitle = 'Advertisement';
+				videoTitleDOM.text( videoTitle );
+			} else {
+				videoTitle = featuredPlayerObj.player.getVideoData().title;
+				videoDuration = featuredPlayerObj.player.getDuration();
+				videoTitleDOM.html( videoTitle );
+				if ( videoDuration > 0 ) {
+					var videoDurHr = 0;
+					var videoDurMin = 0;
+					var videoDurSec = 0;
+
+					if( videoDuration >= 3600 ) {
+						videoDurHr = Math.floor( videoDuration/3600 );
+						videoDuration = videoDuration - videoDurHr * 3600;
+					}
+					if( videoDuration >= 60 ) {
+						videoDurMin = Math.floor( videoDuration/60 );
+						videoDuration = videoDuration - videoDurMin * 60;
+					}
+					videoDurSec = Math.floor( videoDuration );
+
+					if (videoDurSec < 10 ) {
+						videoDurSec = '0' + videoDurSec;
+					}
+
+					if( videoDurHr > 0 ) {
+						if( videoDurMin < 10 ) {
+							videoDurMin = '0' + videoDurMin;
+						}
+						videoDurationDOM.html( videoDurHr + ':' + videoDurMin + ':' + videoDurSec );
+					} else {
+						videoDurationDOM.html( videoDurMin + ':' + videoDurSec );
+					}
+					videoTitleDOM.append( videoDurationDOM );
+				}
+			}
+		}
+
+		function stickyVideo() {
+			var scrollTop;
+			var stickyStartPos;
+
+			if( stickyStart ) {
+
+				stickyStartPos = featuredPlayerWrap.offset().top - $( '.l-header' ).outerHeight( true );
+
+				if ( windowWidth > 767 ) {
+					stickyStartPos =  stickyStartPos + ( featuredPlayerWrap.height() / 2 );
+				}
+
+				scrollTop = $(window).scrollTop();
+
+				if( isSticky ){
+					if( scrollTop <= stickyStartPos ) {
+						removeStickyVideo();
+						isSticky = false;
+					}
+				} else {
+					if( scrollTop > stickyStartPos ) {
+						addStickyVideo() ;
+						isSticky = true;
+					}
+				}
+			}
+		}
+
+		function addStickyVideo() {
+			featuredPlayerWrap.addClass( 'sticky-video' );
+			featuredPlayer.attr( 'style', '');
+
+			if( windowWidth > 767 ) {
+				featuredPlayerObj.player.setSize( stickyDesktopWidth, stickyDesktopHeight );
+				featuredPlayer.css( { 'left': stickyLeftPos } );
+			}
+		}
+
+		function removeStickyVideo() {
+			featuredPlayerWrap.removeClass( 'sticky-video' );
+			featuredPlayer.attr( 'style', '');
+			featuredPlayerObj.player.setSize( startingWidth, startingHeight );
+		}
+	});
+})(jQuery);
+;
+function pm_weather_get_postal(e){var t=e.length;return t>6?e=e.substr(0,6):t>3&&6>t&&(e=e.substr(0,3)),e}function pm_weather_toggle_settings(){jQuery(".weather.cat-head.blue").toggleClass("customize-weather").children(".weather-proof").toggleClass("is-weather"),setTimeout(function(){jQuery(".weather h2.weather span").prepend("Customize your Weather")},400),jQuery(".weather h2.weather span").text("")}function pm_traffic_toggle_settings(){jQuery(".traffic").toggleClass("customize-weather").children(".traffic-wrap").toggleClass("is-weather"),"Traffic"==jQuery(".traffic-top h2.traffic span").text()?setTimeout(function(){jQuery(".traffic-top h2.traffic span").append(" Alerts")},400):jQuery(".traffic-top h2.traffic span").text("Traffic")}function pm_layouts_settings(){}function pm_weather_check_postal(){var e=pm_weather_postal.value.length;e>6&&(pm_weather_postal.value=pm_weather_postal.value.substr(0,6));for(var t="",a=0;e>a;a++){var o=pm_weather_postal.value.substr(a,1);if(0==a%2)var n=new RegExp(/[a-z]/i);else var n=new RegExp(/[0-9]/i);var r=n.test(o);if(!r){document.getElementById("pm_weather_message").style.visibility="visible";break}document.getElementById("pm_weather_message").style.visibility="hidden",t+=o.toUpperCase()}pm_weather_postal.value=t}function pm_weather_json_request(e,t){""!=t&&(pm_geolocation[2]=t,pm_geolocation[3]="",pm_geolocation[4]="");var a={action:"json_weather",postal:pm_geolocation[2],city:pm_geolocation[3],prov:pm_geolocation[4],mode:e,nonce:postmedia_geolocation.nonce};jQuery.post('/wp-admin/admin-ajax.php',a,function(){},"jsonp")}function json_weather_callback(e){if(mode_=e.mode,""==pm_geolocation[3]&&(pm_geolocation[3]=e.city,pm_geolocation[4]=e.province,cki_=pm_geolocation.join(","),pm_weather_cookie_set("pm_latlng",cki_,60)),"undefined"!=typeof weather_page&&"basicbtn"==mode_&&!0===weather_page&&location.reload(),"basic"==mode_||"basicbtn"==mode_){var t=e.image;!0===pn_is_msie&&(t=t.replace(".svg",".png")),document.getElementById("pm_weather_body").innerHTML=e.location,document.getElementById("pm_weather_temp").innerHTML=e.temp+"&deg;<sup>C</sup>",document.getElementById("pm_weather_real").innerHTML=e.real+"&deg;<sup>C</sup>",document.getElementById("pm_weather_image").src=t,""!=e.details?document.getElementById("pm_weather_details").innerHTML=e.details:(document.getElementById("pm_weather_details").style.display="none",document.getElementById("pm_weather_temp").style.height="34px",document.getElementById("pm_weather_templi").style.paddingTop="6px",document.getElementById("pm_weather_temp").style.fontSize="30px")}if("sponsored"==mode_){var a=5*Math.round(e.temp/5),o=e.pop>50?1:0;document.getElementById("pm_weather_banner").innerHTML=e.temp+"&deg;&nbsp;"+e.details,document.getElementById("pm_weather_photo").src=weather_path+"weather_"+a+"_"+o+".jpg"}}function pm_weather_cookie_set(e,t,a){var o=new Date;o.setDate(o.getDate()+a);var n=escape(t)+(null===a?"":"; expires="+o.toUTCString());document.cookie=e+"="+n}function pm_weather_cookie_get(){var e=Array(),t=document.cookie;cki_=t.split(";");for(var a=0;a<cki_.length;a++)key_=cki_[a].split("=")[0],"undefined"!=typeof key_&&(key_=jQuery.trim(key_),key_=unescape(key_),val_=cki_[a].split("=")[1],"undefined"!=typeof val_&&(val_=jQuery.trim(val_),val_=unescape(val_),e[key_]=val_));return e}"function"!=typeof String.prototype.trim&&(String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")});var pn_is_msie=!1,pm_geolocation=Array("","","","",""),ajaxurl="",page_loaded=!1,weather_page="";jQuery(document).ready(function(){weather_page = window.location.href;if(1>weather_page.indexOf('/weather/')){pm_weather_json_request( 'basicbtn', '' )};if("undefined"!=document.getElementById("pm_weather_postal")){jQuery("#pm_weather_loc_fsa_label").click(function(){jQuery("#pm_weather_loc_fsa_label").hide()});var e=window.navigator.userAgent,t=e.indexOf("MSIE 7"),a=e.indexOf("MSIE 8");page_loaded=!0,pn_is_msie=t>0||a>0?!0:!1;var o=document.getElementById("pm_weather_postal");jQuery("#pm_weather_postal").keyup(function(e){pm_weather_check_postal();var t=e||window.event;if(13===t.keyCode){var a=pm_weather_get_postal(o.value);pm_weather_json_request("basicbtn",a),pm_weather_toggle_settings()}}),jQuery("#pm_weather_postal_btn").click(function(){var e=o.value,t=e.length;t>6?e=e.substr(0,6):t>3&&6>t&&(e=e.substr(0,3)),pm_weather_json_request("basicbtn",e),pm_weather_toggle_settings()}),jQuery("#pm_weather_page_postal_btn").click(function(){var e=o.value,t=e.length;t>6?e=e.substr(0,6):t>3&&6>t&&(e=e.substr(0,3)),pm_weather_json_request("page",e)}),jQuery("#pm_weather_settings").on("click",function(e){pm_weather_toggle_settings(e)}),jQuery("#pm_traffic_alerts").on("click",function(e){pm_traffic_toggle_settings(e)}),jQuery("#pm_weather_tap").on("click",function(){function e(e){pm_weather_json_request("basic",e.coords.latitude,e.coords.longitude),pm_weather_toggle_settings()}function t(){document.getElementById("pm_weather_loc_fsa").style.display="block"}navigator.geolocation?navigator.geolocation.getCurrentPosition(e,t):document.getElementById("pm_weather_loc_fsa").style.display="block"})}});;

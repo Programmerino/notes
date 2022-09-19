@@ -1,0 +1,1 @@
+Loki's Wager generally refers to situations in which a general point is thrown out due to the inability to strictly define a part of the point. See [[abortion arguments#Loki's Wager]] for an example.

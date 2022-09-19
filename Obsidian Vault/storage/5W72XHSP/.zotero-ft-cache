@@ -1,0 +1,122 @@
+
+
+Explorer
+
+Yuno
+.fable
+.github.disabled
+.idea
+.ionide
+.vscode
+bin
+docs
+writeup.md
+obj
+tests
+.gitignore
+default.nix
+flake.lock
+flake.nix
+Folder.DotSettings.user
+FSharp.Core.xml
+nuget.config
+packages.lock.json
+Program.fs
+README.md
+result
+shell.nix
+Yuno.fsproj
+Yuno.sln
+Outline
+Timeline
+writeup.md
+
+docs
+writeup.md
+# Yuno
+## Grammar
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+#   Yuno
+##   Ideas
+*  Rust-like inferred lifetimes
+*  Automatic/deterministic memory management
+*  Inferred static types
+*  Under-the-mood automatic mutation of 
+cache-friendly data strctures
+*  Non-performant operations are made 
+explicit
+*  As good as possible TypeScript/WASM 
+binding integration
+* 
+##   Grammar
+$$ \ begin { array } { rcl }
+\ mathbf { Expr }  &  \rightarrow  & Const ( \ mathbf
+{ Double } )  \\
+& | & Ident ( \ mathbf { Identifier } ) \\
+& | & Plus ( \ mathbf { Expr } ,  \ mathbf { Expr } ) \\
+& | & Div ( \ mathbf { Expr } ,  \ mathbf { Expr } )  \\
+& | & Geq ( \ mathbf { Expr } ,  \ mathbf { Expr } )  \\
+& | & And ( \ mathbf { Expr } ,  \ mathbf { Expr } )  \\
+& | & IfThenElse ( \ mathbf { Expr } ,  \ mathbf
+{ Expr } ,  \ mathbf { Expr } ) \\
+& | & Let ( \ mathbf { Identifier } ,  \ color { red }
+{ \ mathbf { Type } } ,  \ mathbf { Expr } ,  \ mathbf
+{ Expr } ) \\
+& | & FunDef ( \ mathbf { Identifier } ,  \ color
+{ red } { \ mathbf { Type } } ,  \ mathbf { Expr } )  \\
+& | & FunCall ( \ mathbf { Expr } ,  \ mathbf { Expr } )  
+\\
+& | &  \ color { blue } { UnitConst }  &  \leftarrow  
+\ text { written as }  \  ( )  \\
+& | &  \ color { blue } { NewRef ( \ mathbf { Expr } ) }  \\
+& | &  \ color { blue } { DeRef ( \ mathbf { Expr } ) }  \\
+& | &  \ color { blue } { AssignRef ( \ mathbf { Expr } , 
+\ mathbf { Expr } ) }  &  \leftarrow   \ text { written 
+as }  \ e_ 1  := e_ 2  \\
+& | &  \ color { blue } { Record ( List [ ( Identifier, 
+\ mathbf { Expr } ) ] ) }  &  \leftarrow   \ text
+{ written as }  \ \ { \ overline { x=e } \ } , \  \ text
+{ e.g., }  \ \ { x_ 1 =e_ 1 , x_ 2 =e_ 2 ,  \ldots , 
+x_i=e_i,  \ldots  \ }  \\
+\ end { array } $$
+& | & \color{blue}{Record(List[(Identifier, \mathbf{Expr})])} & \leftarrow \text{written as} \ \{\overline{x=e}\}, \ \text{e.g.,} \ \{x_1=e_1, x_2=e_2, \ldots, x_i=e_i, \ldots \} \\ \end{array}$$
+Preview writeup.md
+
+0 0
+Layout: U.S.
+Markdown
+LF
+UTF-8
+Spaces: 4
+Ln 30, Col 14
+Project loading failed
+Error: GitHub Copilot requires VS Code 1.57+. Please update your VS Code

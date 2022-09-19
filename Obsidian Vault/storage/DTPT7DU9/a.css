@@ -1,0 +1,125 @@
+#site-navigation ul a {
+  font-size: 14px;
+}
+
+#site-navigation ul li {
+    width: 9% !important;
+}
+
+#template-homepage .banner
+background: #fff !Important;
+}
+
+#main .entry-content ul li {
+    text-indent: 0em !important;
+}
+
+@media (max-width: 768px){
+  #top-navigation {
+margin-top:0px;
+}
+#top-navigation li {
+    padding: 4px;
+}
+.site-header .navbar-toggle {
+    display: inline-block;
+    width: 90%;
+    margin-top:-30px;
+}
+.sub-box-top {
+    margin-bottom: 20px;
+}
+}
+@media (max-width: 990px){
+#top-navigation ul {
+    text-align: center !important;
+}
+}
+
+/* Enter Your Custom CSS Here */
+
+.nav-top {
+  text-align:right; 
+  margin-bottom:20px; 
+}
+
+.nav-top a {
+  font-family: 'Cinzel', serif; 
+  font-size: 15px !important; 
+  color:#000; !important;
+  font-weight: bold;
+    text-align:right; 
+}
+
+.nav-top a:hover {
+  color:#ff9e0f;
+}
+
+.fsField {
+  color:#000;
+}
+
+input, button, select, textarea {
+    border-radius: 5px;
+    border: none;
+    padding: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.fsboxshadow .fsBody .fsForm {
+    box-shadow: none !important;
+  color:#fff !important;
+}
+
+.fsForm .fsLabel {
+    width: 100%;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.fsForm .fsSubmit {
+    padding: 0 !important;
+    margin-top: 0 !important;
+}
+.fsPagination {
+    margin: 0 !important;
+}
+
+.fsSubmit input.fsSubmitButton {
+  background:#fff !important;
+  color:#ff9e0f !important;
+  font-size: 20px !important;
+  border-radius: 10px !important;
+  padding:14px !important;
+}
+
+.wysija-input {
+  background-color:#d3d3d3 
+}
+
+.sub-box-top {
+  padding: 14px 10px;
+  background: -moz-linear-gradient(top, #7db9e8 0%, #2989d8 28%, #415191 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #7db9e8 0%,#2989d8 28%,#415191 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #7db9e8 0%,#2989d8 28%,#415191 100%);
+}
+
+@media (max-width: 995px){
+.sub-box-top {
+    margin-left: 0;
+    font-size: 16px !important;
+    line-height: 40px !important;
+    text-align: center;
+    margin-right: 25px;
+}
+  .nav-top {
+    text-align: center !important;
+}
+}
+
+.entry-content .ap-form-wrapper {
+    background: linear-gradient(to bottom, #7db9e8 0%,#2989d8 28%,#6676b7 100%);
+    background: -moz-linear-gradient(top, #7db9e8 0%, #2989d8 28%, #6676b7 100%);
+    background: -webkit-linear-gradient(top, #7db9e8 0%,#2989d8 28%,#6676b7 100%);
+}

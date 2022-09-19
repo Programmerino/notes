@@ -1,0 +1,1 @@
+The question of whether or not "x" is inherently immoral can be reduced into a rather simple problem (for Consequentialism): does x inherently entail a reduction in pleasure, or logically, is there an instance of x which does not cause a reduction of pleasure AKA all instances of x cause a reduction of pleasure.

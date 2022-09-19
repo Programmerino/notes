@@ -1,0 +1,356 @@
+
+#icon-0-dark .cls-1{fill:#3a82e4}#icon-0-dark .cls-2{fill:#0c1c2c} #icon-1-dark .cls-1{fill:#0c1c2c}#icon-1-dark .cls-2{fill:#3a82e4} #icon-1-light .cls-1{fill:#eef2ec}#icon-1-light .cls-2{fill:#3a82e4} #icon-2-dark .cls-1{fill:#3a82e4}#icon-2-dark .cls-2{fill:#0c1c2c} #icon-2-light .cls-1{fill:#3a82e4}#icon-2-light .cls-2{fill:#eef2ec} #icon-3 .cls-1{fill:#3a82e4}#icon-3 .cls-2{fill:#0c1c2c} #icon-3-light .cls-1{fill:#3a82e4}#icon-3-light .cls-2{fill:#eef2ec} #icon-4-dark .cls-1{fill:#0c1c2c}#icon-4-dark .cls-2{fill:#3a82e4} #icon-4-light .cls-1{fill:#eef2ec}#icon-4-light .cls-2{fill:#3a82e4} #icon-5-dark .cls-1{fill:#3a82e4}#icon-5-dark .cls-2{fill:#0c1c2c} #icon-5-light .cls-1{fill:#3a82e4}#icon-5-light .cls-2{fill:#eef2ec} #icon-6-dark .cls-1{fill:#0c1c2c}#icon-6-dark .cls-2{fill:#3a82e4} #icon-6-light .cls-1{fill:#eef2ec}#icon-6-light .cls-2{fill:#3a82e4} #icon-7-dark .cls-1{fill:#0c1c2c}#icon-7-dark .cls-2{fill:#3a82e4} #icon-7-light .cls-1{fill:#eef2ec}#icon-7-light .cls-2{fill:#3a82e4} #icon-8-dark .cls-1{fill:#0c1c2c}#icon-8-dark .cls-2{fill:#3a82e4} #icon-8-light .cls-1{fill:#eef2ec}#icon-8-light .cls-2{fill:#3a82e4} #icon-9-dark .cls-1{fill:#0c1c2c}#icon-9-dark .cls-2{fill:#3a82e4} .cls-1{fill:#edc955}.cls-2{fill:#3a82e4} #icon-action-hover .cls-1{fill:#d0533e}#icon-action-hover .cls-2{fill:#fff} #icon-action .cls-1{fill:#edc955}#icon-action .cls-2{fill:#d0533e} #icon-chat .cls-1{fill:#d0533e}#icon-chat .cls-2{fill:#edc955} .cls-1{fill:#0c1c2c} #icon-comma-light .cls-1{fill:#fff} #icon-cost .cls-1{fill:#d0533e}#icon-cost .cls-2{fill:#edc955} .cls-1{fill:#edc955}.cls-2{fill:#3a82e4} #icon-economy-hover .cls-1{fill:#d0533e}#icon-economy-hover .cls-2{fill:#fff} #icon-economy .cls-1{fill:#edc955}#icon-economy .cls-2{fill:#d0533e} .cls-1{fill:#3e83e0}.cls-2{fill:#edc955} #icon-education .cls-1{fill:#d0533e}#icon-education .cls-2{fill:#edc955} .cls-1{fill:#edc955}.cls-2{fill:#3e83e0} #icon-empowerment-hover .cls-1{fill:#d0533e}#icon-empowerment-hover .cls-2{fill:#fff} #icon-empowerment .cls-1{fill:#edc955}#icon-empowerment .cls-2{fill:#d0533e} .cls-1{fill:#edc955}.cls-2{fill:#3e83e0} #icon-event-hover .cls-1{fill:#d0533e}#icon-event-hover .cls-2{fill:#fff} #icon-event .cls-1{fill:#edc955}#icon-event .cls-2{fill:#d0533e} .cls-1{fill:#edc955}.cls-2{fill:#3e83e0} #icon-grants-hover .cls-1{fill:#d0533e}#icon-grants-hover .cls-2{fill:#fff} #icon-grants .cls-1{fill:#edc955}#icon-grants .cls-2{fill:#d0533e} .cls-1{fill:#edc955}.cls-2{fill:#3a82e4} .cls-1{fill:#edc955}.cls-2{fill:#3e83e0} #icon-internet-hover .cls-1{fill:#d0533e}#icon-internet-hover .cls-2{fill:#fff} #icon-internet .cls-1{fill:#edc955}#icon-internet .cls-2{fill:#d0533e} .cls-1{fill:#edc955}.cls-2{fill:#3a82e4} #icon-member-hover .cls-1{fill:#d0533e}#icon-member-hover .cls-2{fill:#fff} #icon-member .cls-1{fill:#edc955}#icon-member .cls-2{fill:#d0533e} .cls-1{fill:#edc955}.cls-2{fill:#3a82e4} #icon-mobile-hover .cls-1{fill:#d0533e}#icon-mobile-hover .cls-2{fill:#fff} #icon-mobile .cls-1{fill:#edc955}#icon-mobile .cls-2{fill:#d0533e} #icon-network-blue .cls-1{fill:#edc955}#icon-network-blue .cls-2{fill:#3a82e4} #icon-network-hover .cls-1{fill:#d0533e}#icon-network-hover .cls-2{fill:#fff} #icon-network .cls-1{fill:#edc955}#icon-network .cls-2{fill:#d0533e} .cls-1{fill:#edc955}.cls-2{fill:#3e83e0} #icon-partner-hover .cls-1{fill:#d0533e}#icon-partner-hover .cls-2{fill:#fff} #icon-partner .cls-1{fill:#edc955}#icon-partner .cls-2{fill:#d0533e} .cls-1{fill:#3a82e4}.cls-2{fill:#edc955} #icon-policy-hover .cls-1{fill:#fff}#icon-policy-hover .cls-2{fill:#d0533e} #icon-policy .cls-1{fill:#d0533e}#icon-policy .cls-2{fill:#edc955} .cls-1{fill:#edc955}.cls-2{fill:#3a82e4} #icon-security-hover .cls-1{fill:#d0533e}#icon-security-hover .cls-2{fill:#fff} #icon-security .cls-1{fill:#edc955}#icon-security .cls-2{fill:#d0533e} .cls-1{fill:#edc955}.cls-2{fill:#3a82e4} #icon-technology-hover .cls-1{fill:#d0533e}#icon-technology-hover .cls-2{fill:#fff} #icon-technology .cls-1{fill:#edc955}#icon-technology .cls-2{fill:#d0533e} .cls-1{fill:#0c1c2c} .cls-1{fill:#eef2ec} #icon-0-light .st0{display:none}#icon-0-light .st1{display:inline;fill:#d0e6da}#icon-0-light .st2{fill:#3a82e4}#icon-0-light .st3{fill:#eef2ec} #icon-0 .st0{display:none}#icon-0 .st1{display:inline;fill:#d0e6da}#icon-0 .st2{fill:#eeca4a}#icon-0 .st3{fill:#eef2ec} #icon-1 .st0{display:none}#icon-1 .st1{display:inline;fill:#d0e6da}#icon-1 .st2{fill:#eef2ec}#icon-1 .st3{fill:#eeca4a} #icon-2 .st0{display:none}#icon-2 .st1{display:inline;fill:#d0e6da}#icon-2 .st2{fill:#eeca4a}#icon-2 .st3{fill:#eef2ec} #icon-3 .st0{display:none}#icon-3 .st1{display:inline;fill:#d0e6da}#icon-3 .st2{fill:#eeca4a}#icon-3 .st3{fill:#eef2ec} #icon-4 .st0{display:none}#icon-4 .st1{display:inline;fill:#d0e6da}#icon-4 .st2{fill:#eef2ec}#icon-4 .st3{fill:#eeca4a} #icon-5 .st0{display:none}#icon-5 .st1{display:inline;fill:#d0e6da}#icon-5 .st2{fill:#eeca4a}#icon-5 .st3{fill:#eef2ec} #icon-6 .st0{display:none}#icon-6 .st1{display:inline;fill:#d0e6da}#icon-6 .st2{fill:#eef2ec}#icon-6 .st3{fill:#eeca4a} #icon-7 .st0{display:none}#icon-7 .st1{display:inline;fill:#d0e6da}#icon-7 .st2{fill:#eef2ec}#icon-7 .st3{fill:#eeca4a} #icon-8 .st0{display:none}#icon-8 .st1{display:inline;fill:#d0e6da}#icon-8 .st2{fill:#eef2ec}#icon-8 .st3{fill:#eeca4a} #icon-9-light .st0{display:none}#icon-9-light .st1{display:inline;fill:#d0e6da}#icon-9-light .st2{fill:#eef2ec}#icon-9-light .st3{fill:#3a82e4} #icon-9 .st0{display:none}#icon-9 .st1{display:inline;fill:#d0e6da}#icon-9 .st2{fill:#eef2ec}#icon-9 .st3{fill:#eeca4a} .st0{fill:#3a82e4}.st1{fill:#edc955} #icon-chat-hover .st0{fill:#fff}#icon-chat-hover .st1{fill:#d0533e} #icon-cost-hover .st0{fill:none}#icon-cost-hover .st1{fill:#fff}#icon-cost-hover .st2{fill:#d0533e} #icon-education-hover .st0{fill:#0c1c2c}#icon-education-hover .st1{fill:#d0533e}#icon-education-hover .st2{fill:#fff}
+Member Login
+
+    The Internet
+        About the Internet
+            History of the Internet
+            Facts & Figures
+            Who Makes the Internet Work
+            Glossary of Internet Terms
+    What we’re doing
+        Growing the Internet
+            Community Networks
+            Infrastructure and Community Development
+            Measuring the Internet
+        Strengthening the Internet
+            Encryption
+            Internet Way of Networking
+            MANRS
+            Open Standards Everywhere
+            Time Security
+    What you can do
+        Take Action
+            Attend an event
+            Become an individual member
+            Fellowships
+            Grants and awards
+            Find a chapter
+            Become an organization member
+            Donate
+        Online learning
+            Watch a tutorial
+    Resources
+        Resource library
+            All Resources
+            Policy Briefs
+        Publications
+            Impact Report
+            Global Internet Report
+        Programs
+            IXP Toolkit
+            MANRS
+    About Us
+        About Internet Society
+            Mission
+            Board of Trustees
+            Chapters
+            Organization Members
+            Affiliates and Partners
+            Team
+            Action Plan: 2020
+            Organization Reports & Policies
+            About the Internet Society Foundation
+        Regions
+            Africa
+            Asia-Pacific
+            Europe
+            Latin America & Caribbean
+            Middle East
+            North America
+        Events
+            All Events
+            African Peering and Interconnection Forum (AfPIF)
+            Community Network Summits
+            IETF Meetings
+            InterCommunity
+            NDSS Symposium
+    News
+        News
+            Press Releases
+            Internet Society In the News
+            Blog
+            Statements
+            Speeches
+        For Journalists:
+            Media Center
+
+2020 Action Plan
+2020 Action Plan
+
+A Bigger and Stronger Internet
+
+Read the Internet Society’s roadmap for our work ahead – and let’s join together to support our vision that the Internet is for everyone.
+ISOC-Light-RGB_Logo_250x83
+2019 Impact Report
+2019 Impact Report
+
+In the first-ever Internet Society Impact Report, we present some of our important work in 2019.
+CTG3790 (1)
+2019 Impact Report: Community Networks
+2019 Impact Report: Community Networks
+
+Community networks — networks built, managed, and used by local communities — are cornerstones of the Internet Society’s work.
+IMG_3257 (1)
+Learn More
+Learn More
+
+Did you know that the open standards that power the Internet are created by the Internet Engineering Task Force (IETF)?
+IETF Logo
+Join the team
+Join the team
+
+Do you want to join us in building a bigger, stronger Internet? Read our open job descriptions.
+isoc_team-180x120
+2019 Impact Report: Encryption
+2019 Impact Report: Encryption
+
+At the Internet Society, we believe that encryption is an essential part of the trusted Internet.
+Encryption-Cover
+Member Login
+en
+
+    en
+    fr
+    es
+    More languages
+
+Donate
+	
+×
+	search 	
+ 
+Donate
+‹ Back
+
+    en
+    fr
+    es
+
+Public Policy 20 November 2017
+Internet Access and Education: Key considerations for policy makers
+
+The Internet has immense potential to improve the quality of education, which is one of the pillars of sustainable development. This Internet Society briefing outlines ways in which policymakers can unlock that potential through an enabling framework for access to the Internet. It sets out five priorities for policymakers: infrastructure and access, vision and policy, inclusion, capacity, and content and devices. Together these represent key considerations for unlocking access to the Internet in support of education.
+Introduction
+
+Education is both a basic human right  [i] and a core element of sustainable development. It is the theme of the United Nations’ fourth Sustainable Development Goal, which seeks to “ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.”  [ii] Education enables individuals to build more prosperous and successful lives and societies to achieve economic prosperity and social welfare.
+
+Access to the Internet is fundamental to achieving this vision for the future. It can improve the quality of education in many ways. It opens doorways to a wealth of information, knowledge and educational resources, increasing opportunities for learning in and beyond the classroom. Teachers use online materials to prepare lessons, and students to extend their range of learning. Interactive teaching methods, supported by the Internet, enable teachers to give more attention to individual students’ needs and support shared learning. This can help to rectify inequalities in education experienced by girls and women. Access to the Internet helps educational administrators to reduce the costs and improve the quality of schools and colleges.
+
+Educationalists are enthusiastically exploring opportunities and discovering new ways in which they can use the Internet to improve education outcomes. As the Broadband Commission for Sustainable Development puts it, the challenge is “to help teachers and students use technology … in relevant and authentic ways that actually improve education and foster the knowledge and skills necessary for lifelong learning.”  [iii]
+
+A number of factors, however, inhibit full achievement of these gains.
+
+Lack of access is first and foremost among these. Access to the Internet, with sufficient bandwidth, is essential for the development of an information society. Lack of broadband connectivity is preventing widespread use of Internet in education and other areas of life in many countries. A legal and regulatory environment that fosters investment and innovation is critical to enabling broadband access. This is not just a matter of connectivity. For access to be meaningful, it must also be affordable for schools and individuals, and teachers and students must acquire digital literacy and other skills required to make best use of it. Those teachers and students also need to find and use locally relevant content.  [iv]
+
+The Internet is not, of course, the answer to every challenge posed by education. National policies that draw together experience in both education and technology, within different countries’ national contexts, are essential if the Internet’s contribution to education is to be maximised. The success of Internet in education will be measured by educational outcomes: improvements in students’ attainments, job opportunities and contribution to national development. Our goal at the Internet Society is to ensure that access policies are put in place that allow an Internet of opportunities to flourish and that the Internet thereby contributes fully to achieving these objectives.
+
+This briefing sets out five priorities for policymakers concerned with achieving that: priorities concerned with infrastructure and access, vision and policy, inclusion, capacity, and content and devices. The Internet Society’s Internet Enabling Environment Framework  [v] highlights the importance of infrastructure investment, skills and entrepreneurship, and supportive governance for the Internet ecosystem.
+
+Experience shows that the best results are likely to be achieved through cooperation between stakeholders, including government, Internet business and technical experts, and sector specialists such as teachers and educational administrators.
+Five priorities for Internet and education
+
+Much has been written about the Internet and education over the past ten years. Lessons have been learnt from experience with different technologies and services in countries with different educational systems. The rapid pace of change in technology, and in the availability and affordability of access, means that past experience is not always a good indicator for the future. However, five broad themes have emerged from experience to date as priorities for policymakers today.
+Priority 1 – Infrastructure and access
+
+No strategy for Internet in education can succeed without adequate infrastructure and access to resources. As the Internet Society’s Enabling Environment Framework makes clear, this requires infrastructure investment, skills and entrepreneurship, together with supportive governance for the Internet ecosystem.
+
+Broadband access today is unevenly distributed. People in developed countries are more than four times as likely to have mobile broadband subscriptions than those in least developed countries. There are estimated to be more than thirty fixed broadband subscriptions for every hundred people in European countries, but less than one per hundred in sub-Saharan Africa.  [vi]
+
+    Broadband infrastructure is essential if teachers and students are to make full use of what the Internet can offer. Many rural areas in developing countries still lack broadband networks or affordable connectivity. Governments need to establish legal and regulatory frameworks that encourage investment in order to overcome these limitations – including consideration of new local access and infrastructure models and investment in international connectivity, in national and local networks, in Internet facilities such as Internet Exchange Points (IXPs) and in content infrastructure such as data centres and hosting resources. [vii] Investors must also respond to these incentives.
+    The needs of schools and colleges, and of National Research and Education Networks (NRENs), should be explicitly included in national broadband strategies and universal access programmes to address this. Universal access and service programmes could also offer greater flexibility and innovative funding programmes.
+    Networks and services need to be affordable, for both schools and individuals, if they are to be used effectively. The cost of basic broadband access is more than 5% of average national income in most LDCs, but less than 1% in wealthy countries.  [viii] Financial resources per student are limited, in some countries severely so, while poverty prevents many children from accessing the Internet at home. A regulatory framework that stimulates competition and lowers access prices is as valuable to learners as to other groups within society. Special access rates for schools and colleges should also be considered.
+    Schools need computers, tablets and other ICT devices that are integrated in a smart fashion in the educational environment to make the best use of Internet-enabled learning. These need to be maintained, upgraded and cyber-secure. They also need reliable electric power. The total costs of ownership – capital and operational – should be factored into budgets, and the importance of financial constraints should not be underestimated. School buildings may need to be redesigned to make effective use of Internet-enabled learning. These too are important aspects of enabling access.
+
+Priority 2 – Vision and policy
+
+Policymakers concerned with ICTs and with Education have the opportunity to develop a vision for the future which will enable technology to benefit both students and national development. They should work together to develop that vision, and to design policies that integrate ICTs in national strategies for sustainable development including critical development sectors like education.
+
+    Policies for Internet in education should focus attention and resources on national development priorities. They should start from a thorough understanding of educational strengths and weaknesses; adopt realistic targets for Internet adoption, use and impact; monitor outcomes against those targets; and learn from past experience. While the same challenges arise in many countries, there are also important differences in national context.
+    The enabling environment for broadband access, especially the extent to which it encourages investment and innovation, will be critical in facilitating educational improvements. In 2012, it was estimated that less than 5% of schools in some African countries had even basic Internet access.  [ix] Policies for Internet in education need to focus on the twin challenges of enabling access and facilitating effective use of access.
+    Policies for Internet access and use should encompass the entire education system – from pre-school and primary education, through secondary and tertiary education, to lifelong learning, reskilling and retraining. The aim should be to improve the digital literacy and skills of everyone throughout society, adults as well as children.
+    Policies should build on realistic assessments of what is possible with available finances and other resources, for all parts of the community, in each national context. Without a commitment to equality of opportunity and access, Internet-enabled education could increase inequalities. Using the Internet to improve educational management information systems (EMIS) can play an important part in maximising resources, monitoring outcomes and targeting resources where they are most needed.
+
+Priority 3 – Inclusion
+
+The 2030 Agenda for Sustainable Development aims to ‘ensure inclusive and equitable quality education and promote lifelong learning opportunities for all .’  [x] If the Internet is to contribute effectively to this, access must be available at all levels of education, in both formal and informal learning.
+
+Some communities are better equipped than others to take advantage of the Internet, because infrastructure is more available or more affordable to them, because they have better access to Internet-enabled devices, or because they have economic or social advantages. The World Bank has warned that new resources in education, including ICTs in schools, can exacerbate ‘entrenched inequities’ unless care is taken to ensure inclusion.  [xi] The risk of this can and should be mitigated through policy and practice.
+
+     The Internet can help everyone, at every stage of life, to improve their educational attainments and job opportunities. Continuing education and lifelong learning for adults, including adult literacy, have a crucial part to play in Internet-enabled education.
+    Policies should explicitly address structural inequalities in education, especially gender inequalities. Girls in many countries have more limited access to education than do boys, for a variety of economic, social and cultural reasons. The UNESCO Institute for Statistics estimates that 15 million girls of primary-school age today will never enter a classroom, over half of whom live in sub-Saharan Africa.  [xii] Lack of education contributes to girls’ and women’s disempowerment in later life. Policy initiatives should use the Internet to overcome restrictions on their learning and support adult literacy and other programmes to build their skills within the workforce.
+    Policies should promote greater equality in access to learning resources for disadvantaged groups within societies, such as those living in rural areas or in poverty, ethnic minorities and speakers of minority languages, and those with disabilities.  [xiii]
+    Policies should recognise the risks to which students, particularly girls, can be exposed when using the Internet. Schools are well-placed to help children identify, evaluate and reduce these risks. The inclusion of topics such as digital citizenship and cybersecurity in the curriculum can help them do so.
+
+Priority 4 – Capacity
+
+Education is at the heart of capacity-building. It is through education that people gain skills that equip them to find jobs, start businesses, lead fulfilling lives and provide for themselves and their families. Education builds the capabilities that societies also require to improve productivity and achieve economic growth, to manage health and social services, and to play a full part in the global community of nations.
+
+All aspects of our economies and societies are being changed by the Internet. By improving access to information, knowledge and education, the Internet can help individuals to achieve better educational outcomes across the board, developing the skills that they and their societies require. Initiatives like National Research and Education Networks (NRENs) have also proved their value in supporting Internet infrastructure development, as well as online collaboration between higher education and research institutions.
+
+Success in the digital age requires digital skills. As they enter the world of work, individuals should be able to make use of computers and other digital equipment. Digital literacy – the ability to use online applications, find information online, assess its quality and value, and make use of it in daily life – is crucial to living in the digital world, particularly for the growing number who will work in ICT-intensive industries.  [xiv] School students and adults alike need to learn how to use the Internet to undertake transactions, and how to protect themselves against cybercrime. Developing these skills should be included in curricula.
+
+Teachers need to learn new skills to make effective use of Internet resources. Global experience has shown the importance of professional development in building teacher’s capabilities in using the Internet and introducing new types of learning in the classroom and with individual students.  [xv] Educational administrators also need to learn how best to use the data which online learning makes available to improve education standards and target resources. Building these capabilities will be crucial to maximising the value of the Internet for education.
+Priority 5 – Content and devices
+
+One of the most dramatic differences the Internet can make lies in opening access to a wider range of content for teaching and learning – content that is explicitly educational in purpose and the much wider range of online content that can supplement curricula. Instead of relying primarily on textbooks, teachers can direct students to many different sources, and students can develop research skills by exploring online content on their own.
+
+The Internet has led to important innovations in educational content. Open educational resources (OER) and Massive Online Open Courses (MOOCs) bypass intellectual property constraints by making course materials from one country available to students in another. These can supplement local educational resources, extending the range and quality of materials available to students.
+
+The potential is tremendous, though it must be remembered that not all content is readily transferable, for cultural and other reasons. Policymakers should seek ways to integrate the wealth of new resources into local education without discouraging development of local content or the role and experience of local teachers.
+
+Until recently, the Internet was principally accessed through computers, which were not affordable to most people in most countries. However, access to mobile phones which can be used to access the Internet has played an important part in expanding Internet access, and as a new means to foster creativity. Mobile devices now account for half of total Web traffic, and a significantly higher proportion of that in Africa and Asia.  [xvi]
+
+The growing range of content, lower cost and increased capabilities of access devices are making it easier for people to learn as and when they wish to do so, rather than just in formal school environments. Policymakers should track the development of the Internet to ensure that policies and implementation plans take advantage of this and remain relevant as technology and services evolve.
+Summary
+
+Internet access provides great opportunities for education policymakers to improve the quality of education for individual learners and contribute to national economic and social welfare. New ways of teaching and learning, better access to a much wider range of information and resources, new skills for the digital age: all these can transform lives, helping to achieve education for all and other Sustainable Development Goals.
+
+None of these gains is guaranteed, however. Achieving them requires, first and foremost, affordable access to the Internet. A legal and regulatory framework that encourages investment in connectivity and services, lowers costs and fosters creativity is critical to enabling access and unlocking the Internet’s value for education.
+
+It also requires political commitment, a strong policy framework and realistic implementation strategies. Policymakers should consider the following first steps towards this goal:
+
+    They should develop a regulatory framework that stimulates investment, competition and lower access prices, perhaps including special access rates for schools and colleges.
+    They should review universal access and service programmes to allow more flexible and innovative funding approaches.
+    They should include schools and colleges, as well as National Research and Education Networks (NRENs), in national broadband strategies and universal access programmes.
+    They should encourage and support community-based access initiatives, educational networks, and local research and development initiatives which enable diverse models for access and use.
+    They should explicitly address the potential for ICTs to overcome gender inequalities in education and improve opportunities and outcomes for girls.
+    They should review and update policies to foster greater equality in access to learning resources for disadvantaged groups within societies, such as those living in rural areas or in poverty, ethnic minorities, speakers of minority languages, and those with disabilities.
+    They should ensure that teachers have the necessary skills to make effective use of Internet resources.
+
+By working together, policymakers, the Internet community and education stakeholders can develop comprehensive policy approaches tailored to the circumstances of their countries and communities – establishing the required infrastructure and access to resources, ensuring inclusion, building capabilities, and facilitating access to content and devices. This will contribute not just to education but to the fulfilment of the Sustainable Development Agenda and of an Information Society that meets the needs of all.
+
+Thank you to David Souter for his assistance with this paper.
+Further reading:
+
+Broadband Commission for Digital Development, Technology, Broadband and Education, 2013,
+http://www.broadbandcommission.org/documents/publications/bd_bbcomm-education_2013.pdf
+
+Internet Society, A Policy Framework for Enabling Internet Access, 2017,
+https://www.internetsociety.org/sites/default/files/bp-EnablingEnvironment-20170411-en.pdf
+
+Internet Society, Internet for Education in Africa, 2017,
+https://www.internetsociety.org/doc/internet-education-africa-sdg4
+
+Internet Society, OECD and UNESCO, The Relationship between Local Content, Internet Development and Access Prices, 2011,
+http://www.unesco.org/new/fileadmin/MULTIMEDIA/HQ/CI/CI/pdf/local_content_study.pdf
+
+Neil Selwyn, Education and Technology: Key Issues and Debates, 2016
+
+Michael Trucano, ‘Key themes in national educational technology policies,’ 2015,
+http://blogs.worldbank.org/edutech/key-themes-national-educational-technology-policies
+
+UNESCO, ICT Competency Framework for Teachers, 2011,
+http://unesdoc.unesco.org/images/0021/002134/213475e.pdfhttp://unesdoc.unesco.org/images/0021/002134/213475e.pdf
+
+World Bank, World Development Report 2016, Digital Dividends,
+http://www.inequalityineducation.org/wp-content/uploads/worldBankDigitalDividendsReport2016.pdf
+
+World Bank, EduTech: a World Bank blog on ICT in education,
+http://blogs.worldbank.org/edutech/
+
+World Bank, SABER-ICT Framework Paper for Policy Analysis: Documenting national educational technology policies around the world and their evolution over time, 2016,
+http://wbgfiles.worldbank.org/documents/hdn/ed/saber/supporting_doc/Background/ICT/112899-WP-SABER-ICTframework-SABER-ICTno01.pdf
+
+Endnotes
+
+[i] In Article 13 of the International Covenant on Economic, Social and Cultural Rights ,
+http://www.ohchr.org/EN/ProfessionalInterest/Pages/CESCR.aspx .
+
+[ii]   2030 Agenda for Sustainable Development ,
+https://sustainabledevelopment.un.org/post2015/transformingourworld , Goal 4.
+
+[iii] Technology, Broadband and Education, 2013, p. 15,
+http://unesdoc.unesco.org/images/0021/002196/219687e.pdf
+
+[iv] Internet Society report, Promoting Local Content Hosting to Develop the Internet Ecosystem,
+http://www.internetsociety.org/doc/promoting-local-content-hosting-develop-internet-ecosystem
+
+[v]   A Policy Framework for Enabling Internet Access ,
+https://www.internetsociety.org/sites/default/files/bp-EnablingEnvironment-20170411-en.pdf
+
+[vi]   http://www.itu.int/en/ITU-D/Statistics/Documents/statistics/2017/ITU_Key_2005-2017_ICT_data.xls
+
+[vii]   ibid.
+
+[viii] International Telecommunication Union, Facts and Figures 2017 ,
+http://www.itu.int/en/ITU-D/Statistics/Documents/facts/ICTFactsFigures2017.pdf
+
+[ix] ITU, WSIS Final Targets Review, p. 72,
+http://www.itu.int/en/ITU-D/Statistics/Documents/publications/wsisreview2014/WSIS2014_review.pdf
+
+[x] 2030 Agenda for Sustainable Development , Goal 4 (our emphasis).
+
+[xi]   https://blogs.worldbank.org/edutech/worst-practice
+
+[xii]   http://uis.unesco.org/en/news/263-million-children-and-youth-are-out-school
+
+[xiii] These inequalities are mapped in detail at  http://www.education-inequalities.org/
+
+[xiv] See World Bank, World Development Report 2016 Digital Dividends, pp 112-114,
+http://www.worldbank.org/en/publication/wdr2016
+
+[xv] See e.g. UNESCO, ICT Competency Framework for Teachers, 2011,
+http://unesdoc.unesco.org/images/0021/002134/213475e.pdf
+
+[xvi]   https://www.statista.com/statistics/306528/share-of-mobile-internet-traffic-in-global-regions/
+Growing the Internet , Public Policy , Reports , Education
+
+    InternetEducation.cover thumbnail InternetEducation.cover thumbnail
+
+    Internet Access and Education: Key considerations for policy makers
+    Download
+
+‹ Back
+
+    InternetEducation.cover thumbnail InternetEducation.cover thumbnail
+
+    Internet Access and Education: Key considerations for policy makers
+    Download
+
+Related articles
+Internet for Education in Africa: Helping Policy Makers to Meet the Global Education Agenda Sustainable Development Goal 4
+Development 11 April 2017
+Internet for Education in Africa: Helping Policy Makers to Meet the Global Education Agenda Sustainable Development Goal 4
+
+This report reviews the potential implications of Information and Communication Technologies (ICTs) in general, and the Internet in particular, for education in Africa.
+The Internet, an Opportunity for Sustainable Development
+Development 16 October 2015
+The Internet, an Opportunity for Sustainable Development
+
+An Internet Society Perspective The greatest challenge facing the world today is the need to achieve sustainable development – development...
+A Pilot Community Network in Pakistan: Online Supplementary Education and its Impact
+A Pilot Community Network in Pakistan: Online Supplementary Education and its Impact
+Community Networks 14 September 2018
+A Pilot Community Network in Pakistan: Online Supplementary Education and its Impact
+
+The Internet Society, in partnership with COMSATS Internet Services, has since December 2015 been implementing a pilot initiative in Chak-5 Faiz, a rural village in Pakistan, as part of the Wireless for Communities Programme.
+Join the conversation with Internet Society members around the world
+Become a member
+
+    About the Internet Society
+    About the IETF
+    Careers
+    Contact Us
+    Follow Us
+    Sharing Our Content
+    Affiliated Sites
+    Privacy Policy
+
+USA
+11710 Plaza America Drive, Suite 400
+Reston, VA 20190
++1-703-439-2120
+Switzerland
+Rue Vallin 2
+CH-1201 Geneva
++41-22-807-1444
+Other offices
+
+
+Follow us:
+Follow Internet Society on Twitter Follow Internet Society on LinkedIn Follow Internet Society on Facebook Follow Internet Society on Instagram Follow Internet Society on YouTube Internet Society RSS Feed
+Copyright © 2020 Internet Society
+We care about your privacy and strive to limit our use of cookies to those that help improve our site and keep it relevant. By continuing to use this site, you agree to the use of cookies. To learn more about how you can control use of cookies see our Cookie Policy
+:)
+	

@@ -1,0 +1,337 @@
+The Board of Regents of the University of Wisconsin System
+The Taxation of the Poor Author(s): Howard Chernick and Andrew Reschovsky Source: The Journal of Human Resources, Vol. 25, No. 4 (Autumn, 1990), pp. 712-735 Published by: University of Wisconsin Press Stable URL: http://www.jstor.org/stable/145673 Accessed: 18-09-2015 19:21 UTC
+Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at http://www.jstor.org/page/ info/about/policies/terms.jsp JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms of scholarship. For more information about JSTOR, please contact support@jstor.org.
+University of Wisconsin Press and The Board of Regents of the University of Wisconsin System are collaborating with JSTOR to digitize, preserve and extend access to The Journal of Human Resources. http://www.jstor.org
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+The Taxation of the Poor
+Howard Chernick Andrew Reschovsky
+ABSTRACT
+This paper uses microsimulation modeling to estimate the annual burden offederal, state, and local taxes on the poor in two states. We find that in 1988 the average burden of taxation on poorfamilies and individuals was 15.3 percent in Massachusetts and 18 percent in New York. As most of the burden is due to state and local taxes, federal tax reform had only a minor impact on the overall tax burdens faced by the poor. Though the analysis is for two state, we argue that the basic results are applicable for most other states. Given the high incidence of persistent poverty among those who are poor in any given year, we argue that annual burdens provide a good indication of long-run burdenfor a significant proportion of the poor.
+I. Introduction
+The tax system shouldnot be an additionalburdento those who are strugglingto escape from poverty;insofaras possible, those below the poverty line shouldbe freed fromtaxationaltogether.
+President's Tax Proposals (1985, p. 5)
+Howard Chernick is a professor of economics at Hunter College and Andrew Reschovsky is a visiting professor of economics and public affairs at the University of WisconsinMadison. Financial support for this research was provided in part by a grant to the Institute for Research on Poverty from the Department of Health and Human Services, and by a grant of computer time from the Research Foundation of the City University of New York. The authors would like to thank Katharine Bradbury, Sheldon Danziger, Douglas HoltzEakin, Daniel Weinberg, and several anonymous referees for helpful comments on previous drafts. THE JOURNAL OF HUMAN RESOURCES * XXV * 4
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernickand Reschovsky 713
+Most commentatorson the Tax ReformAct of 1986have arguedthat the achievement of this goal, articulatedin the above statement from PresidentReagan'soriginaltax reformproposalis one of the most important features of the new federal tax legislation.1By raisingthe personal exemption,the standarddeduction,andthe earnedincometax credit,the Tax ReformAct of 1986has reducedthe numberof poor familiespaying federalincome tax by 4.3 millionandeliminatedincometaxationfor most people with incomes below the poverty level (Economic Report of the President 1987, p. 85).
+But tax reform at the federal level has not been followed at the state and local levels. This paper shows that such taxes continue to place a substantialburdenon the poor. Althoughgovernmenttransferprograms provide an importantsource of income for the poor, we do not conduct a net incidence study, but ratherfocus only on taxes. Using data from the CurrentPopulation Survey and a series of linked microsimulation models of federal, state, and local taxes, we develop a comprehensive measureof the tax burdenfaced by low-incomefamiliesand individuals. We demonstratethat even before federaltax reform,the largestportion of the tax burdenon poor individualsand families originatedwith state and local, rather than federal, taxes. Consequently,federal tax reform has had a relativelysmallimpacton reducingthe overalltax burdenfaced by many poor families and individuals.
+Federal tax reform has also been a catalyst for reexaminationof the tax treatment of the poor in several states. A number of states with individual income taxes have responded to the federal changes by increasingpersonalexemptionsandstandarddeductions,withthe objective of removingfamilies in poverty from the tax rolls, and insuringthat no taxpayer with zero federal tax liabilityis obligatedto pay state income taxes. Accordingto Hutchinson(1989)in 1989in 16of the 40 states with a broad-basedpersonal income tax, a family of four with income below the poverty level was exempted from taxation. At the same time, in 19 other states, familieswith incomes of less thanthree-quartersof the poverty line were subject to state income taxation.
+To our knowledge, no research has looked directly at the total tax burdenfaced by personsbelow the povertylevel. In fact, the well-known distributionalanalyses conductedby Joseph Pechmanand his colleagues at the Brookings Institution exclude the poorest 5 percent of families. Microlevel studies of the burdenof taxationon the poor have been hampered by the lack of state-by-statedata on indirecttaxes-sales and ex-
+1. For detailed discussions of the federal tax burdens faced by the poor prior to Tax Reform see the following congressional staff reports: U.S. Congress, Joint Committee on Taxation (1984) and U.S. House of Representatives, Committee on Ways and Means (1984).
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+714 The Journalof HumanResources
+cise taxes-and insufficientdetailin the modelingof the propertytax on renters. To calculate burdensfrom the indirecttaxes it is necessary to estimate the amountof taxable consumptionby low-incomefamiliesliving in each state. Under what we believe to be reasonableassumptions concerningpropertytax incidence(see below), tenantsbeara majorportion of the real property tax levied on their housing units. Determining propertytax burdensfor the poorthusrequiresthe capabilityof modeling the incidence of the propertytax on a state-by-statebasis. Ourapproach allows us to estimate tax burdensfromboth directand indirecttaxes for a randomsampleof state residents.
+Many low-income workers live in families whose incomes exceed the official poverty level by a small amount. In order to include this group, we also analyze the tax burdensfaced by those with incomes between the poverty line and 150percentof the povertyline. This level of income is approximatelyequal to one-halfof medianincome. For convenience, we will referto familiesand individualswith incomesin this rangeas the ''near-poor."
+The issue of currentversus permanentincome is an importantone in evaluating the tax burdens of low-income families. Recent research on poverty has emphasized the differences in the nature and durationof spells of poverty for differentgroups. Ourbasic measureof incidenceis based on current(annual)incomes of the poor. Because the incidence of consumption-basedtaxes is heavily influencedby the length of the accountingperiod for income, we also analyze low-incometax burdens accordingto the extent to which currentlypoor familiesare only temporarily poor.
+In Section II, we describe our approachto modelingand estimating the tax burdensfaced by the poor. We brieflydiscuss our tax incidence assumptions, outline the structureof the tax simulationmodels, and describe the income measure used. The following section describes the basic results, focusing on the burdensfaced by poor and near-poorresidents of two states, Massachusettsand New York, in 1988.This is followed by a discussion of the impacton tax burdencalculationsof using currentratherthanpermanentincome. We next turnour attentionto the impact of federal tax reformon the tax burdensfaced by the poor. The final section presents our conclusions.
+II. Modeling Federal, State, and Local Taxes
+In our linked microsimulationmodels we concentrateon the taxes that are likely to have the largest impact on the poor. At the federallevel, we model the individualincometax andthe payroll(FICA)
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernick and Reschovsky 715
+tax. Together these two taxes account for approximately 85 percent of federal government tax revenue. At the state level we model the two most important revenue sources in most states, the individual income tax and the general sales tax. We also model state and federal excise taxes on alcohol, tobacco, and gasoline. The most important source of tax revenue for most local governments is the property tax. We model the residential component of the local property tax, which is the component with the greatest impact on the poor. The only major tax not included in our analysis is the corporate income tax. There is no consensus within the economics profession concerning its incidence. To the extent that most of the burden of the corporate income tax falls on capital income, it has little impact on the poor. Data from the Current Population Survey indicate that under 10 percent of the poor and the near-poor have any income from interest, dividends, rents, or capital gains; and among those with capital income, capital income averages less than 10 percent of total income. Our choice of incidence assumptions has been guided primarily by the principle that the burden of a tax falls most heavily on the inelastic source or use of income. This principle has led us to make the following assumptions. With respect to the individual income tax at both the federal and state levels, we assume that the tax is borne by the income recipients.2 Based on evidence of the inelasticity of labor supply, we also assume that the entire burden of the payroll tax falls on workers.3 We follow the conventional wisdom in assuming that the sales tax is borne by consumers in proportion to their consumption of taxed commodities.4
+The most controversial issue concerns the property tax, for which there are competing views on incidence. Under the "new view" first articulated by Mieszkowski (1972), the property tax is analyzed as a uniform national tax on capital, coupled with a variable excise component. De-
+2. The basis for this assumption is the empirical evidence that workers do not in general change their hours worked, and investors the amount saved, in response to a change in income tax rates. See Pechman (1985) for a brief review of the evidence on labor supply and on saving behavior. 3. An alternative view attempts to link the incidence of the payroll tax to the receipt of social security benefits. Burkhauser and Turner (1985) show that the burden of the tax varies across workers and over time, and that, for those who correctly anticipate their future benefits, the net impact of the payroll tax will always be less than the burden of the tax alone. Their approach seems strongest for workers who are close enough to retirement to correctly anticipate marginal changes in social security benefits, but less relevant for younger workes. 4. See for example, Musgrave, Case, and Leonard (1974) or Pechman and Okner (1974). In several recent papers Edgar Browning (1978, 1985) has argued that sales tax burdens are proportional to factor earnings rather than to consumption expenditures. It is safe to say that Browning's view on sales tax incidence has not gained wide acceptance among public finance economists.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+716 The Journalof HumanResources
+pendingon the model, the excise componentis borneby local consumers of housing services, landowners,or labor. For analystswho adopta national perspective on propertytax incidence, the capitaltax component dominatesthe results. From the local perspectivethe excise component is more important.As we are analyzingpropertytax incidence in two states, with particularattentionto variationsin effective rateswithinthe states, this study adopts a local perspective. In so doing, we effectively treat the entire residentialpropertytax as an excise tax, of which the owner-occupiedcomponent is borne by the owners of housingand the renterportiondividedbetween tenantsandlandlords.5Studiesattempting to combine the nationaland local componentsof propertytax incidence theory in the study of subnationalunits of government(De Tray and Fernandez 1986, and Harmon 1989)supportour basic findingthat lowincome householdsface high residentialpropertytax burdens.6
+Given the local perspective, the fact that the majorityof the poor are renters(75percentin New YorkandMassachusetts)makesthe incidence of the propertytax on rentalhousingparticularlyimportant.In ourmodel the tax on rentalpropertyis assumedto be dividedbetweenlandlordand tenant, with the shareof each dependingon the shareof landin housing value, and the elasticities of supplyand demandfor housingservices. As our base case, we assume 75 percent forward shifting to tenants. We assume that landlords bear the burden of the land portion of the tax, while the improvementscomponent is substantiallyshifted forwardto tenants.Demandfor housing,particularlyamongthe poor, is quiteinelastic. Though the poor may move frequently,they are restrictedin their access tojurisdictionsandneighborhoodsby fiscalzoninganddiscrimination (Yinger1979, 1986).Withlineardemandandsupplycurves, the ratio of the change in rent to a change in the propertytax is given by (,/(4s + 4d), where k(,and bd are the price elasticities of supply and demand. Witha supplyelasticityfor low incomehousingof 2.2 (Grieson1973)and a demandelasticity of -0.4 (Hanushekand Quigley 1980),85 percentof the tax would be shifted forward to tenants. Our assumptionthat 75 percent of the property tax is shifted to tenants is thus based on this
+5. A similar approach is followed by Ladd and Yinger (1989). Using a multijurisdictional model which allows for the substitutability of land and capital in housing production, and the substitution between housing and other goods in consumption, Case and Grant (1988) find that the excise tax effects of the property tax are large. 6. An alternative approach, associated primarily with Hamilton (1975) treats the property tax as a benefit tax for local public services. This view, which requires strong assumptions regarding zoning or tax capitalization, is most relevant for homogeneous suburbanjurisdictions, whereas the poor are increasingly concentrated in central cities. In any case, the explicit purpose of this paper is to analyze tax incidence, independent of the benefits of government expenditures.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernickand Reschovsky 717
+calculation, and on the evidence from Netzer (1966)that land accounts for somewhat less than 25 percent of the value of rentalproperty.The argumentfor forward shiftingis strengthenedin cities like New York, where there is significantrent control, and propertytax increases are a cost factor in determiningallowablerent increases.
+The modelsareconstructedas a seriesof new subroutinesto the Transfer Income Model (TRIM),a model developed duringthe early 1970sby the UrbanInstituteandthe (then)U.S. Departmentof Health,Education, and Welfare.7The results presentedin this paperare based on datafrom the March 1987 CurrentPopulation Survey (CPS). The CPS includes informationon family structureand size, age, race, sex, ethnic background, and income by source. The income data on the CPS have been inflatedto 1988 values using separate state-specificinflationfactors for each source of income.8A discussion of the income measureis provided below.
+Althoughour models have a greatdeal in commonwith severalothers, in particular,the U.S. Census Bureau(1984)and UrbanInstitutemodels (Sulvetta 1976),they have a numberof uniquefeaturesthat make them especially powerful as tools for analyzingthe tax burdenson the poor. With the exception of the Brookingsmodel (Pechmanand Okner 1974) and a model based on aggregate data constructed by Donald Phares (1980), none of the others calculates tax liabilitiesfor all majorfederal, state, and local taxes. Althoughin this paperwe analyzethe tax systems of only two states, Massachusettsand New York, our concentrationon these two states has allowed us to model the specific features of these taxes with more precision than is found in other models.
+Because tax incidencedependson boththe sourcesanduses of income, and the CurrentPopulationSurvey contains no informationon expenditures, it was necessary to imputecertainitems to individualfilingunits. As we explain in more detail in an appendix which is available from the authors, these imputationswere made on the basis of behavioral relationshipsestimated from other data sources. For example, in order to calculate property tax liabilities, we combine data on local property tax ratesandassessmentratios,informationon within-jurisdictionassessment practices, and data on housing values and rents. We then estimate a statisticalrelationshipbetween liabilitiesand a series of economic and
+7. For a description of the original TRIM model see Sulvetta (1976). Since its development, the TRIM model has been used to evaluate proposals for a large number of federal government programs. 8. The data for calculating the inflation factors were provided by Data Resources, Inc. 9. For a description of the Census Bureau model see (U.S. Bureau of the Census 1984), and for a description of the Urban Institute model see Sulvetta (1976).
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+718 The Journalof HumanResources
+demographicvariables available on the CPS. Our propertytax models also carefullydetermineeligibilityfor variousstate andlocal government programsdesignedto providetax relieffor low-incomeandelderlyhomeowners.
+The importanceof modelinginter and intrajurisdictionavlariationsin effective propertytax rates can be seen by comparingthe incidenceresults to those that would be obtainedundera uniformeffective tax rate. We estimate that if New York City were able to achieve uniformityin its assessment rates, the regressivityof the residentialpropertytax would be reduced by about 10 percent. In earlier work on the propertytax in California(Chernickand Reschovsky 1982), we found that ignoring variationsin effective tax ratesandbases bothwithinandacrossjurisdictions resultsin an approximately30percentunderestimateof theproperty tax burdensfaced by low-incometaxpayers.
+The foundationof the sales tax modelis a three-stageestimationprocedureof taxableconsumption.First, datafromthe ConsumerExpenditure Survey (CES) are used to estimate total consumptionas a function of income and a series of economic and demographicvariables.Next, budget share equations are estimated, where the share of total consumption spent on taxable items is estimated as a function of total consumption and demographicvariables. Finally, the estimatedshares are multiplied by total consumptionto determinetaxableconsumptionin each state.
+Our models cannot provide long-runequilibriumresponses to specific tax policy changes. Thus, they cannot be describedas fully behavioral. However, our models, like the Brookingsmodel and other microsimulation tax models, are designed to allow a wide range of tax incidence assumptions.This flexibilityis especiallyimportantin modelingstate and local taxes.
+Our annual income measure includes census money income, an imputed measure of realized capital gains based on IRS data on gains and losses by Adjusted Gross Income class, the cash value of food stamps and federal energy assistance, and the refundableportionof the Earned Income Tax Credit.The only noncashelementof incomethatwe include is a crudeestimateof the imputedrentfromhomeownership.Finally,we add the employer's share of the payrolltax to insurethat the burdenof the payroll tax is invariantwith respect to the statutorydivision of the tax between employer and employee.
+Since we do not include the corporationincome tax in our basic measureof low-incometax burdens,we do not imputecorporationnet income to our sample. The exclusion will makelittle differencein the case of the poor. We also do not includeindirecttaxes-sales, excise, andproperty taxes-in income. In a nationalstudy of the distributionof the entiretax burden, income valued at factor cost should be reconciled with income
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernickand Reschovsky 719
+at product price by including indirect taxes in income. However, any allocation rule for these taxes implies an assumptionabout the benefits of public expendituresin each state. For example, addingto income an amountequalto the sum of sales, excise, andpropertytaxes impliesthat all such taxes are strict benefit taxes, for which the market value of services received is exactly equal to the tax borne by each family. As discussed above this assumptionis overly restrictive.
+We also exclude fromincomethe value of in-kindtransfersfor medical care and housingassistance. Althougha considerableamountof research has been undertakenin trying to develop methods for valuing in-kind transfers,no consensus has been achievedon the best valuationmethods. In a recent experimentalreport, the U.S. Bureauof the Census (1988b) values the average benefits of Medicareand Medicaidcoverage at $268 for householdsin poverty, andplaces a valueof $364on housingsubsidies received by poor households.
+The Current Population Survey is known to understate the income levels of poorfamilies,relativeto otherdatasourcessuchas the Michigan PanelStudyof Income Dynamicsandthe Surveyof IncomeandProgram Participation.Both as an adjustmentfor underreportingand as a crude correctionfor temporarilylow incomelevels, we arbitrarilyincreasedthe income of families whose reported income was less than 50 percent of the poverty line to 50 percent of the poverty line. In New York and Massachusettsapproximatelyone-quarterof poor familieswere affected by this adjustment. As a result their average 1988 incomes increased from $2,045 to $5,565. Even if incomes are accuratelyreported,current incomes may be low relative to permanentincome for some families, makingcurrentincome an inappropriatebasis for computingtax burdens. The permanent income issue is addressed at some length in a later section.
+III. Tax Burdens on the Poor
+There are about 216,000 families or unrelatedindividuals below the povertylevel in Massachusettsand932,000in New YorkState. (For convenience we shall refer to unrelatedindividualsas one-person families.) These numbersequal 9.1 percent of all families in Massachusetts and 12.8percentof all familiesin New York. Familieswith incomes between the poverty level andone anda halftimes the povertylevel (the "near-poor")comprise an additional8.3 and 10.6 percent in Massachusetts and New York, respectively.
+The data in Tables 1 and 2 presenttax burdenscalculatedon the basis of 1988incomes and tax code provisions.Table 1 shows thatthe average
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+720 The Journal of Human Resources
+
+Table 1
+Tax Liabilities and Tax Burdens of Poor and Near-Poor Massachusetts Families and Unrelated Individuals Based on 1988 Incomes and Tax Law
+
+Number of Percent Average Average
+
+Families
+
+of All
+
+Tax
+
+Tax
+
+Paying Taxesa Familiesa Liability Burdenb
+
+Poor Families (Income below the poverty line)
+
+All Taxes Federal income tax With positive tax liability With negative tax liability F.I.C.A. State income tax
+State sales tax
+Local property tax Excise taxesc
+
+215,810
+8,150
+30,750
+71,310 9,520 215,810 158,350 215,810
+
+100.0%
+3.8
+14.2
+33.0 4.4 100.0 73.4 100.0
+
+$1,105
+-54
+210 10
+180 490 270
+
+15.3%
+-0.5
+2.3 0.1 2.7 7.0 3.8
+
+Near-Poor Families (Income between 100 and 150 percent of the poverty line)
+
+All taxes Federal income tax With positive tax liability With negative tax liability F.I.C.A.
+State income tax State sales tax Local property tax Excise taxesc
+
+195,490
+47,730
+26,790
+82,900 48,620 195,490 139,560 195,490
+
+100.0%
+24.4
+13.7
+42.4 24.9 100.0 71.4 100.0
+
+$1,534
+15
+531 52 195 498 244
+
+12.9%
+0.3
+4.2 0.3 1.7 4.2 2.2
+
+a. Unrelatedindividualsare consideredto be one-personfamilies. b. Definedas the averageof families'tax liabilityas a percentageof theirtotalincome. c. Includesstateandfederalexcise taxes on alcohol,tobacco,andmotorfuels, plusmiscellaneousfederalexcise taxes.
+Source:MassachusettsTax SimulationModel.
+
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernick and Reschovsky 721
+
+Table 2
+Tax Liabilities and Tax Burdens of Poor and Near-Poor New York Families and Unrelated Individuals Based on 1988 Incomes and Tax Law
+
+Number of Percent Average Average
+
+Families
+
+of All
+
+Tax
+
+Tax
+
+Paying Taxesa Familiesa Liability Burdenb
+
+Poor Families (Income below the poverty line)
+
+All Taxes
+Federal income tax
+With positive tax liability With negative tax liability F.I.C.A. State income taxc State sales taxc Local property tax Excise taxesd
+
+931,700
+63,900
+136,500
+297,100 27,500 931,700 719,400 931,700
+
+100.0%
+6.9
+14.6
+31.0 2.9 100.0 77.1 100.0
+
+$1,216
+-45
+257 10
+243 553 198
+
+18.0%
+-0.6
+2.9 0.1 3.9 8.8 2.9
+
+Near-Poor Families (Income between 100 and 150 percent of the poverty line)
+
+All taxes Federal income tax With positive tax liability With negative tax
+liability F.I.C.A. State income taxc
+State sales taxc Local property tax Excise taxesd
+
+775,400
+250,200
+103,600
+383,400 270,100 775,400 601,400 775,400
+
+100.0%
+32.2
+13.4
+49.4 34.8 100.0 77.5 100.0
+
+$2,012
+97
+777 64 254
+621 199
+
+15.4%
+0.7
+5.2 0.4 2.2 5.3 1.6
+
+a. Unrelated individuals are considered to be one-person families. b. Defined as the average of families' tax liability as a percentage of their total income. c. Includes local income and sales taxes.
+d. Includes state and federal excise taxes on alcohol, tobacco, and motor fuels, plus miscellaneous federal excise taxes.
+Source: New York Tax Simulation Model.
+
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+722 The Journalof HumanResources
+poor family in Massachusettsfaces an annualtax liabilityof $1,105and a tax burden (tax liability divided by total income) of 15.3 percent. For the near-poor,the average tax liabilityand burdenare $1,534 and 12.9 percent respectively. Table 2 indicates that in New York State, which has higher state taxes and imposes additionallocal taxes on sales and income, the average annual tax liability on the poor is $1,216, and the average tax burdenis 18.0 percent. The near-poorin New Yorkface an averageliabilityof $2,012 and an averageburdenof 15.4percent.
+Althoughin both states all poor familiespay some sales tax and about 75 percent face a propertytax burden,10only one-thirdof poor families pay payroll taxes, and only a small percentageface positive federalincome tax liabilities.11Only four percent of Massachusettsfamilies with income below the poverty level must pay state income taxes, and these taxpayers face an average burden of only one percent. In New York fewer than 3 percent of the poor pay any state and local income taxes.
+There is considerablevariationin the total tax burdensfaced by poor families. Whileunder 10percentof poorfamiliesin both statesface composite tax burdensof less than5 percent, abouta quarterof all poorface burdensof between 5 and 10 percent, 40 percentface burdensbetween 10 and 20 percent, and another30 percentface burdensthat exceed 20 percent.
+Federal tax reformleaves most poor families and individualsexempt from federal income taxation. Indeed, our data indicate that only 3.8 percent of the poor in Massachusettsand6.9 percentof the poor in New York face positive income tax liabilities.In all cases it is only unmarried individualswithout childrenwho are subjectto the income tax. Federal income tax thresholdsexceed the poverty level for marriedcouples and single-parentfamilies.
+In recent years, payroll(FICA)taxes have been placingan increasing burdenon those with earnings. However, only about one-thirdof poor familiesin both MassachusettsandNew Yorkhave any earnings.Among those paying FICA taxes, the average burdenis 7.1 and 9.0 percent of income in Massachusettsand New York, respectively.
+In orderto protectlow-incomefamiliesfromhighpayrolltax burdens, families with dependentchildrenand income from earningsare eligible for the refundableearnedincome tax credit(EITC).In 1988eligibletax-
+10. There are two reasons why some families face a zero property tax burden. In the case of multiple families living in the same household, we assume that the primary family pays the entire property tax burden. In addition, families that pay no cash rent, or live in public housing are assumed to pay no property tax. 11. For those poor individuals facing positive federal income tax liabilities, the average tax burden is under 2 percent of income in both Massachusetts and New York.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernickand Reschovsky 723
+payers with earningsbelow $6,225received a creditthat rose with earnings, up to a maximumof $874. For incomes above $9,850, the size of the credit is reduced by ten cents for each additionaldollarof income. In both states about 15 percentof poor familiesreceive EITCpayments. The averagecreditequals$438in Massachusettsand$537in New York.12
+How effective is the EITC in reducingfederal tax burdensfor lowincomefamilies?In both MassachusettsandNew Yorkthe averagecredit going to families below the poverty line is large enough to completely offset both the federal income tax and the employee share of the payroll tax. For the near-poorthe effectiveness of the EITC is greaterfor the single-parentthan for two-parentfamilies, and for families with fewer children. In Massachusetts, 55 percent of single-parentfamilies are relieved of directfederaltaxes, while only 10percentof two-parentfamilies have an EITC large enough to outweigh FICA and federal income tax liabilities. In New York less thana quarterof all near-poorfamilieshave their liabilitiesoffset.
+Two-parentfamiliestend to face highertax burdensthan single-parent families because they generallyhave higherlevels of earnings.13In New York the average two-parentfamily classifiedas near-poorfaces a combined federal income and payrolltax burdenof nearly6 percent, versus 3 percentfor single parentfamilies. Controllingfor poverty status, families with more children also tend to have higher earningsthan smaller families. As the EITC by design is independentof family size, larger families in generalface higherburdensfrom federalincome and payroll taxes.
+The above results refer to EITC-eligiblefamilies. Slightly more than half of all poor and near-poorfamiliesand individualswith earningshave no children and hence are not eligible for the EITC. On average these taxpayersface the heaviest burdensfromfederaltaxation.This groupof workingpoor and near-poorface combinedFICA andfederalincometax burdensof about 6 percent in both Massachusettsand New York.
+Despite the fact that some low-income people pay federal taxes, it is importantto keep in mind that in Massachusettsand New York, twothirds of all poor families and about half of near-poorfamilies have no earnings and hence pay no FICA and (in most cases) federal income taxes. Thus, for this group, the entire tax burdencomes from state and
+12. In a conversation with Richard Kasten of the Congressional Budget Office, he indicated that a comparison of the actual number of EITC recipients with a Census-based estimate of the number of eligibles showed that at least 80 percent of those eligible for the EITC do in fact take advantage of the credit. 13. As consumption patterns are similar for single-parent and intact low-income families, these two types of families face similar burdens from state and local taxes.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+724 The Journalof HumanResources
+local taxes. Even for those low-incomefamiliesandindividualswho have positive federaltax liabilities, state and local taxes averageover 60 percent of total taxes.
+Undoubtedlyinfluencedby recent publicattentionfocusingon the federalincome taxes paidby the poor, a numberof stateshave takenexplicit steps to reduce state income tax burdens on their poor residents. Althoughboth New York and Massachusettsplace a relativelyheavy reliance on the individual income taxes, both states have recently taken action to eliminatestate income tax liabilitieson the poor. In Massachusetts, effective in 1987, the definitionof "no tax status" has been expanded so that no tax is due on adjusted gross income below $8,000 ($12,000for couples filingjoint returns).These no-tax levels are above the poverty line for all individualsand familiesexcept for singleparents and couples with more than two dependents.In New York, by 1987the sum of personal exemptions and the standarddeductionexceeded the poverty level for most taxpayers.
+The data in Tables 1 and 2 show that poor families in Massachusetts pay 2.7 percent of their income in general sales taxes and in New York almost four percent. These burdensoccur despite the fact that the sales tax is relativelyunimportantin both states, andboth states exemptfrom taxation the purchase of most goods and services generallyconsidered to be necessities. The high sales tax burdens for low-income families occur primarilybecause, despite the intentionsof state governmentpolicymakers, taxable consumption as a proportionof total consumption does not vary significantlyacross income levels. We estimate that the elasticity of taxable consumptionas a proportionof total consumption with respect to total income is not significantlydifferentfrom zero.
+To understandwhy the attempt to exempt purchases of necessities from sales taxationis not more successful in reducingsales tax burdens on the poor, it is useful to look in more detailat the spendingpatternof low-income families. Data from the Diary Survey of the 1985Consumer Expenditure Survey indicate that among the poorest 20 percent of all families, nearly 30 percent of food expendituresare made on food consumed away from home, and are thus subjectto sales taxationin most states (U.S. Bureau of Labor Satistics 1987). National data from the DiarySurveyindicatethataddingconsumptionexpenditureson food consumed away from home to just three categories of taxable expenditures-personal care products, nonprescriptiondrugsand supplies, and housekeeping supplies-accounts for almost 20 percent of the total income of the poorest one-fifthof all U.S. families. Amongfamilieswith incomes below $5,000 these categories of taxable expendituresaccount for over 35 percent of total income. Applyingthe medianstate sales tax
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernick and Reschovsky 725
+rate of 5 percent to these expenditures yields a tax burden of about 1.7 percent of income. Thus, even though most states exempt expenditures on a broad range of goods and services, the poor continue to face relatively highs sales tax burdens in most states.
+In both Massachusetts and New York the largest source of the tax burden on the poor comes from the property tax. Among those facing a property tax burden, the average tax liability is $668 in Massachusetts and $716 in New York, and the average burdens are 9.5 and 11.4 percent, respectively. Burdens on owners substantially exceed those on renters in Massachusetts, but are about equal in New York. Over 60 percent of poor families paying property taxes are tenants. In Massachusetts they face an average property tax burden of 7.9 percent of income, while poor homeowners face burdens that average 12.1 percent.
+The inclusion of imputed rent in total income has a substantial impact on the property tax burdens of low-income homeowners. Imputed rent comprises about 40 percent of total income for poor owners, and in both states the average property tax burden for this group would rise by 65 percent or more if imputed rent were excluded from the income measure. For the near-poor owner, the average burden would rise by about 50 percent-from 7.8 to 12.1 percent in Massachusetts, and 7.1 to 10.6 percent in New York. Because imputed rent comprises almost half of total income for poor elderly homeowners, if it is not included in income their measured property tax burden would nearly double.
+Although an appropriate measure of "ability to pay" should include imputed rents from homeownership, it should be emphasized that property taxation can create substantial economic hardship for elderly homeowners who, despite large amounts of home equity, have few liquid resources with which to pay their property taxes and provide for the other necessities of life. Although reverse-equity mortgages and tax deferral programs operated in some states may potentially increase the liquidity of home equity, most homeowners appear to be either unable or unwilling to participate in these programs.
+Property tax burdens faced by poor tenants are high enough to cause economic hardship for many poor tenants. The data in Tables 1 and 2 are based on the assumption that tenants bear 75 percent of the total property tax burden on their housing unit. Although this assumption is based on a careful assessment of the low-income rental housing market, it is possible that landlords are able to shift forward to tenants either a smaller or larger share of the total burden on rental property. We thus conducted a sensitivity analysis of the forward shifting assumption by considering both 50 percent and 100 percent shifting of the tax burden. The possibility of complete forward shifting to tenants is most likely in areas, especially
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+726 The Journalof HumanResources
+cities, where exceedingly high rent burdenson low-incometenantsindicate a very tightmarketfor rentalhousing.14Theresultsof this sensitivity analysis show that tenantpropertytax burdenswould rangefrom 5.3 to 10.5 percent in Massachusettsand from 7.6 to 15 percentin New York underthese two alternativeshiftingassumptions.The compositetax burden on tenants correspondinglyrangesfrom about 13.5 to 19 percentin Massachusettsand 14 to 21.5 percentin New York.
+IV. Persistent Poverty and the Burden of Taxation
+One criticism of tax-incidence computations based on cross-sectionaldata is that they overstate the burdensof those with low incomes (Pechman1985,Davies, St.-Hilaire,and Whalley 1984).This is particularlytruefor taxes whose incidenceis determinedprimarilyby the uses of income, as we assume to be the case for the sales, excise, and residentialpropertytaxes. Analysts typicallyascribethe highannualtax burdens for the lowest income classes to the large negative transitory component of measured income and frequentlyexclude the very poor fromthe analysis. Since consumptionis morenearlyproportionatlo permanentincome than to annualincome, the averagetax burdenfor consumptiontax borneby low-incomefamilieswill be lower as the accounting period is lengthened.
+Ourimputedconsumptionmeasuresare based on estimatedconsumption relationships (from the Survey of Income and Education for the property tax and the CES for sales and excise taxes) as a function of reported annual income and demographiccharacteristics.The ratio of consumptionexpendituresto income in the CES typicallyexceeds three in the lowest quintileof the income distributionand falls sharplyas income rises. Since the estimatedincome elasiticitesof demandare biased downward, there is an upwardbias in the estimated consumptiontax burdensof families whose annualincomes are low.
+One approachto the permanentincomeproblemis to attemptto assess the degree of bias in our marginalpropensityto consume estimates by
+14. Sandra Newman and Ann Schnare (1986) show, using evidence from the 1983 American Housing Survey, that in 1983 of the 8.5 million poor households not receiving public assistance (about one-half of all poor households), some 60 percent paid more than half their income in rent, while of the 4.6 million households receiving income but not housing assistance, the average rent burden was almost 50 percent of income. The likelihood of complete forward shifting is probably greater in Boston and New York City because both these cities have rent control ordinances which allow property tax increases to be fully reflected in higher rents.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernick and Reschovsky 727
+reference to other studies.'5 Though in general the bias in using reported annual income depends on the ratio of the variance of transitory income to the variance of permanent income, the degree of bias should vary by consumption category. Mayo (1981) reports that there is a significant downward bias from using current income in housing demand estimates-from 16 percent to 50 percent-and it is greater for renters than for owners. Comparable estimates for taxable consumption under sales and excise taxes are not available, though in general one might expect the bias to be lower, because it is less costly to adjust consumption levels of these items than to adjust housing outlays in response to transitory reductions in income. A rough approximation of the upper-bound of the sales tax bias can be inferred from a recent estimate of the overall marginal propensity to consume using CES consumption data but an instrument for income (Clayton-Matthews and Kazarosian 1988). The estimated sales tax burden for poor families in New York State would decline from 3.9 percent to about 1.5 percent under this estimate.16
+The upward bias in the sales and excise tax estimates for the poor from using reported income is offset to an unknown degree by the general tendency toward underreporting of expenditures on the CES. As a result of this underreporting, simulated sales tax liabilities understate the household portion of the sales tax by about 50 percent in both states.17
+An alternative approach to the permanent income problem is to distinguish between temporary and persistent poverty, and focus on the tax burdens of those who are likely to be poor for an extended time period. Recent literature on income mobility reports a substantial degree of instability in the overall income distribution.18Panel studies of poverty support this conclusion, indicating relatively short durations for most spells of
+15. By contrast,Poterba(1989)simplyassumesthatconsumptionis proportionatlo lifetime income, andthataverageannuallifetimeincomecan be approximatedby annualconsumption. Thus, tax burdensare equalto the sharein total consumptionof the taxableitem or items. 16. The estimatein the text is derivedas follows. Clayton-MatthewasndKazarosian(1988) estimatea totalexpenditureequationfromthe 1985CES,usinganinstrumenftordisposable income. Undertheirequationconsumptionexpendituresat anincomelevel of $5,000would be almost $5,000, ratherthan the substantiallyhigherpredictedconsumptionif reported income is used. Ourestimatesfromthe CES show thaton averagetaxableconsumptionis equal to about 20 percentof total consumption,and that the budgetsharedoes not vary significantlyby income level. Applyingthe New York tax rate to estimatedtaxableconsumptionof $1,000yields a tax burdenof 1.5 percent. 17. A similartype of underestimatefor the sales tax in all states is reportedby Feenberg and Rosen (1986). 18. Poterba(1989)summarizesa numberof studiesof incomedynamicswhichreportrelatively highdegreesof income mobility.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+728 The Journalof HumanResources
+poverty (Ruggles and Williams 1988). At the same time, a numberof studies have emphasizedthe issue of persistentpoverty.
+Papers by Levy (1977), Gottschalk (1982), and Bane and Ellwood (1986) indicate that, while spells of poverty are temporaryfor many of those who fall below the poverty line, a high proportionof the poor at any given time are likely to be poor over an extended time period. For example, Bane and Ellwood report that "more than 50 percent of... the poor in a cross-sectionalsurveyarein the midstof the spellof poverty which will last ten years or more" (p. 11). These findingssuggest that even thoughthe negativetransitorycomponentmaybe a significantfraction of annualincome for the poor as a group, for a substantialsubset annualincome may provide a reasonableapproximationto average income over a longer period.
+The consumptiontax incidence results presentedin the previous section of the paperwere obtainedby dividingpredictedconsumptionby an income measure that was adjustedupwardby the arbitraryinflationof very low reportedincomes and by the inclusionof imputedincomefrom owner-occupiedhousing.
+A second approachto the approximationof long-runtax burdensis to applydifferentialweights to tax burdensaccordingto the probabilitythat the family is in the midstof a long-runspell of poverty. The permanence of poverty will, of course, vary with the criterionused. For the purpose of evaluatingtax burdens,we arguethata relativelyless stringentdefinition of permanenceis appropriate-i.e., incomes below the povertyline in at least five years out of a ten-year period-rather than the ten-year duration period cited in the Bane and Ellwood study. The five-in-ten criterioncan be justifiedby the fact that for most such familiesincomes are unlikelyto rise very far above the povertyline even over a relatively long accountingperiod.19
+To determine the incidence of persistent poverty in our sample, we drawon recent estimates by Adamsand Duncan(1988)of the correlates of persistentpoverty amongurbanresidents.Based on a ten-yearsample from the Panel Study of Income Dynamics, they find that race and sex of head are significantpredictorsof persistentpoverty. The probability that a family falls below the poverty line in at least five out of ten years ranges from 50 percent for nonblack male-headedfamilies to over 75
+19. Rugglesand Williams(1988)findthat even for entrantsinto spells of povertyas short as a month, about half have two-year average income levels below 150 percent of the poverty line, and about three-quartershave average incomes below 200 percent of the poverty line. This findingof low longer-termincomes is expectedto be even strongerfor the groupof persistentlypoor we are examiningin this sectionof the paper.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernickand Reschovsky 729
+percentfor those whose headis blackandfemale.20Applyingthese correlates to the New York sample, two-thirdsof the poverty populationis likely to be poor over an extended time period.
+Permanentincome theory suggeststhat the persistentlypoor are more likely to have adjusted their consumption levels to reflect their lower long-runincomes, andthereforewill tendto face lowerpropertyandsales tax burdens than the temporarilypoor. To identify those likely to be persistentlypoor, we dividedfamiliesby raceandsex of head,andranked each groupfrom low to high accordingto the combinedburdenof sales, property, and excise taxes. In this exercise, income was not adjusted upward and did not include imputed rent. Using New York data, the medianburdenof those poor likely to be persistentlypoor was 10.6percent. This compares to an average burdenof consumptiontaxes for all the poor in New Yorkof 15.6percent(see Table2). These resultssuggest that even for those likely to be poor for an extended time period, the burdenof consumptiontaxes is still significant.For the temporarilypoor, whose incomes may not rise very far above the poverty line even when they exit from poverty (see footnote 19), annualburdensare more than 25 percent of income.
+Since taxes are paid out of current income, high tax burdens are a significantpolicy issue, whatever the time period. With cross-sectional data, we cannot adequately measure the extent to which high burdens persist over time. However, the above discussion suggests that the high annualburdenspredictedby our models may be good approximationsof long-termtax burdensfor a significantproportionof the poor.
+V. The Impact of Federal Tax Reform
+It is importantto put the impact of federal tax reformin perspective. Although federal tax reform reduced the numberof poor payingfederal income taxes by over 60 percentand the numberof nearpoor payingincome taxes by aboutone-quarter,the largemajorityof the poor and near-poorwere not directlyaffectedby federaltax reform.21If the Tax Reform Act of 1986had not been enacted, in 1988close to 80
+20. These proportions are derived from Table 6 of Adams and Duncan (1988). The authors also calculate that at least 4 percent of nonpoor in 1979 are likely to be persistently poor in 1974-1983. 21. These results were derived by comparing a calendar year 1988 simulation under current law with a simulation based on federal income tax law as it would have been in 1988 in the absence of tax reform.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+730 The Journalof HumanResources
+percent of poor families would not have been liable for federal income taxes (or eligible for refundablecredits). Even among those who paid federal income taxes prior to federal tax reform, the total tax burdens fromall taxes was only reducedby aboutthreepercentagepointsin both Massachusettsand New York. For most low-incomefamiliesthe burden of taxationcontinues to come primarilyfrom state and local taxation.
+By expandingthe earnedincome tax credit,federaltax reformoffsets social security taxes for an increased numberof low-income families. Federal tax reform results in an increase of nearly 35 percent in the numberof poorandnear-poorfamiliesreceivingEITCcreditsthatexceed their FICA tax liabilities.It shouldbe recalled,however, thateven after federal tax reform, about two-thirdsof the poor with earningsand over 80 percent of the near-poorwith earningscontinueto face FICA (andin some cases federal income tax) liabilitiesthat are not offset by federal credits.
+By raisingpersonalexemptions,the standarddeduction,andthe EITC, federaltax reformhas restoredthe incometax thresholdof mostfamilies to a level above the poverty line for the firsttime since 1980.Duringthe 1980s, when most moderateand high-incometaxpayerswere benefiting from successive tax cuts, more and more low-income taxpayers were being forced to pay federal income taxes for the first time, as inflation reduced the real value of personalexemptions, the standarddeduction, and the EITC. In effect, federal tax reformhas merely returnedmost poor familiesto the position they held in 1980relativeto the incometax.
+Although the indexing of the major features of the income tax will prevent the income tax thresholdfrom slippingbelow the povertylevel, the increase in the combinedFICA tax rate to 15.3 percentin 1990will furtherincrease federal tax burdenson many poor and near-poortaxpayers.
+VI. Conclusion
+In this paper we set out to see whether recent tax reform effortsat the federal,state, andlocal levels havebeen effectivein alleviating tax burdens on the poor. Although the taxation of the poor is frequentlydiscussed, both conceptualand practicalmeasurementproblems have resultedin few attemptsto determinethe overalltax burdensfaced by poor individualsand families. Using a microsimulationmodel of the majorfederal, state, and local personaltaxes, we have shown that lowincome families in New York and Massachusettsface tax burdensof 18 percent of income in New York and 15 percent in Massachusetts.The
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernick and Reschovsky 731
+major sources of these high tax burdens are state and local sales and property taxes, and federal and state excise taxes. Because relatively few poor families paid federal income taxes even before tax reform, the Federal Tax Reform Act of 1986 was largely ineffective in reducing the total tax burden faced by the poor.
+Because of the important contribution of taxes on consumption to the overall tax burden of the poor, we have paid special attention to the potential upward bias in tax burdens caused by the use of annual rather than permanent income. When we weight the estimated burden of consumption taxes according to the likelihood of persistent poverty, we find that in New York the median tax burden for the persistently poor is estimated to be 10.6 percent, as compared to 15.3 percent for the entire sample. Moreover, since most of those experiencing even temporary spells of poverty do not rise very far above the poverty line over longer time periods, the high estimated consumption tax burdens (over 25 percent of income) for the nonpersistently poor in our sample should not be completely discounted. Therefore, we argue that for the majority of poor families, high tax burdens are not simply artifacts of the annual accounting period, but indicate significant real welfare burdens.
+A question that arises in the interpretation of any empirical incidence study is the sensitivity of the results to the incidence assumptions and the data employed. Because there is no consensus on property tax incidence assumptions, we have simulated the impact of several alternative assumptions. First, in line with the "new view" of property tax incidence, we have assumed that 40 percent of the burden is equivalent to a national property tax and is allocated to the owners of capital. The result of this assumption is to reduce the average property tax burden on the poor by about 30 percent, and the overall tax burden on the poor by about 15 percent. For reasons outlined earlier, the allocation of most of the property tax burden to the consumers of housing is our preferred incidence assumption for low-income families. Second, we have considered alternative forward-shifting assumptions for the property tax on rental housing. Assumptions of 50 and 100 percent shifting yielded a range of property tax burden estimates for renters from 5 to 10 percent in Massachusetts and 8 to 15 percent in New York. However, recent data on rent burdens for low-income households suggest that the upper-bound estimates may be more accurate than the lower-bound.
+Although this study is based on data from only two states, we believe that the basic results hold for residents of most states. Massachusetts and New York are different from the average state in several ways, but the impact of these differences on tax burdens faced by the poor tend to be offsetting. In both states the proportion of the poor with earnings is
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+732 The Journalof HumanResources
+lower than in the average state,22implyinga reductionin the average FICA tax burdenon the poor, but also a smallerrole for tax reformin reducingfederaltax burdenson the poor than in other states.
+New York is clearly a "high tax" state, with state and local taxes as a percent of personal income more than 40 percent above the national average. Massachusettsis more typical of the nation,with a burdenless than4 percentabove the nationalaveragein fiscalyear 1987(U.S. Bureau of the Census 1988a).23However, there are several aspects of the tax structurein the two states that tend to mitigatethe resultinghigherthan averagetax burdenson the poor.
+First, both states place above-averagerelianceon the personalincome tax as comparedto taxes on consumption.However, while most states levy income taxes on the poor, both Massachusettsand New York exempt the poor and the majorityof the near-poorfrom state incometaxation. Second, exemptions of necessities makes the sales tax less regressive than in most other states. Using Suits indices, DonaldPhares(1980) found that in 1975only one state had a sales tax thatwas less regressive than Massachusetts's and only seven states had sales taxes less regressive than New York's. Third, both states levy much lower excise taxes on motor fuels than most other states. New York collects less revenue from the tax (in both per capita terms and as a percentageof personal income) than all other states, and Massachusetts ranks very near the bottom (Advisory Commissionon IntergovernmentaRl elations 1988).
+The largefederalbudgetdeficitandrecentrevenueshortfallsin a number of states have led many economists (and some political leaders) to propose increasingfederal and state excise tax rates on gasoline, cigarettes, and alcoholic beverages. Ouranalysis indicatesthat a substantial portionof the tax burdenon the poor (about25 percentin Massachusetts and 16 percent in New York) currentlycomes from these excise taxes. Furtherincreases in these taxes without offsettingmeasuresto protect low-incometaxpayerswill only serve to increasethe economichardships faced by most low-income families.
+Our results suggest that even after the passage of the Federal Tax ReformAct of 1986,the burdenof taxationon the poor remainshighin absolute terms. Our analysis is not a net incidence study, but focuses only on taxes. Because governmenttransferprogramsprovidean important source of income, both cash and in-kind, for the poor, a general assessment of antipovertypolicy wouldincludebothtaxes paidandbene-
+22. It is interesting to note that CPS data indicate that in 1984 both states also had a lower than average proportion of poor who had any earnings. 23. In per capita terms, state and local taxes in Massachusetts were 26 percent above the national average in fiscal year 1987.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernick and Reschovsky 733
+fits received. We believe, nonetheless, that our results support the case for further tax relief for low-income families.
+Recently proposed federal legislation to expand the Earned Income Tax Credit and to convert the federal child care credit into a refundable credit provide one way to protect low-income families, especially those with earnings, from further increases in tax burdens. Similar steps at the state level, combined with increases in property tax relief measures targeted to low-income tenants and homeowners could provide substantial tax relief from existing burdens.
+References
+Adams, TerryK., and GregJ. Duncan. 1988."The PrevalenceandCorrelatesof PersistentUrbanPoverty." Drafttechnicalreport.AnnArbor,Mich.:Institute for Social Research, University of Michigan.
+Advisory Commissionon IntergovernmentaRl elations. 1988.Significant Features of Fiscal Federalism, 1988ed. Washington,D.C.: ACIR.
+Bane, MaryJo, and DavidT. Ellwood. 1986."SlippingInto andOutof Poverty: The Dynamicsof Spells." Journalof HumanResources 21(1):1-23.
+Browning,EdgarK. 1978. "The Burdenof Taxation."Journalof Political Economy 86(4):649-71.
+--- .. 1985. "Tax Incidence, IndirectTaxes, andTransfers."National Tax Journal 38(4):525-33.
+Burkhauser,RichardV., and JohnA. Turner.1985."Is the Social Security PayrollTax a Tax?" Public Finance Quarterly13(3):253-67.
+Case, Karl E., and James H. Grant. 1988. "PropertyTax Incidenceand Excess Burdensin a MultijurisdictionaNl eoclassical Model." WorkingPaper 130. Wellesley, Mass.: Departmentof Economics, Wellesley College.
+Chernick,Howard, and AndrewReschovsky. 1982. "The DistributionalImpact of Proposition13:A MicrosimulationApproach."National TaxJournal 35(2):149-70.
+Clayton-Matthews,Alan, and MarkKazarosian.1988."The CES and Its Use at SWRI,WithSpecialReferenceto ChildCareandPropensitiesto ConsumeOut of Income." July. ChestnutHill, Mass.: Social WelfareResearchInstitute, Boston College.
+Davies, James, France St-Hilaire,and JohnWhalley. 1984."Some Calculations of LifetimeTax Incidence." AmericanEconomicReview74(4):633-49.
+De Tray, Dennis, and JudithFernandez.1986. "DistributionalImpactsof the PropertyTax Revolt." National TaxJournal39(4):435-50.
+EconomicReportof the President. 1987.Transmittedto the Congresstogether with the AnnualReportof the Councilof EconomicAdvisors, January. Washington,D.C.: GPO.
+Feenberg, Daniel R., and Harvey S. Rosen. 1986."State PersonalIncomeand
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+734 The Journal of Human Resources
+Sales Taxes: 1977-1983." In Studies in State and Local Public Finance, ed. Harvey S. Rosen, 35-85. Chicago: University of Chicago Press. Gottschalk, Peter. 1982. "Earnings Mobility: Permanent Change or Transitory Fluctuations?" Review of Economics and Statistics 64(3):450-56. Grieson, Ronald E. 1973. "The Supply of Rental Housing: Comment." American Economic Review 63(3):433-36. Hamilton, Bruce W. 1975. "Zoning and Property Taxation in a System of Local Governments." Urban Studies 12(2):205-11. Hanushek, Rick, and John Quigley. 1980. "What is the Price Elasticity of Housing Demand?" Review of Economics and Statistics 64(3):449-54. Harmon, Oskar R. 1989. "A New View of the Incidence of the Property Tax: The Case of New Jersey." Public Finance Quarterly 17(3):323-48. Hutchinson, Frederick C. 1989. "Taxing the Poor Deeper into Poverty: The Tax System in Alabama." October. Washington, D.C.: Center on Budget and Policy Priorities. Ladd, Helen F., and John Yinger. 1989. American's Ailing Cities: Fiscal Health and the Design of Urban Policy. Baltimore: The Johns Hopkins University Press. Levy, Frank. 1977. "How Big is the American Underclass?" Urban Institute Working Paper 0090-1. Washington, D.C.: Urban Institute Press. Mayo, Stephen K. 1981. "Theory and Estimation in the Economics of Housing Demand."Journal of Urban Economics 10(1):95-116. Mieszkowski, Peter. 1972. "The Property Tax: An Excise Tax or a Profits Tax?" Journal of Public Economics 1(1):73-96. Musgrave, Richard A., Karl E. Case, and Herman B. Leonard. 1974. "The Distribution of Fiscal Burdens and Benefits." Public Finance Quarterly 2(3):259-311. Netzer, Dick. 1966. The Economics of the Property Tax. Washington, D.C.: The Brookings Institution. Newman, Sandra, and Ann B. Schnare. 1986. Reassessing Shelter Assistance in America. Project Report No. 3512-03, Vol. 1, Analysis and Findings. November. Washington, D.C.: Urban Institute Press. Pechman, Joseph A. 1985. Who Paid the Taxes, 1966-85? Washington, D.C.: The Brookings Institution.
+, and Benjamin A. Okner. 1974. Who Bears the Tax Burden? Washington, D.C.: The Brookings Institution. Phares, Donald. 1980. Who Pays State and Local Taxes? Cambridge, Mass.: Oelgeschlager, Gunn, and Hain. Poterba, James M. 1989. "Lifetime Incidence and the Distributional Burden of Excise Taxes." American Economic Review 79(2):325-30. The President's Tax Proposals to the Congress for Fairness, Growth, and Simplicity. 1985. May. Washington, D.C.: GPO. Ruggles, Patricia, and Roberton Williams. 1988. "Measuring the Duration of Poverty Spells?" Paper Prepared for the Annual Meeting of the Association for Public Policy and Management, Seattle, Washington. October. Sulvetta, Margaret B. 1976. "An Analyst's Guide to TRIM-The Transfer
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+
+Chernick and Reschovsky 735
+Income Model." Working Paper 996-03. Washington, D.C.: Urban Institute Press. U.S. Bureau of Labor Statistics. 1988. "Consumer Expenditure Survey Results for 1985." News. September. Washington, D.C.: U.S. Department of Labor. U.S. Bureau of the Census. 1984. After-Tax Money Income Estimates of Households: 1983. Current Population Reports, Series P-23, No. 143. Washington, D.C.: GPO. - . 1988a. Government Finances in 1987. Series GF. Washington, D.C.: GPO.
+. 1988b. Measuring the Effect of Benefits and Taxes on Income and Poverty: 1986. Current Population Reports, Consumer Income, Series P-60, No. 164-RD-1. Washington, D.C.: GPO. U.S. Congress. Joint Committee on Taxation. 1984. Federal Tax Treatment of Families Below the Poverty Line. Prepared by the Staff of the Joint Committee on Taxation, Scheduled for a hearing before the House Committee on Ways and Means, April 12, 1984. Washington, D.C.: GPO. U.S. House. Committee on Ways and Means. 1984. Families in Poverty: Changes in the "Safety Net." Report prepared for use of the Committee by its staff. September. Washington, D.C.: GPO. Yinger, John. 1979. "Prejudice and Discrimination in the Urban Housing Market." In Current Issues in Urban Economics, ed. Peter Mieszkowski and Mahlon Straszheim, 430-68. Baltimore: Johns Hopkins University Press.
+. 1986. "Measuring Racial Discrimination with Fair Housing Audits." American Economic Review 76(4):88-93.
+This content downloaded from 160.36.178.25 on Fri, 18 Sep 2015 19:21:37 UTC All use subject to JSTOR Terms and Conditions
+

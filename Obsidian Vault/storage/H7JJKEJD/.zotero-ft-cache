@@ -1,0 +1,1039 @@
+IRLE WORKING PAPER #101-19
+April 2019
+Does Locked Up Mean Locked Out? The Eﬀects of the Anti-Drug Act of 1986 on Black Male Students’ College Enrollment
+Tolani Britton
+Cite as: Tolani Britton (2019). “Does Locked Up Mean Locked Out? The Eﬀects of the Anti-Drug Act of 1986 on Black Male Students’ College Enrollment”. IRLE Working Paper No. 101-19. http://irle.berkeley.edu/ﬁles/2019/04/Does-Locked-Up-Mean-Locked-Out.pdf
+http://irle.berkeley.edu/working-papers
+
+Does Locked Up Mean Locked Out? The Effects of the Anti-Drug Act of 1986 on Black Male Students’ College Enrollment Tolani Britton University of California, Berkeley1 April 2019
+I am grateful to Bridget Terry Long, Claudia Goldin, Richard Murnane, David Deming, Eric Bettinger, Dave Marcotte, Sophia Rabe-Hesketh, Travis Bristol, participants at the Association for Public Policy Analysis and Management conference and the Association for Education Finance and Policy conference, and anonymous reviewers for reading drafts and providing helpful feedback on this work. Please address all correspondence to Tolani Britton. Email: tabritton@berkeley.edu
+1 Tolani Britton is an Assistant Professor in the Graduate School of Education at University of California Berkeley.
+1
+
+Abstract This paper explores one reason for the educational gaps experienced by Black men. Using variation in state marijuana possession and distribution laws, this paper examines whether the Anti-Drug Act of 1986, which increased the disproportionate incarceration of Black males, also led to differences in college enrollment rates. The results suggest that Black males had a 2.2% point decrease in the relative probability of college enrollment after the passage of the Anti-Drug Abuse Act of 1986. There is some evidence that laws around crack cocaine, and not marijuana, led to this decrease in the probability of enrollment.
+2
+
+I. Introduction
+Although college enrollment and completion rates have increased over the past thirty years, access to higher education has not been uniform across racial groups. In 2012, the respective rates of college enrollment for Black and White 18-24 year olds were 36.4% and 42.1% (NCES, 2015). Figure 1 shows that the growth in Black male college enrollment has been slower than that of Black women, White men, and White women. Further, gaps in enrollment between Black men and White men and Black men and Black women increased during the 1990s. Using the March supplements of the Current Population Survey from 1968 through 1998, Sufi and Black (2002) calculated average college enrollment rates for high school graduates by SES category and time period. They find that in the late 1970s and early 1980s college enrollment for Black 18 and 19-year-old males and females rose to similar rates of enrollment for White persons of the same age before declining in the mid -1980s. Much of the increase in enrollment in the 1970s was driven by enrollment of low-income Black high school graduates, who were more likely to enroll in college than White students of similar income levels. However, by the 1990s, Black students were less likely to enroll in college than their White peers at all income levels
+Numerous theories seek to explain why gender gaps grew between males and females in college enrollment and completion in the 1980s. Buchanan and DiPrete (2006) find that superior female academic performance explains about 65% of the gender gap in college completion for Black students. Goldin, Katz, and Kuziemko (2006) posit that young women increased their high school achievement from the 1957 to the 1992 high
+3
+
+school graduating cohorts, which accounted for between 30 and 60 percent of the gender gap in college enrollment. Differences in high school graduation rates explained about half of the variation in college graduation rates between the genders (Bailey & Dynarski, 2011). However, another possible explanation for the gender gaps in college enrollment comes from changes in drug laws and differential enforcement of laws on controlled substances by both race and gender.
+Laws around controlled substances became harsher in terms of the penalties and fines imposed during the three decades following 1970. One of the first federal drug laws, the Anti-Drug Abuse Act of 1986, increased penalties for possession of drugs, established mandatory minimum sentences for drug possession and trafficking offenses, differentiated penalties for crack cocaine as opposed to powder cocaine, allowed for seizure of assets, and increased funding for state and local drug control efforts (Saphos, Zeldin, Harbin, Schneider, & Hollenhorst, 1987). The Office of National Drug Control Policy (1999) reports that drug control funding increased from $2.9 billion in 1986 to $4.8 billion in 1987.
+Changes in the laws, in turn, led to higher arrest and incarceration rates than in prior decades, particularly for young Black men (Mustard, 2001). Between 1980 and 1989, the ratio of prison commitments to adult arrests increased from 196 per 1000 to 332 per 1000 (Cohen, 1991). Between 1980 and 1989, arrest of Blacks for drug sales and manufacturing or use rose by 219% when compared to the increase in the arrest rate for Whites of 56%. This disparity in drug arrests by race was also reflected in the juvenile population (OJJDP, 2014). Drug offense arrests among Black juveniles increased from 1985 – 1989 and remained stable from 1989 – 1992. Among White youths, rates
+4
+
+decreased between 1985 and 1992. Some researchers have argued that incarceration rates and the state and federal
+policies that raise rates of imprisonment are driven by increases in crime (Levitt, 1996; Vieraitis, Kovandzic, & Marvell, 2007). Johnson and Raphael (2012) estimated that the marginal cost of imprisoning is less than the benefit derived from the reduction in crime from 1978 through 1990. However, although the marginal benefit decreased in the period from 1991 through 2004, rates of imprisonment continued to rise over the same time period. Smith (2004) demonstrated that while crime rates remained stable or decreased during the 1990s, incarceration rates continued to increase over the same time period.
+Despite similar rates of drug use for adults and lower levels for juveniles, Black persons, and young Black men, specifically, have been disproportionately impacted by controlled substance legislation and enforcement, both during the mid 1980s and in the decades following (Johnston et al., 2010). As early as 1991, the United States Sentencing Commission (1991) reported that non-Whites were more likely than Whites to receive a mandatory minimum sentence for similar crimes and “the greatest expected impact [in the federal prison population] could be attributed to the Anti-Drug Abuse Act of 1986” (p. 66). Further, Mustard (2001) finds that the largest federal sentencing disparities between Black individuals and White individuals occurred for drug trafficking offenses, after controlling for past criminal history. Ironically, much of this disparity was driven by departures from federal guidelines, whereby Black men were more likely than White men with similar criminal histories to receive punishments that were harsher than mandated federal penalties.
+Incarceration for drug offenses could lead to underinvestment in human capital
+5
+
+for young adults through numerous channels. Firstly, time in the criminal justice system impacts academic preparation, which might increase the psychic loss associated with additional years of education. Access to quality secondary and tertiary education within jails and prisons is limited, although studies have demonstrated that higher levels of education are associated with lower rates of recidivism (Aos, Miller, & Drake, 2006; Parent, 1994). Secondly, incarceration limits access to funding for college. Incarcerated persons are ineligible for both federal Pell Grants and student loans while in prison, delaying, and possibly reducing the likelihood of college entry (Horn, Cataldi, & Secora, 2005). Thirdly, drug convictions can limit a young adult’s ability to receive student aid from the government even after release (FAFSA, 2016).2 Fourthly, involvement with the criminal justice system may have a dampening effect on the educational aspirations of youth. One study provided some evidence that being asked about imprisonment serves as a deterrent in applying for financial aid and college, given the discrimination against persons formerly incarcerated (Weissman et al., 2010). Finally, young adults who have served time in correctional institutions have a 12% lower likelihood of being employed after release when compared to youths who have not had contact with the criminal justice system due to the stigma associated with conviction (Freeman, 1994). As approximately 41% of undergraduate college students worked to meet their educational expenses in 2011, the inability to work likely impedes the ability to pay for college for formerly incarcerated adults (NCES, 2014).
+2 After serving time for drug violations, eligibility for federal financial aid depends on if the offense occurred when they were receiving federal aid. To ascertain their eligibility, young adults must complete an additional worksheet. Behavioral economics suggests that complexity in the financial aid process reduces the likelihood of students attending college (Dynarski and Scott-Clayton 2006).
+6
+
+Using variation in state marijuana possession and distribution laws, this paper examines whether the Anti-Drug Act of 1986, which led to the disproportionate incarceration of young Black men for drug possession and manufacture, also led to differences in college enrollment and graduation rates by race and gender Using a quasiexperimental differences-in-differences (DD) strategy, this paper exploits the federal law change to explore how variations in state penalties for marijuana possession and distribution (i.e., state-level variation in the effects of the 1986 federal law change) are associated with changes in the probability of college enrollment for Black men. This is one of the first papers that attempts to quantify the effects of the Anti-Drug Abuse Act of 1986 on college enrollment.
+From the difference-in- differences model using variation in state laws, there was not a statistically significant decrease in the likelihood of college enrolment when a state increases their minimum marijuana possession penalty by one month. However, there is some evidence that while marijuana laws do not have an impact on college enrollment, state cocaine laws and enforcement of cocaine laws led to a relative decrease in the likelihood of college enrollment for Black men living in more punitive states.
+This work links to existing empirical work on the impact of incarceration on educational outcomes (Aizer & Doyle, 2016; Hjalmarsson, 2008). This paper also contributes to the literature around the effects of racial inequality and a greater likelihood of incarceration on human capital acquisition in the United States (Pettit & Western, 2004). Finally, this paper provides another explanation for the gender gaps in college enrollment and completion, particularly for Black young adults (Bailey & Dynarski, 2011; DiPrete & Buchmann, 2006).
+7
+
+The paper is organized as follows. The theoretical framework is presented, followed by the data, empirical framework, results and sensitivity analysis.
+Theoretical Framework Economic theory of crime posits that harsher penalties for infractions will reduce the likelihood of persons being involved in illegal activity, as the cost of criminal activity will be relatively higher (Becker, 1968). Because drug crime is a normal good, Freeman (1994) posits that drug crimes decrease as the cost of involvement rises. Thus, states that have relatively more punitive drug laws could have a lower incidence of drug crime and arrests if the harsher punishment deters crime. While the severity of drug law serves as one component of deterrence in the economic theory of crime, the arrest rate could be a mediating variable. Following the conventions of prior work on arrests and crime in equation (1), arrests for drug infractions are a function of the severity of the drug laws denoted by (S), the prevalence of police enforcement (P), local unemployment rates (U), and the relative wages of legal employment opportunities (W) (Corman & Mocan, 2000). If S or W increases, then the rate of arrests should decrease. If P and U increase, then arrests should increase. (1) Arrests =f (S, P, U,W) Becker (1988) theorizes that increases in the number of persons being arrested in one’s neighborhood should increase the deterrence effect, due to the salience of the arrests to persons in one’s neighborhood. However, Levitt (1998) lays out some of the reasons that deterrence might not work: imperfect information about the likelihood of being caught and the lag time between the crime and punishment. Thus, the impact of changes to a state’s drug laws on arrests is uncertain. On the one hand, an increase in the
+8
+
+penalty could lead to more arrests in the population most likely to be arrested, males aged 18-30, especially in the initial period after the law changes. On the other hand, the increase in the penalty could lead to a decrease in the likelihood of arrest, due to the deterrence effect.
+Lochner and Moretti (2007) theorize that youth make a choice between pursuing education (i.e. not committing crime) versus a life of street crime within the human capital framework. However, an important factor not taken into account by this model is how behavior that had not been criminalized, such as drug possession, could lead to an increased likelihood of arrest after the severity of the punishment (or enforcement) changes (Blumstein, 1995). Also, the assumption of a decision between legal work and committing crime suggests that the two options are mutually exclusive. However, Fagan and Freeman (1999) find that many youths who report receiving income from illegal sources also do “legitimate” work. Analysis of the 1980 NLSY cohort found that 34% of 20-23 year old men with 11 or 12 years of schooling reported earning income from illegal activities and 24% of young men with a high school degree reported earning income from illegal activities (Freeman, 1994). Although these individuals were close to or had completed high school, approximately a third earned income from acts that could lead to incarceration.
+Given that an absolute trade-off does not necessarily exist between legal and illegal work, I extend the model of a non-dichotomous relationship to illegal work and human capital acquisition. Young men aged 18-24 could both be enrolled in high school and planning to attend college and possess or sell drugs. Thus, changes in the severity of state drug laws could impact the college enrollment of the marginal student, and
+9
+
+particularly the educational outcomes of young Black men. There was a disproportionate increase in arrests and incarceration of young Black
+men after 1986 as seen in Figure 2. Also, after a period of growth in college enrollment for Black men during the 1970s and early 1980s, their enrollment stagnated in the late 1980s and early 1990s. An increased likelihood of arrest might have thus impacted the educational attainment of the marginal Black male college student, who might have attended college in the absence of arrest.
+Given that the Anti-Drug Abuse Act of 1986 led to a disparate number of arrests and convictions for non-violent drug offences among young Black men when compared to both Black women and White men, the research questions are: RQ1: Did the passage of the federal Anti-Drug Abuse Act of 1986 cause a fall in relative college enrollment for Black male students? RQ2: Did the passage of state laws that increased punishment for marijuana possession and distribution after the passage of the Anti-Drug Abuse Act of 1986 reduce college enrollment for Black males?
+Data This paper uses the October Current Population Survey (CPS) education supplements, for the years 1984-1992, to examine trends in enrollment by race and gender. In light of the extensive use of this dataset in research, only a brief description is provided here. CPS collects data from approximately 56,000 households monthly, with additional information on educational enrollment and attainment collected each October. This supplement differentiates between types and intensity of college enrollment for individuals. The CPS also provides information on racial and ethnic affiliation, family
+10
+
+composition, and family financial characteristics, which allows for inclusion of individual and family covariates correlated with human capital acquisition, from family income to state of residence.
+Although CPS October Education supplements are one of the few datasets that covers this time period and provides data on college enrollment, the data has limitations. While CPS details state of current residence, this data does not indicate the length of residence in the state or prior states of residence. Thus, persons who move into a state were subject to different drug laws in prior periods and the analysis cannot account for their state of previous residence. State samples from CPS within the age group of 18-24 are also relatively small so standard errors with respect to college enrollment will be larger. Another weakness of the CPS October supplements is that it excludes persons who are incarcerated. In light of the much higher lifetime likelihood of going to prison for Black men when compared to White men, 28.5% versus 4.4% in 1991, CPS likely underestimates differences in educational attainment between Black men and non-Black men and Black women and Black men (Bonczar & Beck, 1997; Heckman & LaFontaine, 2010). As a result, the estimates for the probability of college enrollment for Black men will have downward bias.
+The second source of data contains the state penalties for marijuana possession and distribution in three years: 1986, 1988, and 1990, where 1986 laws serve as the pretreatment, or baseline, laws and 1988 and 1990 are post-treatment laws. The drug laws in 1986 are taken from January of 1986, prior to the federal law change. For each state and year included, the dataset includes the minimum and maximum penalty in months of imprisonment for the first offence of both possession and distribution of 250 grams of
+11
+
+marijuana and cocaine.3 Two hundred and fifty grams corresponds to the first level of penalty for marijuana in the federal government. Variations exist in the ways that states report penalties for marijuana possession and distribution. Many states report upper bounds for penalties in numbers of months of imprisonment but not lower bounds. For example, Arkansas in 1986 considers marijuana possession a misdemeanor. The penalty for this misdemeanor is up to one year of punishment. As a result, the minimum penalty in months is 0 months and the maximum penalty is 12 months. Forty out of the fifty-one states and districts have a minimum punishment of 0 months in 1986 for marijuana possession and 41 states have a minimum marijuana possession penalty of 0 in both 1988 and 1990 in the data because the minimum amount was not specified.4 There is greater variation in the minimum penalty in months of imprisonment for marijuana distribution, as it is considered a more serious crime and thus has a harsher penalty. For distribution, 25 states have a minimum distribution penalty of 0 months in 1986 and 27 states have this minimum distribution penalty in 1988 and 1990. If no gram amount of marijuana is specified in the laws and the punishment pertains to any given amount of the controlled substance, the specified punishment used is the minimum and maximum penalties for 250 grams. If no maximum penalty is provided or if life imprisonment is the penalty, 1000 months is used as the maximum penalty. Estimates for marijuana possession penalties are based on three United States Department of Justice (DOJ) publications: A Guide to State Controlled Substances Act from 1988 and 1990, Felony Laws of the 50 States and
+3 Some states such as Alaska, Arizona, Colorado, Delaware, Michigan, Nebraska, Nevada, and Wyoming have penalties for use separately from the penalties for possession. Given the relatively small number of states that have these additional laws, only laws for possession and distribution are used in the data set. 4 Washington, DC is in the analysis.
+12
+
+District of Columbia, 1986, as well as state session laws on marijuana and cocaine possession and distribution in the specified years from HeinOnline. Sample
+The sample contains a nationally representative set of young adults aged 18-24, though as previously stated it excludes persons who are currently imprisoned. Persons in this age range had the highest rates of school enrollment as compared to other age spans from 1984 - 1992.5 Observations with missing data on race, ethnicity, family income, and state of residence from the October CPS supplements are excluded, which reduced the sample by approximately 5%.6
+In this analysis, the college enrollment of Black young men is compared to that of non-Black men in the same age range because male college enrollment has increased at slower rates than that of females since the 1980s. In Figure 3, there are parallel trends in the fitted values of college enrollment for Black males and non-Black males prior to the law change in 1986. As a result of this similar trend, the post secondary outcomes of Black males can be compared to that of other males. The probability of college enrollment of Black males is also compared to that of Black females. Black females serve as a comparison group because they might have been impacted by policies that affected Black young adults, such as higher arrest rates. While Black women had higher arrest rates than other women, their rates were not as high as arrest rates for Black men. Trends in fitted values are also similar for the comparison of college enrollment trends of Black
+5 Rates of enrollment were 38.7% for 20-24 year olds, 13.3% for 25-29 year olds and 6.7% for 30-34 year olds (NCES 2014). 6 The only variable that had missing data was the family income variable, which is one of the limitations of the CPS.
+13
+
+men and women. All models include individual probability weights in order to produce nationally representative statistics (BLS, 2012).
+Table 1 presents sample means for young adults aged 18 – 24 in the CPS October supplement sample prior to the federal law change and following the federal law change. Over the period from 1984 to 1986, approximately 28% of the sample is enrolled in college, with slightly lower enrollment for Black males at 21% and a slightly higher likelihood of enrollment for non-Black males at 30%. For the entire sample, the likelihood of college enrollment increases 4% points or 14% in the period after the law change from 1987 to 1992. For Black men, the increase is 1% point and for non-Black young men, the increase is 3% points. Also, much of the increase in enrollment comes from four-year colleges, where enrollment increases from 21% to 24% of students in this age group enrolled, as compared to two-year colleges, which went from 7% to 8% enrollment for persons aged 18-24.
+Empirical Methodology The hypothesis that young Black men who reside in a state with more punitive marijuana possession and distribution laws will have a higher likelihood of being arrested (and subsequently imprisoned) for these infractions when compared to non-Black men living in the same states and a higher likelihood of arrest than Black women living in these states undergirds the analysis. In order to test the hypotheses of if an increase in state drug penalties leads to higher arrest rates for Black males than for other males, an event study over the time period from 1984 – 1992 is carried out. The event study measures how rates of arrest change in each year after the law passes, as compared to arrest rates prior to the law change. This empirical approach
+14
+
+compares changes in adult arrest rates from 1984 to 1992 in states that changed their marijuana laws from 1986 to 1988, using data on arrests from the Uniform Crime Reports from 1984 – 1992 and the data on changes to state marijuana and cocaine laws. The event study contrasts arrest rates for Black men in states with law changes and changes in arrest rates for non-Black men in these same states. An event study is also carried out to compare annual changes in arrest for Black men in more punitive states to changes in arrest rates for Black men in states that did not become more punitive. (2) College ist= ∑−55 ������������������������1 (������������������������������������������������ = ������������)+ β1 X+ γ1 S + γ2 R +εist
+In equation (2), College, the outcome variable is a dichotomous variable indicating whether a young Black male who is between the ages of 18 and 24 is enrolled in college. The treatment variable is an indicator of the number of years before, during, and after the event occurs in a particular state. In equation 1, ������������0 equals 1 in the year that marijuana laws change and 0 in any other year and ������������3 equals one in the third year after the law is enacted and 0 in any other year (Hoynes, Page, & Stevens, 2011). The year prior to the law change serves as the base year. Thus, the coefficient for each indicator measures the impact of a state marijuana law on college enrollment in a given year after the passage of the law. The period following the event will be the five years following the law change. The analysis controls for characteristics associated with college enrollment (X) such as age, family income, the seasonably adjusted annual state unemployment rate and average annual public tuition, room, and board fees (Rouse, 1994; Perna, 2000). As college enrollment rates differ regionally, state fixed effects in the model account for time invariant unmeasured differences in states that might effect college enrollment (S). Year fixed effects (R) control for trends specific to a particular year that could impact college enrollment. Standard errors are clustered at the level of the state. This analysis is also
+15
+
+carried out for young White males residing in states that changed their laws in order to compare changes in the likelihood of college enrollment over time to that of Black males.
+After testing the hypothesis that Black men are more likely to be arrested in states with more punitive marijuana laws when compared to both Black men in less punitive states and White men in states that became more punitive, this paper measures the effects of these laws on college enrollment. Difference-in-differences (DD) is used as a quasi-experimental strategy to measure the effects of the Anti-Drug Act of 1986 on college enrollment and graduation rates for Black men. The DD approach compares outcomes for Black men to another demographic group before and after a policy change. The primary assumption for the difference-in-difference model is that the trends in enrollment for the two groups being compared were parallel prior to the change, as seen in Figure 3 (Wooldridge, 2010). Therefore, differences after a change, once accounting for the pre-change gap, are attributable to the law. In other words, the DD strategy accounts for existing time-invariant dissimilarities between the groups that may bias the estimates (Imbens & Wooldridge, 2007).
+For the first research question that explores changes in college enrollment after the passage of the federal law, pre- and post- law change serve as the first difference and race as the second difference, when comparing the college enrollment of Black men to that of non-Black men. In the next set of analyses that compares the outcomes of Black men to that of Black women, pre- and post- law change is the first difference and gender is the second difference. For the second research question that uses variation in state marijuana laws, geographic variation in changes in state laws for marijuana possession and distribution and race are the second difference for the all male sample and gender as
+16
+
+the second difference in the all Black student sample. The models are estimated using both logistic regression and linear probability models and standard errors are clustered at the level of the state, in order to correct for serial correlation in the error terms (Bertrand, Duflo, & Mullainathan, 2004). Each model includes CPS October supplement final person weights.
+The source of variation for the second research question is the changes in severities of states’ marijuana laws after the passage of Anti-Drug Abuse Act of 1986. The analysis uses state variation, as opposed to a smaller geographic unit for a number of reasons. First, most drug crimes were prosecuted under state law, as opposed to federal law, with 653,386 of the total 712,557 incarcerated persons being held in state prison in 1990 (Cohen, 1991; Kaeble et al., 2016). Second, the CPS only covers large metropolitan statistical areas (MSA). Thus, the MSA would not cover all states. One potential limitation of using states as opposed to MSA is that enforcement of marijuana laws vary within states. For example, New York had the Rockefeller Drug Laws, enacted in 1973, whereby possessing four ounces of marijuana carried a sentence of fifteen years to life. Paradoxically, NY CLS Penal § 221.05, passed four years later in 1977, stated that those in possession of less than an ounce of marijuana could be fined but not imprisoned, as long as the marijuana was not shown publicly. Although New York State decriminalized possession of small amounts of marijuana in 1977, law enforcement officers in New York City disproportionately stopped young Black and Latino men in urban areas and forced them to remove drugs from their pockets (Gelman, Fagan, & Kiss, 2007). Once the drugs were in public view, possession became a misdemeanor, and could be punished by imprisonment as compared to a fine for an infraction. While there is extensive research
+17
+
+on the policing in New York City (Golub, Johnson, & Dunlap, 2007; Harcourt & Ludwig, 2007), other states and cities could have a similar dynamic. However, this study measures aggregate changes to college enrollment for Black males. Even if law enforcement varies within states, the analysis, which clusters individuals within states, will capture aggregate changes in college enrollment within states.
+In equation 3, the sample includes young adult males aged 18 to 24, in order to compare the outcomes of Black men and non-Black men. The analysis is for only males in this age group for three reasons. First, young males are the group most likely to be arrested, as shown earlier. Second, trends in college enrollment for White women differ from that of Black men, which would violate the primary assumption of the DD model. Third, this is the age of college entry for many young adults, as approximately 60% of enrolled students in 1987 were in this age range (NCES, 1997). Using ordinary least squares, the model can be expressed as follows: (3) Collegeist = β0 + β1 After1986ist + β2 Blackist + β3 (After1986ist*Blackist)+ + β4Xist + γ1 S + γ2 R +εist In equation (3), College, the outcome variable is a dichotomous variable indicating whether an individual who is between the ages of 18 and 24 is enrolled in college. The binary indicator After1986 captures changes in college enrollment from pre- law change to post common to all demographic groups. Although the Anti-Drug Abuse Act passed October 27, 1986, 1987 is the first year in which the law was applied because the data comes from CPS October supplements and the law had not yet passed in 1986 when the sample was taken. The second difference, captured by the binary variable Black, measures differences in college enrollment between Black and non-Black males prior to
+18
+
+the law change. The variable of interest is the interaction term After1986*Black because it measures the difference in the average change in the probability of college enrollment for Black males from pre- law to post- law after differencing out the average change in college enrollment for non-Black males over the same time period. In the DD model, the interaction term allows the two groups to have a different starting point, or initial enrollment rate, as well as a different rate of change in enrollment after the law. The same model is used with a sample of only young Black adults in order to compare the difference in the probability of college enrollment of Black men and women. In this analysis, the second difference would be gender, which would capture pre- law change differences in the likelihood of college enrollment between Black young women and men.
+Changes in enrollment that occurred at the same time as the rise in incarceration for Black males but not because of the trend constitute one threat to the validity of the analysis. For example, college enrollment for Black males could have changed due to economic conditions or laws, for example an increase in unemployment rates or changes to federal laws around financial. However, unemployment rates for both Black males and White males decreased from January 1984 through January 1989, with a steeper decline in the unemployment rate for Black males than White males. Another threat to the validity comes from the potentially incorrect assumption that marginal college students are being arrested.
+In order to address the aforementioned threats to the validity of the analysis, the analysis controls for demographic and contextual characteristics associated with college enrollment. The vector of control variables (X) include age, age squared, ethnicity, family
+19
+
+income, and the yearly seasonably adjusted annual state unemployment rate (Rouse 1994; Perna 2000). As college enrollment rates differ regionally, the models have state fixed effects to account for time invariant unmeasured differences in states that might effect college enrollment (S). They also include year fixed effects (R) in order to account for trends specific to a particular year that could impact college enrollment.
+Balancing tests on included covariates and outcomes prior to the law change in 1985 and in 1991 after the law changes are carried out. These tests explore differences in the baseline population. For the difference-in-difference estimation, the baseline population for the treatment and control groups are not required to have the same point estimates on covariates, but changes over time should be parallel (Wing, Simon, & BelloGomez, 2018). In this sample, the differences in terms of race, gender, and other demographic characteristics change at similar rates over the time period of the study.
+To refine the analysis and explore how the federal law might have had differential effects by state context, an alternate second difference is used: variation in changes to state laws around marijuana possession and distribution. For example, while Kentucky had a maximum punishment of one year in prison for distribution of up to 225 grams of marijuana in 1986, Alabama had a maximum penalty of fifteen years for distributing the same amount of marijuana in that year (Logan, Stellwagen, & Langan, 1987). The magnitude of the effect of the law on college enrollment might vary with the magnitude of the state law change after the passage of the federal law. In order to capture the ways in which states responded to the unanticipated passage of the Anti-Drug Abuse Act of 19867, the change in minimum penalty in months of imprisonment for marijuana
+7 The law was introduced in the House of Representatives in September of 1986 and passed in October of the same year.
+20
+
+possession serves as the second difference in equation 3. A predictor for the maximum penalty in a state is also included. This analysis thus compares college enrollment rates in states that became more punitive with respect to marijuana possession and distribution after 1986, as compared to those that became less punitive or did not change their marijuana laws from 1986 to 1988.
+The first difference is the change in state marijuana possession and distribution penalties and the second difference is race as follows in equation 4. (4) Collegeist = β0 + β1 State marijuana penalty min (max)ist + β2 Blackist + β3 (Blackist * State marijuana penalty min (max)ist) + β4Xist + γ1 S + γ2 R +εist The variable State marijuana penalty min (max) is a continuous variable that indicates the penalty in months of imprisonment for an amount of marijuana possessed or distributed in a given year. The interaction term Black* State marijuana penalty min (max) is the variable of interest. This difference estimates the difference in average enrollment for Black males in states with more lenient penalties after the law change as compared to Black males in states with more lenient penalties prior to the law change by subtracting out (controlling for) two confounding trends: (1) changes in college enrollment for Black men across all other states (2) changes in college enrollment for young men living in more lenient states. Thus, the interaction term measures not only pre- and post- law differences in college enrollment differentiated by race, but it also allows for differences in college enrollment based on whether an individual lived in a state in which the law was more (or less) severe in terms of the marijuana possession and distribution laws after the passage of the 1986 Anti- Drug Act (Puhani, 2012).
+21
+
+A final specification is the difference-in-difference-in-differences (DDD) model on changes in college enrollment for Black men, which simply extends the state variation DD model by adding a third difference. The first difference is race, the second difference is the change in state marijuana laws, and the third difference is before and after the federal law passed. This model includes all male students in the sample.
+Results Difference- in –differences: Changes in college enrollment after the 1986 law change
+The analysis commences with the event study, which tests the assumption that an increase in the state penalty for drug infractions leads to a greater likelihood of arrest for Black men when compared to White men in more punitive states and Black men in less punitive states. Figure 5 presents the results of the event study for Black and non-Black persons in states that became more punitive with respect to marijuana laws. Here, Black adults had an increase in the number of arrests in the years following the passage of the federal law. By contrast, there was a decrease in the number of arrests for White adults in the same states.
+An event study that compares increases in arrests for drug infractions for Black men in states that increased penalties for marijuana possession with changes in arrests for Black men in states that did not change their penalty is also carried out. In Figure 6, while arrest rates for Black men increased after 1986, the increase in arrests for Black men in states did not change their punishment was less that the increase in arrest rates for Black men in states that became more punitive. These figures provide evidence that arrests disproportionately increased for Black men in states that change their drug laws when compared to arrest rates for White men in states that became more punitive and arrest
+22
+
+rates for Black men is states that did not change their laws. Similar trends exist for changes in cocaine arrests by race in states that changed their cocaine laws. Figures 5 and 6, demonstrate that Black men in states that changed their marijuana laws had higher likelihoods of arrest, when compared to both White men who reside in the same states, and Black men who reside in less punitive states. Thus, an increase in punition disproportionately increases the arrest rate for Black men in the late 1980s and early 1990s.
+Table 2 provides the estimates for the difference-in-difference analysis for the change in the federal law. This table indicates that Black males had a marginally lower probability of being enrolled in college after the passage of the 1986 Anti-Drug Abuse Act. Overall, Black young men were less likely to be enrolled in college prior to the law change when compared to non-Black men, as seen by the consistently negative and statistically significant co-efficient on Black in this male only sample. From Column (3) that includes all covariates and state fixed effects, the coefficient of interest, the interaction term After1986*Black, is negative and marginally significant with a point estimate of -.0222. This can be interpreted as a 2.22% point, or 2.22/21=10%, decrease in the probability of a Black male enrolling in college after the passage of the Anti Drug Act of 1986.8 Further, this estimate aligns with national data demonstrating that while the total numbers of Black males enrolling in higher education increased, their share of the undergraduate population fell slightly during this time period, from 4.2% in 1980 to 3.9% in 1990 (USDOE, 1995).9 Table 2 also explores whether the findings vary by the type of institution, namely, four-year or two-year colleges in the fourth and fifth columns. There
+8 The college enrollment rate for Black men prior to the passage of the federal law was .21 in the sample. 9 The college enrollment rate for White men was 39.5% in 1980 and 35.6% in 1990.
+23
+
+are no detectable effects on enrollment in either two-year or four-year enrollment. However, the relatively small sample size of Black students means that there might not be enough power to detect small effects when differentiating between two-year and fouryear colleges.10
+Next, changes in the likelihood of college enrollment, when comparing the enrollment of Black males to that of Black females in the DD model are explored, as Black women also had increases in arrest rates during this time period; though not at the same level as Black men (Hester, 1989; Jankowski, 1992).11 Here, marginally significant decreases exist in the likelihood of college enrollment by Black men in the years following the passage of the Anti-Drug Abuse Act of 1986, when compared to the years prior in Table 3. The point estimate for the interaction term After1986*Male, in Column (3) for the model with covariates and state and year fixed effects, has a similar direction and magnitude to the one from the all male sample. It shows a 2.24% point decrease in Black male enrollment. There were no significant differences in enrollment for Black males after the policy change when looking at the probability of enrollment in two-year or four-year colleges in Table 3 Columns (4) and (5). As previously hypothesized, one reason that the analysis might not be detecting effects is the relatively small sample size of the Black population of 18-24 years olds in the CPS, particularly when looking at changes within states.
+10 Detecting a mean difference of .01 in the probability of college enrollment with power of .8 and a confidence level of .95 requires a sample size of approximately 28,500 persons. The sample size for Black students in the analysis is 15,147. 11 In 1985, state prisons housed 9,791 Black women (204, 280 Black men) and 10,077 White women (224,647 White men). By 1990, there were 17,753 Black women (326,845 Black men) and 16,813 White women (306,897 White men) in state prisons (Hester, 1989; Jankowski, 1992).
+24
+
+Difference-in-differences: Changes in college enrollment based on state law changes Table 4 presents the effects of marijuana laws on college enrollment for young
+men based on their state of residence and the change in state law from 1986 to 1991. Overall, the results show that states that became more punitive, for their minimum marijuana possession penalties, had slight decreases in college enrollment for Black men.12 From the coefficient on Black* State marijuana penalty in Column (1) of table 4, Black males in a state that had a one month increase in their minimum marijuana possession penalty after the federal law change had a .22 % point, or 1%, increase in the likelihood of college enrollment. However, this result is only marginally significant. When looking at the effects of the change in the maximum penalty from the coefficient Black* State marijuana penalty max 88-86, there is not a significant effect. When using Black women as a comparison group in Table 5, the results resemble the point estimates and magnitude for the analysis comparing the college enrollment of Black men to other men for the minimum penalty. However, the results are also not statistically significant – possibly due to the smaller sample size. Sensitivity Analysis
+While there is some variability with regards to severity of penalties for marijuana laws, drugs such as cocaine and heroin receive the harshest penalty allowed in almost all states. In particular, there were severe penalties associated with cocaine in the federal law and much of the news coverage in the 1980s was around crack or freebase forms of cocaine and their evils (Orcutt & Turner, 1993). Fryer, Heaton, Levitt, and & Murphy (2013) find that crack cocaine had a large impact on a number of social indicators for
+12 Nine states changed their maximum distribution penalties from 1986 to 1988 and twelve states changed their minimum distribution penalties in this time period.
+25
+
+Black persons in the 1990s, from birth rates to death rates. According to the Bureau of Justice Statistics (2017), from 1987 to 1995, most drug arrests were for heroin or cocaine. This changed in 1996, when arrests for marijuana related crimes outnumbered those for other drugs.
+In order to test whether marijuana might be the incorrect controlled substance to detect the changes in Black male college enrollment after the passage of the Anti-Drug Abuse Act of 1986, two approaches are used. First, this paper measures the effects of changes in the minimum and maximum penalties for cocaine possession and distribution on Black male college enrollment. The analysis is also replicated using the state level crack index from Fryer at al. (2013), and replace the state cocaine laws with the state crack index for each year. In the crack index, the authors created proxies for the prevalence of crack in cities and states from 1980 to 2000 and adjusted for the racial makeup of a state. The state yearly crack measure includes percentage of arrests for either possession or distribution of cocaine or a derivative, per capita number of Drug Enforcement Agency arrests and seizures related to cocaine and derivatives, and per capita deaths related to cocaine.
+Using variation in changes of state laws for cocaine in Table 6 Column (1), there is a small but significant decline in the relative probability of Black male college enrollment when the maximum cocaine penalty increases by a month within a state. Enrollment does not change when the minimum penalty increases. In Table 7 that uses the Fryer et al crack index as the primary predictor, the coefficient on the interaction between the crack index and Black is negative and indicates a 2.34% point decrease in the likelihood of college enrollment when the crack index increases by one unit. The
+26
+
+point estimates for the change in the likelihood of college enrollment are of a similar magnitude and direction, though slightly smaller, when Black women serve as the comparison group. While both approaches suggest that increases in the severity of crack laws led to decreases in the college enrollment of Black men when compared to their White peers, the crack index has a much larger point estimate. One reason that the crack index might have a larger effect is that the index not only measures arrests, it also includes a proxy for enforcement, namely how many DEA busts occurred, as well as the death toll related to cocaine.
+A final specification is the difference-in-difference-in-differences (DDD) analysis on changes in college enrollment for Black men. The DDD model had similar results to the DD models using state variation in laws. In the DDD analysis, there were not significant increases in the likelihood of college enrollment for Black men after changes in the marijuana laws, as seen in Table 8 Column (1). However, Table 8 Column (2) shows how the probability of college enrollment for Black men decreased by approximately 5 percentage points in states that increased their cocaine possession penalties.
+Finally, the analysis explored changes in laws around financial aid and changes in college costs. If income constrained students had less access to government grants and loans during the 1980s, this could have changed the likelihood of college enrollment for Black students. While the Higher Education Act was reauthorized in 1986, there were no significant changes to the funding levels for programs from the prior reauthorization (Keppel, 1987). Providers of higher education might have also instituted policies that impacted the demand for higher education, such as lowering tuition or increasing the
+27
+
+amount of aid disbursed. However, tuition prices had not decreased in this time period. According to National Center for Education Statistics (2000), average undergraduate tuition, fees, room and board for both two-year and four-year institutions increased at a relatively constant rate, although two-year prices increased at a slightly slower rate from 1984- 85 through 1986-87. Discussion of results
+This paper seeks to understand whether increases in marijuana possession and distribution penalties by states, following the passage of the federal Anti-Drug Abuse Act of 1986, decreased the likelihood of college enrollment for Black males. While traditional college-aged Black males were disproportionately arrested for drug possession and distribution infractions following the introduction of the federal law (US Sentencing Commission, 1991), it was unclear if these laws also had an impact on the likelihood of college enrollment for Black young men.
+The analysis for the first research question, based on the federal law change, shows that Black males in the United States had a marginally lower probability of college enrollment after the passage of the Anti-Drug Abuse Act of 1986 as compared to Black males prior to the law change, once trends in college enrollment over the period are taken into account. For the second research question, increases in a state’s minimum possession penalty following the federal law change did not change the likelihood of Black male college enrollment. We also do not see significant effects when looking at the effects of changes in the maximum possession penalty or the minimum or maximum distribution penalties. However, an increase in the state cocaine penalty is associated with decreases in the relative college enrollment of Black men.
+28
+
+Types of Penalties Matter: Maximum versus Minimum Penalty for Marijuana Possession
+The results of this study are somewhat surprising. After 1986, a number of states increased the minimum and maximum penalty for marijuana possession and distribution (Holden, 1988). Other states imposed mandatory minimum penalties for drug possession. As a result, Black and Latino young men were more likely to be arrested and incarcerated for drug infractions when compared to their White peers (Meierhoefer, 1992). Further, Black and Latino individuals received longer prison sentences than White persons for similar crimes in both federal and state courts (Steffensmeier, Ulmer, & Kramer, 1998; Steffensmeir & Demuth, 2000; US Sentencing Commission, 1991). Given the increased likelihood of arrest for Black young men, an increase in both the minimum or maximum marijuana penalty could have led to decreases in Black male college enrollment. However, the results demonstrate that states that had increases in the minimum marijuana possession penalty had only small and marginally significant decreases in college enrollment for Black men when compared to both Black women and non-Black men. When looking at cocaine, increases in the maximum cocaine penalties led to decreases in relative college enrollment for Black men.
+The population of Black males arrested could explain why an increase in the minimum marijuana possession penalty was more deleterious to college outcomes than an increase in the maximum penalty. Perhaps, the young Black men who were arrested for marijuana possession crimes and students on the margin of attending college were more likely to be arrested for possession of small amounts of drugs. The increases in state marijuana minimum imprisonment terms could be the difference between being arrested,
+29
+
+convicted, but not incarcerated prior to 1986, as compared to being convicted and serving time in prison after 1986. Prior research demonstrates that while arrests have a negative impact on the likelihood of college enrollment, time served in prison is more detrimental to educational outcomes (Aizer & Doyle, 2015; Hjalmarsson, 2006). For example, Aizer and Doyle (2015) found that incarcerated individuals have a lower likelihood of high school graduation when compared to young adults who are arrested and convicted but do not serve time in jail or prison.
+In order to explore the role of having a higher likelihood of being arrested and serving time in prison on college enrollment, which is the hypothesized mechanism, the correlation between a state having a mandatory minimum drug penalty and the likelihood of college enrollment was measured. A mandatory minimum penalty mandates that a state enforce a jail or prison term if a person is convicted of a drug offense. Thus, states that have mandatory minimum laws might be more likely to assign prison terms to those convicted of drug possession and distribution because the sentence is codified. Estimates suggest that mandatory minimum drug laws increased state prison populations by about 35% between 1985 and 1995 (Caulkins & Chandler, 2006). A negative and statistically significant correlation exists between a state having mandatory minimum drug laws in 1988 and the probability of college enrollment for Black students. The mechanism might be the difference between serving time and not serving time in prison, as opposed to the length of the jail sentence. This correlation could explain why changes in the maximum sentence did not have a detectable effect on the probability of college enrollment. It is unlikely that the difference between serving a maximum marijuana possession sentence of 10 months, as opposed to 12 months, has an impact on the likelihood of college
+30
+
+enrollment. But, serving one month in 1988 as compared to no prison in 1986 could have a large impact on the likelihood of college enrollment for the marginal student.
+The point estimates were quite small for the decreases in the likelihood of college enrollment for Black men in states that changed their marijuana laws. Insufficient power could be one reason that changes in enrollment were not large, particularly for the Male* State marijuana penalty minimum interaction. The sample is even smaller when looking at two-year and four-year enrollment. As the point estimate from the interaction term of interest Black* State marijuana penalty max was less than 1% in a number of the models for overall college enrollment, there is likely difficulty in detecting an effect size with the sample size. College enrollment for Black students: An intersection of race and socioeconomic status
+Another possible reason that Black male college enrollment had a relatively weak relationship with marijuana penalty changes might be related to class differences in college enrollment. Research suggests that college enrollment increased for upper income young adults at the same time that it was stagnating among low-income persons (Bailey & Dynarski, 2011). Thus, higher income Black students might have been more likely to attend school and offset losses in enrollment by lower-income Black. Kane (1994) finds that while college enrollment declined for Black young adults in the early years of the 1980s, there was a rebound in college enrollment rates in the latter part of the decade, in part due to higher parental education levels, which led to a greater likelihood of college enrollment for Black students with parents who had college degrees.
+31
+
+Lags in legislation and effects of drug laws on arrests The timing of the drug legislation and enforcement also played a role in the
+likelihood of college enrollment for Black males. Black adult arrest rates for drug infractions increased sharply from 1986 to 1988, peaked in 1988, and then fell sharply from 1989 to 1992, as seen in Figure 2. For Black juveniles, arrest rates peaked after the passage of the Violent Crime Control and Law Enforcement Act of 1994. Thus, perhaps, the effects of the marijuana laws on Black male college enrollment actually had a longer lag time than can be captured in a study that ends in 1992.
+There are numerous theories about this decline in drug arrests in the period from 1989 to 1992. This decrease in arrests was likely not due to declines in the crime rate. Data from the annual FBI Uniform Crime Report show that overall crime rate rose from 1988 to 1991, as did the violent crime rate. Crime rates did not begin to fall until 1991. Another potential explanation for the decline in arrests is political changes. In 1989, George H.W. Bush became president, which could have led to decreased spending on crime control due to increased uncertainty over future budgets. This scenario is not credible as the drug control budget passed in 1989 was larger than that of previous years (White House, 1998). Further, both the former president Ronald Reagan and the president in 1989 were Republicans. The Republican Party is generally associated with an increase in penalties for crime (Smith, 2004). An alternate explanation is that an economic slowdown occurred in 1989, which in turn became the economic recession of 1990 and 1991 (Blanchard, 1993). The economic slowdown could have led to priority changes within police departments – whereby they did not focus as much on drug crimes. It is hard to evaluate the role of the economic slowdown on the drug arrest rate. There is
+32
+
+limited research on the relationship between drug arrests and the business cycle and a weak relationship between crime and economic downturns, more generally (Cook & Zarkin, 1985).
+Conclusions While numerous statistics demonstrate that increases in rates of Black male college enrollment and attainment rates have not mirrored those of their Black female or White male counterparts, these reasons for these gaps has not been fully explained. Based on the findings from this paper, the probability of college enrollment for Black males likely decreased after the federal law changed. However, it does not seem largely attributable to increases in state penalties for marijuana possession and distribution over the relatively short period from 1986 to 1992. There is some evidence that the more salient drug with respect to changes in Black male college enrollment is crack cocaine.
+33
+
+References Aizer, A., & Doyle, J. J. (2015). Juvenile incarceration, human capital, and future crime:
+Evidence from randomly assigned judges. The Quarterly Journal of Economics, qjv003. Anti-Drug Abuse Act of 1986, Pub.L. 99-570.
+Aos, S., Miller, M., & Drake, E. (2006). Evidence-based public policy options to reduce future prison construction, criminal justice costs, and crime rates. Fed. Sent. R., 19, 275.
+Bailey, M. J., & Dynarski, S. M. (2011). Gains and gaps: Changing inequality in US college entry and completion (No. w17633). National Bureau of Economic Research.
+Beckett, K., & Western, B. (2001). Governing social marginality: Welfare, incarceration, and the transformation of state policy. Punishment & Society, 3(1), 43-59.
+Bernburg, J. G., & Krohn, M. D. (2003). Labeling, life chances and adult crime: The direct and indirect effects of official intervention in adolescence on crime in early adulthood. Criminology, 41(4), 1287-1318.
+Black, S. E., & Sufi, A. (2002). Who goes to college? Differential enrollment by race and family background (No. w9310). National Bureau of Economic Research.
+Blanchard, O. (1993). Consumption and the Recession of 1990-1991. The American Economic Review, 83(2), 270-274.
+Blumstein, A. (1995). Youth violence, guns, and the illicit-drug industry. The Journal of Criminal Law and Criminology (1973-), 86(1), 10-36.
+Bonczar, T. P., & Beck, A. J. (1997). Lifetime likelihood of going to state or federal prison. Birth, 5(4.4), 28-5.
+Braga, A. A., & Weisburd, D. L. (2012). The effects of focused deterrence strategies on crime: A systematic review and meta-analysis of the empirical evidence. Journal of Research in Crime and Delinquency, 49(3), 323-358.
+Buchmann, C., & DiPrete, T. A. (2006). The growing female advantage in college completion: The role of family background and academic achievement. American sociological review, 71(4), 515-541.
+Bureau of Justice Statistics. (2017). Drug and Crime Facts. Retrieved from https://www.bjs.gov/content/dcf/tables/drugtype.cfm.
+Cameron, S. V., & Heckman, J. J. (2001). The dynamics of educational attainment for black, hispanic, and white males. Journal of political Economy, 109(3), 455-499.
+Caulkins, J. P., & Chandler, S. (2006). Long-run trends in incarceration of drug offenders in the United States. Crime & Delinquency, 52(4), 619-641.
+Cohen, R. L. (1991). Prisoners in 1990. US Department of Justice, Bureau of Justice Statistics.
+Conger, D., & Long, M. C. (2013). Gender gaps in college enrollment: The role of gender sorting across public high schools. Educational Researcher, 42(7), 371-380.
+Cook, P. J., & Zarkin, G. A. (1985). Crime and the business cycle. The Journal of Legal Studies, 14(1), 115-128.
+34
+
+Corman, H., & Mocan, H. N. (2000). A time-series analysis of crime, deterrence, and drug abuse in New York City. American Economic Review, 90(3), 584-604.
+Dale, S. B., & Krueger, A. B. (1999). Estimating the payoff to attending a more selective college: An application of selection on observables and unobservables (No. w7322). National Bureau of Economic Research.
+DiPrete, T. A., & Buchmann, C. (2006). Gender-specific trends in the value of education and the emerging gender gap in college completion. Demography, 43(1), 1-24.
+Fagan, J., & Freeman, R. B. (1999). Crime and work. Crime and Justice, 25, 225-290. Freeman, R. B. (1994). Crime and the job market (No. w4910). National Bureau of
+Economic Research. Frankel, M. E. (1973). Criminal sentences: Law without order. Fry, R., & Parker, K. (2012). Record shares of young adults have finished both high
+school and college.
+Fryer, R. G., Heaton, P. S., Levitt, S. D., & Murphy, K. M. (2013). Measuring crack cocaine and its impact. Economic Inquiry, 51(3), 1651-1681.
+Gelman, A., Fagan, J., & Kiss, A. (2007). An analysis of the New York City police department's “stop-and-frisk” policy in the context of claims of racial bias. Journal of the American Statistical Association, 102(479).
+Goldin, C., Katz, L. F., & Kuziemko, I. (2006). The homecoming of American college women: The reversal of the college gender gap (No. w12139). National Bureau of Economic Research.
+Golub, A., Johnson, B. D., & Dunlap, E. (2007). The race/ethnicity disparity in misdemeanor marijuana arrests in New York City. Criminology & public policy, 6(1), 131-164.
+Harlow, C (2003). Education and Correctional Populations. US Department of Justice, Office of Justice Programs, Bureau of Justice Statistics.
+Heckman, J. J., & LaFontaine, P. A. (2010). The American high school graduation rate: Trends and levels. The review of economics and statistics, 92(2), 244-262.
+Hester, T., Bureau of Justice Statistics (BJS), US Dept of Justice, & Office of Justice Programs. (1989). Correctional Populations in the United States, 1986. Washington, DC: Bureau of Justice Statistics.
+Hirschfield, P. (2009). Another way out: The impact of juvenile arrests on high school dropout. Sociology of Education, 82(4), 368-393.
+Holden, G. A. (1988). A guide to state controlled substances acts. National Criminal Justice Association.
+Horn, L., Cataldi, E. F., & Sikora, A. (2005). Waiting to attend college. Undergraduates who delay their postsecondary enrollment. Postsecondary education descriptive analysis report. NCES 2005? 152. National Center for Education Statistics.
+Imbens, G., & Wooldridge, J. M. (2007). What's new in econometrics? NBER.
+Jankowski, L. W. (1992). Correctional populations in the United States, 1990. Bureau of Justice Statistics, 86.
+Johnson, R., & Raphael, S. (2012). How much crime reduction does the marginal prisoner buy?. The Journal of Law and Economics, 55(2), 275-310.
+35
+
+Johnston, L. D., O'malley, P. M., Bachman, J. G., & Schulenberg, J. E. (2010). Monitoring the future: National survey results on drug use, 1975-2009. Volume I: Secondary School Students. NIH Publication No. 10-7584. National Institute on Drug Abuse (NIDA).
+Kaeble, D. Glaze, L. Tsoutis, A. & Minton, T. (2016). Correctional populations in the United States, 2014.
+Kane, T. J. (1994). College entry by blacks since 1970: The role of college costs, family background, and the returns to education. Journal of political Economy, 102(5), 878-911.
+Keppel, F. (1987). The Higher Education Acts Contrasted, 1965-1986: Has Federal Policy Come of Age?. Harvard Educational Review, 57(1), 49-68.
+Kirk, D. S., & Sampson, R. J. (2013). Juvenile arrest and collateral educational damage in the transition to adulthood. Sociology of education, 86(1), 36-62.
+Levitt, S. D. (1996). The effect of prison population size on crime rates: Evidence from prison overcrowding litigation. The quarterly journal of economics, 111(2), 319351.
+Lochner, L., & Moretti, E. (2004). The effect of education on crime: Evidence from prison inmates, arrests, and self-reports. American Economic Review,94(1), 155189.
+Logan, W., Stellwagen, L. S., & Langan, P. A. (1987). Felony Laws of the 50 States and the District of Columbia, 1986. US Department of Justice, Bureau of Justice Statistics.
+Long, B. T. (2004). How have college decisions changed overtime? An application of the conditional logistic choice model. Journal of Econometrics, 121(1-2), 271-296.
+Lowenthal, G. T. (1993). Mandatory sentencing laws: Undermining the effectiveness of determinate sentencing reform. California Law Review, 61-123.
+McDaniel, A., DiPrete, T. A., Buchmann, C., & Shwed, U. (2011). The Black gender gap in educational attainment: Historical trends and racial comparisons. Demography, 48(3), 889-914.
+Meierhoefer, B. S. (1992). The general effect of mandatory minimum prison terms. Washington, DC: Federal Judicial Centre.
+Mustard, D. B. (2001). Racial, ethnic, and gender disparities in sentencing: Evidence from the US federal courts. The Journal of Law and Economics, 44(1), 285-314.
+Nagel, I. H. (1990). Foreword: structuring sentencing discretion: the new Federal Sentencing Guidelines. The Journal of Criminal Law and Criminology (1973), 80(4), 883-943.
+National Center for Education Statistics. (2009). Condition of Education 2009. National Criminal Justice Reference Service. (1994). Violent crime control and law
+enforcement act of 1994 fact sheet. Retrieved from: https://www.ncjrs.gov/txtfiles/billfs.txt. Office of Juvenile Justice and Delinquency Prevention. (2014). Statistical Briefing Book.
+Office of National Drug Control Policy. (1999). National drug control strategy.
+Orcutt, J. D., & Turner, J. B. (1993). Shocking numbers and graphic accounts: Quantified images of drug problems in the print media. Social problems, 40(2), 190-206.
+36
+
+Parent, D. (1993). Conditions of confinement. Juvenile Justice 1, 1(1993), 2-7. Perna, L. W. (2000). Differences in the decision to attend college among African
+Americans, Hispanics, and Whites. The Journal of Higher Education, 71(2), 117141. Pettit, B. (2012). Invisible men: Mass incarceration and the myth of black progress. Russell Sage Foundation. Pettit, B., & Western, B. (2004). Mass imprisonment and the life course: Race and class inequality in US incarceration. American Sociological Review, 69(2), 151-169.
+Rouse, C. E. (1994). What to do after high school: The two-year versus four-year college enrollment decision. Choices and consequences: Contemporary policy issues in education, 59-88.
+Smith, K. B. (2004). The politics of punishment: Evaluating political explanations of incarceration rates. Journal of Politics, 66(3), 925-938.
+Snyder, H. N. (2011). Arrest in the United States, 1980-2009. US Department of Justice, Office of Justice Programs, Bureau of Justice Statistics.
+Steffensmeier, D., Ulmer, J., & Kramer, J. (1998). The interaction of race, gender, and age in criminal sentencing: The punishment cost of being young, black, and male. Criminology, 36(4), 763-798.
+Steffensmeier, D., & Demuth, S. (2000). Ethnicity and sentencing outcomes in US federal courts: Who is punished more harshly?. American sociological review, 705-729.
+US Bureau of the Census. (1978). Current Population Survey Technical Paper 40: Design and Methodology. Available at: https://archive.org/stream/currentpopulatio00unit/currentpopulatio00unit_djvu.txt
+U.S. Department of Commerce, Census Bureau, Current Population Survey (CPS), October, 1975 through 2012.
+U.S. Department of Education, National Center for Education Statistics. 1997. Projection of Education Statistics to 2007. DIANE Publishing.
+U.S. Department of Education, National Center for Education Statistics, Higher Education General Information System (HEGIS). 2000. "Institutional Characteristics of Colleges and Universities;" and Integrated Postsecondary Education Data System (IPEDS), "Fall Enrollment" survey. (This table was prepared September 2000.)
+U.S. Department of Education, National Center for Education Statistics. (1995). "Fall Enrollment in Colleges and Universities;" and Integrated Postsecondary Education Data System (IPEDS), "Fall Enrollment" survey. (This table was prepared March 1995.)
+U.S. Department of Education, National Center for Education Statistics. (2015). Digest of Education Statistics, 2013 (NCES 2015-011), Chapter 3.
+37
+
+United States Sentencing Commission. (1991). The Federal sentencing guidelines: A report on the operation of the guidelines system and short-term impacts on disparity in sentencing, use of incarceration, and prosecutorial discretion and plea bargaining (Vol. 2). The Commission.
+United States Sentencing Commission. (2011). Special report to the Congress: Mandatory minimum penalties in the federal criminal justice system. Washington, DC: US Sentencing Commission.
+Vieraitis, L. M., Kovandzic, T. V., & Marvell, T. B. (2007). The criminogenic effects of imprisonment: Evidence from state panel data, 1974–2002. Criminology & Public Policy, 6(3), 589-622.
+Weissman, M., Rosenthal, A., Warth, P., Wolf, E., & Messina-Yauchzy, M. (2010). The use of criminal history records in college admissions reconsidered. The Center for Community Alternatives.
+Western, B. (2006). Punishment and inequality in America. Russell Sage Foundation. House, W. (1998). Office of National Drug Control Policy. National Drug Control
+Strategy, 1998-2007. Wing, C., Simon, K., & Bello-Gomez, R. A. (2018). Designing Difference in Difference
+Studies: Best Practices for Public Health Policy Research. Annual review of public health, 39, 453-469. Wooldridge, J. M. (2010). Econometric analysis of cross section and panel data. MIT press. Yates, J., & Fording, R. (2005). Politics and state punitiveness in black and white. The Journal of Politics, 67(4), 1099-1121.
+38
+
+Table 1: Sample Means of Population Aged 18- 24 Years Old from 1984-1992
+
+Variable
+
+Pre - Law 1984-86 Mean
+
+Post - Law 1987-92 Mean
+
+Male Black HS Graduate Enrolled in college
+
+0.48
+
+0.48
+
+0.12
+
+0.12
+
+0.83
+
+0.84
+
+0.28
+
+0.32
+
+Enrolled in college (Black males) Enrolled in college (Non-Black males) Enrolled in 2-yr coll. Enrolled in 4-yr coll.
+
+0.21
+
+0.22
+
+0.30
+
+0.33
+
+0.07
+
+0.08
+
+0.21
+
+0.24
+
+Minimum penalty marijuana possession (months) Maximum penalty marijuana possession (months) Minimum penalty marijuana distribution (months) Maximum penalty marijuana distribution (months)
+
+1.19 11.61
+7.62 119.95
+
+0.23 66.19 8.71 138.76
+
+N
+
+47,596
+
+80,669
+
+Source: Authors calculations from CPS October supplements 1984 - 1992 and author’s dataset on
+
+recommended marijuana penalties by state for the years 1986, 1998, and 1990
+
+Notes: The sample is composed of persons aged 18-24 at the time of the survey. Sample means are
+
+calculated based on averages of the variable values over the years before the law change and after the law
+
+change. Minimum (maximum) marijuana penalty shows the recommended minimum (maximum) months
+
+of imprisonment for a first offense marijuana possession or distribution charge without aggravating factor.
+
+39
+
+Table 2: Changes in College Enrollment for Male Persons Aged 18-24 Years Old after the Passage of the Anti-Drug Abuse Act of 1986 (1984-1992)
+
+Control Group: Non- Black males
+
+(1)
+
+(2)
+
+(3)
+
+(4)
+
+(5)
+
+Attend
+
+Attend
+
+Attend
+
+Attend
+
+Attend
+
+Any College
+
+Any College
+
+Any College 4 Year College 2 Year College
+
+After1986 * Black
+
+-0.0181
+
+-0.0237*
+
+-0.0222 t
+
+-0.0184
+
+-0.0037
+
+(0.0121)
+
+(0.0117)
+
+(0.0116)
+
+(0.0125)
+
+(0.0077)
+
+After1986
+
+0.0284** (0.00684)
+
+0.0157* (0.00595)
+
+0.0157** (0.00584)
+
+0.0180** (0.00473)
+
+0.0060** (0.0028)
+
+Black
+
+-0.0966** (0.0111)
+
+-0.0699** (0.00873)
+
+-0.0637** (0.00943)
+
+-0.0527** (0.00927)
+
+-0.0127 t (0.0070)
+
+Constant
+Dem. included State and year FE Observations R-squared ** p<0.01, * p<0.05, t p<0.1
+
+0.3010** (0.00879)
+61,562 0.007
+
+-3.3910** (0.324) X
+61,562 0.093
+
+-3.3660** (0.313) X X 61,562 0.099
+
+-4.2280** (0.280) X X 61,204 0.072
+
+0.8160** (0.2560)
+X X 61,204 0.045
+
+Source: Authors calculations from CPS October supplements 1984 - 1992 Notes : Sample is composed of male persons aged 18-24 at the time of the survey. All models are linear probability models. The outcome for the first three columns is any college enrollment. The outcome for column 4 is enrollment in a four-year college and the outcome for column 5 is enrollment in a two-year college. The demographic factors in columns 2 – 5 include age, age squared, Latino ethnicity, state average unemployment rates for each year, and a binned variable for family income that is topcoded at $75,000. Robust standard errors in parentheses are based on clustering persons within states. Regressions weighted using CPS October supplement weights for persons over the age of 16.
+
+40
+
+41
+
+Table 3: Changes in College Enrollment for Black Persons Aged 18-24 Years Old after the Passage of
+
+the Anti-Drug Abuse Act of 1986 (1984-1992)
+
+Control Group: Black females
+
+(1)
+
+(2)
+
+(3)
+
+(4)
+
+(5)
+
+Attend
+
+Attend
+
+Attend
+
+Attend
+
+Attend
+
+Any college
+
+Any College
+
+Any College
+
+4 Yr College
+
+2 Yr College
+
+After1986 * Male
+
+-0.0201
+
+-0.0231 t
+
+-0.0224 t
+
+-0.0171
+
+-0.0094
+
+(0.0123)
+
+(0.0128)
+
+(0.0132)
+
+(0.0123)
+
+(0.0091)
+
+After1986
+
+0.0304* (0.0117)
+
+0.0132 (0.0104)
+
+0.0128 (0.0105)
+
+0.0138 (0.0103)
+
+0.0113 t (0.00565)
+
+Male
+
+-0.0159 (0.0101)
+
+-0.0344** (0.0104)
+
+-0.0356** (0.0105)
+
+-0.0108 (0.00994)
+
+-0.0213** (0.00751)
+
+Constant
+
+0.2200**
+
+(0.0125)
+
+Dem. included
+
+State and year FE
+
+Observations
+
+15,147
+
+R-squared
+
+0.002
+
+** p<0.01, * p<0.05, t p<0.1
+
+-2.0540** (0.4580)
+X
+15,147 0.063
+
+0.9160 t (0.5010)
+X X 15,147 0.072
+
+0.5240 (0.4200)
+X X 15,035 0.056
+
+0.3360 (0.3240)
+X X 15,035 0.033
+
+Source: Authors calculations from CPS October supplements 1984 - 1992 Notes : Sample is composed of Black persons aged 18-24 at the time of the survey. All models are linear probability models. The outcome for the first three columns is any college enrollment. The outcome for column 4 is enrollment in a four-year college and the outcome for column 5 is enrollment in a two-year college. The demographic factors in columns 2 – 5 include age, age squared, Latino ethnicity, state average unemployment rates for each year, and a binned variable for family income that is topcoded at $75,000. Robust standard errors in parentheses are based on clustering persons within states. Regressions weighted using CPS October supplement weights for persons over the age of 16.
+
+42
+
+Table 4: Changes in College Enrollment for Male Persons Aged 18-24 Years Old in States Based on
+
+the Severity of Marijuana Possession Penalties from 1986 to 1991
+
+Control Group: Non-Black Males
+
+Change from 1986 to 1991
+
+(1)
+
+(2)
+
+(3)
+
+Attend
+
+Attend
+
+Attend
+
+Any College 4 Yr. College 2 Yr. College
+
+Black* Minimum penalty -0.0022 t -0.0012
+
+-0.0009
+
+(months)
+
+(0.0013)
+
+(0.0015)
+
+(0.0008)
+
+Black* Maximum penalty -0.0003
+
+(months)
+
+(0.0003)
+
+-0.0004 (0.0004)
+
+0.0002 (0.0002)
+
+Black
+
+-0.0397** (0.0134)
+
+-0.0118 (0.0195)
+
+-0.0262 t (0.0146)
+
+Minimum penalty (months)
+
+0.0010* (0.0006)
+
+0.0014* (0.0006)
+
+-0.0007* (0.0003)
+
+Maximum penalty (months)
+
+0.0006 (0.0005)
+
+0.0006 (0.0005)
+
+9.70e-05 (0.0003)
+
+Constant
+Dem. included State and year FE Observations R-squared
+
+-3.5060** (0.505)
+X X 20,030 0.104
+
+-4.3440** (0.404)
+X X 19,934 0.075
+
+0.7950* (0.314)
+X X 19,934 0.047
+
+** p<0.01, * p<0.05, t p<0.1 Source: Authors calculations from CPS October supplements 1986 - 1991 and author’s dataset on recommended marijuana penalties by state for the years 1986, 1988, and 1990. Notes: Sample is composed of male persons aged 18-24 at the time of the survey. All models are linear probability models. The outcome for the first three columns is any college enrollment, enrollment in a fouryear college and any enrollment in a two-year college in the period from 1984 to 1991. The outcome for the last three columns is any college enrollment, enrollment in a four-year college and any enrollment in a twoyear college in the period from 1986 to 1990. The variable Minimum penalty is the minimum recommended state penalty for possession in the year in question. The demographic factors in all columns include age, age squared, Latino ethnicity, state average unemployment rates for each year, and a binned variable for family income that is topcoded at $75,000. All models contain state fixed effects and year fixed effects. Robust standard errors in parentheses are based on clustering persons within states. Regressions weighted using CPS October supplement weights for persons over the age of 16.
+
+43
+
+Table 5: Changes in College Enrollment for Black Persons Aged 18-24 Years Old in States Based on
+
+the Severity of Marijuana Possession Penalties from 1986 to 1991
+
+Control Group: Black females
+
+Change from 1986 to 1991
+
+(1)
+
+(2)
+
+(3)
+
+Attend
+
+Attend
+
+Attend
+
+Any College 4 Yr. College 2 Yr. College
+
+Male* Minimum penalty -0.0008
+
+-0.0018
+
+0.0009
+
+(months)
+
+(0.0021)
+
+(0.0011)
+
+(0.0020)
+
+Male*Maximum penalty -0.0002
+
+(months)
+
+(0.0004)
+
+0.0005 (0.0004)
+
+-0.0003 (0.0003)
+
+Male
+
+-0.0397** (0.0134)
+
+-0.0118 (0.0195)
+
+-0.0262 t (0.0146)
+
+Minimum penalty (months)
+
+-0.0015 (0.0033)
+
+0.0012 (0.0013)
+
+-0.0023 (0.0025)
+
+Maximum penalty (months)
+
+0.0011 (0.0007)
+
+0.0011 (0.0010)
+
+-9.02e-05 (0.0008)
+
+Constant
+
+-0.7380
+
+-1.1840
+
+0.3570
+
+(0.8480)
+
+(0.7590)
+
+(0.5030)
+
+Dem. included
+
+X
+
+X
+
+X
+
+State and year FE
+
+X
+
+X
+
+X
+
+Observations
+
+4,914
+
+4,884
+
+4,884
+
+R-squared
+
+0.084
+
+0.068
+
+0.033
+
+** p<0.01, * p<0.05, t p<0.1
+
+Source: Authors calculations from CPS October supplements 1986 - 1991 and author’s dataset on
+
+recommended marijuana penalties by state for the years 1986, 1988, and 1990.
+
+Notes: Sample is composed of Black persons aged 18-24 at the time of the survey. All models are linear
+
+probability models. The outcome for the first three columns is any college enrollment, enrollment in a four-
+
+year college and any enrollment in a two-year college in the period from 1984 to 1991. The outcome for the
+
+last three columns is any college enrollment, enrollment in a four-year college and any enrollment in a two-
+
+year college in the period from 1986 to 1990. The variable Minimum penalty is the minimum
+
+recommended state penalty for possession in the year in question. The demographic factors in all columns
+
+include age, age squared, Latino ethnicity, state average unemployment rates for each year, and a binned
+
+variable for family income that is topcoded at $75,000. All models contain state fixed effects and year fixed
+
+effects. Robust standard errors in parentheses are based on clustering persons within states. Regressions
+
+weighted using CPS October supplement weights for persons over the age of 16.
+
+44
+
+Table 6: Changes in College Enrollment for Male Persons Aged 18-24 Years Old in States Based on
+
+the Severity of Cocaine Possession Penalties from 1986 to 1991
+
+Control Group: Non-Black Males
+
+Change from 1986 to 1991
+
+(1)
+
+(2)
+
+(3)
+
+Attend
+
+Attend
+
+Attend
+
+Any College 4 Yr. College 2 Yr. College
+
+Black* Minimum penalty 0.0004
+
+-0.0001
+
+0.0005
+
+(months)
+
+(0.0003)
+
+(0.0002)
+
+(0.0003)
+
+Black* Maximum penalty -6.49e-05*
+
+(months)
+
+(3.06e-05)
+
+1.78e-06 (1.03e-05)
+
+-6.13e-05 (3.69e-05)
+
+Black
+
+-0.0618** (0.0142)
+
+-0.0207* (0.0081)
+
+-0.0427* (0.0173)
+
+Minimum penalty (months)
+
+0.0002 (0.0002)
+
+0.0002 (0.0002)
+
+-7.40e-05 (0.0001)
+
+Maximum penalty (months)
+
+8.25e-05 (0.0001)
+
+-6.45e-05 (4.16e-05)
+
+0.0002 t (9.23e-05)
+
+Constant
+Dem. included State and year FE Observations R-squared
+
+-3.4720** (0.5080)
+X X 20,030 0.104
+
+0.7880* (0.3130)
+X X 19,934 0.047
+
+-4.2990** (0.4050)
+X X 19,934 0.075
+
+** p<0.01, * p<0.05, t p<0.1 Source: Authors calculations from CPS October supplements 1986 - 1991 and author’s dataset on recommended marijuana penalties by state for the years 1986, 1988, and 1990. Notes: Sample is composed of male persons aged 18-24 at the time of the survey. All models are linear probability models. The outcome for the first three columns is any college enrollment, enrollment in a fouryear college and any enrollment in a two-year college in the period from 1984 to 1991. The outcome for the last three columns is any college enrollment, enrollment in a four-year college and any enrollment in a twoyear college in the period from 1986 to 1990. The variable Minimum penalty is the minimum recommended state penalty for possession in the year in question. The demographic factors in all columns include age, age squared, Latino ethnicity, state average unemployment rates for each year, and a binned variable for family income that is topcoded at $75,000. All models contain state fixed effects and year fixed effects. Robust standard errors in parentheses are based on clustering persons within states. Regressions weighted using CPS October supplement weights for persons over the age of 16.
+
+45
+
+Table 7: Changes in College Enrollment for Male Persons Aged 18-24 Years Old in States Based on
+
+the Severity of Crack Epidemic from 1986 to 1991
+
+Control Group: Non-Black Males
+
+(1)
+
+(2)
+
+(3)
+
+Attend
+
+Attend
+
+Attend
+
+Any College 4 Yr. College 2 Yr. College
+
+Black* Crack_index
+
+-0.0234** -0.0231** 0.0001
+
+(0.0081)
+
+(0.0079)
+
+(0.0035)
+
+Crack_index Black
+
+-0.0028 (0.0045)
+-0.0473** (0.0148)
+
+0.0009 (0.0039)
+-0.0302 t (0.0153)
+
+-0.0019 (0.0021)
+-0.0190** (0.0062)
+
+Constant
+Dem. included State and year FE Observations R-squared
+
+-5.355** (0.486)
+X X 46,742 0.096
+
+-5.253** (0.510)
+X X 46,426 0.072
+
+-0.128 (0.492)
+X X 46,426 0.045
+
+** p<0.01, * p<0.05, t p<0.1 Source: Authors calculations from CPS October supplements 1986 - 1991 and Fryer (2013) crack index from https://scholar.harvard.edu/fryer/publications/measuring-crack-cocaine-and-its-impact. Notes: Sample is composed of male persons aged 18-24 at the time of the survey. All models are linear probability models. The outcome for the first three columns is any college enrollment, enrollment in a fouryear college and any enrollment in a two-year college in the period from 1984 to 1991. The outcome for the last three columns is any college enrollment, enrollment in a four-year college and any enrollment in a twoyear college in the period from 1986 to 1990. The state yearly crack measure includes percentage of arrests for either possession or distribution of cocaine or a derivative, per capita number of Drug Enforcement Agency arrests and seizures related to cocaine and derivatives, and per capita deaths related to cocaine. The crack index also adjusts for racial composition of states. The demographic factors in all columns include age, age squared, Latino ethnicity, state average unemployment rates for each year, and a binned variable for family income that is topcoded at $75,000. All models contain state fixed effects and year fixed effects. Robust standard errors in parentheses are based on clustering persons within states. Regressions weighted using CPS October supplement weights for persons over the age of 16.
+
+46
+
+Table 8: Changes in College Enrollment for Male Persons Aged 18-24 Years Old in States Based on
+
+the Change in State Marijuana and Cocaine Laws
+
+Control Group: Non-Black men
+
+(1)
+
+(2)
+
+Attend
+
+Attend
+
+Any College Any College
+
+(Marijuana (Cocaine
+
+Laws)
+
+Laws)
+
+After *Black* State
+
+0.0617*
+
+-0.0542*
+
+penalty increase
+
+(0.0488)
+
+(0.0242)
+
+Black* State penalty increase
+
+-0.0073 (0.0074)
+
+0.0343 t (0.0189)
+
+After 1986 *Black
+
+-0.0266* (0.0117)
+
+After 1986 *State penalty 0.0101
+
+increase
+
+(0.0149)
+
+Black
+
+-0.0633** (0.0102)
+
+After 1986
+
+0.0128 (0.00932)
+
+State penalty increase
+
+-0.0222** (0.00670)
+
+-0.0100 (0.0137)
+0.00345 (0.0101)
+-0.0721** (0.0128)
+0.0121 (0.0120)
+-0.00532 (0.0110)
+
+Constant
+Dem. included State and year FE Observations R-squared
+
+-3.148*** (0.343)
+X X 54,588 0.100
+
+-3.140*** (0.345)
+X X 54,588 0.100
+
+** p<0.01, * p<0.05, t p<0.1 Source: Authors calculations from CPS October supplements 1986 - 1991 and author’s dataset on recommended marijuana penalties by state for the years 1986, 1988, and 1990. Notes: Sample is composed of male persons aged 18-24 at the time of the survey. All models are linear probability models. The outcome is any college enrollment in the period from 1984 to 1991. The first column shows the results for increases in the marijuana laws in a state from 1986 to 1988 and the second column provides results for increases in the cocaine penalties in a state. The demographic factors in all columns include age, age squared, Latino ethnicity, state average unemployment rates for each year, and a binned variable for family income that is topcoded at $75,000. All models contain state fixed effects and year fixed effects. Robust standard errors in parentheses are based on clustering persons within states. Regressions weighted using CPS October supplement weights for persons over the age of 16.
+
+47
+
+Figure 1: Percentage of 18- to 24-year-olds enrolled in degree-granting institutions by gender and race - 1972 to 2012
+60.0 50.0 40.0 30.0 20.0 10.0
+0.0
+
+White female
+
+Black female
+
+White male
+
+Black male
+
+Source: U.S. Department of Commerce, Census Bureau, Current Population Survey (CPS), October, 1972 through 2012. (This table was prepared May 2013.) Notes: The red diamond markers denote the probability of college enrollment for Black men. The turquoise square line is the trend line for Black women. The blue circular markers denote the probability of college enrollment for White men. The solid green line is the linear trend line for White women.
+
+48
+
+Figure 2: Drug Possession Arrest Rate (per 100,000 individuals) for Adults and Juveniles by Race 1980 - 2012
+1800 1600 1400 1200 1000
+800 600 400 200
+0
+
+White Adult Arrest Rates White Juvenile Arrest Rates
+
+Black Adult Arrest Rates Black Juvenile Arrest Rates
+
+Source: Snyder, H. and Mulako-Wangota, J., Arrest Data Analysis Tool (07-Mar-17) at www.bjs.gov Notes: Data on arrests come from the FBI Uniform Crime Reporting (UCR) program. Arrest rate defined as arrests per 100,000 persons. The green line with the boxed markers is the Black adult arrest rate. The red line with the triangular markers is the White adult arrest rate. The blue line with the circular markers is the Black juvenile arrest rate. The purple line with the diamond markers is the White juvenile arrest rate. A juvenile is defined as a person who is less than 18 years of age at the time of arrest.
+
+1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012
+
+49
+
+Figure 3: Probability of College Enrollment and Fitted Values for Males Aged 18-24 - 1984 - 1995
+Source: 1984 – 1995 CPS October supplements Notes: The red markers denote the probability of college enrollment for White men. The orange solid line is the linear trend line for White men prior to the law change. The red line is the linear trend or White men after the law change. The blue circular markers denote the probability of college enrollment for Black men. The solid green line is the linear trend line for Black men prior to the law change. The solid light blue line is the linear trend line for Black men after the law change.
+50
+
+Figure 4: Change in marijuana minimum distribution penalty from 1986 to 1988 by state
+Source: Authors dataset on recommended marijuana penalties by state for the years 1986, 1988, and 1990 Notes: States in yellow did not change their maximum recommended prison terms for marijuana distribution from 1986 to 1988. States in red became more punitive and increased the recommended maximum number of months of prison for marijuana distribution. States in green became less punitive – reduced the maximum recommended number of months of imprisonment for marijuana distribution.
+51
+
+Figure 5: Change in Number of Arrests by Race in States that Increased the Penalty for Marijuana Possession after 1986
+Source: Authors dataset on recommended marijuana penalties by state for the years 1986, 1988, and 1990 and Uniform Crime Report Data from 1984 – 1992 Notes: The data points are the coefficients from the event study on arrest rates for Black and White men in states that increased their marijuana possession penalty.
+52
+
+Figure 6: Change in Number of Arrests for Black Adults in States by Change in State Laws
+Source: Authors dataset on recommended marijuana penalties by state for the years 1986, 1988, and 1990 and Uniform Crime Report Data from 1984 – 1992 Notes: The data points are the coefficients from the event study on arrest rates for Black men in states that increased their marijuana possession penalty, as compared to arrest rates for Black men in states that either decreased the penalty or did not change the penalty.
+53
+

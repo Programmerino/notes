@@ -1,0 +1,48 @@
+'use strict';(function(){(function(){var cmpScriptElement=document.createElement('script');var firstScript=document.getElementsByTagName('script')[0];cmpScriptElement.async=true;cmpScriptElement.type='text/javascript';var cmpVersion='https://quantcast.mgr.consensu.org/v18/cmp.js';cmpScriptElement.src=cmpVersion;firstScript.parentNode.insertBefore(cmpScriptElement,firstScript);})();(function(){var css=""
++" .qc-cmp-button { "
++"   background-color: #7ed321 !important; "
++"   border-color: #7ed321 !important; "
++" } "
++" .qc-cmp-button:hover { "
++"   border-color: #7ed321 !important; "
++" } "
++" .qc-cmp-alt-action, "
++" .qc-cmp-link { "
++"   color: #7ed321 !important; "
++" } "
++" .qc-cmp-button.qc-cmp-secondary-button:hover { "
++"   background-color: #7ed321 !important; "
++"   border-color: #7ed321 !important; "
++" } "
++" .qc-cmp-button { "
++"   color: #000000 !important; "
++" } "
++" .qc-cmp-button.qc-cmp-secondary-button:hover { "
++"   color: #000000 !important; "
++" } "
++" .qc-cmp-button.qc-cmp-secondary-button { "
++"   color: #000000 !important; "
++" } "
++" .qc-cmp-button.qc-cmp-secondary-button { "
++"   background-color: #eee !important; "
++"   border-color: transparent !important; "
++" } "
++" .qc-cmp-ui a, "
++" .qc-cmp-ui .qc-cmp-alt-action { "
++"   color: #000000 !important; "
++" } "
++" .qc-cmp-small-toggle.qc-cmp-toggle-on, "
++" .qc-cmp-toggle.qc-cmp-toggle-on { "
++"   background-color: #7ed321!important; "
++"   border-color: #7ed321!important; "
++" } "
++"/* Evening Standard */.qc-cmp-ui-container {padding: 16px; }.qc-cmp-title {font-family: 'Standard Text' !important;font-size: 24px !important;}.qc-cmp-main-messaging {font-family: 'Standard Sans' !important; font-weight: normal !important;font-size: 16px !important;}.qc-cmp-sub-title {font-family: 'Standard Text' !important;font-size: 24px !important;}.qc-cmp-messaging {font-family: 'Standard Sans' !important; font-weight: normal !important;font-size: 16px !important;}.qc-cmp-button {font-family: 'Standard Sans' !important; font-weight: 500 !important;}.qc-cmp-alt-action, .qc-cmp-alt-action:not([href]):not([tabindex]) {font-family: 'Standard Sans' !important; font-weight: 500;text-decoration: underline !important;font-size: 16px !important;text-transform: lowercase;}.qc-cmp-alt-action::first-letter {text-transform: uppercase;}.qc-cmp-qc-link-container{display:none !important;height:0px !important;width:0px !important;padding:0px !important;margin:0px !important}.qc-cmp-publisher-logo {max-width: 400px !important;}.qc-cmp-toggle-status {color: #222222 !important;}.qc-cmp-vendor-list-title {font-family: 'Standard Sans' !important;}.qc-cmp-table-header {text-transform: none !important;}@media screen and (min-width: 768px) {.qc-cmp-ui-content { padding-top: 30px !important;}.qc-cmp-title {font-size: 32px !important;}.qc-cmp-sub-title {font-size: 32px !important;}}@media screen and (max-width: 767px) {.qc-cmp-publisher-logo {max-width: 300px !important;}}"
++""
++"";var stylesElement=document.createElement('style');var re=new RegExp('&amp;quote;','g');css=css.replace(re,'"');stylesElement.type='text/css';if(stylesElement.styleSheet){stylesElement.styleSheet.cssText=css;}else{stylesElement.appendChild(document.createTextNode(css));}
+var head=document.head||document.getElementsByTagName('head')[0];head.appendChild(stylesElement);})();(function(){var gdprAppliesGlobally=true;function addFrame(){if(!window.frames['__cmpLocator']){if(document.body){(function(){var body=document.body;var iframe=document.createElement('iframe');iframe.name='__cmpLocator';iframe.style.cssText='display:none';body.appendChild(iframe);})();}else{setTimeout(addFrame,5);}}}
+addFrame();function cmpMsgHandler(event){var json=void 0;var msgIsString=typeof event.data==='string';if(msgIsString){json=event.data.indexOf('__cmpCall')!==-1?JSON.parse(event.data):{};}else{json=event.data;}
+if(json.__cmpCall){(function(){var cmpCall=json.__cmpCall;window.__cmp(cmpCall.command,cmpCall.parameter,function(returnValue,success){var returnMsg={'__cmpReturn':{'success':success,'callId':cmpCall.callId,'returnValue':returnValue}};event.source.postMessage(msgIsString?JSON.stringify(returnMsg):returnMsg,'*');});})();}}
+window.__cmp=function(command){var arg=arguments;var returnValue=null;if(!arg.length){returnValue=__cmp.a;}else if(arg[0]==='ping'){arg[2]({'cmpLoaded':false,'gdprAppliesGlobally':gdprAppliesGlobally},true);}else if(command==='__cmp'){returnValue=false;}else{if(typeof __cmp.a==='undefined'){__cmp.a=[];}
+__cmp.a.push([].slice.apply(arg));}
+return returnValue}
+window.__cmp.gdprAppliesGlobally=gdprAppliesGlobally;window.__cmp.msgHandler=cmpMsgHandler;if(window.addEventListener){window.addEventListener('message',cmpMsgHandler,false);}else{window.attachEvent('onmessage',cmpMsgHandler);}})();var autoDetectedLanguage='en';function splitLang(lang){return lang.length>2?lang.split('-')[0]:lang;};function isSupported(lang){var langs=['bg','cs','da','de','el','en','es','et','fi','fr','ga','hr','hu','it','lt','lv','mt','nl','pl','pt','ro','sk','sl','sv'];return langs.indexOf(lang)===-1?false:true;};if(isSupported(splitLang(document.documentElement.lang))){autoDetectedLanguage=splitLang(document.documentElement.lang);}else if(isSupported(splitLang(navigator.language))){autoDetectedLanguage=splitLang(navigator.language);};var choiceMilliSeconds=(new Date).getTime();window.__cmp('init',{'Non IAB Vendor List URL':'https://quantcast.mgr.consensu.org'.concat('/choice').concat('/jAJ_WUYAnDzxn').concat('/www.standard.co.uk').concat('/.well-known/noniab-vendorlist.json').concat('?timestamp','=',choiceMilliSeconds),'Publisher Logo':'https://www.standard.co.uk/img/logo.svg','Display Persistent Consent Link':false,'No Option':false,'Default Value for Toggles':'off','Google Personalization':true,'Consent Scope':'service','Custom Links Displayed on Initial Screen':['[Privacy policy](https:\/\/www.standard.co.uk\/service\/privacy-policy-6925316.html)'],'Language':'en','Initial Screen Accept Button Text':'OK','PCode':'jAJ_WUYAnDzxn','Display UI':'inEU','Purpose Screen Title Text':'Data Collection Purposes','UI Layout':'popup','Publisher Name':'Evening Standard','Mode':1,'Purpose Screen Body Text':'You can set your consent preferences and decide how you want your data to be used based on the purposes below.  You can do this for us separately from the third-party partners we use.  Each purpose has a description so you can see what your data is used for. ','Soft Opt-in Enabled':false,'Min Days Between UI Displays':365,'Publisher Purpose IDs':[1,2,3,4,5],'Publisher Vendor List URL':'https://quantcast.mgr.consensu.org'.concat('/choice').concat('/jAJ_WUYAnDzxn').concat('/www.standard.co.uk').concat('/.well-known/pubvendors.json').concat('?timestamp','=',choiceMilliSeconds),'Initial Screen Body Text Option':2,'Initial Screen Title Text':'Your privacy choices'});})();

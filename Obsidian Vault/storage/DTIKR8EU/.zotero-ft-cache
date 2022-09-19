@@ -1,0 +1,47 @@
+AUTOLAND ON CONTAMINATED RUNWAYS
+By Captain William Wainwright
+AIRBUS
+10th Performance and Operations Conference (1998)
+1. INTRODUCTION
+Autoland systems were developed for landing in fog. They were aimed at permitting operations to continue at airports such as London-Heathrow or Paris-CDG on the many winter days that these airports are affected by fog. Of course, since its introduction, use of autoland has been extended into other areas that were not considered at the outset. However, the certification requirements were written around the idea that these systems were for use in low visibility. Thus, operations on contaminated runways are not considered during certification, although we do some autolands on wet runways during flight tests. Since we have not done any autoland tests on contaminated runways, we can only give advice based on our knowledge of our autoland systems and our experience of manual landings on contamination. In other words, what theoretically should happen.
+2. AUTOLAND DEVELOPMENT
+The development of an autopilot system for autoland concentrates on the various phases of the landing: approach (following the LOC and GS relatively loosely to allow for speed and configuration changes; land phase (tight following of LOC and GS in stabilised flight); flare; de-rotation after touchdown; roll out. Obviously the airborne parts will not be affected. Thus, there is no reason that an autoland will not work satisfactorily on a contaminated runway down to touchdown. Thereafter, it is not so sure.
+3. CONTAMINATED RUNWAYS
+There are 3 principal problems with landing on a contaminated runway: wheel spinup; braking efficiency; directional control.
+Wheel spin-up is important because a number of systems require it for activation, but a slippery surface slows it down. For this reason, you are advised to do a relatively firm touchdown when landing on a contaminated runway. The idea is that the wheels will break through the layer of contamination and find a bit of friction to give them some rotation. So-called "kiss" landings are not recommended.
+In fact the autoland should normally do a reasonable job. Because it has always been designed for "blind" landings, it tends to favour touching down in a reasonable place, not too long, over touching down softly. This aspect has often been criticised now that you are expecting to use autoland in good visibility, either for training or because you are tired, or in emergency situations when your aircraft might be
+
+overweight (here it should be noted that autolands at AUWs up to MTOW have only been demonstrated so far on A319 and A330-200). It becomes a desirable characteristic as soon as you consider doing an autoland on a contaminated runway. However, there is always some scatter in the performance of an automatic system, just as there is with a human being. The flare is fine-tuned so that it never does a hard landing (although up to 10ft/sec is allowed by the certification rules) and it never misses the ground; that is to say, it never floats. The end result is something like an average touchdown rate of 3ft/sec with quite frequent points at 2ft/sec and 5ft/sec.
+Braking efficiency is not part of the autoland, except that it requires the wheels to be spun-up by a reasonably firm touchdown. But the fact that the brakes are less efficient on slippery surfaces does put the emphasis on touching down in the right place. In this respect, autoland should do a good job, although it will never be very close to the threshold.
+Finally we are left with directional control. Before discussing use of autoland I will reiterate the advice that we have previously given for manual landings on contaminated runways:
+Landing procedures
+- Aim for a firm - not hard - touchdown
+• spoiler extension • wheel spin up
+- Start the derotation and select reversers as soon as the main landing gear touches
+• to increase wheel loading as soon as possible • faster wheel spin up
+- As soon as all wheels are on the ground
+• start braking (if manual) • centralize the sidestick laterally and longitudinally to
+avoid directional problems (asym wheel loading) to give optimum weight on main wheels
+Landing technique
+- If directional problems
+• cancel reverse thrust until control regained • deselect autobrake if control difficulties due to
+differential brake release • fully release pedal on one side to achieve manual
+differential braking
+
+- Be aware that
+• deceleration is much less than normal possibly no deceleration bars
+• critical phase for directional control is at low speed
+- It’s not over until the aircraft stops
+Factors affecting control
+- Capability to maintain directional control at high speeds is retained due to strong aerodynamic rudder control
+- At low speeds capability to counter crosswinds and to maintain directional control is reduced due to:
+• Reduction of stabilizing effect of nosewheel and less effective NWS
+• Destabilizing effect of reversers • Yaw effect of different brake effectiveness, left and
+right wheels • Differential manual braking characteristics
+You will see that landing on a contaminated runway is not the same as doing a normal landing, and that your problems become more severe as you slow down. So what can we say about autoland in these conditions?
+Both the de-rotation and the roll out use gains which are developed to give satisfactory performance on non-slippery runways. The de-rotation is tuned for a comfortable nose-wheel touchdown and is not optimised for the contaminated runway, which requires a fairly quick de-rotation in order get a faster spin-up and to start slowing down as soon as possible; however, the average autoland de-rotation takes only 4/5 seconds and should therefore work reasonably well.
+Thereafter the emphasis is on tight centre-line tracking (actually tracking the LOC) whilst avoiding oscillations (weaving). The gains used for this task are developed in the simulator and then fine-tuned during actual autolands in the aircraft in various wind conditions and CGs. We also do some tests with asymmetric reverse thrust and asymmetric, but constant, braking. However, since we have not done this on contaminated runways, we cannot say exactly how the aircraft will behave on a slippery runway.
+You have already seen that a human pilot has to adapt his technique for landing on a contaminated runway, but an autopilot cannot. However, what it does naturally should work well up to touchdown. Thereafter, we cannot recommend that you do an automatic roll-out, because we have never done any on contaminated runways, even though we believe that it should work well in up to small crosswinds. What we can recommend is to do an autoland and disconnect the autopilot after nose-wheel
+
+touchdown to do a manual roll-out, controlling the aircraft directionally as recommended for manual landings on contaminated runways.
+

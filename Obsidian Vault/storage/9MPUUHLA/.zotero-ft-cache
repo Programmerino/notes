@@ -1,0 +1,492 @@
+ARTICLE
+
+https://doi.org/10.1038/s41467-019-11690-z
+
+OPEN
+
+Unexpected species diversity in electric eels
+
+with a description of the strongest living
+
+bioelectricity generator
+
+C. David de Santana1, William G.R. Crampton2,20, Casey B. Dillman1,3,20, Renata G. Frederico 4,17, Mark H. Sabaj5, Raphaël Covain 6, Jonathan Ready 7, Jansen Zuanon8, Renildo R. de Oliveira 8, Raimundo N. Mendes-Júnior9, Douglas A. Bastos8, Tulio F. Teixeira10,18, Jan Mol11, Willian Ohara10,19, Natália Castro e Castro12, Luiz A. Peixoto10, Cleusa Nagamachi13, Leandro Sousa14, Luciano F.A. Montag4, Frank Ribeiro 15, Joseph C. Waddell2, Nivaldo M. Piorsky16, Richard P. Vari1 & Wolmar B. Wosiacki12
+
+1234567890():,;
+
+Is there only one electric eel species? For two and a half centuries since its description by Linnaeus, Electrophorus electricus has captivated humankind by its capacity to generate strong electric discharges. Despite the importance of Electrophorus in multiple ﬁelds of science, the possibility of additional species-level diversity in the genus, which could also reveal a hidden variety of substances and bioelectrogenic functions, has hitherto not been explored. Here, based on overwhelming patterns of genetic, morphological, and ecological data, we reject the hypothesis of a single species broadly distributed throughout Greater Amazonia. Our analyses readily identify three major lineages that diverged during the Miocene and Pliocene— two of which warrant recognition as new species. For one of the new species, we recorded a discharge of 860 V, well above 650 V previously cited for Electrophorus, making it the strongest living bioelectricity generator.
+
+1 Division of Fishes, Department of Vertebrate Zoology, MCR 159, National Museum of Natural History, PO Box 37012, Smithsonian Institution, Washington, DC, WA 20013-7012, USA. 2 Department of Biology, University of Central Florida, Orlando, FL 32816, USA. 3 Cornell University Museum of Vertebrates, Department of Ecology and Evolutionary Biology, Cornell University, Ithaca, NY 14850, USA. 4 Laboratório de Ecologia e Conservação, Universidade Federal do Pará, Instituto de Ciências Biológicas, Belém, Pará, Brazil. 5 Department of Ichthyology, The Academy of Natural Sciences of Drexel University, 1900 Benjamin Franklin Parkway, Philadelphia, PA 19103, USA. 6 Muséum d’histoire naturelle, Département d’herpétologie et d’ichtyologie, route de Malagnou 1, case postale 6434, CH-1211 Genève 6, Switzerland. 7 Laboratório de Lepidopterologia e Ictiologia Integrada, Centro de Estudos Avançados da Biodiversidade, Instituto de Ciências Biológicas, Universidade Federal do Pará, Belém, Pará, Brazil. 8 Coordenação de Biodiversidade, Instituto Nacional de Pesquisas da Amazônia, Manaus, Amazonas, Brazil. 9 RESEX do Rio Cajari, Instituto Chico Mendes da Conservação da Biodiversidade, Macapá, Amapá, Brazil. 10 Museu de Zoologia da Universidade de São Paulo, Laboratório de Ictiologia, São Paulo, São Paulo, Brazil. 11 Anton de Kom University of Suriname, Paramaribo, Suriname. 12 Museu Paraense Emílio Goeldi, Caixa Postal 399, 66040-170 Belém, Pará, Brazil. 13 Laboratório de Citogenética, Centro de Estudos Avançados da Biodiversidade, Instituto de Ciências Biológicas, Universidade Federal do Pará, BelémPará, Brazil. 14 Laboratório de Ictiologia, Faculdade de Ciências Biológicas, Universidade Federal do Pará, AltamiraPará, Brazil. 15 Instituto de Ciências e Tecnologia das Águas, Universidade Federal do Oeste do Pará, Campus Amazônia, SantarémPará, Brazil. 16 Universidade Federal do Maranhão, Departamento de Biologia, Laboratório de Ecologia e Sistemática de Peixes, São Luis, Maranhão, Brazil. 17Present address: Laboratório de ecologia de peixes, Universidade Federal de Minas Gerias, Institudo de Ciências Biológicas, Belo Horizonte, Minas Gerais, Brazil. 18Present address: Programa de Pós-Graduação em Biologia de Vertebrados, Pontifícia Universidade Católica de Minas Gerais, Belo Horizonte, Minas Gerais, Brazil. 19Present address: Laboratório de Ciências Ambientais, Universidade Federal de Rondônia, Presidente Médice, Rondônia, Brazil. 20These authors contributed equally: William G. R. Crampton, Casey B. Dillman. 21Deceased: Richard P. Vari. Correspondence and requests
+for materials should be addressed to C.D.d.S. (email: desantanac@si.edu)
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+1
+
+ARTICLE
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+Is there only one electric eel species? Since Linnaeus’s description of Electrophorus electricus 250 years ago1, electric
+eels have fascinated scientists and layperson alike by their
+capacity to generate strong (~650 V) electric organ discharges (EODs)2,3. Strong EODs facilitate hunting, prey capture, and
+defense, while weaker (~10 V) EODs allow electrolocation and communication4. Electric eels inspired the design of Volta’s ﬁrst
+electric battery to provide constant current, provide a source of acetylcholinesterase for treating neurodegenerative diseases5, and
+recently encouraged the development of synthetic protocells with natural nanoconductors and capacitators6,7, and a stacked hydrogel battery that could be used to power medical implants8.
+Electric eels are also an emerging model for genomic studies of animal electrogenesis9. Due in part to their large size [up to 2.5 m10], and specialized electrogenic morphology, electric eels
+have long been assumed to comprise a single species broadly distributed through Greater Amazonia—the superbasin com-
+prising the Amazon, Orinoco, and coastal drainages of the Guianas e.g., refs. 11,12.
+To test the hypothesis of a single species of Electrophorus, we examine 107 specimens from across Greater Amazonia—including the type locality of E. electricus in Suriname13 (Supplementary
+Data 1). To explore species-level divergences, we adopt the General Lineage Concept (GLC)14, which recognizes species as separately evolving metapopulation lineages. The GLC uniﬁes
+several pre-existing species concepts, which vary in their criteria
+for identifying the point of lineage divergence during speciation14. Practical applications of the GLC seek multiple, congruent
+lines of evidence for delimiting species, and to this end we subject
+a large dataset (comprising mitochondrial and nuclear DNA,
+morphology, and geographical and ecological distributions) to a
+range of empirical and model-based procedures. Our analyses
+lead us to conclude that there are three common species of
+Electrophorus, which occupy predominantly allopatric ranges (i.e.,
+occupy different regions) in the Guiana Shield (E. electricus),
+Brazilian Shield (E. voltai sp. nov.) and in the lowland Amazon
+basin (E. varii sp. nov.). Here we describe these three species, and
+discuss their morphology, evolutionary history, and ecology.
+
+a
+Guiana Shield 1
+
+Andes
+
+2
+
+3
+
+Andes
+
+Lowland intercratonic basin
+
+Brazilian Shield
+
+Electrophorus electricus Electrophorus voltai Electrophorus varii
+
+b
+
+Species tree
+
+(1) COI (2) ND4 (3) ATP (4) 12S (5) 16S (6) 36298e1 (7) SH3PX3
+
+Results and discussion
+Genetic analysis. Phylogenetic analyses based on the mitochondrial COI gene resolved three divergent and highly supported lineages corresponding to E. electricus, and the two proposed new species E. voltai, and E. varii—both with Bayesian Inference [posterior probability (PP) >0.95], and Maximum-Likelihood (ML) analysis (bootstrap >0.95; Fig. 1). Estimated evolutionary divergences of COI, using Kimura 2-parameter distances, are: 6.6% between E. electricus and E. voltai; 9.8% between E. electricus and E. varii; and 9.3% between E. voltai and E. varii. Intra-speciﬁc divergences range from 0.02% in E. electricus to 0.31 and 0.32% in E. voltai, and E. varii, respectively. Interspeciﬁc COI divergences are also well above the accepted threshold (~2%) used to recognize animal species, including ﬁshes15. Finally, sequences were analyzed by pairwise distances to assess intra- and interspeciﬁc variation, without a priori species hypotheses, using Automatic Barcoding Gap Discovery (ABGD)16. ABGD clustered the sequences into the same three lineages.
+Concatenated mitochondrial DNA (COI, ND4, ATPase6/8, 12S rDNA, and 16S rDNA) was analyzed with three General Mixed Yule Coalescent (GMYC) models: the Bayesian Poisson tree process (bPTP), single- (SML) and multi-threshold (MML) maximum-likelihood methods, and the Genealogical Sorting Index (GSI). The results for GMYC (bPTP, E. electricus 0.999; E. varii 0.826; E. voltai 0.973); SML (3 clusters, p = 5.7e-14), MML (3 clusters, p = 5.6e-14), and GSI (gsi = 1, p < 0.001 for all
+
+(8) 4174e20
+(9) S7i-1
+(10) 55378e1
+Fig. 1 Sampling localities and gene trees for the three species of Electrophorus. a Map of northern South America showing distributions of sampled records and type localities (indicated by numbers) for three electric eel species: Electrophorus electricus (red dots, 1 = Suriname River, Suriname); E. voltai (blue dots, 2 = Rio Ipitinga, Brazil); and E. varii (yellow dots, 3 = Rio Goiapi, Brazil). Bicolor dots (blue/yellow) indicate sympatric co-occurrence of E. voltai and E. varii. The map was created in ArcGIS (https://www.arcgis.com) with images available at Shuttle Radar Topography Mission, Global Multi-resolution Terrain Elevation Data, and HydroSHEDS database. b *BEAST2.4 species tree (top cladogram; 94 specimens: 15 E. electricus, 41 E. voltai, 38 E. varii) based on 5 mitochondrial (trees 1–5; 107 specimens: 19 E. electricus, 43 E. voltai, 45 E. varii) and 5 nuclear genes (6–10; 94 specimens). Higher shading densities represent areas where the majority of trees agree in topology and branch lengths (posterior probabilities >0.99), while lower densities represent areas of uncertainty (Supplementary Data 1)
+
+2
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+ARTICLE
+
+three species) strongly support the same three lineages recovered from COI.
+Concatenated nuclear DNA (S7i-1, SH3PX3, 36298E1, 4174E20, and 55378E1) was analyzed under coalescent-based methods for species delimitation in the Bayesian Phylogenetics and Phylogeography program BP&P v3.217, and by Bayesian posterior probabilities (PP). Results derived from these analyses (Fig. 1) strongly support the same three lineages (PP = 1.0) recovered from COI and concatenated mitochondrial DNA.
+The full set of ten nuclear and mtDNA markers was analyzed using species delimitation in BP&P and Bayesian Evolutionary Analysis by Sampling Trees [*BEAST2.4]18 (Fig. 1). The same three lineages recovered by previous analyses were, again, overwhelmingly supported (PP = 1.0).
+Morphological analysis. Due to uniform body shape and coloration, neither morphometric analyses of 19 linear body measurements (Supplementary Data 2) nor pigmentation characters unambiguously distinguish the three species of Electrophorus. However, a species-level assessment based on characters from the lower jaw, neurocranium, and cleithrum separate specimens of Electrophorus into two groups (Fig. 2): those possessing a dorsoventrally depressed skull (E. electricus and E. voltai), and those with a deepened skull (E. varii). The cleithrum lies between vertebrae 5 and 6 in E. electricus and E. voltai and between 1 and 2 in E. varii. We found additional diagnostic differences in head shape (Fig. 2), and non-overlapping ranges in the number of pectoral-ﬁn rays (e.g., 32–38 in E. electricus versus 20–28 in E. varii) and lateral-line pores (e.g., 88–101 in E. electricus versus 124–186 in E. varii and 112–146 in E. voltai; for more details, see Diagnoses). These historically overlooked characters unambiguously assign all individuals of Electrophorus to the same three species delimited by our genetic analyses.
+
+Electrophorus interrelationships. The interrelationships among Electrophorus and outgroup genera are beyond the scope of this paper; however, some of our ﬁndings, based on a limited number of outgroup taxa, deserve comment. Our analyses recovered Gymnotus as part of an unresolved polytomy, with the genera Hypopomus and Sternopygus both constituting sister taxa to the polytypic Electrophorus (both in ML and in the trimmed terminals (n = 3) Bayesian analysis). In the full 113 terminal dataset Hypopomus is recovered as sister to Electrophorus (see Supplementary Fig. 1). In each of our analyses very long branches subtend all clades. The sampling schema undertaken herein, wherein many terminals within the genus Electrophorus are analyzed alongside the proposed sister lineage, i.e., Gymnotus19, as well as a single species each of Hypopomus and Sternopygus the resultant topologies are not to be taken as proposal of new intergeneric relationships. Instead the sampling was chosen a priori based on previous work19, to calibrate divergence estimates, and provide a diversity of outgroup taxa with which to evaluate the focal taxon Electrophorus. Based on previous research it has been proposed that Electrophorus is either a member of a monotypic Electrophoridae11 or part of the Gymnotidae19. Regardless of familial placement and interrelationships the single branch that leads to Electrophorus, heretofore a single widespread species (and now comprising the nominal species and two new species) is representative of a unique lineage that is unlike other gymnotiforms.
+Temporal diversiﬁcation. We used estimates for the origin of the Isthmus of Panama20 with outgroup taxon sampling in additional gymnotids, i.e., Gymnotus carapo (South America) and G. cylindricus (Central America) (see ref. 21) as a calibration point for the multilocus species tree generated by *BEAST2.4, based on Maximum Clade Credibility, with a relaxed clock assumption for the mtDNA loci22 and a strict clock for the nDNA23. A normal
+
+Electrophorus electricus
+
+Electrophorus voltai
+
+Electrophorus varii
+
+a
+
+b
+
+c
+
+v5
+
+v6
+
+v1
+
+10 mm Depressed skull and cleithrum
+
+Cleithrum
+
+10 mm
+
+Depressed skull and cleithrum
+
+Cleithrum
+
+10 mm
+
+Cleithrum
+
+Deepened skull and cleithrum
+
+Medial margins of dentary
+
+Pores
+
+10 mm
+
+Anus/ urogenital opening
+
+U-shaped head
+
+Ovoid head
+
+Head shape variable
+
+Fig. 2 Key morphological features to recognize the three species of Electrophorus. Top, radiographs of lateral view of the anterior portion of body (skull and pectoral girdle highlighted red). The cleithrum lies between the ﬁfth and sixth vertebrae (v) in Electrophorus electricus (a) and E. voltai (b) versus ﬁrst and second vertebrae in E. varii (c). Bottom, illustrations of ventral view of the head, showing key features listed in Diagnoses. a top: National Museum of Natural History, NMNH 403765, 300 mm TL, Cuyuni River, Guyana; bottom: NMNH 225576, 1000 mm TL, Corantijn River, Suriname. b top: Instituto Nacional de Pesquisas de Amazônia, INPA 39009, 450 mm TL, Teles Pires River, Brazil; bottom: Academy of Natural Sciences of Drexel University, ANSP 197583 (t3539), 1280 mm TL, Xingu River, Brazil. c top: NMNH 306677, 450 mm TL, Lago Janauari, Amazon River, Brazil; bottom: NMNH 196634, 1220 mm TL, Amazon River, Brazil
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+3
+
+ARTICLE
+Substitutions rates/Sites 5E-4 COI 5E-4 ND4 6E-4 ATPASE 8/6 5E-4 12S 5E-4 16S 5E-4 36298E1 5E-4 SH3PX3 5E-4 4174E20 6E-4 55378E1 5E-4 S7-i1
+
+7.1
+
+3.6
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+Electrophorus voltai High-voltage EOD to 860 V
+
+Species tree Gene tree
+
+Electrophorus electricus High-voltage EOD to 480 V
+
+Posterior probabilities 0.99–1.0
+
+0.95–0.98
+
+0.90–0.94
+
+Millions of years ago
+
+Electrophorus varii
+
+15
+
+11.6
+
+Middle
+
+Late
+
+5.3
+
+2.6
+
+0
+
+High-voltage EOD to 572 V
+
+Miocene
+
+Pliocene
+
+Pleistocene
+
+Fig. 3 Electrophorus tree of life and time of species diversiﬁcation. Time-calibrated genealogy of Electrophorus based on a maximum clade credibility (MCC) species tree derived from *BEAST2.4 analyses of 10 genes (colored lines) and 94 specimens of Electrophorus (relaxed molecular clock and uncorrelated lognormal model implemented). Purple bars represent 95% highest posterior density distributions for the estimated divergence time of each major node. Voltage measurements made by us are reported below E. electricus (National Museum of Natural History, NMNH 225670, 520 mm TL, Corantijn River, Suriname), E. voltai (Museu Paraense Emílio Goeldi, MPEG 15529; holotype, 1290 mm TL), and E. varii (MPEG 25422; holotype, 1000 mm TL)
+
+distribution was set to 10.5 Ma (see Time divergence estimates in Methods) and standard deviation of ±1.5 for the outgroup taxa spanning the Isthmus20. The resulting time-calibrated genealogies (Fig. 3) estimate the divergence between E. varii and E. electricus + E. voltai to have occurred by the late Miocene (7.1 Ma; 95% highest posterior density: HPD 8.9–5.2 Ma), with subsequent divergence between E. electricus and E. voltai in the Pliocene (3.6 Ma; 95% HPD 4.7–2.5 Ma).
+Ecological distributions, biogeography, and divergence events. Electrophorus electricus is restricted to the Guiana Shield, and E. voltai occurs in generally north-ﬂowing rivers of the Brazilian shield and south-ﬂowing rivers of the Guyana shield. In contrast, E. varii occurs in lowland ﬂoodplain and terra-ﬁrme systems of the intercratonic Amazon Basin (Fig. 1; Supplementary Data 1). Electrophorus varii and E. voltai co-occur in some streams in the Guiana Shield (Fig. 1). The Miocene divergence of E. electricus + E. voltai and E. varii may reﬂect ecological specialization to shield versus lowland habitats. Shield streams and rivers are: (1) permanently normoxic (>3 mg/l dissolved oxygen); (2) uniformly low in conductivity (<30 µScm−1); and, (3) include rocky substrates, rapids, and waterfalls12. In contrast, waters of the lowland Amazon: (1) include low conductivity blackwaters (<30 µScm−1) and highconductivity whitewaters (60–350 µScm−1); (2) include permanently normoxic terra-ﬁrme streams (>3 mg/l), and seasonally hypoxic ﬂoodplains (<0.5 mg/l); and, (3) are slow ﬂowing—with non-rocky substrates and without rapids or falls12. Some morphological specializations may have attended divergence into shield versus lowland systems. For instance, the depressed skull of E. electricus and E. voltai may represent an adaptation for foraging in rocky substrates or withstanding higher ﬂow—mirroring specializations in other rheophilic (fast-ﬂow-adapted) ﬁshes24.
+
+We hypothesize that the divergence of E. voltai (Brazilian Shield) and E. electricus (Guiana Shield)—both restricted to low conductivity systems (Fig. 1a)—may have arisen from dispersal barriers imposed by the emergence of the Amazon’s modern (high-conductivity) river-ﬂoodplain course in eastern Amazonia (ref. 25 describes similar disjunct distributions in other taxa). The
+separation of the Guiana and Brazilian Shields by a major riverﬂoodplain resulted from the reversal of a paleo west-ﬂowing Amazon to the contemporary east-ﬂowing Amazon during
+the Miocene-Pliocene. The Amazon River was initiated as a transcontinental river 9.4–9 Ma (late Miocene) by recent estimates26, began entrenchment about 6.8 Ma and developed its modern shape from about 2.4 Ma onwards27. Notwithstanding debate over the timing of these events26,28, our estimated 3.6 Ma (95% HPD 4.7–2.5 Ma) divergence of E. voltai and E. electricus
+(Fig. 3) is coincident with the later stages of the origins of the Amazon’s eastern course.
+Do the geographical and ecological distributions of Electrophorus reﬂect predictive models of niche occupation? We used
+Ecological Niche Models (ENMs) based on climatic and
+geomorphological variables to test the premise of divergent
+habitat requirements for each species of Electrophorus. ENMs,
+based on MaxEnt presence-only algorithms, predicted the
+potential niche distributions of Electrophorus with strong conﬁdence (Area Under the Curve, AUC [≥0.90], Fig. 4a–c). Likewise, observed geographic ranges are signiﬁcantly inﬂu-
+enced by the abiotic environmental factors included in our
+analyses: seasonality of air temperature (ST) and annual mean temperature (AMT)—strong predictors of ﬂood pulse; altitude (AL), annual mean precipitation (AMP), and ﬂow accumulation (FLA)—strong predictors of aquatic habitat structure, and; soil types (SOT 0, 3, 6, 11)—predictors of water chemistry. The
+
+4
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+a
+
+b
+
+High
+
+Low
+
+High
+
+c
+
+Low
+
+ARTICLE
+High Low
+
+Head-to-tail voltage (V)
+
+Electrophorus electricus – AUC = 0.98
+d 900
+600 300
+
+Electrophorus varii – AUC = 0.90 1 msec
+
+Electrophorus voltai – AUC = 0.96
+e
+E. electricus E. electricus
+E. varii E. varii E. varii
+
+0 0 200 400 600 800 1000 1200 1400 Total length (mm)
+
+E. varii E. voltai
+
+Fig. 4 Ecological Niche Model and electric organ discharges for species of Electrophorus. Species niche models generated by MaxEnt for Greater Amazonia: a Electrophorus electricus (red); b E. varii (yellow); and c E. voltai (blue). d Measurements of voltage of high-voltage EODs, low-voltage EODs waveforms from Sach’s organ, and posterior one-third of Hunter's organ (grey lines = individually recorded ﬁsh, black lines = averaged waveform for each species). e Nearest-neighbor hierarchical clustering of prominent time-frequency features of the low-voltage Sach’s organ EOD from seven individuals of Electrophorus
+
+predicted niche area for E. electricus (Fig. 4a; AUC = 0.98) designates AL (44.7%) and AMT (25.3%) as the strongest contributors to the models. For E. voltai (Fig. 4c; AUC = 0.96), SOT (35.4%) and FLA (25.4%) contributed most. For E. varii (Fig. 4b; AUC = 0.90), AL (72.3%) and FLA (13.1%) contributed most. Despite strong performance, ENMs nonetheless generated some over-predictions of ranges (Fig. 4a–c). For instance, they inaccurately predicted E. electricus to occur in portions of the lowland Amazon basin between the Guiana and Brazilian Shields (Fig. 4a). Likewise, ENMs incorrectly predicted the occurrence of E. varii in the northern portion of the Guiana Shield (Fig. 4b).
+A hypothesis of niche divergence among Electrophorus species was corroborated by multivariate analyses of variance (MANOVA) of climatic and geomorphological data. MANOVA conﬁrmed signiﬁcant differences among the niches modeled for each species (Pillai’s lambda = 1.1092, F = 10.414, P < 0.001).
+In summary, while best regarded as approximations, our ENMs for Electrophorus support a hypothesis of divergent niche requirements and geographical ranges corresponding to distinct ecological conditions.
+All the three species of Electrophorus have a low-voltage (Sachs’ organ/posterior Hunter’s organ) electric organ discharges (EODs) and high-voltage (main/anterior Hunter’s organ) with a headpositive monophasic waveform. The low-voltage EOD varies in duration across the species as follows (Fig. 4d): E. electricus (2.03–2.19 ms, n = 2), E. varii (1.24–1.78 ms, n = 4), and E. voltai (1.72 ms, n = 1). The high-voltage EOD (Fig. 4d) ranges from 480 V at 760 mm TL, n = 1, in E. electricus; 151 V (200 mm TL) to 572 V (609 mm TL), n = 4, in E. varii; and 860 V at 1219 mm TL, n = 1, in E. voltai.
+To explore similarity in EOD waveform structure between the three species of Electrophorus (Fig. 4d) we extracted prominent
+
+time-frequency features from all available low-voltage Sach’s
+organ EOD waveform recordings using the discrete wavelet
+transform (DWT) and subjected the resulting matrix of DWT coefﬁcients to dimension reduction by pairwise ANOVA; see refs. 29,30. Finally, we subjected this reduced matrix to a nearest-
+neighbor (single linkage) multivariate hierarchical clustering
+procedure.
+Nearest-neighbor clustering analysis (Fig. 4e) demonstrated that the Sach’s organ EOD waveform structures of E. electricus
+and E. varii cluster together, while the (single recorded) EOD of E. voltai is dissimilar to those of E. electricus + E. varii—
+primarily due to its shorter duration. The results of this
+clustering analysis were also congruent with measurements of the multivariate Mahalanobis distance (D2) between the centroids of each species: D2 for E. electricus to E. varii = 25, D2 for E. electricus to E. voltai = 375; D2 for E. varii to E. voltai = 540. The hierarchical classiﬁcation of EOD waveform
+structure in Fig. 4e is not congruent with the phylogeny of
+Electrophorus (Fig. 3), suggesting that distances in EOD signal-
+space are not correlated to phylogenetic distance as would be
+expected if EOD structure evolves via non-adaptive drift. Instead, because the low-voltage Sach’s organ EOD may
+facilitate species-recognition (as documented in weakly-electric gymnotiforms31, and because E. voltai and E. varii co-occur in
+geographical sympatry in parts of the lower Amazon, we
+hypothesize that the EODs of E. voltai may have diverged from
+that of E. varii as an adaptive response to costs associated with heterospeciﬁc mismating events (i.e., reproductive character displacement [RCD]; see ref. 32. Nonetheless, we stress that these analyses are based on small sample sizes (E. electricus, n = 2; E. varii, n = 4; E. voltai, n = 1). A thorough test of the RCD
+hypothesis will require a much larger dataset of signals with an
+expanded geographical coverage.
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+5
+
+ARTICLE
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+Systematic biology.
+Electrophorus Gill, 1864 Electrophorus ref. 33: 152. Type species: Gymnotus electricus
+Linnaeus, 1766. Type by monotypy. Gender: masculine. Electrophorus electricus (Linnaeus, 1766)
+Gymnotus electricus1; Gymnoti tremuli ref. 34: 27, pl. 3; Gymnotus tremulus ref. 35: 111; Gymnotus electricus ref. 1:
+427; Gymnotus regius ref. 36: 273.
+Diagnosis: Ten nucleotides in COI (BOL-COIﬁshF1/R1; 569bp fragment): G(8), A(50), T(76), T(77), T(107), C(119), C(182), G(272), G(494), A(560). Ventral outline of head U-shaped, widest at terminus of branchial opening (Fig. 2a) and lateral-line pores 88–101 (versus ovoid, widest anterior to branchial opening, Fig. 2b; 112–146 in E. voltai). Distinguished by skull depressed, cleithrum lies between vertebrae 5 and 6 (Fig. 2a), pectoral-ﬁn rays 32–38, and lateral-line pores 88–101 (versus skull deep, cleithrum lies between vertebrae 1 and 2, Fig. 2c, 20–28, and 124–186 in E. varii, respectively).
+Description: Species illustrated in Figs. 2, 3, and 5. Maximum size examined specimens 1000 mm TL (total length). Morphometric and meristic data in Supplementary Data 2. Body elongate; sub-cylindrical at pectoral girdle, progressively compressed posteriorly. Mouth superior. Scales absent. Anal and caudal ﬁns seamlessly conjoined. Anus and urogenital papilla separated, located anterior to ventral margin of branchial opening. Head and body color brown to blackish. Clear band along body, below lateral line, variably present.
+Low-voltage (Sachs’ organ) EOD and high-voltage (main/ Hunter’s organ) with head-positive monophasic waveform. Lowvoltage EOD 2.03–2.19 ms duration, n = 2 (Fig. 4d). High-voltage EOD 480 V at 760 mm TL, n = 1 (Fig. 4d). For distribution see Fig. 1a and Supplementary Data 1.
+Electrophorus varii, sp. nov. de Santana, Wosiacki, Crampton, Sabaj, Dillman, Mendes-Júnior and Castro e
+Castro
+Holotype: MPEG 25422, 1000 mm TL; Goiapi River, Marajó Island, Pará, Brazil.
+Paratypes: INPA 46378, INPA 46379 (3); MHNG 2748.083; MPEG 30480 (3).
+Etymology: In honor of Richard Peter Vari (1949–2016) for his contributions to ichthyology.
+Diagnosis: Eleven nucleotides in COI: A(64), A(80), G(146), G (164), T(190), A(251), A(467), C(512), T(517), A(536), and C (569). Pectoral-ﬁn rays 20–28 and lateral-line pores 124–186 (versus 32–38, and 88–101, respectively, in E. electricus). Distinguished by head narrow, Fig. 2a (versus wide, Fig. 2b, in E. voltai; distance between medial margins of contralateral dentaries at transverse through last two ventral pores 2–3 times shorter in E. varii than E. voltai, Fig. 2a, b), skull deep, cleithrum lies between vertebrae 1 and 2, Fig. 2b (versus skull depressed, cleithrum lies between vertebrae 5 and 6, in both E. electricus and E. voltai Fig. 2a, c).
+Description: As for E. electricus, except as noted in Diagnosis and except clear band along body always absent. Species illustrated in Figs. 2, 3, and 6. Maximum size examined specimens 1485 mm TL. Morphometric and meristic data in Supplementary
+1 cm
+Fig. 5 Lateral view of Electrophorus electricus. National Museum of Natural History, NMNH 225670, 520 mm TL. Corantijn River, Suriname
+
+1 cm
+Fig. 6 Lateral view of Electrophorus varii sp. nov. Holotype, Museu Paraense Emílio Goeldi MPEG 25422, 1000 mm TL. Goiapi River, Brazil
+1 cm
+Fig. 7 Lateral view of Electrophorus voltai sp. nov. Holotype, Museu Paraense Emílio Goeldi MPEG 15529, 1290 mm TL. Ipitinga River, Brazil
+Data 2. Low-voltage EOD duration 1.24–1.78 ms (Fig. 4d), highvoltage EOD 151 V (200 mm TL) to 572 V (609 mm TL) (Fig. 4d), n = 4. For distribution see Fig. 1a; Supplementary Data 1.
+Electrophorus voltai, sp. nov. de Santana, Wosiacki, Crampton, Sabaj, Dillman, Castro e Castro, Bastos and Vari
+Holotype: MPEG 15529, 1290 mm TL; Ipitinga River, Almerim, Pará, Brazil.
+Paratypes: ANSP 197583 (4), INPA 50453 (8); MPEG 24793, MPEG 30365-71; MZUSP 116410 (2); MZUSP 116421 (5).
+Etymology: In honor of Alessandro Giuseppe Antonio Anastasio Volta (1745–1827).
+Diagnosis: Eight nucleotides in COI: A(25), C(29), C(50), C (86), C(140), A(230), A(338), and C(545). Ventral outline of head ovoid, widest anterior to branchial opening (Fig. 2b) and lateral-line pores 112–146 (versus U-shaped, Fig. 2a, 88–101 in E. electricus). Distinguished by skull depressed, cleithrum lies between vertebrae 5 and 6; and head wide (versus skull deep, cleithrum lies between vertebrae 1 and 2, Fig. 2b, and head narrow in E. varii), and distance between medial margins of contralateral dentaries at transverse through last two ventral pores 2–3 times longer in E. voltai than in E. varii, Fig. 2b, c.
+Description: As for E. electricus, except as noted in Diagnosis. Species illustrated in Figs. 2, 3, and 7.
+Maximum size examined specimens 1711 mm TL. Morphometric and meristic data in Supplementary Data 2. Low-voltage EOD duration 1.72 ms, (Fig. 4d), high-voltage EOD 860 V at 1219 mm TL (Fig. 4d), n = 1. For distribution see Fig. 1a; Supplementary Data 1.
+Prospectus. We document hidden species-level diversity in the electric eel illustrating how widespread conspicuous species (over 2 m in total length) can go overlooked even in a long-known model organism from one of Earth’s biodiversity hotspots. Our results demonstrate the invaluable use of multi-disciplinary approaches to explore and understand biodiversity. We further expand our knowledge on the incredible strength of high-voltage electric organ discharges (EOD’s) produced by living organisms; herein demonstrated at 860 V. The discharge recorded of E. voltai is distinctly higher than any voltage previously cited for Electrophorus2,3, making it the strongest bioelectricity generator known. We also describe additional species for investigating models in bioelectrogenesis. Future ﬁeld-based investigations of EOD diversity coupled with studies of the physiological and cellular basis of electrogenesis become an additional priority and may reveal evidence for reproductive isolation and speciation based on variation in communication signals32, as well as shed light on the role of Electrophorus as electroreceptive predators37.
+
+6
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+ARTICLE
+
+Recently, genomic and proteonomic tools have been used to greatly enhance our knowledge of the convergent origins of strong electric discharges9. The results shown here suggest that sequencing and comparing the genomes of these three electric eel species will yield further advances towards the origins of, and underlying structures responsible for generation and output of high-voltage electric discharges38. Assessment of further population and/or species diversity in Electrophorus will follow this study, based on the incorporation of additional specimens from targeted areas (including the upper Negro and Orinoco drainages). A comprehensive understanding of Electrophorus could also reveal a hidden variety of enzymatic or bioelectrogenic functions of interest to the broader scientiﬁc community39.
+Methods
+Taxon sampling and specimen collection. To test the hypothesis of a single species of Electrophorus, we examined 107 specimens (all sequenced for mitochondrial DNA, mtDNA, and 94 specimens for nuclear DNA, nDNA) from across Greater Amazonia including the type locality of E. electricus in Suriname (Supplementary Data 1). Outgroup species were Gymnotus carapo, G. choco, G. cylindricus, G. pantherinus, Hypopomus artedi, and Sternopygus macrurus (Supplementary Data 3). Specimens were collected and sampled in the ﬁeld according to the Animal Care and Use standards of the depository institutions and the countries of origin of the tissue samples used in the DNA analyses. In addition, tissues and/or specimens were received from multiple institutions in North and South America and Europe following pertinent Material Transfer Agreements and the national and international protocols for the shipment of materials. Specimens were euthanized and muscle or ﬁns removed and stored in 95% ethanol. All voucher specimens are deposited in the institutions listed in the abbreviation section.
+DNA sequencing. Genomic DNA was isolated from muscle or ﬁn using phenolchloroform in the Autogen platform or DNeasy Tissue Extraction Kits (QIAGEN) following manufacturer’s instructions. The polymerase chain reaction (PCR) was used to obtain fragments of the mtDNA and nDNA and ampliﬁed using the primers compiled in Supplementary Data 4. PCRs for COI, 12s, 16s, Atpase 8/6, 361298E1, 4174E20, 55378E20, and S7-i1 were carried out for 10 µl volumes as follows: 1 µl of 10x buffer, 0.5 µl of 10 µM dNPTs, 0.4 µl of 50 µM MgCl2, 0.3 µl of 10uM of each primer, 5 U/M of Taq DNA polymerase, 6.4 µl of deionized water, and 1µl of DNA extract. Thermal cycling conditions for genes were: 35 cycles, 95 °C for 300 s, 95 °C for 30 s, 72 °C for 45 s, and 72 °C for 300 s. In the case of ND4, PCR was carried out for 20 µl volumes and 1 µl of DNA extract. Nested PCRs for SH3PX3 were carried out for 25 µl volumes and 2 µl of DNA extracts. Thermal cycling conditions for SH3PX3 were: 35 cycles, 94 °C for 60 s, 94 °C for 30 s, 72 °C for 80 s, and 72 °C for 300 s. The annealing temperatures and times are provided in Supplementary Data 4. PCR products were puriﬁed using EXOSAP. DNA sequencing followed standard protocols employed in molecular systematics laboratories and were completed through a capillary sequencing technique on the LAB MAHVN4550 sequencer. All obtained sequences were deposited in GenBank (Supplementary Data 3).
+Sequence alignment. Sequences were edited in the CodonCode Aligner (www.codoncode.com) and preliminarily aligned using ClustalW in MEGA 6.0.6.40. Alignments were checked by eye and manually adjusted when necessary. Kimura Two Parameter (K2P) pairwise distances were calculated using MEGA 6.0.6. For all analyses Sternopygus, when included, was designated as the outgroup. Hypopomus artedi, and four species of Gymnotus were also included. 107 individuals of Electrophorus from throughout their range were included as the ingroup. The best model of nucleotide evolution for each locus was estimated using jModelTest41, though codon-level estimates were not inferred or enforced. For introns sequences heterozygosity was noted with degenerate IUPAC codes. Insertion/ deletion mutations for the EPIC 36298E1 sequences were incorporated in the phylogenetic analyses e.g., ref. 42.
+Species delimitation. Species delimitation was based on the subsequent evaluation of four molecular datasets. Dataset 1: Single locus (COI; 569 bp); Dataset 2: ﬁve mtDNA genes (COI, ND4, ATP6/8, 12S rDNA, and 16S rDNA; 2973 bp total); Dataset 3: ﬁve nDNA loci (one exon: SH3PX3; one intron: S7-i1; and three EPICs: 36298E20, 4174E1, 55378E20; 2459 bp total); Dataset 4: concatenated mtDNA and nDNA genes (5432 bp).
+Dataset 1: Application of a simple barcoding approach for species delimitation, i.e., COI sequences, in combination with pairwise distance comparisons has resulted in highly successful species-level identiﬁcations in ﬁshes, e.g., ref. 43. In spite of this, determination of the limits between inter- and intra-speciﬁc differences and the delimitation of the appropriate level of differences between species threshold has proven difﬁcult, particularly in under-sampled phylogenies44. For DNA taxonomy herein we utilize COI, which as noted above has previously
+
+demonstrated the ability to provide good resolution for species delimitation among ﬁshes. We complement the traditional molecular taxonomic approach, i.e., a single tree for deﬁning species clades and revealing the included gaps, with an independent investigative tool based on pairwise distances to automatically detect signiﬁcant barcoding gaps without an a priori species hypothesis—the Automatic Barcoding Gap Discovery, ABGD16.
+Dataset 2: A computationally multi-faceted parametric inferential approach. Species validation can come in many forms; herein our approach begins with a GMYC model using the 5-gene concatenated mtDNA. Given that branching events, in this case the history of haplotypes along any phylogenetic tree, should be more recent within a species and more distant between species; implementation of the GMYC model seeks to distinguish between cladogenetic (species-level differences modeled by the Yule process) and tokogenetic (intra-speciﬁc differences modeled by the Coalescent process) events. A Bayesian, single-threshold ML method45, and multi-threshold ML method46 are all available for the GMYC model and all three were used here. The single-threshold ML method is the most conservative approach, the multi-threshold method allows for variation in the depth of history at which tokogeny gives way to speciation46, and there is a Bayesian implementation that takes into account error in reconstruction of phylogeny and model uncertainty47. The full dataset (113 terminals) was reduced to unique haplotypes (63 terminals) prior to analyses. Beast 2.418 was run for 20 million generations sampling every 1000 generations, and results were assessed using Tracer v1.5 (http://beast.bio.ed.ac.uk/Tracer) to ensure stationarity and to check that all parameters had acceptable effective samples sizes (>200) for use in generating the distribution of ultrametric trees. The derived maximum clade credibility (MCC) tree from the *BEAST2.4 run was used for the two GMYC analyses based on ML. These analyses were run on the GMYC web server (http://species.h-its.org/gmyc/) using the single and multi-threshold approaches, as described above. The Poisson tree process (PTP) has been shown to better delineate species, particularly when divergences among lineages is low48, and a Bayesian based implementation of this is available (http://species.h-its.org/ptp/). As two GMYC approaches were implemented we elected to use the bPTP method, to investigate a third approach to species number.
+Dataset 3: Nuclear DNA used herein for Electrophorus and related species is a combination of three EPIC loci (see Supplementary Data 3), a single nuclear ribosomal intron (S7-i1), and one exon (SH3PX3). Further estimates of species boundaries and validation of species were completed by analyzing the data in several different ways including analyzing each nuclear locus individually to determine the posterior probability support provided by each locus, analyzing the concatenated full nuclear DNA Dataset 3, incorporating coalescent-based methods for species delimitation of nDNA loci via Bayesian Phylogenetics and Phylogeography (BP&P) v3.217, and investigating the full ten locus dataset with the Genealogical Sorting Index, GSI49 using 10000 permutations on the lattice server50 as well as joint estimation of divergence times and the gene trees species tree using *BEAST2.418. Details of these analyses are as follows: Each nuclear locus was analyzed individually and in a concatenated matrix using MrBayes v3.2.251 on the CIPRES science gateway52 to determine the posterior probability for each of the putative lineages. The concatenated matrix was run for 10 million generations sampling every 1000 generations. Determination of convergence was completed with Tracer v1.5 and using Are We There Yet, AWTY (http://ceb.csit.fsu). Each individual nuclear and mitochondrial locus were run for 200 million generations sampling every 5000 generations using both MrBayes and *BEAST2.4. Stationarity of each locus in each run was assessed with Tracer and AWTY, and the distributions of the results from these runs were plotted in DensiTree v2.2.153 with a ten percent burn-in to visualize the congruence and conﬂict among topologies across loci. Analyses were completed with the entire Dataset 4, but are visualized with only the focal taxon Electrophorus, and a reduced number of terminals in each putative species. This was completed by trimming the total number of terminals post-analysis using Phyutility54.
+Dataset 4: Bayesian Phylogenetics and Phylogeography (BP&P) v3.2 was used to delimit species boundaries on the complete 10-locus dataset with all terminals included and with a reduced number of terminals (three individuals from each putative lineage). BP&P uses the multispecies coalescent to delimit species and infer phylogeny in a Bayesian framework. The program also accounts for population genetic uncertainties in incomplete lineage sorting associated with ancestral polymorphism conﬂicts in gene trees and species trees55. In this program the Gamma prior G (α,β) is assigned to both population size (θ) and age of the species tree root (τ0) and in our analyses α = 2 and β = 1000; all other parameters of divergence time used the Dirichlet prior56 with the heredity scalar set to 0.25 for the mtDNA loci and to 1 for the ﬁve nuclear loci. The analyses were run twice to ensure consistency between the runs.
+Phylogenetic estimation (trees with outgroups). We estimated the phylogeny of Electrophorus using the concatenated alignment of dataset 4 (5852 nucleotides total) in RAxML and MrBayes 3.2.651 both run on the CIPRES science gateway52.
+Time divergence estimates: We simultaneously estimated divergence time, based on an external calibration point, and the species trees from multilocus sequence data using *BEAST2.4 and a relaxed clock for the mtDNA loci and a strict clock for the nDNA23. A subject of much recent debate has been the chronological closure of the Central American Seaway via the Isthmus of Panama and its
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+7
+
+ARTICLE
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+consequences for biotic dispersal between North and South America and vicariance between Atlantic and Paciﬁc Oceans57–64. On the younger side, 62dated the formation of the Isthmus of Panama sensu stricto to around 2.8 Ma. Paleoceanographic studies20,65 show a decrease in the transport of deep and intermediate Paciﬁc waters into the Caribbean by 10 to 11 Ma, probably related to a closing Central American Seaway61. Based on uranium-lead geochronology in detrital zircons, 61provided evidence that rivers originating on the Panama arc transported sediment to the shallow marine basins of northern South America by the middle Miocene (13–15 Ma). Finally, 57used both molecular and fossil data to argue for two signiﬁcant waves of terrestrial dispersal at around 20 and 6 Ma. Based on these studies there a wide time scale from which to select calibration points, each with support from the literature: 2.8 Ma62; and 5.1 Ma—57,58ﬁnal wave of colonization; 10.5 Ma—20,65closing of Central American Seaway; 14 Ma – 61ﬂuvial transport of sediment from Panama arc to South America; or 20 Ma—57,58early wave of terrestrial dispersal. The date used, i.e., 10.5 ± 1.5 Ma, is in the middle of these ranges and is a conservative approach as well as one supported by multiple studies. Mitochondrial DNA indels. One other item of note with respect to the molecular sequence data generated for this study concerns the mitochondrial gene ND4 and indels. In the aligned data matrix Hypopomus artedi was found to have a full codon triplet in ND4 that no other sampled member of the outgroup or ingroup contained. Full codon gaps are known in the mtDNA of ﬁshes, e.g., ND2 of Aphredoderus66. It is unlikely that this amplicon is a pseudogene as no stop codons in either this sequence or any outgroup or ingroup sequences were demonstrated by ORFﬁnder at NCBI. In addition, at position 1270 (−569) within the species of Electrophorus some individuals have an extra adenine residue.
+Molecular diagnosis. Species of Electrophorus were diagnosed by unique nucleotide substitutions shared by all individuals of the distinct populations. Optimizations of the nucleotide substitutions among the species of Electrophorus were obtained from the MP topology using MEGA 6.0.6. Each numeric position was determined by the alignment between the species of Electrophorus with the outgroup. Screening for diagnosed nucleotide substitution were performed manually post alignment using Mesquite (http://mesquiteproject.org).
+Phenotypic analysis. Morphometric and meristic summaries do not include data from individuals smaller than 300 mm TL. Although of large to very large sizes compared to most species of Neotropical freshwater ﬁshes, specimens of Electrophorus less than 300 mm are juveniles with pronounced differences in some meristic (e.g., number of anal/caudal-ﬁn rays) and morphometric values (e.g., preanal-ﬁn distance) relative to larger specimens. Internal anatomy was studied through radiographs.
+Meristics follow11 with the addition of the number of lateral-line pores posterior of the gill opening. Anal/caudal-ﬁn ray counts include the dorsal procurrent rays, when present (made through radiographs). Morphometrics are point-to-point distances taken with digital calipers with intra-speciﬁc ranges presented in tables. Measurements were taken from the left side of individuals, when possible, as follows: body width—the distance across the body at the pectoral-ﬁns base; branchial opening—the distance from the dorsal to the ventral extremities of the opening; eye diameter—the horizontal distance between the anterior and the posterior margins of the eye; eye-posterior naris distance—the distance from the anterior margin of the eye to the posterior margin of the posterior naris; greatest body depth—the greatest vertical extent of the body, usually at the origin of the anal ﬁn along the posterior margin of the gill slit; head depth—the distance between the dorsal and ventral margins of the head at the vertical through the eye; head length—the distance from the tip of the lower jaw to the posterior margin of the opercle; head width—the horizontal distance between the dorsal limits of the branchial opening; internarial distance—the distance between the posterior margin of the anterior naris and the anterior margin of the posterior naris; interorbital distance—the distance between the medial margins of the eyes; mouth-eye distance —the distance from the posterior margin of the mouth to the ventral margin of the eye; mouth width—the distance between the inner corners of the mouth; pectoralﬁn length—the distance from the base of the dorsal most pectoral-ﬁn ray to the distal most point on the ﬁn margin; postorbital distance—the distance from the posterior margin of the eye to the posterior margin of the opercle; preanal-ﬁn distance—the distance from the tip of the lower jaw to the anal-ﬁn origin; preanus distance—the distance from the tip of lower jaw to the anterior margin of the anus; preorbital distance—the distance from the anterior margin of the eye to the anterior margin of the lower jaw; snout-corner of mouth distance—the distance from the snout to the corner of the mouth; and total length—the distance from the tip of the lower jaw to the base of the central caudal-ﬁn ray.
+Species distribution modelling and niche analysis. According to67 the species distribution patterns are the consequences of three main factors: (1) dispersal ability; (2) the spatial distribution of environmental conditions that determine the survival of individuals and the persistence of populations; and (3) biotic interactions and the dynamics of resources. The species distribution models are based on the set of climate variables in wide resolution scales (macroscale) that determine the distribution of organisms, i.e., Grinnelian niche67.
+
+To build the SDM models we used the MaxEnt algorithm, which works with presence data only68. Methods that use only presence data are common especially in areas with large gaps of information and high biodiversity such as the Amazon River basin, where there is no information about absence. MaxEnt estimates the probability of species distribution by ﬁtting a function close to the uniform distribution under the environmental information associated to the occurrence points68. This method can discriminate between the environmental variables associated to the occurrence data and the background variation of the predictor variables based on 10000 random points, i.e., the algorithm contrasts presences against the background location69. We used occurrence points of the three species described in this paper, to show the niche differences among them, Electrophorus electricus had 29, E. voltai 24, and E. varii 46 spatially unique occurrence points, i.e., one occurrence point per pixel, split into 20% test and 80% training.
+The environmental variables were chosen according to their potential to represent the topographical and limnological characteristics in the Amazon freshwater ecosystem based on70 who showed that broad scale variables could be used as proxies for characteristics of the local aquatic environment for modelling ﬁsh species distributions in areas like the Amazon where large gaps exist in our understanding of distributions. The climatic macroscale variables were obtained from BioClim (www.worldclim.org): annual mean precipitation (AMP), annual mean temperature (AMT), seasonality of precipitation (SP) and seasonality of temperature (ST). We also used geomorphological variables about terrain slope (SL), altitude (AL) and ﬂow accumulation (FLA) obtained from Hydro1k (www.usgs.gov) database. Soil type characteristics (SOT 0, 3, 6, 11) were gathered from FAO’s database (www.fao.org.br). All descriptor variables were obtained for pixels of 4 × 4 km of resolution.
+Model evaluation was performed using the Area Under Curve (AUC), which is a threshold-independent measure based on ranking locations, i.e. the probability to choose randomly the presence locations in relation to randomly choosing the background locations, commonly used in SDM modelling71,72. This measure could be interpreted as average of true positives values (sensitivity) of all possible false positive values (speciﬁcity), producing a global measure of ﬁt for the model. These values are then plotted (sensitivity against 1-speciﬁcity) to generate what is known as the ROC (Receiver Operating Characteristic) curve72. Alternatives to AUC there are the threshold dependent measures that from a threshold create a presence and absence binary feature and a confusion matrix71. For that we used the Minimum Difference Threshold Criterion (MDT) that are expected to minimize omission and commission errors73.
+To test the signiﬁcance of the niche differentiation among lineages, we performed the multivariate analyses of variance (MANOVA). All the analyses were performed using dismo and vegan packages for Maxent, and MANOVA in R software74.
+Electric organ discharge analysis. Low-voltage EOD waveform recordings. We measured the low-voltage electrolocation pulses generated irregularly (rates of ca. 0.1–10 Hz) by the Sachs’ electric organ5. Head-to-tail EOD waveforms sensu ref. 75 were recorded within 12 h of capture in inﬂatable swimming pools (2.5–3.0 m diameter, or rectangular ca. 3 × 1.8 m) ﬁlled to 40 cm depth with water from the collecting site. Temperature was standardized to 27.0 ± 0.2 °C. Submerged NiCr electrodes were placed at least 40 cm away from the head and tail of the ﬁsh, along the head–tail axis, and a train of low-voltage pulses acquired directly by an audiodigitizer (96 kHz sampling rate) or a National Instruments digital acquisition device (sampling rates 100–200 kHz). Here we plot a single low-voltage EOD for each individual. We measured EOD duration at a 1% threshold of the peak positive amplitude of the EOD following ref. 75.
+High-voltage EOD amplitudes. We measured the high-voltage pulses generated in rapid volleys by the main electric organ and Hunter’s electric organ for predation and defense4. We used a Fluke 190–202 storage oscilloscope to measure the peak voltage in the volley of high-voltage EODs. Soon after capture the subject specimen was stretched out on a dry heavy-duty (non-conductive) plastic sheet to isolate it from the load of water. In this position a DC-coupled voltage reading from snout to the distal end of the tail was taken by gently prodding the tip of the snout to elicit a volley of high-voltage discharges. The entire procedure was accomplished in less than one minute.
+Low-voltage EOD quantitative analysis. All seven EODs were conditioned to a common sampling rate, energy-normalized to root mean squared (rms) amplitude and centered to the peak of the single EOD phase. Following the procedure described in refs. 30,32, and using a custom MATLAB (The Mathworks, Natick, MA) program, we subjected the conditioned waveforms to the discrete wavelet transform (DWT), using the Symmlet-4 wavelet base, to generate a matrix of 256 DWT coefﬁcients (256 unique coefﬁcients at 8 wavelet scales [(2^8) −1], and one scaling coefﬁcient). The DWT is a popular time-frequency based procedure to deconstruct signals into a smaller number of features informative of temporal (waveform shape) and spectral (frequency) differences among groups of signals76. Following ref. 30 we then subjected the matrix of 256 DWT coefﬁcients × 7 individuals to dimension reduction by pairwise ANOVA to extract those waveform features (DWT coefﬁcients), which permit the most effective discrimination among the three species. This yielded a ﬁnal matrix of just 4 DWT coefﬁcients × 7 individuals. Finally, using the ‘cluster’ package in Statistica 13.3 (Tibco/Statsoft, Palo Alto, CA) we performed nearest-neighbor (single linkage) hierarchical
+
+8
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+ARTICLE
+
+clustering of all individual EODs in the matrix of reduced DWT coefﬁcients, with the Euclidean distance as a metric of distance in multivariate space.
+Nomenclatural acts. This published work and the nomenclatural acts it contains have been registered in ZooBank, the proposed online registration system for the International Code of Zoological Nomenclature (ICZN). The ZooBank LSIDs (Life Science Identiﬁers) can be resolved and the associated information viewed through any standard web browser by appending the LSID to the preﬁx “http://zoobank.org/”. The LSIDs for this publication are: 7598B3E4-8E0C-43CE-A57B-CD71A9C99526, 7FA17DC2-5F58-4366-8908-9E66BE922458, and 142863F0-1F6F-4789-A05BECECC3CC022F.
+Reporting summary. Further information on research design is available in the Nature Research Reporting Summary linked to this article.
+Data availability
+Sequences for all molecular markers are available from the GenBank database (accession numbers are listed in Supplementary Data 3). Specimens from which DNA samples were analyzed were deposited along with tissue samples at the biodiversity collections listed in Supplementary Data 1. All data are available upon reasonable request.
+Received: 26 June 2018 Accepted: 25 July 2019
+References
+1. Linnaeus, C. Systema naturae per regna tria naturae, secundum classes, ordines, genera, species, cum characteribus, differentiis, synonymis, locis. Laurentii Salvii, Holmiae. 12th ed. v. 1 (pt 1): 1–532 (1766).
+2. Finger, S. & Piccolino, M. The Shocking History of Electric Fishes: From Ancient Epochs to the Birth of Modern Neurophysiology. (Oxford Univ. Press, Oxford, 2011).
+3. Encyclopedia Britannica, The Encyclopedia Britannica Publishing Co, 11th Edn. vol. 7 (1910).
+4. Catania, K. The shocking predatory strike of the electric eel. Science 346, 1231–1234 (2014).
+5. Tonelli, M. et al. Multitarget Therapeutic Leads for Alzheimer’s Disease: Quinolizidinyl Derivatives of Bi- and Tricyclic Systems as Dual Inhibitors of Cholinesterases and β-Amyloid (Aβ) Aggregation. ChemMedChem. 10, 1040–1053 (2015).
+6. Xu, J., Vanderlick, T. K. & LaVan, D. A. Energy conversion in protocells with natural nanoconductors. Int. J. Photoenergy 2012, 1–10 (2012).
+7. Sun, H., Fu, X., Xie, S., Jiang, Y. & Peng, H. Electrochemical capacitors with high output voltages that mimic electric eels. Adv. Mater. 28, 2070–2076 (2016).
+8. Schroeder, T. B. H. et al. An electric-eel-inspired soft power source from stacked hydrogels. Nature 552, 214–218 (2017).
+9. Gallant, J. R. et al. Genomic basis for the convergent evolution of electric organs. Science 344, 1522–1525 (2014).
+10. Coates, C. W. & Cox, R. T. A comparison of length and voltage in the electric eel, Electrophorus electricus (Linnaeus). Zoologica 30, 89–93 (1945).
+11. Mago-Leccia, F. Electric ﬁshes of the continental waters of America. Classiﬁcation and catalogue of the electric ﬁshes of the order Gymnotiformes (Teleostei: Ostariophysi) with descriptions of new genera and species (Biblioteca de la academia de ciencias ﬁsicas, matematics y naturales, Caracas, 1994).
+12. Crampton, W. G. R. An ecological perspective on diversity and evolution in Historical biogeography of Neotropical freshwater ﬁshes pp. 165–189. (University of California Press, Berkeley, 2011).
+13. Ferraris, C. J., de Santana, C. D. & Vari, R. P. Checklist of Gymnotiformes (Osteichthyes: Ostariophysi) and catalogue of primary types. Neotrop. Ichthyol. 15, e16006 (2017).
+14. de Queiroz, K. Endless Forms: Species and Speciation pp. 57–75. (Oxford University Press, New York, 1998).
+15. Hebert, P. D. N., Ratnasingham, S. & deWaard, J. R. Barcoding animal life: cytochrome c oxidase subunit 1 divergences among closely related species. Proc. R. Soc. London 270, 96–99 (2003).
+16. Puillandre, N., lambert, A., Brouillet, S. & Achaz, G. ABGD, Automatic Barcode Gap Discovery for primary species delimitation. Mol. Ecol. 8, 1864–1877 (2012).
+17. Yang, Z. The BPP program for species tree estimation and species delimitation. Curr. Zool. 61, 854–865 (2015).
+18. Bouckaert, R. et al. BEAST 2: a software platform for bayesian evolutionary analysis. PLoS Comput. Biol. 10, e1003537 (2014).
+
+19. Tagliacollo, V. A., Bernt, M. J., Craig, J. M., Oliveira, C. & Albert, J. S. Modelbased total evidence phylogeny of Neotropical electric knifeﬁshes (Teleostei, Gymnotiformes). Mol. Biol. Evol. 95, 20–33 (2016).
+20. Osborne, A. H. et al. The seawater neodymium and lead isotope record of the ﬁnal stages of Central American Seaway closure. Paleoceanography 29, 715–729 (2014).
+21. Lovejoy, N. R., Lester, K., Crampton, W. G. R., Marques, F. P. L. & Albert, J. S. Phylogeny, biogeography, and electric signal evolution of Neotropical knifeﬁshes of the genus Gymnotus(Osteichthyes: Gymnotidae). Mol. Phylogenet. Evol. 54, 278–290 (2010).
+22. Drummond, A. J., Ho., S. Y. W., Phillips, M. J. & Rambaut, A. Relaxed phylogenetics and dating with conﬁdence. PLoS Biol. 4, e88 (2006).
+23. Brown, R. P. & Yang, Z. Rate variation and estimation of divergence times using strict and relaxed clocks. BMC Evo. Biol. 11, 271 (2011).
+24. Lujan, N. K. & Conway, K. W. Life in the Fast Lane: A Review of Rheophily in Freshwater Fishes in Extremophile ﬁshes pp. 107–136. (Springer International Publishing, Switzerland, 2015).
+25. Lima, F. C. T. & Ribeiro, C. R. Continental-scale tectonic controls of biogeography and ecology] in Historical biogeography of Neotropical freshwater ﬁshes pp. 145–164. (University of California Press, Berkeley, 2011).
+26. Hoorn, C. et al. The Amazon at sea: onset and stages of the Amazon River from a marine record, with special reference to Neogene plant turnover in the drainage basin. Global Planet. Change 153, 51–65 (2017).
+27. Figueiredo, J., Hoorn, C., Van der Ven, P. & Soares, E. Late Miocene onset of the Amazon River and the Amazon deep-sea fan: evidence from the Foz do Amazonas Basin. Geology 37, 619–622 (2009).
+28. Campbell, K. E. Late Miocene onset of the Amazon River and the Amazon deepsea fan: evidence from the Foz do Amazonas Basin: Comment. Geology 38, e213 (2010).
+29. Crampton, W. G. R. & Albert, J. S. Evolution of electric signal diversity in gymnotiform ﬁshes] in Communication in ﬁshes pp. 647–731. (Science Publishers, Enﬁeld, NH, 2006).
+30. Crampton, W. G. R., Davis, J. K., Lovejoy, N. R. & Pensky, M. Multivariate classiﬁcation of animal communication signals: a simulation-based comparison of alternative signal processing procedures using electric ﬁshes. Journal of Physiology-Paris 102, 304–321 (2008).
+31. Crampton, W. G. R. Electroreception, electrogenesis and signal evolution in freshwater ﬁsh. J. Fish Biol. 95, 92–134 (2019).
+32. Crampton, W. G. R., Lovejoy, N. R. & Waddell, J. C. Reproductive character displacement and signal ontogeny in a sympatric assemblage of electric ﬁsh. Evolution 65, 1650–1666 (2011).
+33. Gill, T. N. Several points in ichthyology and conchology. Proc. Acad. Natl Sci. Phila. 16, 151–152 (1864).
+34. Gronovius, L. T. Zoophylacii Gronoviani fasciculus primus exhibens animalia quadrupeda, amphibia atque pisces, quae in museo suo adservat, rite examinavit, systematice disposuit, descripsit atque iconibus illustravit Laur. Zoophylacii Gronoviani. 1–136, pls. 1–13 (1763).
+35. Houttuyn, M. Natuurlyke historie of uitvoerige beschryving der dieren, planten en mineraalen, volgens het samenstel van den Heer Linnaeus. (Met naauwkeurige afbeeldingen, Amsterdam, 1764).
+36. Chiaje, S. D. Notizia su due Gimnoti elettrici dall’America recati vivi in Napolli. Nuov. Ann. Sci. Nat. Bologna 8, 268–273 (1847).
+37. Stoddard, P. K. Predation enhances complexity in the evolution of electric ﬁsh signals. Nature 400, 254–256 (1999).
+38. Pitchers, W. R., Constantinou, S. J., Lossila, M. & Gallant, J. R. Electric ﬁsh genomics: progress, prospects, and new tools for neuroethology. J. Physiol. (Paris) 110, 259–272 (2016).
+39. Albert, J. S. et al. The case for sequencing the genome of the electric eel Electrophorus electricus. J. Fish Biol. 72, 331–354 (2008).
+40. Tamura, K., Stecher, G., Peterson, D., Filipski, A. & Kumar, S. MEGA6: molecular evolutionary genetics analysis version 6.0. Mol. Biol. Evo. 30, 2725–2729 (2013).
+41. Posada, B. jModelTest: phylogenetic model averaging. Mol. Biol. Evo. 25, 1253–1256 (2008).
+42. Young, N. D. & Healy, J. GapCoder automates the use of indel characters in phylogenetic analysis. BMC Bioinformatics 4, 6 (2003).
+43. Hanner, R., Desalle, R., Ward, R. D., Hebert, P. D. & Kolokotronis, S.-O. The Fish Barcode of Life (FISH-BOL) special issue. Mitochondrial DNA 22, 1–2 (2011).
+44. Meyer, C. P. & Paulay, G. DNA Barcoding: error rates based on comprehensive sampling. PLoS Biol. 3, e422 (2005).
+45. Pons, J. et al. Sequence-based species delimitation for the DNA taxonomy of undescribed insects. Syst. Biol. 55, 595–609 (2006).
+46. Monaghan, M. T. et al. Accelerated species inventory on Madagascar using coalescent-based models of species delineation. Syst. Biol. 58, 298–311 (2009).
+47. Reid, N. M. & Carstens, B. C. Phylogenetic estimation error can decrease the accuracy of species delimitation: a Bayesian implementation of the general mixed Yule-coalescent model. BMC Evo. Biol. 12, 196 (2012).
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+
+9
+
+ARTICLE
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-11690-z
+
+48. Zhang, J., Nielsen, R. & Yang, Z. Evaluation of an improved branch-site likelihood method for detecting positive selection at the molecular level. Mol. Biol. Evol. 22, 2472–2479 (2005).
+49. Cummings, M. P., Neel, M. C. & Shaw, K. L. A genealogical approach to quantifying lineage divergence. Evolution 62, 2411–2422 (2008).
+50. Bazinet A. L. & Cummings, M. P. Distributed & Grid Computing—Science Made Transparent for Everyone. Principles, Applications and Supporting Communities. (Rechenkraft.net, Marburg, 2008).
+51. Ronquist, F. et al. MrBayes 3.2: efﬁcient bayesian phylogenetic inference and model choice across a large model space. Syst. Biol. 61, 539–542 (2012).
+52. Miller, M. A. et al. A RESTful API for access to phylogenetic tools via the CIPRES science gateway. Evol. Bioinfo. 11, 43–48 (2015).
+53. Bouckaert, R. R. DensiTree: making sense of sets of phylogenetic trees. Bioinformatics 26, 1372–1373 (2010).
+54. Smith, S. A. & Dunn, C. W. Phyutility: a phyloinformatics tool for trees, alignments and molecular data. Bioinformatics 24, 715–716 (2008).
+55. Yang, Z. & Rannala, B. Unguided species delimitation using DNA sequence data from multiple loci. Mol. Biol. Evol. 12, 3125–3135 (2014).
+56. Yang, Z. & Rannala, B. Bayesian species delimitation using multilocus sequence data. Proc. Natl Acad. Sci. USA 107, 9264–9269 (2010).
+57. Bacon, C. D. et al. Biological evidence supports an early and complex emergence of the Isthmus of Panama. Proc. Natl. Acad. Sci. U.S.A. 112, 6110–6115 (2015).
+58. Bacon, C. D. et al. Reply to Lessios and Marko et al.: early and progressive migration across the Isthmus of Panama is robust to missing data and biases. PNAS 112, E5767–E5768 (2015).
+59. Lessios, H. A. Appearance of an early closure of the Isthmus of Panama is the product of biased inclusion of data in the metaanalysis. PNAS 112, E5765 (2015).
+60. Marko, P. B., Eytan, R. I. & Knowlton, N. Do large molecular sequence divergences imply an early closure of the Isthmus of Panama? PNAS 112, E5766 (2015).
+61. Montes, C. et al. Middle Miocene closure of the Central American Seaway. Science 348, 226–229 (2015).
+62. O’Dea, A. et al. Formation of the Isthmus of Panama. Sci. Adv. 2, e1600883 (2016).
+63. Molnar, P. Comment (2) on “Formation of the Isthmus of Panama” by O’Dea et al. Sci. Adv. 3, e1602320 (2017).
+64. Jaramillo, C. et al. Comment (1) on “Formation of the Isthmus of Panama” by O’Dea et al. Science Adv. 3, e1602321 (2017).
+65. Sepulchre, P. et al. Consequences of shoaling of the Central American Seaway determined from modeling Nd isotypes. Paleoceanography 29, 176–189 (2014).
+66. Dillman, C. B., Bergstrom, D. E., Noltie, D. B., Holtsford, T. P. & Mayden, R. L. Regressive progression, progressive regression or neither? Phylogeny and evolution of the Percopsiformes (Teleostei, Paracanthopterygii). Zool. Scripta 40, 45–60 (2011).
+67. Soberón, J. Grinnellian and Eltonian niches and geographic distributions of species. Ecol. Lett. 10, 1–9 (2007).
+68. Phillips, S. J., Anderson, R. P. & Schapire, R. E. Maximum entropy modeling of species geographic distributions. Ecol. Model. 190, 231–259 (2006).
+69. Phillips, S. J. & Dudík, M. Modeling of species distributions with Maxent: new extensions and a comprehensive evaluation. Ecography 31, 161–175 (2008).
+70. Frederico, R. G., De Marco, P. & Zuanon, J. Evaluating the use of macroscale variables as proxies for local aquatic variables and to model stream ﬁsh distributions. Freshw. Biol. 59, 2303–2314 (2014).
+71. Merow, C., Smith, M. J. & Silander, J. A. Jr. A practical guide to MaxEnt for modeling species’ distributions: what it does, and why inputs and settings matter. Ecography 36, 1058–1069 (2013).
+72. Fielding, A. H. & Bell, J. F. Review of methods for the assessment of prediction errors in conservation presence/absence models. Environ. Conserv. 24, 38–49 (1997).
+73. Jiménez-Valverde, A. & Lobo, J. M. Threshold criteria for conversion of probability of species presence to either–or presence–absence. Acta Oecol. 31, 361–369 (2007).
+74. R Development Core Team. R: A language and environment for statistical computing. (R Foundation for Statistical Computing, Vienna 2012).
+75. Crampton, W. G. R., Rodriguez-Cattáneo, A., Lovejoy, N. R. & Caputi, A. A. Proximate and ultimate causes of signal diversity in the electric ﬁsh Gymnotus. J. Exp. Biol. 216, 2523–2541 (2013).
+
+76. Mallat, S. A wavelet tour of signal processing. (Academic Press, San Diego, 1999).
+Acknowledgements
+We thank M. Stiassny (American Museum of Natural History), D. Werneke and J. W. Armbruster (Auburn University Natural History Museum), D. Catania (California Academy of Sciences), W. Smith (Field Museum of Natural History), L. Rapp Py-Daniel (Instituto Nacional de Pesquisas da Amazônia), A. Bentley (Kansas University), A. Datovo, M. Gianeti, M. de Pinna, N. Menezes and O. Oyakawa (Museu de Zoologia da Universidade de São Paulo), L. Malabarba (Universidade Federal do Rio Grande do Sul), A. Riberio and C. Doria (Universidade Federal de Rondonia), C. de Oliveira (Universidade Estadual Paulista), N. Lovejoy (University of Toronto), R. Vonk (Zoological Museum Amsterdam) for the loan for specimens or assistance during visits to their institutions. L. Parenti, C. Baldwin, J. Clayton, W. Wendy, D. Pitassy, and S. Raredon provided assistance at the National Museum of Natural History. J. G. Lundberg, N. A. Menezes, and J. Tonini reviewed an early version of this paper. L. O. Ochoa helped preparing GenBank ﬁles. C.D.S. is grateful to Herbert R. and Evelyn Axelrod Chair in Systematic Ichthyology funds in the Division of Fishes, National Museum of Natural History of the Smithsonian Institution, a National Geographic grant from the Committee for Research and Exploration (#9519-14), Thematic grant from the São Paulo Science Foundation-FAPESP/Smithsonian Institution (#2016/19075-9), Conselho Nacional de Desenvolvimento Cientíﬁco e Tecnológico Fellowship, CNPq (#245622/2012-8), CodonCode Aligner license grant, and Global Genome Initiative Grant (GGI-Peer-2017149). Additional support from NSF DEB-1146374 to W.G.R.C., NSF DEB-1257813 to M.H.S., CNPq Edital Universal grant to C.Y.N. (# 475013/2012-3), Conselho Nacional de Desenvolvimento Cientíﬁco e Tecnológico Fellowship, CNPq (#170009/2015-7) to W.B.W., and (#155877/2018-6) to T.F.T, and Instituto Chico Mendes de Conservação da Biodiversidade grant to R.N.M.J. (#006.016).
+Author contributions
+The experiments were conceived and designed by C.D.S., C.B.D., and W.G.R.C. C.D.S., C.B.D., R.G.F., and W.G.R.C. performed the experiments. Data were analyzed by C.D.S., C.B.D., R.G.F., and W.G.R.C. C.D.S., W.G.R.C., C.D.B., R.G.F., M.H.S., R.C., J.R., J.Z., R.R.O., R.N.M.J., D.A.B., T.F.T., J.M., W.O., N.C.C., L.A.P., C.N., L.S., L.F.A.M., F.R., J.C.W., N.M.P., R.P.V., and W.B.W. contributed reagents, materials, tools for analyses, and wrote the manuscript.
+Additional information
+Supplementary Information accompanies this paper at https://doi.org/10.1038/s41467019-11690-z.
+Competing interests: The authors declare no competing interests.
+Reprints and permission information is available online at http://npg.nature.com/ reprintsandpermissions/
+Peer review information: Nature Communications thanks the anonymous reviewers for their contribution to the peer review of this work.
+Publisher’s note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.
+© The Author(s) 2019
+
+10
+
+NATURE COMMUNICATIONS | (2019)10:4000 | https://doi.org/10.1038/s41467-019-11690-z | www.nature.com/naturecommunications
+

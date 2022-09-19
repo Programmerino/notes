@@ -1,0 +1,206 @@
+ (function () {
+  // prod
+  tp = window["tp"] || [];
+
+  /* Checkout related */
+  /**
+   * Event properties
+   *
+   * chargeAmount - amount of purchase
+   * chargeCurrency
+   * uid
+   * email
+   * expires
+   * rid
+   * startedAt
+   * termConversionId
+   * termId
+   * promotionId
+   * token_list
+   * cookie_domain
+   * user_token
+   *
+   */
+  function onCheckoutComplete(data) {
+      // scroll up for receipt
+      let parentElem = document.querySelector('.tp-modal')
+      parentElem.scrollTop = 0
+      document.cookie = '__pianoTerm=null; expires='+ new Date().toGMTString() + '; path=/;'
+      document.cookie = '__pianoParams=null; expires='+ new Date().toGMTString() + '; path=/;'
+  }
+
+  function onCheckoutExternalEvent() {
+  }
+
+  function onCheckoutClose(event) {
+      /* Default behavior is to refresh the page on successful checkout */
+      if (event && event.state == "checkoutCompleted") {
+          location.reload();
+      }
+  }
+
+  function onCheckoutCancel() {
+      location.reload()
+
+  }
+
+  function onCheckoutError() {
+      location.reload()
+  }
+
+  /* Meter callback */
+  function onMeterExpired() {
+
+  }
+
+  /* Meter callback */
+  function onMeterActive() {
+
+  }
+
+  /* Callback executed when a user must login */
+  function onLoginRequired(params) {
+      var regQueries = ['premium'];
+
+      var regSource = localStorage.getItem('regSourceMethod');
+      if (regSource) {
+          regQueries.push('regSourceMethod=' + encodeURIComponent(regSource));
+      }
+
+      var carryQueryParams = location.search.substring(1) ? location.search.substring(1).split('&') : [];
+      if (carryQueryParams.length > 0) {
+          regQueries.concat(carryQueryParams);
+      }
+
+      // Note that in order to be able to read this cookie,
+      // the redirected page should be on the same domain
+      const userRef = tp.util.findCookieByName('p_ref')
+
+      // Set the generated userRef token
+      if (userRef) {
+          tp.push(["setUserRef", userRef]);
+      }
+
+      // Sets the cookie with the current state of the user
+      if (params) {
+          var cookiePath = 'path=/;';
+          var cookieExpire = 'expires=' + new Date(new Date().getTime() + 60 * 60 * 1000).toGMTString() + ';';
+          // if (typeof params.term !== "undefined") {
+          //     var term = {
+          //         price: params.term.totalAmount,
+          //         name: window.globals.pianoResources ? window.globals.pianoResources[params.term.resource.rid].packageName : '',
+          //         length: null,
+          //     }
+          //     for (var i=0; i < params.term.billingPlanTable.length; i++) {
+          //         if (params.term.billingPlanTable[i].period == 'month') {
+          //             term.length = 'Monthly';
+          //         }
+          //         else if (params.term.billingPlanTable[i].period == 'year') {
+          //             term.length = 'Yearly';
+          //         }
+          //     }
+          //     // adobe analytics
+          //     document.cookie = '__pianoTerm=' + encodeURIComponent(JSON.stringify(term)) + ';' + cookieExpire + cookiePath;
+
+          //     params.term = false;
+          // }
+          document.cookie = "__pianoParams=" + encodeURIComponent(JSON.stringify(params)) + ';' + cookieExpire + cookiePath;
+
+          // window.trackingCta is defined in subscribe page (register-options.js)
+          if (window.trackingCta) {
+              document.cookie = "__trackingCta=" + encodeURIComponent(window.trackingCta) + ';' + cookieExpire + cookiePath;
+          }
+
+          var url = location.origin + '/internal-api/subscription/term?__amp_source_origin=' + encodeURIComponent(location.origin) + '&termId=' + params.termId;
+          fetch(url, { credentials: 'same-origin' })
+              .then(data => data.json())
+              .then(data => {
+                  // adobe analytics
+                  document.cookie = '__pianoTerm=' + encodeURIComponent(JSON.stringify(data)) + ';' + cookieExpire + cookiePath;
+                  location.href = '/register?' + regQueries.join('&');
+              })
+      }
+      else {
+          location.href = '/register?' + regQueries.join('&');
+      }
+  }
+
+  /* Callback executed after a tinypassAccounts login */
+  function onLoginSuccess() {
+  }
+
+  /* Callback executed after an experience executed successfully */
+  function onExperienceExecute(event) {
+  }
+
+  /* Callback executed if experience execution has been failed */
+  function onExperienceExecutionFailed(event) {
+  }
+
+  tp.push(["setAid", "SEz5CAOYyJ"]);
+  tp.push(["setEndpoint", "https://buy.tinypass.com/api/v3"]);
+  tp.push(["setUseTinypassAccounts", false ]);
+
+  /* checkout related events */
+  tp.push(["addHandler", "checkoutComplete", onCheckoutComplete]);
+  tp.push(["addHandler", "checkoutClose", onCheckoutClose]);
+  tp.push(["addHandler", "checkoutCustomEvent", onCheckoutExternalEvent]);
+  tp.push(["addHandler", "checkoutCancel", onCheckoutCancel]);
+  tp.push(["addHandler", "checkoutError", onCheckoutError]);
+
+
+  /* user login events */
+  tp.push(["addHandler", "loginRequired", onLoginRequired]);
+  tp.push(["addHandler", "loginSuccess", onLoginSuccess]);
+
+  /* custom handlers */
+  tp.push( [ "addHandler", "loginRequired", onLoginRequired]);
+
+  /* meter related */
+  tp.push(["addHandler", "meterExpired", onMeterExpired]);
+  tp.push(["addHandler", "meterActive", onMeterActive]);
+
+  tp.push(["addHandler", "experienceExecute", onExperienceExecute]);
+  tp.push(["addHandler", "experienceExecutionFailed", onExperienceExecutionFailed]);
+
+  // custom event
+  tp.push(["addHandler", "customEvent", function(event, b, c, d) {
+      switch (event.eventName) {
+          case 'openLogin':
+              // open amp-sidebar
+              document.querySelectorAll('.menu .account span a')[0].click()
+              break;
+          case 'set-return-url':
+              document.cookie = 'ref_url=' + window.location.origin + window.location.pathname + '; path=/;'
+              break;
+          case 'reg-return-url':
+              localStorage.setItem('regReturnUrl', window.location.href);
+              break;
+      }
+  }]);
+
+  window.tp.push(['addHandler', 'showTemplate', function (template) {
+      if (template.templateId == 'OTN6797XUKB0') {
+          if (typeof ga !== 'undefined') {
+              ga('send', 'event', 'adBlocker', location.pathname);
+          }
+      }
+  }]);
+
+  tp.push(["init", function () {
+      tp.enableGACrossDomainLinking();
+      const userRef = tp.util.findCookieByName('p_ref')
+
+      // Set the generated userRef token
+      if (userRef) {
+          tp.push(["setUserRef", userRef]);
+      }
+      tp.experience.init()
+  }]);
+})();
+
+
+  // do not change this section
+  // |BEGIN INCLUDE TINYPASS JS|
+  (function(src){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=src;var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})("//cdn.tinypass.com/api/tinypass.min.js");
+  // |END   INCLUDE TINYPASS JS|

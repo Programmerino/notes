@@ -1,0 +1,3 @@
+Arguments requiring as few shared premises as possible makes intuitive sense but has certain ramifications on debate style:
+1. Arguments relying on morality avoid the debate surrounding which moral system is right, etc. (limited discussion of this in [[the balance between moral systems and intuition#Why Moral Systems Are Still Useful]]) which often leads to more fruitful and fascinating debates
+2. The arguments are usually optically better since they tend to cut out non-starter arguments or "hot takes" that might be too wrong to ignore from the other person's perspective. That being said, if you use premises that you do not actually hold to defend the position, it can be bad (see [[why good faith arguments are mutually beneficial]])

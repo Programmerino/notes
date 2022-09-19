@@ -1,0 +1,648 @@
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+You have institutional access
+
+    View  PDF
+    Download full book 
+
+Transportation Cyber-Physical Systems
+Transportation Cyber-Physical Systems
+2018, Pages 81-113
+Transportation Cyber-Physical Systems
+4 - Real-time control systems
+Author links open overlay panel Yunyi Jia Longxiang Guo Xin Wang
+Show more
+Outline
+Cite
+https://doi.org/10.1016/B978-0-12-814295-0.00004-6 Get rights and content
+Abstract
+
+In reviewing the evolution of transport vehicles, innovations are always centred on the safety, power, economy and comfort of vehicles to make them more functional, environment-friendly and ‘smart’. The achievement of all these performance relies on a well-designed real-time control system, which is considered as the ‘brain’ of modern vehicles.
+
+    Previous chapter in book
+    Next chapter in book 
+
+Keywords
+Actuators
+Autonomous vehicle
+Gaussian Mixture Model
+Neural Network
+Model predictive control
+Real-time control system
+Transportation cyber-physical system
+1. Introduction
+
+In reviewing the evolution of transport vehicles, innovations are always centred on the safety, power, economy and comfort of vehicles to make them more functional, environment-friendly and ‘smart’. The achievement of all these performance relies on a well-designed real-time control system, which is considered as the ‘brain’ of modern vehicles.
+
+A control system consists of a set of devices that senses, alters or modulates the behaviours or tunable parameters of the controlled plant such that the desirable states of the plant are achieved. In a vehicle, a control system can range from the temperature control of the air conditioner to the stability control of the vehicle motion.
+
+For a traditional vehicle, the driver is the only commander that gives the original orders of accelerating, turning, braking, stopping and parking. Through the communication bus, these orders are sent to the control system as the input signals. At the same time, a series of sensors spreading in the vehicle detects all the important information of the vehicle, including the speed, attitude, engine state and environmental condition, which are also parts of the inputs. Based on all these inputs and the embedded control program, the control system computes and sends the output signal to all the actuators to drive the vehicle according to the driver's order. Typically, the hardware of the control system, namely controller, works in a circular scanning mode. Within one scanning period, it scans all the input ports and sends out the control signal from the output ports. The scanning period is always a few milliseconds and can satisfy the requirements of a real-time control.
+
+With the development of information technology, vehicles are getting smarter with increasing automations with the goal of fully autonomous vehicles on the roadways not in a distant future. By using a variety of techniques, an autonomous vehicle can sense the surrounding environment and navigate itself with limited or without human input. Advanced real-time control systems interpret and analyse sensory information to identify appropriate navigation paths to the desired destination, as well as obstacles and relevant signage, ensuring safe and efficient travel.
+
+Compared with traditional vehicles, an autonomous vehicle encompasses more computational and physical components and is a typical transportation cyber-physical system (TCPS). Therefore, in this book, instead of the control technology of traditional vehicles, we will pay our attention on the real-time control systems of autonomous vehicles.
+
+In this chapter, first, the basic concepts of real-time control systems will be introduced and then some examples, including smart traffic lights and autopilots, will be given to illustrate the working principle of a typical real-time control system. Afterwards, we will focus on the basic real-time control technology of an autonomous vehicle. The major content involves the following:
+
+1.
+
+    The physical components, including the electronic control unit (ECU), sensors and actuators.
+2.
+
+    Functions of the control system and the implementation technology.
+
+The former is mainly about the hardware and the latter is about how to develop the software to realise the whole system.
+2. Components in real-time control systems
+2.1. Typical real-time control system
+
+A real-time control system is a control system that ‘controls an environment by receiving data, processing them, and returning the results sufficiently quickly to affect the environment at that time’ [1] . In simulation, the term ‘real-time’ means that the simulation's clock runs at the same pace as a real clock. In process control, it means ‘without significant delay’. In a control system, ‘real-time’ means the programs run by the controller must be fast enough to generate response within specified time limits, often referred to as ‘deadlines’. Such limits or constraints are always in the order of milliseconds or even microseconds. Controlled plants that are critical to the whole system and/or having fast dynamics always require real-time control. For instance, the fly-by-wire system on an aircraft and antilock brakes on a vehicle need real-time control to ensure fast response to avoid catastrophic accidents [2] .
+
+For a real-time controller, the hardware scan cycle must be short enough, and the program should be well designed in order that the input scan, program executing and output scan can be completed within a scan cycle. For today's vehicle controller, the scan cycle can be less than 10 ms. Before being used in practical vehicle products, the whole control system must be tested strictly to guarantee the real-time performance.
+
+The following examples can give an outline of how a real-time control system works. They are some typical real-time control systems in different industries, including in the road transportation domain and aviation sector.
+2.1.1. Smart traffic light control systems
+
+Smart traffic lights (or intelligent traffic lights) form a real-time traffic control system by combining traditional traffic lights with an intelligent signal control system ( Fig. 4.1 ). The signal control system uses an array of sensors to detect traffic density and adjusts traffic lights via artificial intelligence to increase traffic efficiency and safety [3] .
+
+    Download : Download full-size image 
+
+Figure 4.1 . Smart traffic light control systems.
+
+By means of advanced sensors and control technology, the signals of smart traffic lights communicate with both other smart traffic lights and surrounding vehicles to form a real-time control network to manage the traffic in a more efficient way. The major target of this control system is to reduce the amount of time that cars spend idling. It monitors vehicle numbers from different directions through cameras, loop-based detectors and other sensors and makes changes to the schedule of traffic lights in real time to avoid congestion at intersections wherever possible [4] . In some of these systems, lights will change to red to stop the traffic from one direction when a vehicle or cycler is sensed approaching the intersection from another direction without a braking intention to avoid crash. At current stage, some companies, including BMW and Siemens, have developed smart traffic management systems [5] . These systems can warn the automatic start–stop system on many modern vehicles of impending light changes to make them work more intelligently. They will also help those vehicles to schedule upcoming stops according to signal phasing of traffic lights to improve fuel efficiency.
+2.1.2. Autopilot systems
+
+An aircraft autopilot (automatic pilot) system controls the aircraft without the pilot directly operating the controls. Such system is developed to reduce the work load of human pilots in order to lessen their fatigue and reduce operation errors during long flights. It handles most of the time-intensive non–decision-making tasks, helping the human pilots to focus on the overall status of the aircraft and flight.
+
+Autopilot systems use computers to generate the control output. The control software reads the aircraft's current speed, pose, height and location and then issues control signal to a flight control system, which is a lower-level actuator controller, to adjust the control surfaces of the aircraft in order to maintain the aircraft's attitude, height and speed while guaranteeing the lateral, vertical and longitudinal stability. One critical ability of the autopilot system is error correction. When the plane fails to follow the desired states, an error occurs. The autopilot system should be able to correct the error and restore the aircraft to the states desired by the flight task automatically. Two basic autopilot structures can realise this. The first is position based and the second is rate based. A position-based autopilot controls the aircraft so that it always follows desired position profile. The autopilot system moves the control surfaces so that the aircraft's motion reduces the error between the desired aircraft attitude and recorded actual aircraft attitude. Rate-based autopilots use information about the rate of the aircraft and move control surfaces to counter the speed of change that causes the error [6] . A basic structure of an aircraft autopilot is shown in Fig. 4.2 .
+
+    Download : Download full-size image 
+
+Figure 4.2 . An aircraft autopilot system.
+2.2. Structure of the real-time control system of autonomous vehicles
+
+The implementation of real-time control for an autonomous vehicle relies on a series of components, and each of these components performs a different role. Some of them act as the ‘brain’ to coordinate and make decisions and we call them ECUs; some of them are responsible for collecting the external and internal information and we call them sensors; some of them are responsible for executing commands from ECUs and we call them actuators; some of them play as information-transmitting channels and we call them communication bus. Fig. 4.3 shows the functions and the interrelationship of these components.
+
+    Download : Download full-size image 
+
+Figure 4.3 . Components in real-time control system for an autonomous vehicle. ECUs , electronic control units.
+2.3. Electronic control units
+
+Electric Control Unit (ECU) refers to dedicated vehicular embedded microcontrollers that controls one or more of the electrical systems or subsystems in a vehicle. Types of ECU include central control module, engine control module, powertrain control module, transmission control module, electronic brake control module, speed control unit, body control module, suspension control module, human–machine interface, telematic control unit, brake control module (including Anti-lock Braking System (ABS) and Electronic Stability Control (ESC)), battery management system, door control unit and seat control unit. Some modern motor vehicles have up to 80 ECUs [7] .
+
+For an autonomous vehicle, the above ECU functions are mostly unchanged, especially in hardware. However, to realise the autonomous driving, new applications must be added into the real-time control system. As a result, the complexity of the embedded software in ECUs will increase significantly, for many decisions should be made by ECUs independently instead of human drivers. In Section 3 , the control functions related to autonomous driving will be introduced in detail.
+2.4. Sensors in autonomous vehicles
+
+In order to travel on the roadway safely and obey traffic laws, autonomous vehicles rely on a series of sensors that help the vehicles ‘see’ and understand the environment where they are travelling. The environment can be digitally mapped out by using a combination of ultrasonic, radio detection and ranging (RADAR), camera, light detection and ranging (LiDAR) sensors, etc., each of which performs one or more unique functions.
+
+So, what sensors do autonomous vehicles require? In this section, we will give a profile of some basic sensors for autonomous vehicles. These sensors include (1) ultrasonic sensors, (2) RADAR sensors, (3) LiDAR sensors, (4) cameras, (5) speed sensors, (6) global positioning system (GPS), (7) acceleration sensors and (8) inertial measurement unit (IMU) ( Fig. 4.4 ).
+
+    Download : Download full-size image 
+
+Figure 4.4 . Sensors in an autonomous vehicle.
+2.4.1. Ultrasonic sensors
+
+An ultrasonic sensor is a device that can measure the distance by using ultrasonic waves. It works by sending out an ultrasonic wave at a specific frequency and receiving the wave reflected back from the target, as shown in Fig. 4.5 . By recording the time between the emission and reception, we can obtain the distance between the sensor and the object using the following formula: (4.1) D = C s t 2 where D is the distance, t is the travel time between the emission and reception and  C s is the sonic speed, as we know that sound travels through air at about 344 m/s.
+
+    Download : Download full-size image 
+
+Figure 4.5 . Ultrasonic sensor.
+
+The accuracy of ultrasonic sensors is affected by the temperature and humidity of the air. Some objects might not be detected by ultrasonic sensors because they are shaped or positioned in a way that the sound wave bounces off the object or the object is too small to reflect enough of the sound wave back to the sensor. Other objects, such as cloth, can absorb the sound wave, which means there is no way for the sensor to detect them accurately. These are important factors to consider when using an ultrasonic sensor [8] .
+
+The most common applications for ultrasonic distance sensors in vehicles are kerb alert and parking assistance systems.
+2.4.2. Radio detection and ranging sensors
+
+RADAR sensors can detect the distances of objects at a very wide range, as well as the speeds they are moving.
+2.4.2.1. Distance detection by radio detection and ranging sensor
+
+RADAR utilises the same ‘time of flight’ rule to detect distances as ultrasonic sensors do, as shown in Fig. 4.6 , except for the fact that RADAR uses radio waves instead of sonic waves. The distance between the sensor and the object can be calculated by (4.2) D = C R t 2 where D is the distance, t is the time between the emission and reception and C R is the radio wave travelling speed, approximately 3.00 × 108 m/s.
+
+    Download : Download full-size image 
+
+Figure 4.6 . Detection by radio detection and ranging sensors.
+2.4.2.2. Speed detection by radio detection and ranging sensor
+
+Doppler effect is used to measure speed in RADAR sensors. When the fixed-frequency radio wave sent from the sender continuously strikes an object that is moving towards or away from the sender, the frequency of the reflected radio wave will be changed. This frequency shift is known as Doppler effect, as shown in Fig. 4.7 . The presence and the speed of the moving object can be obtained from the difference in frequency between the transmitted and the reflected radio waves [9] .
+
+    Download : Download full-size image 
+
+Figure 4.7 . Doppler effect.
+
+In Doppler effect, the relationship between the received frequency f and the transmitted frequency f 0 is given by (4.3) f = ( c + v T c + v s ) f 0 = ( 1 + v T − v s c + v s ) f 0 where c is the velocity of radio waves in the medium, v T is the velocity of the receiver with respect to the medium and v s is the velocity of the source with respect to the medium. If the speeds, v T and v s , are small compared to the speed of the wave c , the relationship between f and f 0 can be approximated by (4.4) Δ f = f − f 0 ≈ ( Δ υ c ) f 0 where Δ v  =  v T  −  v s . Thus we can acquire the relative speed Δ v by the detection of the frequency shift Δ f .
+2.4.2.3. Different uses of radio detection and ranging sensor in autonomous vehicles
+
+For autonomous driving applications, RADAR sensors can be used for adaptive cruise control (ACC), collision avoidance, etc. Generally, they warn the driver if an imminent collision is detected. If the driver fails to intervene within the stipulated time, the RADAR's input may even engage advanced steering and braking controls to prevent the crash. The high-precision and weather-agnostic capabilities of RADARs make them a permanent fit for any autonomous vehicle, notwithstanding the ambient conditions [10] .
+
+Both short- and long-range automotive-grade RADARs are used for autonomous driving applications. Short-range RADARs ‘sense’ the environment in the vicinity of a car (∼30 m) especially at low speeds, whereas long-range RADARs cover relatively long distances (∼200 m) usually at high speeds. Table 4.1 presents the different applications for RADAR sensors in autonomous vehicles.
+
+Table 4.1 . The Different Applications for Radio Detection and Ranging Sensors in Autonomous Vehicles
+Application	Detection Range	Field of View	Technology
+Adaptive cruise control (ACC)	150 ∼ 200 m	±10 ∼ 20 degrees	Single beam, 24 GHz
+Forward collision warning and precrash detection	40 ∼ 90 m	±35 ∼ 45 degrees	Single beam, 76 GHz/24 GHz
+Blind spot detection, lane change assist and cross-traffic detection	30 ∼ 40 m	±40 ∼ 50 degrees	Single beam, 76 GHz/24 GHz
+ACC with stop and go	Multiple ranges	Multiple ranges	Multimode electronically scan
+2.4.3. Light detection and ranging sensors
+
+LiDAR sensor is one of the most important devices in the autonomous vehicles. It can be mounted on the roof, where the corners or the front and rear bumpers of the autonomous vehicle send invisible laser pulses and ascertain their return time to create a 3D profile around the car. LiDAR can scan over 100 m in all directions and generate a comprehensive and precise 3D map of the immediate world around it, as shown in Fig. 4.8 (right). The vehicle can then use the map to navigate and avoid objects. Autonomous cars earn a distinct advantage over conventional vehicles in terms of situation awareness from this type of technology.
+
+    Download : Download full-size image 
+
+Figure 4.8 . Light detection and ranging (left) and laser point map generated by it (right).
+
+LiDAR consists of an emitter (laser source), mirror, rotating housing and receiver, as shown in Fig. 4.8 (left). The emitter shoots out a laser beam that is reflected by a tilting mirror. The mirror along with the housing is rotating, and the rotary encoder records the angular position of current laser beam. After reflected by objects, the laser beam returns to the tilting mirror and is reflected back to the receiver. The distance can be calculated from travel time of the beam, and the position of the object in 2D space can be obtained together with the angular position [11] .
+2.4.4. Cameras
+
+Cameras convert light to electrical signals which allows autonomous vehicles to perceive its surroundings just like humans do. One unique advantage of cameras is their ability of processing colours, which is very efficient at the classification of textures and makes up for the vacancy other sensors left during interpreting surrounding scenery. Another advantage of cameras is their much better availability and lower price compared to RADAR or LiDAR, which makes them one of the most popular types of sensors being used in autonomous vehicles and one of the top choices for vehicle manufacturers.
+
+There are downsides as well. The powerful processors of some high-definition cameras should be capable of processing millions of pixels for every frame, and some cameras are able to shoot 30–60 frames per second. This requires a very powerful computing platform to ensure the real-time attribute of the control system. Normally, one or more powerful graphics processing units (GPUs) are required and the price can be very costly [12] .
+2.4.5. Speed sensors
+
+Speed sensors are used in automobiles to determine the speed of wheels, based on which the vehicle speed can be easily calculated, and the speed of other mechanical components. They are usually mounted on the wheels to measure their rotating speed and direction, as shown in Fig. 4.9 . These sensors generate input for a variety of different automotive control applications such as ACC, antilock brake system and electronic stability control, etc.
+
+    Download : Download full-size image 
+
+Figure 4.9 . Wheel speed sensors.
+
+Three common wheel speed sensors include the inductive sensors, Hall effect sensors and optical sensors.
+2.4.5.1. Inductive sensors
+
+As illustrated in Fig. 4.10 (upper left), a common inductive sensor consists of a permanent magnet on the top of a pole pin which is wrapped by an inductive coil. This assembly is mounted at a short fixed distance from a ferromagnetic rotor teeth along its radical direction. When the rotor rotates, the air gap between the rotor and the pole pin changes, thus changing the magnetic flux in the coil. The flux change generates a voltage pulse across the coil. The vehicle's control module counts the number of voltage pulses within a specific period of time and computes the wheel speed [13] .
+
+    Download : Download full-size image 
+
+Figure 4.10 . Inductive sensor (upper left), Hall effect sensor (lower left) and optical sensor (right). ECM , engine control module; TCM , transmission control module.
+2.4.5.2. Hall effect sensors
+
+Fig. 4.10 (lower left) shows a typical build of a Hall effect sensor. A permanent magnet is mounted on the top of a Hall effect device. Unlike inductive sensors, the output signal from a Hall effect sensor is not generated by the rate of change of the magnetic field. The Hall effect device is fed with a bias current that is perpendicular to the direction of the magnetic field, and the magnetic field intensity will generate a Hall voltage on the direction that is perpendicular to the directions of both the current and the magnetic field. When the rotor rotates, the air gap between the rotor and the magnet changes, thus changing the Hall voltage and the magnetic field intensity passing through the Hall effect device. The value of Hall voltage is typically in the range of millivolts (mV) and is amplified by integrated electronics. The final output voltage is usually shaped into square waves with amplitude ±5 V or 12 V. This amplitude remains constant while the frequency of the square wave signal increases proportionally with rpm. Unlike inductive sensors that generate voltage signals by themselves, Hall effect sensors need external voltage supply for integrated electronics [14] .
+2.4.5.3. Optical sensors
+
+As shown in Fig. 4.10 (right), optical sensors are another type of sensor that generates square wave signals at a frequency in proportion to the rotor's rotation speed. Instead of using a magnet, an optical sensor uses a light interrupting rotor, an LED and a phototransistor. The phototransistor generates a current when either the reflected light or the passed through lights transmitted by the LED is received. When the rotor has bright and dark marks, the phototransistor will be on the same side as the LED and receive the light reflected by the bright marks. When the rotor has a series of slits that allows light passing through, the phototransistor will be on the opposite side of the LED [14] .
+2.4.6. Global positioning system
+
+The GPS is a global navigation satellite system that provides location and time information to a GPS receiver that is in the line of sight to at least four satellites. It can be applied to air, sea and land transportation. The satellite system of GPS consists of 6 earth-centred orbital planes, each with 4 satellites, i.e., 24 satellites in total. GPS works at almost all time under almost all kinds of weather [15] .
+2.4.6.1. Basic application of global positioning system in autonomous vehicles
+
+As the most important subsystem of autonomous vehicles, navigation and guidance subsystem must always be active and checking the vehicle location versus the goal. For example, if the ‘optimum’ route planned originally has any unexpected diversions, the path must be recomputed in real time to avoid going in a wrong direction.
+
+The primary technique used for navigation and guidance is based on the GPS system. GPS receivers are now available as sophisticated system on a chip IC or multi-chip chipsets which require only power and antenna and include an embedded, application-specific computer engine to perform the intensive calculations. The present position of the vehicle is computed based on complex analysis of signals received from at least 4 of the constellations of over 60 low-orbit satellites [16] .
+
+Another interesting application of GPS is to measure the vehicle speed. Using GPS signals, the exact location of the vehicle can be determined. Combining with the time information, the speed of the vehicle can be precisely calculated.
+2.4.6.2. Real time kinematic global positioning system
+
+RTK (real time kinematic) satellite navigation is a technique used to enhance the precision of position data obtained from standard GPS systems.
+
+The accuracy of the GPS may be affected by many contributing factors like clock difference between satellites, refraction of electromagnetic waves in ionosphere, random noise added to clock in commercialised GPS signal, not enough satellites (less than 8 ∼ 9), and signal bounced off buildings or canyons. A good way to correct these variable errors is to set up a fixed GPS receiver as a base station whose position can be measured. The computing unit of this base station can calculate its position from satellite data and compare it with its actual position. The resulting error information can be shared with another moving GPS receiver, called rover, in the vehicle; then the rover GPS can correct its localisation result based on the correction information sent by the station. This is the basic principle of RTK GPS. Fig. 4.11 shows the working process of RTK GPS.
+
+    Download : Download full-size image 
+
+Figure 4.11 . Real time kinematic global positioning system (GPS).
+2.4.7. Acceleration sensors
+
+Acceleration sensors are devices that measure acceleration caused by speed changes, vibration, collision, etc. In autonomous vehicles, acceleration sensors are always applied in collision detection, antilock braking systems, traction control systems, etc. There are different types of acceleration sensors which are based on different physical principles, typically including piezoelectric, piezoresistive, variable capacitance and variable reluctance acceleration sensor.
+2.4.7.1. Basic acceleration sensor
+
+The basic physical principle behind the acceleration sensor (accelerometer) is the same as a simple mass spring system, as shown in Fig. 4.12 (left). According to Hooke's law, the restoring force of a spring is proportional to the amount of distance it has been stretched or compressed from the equilibrium point. The equation of such relationship is F  =  kx , where k is the elastic constant of the spring, k is the displacement and F is the force. If we ignore the friction between the mass block and the base (which is reasonable with microelectromechanical systems technology), then by Newton's law, the force from the spring is equal to the resultant force of mass m , which can be written as F  =  kx  =  ma , where a is the acceleration of mass m . Hence if we observe a displacement of x and we know the mass m , the acceleration can be calculated by a  =  kx / m [17] .
+
+    Download : Download full-size image 
+
+Figure 4.12 . Mass–spring system used for measuring acceleration (left) and displacement-type acceleration sensor (right).
+2.4.7.2. Piezoelectric acceleration sensor
+
+A piezoelectric acceleration sensor utilises the piezoelectric effect of certain materials to measure acceleration, vibration and mechanical shock.
+
+Piezoelectric material converts mechanical energy into electrical energy and generates an electrical signal in proportion to the applied force. Piezoelectric acceleration sensor consists of a mass attached to a piezoelectric crystal which is mounted on an isolating base inside the case, as shown in Fig. 4.13 (left). When the sensor body is subjected to acceleration along vertical direction, the mass on the crystal accelerates and the resultant force is provided by the piezoelectric crystal (ignoring gravity). This force is proportional to the acceleration according to Newton's second law, F  =  ma , and generates a voltage in the crystal. The final output is then converted into low-impedance voltage with the help of extra electronics. Fig. 4.13 (left) shows the principle of a piezoelectric acceleration sensor [18] .
+
+    Download : Download full-size image 
+
+Figure 4.13 . Piezoelectric acceleration sensor (left) and inertial measurement unit (right).
+2.4.8. Inertial measurement unit
+
+An IMU is an electronic device that measures and reports the object's linear acceleration, angular angles (roll, pitch and yaw angles) and angular rates, using a combination of accelerometers, magnetometers and gyroscopes.
+
+As illustrated in Fig. 4.13 (right), the IMU consists of a platform fixed to the vehicle, and this platform has three gyroscopes and three accelerometers, one pair oriented each for the orthogonal X, Y and Z axes. These sensors provide data on the rotational and linear motion of the platform, which is then used to calculate the motion and position of the vehicle regardless of speed or any sort of signal obstruction [16] .
+2.5. Actuators
+
+For any control system, the actuators are the terminal components which are responsible for moving or controlling the system. In modern vehicles, there are various actuators like motors, valves and hydraulic cylinders. These actuators act as ‘movers’ to execute the steering, gear changing, braking, etc. Because these actuators are universal, i.e., there are no special applications for them in autonomous vehicles; the detail will not be discussed in this book.
+3. Real-time control systems in autonomous vehicles
+
+Generally, there are three different modules in a real-time control system for autonomous vehicles, namely the perception module, mission planning module and motion plan and control module ( Fig. 4.14 ). The perception module collects and transforms sensory information into meaningful information and passes it to navigation and behaviour reasoning module and motion plan and control module. The navigation and behaviour reasoning finds the best path from the start to the destination based on map and task information and issues the most appropriate manoeuvre based on perception information. The motion plan and control module executes the issued behaviour based on the perception information.
+
+    Download : Download full-size image 
+
+Figure 4.14 . General structure of autonomous vehicle real-time control system.
+3.1. Perception
+
+The perception system is responsible for converting the sensory information into meaningful information that describes the conditions of the environment and the ego vehicle. It includes the perception of the environment and the perception of the vehicle itself.
+3.1.1. Obstacle detection and tracking
+
+Typical obstacles in autonomous driving scenario include moving obstacles, for example, pedestrians and moving vehicles, whose information is not included in any existing map, and static obstacles, for instance, kerbs, bushes and parked vehicles, whose information is included or partially included in an existing map. To avoid collision with these obstacles during driving, the autonomous vehicles need to first detect them, then map the static obstacles and finally track the motion and predict the motion of the moving obstacles in a short future in real time. The detection and tracking of these obstacles are achieved based on the sensory information from vision sensors, LiDARs and RADARs.
+3.1.1.1. Feature extraction
+
+The first step here is extracting the useful features from the raw sensory data. Commonly used features include the channels of different colour spaces, for example, RGB (red, green, blue), HSV (hue, saturation, value) and HSL (hue, saturation, lightness) spaces from the camera, the disparity map from the stereo camera, the distance map from the LiDARs and RADARs and the speed map from RADARs. Some higher-level features can be generated from these basic features. For instance, colour histograms can be generated from the RGB space of an image captured by a camera; binary colour maps can be generated from the original colour map by adding threshold to it; depth map can be calculated from the disparity map; histogram of orientated gradients can be generated from a colour map or a depth map. The features will be combined into a final map that has a large depth. This map will help the classifier to categorise the types of the obstacles.
+3.1.1.2. Obstacle detection
+
+With the feature map ready, the next task is to find the interested obstacles from the feature map. A straightforward method is using a scanning window to search over the whole feature map and evaluate the scanning window at each step with the classifier to see if there is interested obstacle within the window. To achieve better searching result, the window needs to search over the map multiple times with different size, and they should be overlapped between each search step. That results in a large amount of ROI (region of interest) windows to be classified and reduces the computational efficiency. One way to reduce the computational load is to predict the possible region in the map where an interested obstacle may appear. For example, the sky never needs to be scanned for finding pedestrians and vehicles.
+
+The ROI will be fed into a classifier to determine whether it contains an interested obstacle. Commonly used classifier includes support vector machines [19] , Gaussian mixture models (GMM) [20] , decision trees [21] and neural networks (NNs) [22] (especially convolutional neural networks (CNNs)). These classifiers are machine learning algorithms that map the input feature to different categories. They need to be trained manually before being used to classify obstacles. In the training process, people need to collect sensory data during driving and manually label the ROIs in the feature map. The classifiers will learn the unique characteristics of different types of obstacles from the training data via machine learning methods. The training of a classifier usually requires very long time data collection and laborious labelling procedure.
+3.1.1.3. Moving obstacle tracking
+
+Because of the dynamic and noise in the environment, the detection of the moving obstacles can be unstable and even discontinuous sometimes. Tracking of moving obstacle is needed to stabilise, smoothen and improve the accuracy of the detection of the obstacles so that their motion can be predicted within a short future and the motion control of the ego vehicle can be improved. Two commonly used tracking methods are Kalman filter and particle filter (PF) [23] , [24] .
+
+Kalman filter [25] is a recursive estimator, and it predicts the states at next time step based on the estimated states from the previous time step and the measurement from the current time step. Kalman filter is good at dealing with linear system and Gaussian errors. With a discrete time state space model: (4.5) x k = A x k − 1 + B u k + w k z k = H x k + v k where x k is system state(s) at time step k , u k is system input(s), z k is system measurement(s), A is system process matrix, B is system input matrix, H is system output matrix, w k is Gaussian process noise obeying normal distribution N (0, Q ), with Q being the variance and v k is Gaussian measurement noise obeying normal distribution N (0, R ), with R being the variance. The process of Kalman filter contains two steps, namely the prediction step: (4.6) Predicted error covariance x ¯ k = A x k − 1 + B u k Predicted state estimate P ¯ k = A x k − 1 A T + Q and the correction step: (4.7) Kalman gain K = P ¯ k H T ( H P ¯ k H T + R ) − 1 Update state estimate x ˆ k = x ¯ k + K ( z k − H x ¯ k ) Update error coveriance P k = ( I − K H ) P ¯ k
+
+In autonomous driving, the motion model for a vehicle is usually a bicycle model with a fixed shape, as shown in Fig. 4.15A , and the model for a pedestrian is usually a point mass model, as shown in Fig. 4.15B . While the motion models are linear, the observation models may be nonlinear, and the measurement noise does not follow Gaussian distribution. To deal with nonlinearity in the state-transition model or the observation model, as shown in Eq. (4.8) , extended Kalman filters (EKF) [26] are adopted. v k is Gaussian observation noise with covariance R k and w k is Gaussian process noise with covariance Q k . f is nonlinear process function and h is nonlinear measurement function. (4.8) x t = f ( x k − 1 , u k ) + w k z k = h ( x k ) + v k The process of EKF can be similarly divided into two steps, namely the prediction step: (4.9) Predicted state estimate x ˆ k | k − 1 = f ( x ˆ k | k − 1 , u k ) Predicted error coveriance P k | k − 1 = F k P k − 1 | k − 1 F k T + Q k and the correction step: (4.10) Kalman gain K k = P k | k − 1 H k T ( H k P k | k − 1 H k T + R k ) − 1 Update state estimate x ˆ k | k = x ˆ k | k − 1 + K k ( z k − h ( x ˆ k | k − 1 ) ) Update error coveriance P k | k = P k | k − 1 − K k H k P k | k − 1 where the state transition and observation matrices are expressed by following Jacobians: (4.11) F k = ∂ f ∂ x | x ˆ k − 1 | k − 1 , u k H k = ∂ h ∂ x | x ˆ k | k − 1
+
+    Download : Download full-size image 
+
+Figure 4.15 . Bicycle model for vehicle (A) and point model for pedestrian (B) [31] .
+
+EKF can only deal with moderate nonlinearity in the system. If the measurement process or the obstacle's motion contains highly nonlinear components or if the noise is not a linear combination of Gaussian components, the effect of EKF can be poor. To deal with this, PF [27] is adopted. PF is a technique for implementing recursive Bayesian filter by Monte Carlo sampling. It represents the posterior density by particles with associated weights and computes estimates based on the samples and wrights. The process of PF is: (4.12) Particle generation x k ( m ) ∼ p ( x k | x k − 1 ) Weight computation w k ∗ ( m ) = w k − 1 ∗ ( m ) p ( z k | x k ( m ) ) Weight normalization w k ( m ) = w k ∗ ( m ) ∑ m = 1 M w k ∗ ( m ) Estimation computation E ( g ( x k | z 1 : k ) ) = ∑ m = 1 M g ( x k ( m ) ) w k ( m ) where m is the index of a particle and M is the quantity of particles. g ( x ) is the system process model.
+3.1.2. Localisation
+
+The localisation for autonomous vehicles includes tasks at three different levels: road-level localisation, lane-level localisation and feature-level localisation. The road-level localisation provides the rough estimation of the vehicle position in an existing road map. This level of localisation can be achieved by utilising the position information provided by a GPS system. However, the refreshing rate of civil-level GPS devices (normally lower than 1 Hz) and the accuracy (∼3 m) are not sufficient for autonomous driving. To achieve lane-level localisation, sensory information from IMUs and wheel speed sensors needs to be fused together with the raw position information to provide higher-positioning refreshing rate (>20 Hz) and accuracy (<0.5 m). Combining this fused position information with an existing road lane map, the vehicle's current lane selection on a road can be identified. The vehicle's position in a lane or in an unstructured environment can be found through feature-level localisation. This level of localisation requires more information from the static obstacle detection and mapping module. Features, for instance, the position of lane markers and kerbs, are further fused with the localisation data to provide more accurate localisation result.
+
+The data fusion in lane- and feature-level localisation is usually done with a Bayesian filter [28] . A typical type of Bayesian filter is PF, as described before.
+3.1.3. Vehicle state estimation
+
+Some of the vehicle states cannot be obtained from the sensors directly, or the sensors required to measure certain states are too expensive, and thus the estimation for these states is needed. For instance, in vehicle lateral control, tyre forces and vehicle sideslip are parameters that are critical but difficult to be measured directly. Under this case, a nonlinear model that describes the behaviour of the vehicle states needs to be introduced, and estimation methods, for example, an EKF observer or a sliding mode observer, can be designed based on the structure and the nonlinearity of the model.
+3.2. Mission planning
+
+Mission planning module is the higher-level decision-making module in autonomous vehicle control. It takes the information from the perception module and issues the target vehicle poses to the motion planning and control module. Mission planning module has two major parts, the first is path planning and the second is behavioural reasoning.
+3.2.1. Path planning
+
+The path planning module finds the optimal route from the vehicle's current location to the requested mission destination using the road network which will be represented as a directed graph with edge weights corresponding to the cost of traversing a road segment. The cost of a road segment varies accordingly to the mission, for example, passenger or cargo delivery. The path planning task can be formulated as finding the optimal path with the least cost on the road network graph. Two commonly used graph search algorithms are Dijkstra's algorithm [29] and A∗ algorithm [30] .
+
+Dijkstra's algorithm is a greedy algorithm that selects the road node from the candidate nodes that has a path with the minimum cost from the starting node. The disadvantage of Dijkstra's algorithm is that it visits too many nodes that are obviously not the best.
+
+A better solution is A∗ algorithm. The improvement of A∗ algorithm compared to Dijkstra's algorithm is that an additional term that represents the estimated cost from the next node to the destination node to the cost function f ( n ) being evaluated at each step: (4.13) f ( n ) = g ( n ) + h ( n ) − g ( n ) : Actual cost from the starting node to reach the n t h node . − h ( n ) : Estimate of the cost of the cheapest path from the n t h node to the goal node . As long as h ( n ) does not overestimate the actual cost, A∗ algorithm can always find the optimal path while reducing the computational load compared to Dijkstra's algorithm.
+3.2.2. Behavioural reasoning
+
+The behavioural reasoning is responsible for rendering a mission executable based on the route information. More specifically, it needs to decide behaviours from lane keeping, lane changing, lane crossing and free space navigation and generate a set of target goal poses for the motion planner and controller using the perception information and the road map.
+
+Fig. 4.16 shows an example of behavioural reasoning subsystem [31] . The state estimator computes a representation of the vehicle's logical position based on the vehicle's position and the world model. The goal selector takes the logical location from the state estimator to generate the location goals for the motion planner. The lane selector, merge planner, scene reporter, distance keeper and vehicle driver form the lane driving planner and controller. The precedence estimator, pan-head planner and transition manager form the intersection handling planner and controller.
+
+    Download : Download full-size image 
+
+Figure 4.16 . Structure of Behavioral Reasoning module.
+3.3. Motion planning and control
+
+The motion plan and control module creates a path towards the desired goal issued from the mission planning and behaviour reasoning module then tracks this path. The tasks in motion planning and control include ACC, lane keeping, lane switching, intersections and yielding and parking.
+3.3.1. Adaptive cruise control
+
+During ACC, the controller controls the longitudinal motion of the vehicle and maintains a proper distance headway from the preceding vehicle based on current speed of the ego vehicle, relative distance and relative speed. There are multiple ways to achieve this function.
+
+In traditional analytical model–based control, an analytical model that rules the behaviour of the vehicle is implemented. The input to the model is the information from the perception module and the output is the longitudinal acceleration/throttle and brake pads lift. An example of the analytical ACC model is the Gazis-Herman-Rothery (GHR) model [32] : (4.14) a F ( t ) = c v F m ( t ) Δ v ( t ) Δ x l ( t ) where Δ v is relative speed, Δ x is relative distance. c is the sensitivity coefficient and l and m are the exponents for relative distance and vehicle speed, respectively. Tuning these three parameters can adjust the performance of the ACC controller.
+3.3.2. Lane keeping
+
+During lane keeping, the controller controls the lateral motion of the vehicle and keeps the vehicle moving at the centre of the lane.
+
+An example of traditional analytical model–based lane keeping control method is pure pursuit method ( Fig. 4.17 ) [33] . In pure pursuit method an ideal bicycle vehicle model is used. The goal point ( g x , g y ) represents the point on the target path (e.g., the centre line of a lane) that is l d distance away from the vehicle's rear axle. l d can be a simple function of vehicle speed, for instance, l d  =  kv . The vehicle's steering input δ can be computed by using the location of the target point and the angle α between the vehicle's heading direction and the look-ahead direction: (4.15) δ ( t ) = tan − 1 ( 2 L sin ( α ( t ) ) l d ) where L is the vehicle's wheelbase.
+
+    Download : Download full-size image 
+
+Figure 4.17 . Pure pursuit method [40] and Stanley Method [40] .
+
+Another analytical model–based lane keeping control method is Stanley method [34] . The vehicle's steering input δ can be calculated with: (4.16) δ ( t ) = θ e ( t ) + tan − 1 ( k e f a ( t ) v x ( t ) ) where k is a tunable parameter.
+3.3.3. Lane switching
+
+During lane switching, the controller needs to decide when to overtake a vehicle in the front and when to merge into another lane ( Fig. 4.18 ). In a traditional rule-based decision-making model, a single longitudinal and a lateral controller are combined with several manually defined criterions to make decisions on lane changing. Typical criterions [35] include safety criterion for deceleration caused to vehicles in the target lane: (4.17) a ˜ n ≥ − b safe where a ˜ n is the deceleration of the successor n and b safe is a given safe limit. This criterion avoids collision between the ego vehicle and the successor vehicle in the target lane.
+
+    Download : Download full-size image 
+
+Figure 4.18 . Typical lane switching [35] .
+
+Incentive criterion for double lane changing: (4.18) a ˜ c − a c + p [ ( a ˜ n − a n ) + ( a ˜ o − a o ) ] ≥ Δ a t h where a ˜ c is the acceleration for ego vehicle c after lane change and a c is the acceleration for ego vehicle before lane change. a ˜ n is the acceleration for vehicle n after lane change and a n is the acceleration for vehicle n before lane change. a ˜ o is the acceleration for vehicle o after lane change and a o is the acceleration for vehicle o before lane change. p is a tunable weight coefficient. This criterion encourages the traffic to move faster after the prospective lane change.
+
+Incentive criterion for single lane changing: (4.19) right lane changing : − a c + p ( a ˜ o − a o ) ≥ Δ a t h − Δ a bias left lane changing : a c − a ˜ c eur + p ( a ˜ n − a n ) ≥ Δ a t h + Δ a bias a ˜ c eur = { min ( a c , a ˜ c ) if v c > υ ˜ lead > υ crit a c otherwise where v crit is a specified velocity for congested traffic, υ ˜ lead is the velocity of the leading vehicle in the left side lane. Δ a bias is a constant bias. This criterion prevents the vehicle from taking a lane change from left to right under normal situation.
+3.3.4. Neural network–based advanced control
+
+Besides the traditional control models mentioned above, there are new motion plan and control methods emerging in the past two decades. These methods can have more complex behaviour patterns and better performance.
+
+In NN-based control model, an NN is used to control the motion of the vehicle. The NN needs to be trained with human driving data before it can be used to control the vehicle. A trained NN will mimic the human driver's behaviour in the training data.
+
+The input to an NN can be the same as the analytical-based approach, namely, extracted features from the perception modules [36] . In this case, a normal NN is competent for the control. Correspondingly, in this case, the training data for the NN are the extracted features as well.
+
+The input to an NN can also be the raw sensory data, for example, the video frames from a camera. In this case a deep NN, which is normally a CNN, needs to be adopted ( Fig. 4.19 ). Correspondingly, the training data for the NN is the raw data, and this specific method is called end-to-end learning [37] . This end-to-end learning based control reduces the load in perception module, but the training process requires much larger amount of training data and computational capacity.
+
+    Download : Download full-size image 
+
+Figure 4.19 . Typical architecture of a Neural Network.
+3.3.5. Stochastic model–based control
+
+In this control approach, a probabilistic distribution or a probabilistic state transition process is used to match the perception measurement to vehicle control input. Similarly, to NN-based control, the stochastic model can only be formulated through a machine learning process. A human driver needs to set the expert demonstration for the stochastic model.
+
+One commonly used probabilistic distribution model is the GMM [38] . It can be realised by combining the perception measurements: (4.20) x t = [ v t , Δ v t , Δ 2 v t , f t , Δ f t , Δ 2 f t , G t , Δ G t , Δ 2 G t ] T and the next time step control output (4.21) y t = [ x t , G t + 1 ] T to formulate a multivariant Gaussian mixture distribution: (4.22) p ( y ) = ∑ k = 1 M α k ϕ k ( y ) = ∑ k = 1 M α k N ( y , μ k y , ∑ k y y ) where v t , Δ v t , Δ 2 v t , f t , Δ f t , Δ 2 f t , G t , Δ G t , Δ 2 G t are current vehicle speed, headway distance, control input and their first- and second-order dynamics.
+
+The parameters of the Gaussian components ϕ k ( y ), including weights α k , mean value μ k y and covariance matrix ∑ k y y , will be initialised with random value first and then learnt from training data using iterative statistical model parameter estimation methods such as expectation maximisation method. The next time step control output can be predicted by maximising the conditional probability given by: (4.23) G ˆ t + 1 = ∑ k = 1 M h k ( x t ) · G ˆ t + 1 ( k ) ( x t ) G ˆ t + 1 ( k ) ( x t ) = arg G t + 1 max { p ( G t + 1 | X t , ϕ k ) } h k ( x t ) = α k p ( x t | ϕ k x ) ∑ k = 1 M α i · p ( x t | ϕ i x )
+
+One typical probabilistic state transition process model is hidden Markov model (HMM) ( Fig. 4.20 ). A Markov chain model describes the transition between discrete states with probabilities. An HMM is the Markov chain model with hidden states and observations. In this type of model, the joint distribution between the hidden modes and the observations, which includes the driving situation z t and control output a t , can be written as [39] : (4.24) P ( m 0 : t , z 1 : t , a 1 : t ) = P ( m 0 ) ∏ k = 1 t [ P ( m k | m k − 1 ) · P ( z k , a k | m k ) ] where M is the number of the hidden modes, P ( m 0 ) is the initial distribution, P ( z k , a k | m k ) is the multivariate Gaussian distribution and α ij is the transition probabilities between the i th and j th hidden modes. These parameters will be learnt from human demonstration by using expectation maximisation algorithms. The output will be predicted by calculating the conditional expectation: (4.25) a t exp = E [ a k | z 1 , … , z t ]
+
+    Download : Download full-size image 
+
+Figure 4.20 . Structure of hidden Markov model.
+
+An HMM model can be combined with GMM by assuming Gaussian mixture distribution for the observation probabilities.
+3.3.6. Model predictive control
+
+The single model base control methods mentioned above are making decisions only based on current driving situation, without making any predictions. This causes the controller's output to be jerky because the controller is trying to respond to the new environmental measurements at every time step, while some of the responses do not need to be made and some others need to be made earlier. When a good human driver is driving, he/she is considering the current situation and the possible situations in a short future and tries to reduce unnecessary operations and to prevent hazard situation from happening.
+
+A method to make the models behave more like good human drivers is to combine them with MPC and formulate a hierarchical MPC ( Fig. 4.21 ). For instance, in an ACC controller, the states of the car-following system can be expressed with [39] : (4.26) { d t + 1 r = d t r + v t r Δ t d − 1 2 a t Δ t d 2 υ t + 1 r = v t r − a t υ t + 1 = v t + a t Δ t d where d t r and v t r are relative distance and speed, v t is ego vehicle speed and a t is ego vehicle acceleration. Δ t d is the time step size of the driver model.
+
+    Download : Download full-size image 
+
+Figure 4.21 . The structure of a hierarchical model predictive control (MPC).
+
+The reference trajectory of the longitudinal acceleration can be generated by iterating the state transition model together with the single control model, which can be an analytical model, a stochastic model or an NN model. The safety constraints during the process can be expressed as: (4.27) { a min ≤ a k | t ≤ a max υ k | t ≤ υ max d k | t p − d k | t ≥ d safe where a min and a max are minimum and maximum possible acceleration limited vehicle physical performance, v max is maximum allowed speed and d safe is the minimum safe distance. They can be included as a quadratic function ‖ ε ‖ S 2 = x T S x in the cost function, where S imposes a high penalty: (4.28) J = ∑ k = t t + P − 1 [ α ( a k − a k ref ) 2 + β ( a k − a k − 1 ) 2 + γ ( v k − υ max ) 2 ] + ‖ ε ‖ S 2 where P is the total amount of predicting steps in the future, a k ref is the desired acceleration and α , β , γ are tunable weights. The MPC controller calculates the optimal longitudinal acceleration for all predicting steps such that cost function J is minimised during the prediction horizon.
+
+Similar to ACC, lane keeping controller can be implemented with NN or stochastic models as well ( Fig. 4.22 ). The basic principles are the same, just need to change the input features of the model to steering-related features and model output to steering angle.
+
+    Download : Download full-size image 
+
+Figure 4.22 . Vehicle kinematic bicycle model.
+
+To implement an MPC controller for lane keeping, we just need to replace the longitudinal model in ACC to a combined model [40] : (4.29) f ( z , u ) = { x ˙ = υ cos ( θ ) y ˙ = υ sin ( θ ) θ ˙ = v L tan ( δ ) υ ˙ = a and modify the cost function as well: (4.30) J = ∑ k = t t + P − 1 [ α ( x k − x k ref ) 2 + α ( y k − y k ref ) 2 + γ ( δ k − δ k − 1 ) 2 ] + ‖ ε ‖ S 2 where x k , x k ref , y k and y k ref are vehicle position and reference position along longitudinal and lateral direction. δ k is vehicle steering and throttle input.
+3.4. Autonomous vehicle collaboration in Transportation Cyber-Physical System
+
+All the real-time control systems introduced above are designed for a single autonomous vehicle. However, in the scenario where level 5 fully autonomous driving is achieved, autonomous vehicles will not function as independent individuals but rather form a cyber-physical network where all vehicles and infrastructures are connected. Under this situation, the motion planning and control system may still work similarly, as today, but the perception and mission planning systems will encounter a big reform. The basic methods will not be changed, but the scale and accuracy of the surrounding map built by the perception system will be improved a lot with the help of excessive information exchanged between vehicles and infrastructures.
+3.4.1. Communication in Transportation Cyber-Physical System
+
+To form the cyber-physical network of vehicles and infrastructures, special communication methods need to be adopted. Unlike normal networks, vehicles are always moving around and causing the structure of the network to change. The first challenge lies in the communication quality between vehicles and infrastructures. Although there is a dedicated short-range communication system designed for this application, more problems still need to be solved. For instance, when traffic is heavy, a large number of vehicles may transmit information at the same time and that can interfere with each other's communication. Some improved protocols need to be adopted to solve communication overheat and, more specifically, to improve the positioning accuracy by reducing the packet collision [41] . The second challenge lies in the structure of the network. Like mentioned above, it is not realistic to include all vehicles and infrastructures under the same network all the time due to the dynamics in the network. An effective method is grouping the nearby vehicles and infrastructures under a low-level network. In this low-level network, detailed information will be shared among terminals. The low-level network will be connected to a high-level network, in which the general and strategic information of low-level networks is shared.
+3.4.2. Vehicle to vehicle collaboration
+
+With the communication system ready, the collaboration between vehicles can be performed by conducting mission planning based on shared perception information between vehicles. This type of collaboration can be very helpful under both highway and urban driving scenarios. For example, during highway driving, the collision prevention system can be both more effective and less intrusive with shared information. By sharing perception information with the leading and following vehicles, a vehicle can expand its perception range by multiple times without the need of adding more expensive sensors. With extra perception information, mission planning system can plan more ahead for potential dangers [42] . Moreover, by sharing mission plan information between each other, a vehicle can learn not only the behaviours but also the reasons for the behaviours of surrounding vehicles, which will significantly reduce unnecessary overshoot or correction in mission plan. Similar collaboration will happen during lane changing manoeuvre. These improvements will bring smoother motion control and better fuel economy on highway. In urban driving scenario, vehicle to vehicle collaboration can also improve driving safety by sharing perceived obstacle information, especially moving obstacles, for example, pedestrians and cyclers. By sharing the perceived traffic light information between each other, vehicles can achieve either least time or minimum energy consumption control strategy in mission planning [43] , [44] . These targets are not achievable if there is no such TCPS.
+3.4.3. Vehicle to infrastructure collaboration
+
+The collaboration between vehicles and infrastructures benefits urban driving. Since infrastructures, for example, traffic lights, RADARs and cameras, are fixed over the road or along the roadside, they can have much more accurate observations of the environment than the moving vehicles. For example, the cameras and RADARs can estimate traffic density in real time and share the information to the cloud [45] . Vehicles that may drive through a congested area can then reschedule its route in advance. Around sharp corners where vehicle onboard sensors may have limited field of vision, cameras mounted on the roadside can help to detect children running across and prevent the happening of accidents by sending a warning to passing-by vehicles. At intersections, the traffic light can share its state to vehicles that are planning to pass it. The vehicles can make adjustment in their mission planner to avoid sudden brake or acceleration. In certain area where human drivers are not presenting, the traffic lights can even be removed to save infrastructure construction cost.
+4. Conclusions and future directions
+
+As a typical CPS system, autonomous vehicles incorporate the three essential factors of computing, communication and control. Among the three factors, the real-time control system is the most sophisticated due to the involvement of various components and functions. Based on the hardware platform constructed by ECUs, sensors and communication buses, each required function is implemented in a form of embedded software. These extendable functions endow the vehicles with intelligence. Instead of a large constellation of sensors working together, future autonomous vehicles will be a real intelligent system, which is the ultimate goal of the autonomous vehicle CPS.
+
+In order to enable autonomous driving functions, the vehicle should rely on the combination of different sensors to perceive the environment with a very high precision and reliability. However, each sensor technology has its own shortcomings and capability limitations, e.g., some of them may be impaired in bad weather scenarios. These shortcomings make it difficult for any of the sensors to be used as a stand-alone system. Moreover, the failure of one or more sensors will possibly result in the malfunction of the autonomous vehicle control system. One way to minimise this is to ‘fuse’ the data emanating from various sources. This is commonly known as sensor fusion. A fused sensor system combines the benefits of multiple sensors, i.e., RADARs, LiDARs, GPS and cameras, to construct data sources with redundancies. In addition, to make the real-control system more robust, fault diagnosis, tolerance control and the sensorless estimation technology also need to be further researched and applied in the TCPS.
+
+Fully autonomous vehicles and intelligent connected vehicles will be the features of future ground transportation. Human–vehicle interaction and riding comfort will also be the goals of autonomous driving system, as well as of all the autonomous functions addressed in this chapter. As the basic supporting technology, real-time control systems need further fusion with other information technology, such as sensor, communication, cloud computing and big data analysis. At the same time, more advanced control algorithm, e.g., model predictive control, intelligent control, robust control and some machine learning techniques, need to be applied to autonomous vehicles to solve the increasingly complicated and large-scaled control problems.
+Exercises
+
+1.
+
+    What is a real-time control system?
+2.
+
+    What are the required sensors for an autonomous vehicle?
+3.
+
+    How to detect the vehicle speed?
+4.
+
+    What is the basic principle of an acceleration sensor?
+5.
+
+    List three types of distance sensors for an autonomous vehicle and give one application example for each of the three types of distance sensors in an automobile.
+6.
+
+    Why is IMU needed for localisation?
+7.
+
+    What is the difference between Kalman filter and EKF tracking methods?
+8.
+
+    What will happen if the tunable parameter k in Stanley steering control model is larger?
+9.
+
+    What will happen if a NN-based controller is placed in an environment that is totally different from its training environment?
+10.
+
+    In a model predictive controller, which part and how should you modify if you want the vehicle to move as fast as possible without considering the energy consumption?
+
+Recommended articles
+References
+
+[1]
+    J. Martin
+    Programming Real-Time Computer Systems
+    (1965)
+    Google Scholar
+[2]
+    K. Kant
+    Computer-Based Industrial Control
+    PHI (2010)
+    Google Scholar
+[3]
+    Smart traffic light. [Online]. Available https://en.wikipedia.org/wiki/Smart_traffic_light . (Accessed on 14/05/2018).
+    Google Scholar
+[4]
+    X. Xie, Smart and Scalable Urban Signal Networks. [Online]. Available http://www.wiomax.com/team/xie/schic/ . (Accessed on 14/05/2018).
+    Google Scholar
+[5]
+    M.G. Richard
+    Networked Traffic Lights Could Save Time, Fuel, and Lives
+    (2010)
+    [Online]. Available:
+    https://www.treehugger.com/cars/networked-traffic-lights-could-save-time-fuel-and-lives.html
+    (Accessed on 14/05/2018)
+    Google Scholar
+[6]
+    Autopilot Systems in Aircraft Instrument Systems. [Online]. Available http://www.flight-mechanic.com/autopilot-systems/ . (Accessed on 14/05/2018).
+    Google Scholar
+[7]
+    Electronic Control Unit. [Online]. Available https://en.wikipedia.org/wiki/Electronic_control_unit . (Accessed on 14/05/2018).
+    Google Scholar
+[8]
+    What Is an Ultrasonic Sensor? [Online]. Available http://education.rec.ri.cmu.edu/content/electronics/boe/ultrasonic_sensor/1.html . (Accessed on 14/05/2018).
+    Google Scholar
+[9]
+    Doppler Effect, Doppler radar. [Online]. Available http://slideplayer.com/slide/10549388/ . (Accessed on 14/05/2018).
+    Google Scholar
+[10]
+    What sensors do driverless cars have? [Online]. Available https://www.quora.com/What-sensors-do-driverless-cars-have . (Accessed on 14/05/2018).
+    Google Scholar
+[11]
+    Autonomous Vehicles. [Online]. Available http://www.cvel.clemson.edu/auto/AuE835_Projects_2011/Vallabhaneni_project.html . (Accessed on 14/05/2018).
+    Google Scholar
+[12]
+    Three Sensors That ‘Drive’ Autonomous Vehicles. [Online]. Available https://www.wirelessdesignmag.com/blog/2017/05/three-sensors-drive-autonomous-vehicles . (Accessed on 14/05/2018).
+    Google Scholar
+[13]
+    Vehicle Speed Sensor. [Online]. Available http://www.cvel.clemson.edu/auto/sensors/vehicle-speed.html . (Accessed on 14/05/2018).
+    Google Scholar
+[14]
+    Inductive and Hall Effect RPM Sensors. [Online]. Available http://autorepairhelp.us/inductive-and-hall-effect-rpm-sensors-explained/ . (Accessed on 14/05/2018).
+    Google Scholar
+[15]
+    J.K. Ravikumar, A. Ravikumar, What Is GPS? 2017. [Online]. Available https://www.geotab.com/blog/what-is-gps/ . (Accessed on 14/05/2018).
+    Google Scholar
+[16]
+    Automotive Applications. [Online]. Available http://www.mouser.com/applications/autonomous-car-sensors-drive-performance/ . (Accessed on 14/05/2018).
+    Google Scholar
+[17]
+    Accelerometer (Analog Devices ADXL50). [Online]. Available http://soundlab.cs.princeton.edu/learning/tutorials/sensors/node9.html . (Accessed on 14/05/2018).
+    Google Scholar
+[18]
+    Piezoelectric Accelerometer. [Online]. Available https://en.wikipedia.org/wiki/Piezoelectric_accelerometer . (Accessed on 14/05/2018).
+    Google Scholar
+[19]
+    Z. Sun, G. Bebis, R. Miller
+    Monocular precrash vehicle detection: features and classifiers
+    IEEE Transactions on Image Processing, 15 (7) (2006), pp. 2019-2034
+    View Record in Scopus Google Scholar
+[20]
+    C. Premebida, G. Monteiro, U. Nunes, P. Peixoto
+    A lidar and vision-based approach for pedestrian and vehicle detection and tracking
+    Intelligent Transportation Systems Conference, 2007. ITSC 2007, IEEE (2007), pp. 1044-1049
+    CrossRef View Record in Scopus Google Scholar
+[21]
+    Z. Sun, G. Bebis, R. Miller
+    On-road vehicle detection: a review
+    IEEE Transactions on Pattern Analysis and Machine Intelligence, 28 (5) (2006), pp. 694-711
+    View Record in Scopus Google Scholar
+[22]
+    L. Zhao, C.E. Thorpe
+    Stereo-and neural network-based pedestrian detection
+    IEEE Transactions on Intelligent Transportation Systems, 1 (3) (2000), pp. 148-154
+    View Record in Scopus Google Scholar
+[23]
+    A. Petrovskaya, S. Thrun
+    Model based vehicle detection and tracking for autonomous urban driving
+    Autonomous Robots, 26 (2–3) (2009), pp. 123-139
+    CrossRef View Record in Scopus Google Scholar
+[24]
+    J. Lou, T. Tan, W. Hu, H. Yang, S.J. Maybank
+    3-D model-based vehicle tracking
+    IEEE Transactions on Image Processing, 14 (10) (2005), pp. 1561-1569
+    View Record in Scopus Google Scholar
+[25]
+    R.E. Kalman, et al.
+    A new approach to linear filtering and prediction problems
+    Journal of Basic Engineering, 82 (1) (1960), pp. 35-45
+    CrossRef Google Scholar
+[26]
+    M.I. Ribeiro
+    Kalman and extended kalman filters: concept, derivation and properties
+    Institute for Systems and Robotics, 43 (2004)
+    Google Scholar
+[27]
+    P. Del Moral
+    Non-linear filtering: interacting particle resolution
+    Markov Processes and Related Fields, 2 (4) (1996), pp. 555-581
+    View Record in Scopus Google Scholar
+[28]
+    J. Levinson, M. Montemerlo, S. Thrun
+    Map-based precision vehicle localization in urban environments
+    Robotics: Science and Systems, vol. 4 (2007), p. 1
+    Google Scholar
+[29]
+    E.W. Dijkstra
+    A note on two problems in connexion with graphs
+    Numerische Mathematik, 1 (1) (1959), pp. 269-271
+    Google Scholar
+[30]
+    P.E. Hart, N.J. Nilsson, B. Raphael
+    A formal basis for the heuristic determination of minimum cost paths
+    IEEE Transactions on Systems Science and Cybernetics, 4 (2) (1968), pp. 100-107
+    Google Scholar
+[31]
+    C. Urmson, et al.
+    Autonomous driving in urban environments: boss and the urban challenge
+    Journal of Field Robotics, 25 (8) (2008), pp. 425-466
+    CrossRef View Record in Scopus Google Scholar
+[32]
+    D.C. Gazis, R. Herman, R.B. Potts
+    Car-following theory of steady-state traffic flow
+    Operations Research, 7 (4) (1959), pp. 499-505
+    CrossRef View Record in Scopus Google Scholar
+[33]
+    O. Amidi
+    Integrated Mobile Robot Control
+    (1990)
+    Google Scholar
+[34]
+    S. Thrun, et al.
+    Stanley: the robot that won the DARPA grand challenge
+    Journal of Field Robotics, 23 (9) (2006), pp. 661-692
+    CrossRef View Record in Scopus Google Scholar
+[35]
+    A. Kesting, M. Treiber, D. Helbing
+    General lane-changing model MOBIL for car-following models
+    Transportation Research Record Journal of the Transportation Research Board (1999) (2007), pp. 86-94
+    CrossRef View Record in Scopus Google Scholar
+[36]
+    R. Fierro, F.L. Lewis
+    Control of a nonholonomic mobile robot using neural networks
+    IEEE Transactions on Neural Networks, 9 (4) (1998), pp. 589-600
+    View Record in Scopus Google Scholar
+[37]
+    M. Bojarski, et al.
+    End to End Learning for Self-Driving Cars
+    arXiv Prepr. arXiv1604.07316
+    (2016)
+    Google Scholar
+[38]
+    Y. Nishiwaki, C. Miyajima, N. Kitaoka, K. Itou, K. Takeda
+    Generation of pedal operation patterns of individual drivers in car-following for personalized cruise control
+    Intelligent Vehicles Symposium, 2007 IEEE (2007), pp. 823-827
+    CrossRef View Record in Scopus Google Scholar
+[39]
+    S. Lefèvre, A. Carvalho, F. Borrelli
+    A learning-based framework for velocity control in autonomous driving
+    IEEE Transactions on Automation Science and Engineering, 13 (1) (2016), pp. 32-42
+    View Record in Scopus Google Scholar
+[40]
+    J.M. Snider, et al.
+    Automatic Steering Methods for Autonomous Automobile Path Tracking
+    Robot Institute, Pittsburgh, PA (2009)
+    Tech. Rep. C.
+    Google Scholar
+[41]
+    S. Singh
+    Critical Reasons for Crashes Investigated in the National Motor Vehicle Crash Causation Survey
+    (2015)
+    Google Scholar
+[42]
+    R. Sengupta, S. Rezaei, S.E. Shladover, D. Cody, S. Dickey, H. Krishnan
+    Cooperative collision warning systems: concept definition and experimental implementation
+    Journal of Intelligent Transportation Systems, 11 (3) (2007), pp. 143-155
+    CrossRef View Record in Scopus Google Scholar
+[43]
+    E. Koukoumidis, M. Martonosi, L.-S. Peh
+    Leveraging smartphone cameras for collaborative road advisories
+    IEEE Transactions on Mobile Computing, 11 (5) (2012), pp. 707-723
+    View Record in Scopus Google Scholar
+[44]
+    E. Koukoumidis, L.-S. Peh, M.R. Martonosi
+    SignalGuru: leveraging mobile phones for collaborative traffic signal schedule advisory
+    Proceedings of the 9th International Conference on Mobile Systems, Applications, and Services (2011), pp. 127-140
+    CrossRef View Record in Scopus Google Scholar
+[45]
+    J. Barrachina, et al.
+    V2X-d: a vehicular density estimation system that combines V2V and V2I communications
+    Wireless Days (WD), 2013 IFIP (2013), pp. 1-6
+    CrossRef View Record in Scopus Google Scholar
+
+Cited by (3)
+
+    An overview of sensors in Autonomous Vehicles
+    2021, Procedia Computer Science
+    Show abstract
+    Sensor and sensor fusion technology in autonomous vehicles: A review
+    2021, Sensors
+    Ontology-Based Event Modeling and High-Confidence Processing in IoT-Enabled High-Speed Train Control System
+    2021, Journal of Signal Processing Systems
+
+Copyright © 2018 Elsevier Inc. All rights reserved.
+Elsevier logo with wordmark
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy 
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+Copyright © 2022 Elsevier B.V. or its licensors or contributors. ScienceDirect ® is a registered trademark of Elsevier B.V.
+
+ScienceDirect ® is a registered trademark of Elsevier B.V.
+RELX group home page

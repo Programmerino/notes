@@ -1,0 +1,82 @@
+/*****************************************************************************
+ *  tvgrid_syp_1.css                                                         *
+ *                                                                           *
+ *  Stylesheet for the tv grid component of the tv listings application.     *
+ *  It is reccomended that you change only colour values; DO NOT modify any  *
+ *  values which are lised in pixels (px). These values have been carefully  *
+ *  crafted to work with the server-generated HTML in a consistent way.      *
+ *                                                                           *
+ *  @author    Kevin Rose     <jholmes@tvmedia.ca>                          *
+ *  @copyright TV Media Inc, 2009                                           *
+ *                                                                           *
+ *****************************************************************************/
+
+/* the grid <table> */
+.tvm_frm_select  { color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #fff; text-transform: capitalize; margin: 0; padding-top: px; }
+.tvm_tbl_grd {  table-layout: fixed; background-color: #fff; border-color: #333; }
+.tvm_tbl_inner { background-color: #fff }
+.tvm_tbl_outer  {}
+.tvm_td_btn  { text-align: center; color: white; font-size: 10px; font-family: "Trebuchet MS", Geneva, Arial, Helvetica, SunSans-Regular, sans-serif; background-color: #7fa8bb ; text-transform: uppercase; padding:5px;}
+
+.tvm_td_btn_dwn, .tvm_td_btn_ovr {text-align: center; color: white; font-size: 10px; font-family: "Trebuchet MS", Geneva, Arial, Helvetica, SunSans-Regular, sans-serif; background-color: #546F7B ; text-transform: uppercase; padding:5px;}
+#tvm-form-select-top, #tvm-form-select-bottom {display: none}
+.tvm_td_chn { line-height: 14px; height: 30px; border: solid 1px #ccc; padding:7px 0;}
+.tvm_td_grd { text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #222; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_td_grd_r { text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_td_grd_m { text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_td_grd_s { text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_td_head  { padding: 0 0 6px; display:none; }
+.tvm_td_leg_r { background-color: #ffe; border: solid 1px #CCCCCC; text-transform:capitalize; }
+.tvm_td_leg_m { background-color: #FFF6F6; border: solid 1px #CCCCCC; text-transform:capitalize;}
+.tvm_td_leg_s { background-color: #DCEEF3; border: solid 1px #CCCCCC; text-transform:capitalize;}
+.tvm_td_timebar { background-color: #ddd; border:none; border: 1px solid #ddd;}
+.tvm_txt_boiler  { color: black; font-size: 9px; font-family: Verdana, Arial, Helvetica, sans-serif; display:none; }
+.tvm_txt_chan_num { overflow:auto; font-size: 10px; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; }
+.tvm_txt_chan_name { overflow:hidden; font-size: 10px; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; }
+.tvm_txt_ctrls { text-align: right; color: #333; font-size: 8px; font-family: "Trebuchet MS", Geneva, Arial, Helvetica, SunSans-Regular, sans-serif; line-height: 10px; text-transform:capitalize;}
+.tvm_txt_head  { color: black; font-size: 14px; font-family: "Trebuchet MS", Geneva, Arial, Helvetica, SunSans-Regular, sans-serif; font-weight: bold; display:none; }
+.tvm_txt_timebar {font-size: 11px; font-family: Verdana; font-weight: bold; text-transform: uppercase; }
+.tvm_td_grd_ovr {  text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_td_grd_r_ovr { text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_td_grd_m_ovr { text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_td_grd_s_ovr { text-overflow: ellipsis; line-height: 10px; overflow:hidden; cursor: default; height: 28px; border: solid 1px #ccc; color: #333; font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif }
+.tvm_listings_link { color: black; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #fff; margin: 0; padding: 6px; text-align:Center;  }
+.tvm_lineup_selector {text-transform:capitalize; margin-bottom:5px;}
+.tvm_nav_ctrls {margin-top:5px;}
+.tvm_tbl_grd {
+   border-collapse: collapse;
+   border: 0px
+}
+.tvm_legend {display: none;}
+.tvm_date_row {display: none;}
+.tvm_chan_logo {display: none;}
+
+.tvm-cta-grid {
+    background-color: #7fa8bb;
+    color:#fff;
+}
+
+
+.tvm-cta-grid {
+    margin-top: -9px;
+    background-color:#ddd;
+    border:1px solid #ccc;
+    display:inline-block;
+    cursor:pointer;
+    color:#000;
+    font-family:arial;
+    font-size:14px;
+    padding:3px 0px;
+    text-decoration:none;
+    width: 300px;
+    text-align: center;
+}
+.tvm-cta-grid:hover {
+    background-color:#ddd;
+}
+.tvm-cta-grid:active {
+    position:relative;
+    top:1px;
+}
+.tvm-leader-header {color: #000;font-family: georgia, serif; font-size: 11px; text-transform: uppercase; font-weight: bold}
+.tvm-leader-date {font-style: italic; font-weight:normal;}
