@@ -6,6 +6,9 @@
   inputs.obsidianhtml = {
     url = "github:Programmerino/obsidian-html/personal";
   };
+  inputs.nixpkgs = {
+    url = "github:NixOS/nixpkgs";
+  };
 
   outputs = {
     self,
