@@ -5,9 +5,10 @@
   };
   inputs.obsidianhtml = {
     url = "github:Programmerino/obsidian-html/personal";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
   inputs.nixpkgs = {
-    url = "github:NixOS/nixpkgs";
+    url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
   outputs = {
