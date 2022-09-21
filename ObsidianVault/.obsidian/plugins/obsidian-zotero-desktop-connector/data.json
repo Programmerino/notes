@@ -6,6 +6,17 @@
   "pdfExportImageQuality": 100,
   "citeFormats": [
     {
+      "name": "ACM Proceedings Bibliography",
+      "format": "formatted-bibliography",
+      "cslStyle": "acm-sig-proceedings"
+    },
+    {
+      "name": "ACM Proceedings Citation",
+      "format": "pandoc",
+      "cslStyle": "acm-sig-proceedings",
+      "brackets": true
+    },
+    {
       "name": "Policy Debate Cite",
       "format": "formatted-citation",
       "cslStyle": "http://www.zotero.org/styles/policy-debate-citation"

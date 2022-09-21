@@ -1,0 +1,7 @@
+{
+  "pathToPandoc": "/run/current-system/sw/bin/pandoc",
+  "tooltipDelay": 0,
+  "showCitekeyTooltips": true,
+  "hideLinks": true,
+  "pathToBibliography": "/home/davis/Zotero/storage/Library.json"
+}

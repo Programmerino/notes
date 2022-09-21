@@ -51,6 +51,11 @@
     "bitstring",
     " bitstring",
     "bitstring",
-    "bitstring"
+    "bitstring",
+    "intuitionistic",
+    "Martin-Löf",
+    "Fraenkel",
+    "Zermelo",
+    "verifiability"
   ]
 }
