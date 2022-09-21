@@ -1,6 +1,4 @@
 # [{{bibliography}}]({{select}})
-## Summary
-## Cards
 ## Extracts
 ## Content
 {% for attachment in attachments %}

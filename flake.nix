@@ -12,7 +12,7 @@
     url = "github:numtide/flake-utils";
   };
   inputs.obsidianhtml = {
-    url = "github:Programmerino/obsidian-html/personal";
+    url = "github:obsidian-html/obsidian-html";
     inputs.nixpkgs.follows = "nixpkgs";
   };
   inputs.nixpkgs = {
@@ -36,6 +36,19 @@
         project = obsidianhtml.mkProject."${system}" {
           inherit name;
           src = ./ObsidianVault;
+          #included_file_suffixes = [
+          #  "jpg"
+          #  "jpeg"
+          #  "gif"
+          #  "png"
+          #  "bmp"
+          #  "pdf"
+          #  "mp4"
+          #  "webm"
+          #  "wav"
+          #  "mp3"
+          #  "html"
+          #];
           toggles.process_all = true;
           entrypoint = "index.md";
         };

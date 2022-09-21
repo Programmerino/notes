@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "ac417e96bf8d1859",
+        "id": "d2bbcb6111c034be",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "forum analysis",
+                "query": "import template",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -58,12 +58,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 477.5
+    "width": 596.5
   },
   "right": {
     "id": "282606d45673b3c4",
@@ -122,25 +121,34 @@
                 "useHierarchy": true
               }
             }
+          },
+          {
+            "id": "4176fa84fc9c8796",
+            "type": "leaf",
+            "state": {
+              "type": "ReferenceListView",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "ac417e96bf8d1859",
+  "active": "d2bbcb6111c034be",
   "lastOpenFiles": [
-    "index.md",
-    "The Repugnant Conclusion.md",
-    "abortion arguments.md",
-    "Loki's Wager.md",
-    "why good faith arguments are mutually beneficial.md",
-    "argument of the least premises.md",
-    "finding the underlying reason of a position.md",
-    "the balance between moral systems and intuition.md",
-    "the definition of Consequentialism.md",
-    "issues with Consequentialism and Utilitarianism.md"
+    "Callaghan '22.md",
+    "Forum Analysis.md",
+    "Xi '99.md",
+    "forum analysis notes.md",
+    "Functional Programming Languages which compile to JS and support typescript definitions.md",
+    "Swaine '22.md",
+    "SaylorAcademy '22.md",
+    "import template.md",
+    "BMJ '19.md",
+    "issues related to the transgender movement.md"
   ]
 }
