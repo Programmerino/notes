@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Forum Analysis.md",
+            "file": "functional c++.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "import template",
+                "query": "amdahl's",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 596.5
+    "width": 299.5
   },
   "right": {
     "id": "282606d45673b3c4",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Forum Analysis.md",
+                "file": "functional c++.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Forum Analysis.md"
+                "file": "functional c++.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Forum Analysis.md",
+                "file": "functional c++.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,15 +140,15 @@
   },
   "active": "d2bbcb6111c034be",
   "lastOpenFiles": [
-    "Callaghan '22.md",
-    "Forum Analysis.md",
-    "Xi '99.md",
-    "forum analysis notes.md",
-    "Functional Programming Languages which compile to JS and support typescript definitions.md",
-    "Swaine '22.md",
-    "SaylorAcademy '22.md",
-    "import template.md",
-    "BMJ '19.md",
-    "issues related to the transgender movement.md"
+    "8-24-2022 Concurrent.md",
+    "9-23-2022 Concurrent.md",
+    "functional c++.md",
+    "9-9-2022 Concurrent.md",
+    "9-14-2022 Concurrent.md",
+    "Untitled 2.md",
+    "9-12-2022 Concurrent.md",
+    "9-7-22 Concurrent.md",
+    "8-29-22 Concurrent.md",
+    "SilenceRemovers.md"
   ]
 }
