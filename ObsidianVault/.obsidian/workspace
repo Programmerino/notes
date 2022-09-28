@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "functional c++.md",
+            "file": "Hakaru notes.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "amdahl's",
+                "query": "Value iteration",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 323.5
   },
   "right": {
     "id": "282606d45673b3c4",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "functional c++.md",
+                "file": "Hakaru notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "functional c++.md"
+                "file": "Hakaru notes.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "functional c++.md",
+                "file": "Hakaru notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,25 +130,23 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "d2bbcb6111c034be",
   "lastOpenFiles": [
-    "8-24-2022 Concurrent.md",
-    "9-23-2022 Concurrent.md",
-    "functional c++.md",
-    "9-9-2022 Concurrent.md",
-    "9-14-2022 Concurrent.md",
-    "Untitled 2.md",
-    "9-12-2022 Concurrent.md",
-    "9-7-22 Concurrent.md",
-    "8-29-22 Concurrent.md",
-    "SilenceRemovers.md"
+    "Original Hakaru Page/Tutorial - Hakaru Workflow for.md",
+    "Hakaru notes.md",
+    "Original Hakaru Page/Tutorial - Hakaru Workflow for a Discrete Model.md",
+    "Original Hakaru Page/Compiling to C.md",
+    "Original Hakaru Page/Compiling to Haskell.md",
+    "Original Hakaru Page/Quick Start - A Mixture Model Example.md",
+    "Original Hakaru Page/What is Probabilistic Programming?.md",
+    "Advanced Data Structures HW 2.md",
+    "Concurrency Class 2022.md",
+    "Math version of rolling hash function.md"
   ]
 }

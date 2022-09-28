@@ -1,0 +1,1 @@
+Reflexivity for a binary relation $\oplus$ means $a \oplus a$ for all $a$.

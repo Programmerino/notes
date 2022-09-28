@@ -1,0 +1,1 @@
+Antisymmetry for a binary relation $\oplus$ means $a \oplus b$ and $b \oplus a$ implies $a = b$.
