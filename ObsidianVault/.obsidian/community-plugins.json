@@ -3,5 +3,7 @@
   "obsidian-languagetool-plugin",
   "obsidian-annotator",
   "obsidian-diagrams-net",
-  "obsidian-pandoc-reference-list"
+  "obsidian-pandoc-reference-list",
+  "better-word-count",
+  "obsidian-completr"
 ]

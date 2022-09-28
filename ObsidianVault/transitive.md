@@ -1,0 +1,1 @@
+Transitivity for a binary relation $\oplus$ means $a \oplus b$ and $b \oplus c$ implies $a \oplus c$.
