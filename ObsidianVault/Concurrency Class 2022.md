@@ -10,5 +10,4 @@
 ![[9-19-2022 Concurrent]]
 ![[9-21-2022 Concurrent]]
 ![[9-23-2022 Concurrent]]
-
-![[8]]
+![[9-28-2022 Concurrent]]

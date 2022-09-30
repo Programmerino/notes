@@ -56,6 +56,9 @@
     "Martin-Löf",
     "Fraenkel",
     "Zermelo",
-    "verifiability"
-  ]
+    "verifiability",
+    "Hakaru",
+    "Monad-bayes"
+  ],
+  "readableLineLength": false
 }

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Hakaru notes.md",
+            "file": "9-30-2022 Concurrent.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Value iteration",
+                "query": "monad",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -62,7 +62,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 323.5
+    "width": 351.5,
+    "collapsed": true
   },
   "right": {
     "id": "282606d45673b3c4",
@@ -78,14 +79,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hakaru notes.md",
+                "file": "9-30-2022 Concurrent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -95,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hakaru notes.md"
+                "file": "9-30-2022 Concurrent.md"
               }
             }
           },
@@ -105,7 +106,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hakaru notes.md",
+                "file": "9-30-2022 Concurrent.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,19 +135,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 328.1666564941406,
+    "collapsed": true
   },
   "active": "d2bbcb6111c034be",
   "lastOpenFiles": [
-    "Original Hakaru Page/Tutorial - Hakaru Workflow for.md",
-    "Hakaru notes.md",
-    "Original Hakaru Page/Tutorial - Hakaru Workflow for a Discrete Model.md",
-    "Original Hakaru Page/Compiling to C.md",
-    "Original Hakaru Page/Compiling to Haskell.md",
-    "Original Hakaru Page/Quick Start - A Mixture Model Example.md",
-    "Original Hakaru Page/What is Probabilistic Programming?.md",
     "Advanced Data Structures HW 2.md",
-    "Concurrency Class 2022.md",
-    "Math version of rolling hash function.md"
+    "General solution strategy for inequalities.md",
+    "Advanced Data Structures HW 2 Old Solutions.md",
+    "Untitled 1.md",
+    "RL HW 1.md",
+    "Review of probabilistic programming languages.md",
+    "External Pages/Compiling to Haskell.md",
+    "9-28-2022 Concurrent.md",
+    "External Pages/Metropolis Hastings.md",
+    "carp analysis.md"
   ]
 }

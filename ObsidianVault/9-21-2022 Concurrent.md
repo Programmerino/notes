@@ -9,6 +9,6 @@
 * The Sequenced-Before order is the direct interpretation of a program (the obvious one, barring optimizations by the compiler and processor)
 * The Synchronizes-with order connects two threads of execution. For example, if thread 1 obtains a lock and increments a counter by 1 (then unlocking), followed by thread 2 obtaining the lock and incrementing, there is an order between these threads of execution
 	* This can be runtime-based or known at compile-time
-* The Intra-thread happens-before (or program) order is the combination of the Sequenced-Before order and the Synchronizes-with order
+* The ~~Intra-thread~~ happens-before (or program) order is the combination of the Sequenced-Before order and the Synchronizes-with order
 * A data race happens when two critical sections or barrier phases are unordered with respect to each other, access the same memory, and have at least one writing access.
-* Valgrind can be used to detect data races, lock starvation using a timeout, and can trace the intra-thread happens-before order at runtime
+* Valgrind can be used to detect data races, lock starvation using a timeout, and can trace the ~~intra-thread~~ happens-before order at runtime

@@ -18,10 +18,41 @@ if cond: x1 else: x2
 
 Whatever is passed to `return` is what is output to the console  ([[Quick Start - A Mixture Model Example#Creating a Mixture Model|ref]]). The values should be returned in order of known followed by unknown knowledge ([[Tutorial - Hakaru Workflow for a Discrete Model#Modelling|ref]]). For `disintegrate`, the leftmost values are used to create the distribution for the last value. 
 
-``disintegrate`` transforms a Hakaru model to a representation using anonymous functions which can be passed to other applications, and reformulates the program into a function which maps known knowledge into wanted knowledge.
-
 ``hk-maple`` uses Maple to algebraically simplify a disintegrated Hakaru model, and often produces heavily simplified results.
 ## Compile to Haskell
 To compile to Haskell, use ``compile`` ([[Compiling to Haskell#Compiling to Haskell|ref]])
 ## Compile to C
-To compile to C (uses OpenMP for parallelism on multicore machines when called with `-j` to `hkc`) use `hkc foo.hk -o foo.c` or `hkc --make gcc` to directly make the executable ([[Compiling to C#Compiling to C|ref]], [[Compiling to C#Parallel Programs|ref]]).
+To compile to C (uses OpenMP for parallelism on multicore machines when called with `-j` to `hkc`) use `hkc foo.hk -o foo.c` or `hkc foo.hk --make gcc` to directly make the executable ([[Compiling to C#Compiling to C|ref]], [[Compiling to C#Parallel Programs|ref]]).
+## Primitive Probability Distributions
+![[Primitive Probability Distributions]]
+## Functions
+```hakaru
+def fnName(x1 type, x2 type) rettype:
+	x1 + x2
+
+fnName = fn x1 x2 retType: x1 + x2
+```
+([[Functions|ref]])
+![[Types and Coercions]]
+## Arrays and Plate
+![[Arrays and Plate#Arrays]]
+``size(a)`` gets the length of an array as a `nat`
+([[Arrays and Plate#Array size and indexing|ref]]).
+![[Arrays and Plate#Plate]]
+![[Loops]]
+![[Expect]]
+
+## Transformations
+`normalize` removes weights from probability distributions ([[Normalize|ref]]).
+``disintegrate`` transforms a Hakaru model to a representation using anonymous functions which can be passed to other applications, and reformulates the program into a function which maps known knowledge into wanted knowledge.
+``density`` generates a function which computes the density of a distribution at a point. A program cannot use return, but instead needs to return a measure to use this ([[Density|ref]]).
+### Maple
+``hk-maple -c Simplify prog.hk`` optimizes a program for sampling efficiency ([[Hakaru-Maple#Simplify|ref]])
+`hk-maple -c disintegrate prog.hk` is an alternative implementation for the built-in disintegrate. It should be used for programs with "superpositions with complicated conditions" or "complicated rational polynomials" ([[Hakaru-Maple#Disintegrate|ref]])
+#### Summarize
+![[Hakaru-Maple#Summarize]]
+## Metropolis Hastings
+![[Metropolis Hastings]]
+
+## Misc
+``reduce(fn, init, arr)`` is available. ([[Examples#Gaussian Mixture Model|ref]])

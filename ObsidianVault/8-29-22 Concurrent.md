@@ -10,6 +10,7 @@
 	* Conflict misses
 		* There aren't enough cache lines available for a set, so we need to evict
 		* This can happen if you are using a 2D array with a certain element data size, and you skip by row
+	* [[9-28-2022 Concurrent|Contention misses]]
 * CPUs often perform prefetching, which is when they recognize a pattern of data access and “prefetch” what they expect will be asked for into the cache ahead of time
 	* In a stream, it will fetch the next line (e.g., an array), and in stride, it will skip an amount and fetch
 		* On Intel, any access will prefetch one more line on the assumption it's a stream
