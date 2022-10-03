@@ -1,0 +1,1 @@
+Systems which allow constructing the set of all [[ordinal numbers]] are inconsistent
