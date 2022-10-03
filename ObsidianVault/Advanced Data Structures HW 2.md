@@ -78,6 +78,29 @@ $$
 
 where $\operatorname{VAR}(X)$ denotes its variance. Using this inequality and results from the two previous problems, prove that the probability that if we insert $n$ elements in a hashtable of size $\beta n$, we have $\frac{n-1}{2 \beta}+c n$ or more collisions is at most $O\left(\frac{1}{\beta c^{2} n}\right)$ for some $c>0$. This is a vanishingly small probability if $n$ is large.
 
+%%
+From [[Chebyshev's Inequality]]
+%%
+First, I provide an easier interpretation of Chebyshev's inequality:
+Where $X$ is a random variable, $\mu$ is the expected value/mean, $\sigma$ is the standard deviation (square root of variance), and $k$ can be any real number greater than 0, the probability that values lie outside
+$$
+(\mu-k\sigma, \mu + k\sigma)
+$$ is less than $\frac{1}{k^2}$. Since I want the upper bound to be $\frac{n-1}{2\beta} + cn$, I simply set the upper bound to this value and solve for $k$ so it can be substituted into the RHS:
+$$
+\begin{aligned}
+\mu+k\sigma &= \frac{n-1}{2\beta} + cn\\
+\frac{n-1}{2\beta} + k\sqrt{\frac{4 n}{3 \beta}}&=\frac{n-1}{2\beta} + cn\\
+k\sqrt{\frac{4 n}{3 \beta}}&= cn\\
+k\frac{2\sqrt{n}}{\sqrt{3}{\sqrt{\beta}}}&= cn\\
+k2\sqrt{n}&= cn\sqrt{3}{\sqrt{\beta}}\\
+k&= \frac{cn\sqrt{3}{\sqrt{\beta}}}{2\sqrt{n}}\\
+k&= \frac{c\sqrt{n}\sqrt{3}{\sqrt{\beta}}}{2}\\
+\rightarrow\frac{1}{k^2}&=\frac{1}{\frac{c\sqrt{n}\sqrt{3}{\sqrt{\beta}}}{2}^2}\\
+&=\frac{1}{\frac{3nc^2\beta}{4}}\\
+&=\frac{4}{3nc^2\beta}\\
+&\rightarrow O\left(\frac{1}{\beta c^2n}\right)\\
+\end{aligned}
+$$
 Consider the following design using multiple hash tables: we will use some number $t+1$ hash tables $T_{0}, \ldots, T_{t}$, wherein each $T_{j}$ uses randomly selected hash function $h_{j}$ drawn from some universal family $\mathcal{H}$ satisfying the conditions laid out in the previous problems.
 
 The insertion algorithm for a key $x$ is simple: starting with the hashtable $j=0$, we try to insert $x$ into hash table $T_{j}$ using hash function $h_{j}$. If $T_{j}\left[h_{j}[x]\right]$ slot is already occupied by another key, we increment $j$ and continue. Otherwise, we insert element $x$ into hashtable $T_{j}$. If this process reaches $j>t$ without inserting $x$, we declare a failure, draw new random hash functions and rehash.
@@ -85,6 +108,12 @@ The insertion algorithm for a key $x$ is simple: starting with the hashtable $j=
 We will insert $n$ distinct keys into the overall data structure and each table has size $2 n$.
 
 (D, 5 points) Prove that with probability at least $1-O\left(\frac{1}{n}\right)$, at least $\frac{n}{2}$ will be reside in the hash table $T_{0}$.
+
+$$
+\frac{n-1}{4}
+$$
+
+Reusing the above Chebyshev's inequality, we can construct the range $(0, \frac{n}{2} - 1)$. Anything outside this range represents the probability $\frac{n}{2}$ will reside outside the hash table.
 
 (E, Extra Credit) Suppose we $\frac{n}{c_{i}}$ elements cause collisions in the first $i-1$ hash tables and thus "percolate" to the $i^{t h}$ hash table. Prove that with probability at least $1-O\left(\frac{1}{n}\right)$, fewer than $\frac{n}{2 c_{i}^{2}}$ will be inserted into the $i+1^{\text {th }}$ hash table.
 

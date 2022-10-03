@@ -1,0 +1,1 @@
+Ordinal numbers are labels with a total order
