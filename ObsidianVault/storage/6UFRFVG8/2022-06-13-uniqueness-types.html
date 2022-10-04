@@ -1,0 +1,271 @@
+<!DOCTYPE html> <html style lang=en><!--
+ Page saved with SingleFile 
+ url: https://futhark-lang.org/blog/2022-06-13-uniqueness-types.html 
+ saved date: Mon Oct 03 2022 23:51:12 GMT-0600 (Mountain Daylight Time)
+--><meta charset=utf-8>
+<title>Uniqueness Types and In-Place Updates</title>
+<style>body{font-family:sans-serif;padding:0px;margin:0px;margin-left:auto;margin-right:auto;width:75%;max-width:65em;overflow-y:scroll;line-height:1.4;background-color:#fff9e5;color:black}code{font-size:13pt;background-color:#d8d3c3}h1{font-size:30px}h3{font-size:18px}pre{font-family:Courier,Monospace;line-height:1.4;padding:0.5em;margin:0;background-color:#d8d3c3;color:black;min-width:100%;max-width:none;display:inline-block}a{text-decoration:none;color:#428bca;font-weight:bold}a:visited{text-decoration:none;color:#0a4080;font-weight:bold}.titlelink,.titlelink:visited{color:black}#header{margin-bottom:4em;padding:12px 0px 12px 0;background-color:#5f021f;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiCiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIKICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiCiAgIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIgogICB3aWR0aD0iMTY4LjM4NzczbW0iCiAgIGhlaWdodD0iMTA5LjY4Nzc4bW0iCiAgIHZpZXdCb3g9IjAgMCAxNjguMzg3NzMgMTA5LjY4Nzc4IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc4IgogICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjkxIHIxMzcyNSIKICAgc29kaXBvZGk6ZG9jbmFtZT0ibG9nby13aGl0ZS5zdmciCiAgIGlua3NjYXBlOmV4cG9ydC1maWxlbmFtZT0iL2hvbWUvYXRoYXMvUGljdHVyZXMvZnV0aGFyay5wbmciCiAgIGlua3NjYXBlOmV4cG9ydC14ZHBpPSI5NiIKICAgaW5rc2NhcGU6ZXhwb3J0LXlkcGk9Ijk2Ij4KICA8ZGVmcwogICAgIGlkPSJkZWZzMiIgLz4KICA8c29kaXBvZGk6bmFtZWR2aWV3CiAgICAgaWQ9ImJhc2UiCiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIgogICAgIGJvcmRlcmNvbG9yPSIjNjY2NjY2IgogICAgIGJvcmRlcm9wYWNpdHk9IjEuMCIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOnpvb209IjAuOTg5OTQ5NDkiCiAgICAgaW5rc2NhcGU6Y3g9IjYxLjg4NDA4NCIKICAgICBpbmtzY2FwZTpjeT0iMjgzLjM5OTczIgogICAgIGlua3NjYXBlOmRvY3VtZW50LXVuaXRzPSJtbSIKICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJsYXllcjEiCiAgICAgc2hvd2dyaWQ9ImZhbHNlIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDE2IgogICAgIGlua3NjYXBlOndpbmRvdy14PSIwIgogICAgIGlua3NjYXBlOndpbmRvdy15PSIyNyIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGZpdC1tYXJnaW4tdG9wPSIwIgogICAgIGZpdC1tYXJnaW4tbGVmdD0iMCIKICAgICBmaXQtbWFyZ2luLXJpZ2h0PSIwIgogICAgIGZpdC1tYXJnaW4tYm90dG9tPSIwIgogICAgIGlua3NjYXBlOnBhZ2VjaGVja2VyYm9hcmQ9InRydWUiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNSI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICBpbmtzY2FwZTpsYWJlbD0iTGF5ZXIgMSIKICAgICBpbmtzY2FwZTpncm91cG1vZGU9ImxheWVyIgogICAgIGlkPSJsYXllcjEiCiAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE4LjczNjY2NSwtNDUuODU4MDAyKSI+CiAgICA8cGF0aAogICAgICAgc3R5bGU9ImZpbGw6I2ZmZjllNTtzdHJva2Utd2lkdGg6MTtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZTtzdHJva2Utb3BhY2l0eToxIgogICAgICAgZD0iTSA1NS41NzQzNTYsMTEzLjMxODMzIEMgNzMuMjU5MTY5LDg5LjI5Mzg0NSA5NC44OTcxNzEsODMuMDk0MzI4IDEwNy40NzE0Nyw4Ni45OTI0NDQgYyAzMC41NTMyOSw5Ljg4MTgwNiA0Ni4xODA2NiwxNy4zMzc1ODYgNDYuNTQzMTksNy41MjY4OTIgNi45OTExOCwwLjI1ODU5MyAxNC4wNTY1LDI5LjE2NTcxNCAyOS4wMDA4NiwzMy40NTgyOTQgOS4zNTQwOCwzLjM5NDczIDEuMzM0NzgsNS40NDg3NSAtMTAuMDI1MTcsMTUuMTUwMzkgLTI1LjQzMzUsMjAuNzMyNjkgLTE1MC44MTg4OTIsMTguNDk3MDIgLTExNy40MTU5OTQsLTI5LjgwOTY5IHogTSAxOC43MzY2NjUsMTA5Ljc0Mjg3IEMgMTguNzc3MDksMTAyLjUxMjY0IDM0LjM1NjI1NiwxMDIuMDM3NDQgNDYuMjUzMSwxMDAuOTAwMyA1My40Nzc4MDMsODkuMTA5MzE3IDI2Ljc3NjY4OSw3NC41NTQyOTkgMjYuNzc2Njg5LDc0LjU1NDI5OSBjIDEuNDY4OTQ1LC02LjMxOTg5MiAyMi45Nzg3MjcsLTIuMTc1MjczIDQwLjY0Nzc0OCw2Ljc3MzY4MyAxMi43OTc3NTEsLTcuMDUyMzA5IC01LjQyOTE2LC0zMS41NDU0NTEgLTUuNDI5MTYsLTMxLjU0NTQ1MSA1LjA1NDA2NCwtNi42MDk2NTYgMjkuMzUxMjI2LDE1LjIzMjg3MyAzMy42MjYzMjgsMjIuOTE2MTc4IDEwLjQxMjMzNSwwLjQxNTI4OCAxMC41NTM4MjUsLTE3Ljg3NTgzNSA1Ljc3NTExNSwtMjUuOTIwMTQxIDUuMTQ1MjksLTYuMTY3MzY0IDIyLjg1NTMzLDIwLjI3NTc5MSAyNi43Mzg1MiwzMS4wOTY5NTMgNy41NzYxNSwwLjIwMTQ1NiA3LjU0NDQsLTQuNDgxMzI1IDQuNzAzNjUsLTE3LjUzNjc1NyA0LjE1NzM0LC00Ljg4MDg0NCAxNS4yNjg3NiwyMS40MjE1NTYgMTUuNTEzMjIsMjcuODMzNzk5IDAuMDc1OCw4LjE1MjAxNSAtMTUuNTczOTksLTEuMDgwMDk1IC0yMS40NzY0OSwtMi4yOTk0MTIgLTkuOTYwNjcsLTQuMTY5NDQgLTIwLjczNTkzLC04LjAxMjI3MyAtMzEuNjc1NjMsLTUuNzY3MDU2IC0xNi40MzY2MjUsMi4wOTUzODcgLTI4Ljc1MzEzNiw5LjQyODM2MSAtNDEuMjkwNDI0LDIzLjg2MTEyNSAtMTguMTAzMzY3LDI1LjQ1NzUgNS4wNTA5NjEsMTIuMDkxMTggLTM1LjE3MjkwMSw1Ljc3NTY1IHoiCiAgICAgICBpZD0icGF0aDQ1MzQiCiAgICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgICAgc29kaXBvZGk6bm9kZXR5cGVzPSJjY2NjY2NjY2NjY2NjY2NjY2NjYyIgLz4KICA8L2c+Cjwvc3ZnPgo=);background-size:6em;background-position:5% 30%;background-repeat:no-repeat}#logo{display:block;font-size:30px;color:#fff9e5;margin-left:200px;position:relative}#logo a{text-decoration:none;color:#fff9e5;font-weight:normal}#slogan{font-size:14px;color:#fff9e5;margin-top:10px;margin-left:200px}#content{padding:1.5em;padding-top:0.5em;vertical-align:top}#footer{font-size:10pt;padding:20px}#footer div{text-align:right}.postmetadata{margin-top:-1em;font-size:10pt}#menu{list-style-type:none;padding:0;margin:0;margin-top:-1em;position:relative;width:100%;top:1em}#menu li{margin:0;color:#fff9e5}#menu li a{background-color:#5f021f;color:#fff9e5;text-decoration:none}#menu #chosen,#menu #chosen a,#menu a:hover{color:#5f021f;background-color:#fff9e5}@media (min-width:950px){#menu{display:block;padding-top:2em;text-align:center}#menu li{margin:0;text-align:center;display:inline;white-space:nowrap}#menu li a{padding:1em;border:1px solid black}}@media (max-width:949px){body{width:100%}ol{padding-left:0}#header{background:#5f021f}#logo{margin-left:20px}#slogan{margin-left:20px}#menu{padding-top:1em;padding-bottom:1em}#menu li{text-align:left}#menu li a{display:block;padding-left:1em;padding-top:0.5em;padding-bottom:0.5em}}li{margin-top:1em}li p:first-child{margin-top:0}li p:last-child{margin-bottom:0}.sourceCode span.kw{font-weight:bold}.sourceCode span.dv{color:black}.sourceCode span.co{color:#333333;font-style:italic}.github-fork-ribbon{width:12.1em;height:12.1em;position:absolute;overflow:hidden;top:0;right:0;z-index:9999;pointer-events:none;font-size:13px;text-decoration:none;text-indent:-999999px}.github-fork-ribbon:before,.github-fork-ribbon:after{position:absolute;display:block;width:15.38em;height:1.54em;top:3.23em;right:-3.23em;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.github-fork-ribbon:before{content:"";padding:.38em 0;background-color:#a00;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.15)));background-image:-webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.15));background-image:-moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.15));background-image:-ms-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.15));background-image:-o-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.15));background-image:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.15));-webkit-box-shadow:0 .15em .23em 0 rgba(0,0,0,0.5);-moz-box-shadow:0 .15em .23em 0 rgba(0,0,0,0.5);box-shadow:0 .15em .23em 0 rgba(0,0,0,0.5);pointer-events:auto}.github-fork-ribbon:after{content:attr(data-ribbon);color:#fff;font:700 1em"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.54em;text-decoration:none;text-shadow:0-.08em rgba(0,0,0,0.5);text-align:center;text-indent:0;padding:.15em 0;margin:.15em 0;border-width:.08em 0;border-style:dotted;border-color:#fff;border-color:rgba(255,255,255,0.7)}</style>
+<meta name=description content="A high-performance and high-level purely functional data-parallel array programming language that can execute on the GPU and CPU.">
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<link rel=icon type=image/png href="data:image/png;base64,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" sizes=32x32><link rel=canonical href=https://futhark-lang.org/blog/2022-06-13-uniqueness-types.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+ <body>
+ <div id=header>
+ <span id=logo><a href=https://futhark-lang.org/>The Futhark Programming Language</a></span>
+ <div id=slogan>
+ High-performance purely functional data-parallel array programming
+ </div>
+ <ul id=menu><li><a href=https://futhark-lang.org/index.html>Overview</a><li><a href=https://futhark-lang.org/examples.html>Examples</a><li><a href=https://futhark-lang.org/docs.html>Docs</a><li><a href=https://futhark-lang.org/publications.html>Publications</a><li><a href=https://futhark-lang.org/performance.html>Gotta Go Fast!</a><li><a href=https://futhark-lang.org/getinvolved.html>Get Involved</a><li id=chosen><a href=https://futhark-lang.org/blog.html>Blog</a></ul>
+ </div>
+ <a class=github-fork-ribbon href=https://github.com/diku-dk/futhark data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+ <div id=content>
+ <strong>We are hiring a PhD student to do research on functional
+ high performance computing, including work on Futhark
+ itself. <a href="https://employment.ku.dk/phd/?show=157471">See
+ here</a> for more details.</strong>
+ <h1><a href=# class=titlelink>Uniqueness Types and In-Place Updates</a></h1>
+<div class=postmetadata>
+ Posted on June 13, 2022
+ 
+</div>
+<p>I recently wrote about how Futhark had been <a href=https://futhark-lang.org/blog/2022-04-12-the-final-problem.html>relieved of its last
+design defect and was now perfect</a>.
+It turns out that wings made of wax melt quite easily. While I am
+falling, I might as well write about one part of Futhark’s design
+that, while not <em>crucially</em> flawed, is somewhat unpleasant. This
+dubious feature is Futhark’s uniqueness type system, supporting the
+language feature we sometimes (unfortunately) call <em>in-place updates</em>.
+Although it serves a purpose, its interaction with other language
+features is problematic.</p>
+<h3 id=basics-of-uniqueness-types><a href=#basics-of-uniqueness-types id=basics-of-uniqueness-types-link class=titlelink title=basics-of-uniqueness-types>Basics of uniqueness types</a></h3>
+<p>The existence of uniqueness types in Futhark is ultimately rooted in a
+desire to accommodate a certain style of programming. Boiled down to a
+single construct, we want to support <code>with</code>-expressions:</p>
+<div class=sourceCode id=cb1><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb1-1><a href=#cb1-1 aria-hidden=true tabindex=-1></a>A <span class=kw>with</span> [i] = v</span></code></pre></div>
+<p>Semantically, this expression produces an array with the same elements
+as <code>A</code>, except that the element at index <code>i</code> is replaced by <code>v</code>.
+Nothing fancy, purely functional, and you could easily write such a
+function on lists in any functional language. But in Futhark, we want
+to make a further guarantee: the run-time cost of a <code>with</code> expression
+must be proportional to the size of the value <code>v</code>, <em>not</em> the size of
+the full array <code>A</code>. In practice, this means that copying all of <code>A</code>
+is not allowed, and so the only straightforward implementation
+technique is to perform a write directly to the storage of <code>A</code> - what
+we call an <em>in-place update</em>. But since Futhark is a purely
+functional language, we don’t want the user to <em>observe</em> that a
+destructive update has been performed. This feature is about the
+<a href=https://futhark-lang.org/blog/2022-01-27-cost-models-are-contracts.html><em>cost model</em></a>, not of the
+<em>semantics</em> of the language.</p>
+<p>So how do we support such a feature, which we wish to implement with a
+destructive in-place update, without turning Futhark into an
+imperative language? Our approach is to introduce type rules that
+check that the “old” value of A is never used again, meaning that the
+<em>effect</em> of the in-place-update cannot possibly be observed. This is
+precisely what Futharks’s uniqueness type system makes possible: after
+<code>A with [i] = v</code> we mark <code>A</code> as <em>consumed</em> and mark any subsequent use
+as a compile-time error.</p>
+<p>This has some overlap with <a href=https://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems>linear and affine type
+systems</a>,
+where values must be used <em>exactly once</em> (linear) or <em>at most once</em>
+(affine). Most operations on linear values return a <em>new</em> linear
+value, that you can use for further operations. Linear type systems
+are particularly useful for resource management - by requiring that a
+value must be used <em>exactly once</em>, you make it impossible to forget to
+free a resource (such as memory). Only the deallocation function will
+accept a linear argument without returning a new linear value.</p>
+<p>Linear arrays would permit efficient <code>with</code> expressions, but the type
+system would be cumbersome. For example, while linear types have only
+a single notion of <em>use</em>, in Futhark we wish to distinguish a
+non-destructive <em>observation</em> from a destructive <em>consumption</em>. An
+array can be observed multiple times, but only consumed once. This is
+needed to allow expressions such as the following:</p>
+<div class=sourceCode id=cb2><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb2-1><a href=#cb2-1 aria-hidden=true tabindex=-1></a>A <span class=kw>with</span> [i] = A[i] + <span class=dv>1</span></span></code></pre></div>
+<p>All observations of an array must happen <em>before</em> a consumption (if
+any). The notions of “before” and “after” are defined syntactically,
+by specifying an evaluation order. It could also be done by defining
+rules based on actual data dependencies, which is what the compiler
+actually does internally, but we judged that at the surface language
+level, it’s more important to have simple than flexible rules. This
+is not an issue that is particularly important in practice. It does
+mean that the following code fragment will not type-check:</p>
+<div class=sourceCode id=cb3><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb3-1><a href=#cb3-1 aria-hidden=true tabindex=-1></a><span class=kw>let</span> B = A <span class=kw>with</span> [i] = v</span>
+<span id=cb3-2><a href=#cb3-2 aria-hidden=true tabindex=-1></a><span class=kw>let</span> x = A[i]</span></code></pre></div>
+<p>Here <code>A</code> is used after it has been consumed. It works if we flip the
+two lines:</p>
+<div class=sourceCode id=cb4><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb4-1><a href=#cb4-1 aria-hidden=true tabindex=-1></a><span class=kw>let</span> x = A[i]</span>
+<span id=cb4-2><a href=#cb4-2 aria-hidden=true tabindex=-1></a><span class=kw>let</span> B = A <span class=kw>with</span> [i] = v</span></code></pre></div>
+<h3 id=alias-analysis><a href=#alias-analysis id=alias-analysis-link class=titlelink title=alias-analysis>Alias analysis</a></h3>
+<p>What makes this entire business particularly hairy is that consumption
+of <code>A</code> also applies to <em>aliases</em> of <code>A</code>. Two values are aliased if
+they <em>might</em> share storage at run-time. The rules for aliasing are
+syntax-driven and mostly based on intuition (because we have neglected
+to document them properly):</p>
+<ul>
+<li><p><code>A</code> aliases <code>A</code>, meaning that after <code>let B = A</code>, <code>B</code> aliases <code>A</code>.</p></li>
+<li><p><code>A[i]</code> aliases <code>A</code> if the result is <em>not</em> a primitive type.</p></li>
+<li><p><code>if x then y else z</code> aliases the union of the aliases of <code>y</code> and <code>z</code>.</p></li>
+<li><p>An array literal <code>[x,y,z]</code> has no aliases. Operationally speaking,
+it is freshly constructed.</p></li>
+</ul>
+<p>And so on. There is a rule for each syntactic construct, and the type
+checker has to carefully track aliases even when names go out of
+scope, but it is ultimately more convoluted than truly complicated.
+And of course, it is always possible to <code>copy</code> a value to obtain an
+alias-free version, with no <em>semantic</em> impact. I want to emphasise
+this part: aliases <em>never</em> affect the semantics of the program, <em>only</em>
+whether it will type check. An alias-related type error can <em>always</em>
+be fixed by copying.</p>
+<h4 id=functions><a href=#functions id=functions-link class=titlelink title=functions>Functions</a></h4>
+<p>The real problem occurs for function applications, as syntax-driven
+alias analysis is <em>intra</em>-procedural. This is not just for
+implementation simplicity, but also to ensure compositionality. The
+types of functions should make it obvious whether they can be
+composed, and not be up to some complicated black-box alias analysis.
+This means that function types need to contain the following
+information:</p>
+<ol type=1>
+<li><p>To which extent a function consumes its argument(s), e.g.&nbsp;a
+function that uses <code>with</code>-expressions.</p></li>
+<li><p>How the result of the function aliases its arguments, e.g.&nbsp;consider
+a function like <code>transpose</code>, which runs in constant time by merely
+returning a “view” of the original array, without copying it.</p></li>
+</ol>
+<p>It is for <em>this</em> purpose, describing the behaviour of functions, that
+we need uniqueness types, although I think we have diverged so much
+from their origin in <a href=https://wiki.clean.cs.ru.nl/Clean>Clean</a> that
+the name is no longer appropriate.</p>
+<p>As a starting point, if a function <code>f</code> has type <code>a -&gt; b</code>, then it does
+<em>not</em> consume its argument (of type <code>a</code>), and its result (of type <code>b</code>)
+<em>may</em> alias the argument.</p>
+<p>If <code>f</code> has type <code>*a -&gt; b</code>, then <code>f</code> consumes its argument, and the
+result may have aliases. This last part doesn’t matter for a function
+that takes a single argument, but for a function of type <code>a -&gt; *a -&gt; b</code>, the result may alias the first <code>a</code>. Such a function that consumes
+its argument behaves a lot like a <code>with</code> expression. After an
+application <code>f A</code>, we may no longer use <code>A</code>.</p>
+<p>If a function <code>f</code> has type <code>a -&gt; *b</code>, then it does not consume its
+argument, and the result has no aliases.</p>
+<p>These rules are relatively simple, but we need an additional
+constraint: the result of a function may not alias a global variable.
+This is because the type rules only allow two cases: either the result
+of a function call to alias the function arguments, or it doesn’t
+alias anything. We have no way to express that it may alias some
+global variable. As with all other alias-related errors, this can be
+fixed by using <code>copy</code> to break the aliasing.</p>
+<h4 id=uniqueness><a href=#uniqueness id=uniqueness-link class=titlelink title=uniqueness>Uniqueness?</a></h4>
+<p>So why are we using the term “uniqueness types” at all? In the
+original design, a type of form <code>*a</code> was called <em>unique</em>. It was
+supposed to denote that when you had a variable of this type, you held
+the <em>only</em> reference to that type. When this is the case, you can
+clearly change the value without affecting anyone else. But we almost
+immediately diverged from this simple concept, as we wanted to permit
+a style of programming where an array can be “observed” (e.g.&nbsp;indexed)
+many times before it is “consumed”. So gradually we have moved to a
+design that is more focused on the notions of <em>consumption</em> and
+<em>aliases</em>, as this is what really matters.</p>
+<h3 id=complicating-the-types><a href=#complicating-the-types id=complicating-the-types-link class=titlelink title=complicating-the-types>Complicating the types</a></h3>
+<p>In principle, we could complicate the type system further. Imagine a
+function that accepts two arguments and returns a pair, each component
+of which will alias a corresponding argument. This is currently not
+expressible. Either a function result aliases <em>nothing</em> or it aliases
+<em>all</em> arguments. It is not difficult to conceive of a more elaborate
+type system where the potential aliases of return values are more
+explicit:</p>
+<div class=sourceCode id=cb5><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb5-1><a href=#cb5-1 aria-hidden=true tabindex=-1></a>(x: a) -&gt; (y: b) -&gt; (a@{x}, b@{y})</span></code></pre></div>
+<p>In practice, this has not yet proven necessary or even useful. Most
+uses of uniqueness in real Futhark programs tends to be quite
+straightforward and localised.</p>
+<p>A more significant problem is that uniqueness types do not interact
+well with higher-order functions. Consider an application function:</p>
+<div class=sourceCode id=cb6><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb6-1><a href=#cb6-1 aria-hidden=true tabindex=-1></a>apply : (a -&gt; b) -&gt; a -&gt; b</span></code></pre></div>
+<p>By its type, <code>apply</code> accepts a function that does not consume its
+argument. We can define a “consuming apply” of the following type:</p>
+<div class=sourceCode id=cb7><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb7-1><a href=#cb7-1 aria-hidden=true tabindex=-1></a>capply : (*a -&gt; b) -&gt; *a -&gt; b</span></code></pre></div>
+<p>The programmer then has to pick the right one for each situation.
+Although perhaps clumsy, it has not proven a major problem in
+practice. One reason, as usual, is that you can always obtain a
+“unique” (alias-free) array through <code>copy</code>. Since this entire
+business is solely about the <em>cost model</em>, not semantics, copying is
+always viable, as long as you don’t do it inside loops in ways that
+would affect the asymptotic cost of the program.</p>
+<p>A slightly more subtle constraint is that a function is not allowed to
+consume any free variables. Example:</p>
+<div class=sourceCode id=cb8><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb8-1><a href=#cb8-1 aria-hidden=true tabindex=-1></a><span class=kw>let</span> B = copy A                   <span class=co>-- Fresh, no aliases</span></span>
+<span id=cb8-2><a href=#cb8-2 aria-hidden=true tabindex=-1></a><span class=kw>let</span> f (i: i64) = B <span class=kw>with</span> [i] = <span class=dv>0</span>  <span class=co>-- No!</span></span></code></pre></div>
+<p>At the point of definition, we have no idea how often <code>f</code> will be
+applied, and since an array must be consumed <em>at most once</em>, we forbid
+the definition of the function <code>f</code>. As an example of how it could go
+wrong, passing <code>f</code> to <code>map</code> would obviously result in <code>f</code> being
+applied multiple times. On the other hand, passing <code>f</code> to <code>apply</code>
+would result in only a single application.</p>
+<p>This could perhaps be solved by using an effect system to indicate
+which variable would be consumed. Then <code>f</code> would have type</p>
+<div class=sourceCode id=cb9><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb9-1><a href=#cb9-1 aria-hidden=true tabindex=-1></a>f : i64 -&gt;{B} []i64</span></code></pre></div>
+<p>indicating that it consumes <code>B</code>. The <code>map</code> function would then have
+type</p>
+<div class=sourceCode id=cb10><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb10-1><a href=#cb10-1 aria-hidden=true tabindex=-1></a>map : (a -&gt;{} b) -&gt;{} []a -&gt;{} []b</span></code></pre></div>
+<p>indicating that the function passed in must have no effects. On the
+other hand, <code>apply</code> would be</p>
+<div class=sourceCode id=cb11><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb11-1><a href=#cb11-1 aria-hidden=true tabindex=-1></a>apply : (a -&gt;{E} b) -&gt;{} a -&gt;{E} b</span></code></pre></div>
+<p>where <code>E</code> is an <em>effect variable</em>, indicating that <code>apply</code> has the
+same effect as the function being applied. For brevity, we’d probably
+write the effect-free function arrow <code>-&gt;{}</code> as just <code>-&gt;</code>. This may
+look like an esoteric case, but in Futhark we want to support a
+programming style based on pipelines:</p>
+<div class=sourceCode id=cb12><pre class="sourceCode futhark"><code class="sourceCode futhark"><span id=cb12-1><a href=#cb12-1 aria-hidden=true tabindex=-1></a>x |&gt; f |&gt; g |&gt; h</span></code></pre></div>
+<p>The pipeline operator <code>|&gt;</code> is exactly <code>apply</code>, although with its
+arguments flipped. Thus, in order to allow such pipelines where some
+of the functions consume their arguments, we would need some sort of
+<em>consumption polymorphism</em>. Alternatively, we need dedicated
+consuming operators.</p>
+<h3 id=design-goals><a href=#design-goals id=design-goals-link class=titlelink title=design-goals>Design goals</a></h3>
+<p>Apart from enabling a certain implementation technique while remaining
+purely functional, the design of Futhark’s uniqueness types was also
+shaped by other goals. The main one is simplicity, and particularly
+that programmers can ignore this entire business whenever it is not
+needed. We are particularly concerned with not making function types
+too complicated in the common case. The current situation is mostly
+tolerable this regard, with the only blemish being that most functions
+have a <code>*</code> in their return type to indicate that the result has no
+aliases. It turns out that most functions produce “fresh” arrays, and
+if this was not part of the types of standard functions, using <code>with</code>
+would be very annoying as most things would alias each other.
+Alternatively, we could change the design to require an annotation for
+those functions that produce aliased results, which would instead
+complicate the types of <code>transpose</code>, <code>take</code>, <code>flatten</code>, <code>id</code>, etc.</p>
+<p>One could argue that for a function</p>
+<pre><code>val map 'a 'b : (a -&gt; b) -&gt; []a -&gt; *[]b</code></pre>
+<p>we could infer that the result cannot <em>possibly</em> alias the arguments,
+as the types differ. There is no way to construct an array <code>[]b</code> that
+aliases an array <code>[]a</code> unless <code>a = b</code>, which <code>map</code> cannot assume.
+This would cut down on noise for certain polymorphic functions, but it
+would remain for many other functions.</p>
+<p>Generally, the language complexity budget for Futhark is that it
+should be at about the level of Standard ML or Haskell 98. There are
+many complex parallel languages. Our research and design hypothesis
+is that a usable and effective high-level data parallel language does
+not have to be particularly complicated. We wish to preserve a
+semantics that is basically the lambda calculus with arrays, and in
+which programs are expressed using straightforward transformations of
+values. The <code>with</code> construct is a good example of this idea, and I
+have long regretted that we used the term “in-place updates” for this
+language feature, as it needlessly conflates the implementation with
+the semantics.</p>
+<p>An open question is whether this feature is really <em>needed</em>. After
+all, Futhark is a parallel and functional language. Why do we need a
+feature that is mostly useful when writing imperative-ish code? The
+answer is that many parallel programs contain a sequential <em>core</em>
+inside all of those parallel loops, and if that core is not efficient,
+then neither is the program as a whole. The <code>with</code> expression is also
+not the only ultimate source of consumption - <code>scatter</code> is a kind of
+parallel <code>with</code>, and as far as we know it is needed to express certain
+highly irregular algorithms, such as graph operations, with the right
+asymptotic efficiency. I really wish we could get rid of in-place
+updates, uniqueness types, consumption, aliasing, or whatever you want
+to call it, but so far it appears necessary to support the kinds of
+programs that we want to write.</p>
+ </div>
+ <div id=footer>
+ <div id=DIKU>Developed
+ at <a href=http://www.diku.dk/>DIKU</a>
+ (<a href=https://futhark-lang.org/license.html>copyright</a>)</div>
+ </div>
+ 

@@ -1,1 +1,1 @@
-Systems which allow constructing the set of all [[ordinal numbers]] are inconsistent
+Systems which allow constructing the set of all [[ordinal numbers]] are inconsistent. When applied to type theory, it is called Girard's paradox, which uses the same proof to demonstrate that systems which allow a type of types are inconsistent.

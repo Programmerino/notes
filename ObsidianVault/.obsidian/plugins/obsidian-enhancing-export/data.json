@@ -13,7 +13,8 @@
       "name": "TextBundle"
     },
     {
-      "name": "PDF"
+      "name": "PDF",
+      "customArguments": "--resource-path=\"${currentDir}/${attachmentFolderPath}\""
     },
     {
       "name": "Word (.docx)"
@@ -46,7 +47,7 @@
   "defaultExportDirectoryMode": "Auto",
   "openExportedFile": true,
   "version": "1.1.1",
-  "lastEditName": "Html",
+  "lastEditName": "PDF",
   "lastExportDirectory": {
     "linux": "/home/davis/Documents"
   },

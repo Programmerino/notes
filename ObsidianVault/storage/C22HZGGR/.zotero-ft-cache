@@ -1,0 +1,415 @@
+
+Skip to content
+New repository Import repository New gist New organization
+@Programmerino
+Signed in as Programmerino
+Set status
+Edit status
+Could not update your status, please try again.
+80 remaining
+Suggestions:
+palm_tree
+On vacation
+face_with_thermometer
+Out sick
+house
+Working from home
+dart
+Focusing
+Busy
+
+When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.
+Clear status
+Never
+
+    Never
+    Keep this status until you clear your status or edit your status.
+    in 30 minutes
+    in 1 hour
+    in 4 hours
+    today
+    this week
+
+Set status Clear status
+Your profile Your repositories Your codespaces
+Your organizations
+Your projects Your stars Your gists
+Upgrade
+Feature preview
+Help Settings
+Sign out
+{{ message }}
+/   ...   /  
+diku-dk   /   futhark   /   Issues #273   /  
+Clear Command Palette
+Tip: Type # to search pull requests
+Type ? for help and tips
+Tip: Type # to search issues
+Type ? for help and tips
+Tip: Type # to search discussions
+Type ? for help and tips
+Tip: Type ! to search projects
+Type ? for help and tips
+Tip: Type @ to search teams
+Type ? for help and tips
+Tip: Type @ to search people and organizations
+Type ? for help and tips
+Tip: Type > to activate command mode
+Type ? for help and tips
+Tip: Go to your accessibility settings to change your keyboard shortcuts
+Type ? for help and tips
+Tip: Type author:@me to search your content
+Type ? for help and tips
+Tip: Type is:pr to filter to pull requests
+Type ? for help and tips
+Tip: Type is:issue to filter to issues
+Type ? for help and tips
+Tip: Type is:project to filter to projects
+Type ? for help and tips
+Tip: Type is:open to filter to open content
+Type ? for help and tips
+We’ve encountered an error and some results aren't available at this time. Type a new search or try again later.
+No results matched your search
+Top result
+Commands Type > to filter
+Global Commands Type > to filter
+This Page
+Files
+Pages
+Access Policies
+Organizations
+Repositories
+Issues, pull requests, and discussions Type # to filter
+Teams
+Users
+Projects
+Modes
+Use filters in issues, pull requests, discussions, and projects
+Search for issues and pull requests # Search for issues, pull requests, discussions, and projects # Search for organizations, repositories, and users @ Search for projects ! Search for files / Activate command mode > Search your issues, pull requests, and discussions # author:@me Search your issues, pull requests, and discussions # author:@me Filter to pull requests # is:pr Filter to issues # is:issue Filter to discussions # is:discussion Filter to projects # is:project Filter to open issues, pull requests, and discussions # is:open
+diku-dk / futhark Public
+
+    Unwatch Stop ignoring Watch 67
+    Notifications
+    Participating and @mentions
+    Only receive notifications from this repository when participating or @mentioned.
+    All Activity
+    Notified of all notifications on this repository.
+    Ignore
+    Never be notified.
+    Custom
+    Select events you want to be notified of in addition to participating and @mentions.
+    Custom
+    Custom
+    Select events you want to be notified of in addition to participating and @mentions.
+    Issues
+    Pull requests
+    Releases
+    Discussions
+    Discussions are not enabled for this repository
+    Security alerts
+    Apply Cancel
+    Unstar this repository?
+
+    This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    Unstar
+
+    Code
+    Issues 54
+    Pull requests 2
+    Actions
+    Projects 0
+    Wiki
+    Security
+    Insights
+
+More
+
+    Code
+    Issues
+    Pull requests
+    Actions
+    Projects
+    Wiki
+    Security
+    Insights
+
+New issue
+Jump to bottom
+Should we ban recursive functions from Futhark? #273
+Closed
+athas opened this issue on Jan 11, 2017 · 10 comments
+Labels
+language
+Comments
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member
+athas commented on Jan 11, 2017
+
+Recursive functions are a bad idea in Futhark. There are two reasons for this:
+
+    The Futhark compiler does not perform tail-call optimisation.
+    It is not possible to efficiently implement non-tail call recursion on GPUs, because threads have essentially no stack.
+
+Issue 2 is only a problem for the part of the code that runs on GPUs, but when writing a function, you cannot know where it will eventually run, and I'm not terribly interested in making parallelisability part of the function type. Issue 2 could be solved via general flattening, which can handle arbitrary recursion (but not efficiently). But until we come up with some solution, it may be better to be more honest about what kind of code the language expects you to write.
+
+Banning recursion is not as devastating as it might seem, as Futhark has other looping constructs. In particular, our do loops can be seen exactly as tail-recursive functions with some syntax sugar. None of our current benchmarks use recursive functions, and the only tests that do are those that explicitly test recursion.
+
+Of course, Futhark is not a "GPU language" - it is a high-level parallel language - and we might conceivably want to run on parallel platforms where recursion is fine, like multicore CPUs. Restricting the language due to technical quirks of one major platform could be seen as a layering violation. Of course, if we ever want to translate to something like FPGAs, recursion is right out as well.
+
+I am currently slightly in favour of banning recursive functions. This is partially due to my general preference for small languages, and partially due to my belief that recursion is a kind of low level building block, the functional equivalent of go to , that we may not need in idiomatic array code.
+
+A variation, which I am also seriously considering, is to only permit recursion in the case of tail recursion. This would solve our problems, and still permit the writing of e.g. state machines using recursive functions (as is most natural).
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member Author
+athas commented on Jan 11, 2017
+
+Right now, if you are unlucky enough to compile a Futhark program that ends up with a recursive function inside of a parallel kernel, you will get a cryptic compiler error from somewhere near the code generator.
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member
+oleks commented on Jan 11, 2017
+On Wed, Jan 11, 2017 at 5:14 PM, Troels Henriksen ***@***.***> wrote: Right now, if you are unlucky enough to compile a Futhark program that ends up with a recursive function inside of a parallel kernel, you will get a cryptic compiler error from somewhere near the code generator.
+I think instead, someone(tm) should fix that, and point 1. Let Futhark _attempt_ to unfold a recursive function into an efficient kernel, and let the user know nicely if it fails to do so. The whole point, as I see Futhark today, is to make GPU programming easier and better through a more (limited) functional approach. I think removing recursion works against that. It almost turns Futhark into a SQL of sorts.
+…
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member Author
+athas commented on Jan 11, 2017
+What would you tell the programmer? The error is detected on a highly transformed program that may bear very little similarity with what the programmer wrote. The recursive call may be hidden inside a library function. The nice thing about tail-recursive functions is that we can _always_ compile them. General recursion can only be compiled by throwing them at some huge black box (from the POV of the programmer) and hoping for the best. I am a big fan of solving problems by removing features.
+…
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member
+oleks commented on Jan 11, 2017
+On Wed, Jan 11, 2017 at 5:31 PM, Troels Henriksen ***@***.***> wrote: What would you tell the programmer? The error is detected on a highly transformed program that may bear very little similarity with what the programmer wrote. The recursive call may be hidden inside a library function. The nice thing about tail-recursive functions is that we can _always_ compile them. General recursion can only be compiled by throwing them at some huge black box (from the POV of the programmer) and hoping for the best. I am a big fan of solving problems by removing features.
+There is also the possible argument that not *all* of what is considered "functional programming" is good for the programmer. Among other things, removing general recursion would greatly simplify termination analysis; Hurray!
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member Author
+athas commented on Jan 11, 2017
+Futhark has while loops, so it would not affect termination analysis.
+…
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member
+oleks commented on Jan 11, 2017
+On Wed, Jan 11, 2017 at 6:22 PM, Troels Henriksen ***@***.***> wrote: Futhark has while loops, so it would not affect termination analysis.
+That depends on the while-condition ;-)
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Contributor
+fenollp commented on Jan 11, 2017
+
+As long as there's map & fold or similar... I say remove the feature!
+All reactions
+
+@athas athas added the language label on Jan 16, 2017
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member Author
+athas commented on Mar 15, 2017
+
+I have decided to do this. The mechanism will be by changing the type checker to require that a function (or constant) must be defined before it is used, and a function will not be in scope of itself. This will require some changes to test and benchmark programs.
+
+In the future, we will loosen this restriction. Mutually tail-recursive functions would be useful for encoding state machines. But for now, we don't have the manpower to support this properly, so we might as well ban it and spare programmers some uncomfortable surprises.
+All reactions
+
+@athas athas closed this as completed in 02c69e9 on Mar 16, 2017
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+jarble commented on Sep 23, 2020 •
+edited
+
+@athas It might be possible to implement tail-recursion using while-loops in Futhark.
+
+Since Futhark doesn't have recursion yet, this function won't compile:
+
+ let rec fibhelper(x: i32, y: i32, n: i32): i32 = if n == 1 then x else fibhelper(y, x+y, n-1)  
+
+But it could be rewritten using a while-loop, simulating recursion by reassigning the function's parameters with each iteration of the loop:
+
+ let fibhelper(x: i32, y: i32, n: i32): i32 = let (x_1, y_1, n_1, continue, result) = loop (x, y, n, true, 0) while continue do if n_1 == 1 then (x_1, y_1, n_1, false, x_1) else (y_1, x_1+y_1, n_1-1, continue, result) in result  
+
+Would it be possible for the Futhark compiler to implement tail-recursion in this way?
+All reactions
+
+    +1
+    -1
+    smile
+    tada
+    thinking_face
+    heart
+    rocket
+    eyes
+
+Sorry, something went wrong.
+Quote reply
+Member Author
+athas commented on Sep 23, 2020
+
+Yes, you can do that, and that's the recommended workaround. The reason we do not support it directly in the language is because it's actually not that easy to define what "tail call" means. Is the following function tail recursive?
+
+ let rec fibhelper(x: i32, y: i32, n: i32): i32 = if n == 1 then x else (y, x+y, n-1) |> fibhelper  
+
+Until we have good answers (or more likely, good compilation of recursive parallel functions), we will not support recursive functions.
+All reactions
+
+Write Preview
+Add a quote, <Ctrl+Shift+.> Add code, <Ctrl+e>
+Insert Link
+Link Text
+URL
+Add
+Add a link, <Ctrl+k>
+Directly mention a user or team Reference an issue, pull request, or discussion
+Select a reply ctrl .
+Add saved reply
+There was an error creating your Issue.
+Comment
+Remember, contributions to this repository should follow its contributing guidelines and code of conduct .
+Assignees
+No one assigned
+Labels
+language
+Projects
+None yet
+Milestone
+No milestone
+Development
+
+No branches or pull requests
+Notifications
+Customize
+Notification settings
+Loading...
+Subscribe
+
+You’re not receiving notifications from this thread.
+4 participants
+@athas @oleks @fenollp @jarble
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+You can’t perform that action at this time.

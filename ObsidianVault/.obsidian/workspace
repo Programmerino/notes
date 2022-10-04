@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "1c3e8e5d3e6f1e56",
+        "id": "1497d8b5cbf3b0f7",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "well-order.md",
+            "file": "10-4-2022 Advanced Data Structures.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -41,7 +41,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "monad",
+                "query": "hash",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "well-order.md",
+                "file": "10-4-2022 Advanced Data Structures.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "well-order.md"
+                "file": "10-4-2022 Advanced Data Structures.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "well-order.md",
+                "file": "10-4-2022 Advanced Data Structures.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,17 +137,17 @@
     "width": 328.1666564941406,
     "collapsed": true
   },
-  "active": "1c3e8e5d3e6f1e56",
+  "active": "1497d8b5cbf3b0f7",
   "lastOpenFiles": [
-    "Burali-Forti paradox.md",
-    "ordinal numbers.md",
-    "Type theory.md",
-    "10-3-2022 Writing.md",
-    "Advanced Data Structures HW 2.md",
-    "Chebyshev's Inequality.md",
-    "Herby Pork Chops in Tomato Cream Sauce Notes.md",
-    "9-30-2022 Concurrent.md",
-    "General solution strategy for inequalities.md",
-    "Advanced Data Structures HW 2 Old Solutions.md"
+    "Mini Project 1 Proposal.md",
+    "8-30-2022 Advanced Data Structures.md",
+    "9-9-2022 Concurrent.md",
+    "8-25-2022 Advanced Data Structures.md",
+    "9-1-2022 Concurrent.md",
+    "9-6-2022 Advanced Data Structures.md",
+    "9-13-2022 Advanced Data Structures.md",
+    "9-15-2022 Advanced Data Structures.md",
+    "9-20-2022 Advanced Data Structures.md",
+    "9-22-2022 Advanced Data Structures.md"
   ]
 }

@@ -58,7 +58,8 @@
     "Zermelo",
     "verifiability",
     "Hakaru",
-    "Monad-bayes"
+    "Monad-bayes",
+    "unrepresentable"
   ],
   "readableLineLength": false
 }

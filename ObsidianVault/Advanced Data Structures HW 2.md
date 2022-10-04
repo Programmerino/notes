@@ -22,7 +22,7 @@ First, let's think of the problem as a binomial. The first consideration is how 
 $$
 \begin{aligned}
 & n^2 & & \text{Cardinality of Cartesian product of a set with itself}\\
-\rightarrow\text{ } & n^2 - n & & \text{Since each original element in the set is paired with a pair (a, a) in the Cartesian product, to remove them simply subtract by n}\\
+\rightarrow\text{ } & n^2 - n & & \text{Each original element $a$ in the set has a pair (a, a), they can be removed by subtracting n}\\
 \rightarrow\text{ } & \frac{n^2 - n}{2} & & \text{Remove double counting due to the presence of a pair (b, a) for each (a, b)}\\
 \end{aligned}
 $$
@@ -109,11 +109,27 @@ We will insert $n$ distinct keys into the overall data structure and each table 
 
 (D, 5 points) Prove that with probability at least $1-O\left(\frac{1}{n}\right)$, at least $\frac{n}{2}$ will be reside in the hash table $T_{0}$.
 
+First, this is the same as the probability that there are at most $\frac{n}{2}-1$ collisions in the hashtable. The complement of this is the probability there are at least $\frac{n}{2}$ collisions in the table. My strategy is to calculate this using the above Chebyshev's inequality, and then to find the original probability:
 $$
-\frac{n-1}{4}
+\begin{aligned}
+\beta &= 2\\
+\frac{n-1}{2(2)}+c n&=\frac{n}{2}\\
+\frac{n-1}{4}+c n&=\frac{n}{2}\\
+\frac{n-1}{2}+2cn&=n\\
+\frac{n-1}{2n}+2c&=1\\
+2c&=1-\frac{n-1}{2n}\\
+c&=\frac{n+1}{4n}\\
+&\rightarrow\frac{4}{3n(\frac{n+1}{4n})^2(2)}\\
+&=\frac{4}{6n(\frac{n+1}{4n})^2}\\
+&=\frac{2}{\frac{3n(n+1)^2}{16n^2}}\\
+&=\frac{2\cdot{16n^2}}{3n(n+1)^2}\\
+&=\frac{32n^2}{3n(n+1)^2}\\
+&=\frac{32n}{3(n+1)^2}\\
+&\rightarrow1-\frac{32n}{3(n+1)^2}\geq1-\frac{c}{n}\\
+\end{aligned}
 $$
+When $c = \frac{32}{3}$ for $1-O(\frac{1}{n})\rightarrow1-\frac{c}{n}$, the requirements are fulfilled.
 
-Reusing the above Chebyshev's inequality, we can construct the range $(0, \frac{n}{2} - 1)$. Anything outside this range represents the probability $\frac{n}{2}$ will reside outside the hash table.
 
 (E, Extra Credit) Suppose we $\frac{n}{c_{i}}$ elements cause collisions in the first $i-1$ hash tables and thus "percolate" to the $i^{t h}$ hash table. Prove that with probability at least $1-O\left(\frac{1}{n}\right)$, fewer than $\frac{n}{2 c_{i}^{2}}$ will be inserted into the $i+1^{\text {th }}$ hash table.
 
@@ -165,7 +181,8 @@ let binSearch (target: float) n =
     let binomial = DiscreteDistribution.binomial 0.5 n
     let rec go prev repetitions lower upper topCap =
         let midpoint = (upper + lower) / 2.
-        let result = (binomial.CDF ((float(n)/2.) + midpoint)) - (binomial.CDF ((float(n)/2.) - midpoint))
+        let result = (binomial.CDF ((float(n)/2.) + midpoint))
+				        - (binomial.CDF ((float(n)/2.) - midpoint))
         // printfn "%A-%A-%A Us: %A Target: %A" lower midpoint upper result target
         if repetitions > 100 || (lower = midpoint && midpoint = upper)  then
             gLower <- midpoint
@@ -190,7 +207,8 @@ let f n = 1.96 * ((sqrt n) / 2.)
 [<EntryPoint>]
 let main argv =
     Seq.initInfinite id
-    |> Seq.iter(fun x -> let res = (binSearch 0.95 x) in printfn "%A,%A" x ((f (float(x))) - res))
+    |> Seq.iter(fun x -> let res = (binSearch 0.95 x)
+						    in printfn "%A,%A" x ((f (float(x))) - res))
 
     0
 
@@ -295,9 +313,9 @@ let main argv =
  99    | 10               
  100   | 10               
 
-![[Pasted image 20220929225902.png]]
-
+![Pastedimage20220929225902.png](Pastedimage20220929225902.png)
 **0.99**:
+
  **n** | **Difference** 
 -------|----------------
  5     | 2.5            
@@ -398,16 +416,23 @@ let main argv =
  100   | 13.0           
 
 
-![[Pasted image 20220929230650.png]]
+![Pastedimage20220929230650.png](Pastedimage20220929230650.png)
 
 ( $B, 20$ points) One way to perform a statistical test of randomness is to count the number of $1 \mathrm{~s}$ for each bit in the sequence and check that the value lies within a $99 \%$ CI of the expected value gleaned from the problem above.
 
 If all the bit positions have this property, can we be sure that our sequence is random? Find a counterexample and try to refine the argument to avoid such counterexamples.
 
+An easy counterexample would be to have a bitstring where there first half of the bits are all zeroes, and the second half are all ones. This would be the expected value and pass with flying colors. One way to avoid this is to implement the test as a rolling test, where you run the statistical test on an increasing large list (each element being a bit or equal-sized subset of the number representation) until you eventually test the entire list. If each test yielded a result in the 99% CI of the expected value, then we can be confident that the bitstring was random. (I actually ended up only doing the test for each byte since it was much more efficient)
+
 Implement this test in your favorite programming language and test it against some pseudo random sequences generated using the random number generated as well as some common sequences of numbers converted into 32 bits. Explain what your randomness test concludes for each sequence.
+
+I tested it against the first 250 numbers from the Fibonacci sequence, the first 1000 natural numbers, 5000 random numbers, and a number generated with the counterexample above. It found that all but the natural number sequence were not random.
+
 
 Extra Credit Read about and implement the Wald-Wolfowitz runs test: a standard statistical test for precisely this purpose.
 
 (C, 25 points) Take some $n$ strings from a text file (you can use get words from a file of Hemingway's writings or a web page) and apply a hash function to it.
 
 You can use your own hash function or inbuilt functions from some hashing libraries that have been implemented in $\mathrm{C}, \mathrm{C}++$, python and other languages. Hash the strings into 64 bit numbers. Run a randomness tests from previous part on the resulting 64 bit numbers. What do tests conclude? Try at least 2-3 different hash functions and at least 10,000 words from different sources.
+
+I used Murmur64, MD5, and SHA256. I tested samples from Plato's Republic and a collection of Hemingway writings, taking 10000 words from each. For each combination of hash function and the sample source, the test determined the source was random each time.
