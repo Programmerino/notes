@@ -25,4 +25,27 @@
 	* Delete is $O(\log n)$
 	* Decrease-key is $O(1)$
 * Binomial heaps...
+	* A forest of binomial trees
+		* The size (number of nodes) is always a power of two
+		* They have an inductive definition where the base case is a single node and $B_1$ is a root with one child. Every tree $B_k$ is the linking of the last tree with itself
+			* Linking is done by making the subtree with a smaller root the rightmost child of the bigger root
+			* Another way of thinking about this is that each child of the root is a binomial tree, starting at $B_0$ at the leftmost child, ending with $B_{k-1}$ at the rightmost child
+		* A pointer to the minimum element is maintained
+		* There is at most one binomial tree of any given size.
+		* The biggest size binomial tree will be $\lceil{\log_2(n)}\rceil$
+	* Insert is done by...
+		* Make a singleton tree, and if another singleton exists, merge them. Do this recursively until the invariant of one binomial tree of a size is satisfied.
+		* This works like binary addition. Given the node-# in binary, each place is associated with a binary tree size which will need to be present. Inserting is just adding 1 to the previous node count
+		* Melding is done similarly
+			* Keep in mind, binomial tree addition/linking is not commutative
+	* To delete, just remove the associated node and the children trees just become trees to reinsert. If it is farther down in the tree, replace the node's value with the parent's value until the root is reached ???. This is $O(\log n)$
+* Dijkstra's algorithm
+	* Insert the starting node into the heap with priority 0, insert everything else with infinite priority. The insertion yields a pointer to the heap node, so we associate each vertex in the directed graph with the returned node.
+	* In a loop
+		* Delete the minimum node, and find all the adjacent neighbors to that node.
+			* Add the distance with the weight of the connection to the node. If the value is higher than...
+* Fibonacci heaps
+	* Like a binomial heap with laziness
+	* Insert just adds the singleton to the linked list of trees with no extra work ($O(1)$) while keeping track of the minimum value
+	* Melding just appends the linked list of the second heap to the first, keep the smaller of the two minimum values
 	* 

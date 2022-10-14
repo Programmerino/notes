@@ -78,6 +78,7 @@ Bonus
 Beyond
 Basic
 Becomes
+Binomial
 programs
 possibilities
 probabilistic
@@ -296,6 +297,7 @@ providing
 physics
 plausibly
 portability
+power
 are
 and
 algorithm
@@ -489,6 +491,8 @@ atop
 asymptotically
 argue
 automatically
+associate
+appends
 written
 writing
 which
@@ -691,6 +695,8 @@ bullet
 bring
 bottomright
 brackets
+bigger
+biggest
 the
 then
 tug
@@ -833,6 +839,8 @@ theories
 talk
 template
 transformable
+thinking
+track
 scenario
 simulations
 simulation
@@ -1102,6 +1110,11 @@ straight
 storing
 structs
 symbolic
+supporting
+sorting
+singleton
+satisfied
+similarly
 restricting
 round
 results
@@ -1279,6 +1292,8 @@ reasonable
 relationship
 red
 re
+radix
+remove
 Hakaru
 Hastings
 Haskell
@@ -1560,6 +1575,7 @@ inlining
 isomorphic
 indexing
 includes
+inductive
 Probabilistic
 Programming
 Pattern
@@ -1770,6 +1786,7 @@ descriptions
 delimited
 datum
 directives
+distance
 fit
 first
 for
@@ -1870,6 +1887,8 @@ fine
 fully
 further
 foundations
+forest
+farther
 you
 your
 yet
@@ -2410,6 +2429,11 @@ compilers
 corresponds
 compiling
 computationally
+combining
+compares
+column
+commutative
+connection
 of
 observed
 only
@@ -2685,6 +2709,7 @@ largest
 links
 laws
 literal
+laziness
 match
 modelling
 methods
@@ -2817,6 +2842,7 @@ middleman
 mind
 mapping
 monad
+maintained
 This
 The
 To
@@ -2926,6 +2952,9 @@ MRP
 Maybe
 Memblock
 Measures
+Meld
+Make
+Melding
 uses
 use
 used
@@ -3247,6 +3276,7 @@ valid
 variety
 varies
 vs
+vertex
 Let
 Latent
 Like
@@ -3277,6 +3307,7 @@ Lookup
 Lagrange
 Literals
 Lambdas
+Linking
 OpenMP
 Out
 Our
@@ -3348,6 +3379,9 @@ Decision
 Dropout
 Doing
 Does
+Deleting
+Decrease
+Do
 Add
 Arrays
 Allocation
@@ -3446,6 +3480,7 @@ kOTQ
 keeps
 killing
 kind
+keeping
 Gaussian
 Given
 Graphical
@@ -3518,6 +3553,8 @@ Is
 Iterative
 Inlining
 Indices
+Insert
+Inserting
 You
 Your
 YL
@@ -3592,6 +3629,7 @@ KTT
 Kb
 KP
 Kx
+Keep
 query
 quantity
 questions
@@ -3665,6 +3703,7 @@ Updates
 Unsupervised
 Unbiased
 Under
+Used
 Valgrind
 Verify
 Variance
