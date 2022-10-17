@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "10-11-2022 Advanced Data Structures.md",
+            "file": "VSCode Python Linters.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "10-11-2022 Advanced Data Structures.md",
+                "file": "VSCode Python Linters.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "10-11-2022 Advanced Data Structures.md"
+                "file": "VSCode Python Linters.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "10-11-2022 Advanced Data Structures.md",
+                "file": "VSCode Python Linters.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,6 +139,7 @@
   },
   "active": "1497d8b5cbf3b0f7",
   "lastOpenFiles": [
+    "10-11-2022 Advanced Data Structures.md",
     "10-10-2022 Goals.md",
     "10-4-2022 Goals.md",
     "Review of probabilistic programming languages.md",
@@ -147,7 +148,6 @@
     "External Pages/Compiling to C.md",
     "External Pages/Arrays and Plate.md",
     "Homework 2A - Synchronous Dynamic Programming and the Gym API.md",
-    "10-6-2022 Advanced Data Structures.md",
-    "Futhark performance tricks.md"
+    "10-6-2022 Advanced Data Structures.md"
   ]
 }
