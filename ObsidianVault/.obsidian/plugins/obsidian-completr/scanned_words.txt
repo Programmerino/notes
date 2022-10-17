@@ -39,6 +39,7 @@ Regardless
 RB
 Root
 Results
+Resources
 Bayesian
 Below
 But
@@ -298,6 +299,12 @@ physics
 plausibly
 portability
 power
+pylint
+pycodestyle
+prospector
+pylama
+private
+potentially
 are
 and
 algorithm
@@ -493,6 +500,8 @@ argue
 automatically
 associate
 appends
+administrative
+attack
 written
 writing
 which
@@ -697,6 +706,9 @@ bottomright
 brackets
 bigger
 biggest
+bandit
+basic
+bomb
 the
 then
 tug
@@ -841,6 +853,7 @@ template
 transformable
 thinking
 track
+threat
 scenario
 simulations
 simulation
@@ -1115,6 +1128,13 @@ sorting
 singleton
 satisfied
 similarly
+server
+storage
+student
+shell
+severity
+severe
+shut
 restricting
 round
 results
@@ -1294,6 +1314,9 @@ red
 re
 radix
 remove
+remote
+reverse
+risk
 Hakaru
 Hastings
 Haskell
@@ -1576,6 +1599,11 @@ isomorphic
 indexing
 includes
 inductive
+isort
+ideas
+inaccessible
+isolated
+integrity
 Probabilistic
 Programming
 Pattern
@@ -1889,6 +1917,7 @@ further
 foundations
 forest
 farther
+flake
 you
 your
 yet
@@ -2163,6 +2192,9 @@ exclude
 expense
 evaluated
 exp
+exhaust
+executed
+extremely
 can
 contain
 certain
@@ -2434,6 +2466,8 @@ compares
 column
 commutative
 connection
+confidentiality
+completely
 of
 observed
 only
@@ -2601,6 +2635,7 @@ gym
 gymlibrary
 glaring
 gain
+grade
 last
 looks
 like
@@ -2710,6 +2745,7 @@ links
 laws
 literal
 laziness
+ll
 match
 modelling
 methods
@@ -2843,6 +2879,8 @@ mind
 mapping
 monad
 maintained
+mypy
+minimal
 This
 The
 To
@@ -2899,6 +2937,7 @@ Table
 Talks
 Tree
 Type
+Threats
 Metropolis
 Markov
 Monte
@@ -3021,6 +3060,7 @@ undefinable
 unsatisfying
 utility
 underflow
+unsecured
 Chain
 Carlo
 Compile
@@ -3102,6 +3142,7 @@ Complexity
 Conversions
 Calling
 Computations
+Compute
 Quick
 QVV
 QRR
@@ -3190,6 +3231,7 @@ Subproblems
 Synchronous
 Space
 Supports
+Shutdown
 Example
 Examples
 Experiment
@@ -3277,6 +3319,7 @@ variety
 varies
 vs
 vertex
+vulnerabilities
 Let
 Latent
 Like
@@ -3382,6 +3425,7 @@ Does
 Deleting
 Decrease
 Do
+Default
 Add
 Arrays
 Allocation
@@ -3434,6 +3478,7 @@ About
 Analytical
 Attached
 Array
+Assets
 just
 jmlr
 judge

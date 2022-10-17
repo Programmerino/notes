@@ -1,4 +1,6 @@
 {
   "translucency": true,
-  "baseFontSize": 24
+  "baseFontSize": 24,
+  "accentColor": "",
+  "nativeMenus": false
 }

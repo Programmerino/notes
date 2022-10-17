@@ -1,0 +1,10 @@
+* Default
+	* pylint
+	* flake8
+	* mypy
+	* pycodestyle
+	* prospector
+	* pylama
+	* bandit
+* isort
+	* isort
