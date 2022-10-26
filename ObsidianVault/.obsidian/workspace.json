@@ -45,9 +45,35 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "449b8a6735bda697",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Futhark Performance Notes.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4fce8701a0cc86de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mini Project 1 Proposal.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -76,7 +102,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "monad bayes",
+                "query": "mini project",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,11 +119,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 351.5
+    "width": 351.5,
+    "collapsed": true
   },
   "right": {
     "id": "282606d45673b3c4",
@@ -113,7 +141,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSCI 3403 Midterm.md",
+                "file": "Mini Project 1 Proposal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSCI 3403 Midterm.md"
+                "file": "Mini Project 1 Proposal.md"
               }
             }
           },
@@ -140,7 +168,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSCI 3403 Midterm.md",
+                "file": "Mini Project 1 Proposal.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,17 +203,17 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "26e2ea3066c94cd5",
+  "active": "703738fe40565af3",
   "lastOpenFiles": [
+    "10-3-2022 Goals.md",
+    "8-30-2022 Advanced Data Structures.md",
+    "Mini Project 1 Proposal.md",
+    "Futhark Performance Notes.md",
+    "Futhark performance tricks.md",
+    "Futhark undocumented modules notes.md",
+    "CSCI 3403 Midterm.md",
     "Recitation 2 - Symmetric Encryption.md",
     "Recitation 1 - Threat Model.md",
-    "VSCode Python Linters.md",
-    "10-11-2022 Advanced Data Structures.md",
-    "10-10-2022 Goals.md",
-    "10-4-2022 Goals.md",
-    "Review of probabilistic programming languages.md",
-    "RL HW 1.md",
-    "Hakaru notes.md",
-    "External Pages/Compiling to C.md"
+    "VSCode Python Linters.md"
   ]
 }
