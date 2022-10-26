@@ -40,6 +40,9 @@ RB
 Root
 Results
 Resources
+Ripper
+Records
+Returning
 Bayesian
 Below
 But
@@ -305,6 +308,13 @@ prospector
 pylama
 private
 potentially
+password
+port
+packets
+privileges
+plaintext
+passwords
+parallelized
 are
 and
 algorithm
@@ -502,6 +512,11 @@ associate
 appends
 administrative
 attack
+automated
+authentication
+autotune
+accumulator
+athas
 written
 writing
 which
@@ -596,6 +611,7 @@ wrong
 workarounds
 worse
 wp
+worker
 by
 be
 bind
@@ -709,6 +725,10 @@ biggest
 bandit
 basic
 bomb
+behind
+backends
+branch
+box
 the
 then
 tug
@@ -854,6 +874,7 @@ transformable
 thinking
 track
 threat
+transpose
 scenario
 simulations
 simulation
@@ -1135,6 +1156,18 @@ shell
 severity
 severe
 shut
+scan
+sniff
+sent
+sales
+salted
+span
+sequentialize
+signed
+syntactic
+sugar
+subarrays
+slight
 restricting
 round
 results
@@ -1317,6 +1350,8 @@ remove
 remote
 reverse
 risk
+regularly
+reductions
 Hakaru
 Hastings
 Haskell
@@ -1353,6 +1388,9 @@ HERE
 Horizon
 HKC
 Here
+Hire
+HTTP
+HOFs
 notes
 not
 near
@@ -1407,6 +1445,8 @@ north
 numbering
 numerous
 nor
+navigating
+navigate
 What
 Whatever
 Workflow
@@ -1604,6 +1644,11 @@ ideas
 inaccessible
 isolated
 integrity
+insecure
+importantly
+imin
+iterated
+inliner
 Probabilistic
 Programming
 Pattern
@@ -1815,6 +1860,11 @@ delimited
 datum
 directives
 distance
+discovered
+developer
+differs
+dependencies
+dependency
 fit
 first
 for
@@ -1918,6 +1968,12 @@ foundations
 forest
 farther
 flake
+feed
+forced
+foldl
+fold
+fusion
+flattened
 you
 your
 yet
@@ -2010,6 +2066,7 @@ helps
 hack
 homework
 hacks
+hackervoice
 For
 Functions
 Furthermore
@@ -2052,6 +2109,7 @@ Function
 Fourier
 Fig
 Form
+Flag
 example
 each
 efficient
@@ -2195,6 +2253,8 @@ exp
 exhaust
 executed
 extremely
+exposed
+employed
 can
 contain
 certain
@@ -2468,6 +2528,15 @@ commutative
 connection
 confidentiality
 completely
+camera
+credentials
+card
+cracking
+conventional
+counterparts
+composite
+constructors
+copying
 of
 observed
 only
@@ -2565,6 +2634,7 @@ objectively
 objective
 obtainable
 openmp
+outdated
 guess
 good
 gets
@@ -2746,6 +2816,7 @@ laws
 literal
 laziness
 ll
+logged
 match
 modelling
 methods
@@ -2881,6 +2952,7 @@ monad
 maintained
 mypy
 minimal
+multidimensional
 This
 The
 To
@@ -2938,6 +3010,7 @@ Talks
 Tree
 Type
 Threats
+Tuples
 Metropolis
 Markov
 Monte
@@ -2994,6 +3067,8 @@ Measures
 Meld
 Make
 Melding
+Multicore
+Modules
 uses
 use
 used
@@ -3061,6 +3136,8 @@ unsatisfying
 utility
 underflow
 unsecured
+users
+unrolling
 Chain
 Carlo
 Compile
@@ -3143,6 +3220,8 @@ Conversions
 Calling
 Computations
 Compute
+CD
+Copied
 Quick
 QVV
 QRR
@@ -3232,6 +3311,14 @@ Synchronous
 Space
 Supports
 Shutdown
+SSH
+SOACs
+Scans
+Sequentialize
+Sum
+Stored
+Slicing
+Sequential
 Example
 Examples
 Experiment
@@ -3382,6 +3469,7 @@ OpenAI
 Ok
 Obviously
 Optimizations
+Option
 Discrete
 Distributions
 Dirichlet
@@ -3500,6 +3588,7 @@ job
 jumps
 join
 jump
+jobs
 known
 knowledge
 kernel
@@ -3555,6 +3644,8 @@ Gym
 Go
 GIgantua
 GCC
+Getting
+Generally
 In
 It
 If
@@ -3600,6 +3691,8 @@ Inlining
 Indices
 Insert
 Inserting
+Irregular
+Incurs
 You
 Your
 YL
@@ -3642,6 +3735,7 @@ NLP
 Numerical
 Newton
 Notes
+Nested
 zero
 zNew
 zucchini
@@ -3726,6 +3820,7 @@ Jun
 Just
 Jan
 Justification
+John
 Unix
 Usage
 Uniform
@@ -3749,6 +3844,7 @@ Unsupervised
 Unbiased
 Under
 Used
+Unsigned
 Valgrind
 Verify
 Variance
