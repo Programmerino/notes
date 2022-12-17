@@ -12,7 +12,7 @@
     url = "github:numtide/flake-utils";
   };
   inputs.obsidianhtml = {
-    url = "github:obsidian-html/obsidian-html";
+    url = "github:Programmerino/obsidian-html";
     inputs.nixpkgs.follows = "nixpkgs";
   };
   inputs.nixpkgs = {

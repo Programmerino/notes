@@ -54,15 +54,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1663708948,
-        "narHash": "sha256-uU7KZd3U/BXDMLZnf2QIhXtXujrPFnJ+V+Mu+bR/t5Q=",
-        "owner": "obsidian-html",
+        "lastModified": 1671252802,
+        "narHash": "sha256-cjdlgEA1lUfhZKNLJbq2YCTlnh4VOZVNRrNUpwOzETY=",
+        "owner": "Programmerino",
         "repo": "obsidian-html",
-        "rev": "bfe1ae5d74c188e129f15842f625ee046b3e661c",
+        "rev": "52db1fcf454079c16c1df6d571b07b861d5c26e7",
         "type": "github"
       },
       "original": {
-        "owner": "obsidian-html",
+        "owner": "Programmerino",
         "repo": "obsidian-html",
         "type": "github"
       }
