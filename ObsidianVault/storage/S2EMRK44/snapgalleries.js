@@ -1,3 +1,0 @@
-document.addEventListener('postmedia_plugin_snapgalleries_gallery_load',function(e){var gallery_info=e.detail;var title_height=jQuery('.gallery_desc',gallery_info.gallery).outerHeight(true);jQuery('.social-bar',gallery_info.gallery).css('top',(gallery_info.image_height+title_height+10)+'px');});function snapgalleryMoreSocialOpen(element){jQuery(element).find('.more-social-menu').show();}
-function snapgalleryMoreSocialClose(element){jQuery(element).parent('.more-social-menu').hide();}
-function snapgalleryMoreSocialToggle(element){jQuery(element).find('.more-social-menu').show();}

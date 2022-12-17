@@ -1,1 +1,0 @@
-function setCookie(a,e,c,f,d,g){var b;c&&(b=new Date,b.setTime(b.getTime()+c));document.cookie=a+"="+e+(c?";expires="+b.toGMTString():"")+";path="+(f||"/")+(d?";domain="+d:"")+(g?";secure":"")}function getCookie(a){return(a=document.cookie.match(new RegExp("(?:^|; )"+a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,"\\$1")+"=([^;]*)")))?decodeURIComponent(a[1]):void 0};

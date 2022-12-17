@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[36],{1046:function(n,e,o){o(1047),n.exports=self.fetch.bind(self)}}]);
-//# sourceMappingURL=https://fortune.com/static/js/npm.isomorphic-fetch.map?v=505616fc

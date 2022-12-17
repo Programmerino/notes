@@ -1,9 +1,0 @@
-.sidebar{position:relative;text-align:center;flex:0 0 40px;background:#34495E}
-.sidebar .item-container{position:-webkit-sticky;position:-moz-sticky;position:-ms-sticky;position:-o-sticky;position:sticky;top:0}
-.sidebar a{font-size:16px;display:block;color:#b9c9d8;transition:color 0.25s,background-color 0.25s;padding:0.5em}
-.sidebar a .svg-icon{transition:fill 0.25s;display:inline-block;height:16px;width:16px;fill:#b9c9d8}
-.sidebar a.active{color:#fff;background-color:#46637f}
-.sidebar a.active .svg-icon{fill:#fff}
-.sidebar a:hover{color:#fff;background-color:#4f6f8f}
-.sidebar a:hover .svg-icon{fill:#fff}
-.btn-mobile-toggle-container{display:none}

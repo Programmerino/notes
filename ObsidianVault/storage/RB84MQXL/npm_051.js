@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[80],{1194:function(e,s,t){"use strict";e.exports=function(e,s){if(s=s.split(":")[0],!(e=+e))return!1;switch(s){case"http":case"ws":return 80!==e;case"https":case"wss":return 443!==e;case"ftp":return 21!==e;case"gopher":return 70!==e;case"file":return!1}return 0!==e}}}]);
-//# sourceMappingURL=https://fortune.com/static/js/npm.requires-port.map?v=4fbce1c2

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["js/app~js/longFormHero"],{27:function(n,o,t){"use strict";function i(){if(navigator.userAgent.match(/Mobi/))return!0;if("screen"in window&&window.screen.width<1366)return!0;const n=navigator.connection||navigator.mozConnection||navigator.webkitConnection;return n&&"cellular"===n.type}t.d(o,"a",(function(){return i}))}}]);

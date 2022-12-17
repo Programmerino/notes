@@ -1,1 +1,0 @@
-gs_channels=['gs_politics','gs_politics_misc','gs_science','gs_economy','gv_death_injury','neg_mbs_base','gs_economy_misc','gs_politics_american','gv_military','gs_science_environ','neg_wuhanpneumonia'];

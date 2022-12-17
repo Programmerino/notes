@@ -1,1 +1,0 @@
-document.writeln("<img src=\"http://ab168070.adbutler-chargino.com/error/blank.gif\" width=728 height=90>");

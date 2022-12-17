@@ -1,5 +1,0 @@
-(function($) {  
-    $(document).on('focus', '.rpw-gm-city', function() {
-        $('.pac-container').css('z-index', '1000000');   
-    });
-})(jQuery);

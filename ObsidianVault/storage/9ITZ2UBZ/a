@@ -1,5 +1,0 @@
-var alt = "body"; if(document[alt]==undefined) alt="head";
-document[alt].insertAdjacentHTML( 'afterbegin', "<img style='display:none' src='https://ds.reson8.com/insights.gif?rand=[cache_buster]&t=0&pixt=resonate&advkey=0010M00001UQxJiQAL&opptykey=VPPB0418A&evkey=100270459&evtype=custom' height='1' width='1' alt=''>" );
-document[alt].insertAdjacentHTML( 'afterbegin', "<img style='display:none' src='https://ds.reson8.com/insights.gif?rand=[cache_buster]&t=0&pixt=resonate&advkey=0010M00001QrWMUQA3&opptykey=VPRO0517A&evkey=163259&evtype=custom&resnc1=esp&resnc2=open&resnc3=12910841617805812' height='1' width='1' alt=''>" );
-document[alt].insertAdjacentHTML( 'afterbegin', "<img style='display:none' src='https://secure.adnxs.com/seg?add=11061180&t=2' height='1' width='1' alt=''>" );
-document[alt].insertAdjacentHTML( 'afterbegin', "<img style='display:none' src='https://secure.adnxs.com/px?id=940213&t=2' height='1' width='1' alt=''>" );

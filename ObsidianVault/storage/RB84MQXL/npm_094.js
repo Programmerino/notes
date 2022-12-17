@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[74],{826:function(n,r,o){"use strict";r.a=function(){for(var n=arguments.length,r=Array(n),o=0;o<n;o++)r[o]=arguments[o];return function(n,o){for(var t=arguments.length,c=Array(t>2?t-2:0),e=2;e<t;e++)c[e-2]=arguments[e];return r.reduce(function(n,r){return r.apply(void 0,[n,o].concat(c))},n)}}}}]);
-//# sourceMappingURL=https://fortune.com/static/js/npm.reduce-reducers.map?v=6b08b2c1

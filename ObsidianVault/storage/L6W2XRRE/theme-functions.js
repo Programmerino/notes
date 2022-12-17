@@ -1,7 +1,0 @@
-jQuery(document).foundation();jQuery(window).on('load scroll resize orientationChange',function(){var stickyMenu=jQuery('.header_container').outerHeight(true);if(jQuery(window).scrollTop()>stickyMenu){jQuery('.contain-to-grid').addClass('fixed');}
-else{jQuery('.contain-to-grid').removeClass('fixed');}});jQuery('input[type="submit"]').addClass('button');jQuery('.comment-reply-link').addClass('secondary label radius');jQuery('#cancel-comment-reply-link').addClass('alert label radius');jQuery('iframe[src*="vimeo.com"]').wrap('<div class="flex-video widescreen vimeo" />');jQuery('iframe[src*="youtube.com"],iframe[src*="dailymotion.com"],iframe[src*="videopress.com"]').wrap('<div class="flex-video widescreen" />');jQuery(window).load(function(){jQuery("#topofpage").hide().removeAttr("href");if(jQuery(window).scrollTop()!="0")
-jQuery("#backtotop").fadeIn("slow")
-var scrollDiv=jQuery("#backtotop");jQuery(window).scroll(function(){if(jQuery(window).scrollTop()=="0")
-jQuery(scrollDiv).fadeOut("slow")
-else
-jQuery(scrollDiv).fadeIn("slow")});});jQuery('#backtotop').click(function(){jQuery('html, body').animate({scrollTop:jQuery('body').offset().top},1000);});jQuery('.accordion p:empty, .accordion br, .orbit p:empty, .orbit br').remove();jQuery('.gallery').addClass('clearfix');

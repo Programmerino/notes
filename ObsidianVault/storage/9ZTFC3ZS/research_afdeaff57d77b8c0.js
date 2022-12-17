@@ -1,1 +1,0 @@
-(function(a){a(function(){a("body").on("click",'[data-upgrade-opp="true"]',function(){a(this).data("feature-type")&&a.post("/account/upgrade_opp",{feature:a(this).data("feature-type"),details:a(this).data("feature-details"),internal_source:a(this).data("feature-internal-source")})})})})(jQuery);

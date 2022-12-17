@@ -1,5 +1,0 @@
-(function () {var f = function () {
-	};
-
-	if (document.body) { f(); } else { document.addEventListener('DOMContentLoaded', f); }
-}());

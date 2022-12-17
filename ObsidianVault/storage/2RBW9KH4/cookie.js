@@ -1,1 +1,0 @@
-_gfp_s_({"_cookies_":[{"_value_":"ID=dcba1d3d9080e386:T=1584047799:S=ALNI_MZRoWgIQ1oegTHe7B0IFleraq0kAg","_expires_":1647119799,"_path_":"/","_domain_":"rethinkingthedollar.com"}]});
