@@ -3,5 +3,5 @@
 ## Content
 {% for attachment in attachments %}
 ### {{attachment.title}}
-![[{{attachment.path | replace("/Users/davis/Zotero/", "")}}]]
+![[{{attachment.path | replace("/home/davis/Zotero/", "")}}]]
 {% endfor %}

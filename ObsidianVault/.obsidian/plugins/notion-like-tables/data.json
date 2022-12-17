@@ -1,0 +1,62 @@
+{
+  "data": {
+    "table-id-l594vJ": {
+      "model": {
+        "columnIds": [
+          "column-id-HtOrfrvv"
+        ],
+        "rowIds": [
+          "row-id-Jeg5eTIA",
+          "row-id-MLLwjA1E"
+        ],
+        "cells": [
+          {
+            "id": "cell-id-wRz3h07h",
+            "columnId": "column-id-HtOrfrvv",
+            "rowId": "row-id-Jeg5eTIA",
+            "markdown": "New Column",
+            "html": "New Column",
+            "isHeader": true
+          },
+          {
+            "id": "cell-id-zVJDrUD7",
+            "columnId": "column-id-HtOrfrvv",
+            "rowId": "row-id-MLLwjA1E",
+            "markdown": "",
+            "html": "",
+            "isHeader": false
+          }
+        ]
+      },
+      "settings": {
+        "columns": {
+          "column-id-HtOrfrvv": {
+            "sortDir": "default",
+            "width": "120px",
+            "type": "text",
+            "useAutoWidth": false,
+            "shouldWrapOverflow": false,
+            "tags": []
+          }
+        },
+        "rows": {
+          "row-id-Jeg5eTIA": {
+            "creationDate": 1667446903148
+          },
+          "row-id-MLLwjA1E": {
+            "creationDate": 1667446903149
+          }
+        }
+      },
+      "pluginVersion": 505
+    }
+  },
+  "tableFolder": "_notion-like-tables",
+  "viewModeSync": {
+    "eventType": "update-state",
+    "tableId": null,
+    "viewModes": []
+  },
+  "shouldClear": false,
+  "shouldDebug": false
+}
