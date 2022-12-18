@@ -51,8 +51,18 @@
 ### 28-29
 * A system is causal if its output only depends on current and past inputs and is defined as…
 	* For a continuous-time signal $x: \mathbb{R} \rightarrow A$ where $\left.x\right|_{t \leq \tau}$ is the "current and past inputs” at time $\tau$, then a continuous-time system $S: A^\mathbb{R} \rightarrow B^\mathbb{R}$ is causal if $\forall_{x_1,x_2 \in A^\mathbb{R}}\forall_{\tau\in\mathbb{R}}\left(\left.x_1\right|_{t \leq \tau}=\left.\left.x_2\right|_{t \leq \tau} \Rightarrow S\left(x_1\right)\right|_{t \leq \tau}=\left.S\left(x_2\right)\right|_{t \leq \tau}\right)$. That is, if two inputs are identical up to $\tau$, then the outputs are identical up to $\tau$. It is strictly causal if $\leq$ is changed to $<$ (typically used in feedback systems).
-### 29
+### 29-30
 * A system is memoryless if it does not rely on past inputs, AKA can be written as a function of only $x(t)$ at a time $t$ ([ANALYSIS] can easily be represented with `map` in FRP). The Integrator actor is not memoryless, but an adder is.
 * If a system is strictly causal and memoryless, then its output is constant for all inputs.
 * Linear and time invariant (LTI) systems are both linear, and time invariant...
 	* A system is linear if it satisfies superposition: $\forall x_1, x_2 \in X$ and $\forall a, b \in \mathbb{R}, \quad S\left(a x_1+b x_2\right)=a S\left(x_1\right)+b S\left(x_2\right)$.
+	* A system is time-invariant if "sliding" the value for $t$ does not change the result. In other words...
+		* If $\forall x \in X$ and $\forall t \in \mathbb{R}, \quad\left(D_\tau(x)\right)(t)=x(t-\tau)$ then $\forall x \in X$ and $\forall \tau \in \mathbb{R}, \quad S\left(D_\tau(x)\right)=D_\tau(S(x))$.
+	* If you can achieve an LTI model, you should do so if the sacrifice isn't too great.
+### 30
+* A system is bounded-input bounded-output stable if there is a maximum bound on the outputs for any inputs which have a maximum bound.
+### 31
+* A system with feedback has an output feeding into a prior actor. Systems which seek to compensate for error are examples. The value used in the feedback is also called the feedback, and the signal produced from it is called the correction signal. Since it can normally only affect future errors, the system usually includes at least one strictly causal actor.
+### 32
+* In a proportional control feedback loop, the control signal is scaled by the error
+## 38
