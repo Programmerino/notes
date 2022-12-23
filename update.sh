@@ -1,3 +1,4 @@
+sudo mount --bind /home/davis/Zotero/storage/ "/home/davis/Documents/Obsidian/ObsidianVault/storage"
 git add .
 git rm -r --cached .
 git add .
