@@ -1,0 +1,1 @@
+Hope you're doing well! I'm updating my CV to apply to work with one of the Computer Science faculty for an Accelerated Masters and was wondering what the status of our manuscript was?
