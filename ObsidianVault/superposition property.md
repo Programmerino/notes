@@ -1,0 +1,1 @@
+A function which is both [[additivity|additive]] and [[homogeneity|homogeneous]]. When combined, the rule looks like: $F(ax_1 + bx_2) = aF(x_1) + bF(x_2)$

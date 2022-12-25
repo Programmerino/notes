@@ -1,0 +1,1 @@
+Semantics 2 is similar to [[interleaving semantics]], except it allows for both $A$ and $B$ as well as either.

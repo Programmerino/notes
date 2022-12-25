@@ -1,0 +1,1 @@
+* In [[CPS]], $\textbf{F}(t) = M\ddot{x}(t)$ which yields a 3D force vector

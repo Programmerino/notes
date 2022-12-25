@@ -1,0 +1,1 @@
+A system is linear if it satisfies the [[superposition property]]

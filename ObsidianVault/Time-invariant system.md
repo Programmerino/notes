@@ -1,0 +1,2 @@
+A system is time-invariant if adding any constant to all $t$ does not change the result. Mathematically, this looks like:
+If $\forall x \in X$ and $\forall t \in \mathbb{R}, \quad\left(D_\tau(x)\right)(t)=x(t-\tau)$ then $\forall x \in X$ and $\forall \tau \in \mathbb{R}, \quad S\left(D_\tau(x)\right)=D_\tau(S(x))$.

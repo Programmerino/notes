@@ -1,0 +1,2 @@
+An execution trace is similar to an [[observable trace]], but also includes the [[state]] from which an [[output]] was produced or wasn't produced. This is graphically represented with:
+![[Pasted image 20221223184423.png]]

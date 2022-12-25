@@ -1,0 +1,1 @@
+The scale actor takes a parameter $a$ and performs $ax$ to produce $y$ and is pictorially represented as a sideways triangle

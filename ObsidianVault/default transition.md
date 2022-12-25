@@ -1,0 +1,3 @@
+A default [[transition]] explicitly shows the [[transition]] to the same [[state]] whenever the other [[transition|transitions]] are not enabled. It is denoted with "true /" and is drawn with a dashed line.
+* It is kind of like the default case in a match statement
+* They can always be replaced with ordinary [[transition|transitions]] which negate the [[guard|guards]] of the other [[transition|transitions]]. Between ordinary and default [[transition|transitions]], ordinary [[transition|transitions]] have priority.

@@ -1,0 +1,1 @@
+A pure signal has a type of $\mathbb{R} \rightarrow \{absent, present\}$ as opposed to an [[valued signal]] which carries an additional value when the signal isn't absent.

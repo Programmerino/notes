@@ -1,0 +1,1 @@
+If a [[state machine]] is both [[Deterministic state machine|deterministic]] and [[Receptive state machine|receptive]], then it follows that for every [[state]], there is exactly one possible [[transition]] given any [[input]] value.

@@ -1,0 +1,2 @@
+Can be described as the integral of [[rotational velocity]]:
+$\begin{aligned} \theta(t) & =\theta(0)+\int_0^t \dot{\theta}(\tau) d \tau \\ & =\theta(0)+t \dot{\theta}(0)+\frac{1}{I} \int_0^t \int_0^\tau \mathbf{T}(\alpha) d \alpha d \tau\end{aligned}$

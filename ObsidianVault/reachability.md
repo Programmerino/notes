@@ -1,0 +1,1 @@
+A [[state]] is reachable given an [[input]] sequence if it can be reached from the initial [[state]]. The set of reachable [[state]]s is often smaller than the set of [[state]]s.

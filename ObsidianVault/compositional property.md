@@ -1,0 +1,1 @@
+A property is **compositional** if a property held by the components implies the property for the composition.

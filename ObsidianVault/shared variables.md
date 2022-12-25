@@ -1,0 +1,1 @@
+A method for communication when using [[side-by-side composition]] for [[extended-state machine]]s where variables can be shared between the [[actor]]s. The semantics of these are highly dependent on the semantics used for [[asynchronous composition|asynchronous]]/[[synchronous composition]].

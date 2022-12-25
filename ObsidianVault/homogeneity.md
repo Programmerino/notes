@@ -1,0 +1,1 @@
+A homogeneous function satisfies ${\displaystyle F(ax)=aF(x)\,}$

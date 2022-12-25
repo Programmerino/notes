@@ -1,0 +1,1 @@
+A continuous-time system is one which operates on continuous-time signals

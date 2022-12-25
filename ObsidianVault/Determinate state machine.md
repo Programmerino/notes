@@ -1,0 +1,1 @@
+A determinate [[state machine]], given the same [[input|inputs]], will always produce the same [[output|outputs]]. All [[deterministic state machine|deterministic state machines]] are determinate.

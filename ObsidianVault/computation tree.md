@@ -1,0 +1,2 @@
+A computation tree is used for [[non-deterministic state machine]]s to show all possible [[observable trace]]s/[[execution trace]]s that can occur for a particular [[input]] sequence, or for all possible [[input]] sequences:
+![[Pasted image 20221223184809.png]]

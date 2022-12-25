@@ -1,0 +1,1 @@
+The integrator actor takes an initial value $i$ as a parameter and is defined by $\forall t \in \mathbb{R}, \quad y_2(t)=i+\int_0^t x_2(\tau) d \tau$. It is pictorially represented as a rectangle with an integration symbol inside it.
