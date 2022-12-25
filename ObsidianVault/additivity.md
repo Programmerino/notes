@@ -1,0 +1,1 @@
+An additive function satisfies $\displaystyle F(x_{1}+x_{2})=F(x_{1})+F(x_{2})\,$

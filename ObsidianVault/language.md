@@ -1,0 +1,1 @@
+The set of all possible [[behavior]]s for a [[state machine]] $M$ is called its **language**, written $L(M)$. For [[receptive state machine]]s, the language will always include all possible [[input]] sequences.

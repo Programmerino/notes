@@ -1,0 +1,1 @@
+An accumulator is a non-[[time-invariant system|time-invariant]] actor which "accumulates" some value. For example, the [[Integrator actor]] is an accumulator.

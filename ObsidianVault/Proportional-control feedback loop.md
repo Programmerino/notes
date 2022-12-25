@@ -1,0 +1,1 @@
+A proportional-control feedback loop has the control signal scaled by the error

@@ -1,0 +1,1 @@
+Adds the results of two incoming signals. For subtraction, a minus sign is placed next to the signal which subtracts the other.

@@ -1,12 +1,3 @@
 [
-  "obsidian-zotero-desktop-connector",
-  "obsidian-languagetool-plugin",
-  "obsidian-annotator",
-  "obsidian-diagrams-net",
-  "obsidian-pandoc-reference-list",
-  "better-word-count",
-  "obsidian-enhancing-export",
-  "wikilinks-to-mdlinks-obsidian",
-  "notion-like-tables",
-  "table-editor-obsidian"
+  "obsidian-zotero-desktop-connector"
 ]

@@ -1,0 +1,4 @@
+* [[finite-state machine|Finite-state machines]] can be graphically drawn with [[state|states]] and arrows between those [[state|states]], where one is defined as the initial [[state]]. These arrows are also called **transitions** and can have additional properties…
+	* Transitions are typically composed of a guard/predicate, and an action. When the predicate is true, the transition is “enabled”, and will be taken (the action describes which state the transition leads to). If no transitions are enabled, then no transition occurs (this can alternatively be described as the [[default transition]])
+	* In some formalisms, the transitions can also be given integer priorities to resolve situations where multiple guards are true.
+* Transitions which end in the same state are called self-transitions.

@@ -1,0 +1,1 @@
+Model-order reduction is the simplification of a model given some knowledge about where it is used. For example, we might be able to ignore the y-axis for something like a car's movement, since we don't expect it to rise or fall.

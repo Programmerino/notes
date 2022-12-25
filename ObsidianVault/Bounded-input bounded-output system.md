@@ -1,0 +1,1 @@
+A system is bounded-input bounded-output stable if there is a maximum bound on the outputs for any inputs which have a maximum bound.

@@ -1,0 +1,1 @@
+If you imagine a [[behavior]] as an array for each [[input]] and [[output]], then the **observable trace** is the zipped version of that array

@@ -1,0 +1,2 @@
+* These are best modeled with [[CPS Models]] using [[Continuous Dynamics in CPS|continuous dynamics]].
+* Everything typically surrounds the definition of [[position]], from which most of everything else can be described.

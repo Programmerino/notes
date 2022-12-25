@@ -1,0 +1,1 @@
+A set [[action]] is an [[action]] that manipulates the variables during a [[transition]] in an [[extended-state machine]]. Conceptually, they are done *after* the [[guard]] and [[output]] is evaluated, so the previous value will be read if referenced to in either case.

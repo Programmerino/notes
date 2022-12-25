@@ -11,5 +11,4 @@
 		* T1: M.store(B) → M.load() → M.load() → M.load()
 		* Could result in BBB since it only guarantees that the A and D are ordered together in T0, but doesn't specify any relationship with T1. That being said, DAB is impossible because D always comes after A.
 	* A parallel history H is then equivalent to some sequential history S where S contains all H's events, and has the same equivalent sequential object semantics. It is linearizable if it preserves real-time order such that $R_A <_H I_B \Rightarrow I_AR_A <_H I_BR_B$ but is sequentially consistent if $I_A^t <_H I_B^t \Rightarrow I_AR_A <_H I_BR_B$ (preserving program order)
-* A benefit to linearizability is that it is composable, meaning that if it is inside another object, the parent remains linearizable, but this is not the case with sequential consistency
-	* 
+* A benefit to linearizability is that it is [[compositional property|compositional]], but this is not the case with sequential consistency
