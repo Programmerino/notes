@@ -141,8 +141,65 @@
             "id": "529123e2b3923f9d",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "concurrent composition.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "312023a962e454ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "model communication.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8b9cabb633fb088c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "model of computation.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e6a9d5f1e1d061dd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous-reactive MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "509f99de523b9e87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "behavior.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           },
           {
@@ -224,7 +281,7 @@
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 13
       }
     ],
     "direction": "vertical"
@@ -253,7 +310,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "simultaneous and instant",
+                "query": "fixed point",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -292,6 +349,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "synchronous-reactive MoC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -307,7 +365,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "synchronous-reactive MoC.md"
+              }
             }
           },
           {
@@ -316,6 +376,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "synchronous-reactive MoC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -360,17 +421,17 @@
       "random-note:Open random note": false
     }
   },
-  "active": "529123e2b3923f9d",
+  "active": "703738fe40565af3",
   "lastOpenFiles": [
-    "history transition.md",
-    "reset transition.md",
-    "hierarchical composition.md",
-    "Preemptive transitions.md",
-    "semantics of hierarchical composition.md",
-    "state refinement.md",
-    "Sequential semantics.md",
-    "CPS.md",
-    "Lee and Tripakis semantics.md",
-    "state machine composition.md"
+    "model of computation.md",
+    "synchronous-reactive MoC.md",
+    "CPS models.md",
+    "port.md",
+    "Feedback systems.md",
+    "synchronous composition.md",
+    "fixed point.md",
+    "Determinate state machine.md",
+    "cascade composition.md",
+    "clock signal.md"
   ]
 }

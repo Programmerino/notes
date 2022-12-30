@@ -3,4 +3,4 @@ A state refinement in the context of a [[finite-state machine]] in a [[hybrid sy
 In the context of [[hierarchical composition]], it refers to a [[finite-state machine]] contained in a [[state machine]] using [[hierarchical composition]].
 
 ## modal model
-When using this, the [[hybrid systems modeling|hybrid system]] can be described as a **modal [[CPS Models|model]]** since the dynamics of the [[actor]] have different "modes" associated with each [[state]] in the [[finite-state machine]].
+When using this, the [[hybrid systems modeling|hybrid system]] can be described as a **modal [[CPS models|model]]** since the dynamics of the [[actor]] have different "modes" associated with each [[state]] in the [[finite-state machine]].
