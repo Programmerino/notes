@@ -3,7 +3,7 @@
 	* [[Finite-state machine]]
 	* [[Determinate state machine]]
 	* [[Deterministic state machine]]
-	* [[Non-deterministic state machine]]
+	* [[non-deterministic state machine]]
 	* [[Receptive state machine]]
 * See [[state machine syntax]]
 * See [[state machine composition]]

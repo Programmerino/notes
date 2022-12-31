@@ -5,3 +5,4 @@ A model of computation (MoC) provides the semantics to describe how an instance 
 
 Common MoCs include...
 * [[synchronous-reactive MoC]]
+* [[dataflow MoC]]

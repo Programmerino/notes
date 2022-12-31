@@ -169,7 +169,249 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "model of computation.md",
+                "file": "ill formed.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a62adeb2b81811ba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "determinism.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4dd4c474a07ebda4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous-reactive MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3a73d049dae30da6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous-reactive MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f48e74f724761a9b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous-reactive MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c9b55d7028387b07",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous-reactive MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "668c2facd6120559",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "model.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f4af60ffc8aef961",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous-reactive MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5c00d99f98000779",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataflow deadlock.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d9956e21cd3138d7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "firing rule.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f3886fa8de926cfa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataflow deadlock.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b374817fde74a9b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataflow MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "78c1e15681ed438e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "firing rule.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7be35c3e36f9c6b9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataflow MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4701e52c7739bd57",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous dataflow MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7778a01f4c36c416",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous dataflow MoC scheduling.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3d4831e238e550ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "synchronous dataflow MoC scheduling.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6ae107125dfeb927",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dataflow MoC.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "81f69140df8d0d40",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "4a02c770cd4e6fac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "non-deterministic.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -182,7 +424,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "synchronous-reactive MoC.md",
+                "file": "fixed point.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -247,7 +489,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Non-deterministic state machine.md",
+                "file": "non-deterministic state machine.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -281,7 +523,7 @@
             }
           }
         ],
-        "currentTab": 13
+        "currentTab": 28
       }
     ],
     "direction": "vertical"
@@ -310,7 +552,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "fixed point",
+                "query": "present",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -349,7 +591,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "synchronous-reactive MoC.md",
+                "file": "synchronous dataflow MoC scheduling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -366,7 +608,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "synchronous-reactive MoC.md"
+                "file": "synchronous dataflow MoC scheduling.md"
               }
             }
           },
@@ -376,7 +618,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "synchronous-reactive MoC.md",
+                "file": "synchronous dataflow MoC scheduling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -421,17 +663,17 @@
       "random-note:Open random note": false
     }
   },
-  "active": "703738fe40565af3",
+  "active": "3d4831e238e550ee",
   "lastOpenFiles": [
-    "model of computation.md",
-    "synchronous-reactive MoC.md",
-    "CPS models.md",
-    "port.md",
-    "Feedback systems.md",
-    "synchronous composition.md",
-    "fixed point.md",
-    "Determinate state machine.md",
-    "cascade composition.md",
-    "clock signal.md"
+    "synchronous dataflow MoC.md",
+    "synchronous dataflow MoC scheduling.md",
+    "dataflow MoC.md",
+    "dataflow deadlock.md",
+    "Delay actor.md",
+    "representation of actors in dataflow MoCs.md",
+    "firing rule.md",
+    "model.md",
+    "finding the fixed-point solution for synchronous-reactive state machines.md",
+    "token.md"
   ]
 }
