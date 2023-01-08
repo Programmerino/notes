@@ -33,7 +33,7 @@
     }
   ],
   "shouldShowCiteSuggest": true,
-  "exeVersion": "1.0.12",
+  "exeVersion": "1.0.14",
   "shouldConcat": true,
   "pdfExportImageOCR": false
 }
