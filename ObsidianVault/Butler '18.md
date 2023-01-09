@@ -7,7 +7,6 @@
 ![[storage/IBL6TIML/Butler et al. - 2018 - Assessment and support of children and adolescents.pdf]]
 
 ## PubMed entry
-![[]]
 
 ## Snapshot
 ![[storage/SBCZ3G97/631.html]]

@@ -54,11 +54,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1671287106,
-        "narHash": "sha256-n4/FDztgXTxvAJDi7wZ5fcoIPByfSo0g5xxhH1QKnpc=",
+        "lastModified": 1673289800,
+        "narHash": "sha256-KZeuB4G0kTDuAWBv4kpyBbDW5ZvRFqgifnwFmqy5uzo=",
         "owner": "obsidian-html",
         "repo": "obsidian-html",
-        "rev": "2e475b120e2311baacaf8713647b8867447dba95",
+        "rev": "94415cd4fc41c45779747da85a1d460127a58fc6",
         "type": "github"
       },
       "original": {

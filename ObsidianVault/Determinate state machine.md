@@ -1,1 +1,3 @@
+#saved
+
 A determinate [[state machine]], given the same [[input|inputs]], will always produce the same [[output|outputs]]. All [[deterministic state machine|deterministic state machines]] are determinate. This property means that state machines and actors can be directly modeled with functions. When [[state machine composition|composed]], the semantics of the model can be represented with the solution to a system of equations of these

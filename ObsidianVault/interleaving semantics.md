@@ -1,3 +1,5 @@
+#saved
+
 For [[asynchronous composition]], it means that a [[reaction]] of $C$ is a [[non-deterministic state machine|non-deterministic]] [[reaction]] of either $A$ or $B$, but not both. This means that even if $A$ and $B$ are present, only one of the state machines will see the input if they have independent [[input]]s. To fix this, you can either set a specific scheduling scheme for ordering between the two, or you can use [[synchronous composition]].
 
 * A benefit to these semantics is that it enforces accesses to any [[shared variables]] will be atomic since only one [[actor]] will be running at a given time.

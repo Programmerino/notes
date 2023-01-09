@@ -1,3 +1,5 @@
+#saved
+
 * Models the dynamics and evolution of a [[CPS|system]] state over time with formal properties which are predictive of the real physical system, used in [[CPS]]
 	* The dynamics can be [[Continuous Dynamics in CPS|continuous]] or [[Discrete Dynamics in CPS|discrete]].
 * Are used to gain a deeper understanding of a [[CPS|system]] through imitation, and specifies concretely what a [[CPS|system]] does through a process of design and analysis…

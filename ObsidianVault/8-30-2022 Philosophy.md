@@ -1,7 +1,8 @@
+#saved
 * Descartes believed that a person was responsible for consequences, even in the presence of a god. He believed that if people didn't have a clear and distinct idea for what action to take, to not take any action (Meditation 4)
 	* Hellenistic philosophers agree with this.
 	* Skeptics claim that you probably can't agree with this and Leibniz's idea of identity because there can be microscopic differences in your perception of the environment to the actual environment, which means you would make actions without clear, distinct ideas.
-		* Stoics deal with binary classifications by saying there is a distinct point between the two.
+		* Stoics deal with [[binary classifications]] by saying there is a distinct point between the two.
 * Atoraxia is freedom from judgement
 * Survival is used as an alternative to identity for “sameness”:
 	* If a person is carbon copied and the original is eliminated, are they the same person before the process?

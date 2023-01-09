@@ -13,14 +13,62 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "9-22-2022 Philosophy.md",
+                "file": "8-30-2022 Philosophy.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "86d5ff81a536754a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "8-30-2022 Philosophy.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "556156c61c780b3b",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "85221f41c687c960",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "binary classifications.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b40f7f2a3daf85a5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Butler '18.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -49,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "philosophy",
+                "query": "fini",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -87,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "9-22-2022 Philosophy.md",
+                "file": "Butler '18.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "9-22-2022 Philosophy.md"
+                "file": "Butler '18.md"
               }
             }
           },
@@ -114,7 +162,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "9-22-2022 Philosophy.md",
+                "file": "Butler '18.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,17 +207,17 @@
       "random-note:Open random note": false
     }
   },
-  "active": "3d4831e238e550ee",
+  "active": "b40f7f2a3daf85a5",
   "lastOpenFiles": [
-    "10-6-2022 Philosophy.md",
-    "9-6-2022 Philosophy.md",
-    "9-13-2022 Philosophy.md",
-    "9-22-2022 Philosophy.md",
-    "10-4-2022 Philosophy.md",
+    "finite-state machine.md",
+    "Butler '18.md",
+    "guard.md",
+    "Sorites paradox.md",
+    "binary classifications.md",
     "8-30-2022 Philosophy.md",
-    "synchronous dataflow MoC scheduling.md",
-    "Lee87.md",
-    "CPS.md",
-    "system.md"
+    "reset transition.md",
+    "Notes template.md",
+    "hierarchical composition.md",
+    "history transition.md"
   ]
 }
