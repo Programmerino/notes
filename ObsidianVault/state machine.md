@@ -1,3 +1,5 @@
+#saved
+
 * State machines are used to model [[Discrete Dynamics in CPS]] and are the combination of [[state|states]] and [[signal|signals]] and are reactive to an [[environment]]. See the [[counter state machine]] for an example.
 * They can be categorized in several ways…
 	* [[Finite-state machine]]

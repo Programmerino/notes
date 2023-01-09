@@ -1,3 +1,4 @@
+#saved
 Dataflow [[models of computation]] provide communication between [[actor]]s in the form of sequences of [[tokens]], where signals are then [[partial functions]] of the form $s : \mathbb{N} \rightharpoonup V_s$ which maps some subset of $\mathbb{N}$ called the **initial segment** to the [[tokens]]. See [[representation of actors in dataflow MoCs]] for more info
 
 Common examples include:

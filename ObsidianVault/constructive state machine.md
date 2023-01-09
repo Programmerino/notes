@@ -1,3 +1,5 @@
+#saved
+
 The following procedure will find a [[fixed point]] for most [[well formed]] [[synchronous-reactive MoC]] [[model]]:
 For each [[reachable state]] $i$:
 1. Start with $s(n)$ unknown.
