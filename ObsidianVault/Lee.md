@@ -2,9 +2,6 @@
 ## Extracts
 ## Content
 
-### Amazon.com Link
-![[]]
-
 ### Lee and Seshia - Introduction to Embedded Systems, Second Edition .pdf
 ![[storage/FYJVPSNW/Lee and Seshia - Introduction to Embedded Systems, Second Edition .pdf]]
 

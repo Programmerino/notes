@@ -60,7 +60,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Butler '18.md",
+                "file": "Pascoe '09.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -97,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "fini",
+                "query": "![[]]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -119,7 +119,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 422.5
+    "width": 422.5,
+    "collapsed": true
   },
   "right": {
     "id": "282606d45673b3c4",
@@ -135,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Butler '18.md",
+                "file": "Pascoe '09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Butler '18.md"
+                "file": "Pascoe '09.md"
               }
             }
           },
@@ -162,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Butler '18.md",
+                "file": "Pascoe '09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -209,15 +210,15 @@
   },
   "active": "b40f7f2a3daf85a5",
   "lastOpenFiles": [
-    "finite-state machine.md",
+    "Chu '17.md",
+    "Nasreddine05.md",
+    "Lee.md",
+    "Hughto '15.md",
     "Butler '18.md",
+    "finite-state machine.md",
     "guard.md",
     "Sorites paradox.md",
     "binary classifications.md",
-    "8-30-2022 Philosophy.md",
-    "reset transition.md",
-    "Notes template.md",
-    "hierarchical composition.md",
-    "history transition.md"
+    "8-30-2022 Philosophy.md"
   ]
 }

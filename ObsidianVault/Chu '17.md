@@ -2,8 +2,6 @@
 
 ### Overview
 122 studies supported IPTS ([[why people commit suicide (interpersonal theory of suicide)]]) and found that the interaction between "thwarted belongingness", perceived burdensomeness, and capability for suicide was heavily linked to suicide attempts.
-### PubMed Central Link
-![[]]
 
 ### The Interpersonal Theory of Suicide: A Systematic Review and Meta-Analysis of a Decade of Cross-National Research
 ![[storage/35333I25/chu2017.pdf.pdf]]
