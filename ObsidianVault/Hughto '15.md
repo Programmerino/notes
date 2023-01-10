@@ -5,9 +5,6 @@ Transgender stigma exists reduces opportunities and negatively affects general h
 ### Accepted Version
 ![[storage/SC3UHP8A/White Hughto et al. - 2015 - Transgender Stigma and Health A Critical Review o.pdf]]
 
-### PubMed Central Link
-![[]]
-
 ### Transgender Stigma and Health: A Critical Review of Stigma Determinants, Mechanisms, and Interventions
 ![[storage/YC8W6XRV/whitehughto2015.pdf.pdf]]
 
