@@ -13,7 +13,7 @@
   };
   inputs.obsidianhtml = {
     url = "github:obsidian-html/obsidian-html";
-    inputs.nixpkgs.follows = "nixpkgs";
+    #inputs.nixpkgs.follows = "nixpkgs";
   };
   inputs.nixpkgs = {
     url = "github:NixOS/nixpkgs/nixpkgs-unstable";
