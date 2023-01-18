@@ -8,4 +8,4 @@ echo Starting cacheBuild
 cacheBuild
 echo cacheBuild done
 git commit -m "$(date -d yesterday '+%B %e, %Y')"
-git push
+git push --force
