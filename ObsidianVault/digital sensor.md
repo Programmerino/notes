@@ -1,0 +1,1 @@
+A digital [[sensor]] is a [[sensor]] bundled with an [[analog-to-digital converter]], and necessarily has less precision than the raw signal provided by a [[analog sensor]].

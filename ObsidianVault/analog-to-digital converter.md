@@ -1,0 +1,1 @@
+An analog-to-digital converter (ADC) converts the voltage produced by a [[sensor]] to a number which can be processed by digital computers.

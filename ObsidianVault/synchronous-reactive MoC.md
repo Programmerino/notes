@@ -1,6 +1,6 @@
 #saved
 
-The synchronous-reactive (SR) [[model of computation]] specifies a [[Discrete Dynamics in CPS|discrete system]] where [[signal]]s are absent at all times except potentially at ticks of a global clock. The [[CPS models|model]] is executed with global reactions occurring at discrete times with all [[reaction]]s being [[simultaneous and instantaneous]]. With this model, any connection from an [[output]] [[port]] to an [[input]] [[port]] means the [[input]] [[port]] is the same as the value at the [[output]] [[port]] at all times.
+The synchronous-reactive (SR) [[model of computation]] specifies a [[Discrete Dynamics in CPS|discrete system]] where [[signal]]s are absent at all times except potentially at ticks of a global clock. The [[CPS model|model]] is executed with global reactions occurring at discrete times with all [[reaction]]s being [[simultaneous and instantaneous]]. With this model, any connection from an [[output]] [[port]] to an [[input]] [[port]] means the [[input]] [[port]] is the same as the value at the [[output]] [[port]] at all times.
 
 [[Deterministic state machine]]s under this model can have their [[port]]s calculated by finding the [[fixed point]] of the [[firing function]] (when $s(n) = a_i(s(n))$ where $s(n)$ is the value of the [[signal]] $s$ at the $n$-th [[reaction]]) at each step, carrying out [[state]] [[transition]]s in between.
 

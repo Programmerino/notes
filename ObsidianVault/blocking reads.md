@@ -1,0 +1,1 @@
+[[Kahn process network]] often use **blocking reads** to guarantee proper concurrent execution. With blocking reads, the [[actor]] issues a read request and blocks until the data becomes available on [[input]] [[port]]s whenever the [[actor]] wants to read [[input]] data. These are akin to a [[firing rule]]s which require one [[token]] to continue computation.

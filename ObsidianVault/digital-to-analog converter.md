@@ -1,0 +1,1 @@
+A digital-to-analog converter (DAC) converts a digital number into an analog voltage which can drive an [[actuator]].

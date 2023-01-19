@@ -1,0 +1,1 @@
+Blocking writes in [[Kahn process network]]s block processes whenever they write to an [[output]] [[port]] until the receiving process is ready to receive the data. This exchange of [[token]]s is called a **rendezvous**.

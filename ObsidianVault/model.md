@@ -1,1 +1,1 @@
-![[CPS models]]
+![[CPS model]]

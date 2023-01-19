@@ -5,6 +5,10 @@ A model of computation (MoC) provides the semantics to describe how an instance 
 * Concurrency mechanisms
 * Communication mechanisms
 
-Common MoCs include...
+Common MoCs and categories of MoCs include...
 * [[synchronous-reactive MoC]]
 * [[dataflow MoC]]
+* [[synchronous dataflow MoC]]
+* [[dynamic dataflow MoC]]
+* [[Kahn process network]]
+* [[timed MoC]]
