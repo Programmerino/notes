@@ -6,7 +6,6 @@
 ![[storage/6TRL27YX/Kahn - 1974 - The Semantics of a Simple Language for Parallel Pr.pdf]]
 
 ### Semantic Scholar Link
-![[]]
 
 
 %% Import Date: 2023-01-18T22:10:56.288-07:00 %%
