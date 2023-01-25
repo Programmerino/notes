@@ -1,2 +1,2 @@
-#incomplete
-A continuous-time [[system]] is one which operates on continuous-time [[signal]]s and can be executed approximately on digital computers with a [[solver]].
+#incomplete #saved
+A continuous-time [[system]] is one which operates on continuous-time [[CPS signal]]s and can be executed approximately on digital computers with a [[solver]].

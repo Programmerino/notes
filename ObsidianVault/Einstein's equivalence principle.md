@@ -1,0 +1,1 @@
+Einstein's equivalence principle states that the [[gravitational force]] is indistinguishable from [[acceleration]]

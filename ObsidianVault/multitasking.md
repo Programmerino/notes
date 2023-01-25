@@ -1,0 +1,1 @@
+Multitasking is a strategy of achieving [[concurrency]] without invoking [[parallelism]] by interleaving the execution of multiple tasks into a single sequential stream of instructions.

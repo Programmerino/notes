@@ -1,1 +1,2 @@
-For any given [[actor|actor]], the state space is the set describing the possible values the actor's state can take on. For example, the [[Integrator actor]] has a state space of $\mathbb{R}$ since the previous areas is represented as a real number.
+#saved
+For any given [[actor|actor]], the [[state]] space is the set describing the possible values the [[actor]]'s [[state]] can take on. For example, the [[Integrator actor]] has a state space of $\mathbb{R}$ since the previous areas is represented as a [[real number]].

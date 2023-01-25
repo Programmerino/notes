@@ -1,0 +1,1 @@
+Work refers to the conventional complexity of an algorithmic operation, and refers to the total number of times action(s) are taken in the course of the operation.

@@ -1,3 +1,4 @@
+#saved
 The discrete-event [[MoC]] (DE/DEVS) is a very popular extension of [[Moore machine]]s and associates with all [[CPS event]]s a time stamp, and each [[actor]] reacts to [[input]] [[CPS event]]s in timestamp-order, and produces [[output]]s in timestamp-order.
 
 To execute a DE [[CPS model]], an **event queue** is used which is initially potentially populated by the initial [[CPS event]]s of the [[actors]] in the [[system]], and then executed by continuously sending the earliest [[CPS event]] in the queue to the appropriate [[actor]] and pushing the result to the queue in the correct place. What this timestamp is is variant-dependent, as some allow instantaneous timestamps, and some require strictly larger time stamps.

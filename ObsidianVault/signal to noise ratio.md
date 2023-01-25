@@ -1,0 +1,1 @@
+Signal to noise ratio is a metric of [[noise]] in [[decibel]]s defined as $S N R_{d B}=20 \log _{10}\left(\frac{X}{N}\right)$ where $X$ is the [[RMS]]

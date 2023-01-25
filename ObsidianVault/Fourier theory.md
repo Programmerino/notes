@@ -1,0 +1,1 @@
+Fourier theory states that [[signal]]s are the additive composition of [[sine waves]] of different [[frequencies]].

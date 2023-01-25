@@ -1,0 +1,1 @@
+The back electromagnetic force is a form of [[noise]] which refers to the reduced response of a [[motor]] due to the presence of resisting [[torque]].

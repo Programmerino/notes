@@ -1,0 +1,1 @@
+A microphone is a [[sensor]] detecting changes in [[sound pressure]] and are typically optimized for human audio (20 to 20,000 [[Hertz]]).

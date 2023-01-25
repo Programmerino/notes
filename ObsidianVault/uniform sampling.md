@@ -1,0 +1,1 @@
+Uniform [[sampling]] is [[sampling]] at a fixed **sampling interval**. The resulting [[CPS signal]] can be described as $\forall n \in \mathbb{Z}, \quad s(n)=f(x(n T))$ where $T$ is the time interval.

@@ -1,0 +1,1 @@
+A processor realization is a piece of silicon sold by a semiconductor vendor.

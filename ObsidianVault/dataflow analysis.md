@@ -1,0 +1,1 @@
+Dataflow analysis is the process of generating [[parallel]] code from sequential code.

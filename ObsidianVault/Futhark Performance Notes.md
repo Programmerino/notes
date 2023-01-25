@@ -1,6 +1,7 @@
-
-* SOACs
-	* Parallel operators have equivalent *work* (conventional complexity) to their sequential counterparts (e.g, reduce and foldl), but *span* differs as it refers to the longest chain of sequential dependencies. In this case, `foldl` would have a span of `O(n)` while `reduce` would have a span of `O(log(n))`.
+#converted
+* [[work]]
+* [[span]]
+* [[SOACs]]
 * Scans and reductions
 	* Avoid using arrays as the values being iterated over (e.g. when using a 2D array)
 	* Sequentialize loops over small arrays, either by unrolling it manually or using a fold
@@ -36,4 +37,3 @@
 	* Avoid having a large tuple as the accumulator in a loop expression
 * HOFs
 	* Incurs slight overhead
-* 

@@ -1,0 +1,1 @@
+A gyroscope is a [[sensor]] measuring changes in [[orientation]].

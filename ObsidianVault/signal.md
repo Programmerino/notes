@@ -1,4 +1,1 @@
-A signal is a discrete event in the context of a [[state machine]].
-* There are many ways to characterize signals...
-	* [[Pure signal]]
-	* [[valued signal]]
+A signal is a collection of [[sampled]] measurements of the physical world taken at a [[sample rate]].

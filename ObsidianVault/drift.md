@@ -1,0 +1,1 @@
+Drift is a form of [[noise]] in [[sensor]]s which have their [[signal]] [[integrated]] (such as an [[accelerometer]]) which increases proportionally to $t^2$.

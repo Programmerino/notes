@@ -1,0 +1,1 @@
+Algorithmic complexity is the general idea of classifying how an operation performs asymptotically as some number $n$ increases. There are two primary metrics for this: [[work]] and [[span]].

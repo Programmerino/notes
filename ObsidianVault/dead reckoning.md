@@ -1,0 +1,1 @@
+Dead reckoning is the process of using measurements of motion (e.g., [[accelerometer]], [[gyroscope]]) to estimate [[position]] and [[orientation]] from known initial values.

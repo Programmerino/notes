@@ -1,3 +1,4 @@
+#saved
 ![[Pasted image 20230118214201.png]]
 
 The [[Delay actor]] has special status (or rather, special absence) in the [[SDF]] [[MoC]] and is represented as a connection with initial [[token]]s which avoids the unnecessary copying of [[input]]s to [[output]]s if implemented literally. They play an important role in "getting the ball rolling" for [[unbounded execution]]. For example, in the above image, without the four initial [[token]]s the [[system]] would eventually [[deadlock]].

@@ -9,7 +9,7 @@
 * There are a variety of ways to categorize cyber-physical systems...
 	* [[Causal system]]
 	* [[Memoryless system]]
-	* [[Linear system]]
+	* [[CPS linear system]]
 	* [[Time-invariant system]]
 	* [[Linear and time-invariant system]]
 	* [[Bounded-input bounded-output system]]

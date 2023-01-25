@@ -1,1 +1,2 @@
+#saved
 Timed automata are used to emulate a clock and timing-based events for [[hybrid systems modeling|hybrid systems]]. The clock is modeled by the first-order differential equation $\forall t\in T_m, \dot{s}(t) = a$ where $T_m \subset \mathbb{R}$ is the subset of time during which the hybrid system is in mode $m$ and the rate of the clock is a constant $a$. See the [[thermostat hybrid system]] and [[timer timed automata]] for examples.

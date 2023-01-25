@@ -1,1 +1,2 @@
+#saved
 Sensor-actuator models attempt to model the relationship between [[digital sensor]]s and [[digital actuator]]s with the physical world.

@@ -1,0 +1,1 @@
+The global positioning system (GPS) is a strategy for [[position tracking]] which uses 4+ GPS satellites carrying precise clocks which communicate [[time of transmission]] and [[position]] to a receiver. Given these values, the receiver can use [[triangulation]] to determine its position, while the fourth value is used to account for error in the local clock.

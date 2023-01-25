@@ -1,0 +1,1 @@
+Inertial navigation uses the combination of a [[gyroscope]] and [[accelerometer]] to deduce [[position]] through [[dead reckoning]]. The combination of these two [[sensor]]s is called an **inertial measurement unit** or **inertial navigation system**.

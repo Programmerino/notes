@@ -1,1 +1,2 @@
+#saved
 Saturation is the phenomena where [[sensor]]s or [[actuator]]s will read or perform at their maximum bound or minimum bound when the [[range]] is surpassed.

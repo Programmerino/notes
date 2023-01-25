@@ -1,0 +1,1 @@
+Pulse width modulation (PWM) rapidly powers a [[switch]] connected to an [[actuator]] on and off as a way to control the output of the [[actuator]] (reduced [[torque]] for a [[DC]] [[motor]], etc.). The **duty cycle** is $\frac{\text{on time}}{\text{total cycle period}}$.

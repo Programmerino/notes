@@ -1,1 +1,2 @@
-An actuator is a device that alters a physical quantity, usually with a voltage proportional to the size of change in the physical quantity. They can [[analog actuator]]s or [[digital actuator]]s.
+#saved
+An actuator is a device that alters a physical quantity, usually with a voltage proportional to the size of change in the physical quantity. They can be [[analog actuator]]s or [[digital actuator]]s.

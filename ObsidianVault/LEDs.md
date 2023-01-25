@@ -1,0 +1,1 @@
+Light-emitting diodes (LEDs) can be directly connected to [[GPIO]] pins.

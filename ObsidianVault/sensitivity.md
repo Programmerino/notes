@@ -1,1 +1,2 @@
-[[Sensor]]/[[actuator]] [[sensitivity]] can be quantified with [[proportionality constant]] since it specifies the degree to which the measurement changes when the physical quantity changes.
+#saved
+[[Sensor]]/[[actuator]] [[sensitivity]] can be quantified with the [[proportionality constant]] since it specifies the degree to which the measurement changes when the physical quantity changes.

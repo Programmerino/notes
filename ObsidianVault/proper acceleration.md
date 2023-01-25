@@ -1,0 +1,1 @@
+Proper [[acceleration]] is [[acceleration]] of an object observed by an observer in free fall, and is essentially the combination of [[gravity]] and [[acceleration]]. This is linked to [[Einstein's equivalence principle]]

@@ -1,1 +1,2 @@
+#saved
 Sequential semantics specify that in [[hierarchical composition]], [[action]]s should be taken in the order they occur, and that between conflicting [[action]]s (e.g, writing to the [[output]] [[port]]), the later one has priority.

@@ -1,0 +1,3 @@
+Finite impulse response (FIR) is a [[signal processing]] algorithm which processes some [[signal]] $x: \mathbb{N} \rightarrow D$, where $D$ is a relevant digital [[datatype]] encoding the [[signal]], and computes $y(n)=\sum_{i=0}^{N-1} a_i x(n-i)$ where the $a_i$ coefficients are the **tap values** and $N$ is the length of the filter. Often times, $y(0)$ will be set to 0.
+
+This can be expanded to more dimensions.

@@ -1,0 +1,1 @@
+Aliasing refers the phenomena where distinct [[continuous]] [[function]]s, when [[sampled]], yield the same [[CPS signal]].

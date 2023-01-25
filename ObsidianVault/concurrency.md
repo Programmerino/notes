@@ -1,0 +1,1 @@
+A program is **concurrent** if different parts of the program *conceptually* execute simultaneously as opposed to [[parallelism]]. This can be achieved with real [[parallelism]], or with [[multitasking]].

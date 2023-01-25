@@ -1,0 +1,3 @@
+An accelerometer is a [[sensor]] which measures [[proper acceleration]] and [[gravitational force]] due to [[Einstein's equivalence principle]] and works by measuring the [[position]] of a movable mass connected to a [[spring]]. Whenever the [[sensor]] [[accelerates]], or is lying without [[free fall]], the mass is displaced and measured.
+
+Since [[acceleration]] is related to [[velocity]] and [[position]], it is possible to take the [[integral]] of the provided values to calculate these, although, this is susceptible to [[drift]].

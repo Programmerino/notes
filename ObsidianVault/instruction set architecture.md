@@ -1,0 +1,1 @@
+The definition of instructions a processor can execute and architectural constraints. They typically do not define timing constraints, and thus can be insufficient to guarantee continuity across [[processor realization]]s.

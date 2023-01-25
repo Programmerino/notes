@@ -1,0 +1,1 @@
+VLIW stands for very large instruction word, and is a method of [[parallelism]] where the [[compiler]] generates a set of instructions to be ran in parallel, as opposed to [[SIMD]] where only one instruction is needed.

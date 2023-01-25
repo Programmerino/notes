@@ -1,0 +1,1 @@
+[[analog-to-digital converter]]s [[sample]] the underlying physical quantity at particular points in time to create a [[discrete]] [[CPS signal]].

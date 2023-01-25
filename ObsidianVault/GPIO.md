@@ -1,0 +1,1 @@
+GPIO refers to the digital I/O pins of a [[microcontroller]]

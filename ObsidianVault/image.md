@@ -1,0 +1,1 @@
+An image can be modeled as a [[function]] $x: H \times V \rightarrow D$ where $H \subset \mathbb{N}$ and $V \subset \mathbb{N}$ represent the horizontal and vertical indices and $D$ is the set of possible pixel values. $H$ and $V$ make up the image [[resolution]].

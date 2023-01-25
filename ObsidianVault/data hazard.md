@@ -1,0 +1,1 @@
+A data hazard is a violation of a programmer's expectation of the results of prior instructions not being visible to later instructions due to a [[concurrency]] bug.

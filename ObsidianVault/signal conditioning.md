@@ -1,0 +1,1 @@
+Signal conditioning reduces or eliminate [[noise]] in a [[signal]], often times with [[frequency selective filtering]].

@@ -1,0 +1,1 @@
+The [[sampling]] rate is the inverse of the [[sampling interval]] and is measured in [[sample]]s per second or [[Hertz]].

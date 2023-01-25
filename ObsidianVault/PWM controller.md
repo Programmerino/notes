@@ -1,0 +1,1 @@
+A [[pulse width modulation]] controller uses a feedback [[sensor]] to achieve a desired physical output (e.g., for a [[motor]], a [[[rotary encoder]] is used to achieve a desired RPM])

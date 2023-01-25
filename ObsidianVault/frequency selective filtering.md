@@ -1,0 +1,1 @@
+Frequency selective filtering uses [[Fourier theory]] for [[signal conditioning]].
