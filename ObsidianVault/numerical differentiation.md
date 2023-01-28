@@ -1,0 +1,1 @@
+Numerical [[differentiation]] is the simplest way to estimate the [[derivative]]s of [[function]]s, and can be done with the [[difference quotient formula]]. When [[symbolic differentiation]] or [[automatic differentiation]] is available, they should be used since they are more accurate.
