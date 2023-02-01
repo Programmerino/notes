@@ -116,7 +116,7 @@
           entrypoint = "index.md";
         };
       in rec {
-        packages.default = project.compile;
+        packages.default = pkgs.symlinkJoin {name = "default"; paths = [ project.compile ./ObsidianVault/export ]; };
 
         devShells.default = pkgs.mkShell {
           inherit name;
