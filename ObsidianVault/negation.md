@@ -1,0 +1,1 @@
+Negation is a [[logical operator]] ($\neg$A) which negates the [[truth value]] of $A$.

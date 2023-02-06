@@ -1,0 +1,1 @@
+Logical implication (A $\rightarrow$ B) is a [[logical operator]] which expresses that whenever $A$ is true, $B$ is also true. Therefore, it is only false when $A$ is true and $B$ is false.

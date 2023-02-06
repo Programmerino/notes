@@ -1,0 +1,1 @@
+Biconditional is a [[logical operator]] ($A\Leftrightarrow B$) which expresses that $A$ has the same [[truth value]] as $B$.

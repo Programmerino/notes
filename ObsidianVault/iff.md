@@ -1,0 +1,1 @@
+If and only if. Represents the logical [[biconditional]].

@@ -1,0 +1,1 @@
+A [[proof]] by contradiction exploits the [[contrapositive]] property in [[logic]] by assuming the [[negation]] of the conclusion and demonstrating that a contradiction occurs in doing so.

@@ -1,0 +1,1 @@
+For a [[graph]], a [[vertex]].

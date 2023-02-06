@@ -1,0 +1,1 @@
+Depth-first search is the [[search algorithm]] using a [[queue]] and is characterized by forming straight paths away from the starting [[vertex]] and is typically used with a specific [[node]] in mind. For example, a navigation algorithm might use [[DFS]] where [[BFS]] would make less sense.
