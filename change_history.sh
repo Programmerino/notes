@@ -1,3 +1,5 @@
+git log --all --pretty=format: --name-only --diff-filter=A > /tmp/test
+cat /tmp/test | sed '/^[[:space:]]*$/d' | git check-ignore --no-index --stdin >> .gitignore
 grep -rlw --include="*.md" -e "#protected" * >> .gitignore
 awk -i inplace '!seen[$0]++' .gitignore
 git add .
