@@ -14,4 +14,4 @@ git add .
 #cacheBuild
 #echo cacheBuild done
 git commit -m "$(date -d yesterday '+%B %e, %Y')"
-git push || git push --set-upstream origin main --force
+git push --set-upstream origin main || git push --set-upstream origin main --force
