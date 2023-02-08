@@ -1,8 +1,12 @@
 #set -e
 shopt -s dotglob
+#git filter-repo --invert-paths --paths-from-file /tmp/ignored --force --debug
 sudo umount /home/davis/Documents/Obsidian/ObsidianVault/storage
 mv /home/davis/Documents/Obsidian/ObsidianVault/storage/* /home/davis/Zotero/storage/
 sudo mount --bind /home/davis/Zotero/storage/ "/home/davis/Documents/Obsidian/ObsidianVault/storage"
+grep -rlw --include="*.md" -e "#protected" . >> .gitignore
+awk -i inplace '!seen[$0]++' .gitignore
+git ls-files --others -i --exclude-standard > /tmp/ignored
 git add .
 git rm -r --cached .
 git add .
