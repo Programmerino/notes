@@ -10,8 +10,8 @@ git log --all --pretty=format: --name-only --diff-filter=A > /tmp/test
 git add .
 git rm -r --cached .
 git add .
-echo Starting cacheBuild
-cacheBuild
-echo cacheBuild done
+#echo Starting cacheBuild
+#cacheBuild
+#echo cacheBuild done
 git commit -m "$(date -d yesterday '+%B %e, %Y')"
 git push || git push --set-upstream origin main --force
