@@ -6,3 +6,4 @@ git add .
 git ls-files --others -i --exclude-standard > /tmp/ignored
 git commit -m "$(date -d yesterday '+%B %e, %Y')"
 git filter-repo --invert-paths --paths-from-file /tmp/ignored --force --debug
+git remote add origin "https://github.com/Programmerino/notes.git"
