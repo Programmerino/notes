@@ -14,5 +14,4 @@ git add .
 #cacheBuild
 #echo cacheBuild done
 git commit -m "$(date -d yesterday '+%B %e, %Y')"
-(! cat /tmp/test | sed '/^[[:space:]]*$/d' | git check-ignore --no-index --stdin) || { echo 'gitignored files are in history! Run change_history.sh before proceeding!' ; exit 1; }
 git push --set-upstream origin main || git push --set-upstream origin main --force
