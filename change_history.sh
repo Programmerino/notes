@@ -1,3 +1,5 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i bash -p python3Packages.git-filter-repo
 git log --all --pretty=format: --name-only --diff-filter=A > /tmp/test
 cat /tmp/test | sed '/^[[:space:]]*$/d' | git check-ignore --no-index --stdin >> .gitignore
 grep -rlw --include="*.md" -e "#protected" * >> .gitignore
