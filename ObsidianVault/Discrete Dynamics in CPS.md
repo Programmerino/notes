@@ -1,3 +1,3 @@
 * Discrete dynamics are used for processes which cannot easily be modeled with differential/integral equations and may include collisions, UI systems (button clicks are discrete events), etc. and can instead be modeled better with [[state machine|state machines]].
-	* The dynamics are typically described in terms of [[reaction|reactions]].
+	* The dynamics are typically described in terms of [[CPS reaction|reactions]].
 * This is in contrast with [[Continuous Dynamics in CPS]], although they can be mixed with [[hybrid systems modeling]].

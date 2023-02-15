@@ -1,1 +1,1 @@
-A time-triggered [[reaction]] is akin to polling, while one that is actually caused by the event is an [[event-based reaction]]
+A time-triggered [[CPS reaction]] is akin to polling, while one that is actually caused by the event is an [[event-based reaction]]

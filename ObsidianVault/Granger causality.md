@@ -1,0 +1,1 @@
+Granger [[causality]] is a definition for [[causality]] where if a certain event provides information (e.g. "[[forecast]]s") a later event, then it is said to cause it. In reality, it can only demonstrate the [[causality]] most people think about when all other possible causes are eliminated first.

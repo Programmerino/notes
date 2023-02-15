@@ -1,2 +1,2 @@
 #saved
-A method of [[state machine composition]] is simultaneous and instantaneous if the [[state machine composition|composed]]  [[reaction]] is flattened into a single [[reaction]]. This has the corollary of meaning that intermediary [[state]]s don't actually happen.
+A method of [[state machine composition]] is simultaneous and instantaneous if the [[state machine composition|composed]]  [[CPS reaction]] is flattened into a single [[CPS reaction]]. This has the corollary of meaning that intermediary [[state]]s don't actually happen.
