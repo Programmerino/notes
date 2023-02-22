@@ -1,7 +1,6 @@
-# [{{bibliography}}]({{select}})
-## Extracts
-## Content
+# [{{title}}]({{select}})
 {% for attachment in attachments %}
-### {{attachment.title}}
+{% if 'md' in attachment.title %}
 ![[{{attachment.path | replace("/home/davis/Zotero/", "")}}]]
+{% endif %}
 {% endfor %}
