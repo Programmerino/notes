@@ -1,0 +1,1 @@
+SimHash is similar to [[minhash]], although it appears to perform worse in all respects ([[Shrivastava14]]).

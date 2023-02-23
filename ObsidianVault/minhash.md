@@ -6,3 +6,5 @@ Let's assume we are using the method using a [[universal family]] of [[hash func
 	* With $n \rightarrow \infty$, it is the same as [[Jaccard similarity]]. 
 
 A more optimal version uses just one [[hash function]]. If all the sets in question have at least $n$ elements, then you can apply the hash function to all the elements in the set and choose the lowest $n$ as your signature.
+
+The [[hash function]] should be [[k-wise independent]] or use [[tabulation hashing]].
