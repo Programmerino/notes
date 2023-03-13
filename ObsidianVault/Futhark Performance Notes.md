@@ -1,6 +1,6 @@
 #converted
 * [[work]]
-* [[span]]
+* [[span complexity]]
 * [[SOACs]]
 * Scans and reductions
 	* Avoid using arrays as the values being iterated over (e.g. when using a 2D array)
