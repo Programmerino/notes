@@ -1,0 +1,3 @@
+![[imatinib]]
+
+Source: [[NationalCancerInstitute17]]

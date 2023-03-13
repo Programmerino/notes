@@ -1,0 +1,3 @@
+Genetic [[disease]]s resulting from [[DNA]] alterations in [[genes]] related to [[cell growth]] which cause abnormal amounts of [[protein]]s to be produced, or for them to be misshapen. The accumulation of these [[genetic]] changes are called [[somatic changes]], and are responsible for 90-95% of all cases of cancer. While most cancers are not inherited, there are some examples like [[Lynch syndrome]] or [[breast cancer]].
+
+Source: [[NationalHumanGenomeResearchInstitute18]]

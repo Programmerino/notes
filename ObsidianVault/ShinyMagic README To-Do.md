@@ -1,0 +1,1 @@
+Heatmaps of breast cancer RNA-seq data based on the expression levels of HR/DNA repair-associated genes were created using the ***X*** package. We then created subclusters from the heatmap based on the presence of PIK3CA mutations, and merged this with corresponding data on copy number variation, DNA methylation and other somatic mutations.

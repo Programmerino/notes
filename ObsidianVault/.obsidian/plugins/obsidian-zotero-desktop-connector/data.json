@@ -6,6 +6,15 @@
   "pdfExportImageQuality": 100,
   "citeFormats": [
     {
+      "name": "APA Bibliography",
+      "format": "formatted-bibliography"
+    },
+    {
+      "name": "APA Citation",
+      "format": "formatted-citation",
+      "cslStyle": "apa"
+    },
+    {
       "name": "ACM Proceedings Bibliography",
       "format": "formatted-bibliography",
       "cslStyle": "acm-sig-proceedings"

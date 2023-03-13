@@ -8,3 +8,7 @@ Let's assume we are using the method using a [[universal family]] of [[hash func
 A more optimal version uses just one [[hash function]]. If all the sets in question have at least $n$ elements, then you can apply the hash function to all the elements in the set and choose the lowest $n$ as your signature.
 
 The [[hash function]] should be [[k-wise independent]] or use [[tabulation hashing]].
+
+For a [[homomorphic]] extension to this, see [[homomorphic minhash]].
+
+Source: [[Wikipedia23]], [[McCormick23]]
