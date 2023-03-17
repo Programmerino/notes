@@ -1,0 +1,1 @@
+* Extract heading keeps invalid characters and formatting

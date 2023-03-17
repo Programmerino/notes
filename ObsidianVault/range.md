@@ -1,2 +1,2 @@
 #saved
-The [[range]] of a [[sensor]] is the set of values of a physical quantity that it can measure or, if it is an [[actuator]], the extent to which it can change it. Outside the range of the [[sensor]]/[[actuator]], [[linear model]]s and basic [[affine model]]s are no longer valid due to [[saturation]].
+The [[range]] of a [[sensor]] is the set of values of a physical quantity that it can measure or, if it is an [[actuator]], the extent to which it can change it. Outside the range of the [[sensor]]/[[actuator]], [[linear model]]s and basic [[affine model]]s are no longer valid due to [[sensor-actuator saturation]].
